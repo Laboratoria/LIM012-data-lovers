@@ -67,8 +67,8 @@ Estos son datos que te proponemos:
    - [Investigación con jugadores de LoL](/src/data/lol/README.md)
 
 * [Atletas Olímpicos](src/data/rickandmorty/rickandmorty.json).
-  Este set nos proporciona la lista de los personajes de la serie Rick and
-  Morty.
+  Este set nos proporciona la lista de los atletas que ganaron medallas en las
+  olímpiadas de invierno y verano del siglo XXI.
    - [Investigación con interesados en atletas olímpicos](/src/data/rickandmorty/README.md)
 
 <!---
@@ -240,9 +240,9 @@ como toda la configuración de dependencias:
 |  |  |  ├── pokemon.js
 |  |  |  ├── pokemon.json
 |  |  |  └── README.md
-|  |  └── rickandmorty
-|  |     ├── rickandmorty.js
-|  |     └── rickandmorty.json
+|  |  └── atletas
+|  |     ├── atletas.js
+|  |     └── atletas.json
 |  |     └── README.md
 |  ├── data.js
 |  ├── index.html
