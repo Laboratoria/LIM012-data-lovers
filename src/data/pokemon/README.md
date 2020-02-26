@@ -96,9 +96,10 @@ nombre, tipo, base de daño, energía, duración del movimiento(seg).
 ### Estructura de la data
 
 La data es un objeto que contiene una propiedad llamada pokemon, dicha
-propiedad es un array de objetos, donde cada objeto es un pokémon.
+propiedad es un array de objetos, donde cada objeto tiene los datos de
+un pokémon.
 
-Detalle de cada objeto:
+Detalle de cada objeto, por ejemplo:
 
 ```json
 {
