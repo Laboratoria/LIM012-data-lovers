@@ -66,10 +66,10 @@ Estos son datos que te proponemos:
   juego League of Legends (LoL).
    - [Investigación con jugadores de LoL](/src/data/lol/README.md)
 
-* [Atletas Olímpicos](src/data/rickandmorty/rickandmorty.json).
+* [Atletas Olímpicos](src/data/atletas/atletas.json).
   Este set nos proporciona la lista de los atletas que ganaron medallas en las
   olímpiadas de invierno y verano del siglo XXI.
-   - [Investigación con interesados en atletas olímpicos](/src/data/rickandmorty/README.md)
+   - [Investigación con interesados en atletas olímpicos](/src/data/atletas/README.md)
 
 <!---
 ¡Too much information para comenzar (Diego)!
