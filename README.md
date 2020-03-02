@@ -105,9 +105,9 @@ y de equipo.
 
 ### DOM
 
-- [ ] Entender y reconocer los selectores del DOM (querySelector | querySelectorAll).
-- [ ] Manejar eventos del DOM. (addEventListener)
-- [ ] Manipular dinámicamente el DOM. (createElement, appendchild, innerHTML, value)
+- [ ] Entender y reconocer los selectores del DOM (`querySelector` | `querySelectorAll`).
+- [ ] Manejar eventos del DOM. (`addEventListener`)
+- [ ] Manipular dinámicamente el DOM. (`createElement`, `appendchild`, `innerHTML`, `value`)
 
 ### Javascript
 
@@ -116,7 +116,7 @@ y de equipo.
 - [ ] Entender el uso de condicionales (`if-else` | `switch`).
 - [ ] Entender el uso de bucles (`for` | `forEach`).
 - [ ] Entender la diferencia entre expression y statements.
-- [ ] Utilizar funciones (parámetros | argumentos | valor de retorno).
+- [ ] Utilizar funciones (`parámetros` | `argumentos` | `valor de retorno`).
 - [ ] Entender la diferencia entre tipos de datos atómicos y estructurados.
 - [ ] Utilizar ES Modules (`import` | `export`).
 
@@ -125,8 +125,8 @@ y de equipo.
 
 ### Git y GitHub
 - [ ] Ejecutar comandos de git (`add` | `commit` | `pull` | `status` | `push`).
-- [ ] Utilizar los repositorios de GitHub (`clone` | `fork` | gh-pages).
-- [ ] Colaborar en Github (pull requests).
+- [ ] Utilizar los repositorios de GitHub (`clone` | `fork` | `gh-pages`).
+- [ ] Colaborar en Github (`pull requests`).
 
 ### Buenas prácticas de desarrollo
 - [ ] Organizar y dividir el código en módulos (Modularización).
