@@ -13,7 +13,7 @@ y que tienen un conjunto de habilidades únicas. Es con esos campeones con los
 que se juega toda la partida. Para entender un poco más del juego puedes entrar
 a este [link](https://www.redbull.com/es-es/5-consejos-empezar-jugar-league-of-legends#targetText=Lo%20primero%20que%20tienes%20que,donde%20lucha%20cinco%20contra%20cinco).
 
-## Algunos datos de cómo se juega:
+## Algunos datos de cómo se juega
 
 - Para jugar tienes que elegir a **campeones** que son los personajes que
 estarán en tu equipo y que lucharán contra el enemigo.
