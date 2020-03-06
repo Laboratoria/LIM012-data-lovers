@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+}
+
+
+/*Tipos de letras 
+- font-family: 'Cuprum', sans-serif;
+- font-family: 'Trade Winds', cursive;
+- font-family: 'Marcellus SC', serif;
+- font-family: 'Roboto', sans-serif;
+ 
+ Colores :
+- celeste 08D7F7
+- morado 9B51E0
+- inputs casi blanco EEEAEA
+- dorado LOL DFC981
+*/
+
+body {
+    background: url(./assets/backgroundNero.jpeg);
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+}
+
+
+/*Scroll Bar*/
+
+::-webkit-scrollbar {
+    width: 5px;
+    background-color: black;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 6px;
+    background: linear-gradient( black, rgba(223, 201, 129, 0.541));
+}
+
+
+/*FOOTER*/
+
+.footer {
+    min-width: 95%;
+}
+
+.right {
+    min-width: 50%;
+    min-height: 50%;
+    padding-right: 15rem;
+    color: rgb(247, 221, 165);
+    text-align: center;
+    font-size: 0.875rem;
+    margin: 7% 12% 0% 0%;
+}
+
+.left {
+    margin-top: 5%;
+    min-width: 50%;
+    min-height: 15%;
+    padding-left: 66%;
+}
+
+.left a:link,
+.left a img {
+    width: 2.3125rem;
+    height: 2.3125rem;
+    text-decoration: none;
+}
+
+.imgRedes:hover {
+    border-radius: 50%;
+    box-shadow: inset 0 0 1.25rem #FEB412, 0 0 1.25rem #FEB412;
+}
+
+#facebook:hover {
+    border-radius: 50%;
+    box-shadow: inset 0 0 1.25rem #FEB412, 0 0 1.25rem #FEB412;
+}
+
+#instagram:hover {
+    border-radius: 50%;
+    box-shadow: inset 0 0 1.25rem #FEB412, 0 0 1.25rem #FEB412;
+}
+
+#compartir {
+    height: 1.8rem;
+    width: 1.8rem;
+    animation-delay: 0s;
+    animation-duration: 3s;
+    margin-right: 0.9375rem;
+    animation-iteration-count: infinite;
+}
+
+
+/*RESPONSIVE*/
+
+@media screen and (min-width:1000px) {
+    .footer {
+        display: grid;
+        min-width: 40%;
+        grid-template-columns: 1fr 1fr;
+    }
+}

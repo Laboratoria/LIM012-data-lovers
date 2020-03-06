@@ -131,6 +131,4 @@ Detalle de cada propiedad, por ejemplo:
     "attackspeedperlevel": 3
   }
 },
-
-
 ```

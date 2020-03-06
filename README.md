@@ -146,9 +146,9 @@ Los criterios para considerar que has completado este proyecto son:
 
 ### Definición del producto
 
-Documenta brevemente tu trabajo en el archivo `README.md` de tu repositorio,
+<!-- Documenta brevemente tu trabajo en el archivo `README.md` de tu repositorio,
 contándonos cómo fue tu proceso de diseño y cómo crees que el producto resuelve
-el problema (o problemas) que tiene tu usuario.
+el problema (o problemas) que tiene tu usuario. -->
 
 ### Historias de usuario
 
@@ -371,11 +371,38 @@ en base al conocimiento que puedas obtener de tu usuario. Estas preguntas te
 pueden ayudar:
 
 * ¿Quiénes son los principales usuarios de producto?
+Jovenes hasta los 30 años o mas principiantes o jugadores experimentados.
 * ¿Cuáles son los objetivos de estos usuarios en relación con el producto?
+su objetivo es seleccionar un campeon de acuerdo a sus características para iniciar el juego.
 * ¿Cuáles son los datos más relevantes que quieren ver en la interfaz y por qué?
+son tales como attack: 3,
+        defense: 4,
+        magic: 8,
+        difficulty: 5 
+        ovespeed: 350,
+        armor: 26.38,
+        armorperlevel: 3.5,
+        spellblock: 32.1,
+        spellblockperlevel: 1.25,
+        attackrange: 125,
+        hpregen: 8.34,
+        hpregenperlevel: 0.65,
+        mpregen: 50,
+        mpregenperlevel: 0,
+        crit: 0,
+        critperlevel: 0,
+        attackdamage: 58.376,
+        attackdamageperlevel: 3.2,
+        attackspeedoffset: -0.1,
+        attackspeedperlevel: 3.1, 
+        para los nuevos usuarios que les indique las categorias como seleccionar entre asesinos magos ,etc verlos por imagesn 
+        reconocerlos y ver sus atributos tambien.
 * ¿Cuándo utilizan o utilizarían el producto?
+en sus momentos libres, mañanas tardes y noches en campeonatos , en juegos de MULTIPLAYER ONLINE.
 * Toda tu investigación previa debe tener como resultado todas las Historias
   de Usuario de tu proyecto.
+
+  mostras historias de usuario FOTOS DE BAJA FIDELIDAD 
 * No hagas los prototipos de alta fidelidad de todas tus Historias. Comienza
   solamente por los que se necesiten para tu Sprint 1 (semana 1 de trabajo). Más
   pistas en la guía de organización para el proyecto.
