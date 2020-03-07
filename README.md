@@ -23,9 +23,9 @@ para crear estratégias que les permita llevarse la victoria en la grieta (campo
 * Para los nuevos usuarios que les indique las categorias de como seleccionar entre asesinos magos ,etc. Verlos por 
   imagen y ver sus atributos tambien (los principales).
 <br>
-* Para usuarios experimentados son una barra para filtrar y ordenar la información de los campeones tales cómo:
+* Para usuarios experimentados son una barra para filtrar y ordenar la información de los campeones tales cómo:<br>
 <br>
-        Atack: 3,defense: 4,magic: 8, difficulty: 5, ovespeed: 350, armor: 26.38, étc.
+        Atack: 3,defense: 4,magic: 8, difficulty: 5, ovespeed: 350, armor: 26.38, étc.<br>
 <br>
 
 `¿Cuáles son los objetivos de estos usuarios en relación con el producto?`
