@@ -20,7 +20,6 @@ para crear estrategias que les permita llevarse la victoria en la grieta (campo 
 * Para los nuevos usuarios que les indique las categorias de como seleccionar entre asesinos magos ,etc. Verlos por 
   imagen y ver sus atributos tambien (los principales).<br>
 * Para usuarios experimentados son una barra para filtrar y ordenar la información de los campeones tales cómo:<br>
-<br>
         Atack: 3,defense: 4,magic: 8, difficulty: 5, ovespeed: 350, armor: 26.38, étc.
 <br>
 
@@ -50,6 +49,7 @@ experiencia más personalizada y tener una idea general de que trata el juego.
 
 -Utilizar Html semántico.<br>
 -Hacerle testing al resultado.<br>
+-Pagina responsive con felxbox grid.<br>
 -Usar lint para evaluación de código (correcciones de sintaxis).<br>
 -Subir a github <br>
 -Desplegar en Git hub pagues.<br>
@@ -102,6 +102,7 @@ todos los campeones disponibles por nombre en orden alfabético
 
 -Utilizar Html semántico.<br>
 -Hacerle testing al resultado (Pruebas unitarias)<br>
+-Pagina responsive con felxbox grid.<br>
 -Usar lint para evaluación de código (correcciones de sintaxis).<br>
 -Refactorizar <br>
 -Subir a github <br>
