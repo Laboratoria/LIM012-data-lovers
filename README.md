@@ -3,30 +3,37 @@
 ## Investigación UX: ✏️
  
 Es una página web que permite al usuari@ (entre nuevos y experimentados), poder filtrar y ordenar una lista de campeones de **League of Legends** para 
-seleccionar uno específico y ver sus estadísticas generales (more stats) y principales (ataque, defensa, magia y dicultad), todo esto con el objetivo
+seleccionar uno en específico y ver sus estadísticas generales (more stats) y principales (ataque, defensa, magia y dicultad), todo esto con el objetivo
 de tener un campeón con mayor ventaja que otro.<br> 
-[Planing 👉Trello](https://trello.com/b/ZbxxiHvY/datalovers)
+[Planning 👉Trello](https://trello.com/b/ZbxxiHvY/datalovers)
                                              
 
-`¿Quienes son los principales usuarios del producto?`<br>
+`¿Quienes son los principales usuarios del producto?`
+<br>
 Jugador@s de esports (deporte electrónico) que no conocen el juego, entre 10 y 30 años de edad (no excluyente) 
 interesados en el modo de juego MOBA (Multiplayer Online Battle Arena).
 
-`¿Cuáles son los objetivos de estos usuarios en relación con el producto?`<br>
+`¿Cuáles son los objetivos de estos usuarios en relación con el producto?`
+<br>
 El objetivo de estos invocadores (usuarios dentro del juego) es poder conocer las diferentes estadísticas de los más de 140 campeones del juego,
-para crear estrategias que les permita llevarse la victoria en la grieta (campo de batalla).
+para crear estratégias que les permita llevarse la victoria en la grieta (campo de batalla).
 
-`¿Cuáles son los datos mas importantes que quieren ver en la interfaz y por qué?`<br>
+`¿Cuáles son los datos mas importantes que quieren ver en la interfaz y por qué?`
+<br>
 * Para los nuevos usuarios que les indique las categorias de como seleccionar entre asesinos magos ,etc. Verlos por 
-  imagen y ver sus atributos tambien (los principales).<br>
-* Para usuarios experimentados son una barra para filtrar y ordenar la información de los campeones tales cómo:<br>
+  imagen y ver sus atributos tambien (los principales).
+<br>
+* Para usuarios experimentados son una barra para filtrar y ordenar la información de los campeones tales cómo:
+<br>
         Atack: 3,defense: 4,magic: 8, difficulty: 5, ovespeed: 350, armor: 26.38, étc.
 <br>
 
-`¿Cuáles son los objetivos de estos usuarios en relación con el producto?`<br>
+`¿Cuáles son los objetivos de estos usuarios en relación con el producto?`
+<br>
 Su objetivo es seleccionar un campeón de acuerdo a su gusto y características para iniciar el juego.
 
-`¿Cuándo utilizan o utilizarían el producto?`<br>
+`¿Cuándo utilizan o utilizarían el producto?`
+<br>
 A la hora de planear una estrategia de juego, para conocer mejor a su campeón y poder acceder a los datos de sus counters, 
 y finalmente como hacen sinergia distintos campeones para conformar el mejor equipo. Los usuarios solemos buscar los 
 stats de nuestro equipo enemigo cuando estamos en pantalla de carga, antes de iniciar la partida.
@@ -36,17 +43,17 @@ stats de nuestro equipo enemigo cuando estamos en pantalla de carga, antes de in
 HISTORIA DE USUARIO 1 (H.U.1): 
 ```
 
-**HU1**: Pantalla de inicio : Como jugador@ de lol quiero leer una breve descripción del juego e ingresar mi nombre, para sentir la 
+**HU1**: Pantalla de inicio : COMO jugador@ de lol QUIERO leer una breve descripción del juego e ingresar mi nombre, PARA sentir la 
 experiencia más personalizada y tener una idea general de que trata el juego.
 
-**Criterios de aceptación:** 🤔<br>
-
+**Criterios de aceptación:** 🤔
+<br>
 -Que el usuario visualice una pantalla de inicio.<br>
 -Que el usuario pueda ingresar su nombre en un campo (input).<br>
 -Que el usuario pueda darle click a un botón que lo dirija a una siguiente pagina donde vera un listado de campeones.
 
-**Definición de terminado:** ✔ <br>
-
+**Definición de terminado:** ✔ 
+<br>
 -Utilizar Html semántico.<br>
 -Hacerle testing al resultado.<br>
 -Pagina responsive con felxbox grid.<br>
@@ -64,11 +71,11 @@ experiencia más personalizada y tener una idea general de que trata el juego.
 
 **Testing con usuarios** :
 
-1. Al inicio no entendian (como figura en la primera HU) que era LOL.
-2. Resaltaron no entender que era un invocador (por lo que cambiamos el termino como ingrese su nombre) 
-3. Realtaron no ver un boton de start, y no entendian el boton de listado de campeones por lo que optamos
-   en colocar un solo boton de start que los dirija a otra pagina donde en una etiqueta se dijera que elijan a un 
-   campeon.
+1. Al inicio no entendían (como figura en la primera HU) que era LOL.
+2. Resaltaron no entender que era un invocador (por lo que cambiamos el término como 'ingrese su nombre') 
+3. Resaltaron no ver un botón de start, y no entendían el botón de listado de campeones por lo que optamos
+   en colocar un solo botón de start que los dirija a otra página donde en una etiqueta se dijera que elijan a un 
+   campeón.
 4. El testing de la primera HU pasó testing de la mayoría de usuarios.
 
 ## Prototipado BAJA FIDELIDAD 
