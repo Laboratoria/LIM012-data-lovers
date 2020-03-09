@@ -3,7 +3,7 @@
 ## Investigación UX: ✏️
  
 Es una página web que permite al usuari@ (entre nuevos y experimentados), poder filtrar y ordenar una lista de campeones de **League of Legends** para seleccionar uno en específico y ver sus estadísticas generales (more stats) y principales (ataque, defensa, magia y dicultad), 
-todo esto con el objetivo de tener un campeón con mayor ventaja que otro.<br>[Planning 👉Trello](https://trello.com/b/ZbxxiHvY/datalovers)
+todo esto con el objetivo de tener un campeón con mayor ventaja que otro.[Planning 👉Trello](https://trello.com/b/ZbxxiHvY/datalovers)
                                              
 
 `¿Quienes son los principales usuarios del producto?`
