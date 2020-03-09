@@ -1,93 +1,58 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <title>Data Lovers</title>
-    <link rel="icon" type="image/png" href="./assets/logoURL.png" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Cuprum|Marcellus+SC|Roboto|Trade+Winds&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DataLoversLOL</title>
+  <link rel="icon" type="image/png" href="./assets/logoURL.png" />
+  <link rel="stylesheet" href="style2.css">
+  <link href="https://fonts.googleapis.com/css?family=Cuprum|Marcellus+SC|Roboto|Trade+Winds&display=swap"
+    rel="stylesheet">
 </head>
 
 <body>
+  <div class="head">
+    <div class="mainTittle">
+      <h3>CHOOSE YOUR</h3>
+      <div id="divider">
+        <img src="assets/casco1.png" alt="helmet">
+        <h1>CHAMPION</h1>
+      </div>
+    </div>
+    <div class="text1">
+      <h3>Each champion has different statistics where their initial values ​​are measured and how these values ​​rise
+        for
+        each level. To know more click on a champion.</h3>
+    </div>
+    <div class="list"></div>
+    <div class="searchbar">
+      <div class="nameSearch">
+        <img src="assets/search.png" alt="search">
+        <p>Search by name</p>
+      </div>
+      <span class="line"></span>
+      <div class="menu">
+        <p>ALL</p>
+        <p>ASSASIN</p>
+        <p>MAGE</p>
+        <p>FIGTHER</p>
+        <p>TANK</p>
+        <p>SUPPORT</p>
+        <p>MARKSMAN</p>
+      </div>
+      <span class="line"></span>
+      <div class="difficulty">
+        <img src="assets/arrow.png" alt="">
+        <p>Search for difficulty</p>
+      </div>
+    </div>
+  </div>
 
-    <div id="root">
-
-        <div>
-            <video src=""></video>
-        </div>
-
-        <div>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-
-            <footer class="footer">
-                <div class="right">
-                    <p>&copy; 2020 | Todos los Derechos Reservados</p>
-                </div>
-                <div class="left">
-                    <a href="#">
-                        <img src="./assets/shareLOGO.png" id="compartir" class="animated wobble">
-                    </a>
-
-                    <a href="https:/facebook.com" class="nav-link" target="_blank">
-                        <img src="./assets/fbLOGO.png" id="facebook">
-                    </a>
-
-                    <a href="https://twitter.com" class="nav-link" target="_blank">
-                        <img src="./assets/twittLOGO.png" class="imgRedes">
-                    </a>
-
-                    <a href="https://www.instagram.com/" class="nav-link" target="_blank">
-                        <img src="./assets/instaLOGO11.png" id="instagram">
-                    </a>
-                </div>
-
-            </footer>
-        </div>
-        <script src="main.js" type="module"></script>
+  <div id="list">
+  </div>
+  <script src="./data.js" type="module"></script>
+  <script src="./main.js" type="module"></script>
 </body>
 
 </html>
