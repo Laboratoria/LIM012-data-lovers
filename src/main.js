@@ -1,10 +1,24 @@
-// import data from './data/injuries/injuries.js';
 import data from './data/lol/lol.js';
-// import data from './data/patient/patient.js';
-//import data from './data/pokemon/pokemon.js';
-// import data from './data/rickandmorty/rickandmorty.js';
-// import data from './data/steam/steam.js';
-// import data from './data/worldbank/worldbank.js';
+
+
+/*Mostrar en interfaz dos mas saludo y letra capital*/
+const primeraInterfaz = document.getElementById('primeraInterfaz');
+const segundaInterfaz = document.getElementById('segundaInterfaz');
+primeraInterfaz.style.display = 'block';
+segundaInterfaz.style.display = 'none';
+
+document.getElementById("buttonEnter").addEventListener('click', () => {
+  const name = document.getElementById('inputName').value;
+  const newStr = `${name[0].toUpperCase()}${name.slice(1)}`;
+  const parrafo = document.getElementById('nombreIngresado');
+  parrafo.innerHTML = `!\n Welcome ${newStr}\n !`;
+  segundaInterfaz.style.display = 'block';
+  primeraInterfaz.style.display = 'none';
+});
+
+
+
+/*Muestra de la lista de campeones*/
 console.log(data.data);
 const championList = data.data;
 let list = document.querySelector("#list");
