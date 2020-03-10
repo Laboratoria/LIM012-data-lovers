@@ -1,10 +1,4 @@
-<<<<<<< HEAD
-#header{
-    position: fixed;
-    height: 15px ;
-    width: 100px;
-}
-=======
+
 .root{
   background: #eee;
   display: grid;
@@ -36,5 +30,27 @@
 .top-filter{
   background-color: #fff;
 }
-
->>>>>>> f7632c3b0164c3d13a5cdd9d83d418f6bdde1cd2
+#CardContainer{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.pokemonCard{
+width: 130px;
+height:180px;
+border: 1px solid #3282B8;
+border-radius: 10px;
+margin: 7px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+.PokemonName{
+  
+}
+.PokemonImage{
+  width: 120px;
+  height: 120px;
+  border: 1px solid #3282B8;
+}
