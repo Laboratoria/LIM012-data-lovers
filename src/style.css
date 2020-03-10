@@ -1,3 +1,32 @@
 .root{
-  
+  background: #eee;
+  display: grid;
+  grid-template-rows: 100px 50px 50px 80% 100px;
 }
+
+#header,#footer{
+  background: #1B262C;
+}
+  #img-logo{
+    height: 100px;
+  }
+
+#navbar{
+  background: #0F4C75;
+  margin: 0;
+  padding: 1rem 2rem;
+}
+
+#sidebar{
+  display: none;
+}
+
+#input-bar-search{
+  margin: 0;
+  padding: 0;
+}
+
+.top-filter{
+  background-color: #fff;
+}
+
