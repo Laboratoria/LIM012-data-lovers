@@ -32,7 +32,7 @@ html {
   color: #333;
   /* overflow-x: hidden; */
   /* overflow-y: hidden; */
-  background: url(./assets/backgroundNero.jpeg);
+  background: url(./assets/FONDO3.png);
   background-size: cover;
   height: 100vh;
   width: 100vw;
@@ -400,17 +400,20 @@ html {
 /*MODAL*/
 /*SEGUNDA INTERFAZ */
 
-#head {
-  background: url(./assets/backgroundNero.jpeg);
-  height: 450px;
-  width: 100%;
-  background-size: contain;
+#secondScreen {
+  background-image: url(assets/FONDO3.png);
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
 }
 
 .mainTittle {
-  color: #DFC981;
+  color: rgb(252, 241, 183);
+  text-shadow: 1px 1px 6px #07CBE9;
   text-align: center;
-  /* padding-bottom: 2rem; */
+  padding-bottom: 1rem;
+  margin-top: 1rem;
+  font-size: 150px;
 }
 
 #chooseYour {
@@ -419,7 +422,7 @@ html {
   font-family: 'Marcellus SC', serif;
   margin-left: 5%;
   color: #DFC981;
-  margin-bottom: -35px;
+
 }
 
 #champion {
@@ -428,6 +431,7 @@ html {
   font-family: 'Marcellus SC', serif;
   text-align: center;
   color: #DFC981;
+  margin-top: 15px;
 }
 
 #list {
@@ -440,8 +444,9 @@ html {
 
 #divider2 {
   display: grid;
-  margin-left: 37%;
-  grid-template-columns: 16% 20%;
+  margin-left: 41%;
+  grid-template-columns: 12% 20%;
+  margin-top: -18px;
 }
 
 .championName {
@@ -492,6 +497,10 @@ html {
   align-self: center;
 }
 
+.hidden {
+  display: none;
+}
+
 .line {
   border-left: 1px solid #D32ECD;
   height: 50px;
@@ -500,9 +509,20 @@ html {
 
 .text1 {
   padding: 0 5px 1px 5px;
-  font-size: 20px;
+  font-size: 17px;
   font-family: 'Marcellus SC', serif;
   text-align: center;
-  color: rgb(252, 241, 183);
-  text-shadow: 1px 1px 6px #07CBE9;
+  color: #DFC981;
+  padding: 2rem 6rem 2rem 6rem;
+
+}
+
+#searchInputs {
+  border: 0;
+  background-color: rgb(218, 213, 213);
+  width: 130px;
+  margin-left: 2px;
+  color: #a87e3e;
+  font-size: 17px;
+  margin-top: -16px;
 }

@@ -36,7 +36,6 @@
       <div id="mainElements3"><input type="text" id="inputName" name="modal" /><label for="name"
           class="label_name"><span class="letraName">ENTER YOUR NAME</span></label></div>
       <div id="mainElements4"><button id="buttonEnter">ENTER</button></div>
-      <div id="mainElements5"><button type="submit" value="MASTER"></button></div>
     </main>
 
   </div>
@@ -48,8 +47,7 @@
         <h3 class="saludo" id="nombreIngresado"></h3>
       </div>
     </div>
-
-    <div id="head">
+    <div id="secondScreen">
       <div class="mainTittle">
         <h3 id="chooseYour">CHOOSE YOUR</h3>
         <div id="divider2">
@@ -65,7 +63,8 @@
       <div class="searchbar">
         <div class="nameSearch">
           <img src="assets/search.png" alt="search">
-          <p>Search by name</p>
+          <input id="searchInputs" type="text" placeholder="search by name">
+
         </div>
         <span class="line"></span>
         <div class="menu">
@@ -84,8 +83,9 @@
         </div>
       </div>
 
-    </div>
-    <div id="list">
+      <div id="list">
+      </div>
+      <div id="filteredList" class="hidden"></div>
     </div>
   </div>
 
