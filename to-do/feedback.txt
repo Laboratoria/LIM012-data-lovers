@@ -1,0 +1,37 @@
+Feedbacks recibido: 
+
+Feedback N°1: (Coach Lulú) 06/03
+- Modificacion de las historias, al filtrar por tipo/rareza,
+colocar un indicador de cantidad con respecto a cada filtro.
+- Realizar los prototipos de baja fidelidad para concretar las vistas
+de las historias.
+- Añadir historia para informacion adicional para el usuario.
+- La historia adicional de los top ten, debe ser de una cantidad limitada
+y ordenada de mayor a menor que es lo mas convencional.
+
+Feedback N°2: (usuario novato) 08/03
+- La historia de usuario que te muestra un cálculo para determina el top ten de
+pokemons más poderosos, no es tan necesaria, debido a que en el juego los pokemons 
+utilizados siendo los menos evolucionado tiene la capacidad de desenvolverse en batalla
+al igual que los pokemons mas evoucionados.
+- la historia de usuario orientada a como atrapar los pokemon debería estar mejor
+explicadas, ya que hay algunos terminos no muy entendibles como egg
+- el nombre del boton que señaliza la historia de usuario que hace referencia al combo , 
+deberia ser mas entendible para un usuario que no sabe del juego, ya que "combo" no explica mucho
+- eplicación más didactica sobre la buddy distance en la historia de usuario catch
+
+Feedback N°3: (jugador de Pokemon Go) 09/03
+- para la explicación de %huida,%captura,spawn y egg se podría contemplar usar una imagen o gif
+que explique de una forma más didactica sin palabras o con ejemplos(de cada 10 pokemons visto solo 1 huye)
+- para las imagenes de los stats sería bueno utilizar la iconografía del propio juego
+- para la barra de filtro se podría colocar una barra interactiva que me permita seleccionar filtros mutiples
+- la splash screen esta bien pero no es muy necesaria
+
+
+Feedback N°4: (estudiante laboratoria) 10/03
+- la splash screen no es indispensable, ya que no agrega un valor a la visualizacion de la 
+historia para el usuario
+- la imagen de pokemon debe tener alguna señalizacion o ser mas obvia para que el usuario sepa
+que puede darle click
+- deberia ser todo en una sola página, evitar hacer 2 páginas diferentes
+- las historias deben ser diferentes  e intentar cumplir con todos los objetivos de aprendizaje

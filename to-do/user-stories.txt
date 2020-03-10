@@ -1,0 +1,32 @@
+¿Quiénes son los principales usuarios de producto? 
+1. Entrenador primerizo
+2. Maestro Pokémon
+
+¿Cuáles son los objetivos de estos usuarios en relación con el producto? 
+Obtener información rápido sobre uno o varios pokémon con base en uno o varios criterios útiles:
+*Tomar mejores decisiones sobre qué pokémon son mejores atrapar y cómo. 
+*Saber escoger mejor sus pokémon para las peleas.
+
+¿Cuáles son los datos más relevantes que quieren ver en la interfaz y por qué? 
+Los Pokémon tienen características únicas que determinan las decisiones que toma el usuario (tipo, tamaño, info, ataques).
+encounter: % base de huida y % base de captura.
+spaw-chance: frecuencia de aparición de un pokémon.
+egg: en que tipo de huevos aparece el pokémon.
+buddy-distance-km: distancia en km que debe caminar el usuario con un pokémon con buddy para obtener 1 caramelo de dicho pokémon.
+evolution: tipo de caramelo, siguiente evolución y anterior evolución, si necesita algún ítem para evolucionar.
+stats: base de ataque,defensa y salud + max CP(combat points) y max HP (health points).
+resistant: a qué tipos de pokémon es resistente.
+weaknesses: contra qué tipos de pokémon es débil.
+quick-move: Movimientos rápidos.
+special-attack: Ataques especiales
+STAB (Same Type Attack Bonus): Si el Pokémon que usa el movimiento es del mismo tipo que el movimiento, el daño aumenta en un 20%
+DPS (damage-per-second): Se calcula dividiendo el daño base del movimiento por el STAB entre el tiempo que toma el movimiento.
+EPS (energy-per-second): Se calcula dividiendo la energía entre el tiempo que toma el movimiento.
+El mejor set de movimientos: calcula cuál es la mejor combinación de quick-move con special-attack para ataque y defensa en gimnasios. 
+
+¿Cuándo utilizan o utilizarían el producto? 
+Obligatoriamente tienen que estar en la calle e idealmente cuando tienen tiempo libre (tardes/noches y fines de semana)
+
+¿Cómo nos organizamos? 
+Trello Board: https://trello.com/b/HSpK0f78/data-lovers-pokemon
+
