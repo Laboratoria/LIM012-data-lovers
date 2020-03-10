@@ -442,6 +442,14 @@ html {
   grid-gap: 3rem;
 }
 
+#filteredList {
+  color: #DFC981;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  padding: 3rem;
+  grid-gap: 3rem;
+}
+
 #divider2 {
   display: grid;
   margin-left: 41%;
@@ -498,7 +506,7 @@ html {
 }
 
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 .line {

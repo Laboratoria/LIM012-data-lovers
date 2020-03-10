@@ -49,21 +49,31 @@ function filterByName() {
 }*/
 
 let input = document.querySelector("#searchInputs");
+let filteredList = document.querySelector("#filteredList");
 
 if (typeof input.addEventListener != "undefined") {
   input.addEventListener(
     "keyup",
-    function(evt) {
+    function (evt) {
       let term = evt.target.value.toLowerCase();
       let filteredChampions = Object.values(championList).filter(champion => {
         if (champion.name.toLowerCase().indexOf(term) != -1) {
           return champion;
         }
       });
-      list.classList.add("hidden");
-      let filteredList = document.querySelector("#filteredList");
-      filteredList.classList.remove("hidden");
-      Object.values(filteredList).map(champion => {
+      if (term.length != 0) {
+        list.classList.add("hidden");
+        filteredList.classList.remove("hidden");
+
+      } else {
+        list.classList.remove("hidden");
+        filteredList.classList.add("hidden");
+
+      }
+
+      console.log(Object.values(filteredChampions));
+      filteredList.innerHTML = "";
+      Object.values(filteredChampions).map(champion => {
         const div = document.createElement("div");
         const img = document.createElement("img");
         const p = document.createElement("p");
@@ -73,7 +83,7 @@ if (typeof input.addEventListener != "undefined") {
         p.innerHTML = `${champion.name}`;
         div.appendChild(img);
         div.appendChild(p);
-        list.appendChild(div);
+        filteredList.appendChild(div);
       });
     },
     false
