@@ -17,20 +17,3 @@ for (let i = 0; i < data.pokemon.length; i += 1) {
 }
 
 // console.log(example, data);
-//
-//
-// for (let element of data.pokemon) {
-//   // console.log(element.name, element.num, element.img);
-//   // console.log(element.generation.name);
-//   if (element.generation.name === 'johto') {
-//     const pokemon = `
-//         <div>
-//             <p>${element.num}</p>
-//             <img src = "${element.img}">
-//             <p>${element.name}</p>
-//         </div>
-//     `;
-//   johto.innerHTML += pokemon;
-//   // console.log(element.name, element.num, element.img);
-//   }
-// }
