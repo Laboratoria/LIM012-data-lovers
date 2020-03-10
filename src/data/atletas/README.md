@@ -42,15 +42,13 @@ Detalle de cada objeto, por ejemplo:
 
 ```json
 {
-  "id": 11799,
-  "name": "Matteo Bisiani",
-  "gender": "M",
-  "height": "184",
-  "weight": "85",
-  "date-birth": 1976,
-  "sport": "Archery",
-  "game": "2000 Summer",
-  "team": "Italy",
+  "nombre": "Matteo Bisiani",
+  "genero": "M",
+  "altura": "184",
+  "peso": "85",
+  "fecha-nacimiento": 1976,
+  "deporte": "Archery",
+  "equipo": "Italy",
   "noc": "ITA",
   "disciplinas": [
     {
