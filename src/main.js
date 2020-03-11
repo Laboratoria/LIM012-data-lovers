@@ -7,4 +7,5 @@ import data from './data/pokemon/pokemon.js';
 // import data from './data/steam/steam.js';
 // import data from './data/worldbank/worldbank.js';
 
-console.log(example, data);
+console.log(data.pokemon[0].name);
+document.getElementById("card1").innerHTML= data.pokemon[0].name;

@@ -110,3 +110,27 @@ main{
   font-weight: bolder;
 }
 
+#CardContainer{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.pokemonCard{
+width: 130px;
+height:180px;
+border: 1px solid #3282B8;
+border-radius: 10px;
+margin: 7px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+.PokemonName{
+  
+}
+.PokemonImage{
+  width: 120px;
+  height: 120px;
+  border: 1px solid #3282B8;
+}
