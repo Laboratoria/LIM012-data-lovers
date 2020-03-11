@@ -1,5 +1,56 @@
-#header{
-    position: fixed;
-    height: 15px ;
-    width: 100px;
+
+.root{
+  background: #eee;
+  display: grid;
+  grid-template-rows: 100px 50px 50px 80% 100px;
+}
+
+#header,#footer{
+  background: #1B262C;
+}
+  #img-logo{
+    height: 100px;
+  }
+
+#navbar{
+  background: #0F4C75;
+  margin: 0;
+  padding: 1rem 2rem;
+}
+
+#sidebar{
+  display: none;
+}
+
+#input-bar-search{
+  margin: 0;
+  padding: 0;
+}
+
+.top-filter{
+  background-color: #fff;
+}
+#CardContainer{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.pokemonCard{
+width: 130px;
+height:180px;
+border: 1px solid #3282B8;
+border-radius: 10px;
+margin: 7px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+.PokemonName{
+  
+}
+.PokemonImage{
+  width: 120px;
+  height: 120px;
+  border: 1px solid #3282B8;
 }
