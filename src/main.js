@@ -10,17 +10,16 @@ document.getElementById("buttonEnter").addEventListener("click", () => {
   const name = document.getElementById("inputName").value;
   const newStr = `${name[0].toUpperCase()}${name.slice(1)}`;
   const parrafo = document.getElementById("nombreIngresado");
-  parrafo.innerHTML = `!\n Welcome ${newStr}\n !`;
+  parrafo.innerHTML = `\n Welcome ${newStr}\n !`;
   segundaInterfaz.style.display = "block";
   primeraInterfaz.style.display = "none";
 });
 
 /*Muestra de la lista de campeones*/
-console.log(data.data);
 const championList = data.data;
 let list = document.querySelector("#list");
-console.log(list);
-//object values
+
+//object values le saca los valores de key en forma de arreglo
 Object.values(championList).map(champion => {
   const div = document.createElement("div");
   const img = document.createElement("img");
@@ -33,45 +32,36 @@ Object.values(championList).map(champion => {
   div.appendChild(p);
   list.appendChild(div);
 });
-//funcion evaluar que tiene dos cadenas
-//tengo que hacer un nuevo arreglo que tengan solo los campeones que cumplan con la condicion
-let newArray = Object.values(championList).filter(champion => {
-  champion.tags[1] = true;
-  // if (condicion que evalua lo que quieres con champion)
-  // return champion
-});
-
-const filterByClass = (tags, selectedClass) => {};
-/*
-function filterByName() {
-  let input = document.querySelector("#searchInputs");
-  console.log(input);
-}*/
-
+//busqueda por nombre
 let input = document.querySelector("#searchInputs");
 let filteredList = document.querySelector("#filteredList");
 
+//target : lo que sea a lo que se le aplique add event listener
 if (typeof input.addEventListener != "undefined") {
-  input.addEventListener(
-    "keyup",
-    function (evt) {
+  input.addEventListener("keyup", (evt) => {
       let term = evt.target.value.toLowerCase();
       let filteredChampions = Object.values(championList).filter(champion => {
+        //indexof da -1 si no encuentra resultados
         if (champion.name.toLowerCase().indexOf(term) != -1) {
           return champion;
         }
       });
+      //mensaje de error en la busqueda por nombre
       if (term.length != 0) {
         list.classList.add("hidden");
         filteredList.classList.remove("hidden");
-
       } else {
         list.classList.remove("hidden");
         filteredList.classList.add("hidden");
-
+      }
+      let errorMessage = document.querySelector("#error");
+      if (filteredChampions.length === 0) {
+        errorMessage.classList.remove("hidden");
+      } else {
+        errorMessage.classList.add("hidden");
       }
 
-      console.log(Object.values(filteredChampions));
+      //vaciar arreglo para que no se duplique
       filteredList.innerHTML = "";
       Object.values(filteredChampions).map(champion => {
         const div = document.createElement("div");
