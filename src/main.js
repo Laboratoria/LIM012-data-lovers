@@ -55,7 +55,7 @@ let filteredListAssasin = document.querySelector("#filteredList");
 
 pAssasin.addEventListener('click', () => {
 
-    const filterByAssasin = Object.values(championList).filter(champion => champion === "Assassin");
+    const filterByAssasin = championList.filter(champion => champion === "Assassin");
     console.log(filterByAssasin);
 
 
