@@ -33,6 +33,7 @@ Object.values(championList).map(champion => {
   list.appendChild(div);
 });
 //busqueda por nombre
+//probando la subida
 let input = document.querySelector("#searchInputs");
 let filteredList = document.querySelector("#filteredList");
 
