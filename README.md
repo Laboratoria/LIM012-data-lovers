@@ -110,6 +110,8 @@ todos los campeones disponibles por nombre en orden alfabético
 -Usar lint para evaluación de código (correcciones de sintaxis).<br>
 -Refactorizar <br>
 -Subir a github <br>
+hola caracol 
+haoasjahskjahskjahs
 -Desplegar en Git hub pagues.<br>
 
 
