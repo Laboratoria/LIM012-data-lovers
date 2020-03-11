@@ -1,22 +1,21 @@
 // import { example } from './data.js';
 import data from './data/pokemon/pokemon.js';
 
-const johto = document.querySelector('.generation-II');
+const kanto = document.getElementById('kanto');
 
 for (let i = 0; i < data.pokemon.length; i += 1) {
-  if (data.pokemon[i].generation.name === 'johto') {
+  if (data.pokemon[i].generation.name === 'kanto') {
     const pokemon = `
-          <div>
-              <p>${data.pokemon[i].num}</p>
-              <img src = "${data.pokemon[i].img}">
-              <p>${data.pokemon[i].name}</p> 
-          </div>
+        <div class="pokemon-card">
+            <p class="pokemon-number left">${data.pokemon[i].num}</p>
+            <img class="pokemon-image" src = "${data.pokemon[i].img}">
+            <p class="pokemon-name">${data.pokemon[i].name}</p> 
+        </div>
       `;
-    johto.innerHTML += pokemon;
+    kanto.innerHTML += pokemon;
   }
 }
-
-// console.log(example, data);
+// console.log(data);
 /*
 for (let i = 0; i < data.pokemon.length; i += 1) {
     // console.log(element.name, element.num, element.img);
@@ -30,7 +29,6 @@ for (let i = 0; i < data.pokemon.length; i += 1) {
       const pokemon = [data.pokemon[i].name, data.pokemon[i].num];
       const newDiv = document.createElement('div');
       newDiv.innerHTML += pokemon;
-     
       // console.log(data.pokemon.name, data.pokemon.num, data.pokemon.img);
       document.querySelector('.generation-I').appendChild(newDiv);
       // newDiv.appendChild(pokemon);
