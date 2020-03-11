@@ -16,15 +16,16 @@ for (let i = 0; i < data.pokemon.length; i += 1) {
     kanto.innerHTML += pokemon;
   } else {
     const pokemon = `
-        <div class="pokemon-card">
-            <p class="pokemon-number left">${data.pokemon[i].num}</p>
-            <img class="pokemon-image" src = "${data.pokemon[i].img}">
-            <p class="pokemon-name">${data.pokemon[i].name}</p> 
-        </div>
-      `;
+    <div class="pokemon-card">
+        <p>${data.pokemon[i].num}</p>
+        <img src = "${data.pokemon[i].img}">
+        <p>${data.pokemon[i].name}</p> 
+    </div>
+`;
     johto.innerHTML += pokemon;
   }
 }
+//
 // console.log(data);
 /*
 for (let i = 0; i < data.pokemon.length; i += 1) {
