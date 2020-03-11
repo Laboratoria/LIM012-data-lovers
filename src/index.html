@@ -31,7 +31,7 @@
                 <p>League of Legends is a MOBA type game (Multiplayer Online Battle Arena) where players work as a team to destroy the central structure (called Nexus) and gain victory.</p>
             </div>
             <div id="mainElements2"><img src="./assets/divider.png"></div>
-            <div id="mainElements3"><input type="text" id="inputName" name="modal" /><label for="name" class="label_name"><span class="letraName">ENTER YOUR NAME</span></label></div>
+            <div id="mainElements3"><input type="text" id="inputName" name="modal" spellcheck="false" /><label for="name" class="label_name"><span class="letraName">ENTER YOUR NAME</span></label></div>
             <div id="mainElements4"><button id="buttonEnter">ENTER</button></div>
             <div id="mainElements5"><button type="submit" value="MASTER"></button></div>
         </main>
@@ -61,17 +61,17 @@
             <div class="searchbar">
                 <div class="nameSearch">
                     <img src="assets/search.png" alt="search">
-                    <p>Search by name</p>
+                    <input id="searchInputs" type="text" placeholder="search by name" spellcheck="false" />
                 </div>
                 <span class="line"></span>
                 <div class="menu">
-                    <p>ALL</p>
-                    <p>ASSASIN</p>
-                    <p>MAGE</p>
-                    <p>FIGTHER</p>
-                    <p>TANK</p>
-                    <p>SUPPORT</p>
-                    <p>MARKSMAN</p>
+                    <p id="all" [href]="">ALL</p>
+                    <a id="assasin">Assasin</a>
+                    <p id="mage">MAGE</p>
+                    <p id="figther">FIGTHER</p>
+                    <p id="tank">TANK</p>
+                    <p id="support">SUPPORT</p>
+                    <p id="marksman">MARKSMAN</p>
                 </div>
                 <span class="line"></span>
                 <div class="difficulty">
@@ -83,6 +83,17 @@
         </div>
         <div id="list">
         </div>
+        <div id="filteredList" class="hidden"></div>
+
+        <!-- filtrado por clase de campeon  -->
+        <div id="filterAssasin"></div>
+        <div id="filterMage"></div>
+        <div id="filterFigther"></div>
+        <div id="filterTank"></div>
+        <div id="filterSupport"></div>
+        <div id="filterMarksman"></div>
+
+
     </div>
 
     <footer class="footer">
