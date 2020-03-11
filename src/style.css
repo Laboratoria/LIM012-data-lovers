@@ -22,14 +22,20 @@
     width: 100%;
 }
 
-.content {
-    width: 75%;
+.center {
+    max-width: 1000px;
     margin: auto;
-    text-align: right;
+}
+.content {
+   text-align: right;
 }
 
 h2 {
     width: 100%;
+    margin-top: 0px;
+    margin-bottom: 3em;
+    font-family: 'Rubik', sans-serif;
+    font-size: 1.6em;
 }
 
 .content select {
@@ -45,6 +51,7 @@ h2 {
     justify-content: space-between;
     border: 1px solid black;
     text-align: left;
+    margin-bottom: 1.5em;
 }
 
 .pokemon-card {
@@ -68,3 +75,58 @@ h2 {
     font-weight: 600;
     font-size: 1.1em;
 }
+
+.arrow{
+    margin-top: 0,5em;
+    border-style: solid;
+    border-color:transparent red red red;
+    border-width:0px 50px 50px 50px;
+    width: 140px;
+    position: relative;
+}
+
+.arrow::after {
+    content: "";
+      position: absolute;
+      top: 0px;
+      left: 190px;
+      width: 0;
+      height: 0;
+      border-width: 25px;
+      border-style: solid;
+      border-color:  transparent transparent transparent red;
+}
+
+
+
+
+
+/*
+.arrow{
+    border-style: solid;
+    border-color:red green yellow blue;
+    border-width:0px 25px 25px 25px;
+    height: 0px;
+    width: 50px;
+    position: relative;
+}
+
+/*.flecha::after{
+    content: "";
+    border-style: solid;
+    border-color:transparent  transparent transparent blue ;
+    border-width: 30px;
+    height: 0px;
+}
+
+.arrow::after{
+    display: inline-block;
+    border-style: solid;
+    border-color:transparent transparent transparent black;
+    border-width:20px;
+    height: 0px;
+    position: absolute;
+    margin-left: 0px;
+    width: 1500px;
+}
+*/
