@@ -1,17 +1,27 @@
 // import { example } from './data.js';
 import data from './data/pokemon/pokemon.js';
 
-const johto = document.querySelector('.generation-II');
+const kanto = document.getElementById('generation-I')
+const johto = document.getElementById('generation-II');
 
 for (let i = 0; i < data.pokemon.length; i += 1) {
-  if (data.pokemon[i].generation.name === 'johto') {
+  if (data.pokemon[i].generation.name === 'kanto') {
     const pokemon = `
-          <div>
+          <div class="pokemon-card">
               <p>${data.pokemon[i].num}</p>
               <img src = "${data.pokemon[i].img}">
               <p>${data.pokemon[i].name}</p> 
           </div>
       `;
+    kanto.innerHTML += pokemon;
+  } else {
+    const pokemon = `
+  <div class="pokemon-card">
+      <p>${data.pokemon[i].num}</p>
+      <img src = "${data.pokemon[i].img}">
+      <p>${data.pokemon[i].name}</p> 
+  </div>
+`;
     johto.innerHTML += pokemon;
   }
 }
