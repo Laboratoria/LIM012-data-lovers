@@ -134,3 +134,14 @@ align-items: center;
   height: 120px;
   border: 1px solid #3282B8;
 }
+  .pokemon-type{
+    border-radius: 3px;
+    color: white;
+    font-size: 12px;
+    /* font-weight: bolder; */
+    height: auto;
+    padding: .3rem;
+    /* background-color: tomato; */
+    margin: .3em;
+
+  }
