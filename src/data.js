@@ -1,11 +1,7 @@
-// estas funciones son de ejemplo
 
-export const example = () => {
-  return '';
+export const dinamicSearchPokemon = (wordIntroduced,dataNamePokemon) => {
+
 };
 
-export const anotherExample = () => {
-  return 'OMG';
-};
 
 
