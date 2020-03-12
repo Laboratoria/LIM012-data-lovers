@@ -18,7 +18,6 @@ document.getElementById("buttonEnter").addEventListener("click", () => {
 /*Muestra de la lista de campeones*/
 
 const championList = data.data;
-console.log(championList);
 
 let list = document.querySelector("#list");
 
@@ -35,7 +34,7 @@ let list = document.querySelector("#list");
 // };
 
 
-let pAssasin = document.querySelector("#assasin");
+/*let pAssasin = document.querySelector("#assasin");
 let filteredListAssasin = document.querySelector("#filteredList");
 
 
@@ -60,6 +59,22 @@ pAssasin.addEventListener('click', () => {
   });
 
 });
+*/
+
+//object values le saca los valores de key en forma de arreglo
+Object.values(championList).map(champion => {
+  const div = document.createElement("div");
+  const img = document.createElement("img");
+  const p = document.createElement("p");
+  p.className = "championName";
+  img.className = "championSplash";
+  img.src = `${champion.splash}`;
+  p.innerHTML = `${champion.name}`;
+  div.appendChild(img);
+  div.appendChild(p);
+  list.appendChild(div);
+})
+
 //busqueda por nombre
 //probando la subida
 let input = document.querySelector("#searchInputs");
