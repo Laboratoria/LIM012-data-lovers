@@ -8,26 +8,37 @@ import pokemon from './data/pokemon/pokemon.js';
 // import data from './data/steam/steam.js';
 // import data from './data/worldbank/worldbank.js';
 
-let pokemonNames=document.getElementsByClassName("pokemon-name");
-let pokemonImg=document.getElementsByClassName("pokemon-image");
-for(let i=0; i<1;i++){
-        
-        pokemonNames[i].innerHTML=data.pokemon[i].name;
-        //cargar imagen
-        let img= document.createElement("IMG");
-        img.setAttribute("src",data.pokemon[i].img );
-        img.setAttribute("alt", "Imagen Pokemón");
-        pokemonImg[i].appendChild(img);
+const createCard= (i,dataNamePokemon,dataImgPokemon)=>{
+    let divCard=document.createElement("div")
+    divCard.className="pokemon-card";
+    document.getElementById("card-container").appendChild(divCard);
+    let divCardName=document.createElement("div");
+    let divCardImage=document.createElement("div");
+    let divCardTypes=document.createElement("div");
+    divCardName.className="pokemon-name";
+    divCardImage.className="pokemon-image";
+    divCardTypes.className="pokemon-types";
+    document.getElementsByClassName("pokemon-card")[i].appendChild(divCardName);
+    document.getElementsByClassName("pokemon-card")[i].appendChild(divCardImage);
+    document.getElementsByClassName("pokemon-card")[i].appendChild(divCardTypes);
+    putName(dataNamePokemon, divCardName);
+    putImage(dataImgPokemon, divCardImage);
+}
+ const putImage =(dataImgPokemon, divCardImage) =>{
+    let img=document.createElement("IMG");
+    img.setAttribute("src",dataImgPokemon);
+    img.setAttribute("alt", "Imagen Pokemón");
+    divCardImage.appendChild(img);
+ }
+
+ const putName = (dataNamePokemon, divCardName) => {
+    divCardName.textContent=dataNamePokemon;
+  }
+ const showCard = ()=> {
+    for (let i=0; i<data.pokemon.length ; i++){
+        createCard(i,data.pokemon[i].name,data.pokemon[i].img);
     }
-    let div1=document.createElement("div")
-    div1.className="pokemon-card";
-    document.getElementById("card-container").appendChild(div1);
-    
-    let div2=document.createElement("div");
-    div2.className="pokemon-name";
-    let div3=document.createElement("div");
-    div3.className="pokemon-image";
-    document.getElementsByClassName("pokemon-card")[1].appendChild(div2);
-    document.getElementsByClassName("pokemon-card")[1].appendChild(div3);
+  }
+showCard();
 
 

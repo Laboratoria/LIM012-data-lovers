@@ -129,13 +129,14 @@ align-items: center;
   width: 120px ;
   height: 30px ;
   text-align: center;
+  text-transform: capitalize;
 }
 .pokemon-image{
   width: 120px;
   height: 120px;
   border: 1px solid #3282B8;
 }
-.pokemon-type{
+.pokemon-types{
   width: 120px;
   height: 30px;
 }
