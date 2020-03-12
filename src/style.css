@@ -5,7 +5,6 @@
   box-sizing: border-box;
 }
 
-
 /*Tipos de letras 
 - font-family: 'Cuprum', sans-serif;
 - font-family: 'Trade Winds', cursive;
@@ -22,7 +21,6 @@
 Invision https://mararodriguez597039.invisionapp.com/freehand/datalovers-lol-AYIeTKBpY?v=X6JP0IPtqctW100IADvc3w%3D%3D&linkshare=urlcopied
 Links FIGMA https://www.figma.com/file/lr2q13Jdqztgdy6ag3oV7a/Untitled?node-id=77%3A177
 TRELLO : https://trello.com/b/ZbxxiHvY/datalovers */
-
 
 body,
 html {
@@ -161,8 +159,6 @@ html {
   grid-template-rows: 25% 20% 20% 15% 15%;
 }
 
-
-
 #mainElements1 {
   grid-row: 1;
   grid-column: 1/4;
@@ -171,11 +167,11 @@ html {
 #mainElements1 p {
   padding: 39px 5px 0px 5px;
   font-size: 30px;
-  font-family: 'Marcellus SC', serif;
+  font-family: "Marcellus SC", serif;
   text-align: center;
   /* margin-top: 190px; */
   color: rgb(252, 241, 183);
-  text-shadow: 1px 1px 6px #07CBE9;
+  text-shadow: 1px 1px 6px #07cbe9;
 }
 
 #mainElements2 {
@@ -221,7 +217,6 @@ html {
   width: 100vw;
 }
 
-
 /*Scroll Bar*/
 
 ::-webkit-scrollbar {
@@ -237,7 +232,6 @@ html {
 ::-webkit-scroll {
   background-color: black;
 }
-
 
 /*HEADER*/
 
@@ -336,7 +330,6 @@ html {
   }
 }
 
-
 /*MAIN*/
 
 .mainContainer {
@@ -355,11 +348,11 @@ html {
 #mainElements1 p {
   padding: 39px 5px 0px 5px;
   font-size: 30px;
-  font-family: 'Marcellus SC', serif;
+  font-family: "Marcellus SC", serif;
   text-align: center;
   /* margin-top: 190px; */
   color: rgb(252, 241, 183);
-  text-shadow: 1px 1px 6px #07CBE9;
+  text-shadow: 1px 1px 6px #07cbe9;
 }
 
 #mainElements2 {
@@ -416,10 +409,10 @@ html {
   margin-bottom: 75px;
   padding-bottom: 5px;
   color: wheat;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 25px;
   pointer-events: none;
-  border-bottom: 2px solid #FEB412;
+  border-bottom: 2px solid #feb412;
 }
 
 .label_name::after {
@@ -451,12 +444,12 @@ html {
   text-transform: capitalize;
 }
 
-#inputName:focus+.label_name .letraName {
+#inputName:focus + .label_name .letraName {
   transform: translateY(-230%);
   font-size: 18px;
   letter-spacing: 10px;
   margin-left: 65px;
-  text-shadow: 1px 1px 8px #FEB412, 0 0 1em #07CBE9, 0 0 0.2em #07CBE9;
+  text-shadow: 1px 1px 8px #feb412, 0 0 1em #07cbe9, 0 0 0.2em #07cbe9;
 }
 
 #inputName:focus .label_name .letraName::after {
@@ -476,24 +469,24 @@ html {
   grid-column: 2/3;
 }
 
-#mainElements4>button {
+#mainElements4 > button {
   width: 80%;
   height: 60%;
   outline: none;
   color: wheat;
   font-size: 25px;
   margin-left: 12%;
-  border: 1px solid #07CBE9;
+  border: 1px solid #07cbe9;
   background-color: transparent;
-  font-family: 'Marcellus SC', serif;
+  font-family: "Marcellus SC", serif;
 }
 
-#mainElements4>button:hover {
-  box-shadow: 0 0 1.25rem #FEB412, 0 0 1.25rem #FEB412;
-  text-shadow: 1px 1px 8px #FEB412, 0 0 1em #07CBE9, 0 0 0.2em #07CBE9;
+#mainElements4 > button:hover {
+  box-shadow: 0 0 1.25rem #feb412, 0 0 1.25rem #feb412;
+  text-shadow: 1px 1px 8px #feb412, 0 0 1em #07cbe9, 0 0 0.2em #07cbe9;
   letter-spacing: 5px;
   font-size: 30px;
-  border: 1px solid #B48643;
+  border: 1px solid #b48643;
 }
 
 #mainElements5 {
@@ -501,23 +494,22 @@ html {
   grid-column: 2/3;
 }
 
-#mainElements5>button {
+#mainElements5 > button {
   width: 80%;
   height: 60%;
   outline: none;
   margin-left: 12%;
-  border: 1px solid #07CBE9;
+  border: 1px solid #07cbe9;
   background-color: transparent;
 }
 
-#mainElements5>button:hover {
-  box-shadow: 0 0 1.25rem #FEB412, 0 0 1.25rem #FEB412;
-  text-shadow: 1px 1px 8px #FEB412, 0 0 1em #07CBE9, 0 0 0.2em #07CBE9;
+#mainElements5 > button:hover {
+  box-shadow: 0 0 1.25rem #feb412, 0 0 1.25rem #feb412;
+  text-shadow: 1px 1px 8px #feb412, 0 0 1em #07cbe9, 0 0 0.2em #07cbe9;
   letter-spacing: 5px;
   font-size: 30px;
-  border: 1px solid #B48643;
+  border: 1px solid #b48643;
 }
-
 
 /*FOOTER*/
 
@@ -533,7 +525,7 @@ html {
   min-height: 50%;
   color: rgb(247, 221, 165);
   text-align: left;
-  font-family: 'Marcellus SC', serif;
+  font-family: "Marcellus SC", serif;
   font-size: 20px;
   grid-column: 1/3;
   margin: 7px 0px 0px 13px;
@@ -541,7 +533,7 @@ html {
 }
 
 .right:hover {
-  text-shadow: 1px 1px 6px #07CBE9;
+  text-shadow: 1px 1px 6px #07cbe9;
 }
 
 #left {
@@ -564,17 +556,17 @@ html {
 
 .imgRedes:hover {
   border-radius: 50%;
-  box-shadow: inset 0 0 1.25rem #FEB412, 0 0 1.25rem #FEB412;
+  box-shadow: inset 0 0 1.25rem #feb412, 0 0 1.25rem #feb412;
 }
 
 #facebook:hover {
   border-radius: 50%;
-  box-shadow: inset 0 0 1.25rem #FEB412, 0 0 1.25rem #FEB412;
+  box-shadow: inset 0 0 1.25rem #feb412, 0 0 1.25rem #feb412;
 }
 
 #instagram:hover {
   border-radius: 50%;
-  box-shadow: inset 0 0 1.25rem #FEB412, 0 0 1.25rem #FEB412;
+  box-shadow: inset 0 0 1.25rem #feb412, 0 0 1.25rem #feb412;
 }
 
 #compartir {
@@ -587,14 +579,12 @@ html {
 .cuadraditoDsaludo {
   margin: auto;
   color: rgb(252, 241, 183);
-  font-family: 'Marcellus SC', serif;
+  font-family: "Marcellus SC", serif;
   display: inline;
   text-align: center;
 }
 
-
 /*MODAL*/
-
 
 /*SEGUNDA INTERFAZ */
 
@@ -607,32 +597,39 @@ html {
 
 .mainTittle {
   color: rgb(252, 241, 183);
-  text-shadow: 1px 1px 6px #07CBE9;
+  text-shadow: 1px 1px 6px #07cbe9;
   text-align: center;
   padding-bottom: 1rem;
   margin-top: 1rem;
   font-size: 150px;
 }
+.builds {
+  background-color: #0ca6beb7;
+  border-radius: 25px 0px 15px 0px;
+  margin: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
 
 #chooseYour {
   padding: 0 5px 0 5px;
   font-size: 20px;
-  font-family: 'Marcellus SC', serif;
+  font-family: "Marcellus SC", serif;
   margin-left: 5%;
-  color: #DFC981;
+  color: #dfc981;
 }
 
 #champion {
   padding: 0 5px 1px 5px;
   font-size: 40px;
-  font-family: 'Marcellus SC', serif;
+  font-family: "Marcellus SC", serif;
   text-align: center;
-  color: #DFC981;
+  color: #dfc981;
   margin-top: 15px;
 }
 
 #list {
-  color: #DFC981;
+  color: #dfc981;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   padding: 3rem;
@@ -640,7 +637,7 @@ html {
 }
 
 #filteredList {
-  color: #DFC981;
+  color: #dfc981;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   padding: 3rem;
@@ -662,13 +659,27 @@ html {
 .championSplash {
   width: 100%;
   object-fit: scale-down;
-  border: #DFC981 1px solid;
+  border: #dfc981 1px solid;
+}
+
+.btn {
+  cursor: pointer;
+  outline: none;
+}
+
+.btn:hover {
+  color: #07cbe9;
+  font-weight: bold;
+}
+
+.btn:after {
+  color: #d32ecd;
 }
 
 .searchbar {
-  border: #DFC981;
+  border: #dfc981;
   background-color: rgb(218, 213, 213);
-  color: #DFC981;
+  color: #dfc981;
   display: grid;
   grid-template-columns: 13% 1% 1fr 1% 10%;
   padding-left: 1rem;
@@ -698,7 +709,7 @@ html {
   justify-content: space-evenly;
 }
 
-.menu>p {
+.menu > p {
   align-self: center;
 }
 
@@ -707,7 +718,7 @@ html {
 }
 
 .line {
-  border-left: 1px solid #D32ECD;
+  border-left: 1px solid #d32ecd;
   height: 50px;
   align-self: center;
 }
@@ -715,9 +726,9 @@ html {
 .text1 {
   padding: 0 5px 1px 5px;
   font-size: 17px;
-  font-family: 'Marcellus SC', serif;
+  font-family: "Marcellus SC", serif;
   text-align: center;
-  color: #DFC981;
+  color: #dfc981;
   padding: 2rem 6rem 2rem 6rem;
 }
 

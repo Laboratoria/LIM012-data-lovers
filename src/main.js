@@ -21,46 +21,6 @@ const championList = data.data;
 
 let list = document.querySelector("#list");
 
-//tengo que hacer un nuevo arreglo que tengan solo los campeones que cumplan con la condicion
-// let newArray = Object.values(championList).filter(champion => {
-//     champion.tags[1] = true;
-// if (condicion que evalua lo que quieres con champion)
-// return champion
-// });
-
-// const filterByClass = (tags, selectedClass) => {
-
-
-// };
-
-
-/*let pAssasin = document.querySelector("#assasin");
-let filteredListAssasin = document.querySelector("#filteredList");
-
-
-pAssasin.addEventListener('click', () => {
-
-  const filterByAssasin = championList.filter(champion => champion === "Assassin");
-  console.log(filterByAssasin);
-
-
-  filterByAssasin.innerHTML = "";
-  Object.values(filteredListAssasin).map(champion => {
-    const div = document.createElement("div");
-    const img = document.createElement("img");
-    const p = document.createElement("p");
-    p.className = "championName";
-    img.className = "championSplash";
-    img.src = `${champion.splash}`;
-    p.innerHTML = `${champion.name}`;
-    div.appendChild(img);
-    div.appendChild(p);
-    filteredListAssasin.appendChild(div);
-  });
-
-});
-*/
-
 //object values le saca los valores de key en forma de arreglo
 Object.values(championList).map(champion => {
   const div = document.createElement("div");
@@ -73,7 +33,7 @@ Object.values(championList).map(champion => {
   div.appendChild(img);
   div.appendChild(p);
   list.appendChild(div);
-})
+});
 
 //busqueda por nombre
 //probando la subida
@@ -129,58 +89,15 @@ if (typeof input.addEventListener != "undefined") {
   );
 }
 
-
-
-/*Filtrado barra input LUPA de buscar*/
-// let input = document.querySelector("#searchInputs");
-// let filteredList = document.querySelector("#filteredList");
-
-// if (typeof input.addEventListener != "undefined") {
-//     input.addEventListener("keyup", (evt) => {
-//             let term = evt.target.value.toLowerCase();
-//             let filteredChampions = Object.values(championList).filter(champion => {
-//                 if (champion.name.toLowerCase().indexOf(term) != -1) {
-//                     return champion;
-//                 }
-//             });
-//             if (term.length != 0) {
-//                 list.classList.add("hidden");
-//                 filteredList.classList.remove("hidden");
-
-//             } else {
-//                 list.classList.remove("hidden");
-//                 filteredList.classList.add("hidden");
-
-//             }
-
-//             filteredList.innerHTML = "";
-//             Object.values(filteredChampions).map(champion => {
-//                 const div = document.createElement("div");
-//                 const img = document.createElement("img");
-//                 const p = document.createElement("p");
-//                 p.className = "championName";
-//                 img.className = "championSplash";
-//                 img.src = `${champion.splash}`;
-//                 p.innerHTML = `${champion.name}`;
-//                 div.appendChild(img);
-//                 div.appendChild(p);
-//                 filteredList.appendChild(div);
-//             });
-//         },
-//         false
-//     );
-//// }
-
 //[p.btn, p.btn, p.btn, p.btn, p.btn, p.btn, p.btn]
 // p.btn == button == <p class="btn" data-value="ALL">ALL</p>
 let buttons = document.querySelectorAll(".btn");
 
-buttons.forEach((button) => {
-  button.addEventListener("click", (evt) => {
-    // term == Assassin
+buttons.forEach(button => {
+  button.addEventListener("click", evt => {
+
     let term = button.getAttribute("data-value");
-
-
+    // <p class="btn" data-value="ALL">ALL</p>
     if (term === "ALL") {
       list.classList.remove("hidden");
       filteredList.classList.add("hidden");
@@ -193,7 +110,7 @@ buttons.forEach((button) => {
       if (champion.tags.indexOf(term) != -1) {
         return champion;
       }
-    })
+    });
     filteredList.innerHTML = "";
     //filteredList ==  <div id="filteredList" ></div>
     Object.values(filteredChampions).map(champion => {
@@ -208,5 +125,5 @@ buttons.forEach((button) => {
       div.appendChild(p);
       filteredList.appendChild(div);
     });
-  })
-})
+  });
+});
