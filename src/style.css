@@ -5,23 +5,26 @@
 
 .container {
     background-color: #F2F2F2;
+    font-family: 'Rubik', sans-serif;
 }
 
 .bottom-margin {
     margin-bottom: 3em;
 }
 
-.head {
-    width: 100%;
-    height: 180px;
-    background-image: linear-gradient(to bottom, #266378, #047887, #008d8d, #18a18c, #4ab483);
-    border-radius: 0 0 30px 30px;
+.center {
+    max-width: 75%;
+    margin: auto;
 }
 
-.menu {
-    height: 2.7rem;
-    border-top: 3px solid #FFF;
-    border-bottom: 3px solid #FFF;
+.head {
+    width: 100%;
+    height: 160px;
+    background-image: linear-gradient(to bottom,  #266378, #266378,  #266378, #047887, #008d8d, #18a18c, #4ab483);
+    border-radius: 0 0 18px 18px;
+    position: sticky;
+    position: -webkit-sticky; /* Safari */
+    top: -100px;
 }
 
 .banner {
@@ -43,9 +46,62 @@
     color: #FFF;
 }
 
-.center {
-    max-width: 75%;
-    margin: auto;
+.menu {
+    height: 35px;
+    border-top: 3px solid #FFF;
+    border-bottom: 3px solid #FFF;
+}
+
+.menu div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu ul {
+    list-style: none;
+    display: flex;
+}
+
+.menu ul a {
+    display: block;
+    padding: 5px 60px 6px 0;
+    text-decoration: none;
+    color: #FFF;
+    font-size: 21px;
+    font-weight: 550;
+}
+
+.menu img {
+    padding: 2px 5px;
+    display: block;
+    width: 30px;
+    height: 30px;
+    margin-left: 3px;
+}
+
+.menu input {
+    height: 25px;
+    margin: 5px;
+    border-radius: 5px;
+    border: none;
+    opacity: 70%;
+    width: 210px;
+    padding: 0 5px;
+    font-size: 1em;
+}
+
+.icon-search {
+    color: #FFF;
+    font-size: 23px;
+    padding: 6px;
+}
+
+.menu a:hover, .icon-search:hover {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.menu img:hover {
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 .content {
@@ -81,7 +137,6 @@ h2 {
     text-align: center;
     border-radius: 5px;
     box-shadow: 5px 5px 9px rgba(0, 0, 0, 0.15), -3px -3px 10px rgba(0, 0, 0, 0.15);
-    font-family: 'Rubik', sans-serif;
     font-size: 1em;
     color: #3B4859;
     cursor: pointer;
@@ -92,3 +147,4 @@ h2 {
     font-weight: 600;
     font-size: 1.1em;
 }
+
