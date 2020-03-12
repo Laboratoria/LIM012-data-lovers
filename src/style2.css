@@ -1,0 +1,133 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.head {
+  background: url(./assets/backgroundNero.jpeg)no-repeat;
+  height: 450px;
+  width: 100%;
+  background-size: cover
+}
+
+.mainTittle {
+  color: #DFC981;
+  text-align: center;
+  padding-bottom: 2rem;
+}
+
+#list {
+  color: #DFC981;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  padding: 3rem;
+  grid-gap: 3rem;
+  background: #485563;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #29323c, #485563);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #29323c, #485563);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+#divider {
+  display: grid;
+  grid-template-columns: 8% 10%;
+  align-items: center;
+  text-align: center;
+  align-content: center;
+}
+
+.text1 {
+  padding-bottom: 3rem;
+}
+
+.championName {
+  font-size: 20px;
+  text-align: center;
+}
+
+.championSplash {
+  width: 100%;
+  object-fit: scale-down;
+  border: #DFC981 1px solid;
+}
+
+.searchbar {
+  border: #DFC981;
+  background-color: rgb(218, 213, 213);
+  color: #DFC981;
+  display: grid;
+  grid-template-columns: 13% 1% 1fr 1% 10%;
+  padding-left: 1rem;
+  margin: 2rem;
+}
+
+.nameSearch {
+  color: #a87e3e;
+  display: grid;
+  grid-template-columns: 5% 95%;
+  grid-gap: 20px;
+  padding-top: 16px;
+}
+
+.difficulty {
+  color: #a87e3e;
+  display: grid;
+  grid-template-columns: 2% 98%;
+  grid-gap: 25px;
+  padding-top: 12px;
+}
+
+.menu {
+  color: #a87e3e;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.menu>p {
+  align-self: center;
+}
+
+.line {
+  border-left: 1px solid #D32ECD;
+  height: 50px;
+  align-self: center;
+}
+
+.text1 {
+  color: #a87e3e;
+  margin: 2rem;
+  text-align: center;
+}
+
+/*Scroll Bar*/
+
+::-webkit-scrollbar {
+  width: 5px;
+  background-color: black;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 6px;
+  background: linear-gradient(black, rgba(223, 201, 129, 0.541));
+}
+
+/*Tipos de letras 
+  - font-family: 'Cuprum', sans-serif;
+  - font-family: 'Trade Winds', cursive;
+  - font-family: 'Marcellus SC', serif;
+  - font-family: 'Roboto', sans-serif;
+   
+   Colores :
+   -rosado D32ECD
+  - celeste 08D7F7
+  - morado 9B51E0
+  - inputs casi blanco EEEAEA
+  - dorado LOL DFC981
+  - dorado oscuro #a87e3e
+  */
