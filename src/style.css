@@ -32,8 +32,10 @@
 
 h2 {
     width: 100%;
+    background-color: #F25749;
+    color: #ffffff;
     margin-top: 0px;
-    margin-bottom: 3em;
+    /*margin-bottom: 3em;*/
     font-family: 'Rubik', sans-serif;
     font-size: 1.6em;
 }
@@ -50,8 +52,8 @@ h2 {
     flex-wrap: wrap;
     justify-content: space-between;
     border: 1px solid black;
-    text-align: left;
     margin-bottom: 1.5em;
+    width: 100%;
 }
 
 .pokemon-card {
@@ -76,26 +78,49 @@ h2 {
     font-size: 1.1em;
 }
 
+.ancho{
+    display: inline-block;
+    width: 30%;
+    margin-bottom: 3em;
+    justify-content: flex-start;
+}
 .arrow{
-    margin-top: 0,5em;
+    display: inline-block;
     border-style: solid;
-    border-color:transparent red red red;
-    border-width:0px 50px 50px 50px;
-    width: 140px;
+    border-color:transparent #F25749 #F25749 #F25749;
+    border-width: 0px 2px 2px 2px;
+    width: 250px;
     position: relative;
+    margin-left: 0px;
 }
 
 .arrow::after {
     content: "";
-      position: absolute;
-      top: 0px;
-      left: 190px;
-      width: 0;
-      height: 0;
-      border-width: 25px;
-      border-style: solid;
-      border-color:  transparent transparent transparent red;
+    margin-top: 0px;
+    position: absolute;
+    top: 0px;
+    left: 252px;
+    width: 0;
+    height: 0;
+    border-width: 16px;
+    border-style: solid;
+    border-color:  transparent transparent transparent #F25749;
 }
+.line {
+    border: 2px solid #F25749;
+    display: inline-block;
+    width: 90%;
+    
+    
+}
+
+.ancho-line{
+    display: inline-block;
+    width: 50%;
+    margin-bottom: 3em;
+}
+
+
 
 
 
