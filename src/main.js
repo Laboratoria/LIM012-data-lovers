@@ -55,8 +55,9 @@ let filteredListAssasin = document.querySelector("#filteredList");
 
 pAssasin.addEventListener('click', () => {
 
-    const filterByAssasin = championList.filter(champion => champion === "Assassin");
-    console.log(filterByAssasin);
+
+
+    const filterByAssasin = championClassAssasin.filter(championClassAssasin => championClassAssasin.tags[0] === "Assassin");
 
 
     filterByAssasin.innerHTML = "";
