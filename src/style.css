@@ -161,6 +161,8 @@ html {
   grid-template-rows: 25% 20% 20% 15% 15%;
 }
 
+
+
 #mainElements1 {
   grid-row: 1;
   grid-column: 1/4;
@@ -523,6 +525,10 @@ html {
   color: #DFC981;
   padding: 2rem 6rem 2rem 6rem;
 
+}
+
+.btn {
+  cursor: pointer;
 }
 
 #searchInputs {
