@@ -5,14 +5,14 @@ const kanto = document.getElementById('kanto');
 const johto = document.getElementById('johto');
 
 for (let i = 0; i < data.pokemon.length; i += 1) {
-  if (data.pokemon[i].generation.name === 'kanto') {
+  if (data.pokemon[i].generation.name === 'kanto'){
     const pokemon = `
         <div class="pokemon-card">
             <p class="pokemon-number left">${data.pokemon[i].num}</p>
             <img class="pokemon-image" src = "${data.pokemon[i].img}">
             <p class="pokemon-name">${data.pokemon[i].name}</p> 
         </div>
-      `;
+      `;   
     kanto.innerHTML += pokemon;
   } else {
     const pokemon = `
