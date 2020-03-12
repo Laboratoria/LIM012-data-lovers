@@ -25,6 +25,7 @@ for (let i = 0; i < data.pokemon.length; i += 1) {
     johto.innerHTML += pokemon;
   }
 }
+//
 // console.log(data);
 /*
 for (let i = 0; i < data.pokemon.length; i += 1) {

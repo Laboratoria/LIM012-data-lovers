@@ -104,13 +104,14 @@
     background-color: rgba(0, 0, 0, 0.7);
 }
 
-.content {
-    text-align: right;
+.center {
+    max-width: 1000px;
+    margin: auto;
 }
 
-h2 {
-    width: 100%;
-}
+/*.content {
+   text-align: center;
+}*/
 
 .content select {
     width: 6em;
@@ -123,8 +124,9 @@ h2 {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    border: 1px solid black;
-    text-align: left;
+    /* border: 1px solid black; */
+    margin-bottom: 1.5em;
+    width: 100%;
 }
 
 .pokemon-card {
@@ -147,4 +149,75 @@ h2 {
     font-weight: 600;
     font-size: 1.1em;
 }
+.subtitulos {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 3em;  
+}
 
+.width-arrow{
+   /*border: 1px solid black;*/
+    display: inline-block;
+    width: 25%;
+    margin-top: 0em;
+}
+
+.width-line{
+    /*border: 1px solid black;*/
+    display: inline-block;
+    width: 74%; 
+    margin-top: 0em;
+    transform: translate(2px,-3.5px);
+}
+
+h2 {
+    background-color: #F25749;
+    color: #ffffff;
+    font-family: 'Rubik', sans-serif;
+    font-size: 23px;
+    padding: 2px;
+}
+
+.arrow{
+    display: inline-block;
+    border-style: solid;
+    border-color:#F25749 #F25749 #F25749 #F25749;
+    border-width: 0.2px 0.2px 5px 10px;
+    width: 240px;
+    height: 30px;
+    position: relative;
+    border-radius: 5px 0 0 5px;
+}
+
+.arrow::after {
+    display: inline-block;
+    content: "";
+    position: absolute;
+    top: 0px;
+    width: 0;
+    height: 1px;
+    border-width: 18px;
+    border-style: solid;
+    border-color: transparent transparent transparent #F25749;
+    border-radius: 5px;
+    transform: translate(239px,-1px);
+}
+
+.lines {
+    height: 4px;
+    background-color: #F25749;
+    border-radius: 0px 5px 5px 0px;
+}
+
+.ir-arriba{
+    display: inline-block;
+    padding: 0px;
+    font-size: 50px;
+    color: #ffffff;
+    border-radius: 60px;
+    background: linear-gradient(to bottom, #266378, #047887, #008d8d, #18a18c, #4ab483);;
+    cursor: pointer; /*Simula que la imagen sea com un botón o enlace.*/
+    position: fixed; /*Hará que el botó siempre esté fijo */
+    bottom: 20px;
+    right: 20px;
+}
