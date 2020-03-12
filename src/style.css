@@ -254,7 +254,7 @@ html {
 
 .letraName {
     position: absolute;
-    left: 0px;
+    left: 20px;
     transition: all 0.3s ease;
     bottom: 0px;
     margin-left: 100px;
@@ -395,6 +395,11 @@ html {
     width: 1.8rem;
     animation-delay: 0s;
     animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+.letraName {
+    margin-left: 20px;
 }
 
 .cuadraditoDsaludo {
@@ -459,6 +464,12 @@ html {
     grid-gap: 3rem;
 }
 
+#filteredList p {
+    font-size: 40px;
+    font-family: 'Marcellus SC', serif;
+    color: red;
+}
+
 #divider2 {
     display: grid;
     margin-left: 41%;
@@ -469,12 +480,22 @@ html {
 .championName {
     font-size: 20px;
     text-align: center;
+    font-family: 'Trade Winds', cursive;
+}
+
+.championName:hover {
+    color: #07CBE9;
 }
 
 .championSplash {
     width: 100%;
     object-fit: scale-down;
     border: #DFC981 1px solid;
+}
+
+.championSplash:hover {
+    box-shadow: inset 0 0 1.25rem #07CBE9, 0 0 1.25rem #07CBE9;
+    border: rgb(80, 234, 245) 1px solid;
 }
 
 .searchbar {
@@ -513,7 +534,8 @@ html {
     justify-content: space-evenly;
 }
 
-.btn:hovered {
+.btn:hover,
+.btn.active {
     color: #D32ECD;
 }
 
@@ -537,17 +559,25 @@ html {
     font-family: 'Marcellus SC', serif;
     text-align: center;
     color: #DFC981;
-    padding: 2rem 6rem 2rem 6rem;
+    padding: 0 6rem 0 6rem;
 }
 
 #searchInputs {
     border: 0;
     background-color: rgb(218, 213, 213);
+    color: #a87e3e;
     width: 130px;
     margin-left: 2px;
     font-size: 12px;
     margin-top: -16px;
     font-family: 'Marcellus SC', serif;
+}
+
+#searchInputs:hover {
+    letter-spacing: 6px;
+    color: #a87e3e;
+    text-shadow: 1px 1px 8px #FEB412, 0 0 1em #07CBE9, 0 0 0.2em #07CBE9;
+    font-size: 25px;
 }
 
 #searchInputs::placeholder {

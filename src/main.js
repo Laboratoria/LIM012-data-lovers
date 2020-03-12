@@ -34,6 +34,9 @@ Object.values(championList).map(champion => {
     list.appendChild(div);
 })
 
+
+
+
 //busqueda por nombre
 //probando la subida
 let input = document.querySelector("#searchInputs");
@@ -93,14 +96,18 @@ if (typeof input.addEventListener != "undefined") {
 let buttons = document.querySelectorAll(".btn");
 
 buttons.forEach((button) => {
+
     button.addEventListener("click", () => {
         // term == Assassin
+
         let term = button.getAttribute("data-value");
+        this.toggleClass("active");
 
 
         if (term === "ALL") {
             list.classList.remove("hidden");
             filteredList.classList.add("hidden");
+
         } else {
             list.classList.add("hidden");
             filteredList.classList.remove("hidden");
