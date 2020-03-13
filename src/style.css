@@ -300,12 +300,42 @@ html {
   font-family: "Marcellus SC", serif;
 }
 
+<<<<<<< HEAD
 #mainElements4 > button:hover {
   box-shadow: 0 0 1.25rem #feb412, 0 0 1.25rem #feb412;
   text-shadow: 1px 1px 8px #feb412, 0 0 1em #07cbe9, 0 0 0.2em #07cbe9;
   letter-spacing: 6px;
   font-size: 30px;
   border: 1px solid #b48643;
+=======
+#buttonEnter1 {
+    /* height: 28px;
+    width: 28px; */
+    /* margin-left: 56px; */
+    margin-top: 4px;
+}
+
+#modal {
+    background: rgba(190, 116, 219, 0.9);
+    color: #fff;
+    position: absolute;
+    /* top: -100vh; */
+    margin-top: 90px;
+    margin-left: 35%;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    transition: all 0.5s;
+    border-radius: 20px;
+}
+
+#mainElements4>button:hover {
+    box-shadow: 0 0 1.25rem #FEB412, 0 0 1.25rem #FEB412;
+    text-shadow: 1px 1px 8px #FEB412, 0 0 1em #07CBE9, 0 0 0.2em #07CBE9;
+    letter-spacing: 6px;
+    font-size: 30px;
+    border: 1px solid #B48643;
+>>>>>>> 0fdfee95387880ba61358089d1a622cb4c6f0146
 }
 
 #mainElements5 {
@@ -313,6 +343,7 @@ html {
   grid-column: 2/3;
 }
 
+<<<<<<< HEAD
 #mainElements5 > img {
   width: 55%;
   height: 80%;
@@ -324,6 +355,20 @@ html {
 #mainElements5 > img:hover {
   box-shadow: 0 0 1.25rem #feb412, 0 0 1.25rem #feb412;
   border: 1px solid #b48643;
+=======
+#imgRiot {
+    width: 55%;
+    height: 80%;
+    outline: none;
+    margin-left: 25%;
+    background-color: transparent;
+    border: 2px solid #07CBE9;
+}
+
+#imgRiot:hover {
+    box-shadow: 0 0 1.25rem #FEB412, 0 0 1.25rem #FEB412;
+    border: 1px solid #B48643;
+>>>>>>> 0fdfee95387880ba61358089d1a622cb4c6f0146
 }
 
 /*FOOTER*/
@@ -385,10 +430,22 @@ html {
 }
 
 #compartir {
+<<<<<<< HEAD
   height: 1.8rem;
   width: 1.8rem;
   animation-delay: 0s;
   animation-duration: 3s;
+=======
+    height: 1.8rem;
+    width: 1.8rem;
+    animation-delay: 0s;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+.letraName {
+    margin-left: 20px;
+>>>>>>> 0fdfee95387880ba61358089d1a622cb4c6f0146
 }
 
 .cuadraditoDsaludo {
@@ -479,6 +536,12 @@ html {
   grid-gap: 3rem;
 }
 
+#filteredList p {
+    font-size: 22px;
+    font-family: 'Trade Winds', cursive;
+    color: #E0CB7E;
+}
+
 #divider2 {
   display: grid;
   margin-left: 41%;
@@ -495,6 +558,11 @@ html {
   width: 100%;
   object-fit: scale-down;
   border: #dfc981 1px solid;
+}
+
+.championSplash:hover {
+    box-shadow: inset 0 0 1.25rem #07CBE9, 0 0 1.25rem #07CBE9;
+    border: rgb(80, 234, 245) 1px solid;
 }
 
 .searchbar {
@@ -573,6 +641,13 @@ html {
   font-size: 12px;
   margin-top: -16px;
   font-family: "Marcellus SC", serif;
+}
+
+#searchInputs:hover {
+    letter-spacing: 6px;
+    color: #795DE6;
+    text-shadow: 1px 1px 8px #07CBE9, 0 0 1em #07CBE9, 0 0 0.2em #07CBE9;
+    font-size: 25px;
 }
 
 #searchInputs::placeholder {

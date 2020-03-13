@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+<<<<<<< HEAD
   <meta charset="utf-8" />
   <title>LOL</title>
   <link rel="icon" type="image/png" href="./assets/logoURL.png" />
@@ -9,6 +10,15 @@
   <link href="https://fonts.googleapis.com/css?family=Cuprum|Marcellus+SC|Roboto|Trade+Winds&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+=======
+    <meta charset="utf-8" />
+    <title>LOL</title>
+    <link rel="icon" type="image/png" href="./assets/logoURL.png" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Cuprum|Marcellus+SC|Roboto|Trade+Winds&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+>>>>>>> 0fdfee95387880ba61358089d1a622cb4c6f0146
 </head>
 
 <body>
@@ -45,6 +55,7 @@
       <div id="mainElements3">
         <input type="text" id="inputName" name="modal" /><label for="name" class="label_name"><span
             class="letraName">ENTER YOUR NAME</span></label>
+<<<<<<< HEAD
       </div>
       <div id="mainElements4"><button id="buttonEnter">ENTER</button></div>
     </main>
@@ -55,6 +66,20 @@
       <div>
         <h3 class="saludo" id="nombreIngresado"></h3>
       </div>
+=======
+            </div>
+            <div id="mainElements4"><button id="buttonEnter">ENTER</button>
+                <input type="radio" id="buttonEnter1" name="modal" style="visibility:hidden" />
+                <input type="radio" id="cerrar-modal" name="modal" /><label for="cerrar-modal">X</label>
+                <div id="modal"></div>
+            </div>
+            <div id="mainElements5">
+                <a href="https://www.riotgames.com/en" class="nav-link" target="_blank">
+                    <img src="./assets/riot.jpeg" id="imgRiot" />
+                </a>
+            </div>
+        </main>
+>>>>>>> 0fdfee95387880ba61358089d1a622cb4c6f0146
     </div>
     <div id="secondScreen">
       <div class="mainTittle">
@@ -63,6 +88,7 @@
           <img src="assets/casco1.png" alt="helmet" />
           <h1 id="champion">CHAMPION</h1>
         </div>
+<<<<<<< HEAD
       </div>
       <div class="text1">
         <h3>
@@ -104,6 +130,73 @@
         </div>
       </div>
       <footer class="footer">
+=======
+        <div id="secondScreen">
+            <div class="mainTittle">
+                <h3 id="chooseYour">CHOOSE YOUR</h3>
+                <div id="divider2">
+                    <img src="assets/casco1.png" alt="helmet" />
+                    <h1 id="champion">CHAMPION</h1>
+                </div>
+            </div>
+            <div class="text1">
+                <h3>
+                    Each champion has different statistics where their initial values ​​are measured and how these values ​​rise for each level. To know more click on a champion.
+                </h3>
+            </div>
+            <div class="searchbar">
+                <div class="nameSearch">
+                    <img src="assets/search.png" alt="search" />
+                    <input id="searchInputs" type="text" placeholder="Search" spellcheck="false" />
+                </div>
+                <span class="line"></span>
+                <div class="menu">
+                    <ul>
+                        <li class="active" data-value="ALL"> <a href="#">ALL</a> </li>
+                        <li data-value="Assassin"> <a href="#">ASSASSIN</a> </li>
+                        <li data-value="Mage"> <a href="#">MAGE</a> </li>
+                        <li data-value="Fighter"> <a href="#">FIGTHER</a> </li>
+                        <li data-value="Tank"> <a href="#">TANK</a> </li>
+                        <li data-value="Support"> <a href="#">SUPPORT</a> </li>
+                        <li data-value="Marksman"><a href="#">MARKMAN</a></li>
+                    </ul>
+                </div>
+
+                <span class="line"></span>
+                <div class="difficulty">
+                    <img src="assets/arrow.png" alt="" />
+                    <p id="pDificulty">Level</p>
+                </div>
+            </div>
+        </div>
+        <div id="list"></div>
+        <div id="filteredList" class="hidden"></div>
+        <h3 id="error" class="hidden"> <img src="./assets/goldSword.png"> Champion not found <img src="./assets/goldSword.png"></h3>
+
+        <!-- TERCERAinterfaz MODAL -->
+        <div id="miModal" class="modal">
+            <div class="flex" id="flex">
+                <div class="contenido-modal">
+                    <div class="modal-header flex">
+                        <h2>Titulo de campeon</h2>
+                        <span class="close" id="close">&times</span>
+                    </div>
+                    <div class="modal-body">
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse sapiente tempore omnis, natus quae eos delectus molestias facilis, cupiditate error illum voluptate odit quam corrupti vitae, ipsum ut nostrum ipsa?
+
+                        </p>
+
+                    </div>
+                    <div class="modal footer">
+                        <h3>hecho esta & copyright</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+>>>>>>> 0fdfee95387880ba61358089d1a622cb4c6f0146
         <div class="right">
           <p>&copy; 2020 &nbsp;| &nbsp; Todos los Derechos Reservados</p>
         </div>
@@ -126,7 +219,7 @@
       </footer>
     </div>
 
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="./data.js " type="module "></script>
     <script src="./main.js" type="module"></script>
 

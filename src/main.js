@@ -1,5 +1,7 @@
 import data from "./data/lol/lol.js";
 
+
+
 /*Muestra en interfaz dos mas saludo y letra capital*/
 const primeraInterfaz = document.getElementById("primeraInterfaz");
 const segundaInterfaz = document.getElementById("segundaInterfaz");
@@ -90,38 +92,49 @@ if (typeof input.addEventListener != "undefined") {
 
 //[p.btn, p.btn, p.btn, p.btn, p.btn, p.btn, p.btn]
 // p.btn == button == <p class="btn" data-value="ALL">ALL</p>
-let buttons = document.querySelectorAll(".btn");
+let ul = document.querySelector('ul')
+let li = document.querySelectorAll('li');
 
-buttons.forEach(button => {
-  button.addEventListener("click", evt => {
-    let term = button.getAttribute("data-value");
-    // <p class="btn" data-value="ALL">ALL</p>
-    if (term === "ALL") {
-      list.classList.remove("hidden");
-      filteredList.classList.add("hidden");
-    } else {
-      list.classList.add("hidden");
-      filteredList.classList.remove("hidden");
-    }
-    // filteredChampions == []
-    let filteredChampions = Object.values(championList).filter(champion => {
-      if (champion.tags.indexOf(term) != -1) {
-        return champion;
-      }
-    });
-    filteredList.innerHTML = "";
-    //filteredList ==  <div id="filteredList" ></div>
-    Object.values(filteredChampions).map(champion => {
-      const div = document.createElement("div");
-      const img = document.createElement("img");
-      const p = document.createElement("p");
-      p.className = "championName";
-      img.className = "championSplash";
-      img.src = `${champion.splash}`;
-      p.innerHTML = `${champion.name}`;
-      div.appendChild(img);
-      div.appendChild(p);
-      filteredList.appendChild(div);
-    });
-  });
+li.forEach(el => {
+  el.addEventListener('click', function () {
+    ul.querySelector('.active').classList.remove('active');
+    el.classList.add('active');
+  })
+
 });
+
+li.forEach((button) => {
+
+      buttons.forEach(button => {
+        button.addEventListener("click", evt => {
+          let term = button.getAttribute("data-value");
+          // <p class="btn" data-value="ALL">ALL</p>
+          if (term === "ALL") {
+            list.classList.remove("hidden");
+            filteredList.classList.add("hidden");
+          } else {
+            list.classList.add("hidden");
+            filteredList.classList.remove("hidden");
+          }
+          // filteredChampions == []
+          let filteredChampions = Object.values(championList).filter(champion => {
+            if (champion.tags.indexOf(term) != -1) {
+              return champion;
+            }
+          });
+          filteredList.innerHTML = "";
+          //filteredList ==  <div id="filteredList" ></div>
+          Object.values(filteredChampions).map(champion => {
+            const div = document.createElement("div");
+            const img = document.createElement("img");
+            const p = document.createElement("p");
+            p.className = "championName";
+            img.className = "championSplash";
+            img.src = `${champion.splash}`;
+            p.innerHTML = `${champion.name}`;
+            div.appendChild(img);
+            div.appendChild(p);
+            filteredList.appendChild(div);
+          });
+        });
+      });
