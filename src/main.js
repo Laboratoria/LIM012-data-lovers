@@ -39,7 +39,8 @@ const createPokemonCard= (i,dataNamePokemon,dataImgPokemon,dataTypePokemon)=>{
 }
 
 const putPokemonImage =(dataImgPokemon, divCardImage) =>{
-  let img=document.createElement("IMG");
+  let img = document.createElement("IMG");
+  img.id = "pokemon-img";
   img.setAttribute("src",dataImgPokemon);
   img.setAttribute("alt", "Imagen Pokemón");
   divCardImage.appendChild(img);

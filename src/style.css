@@ -138,6 +138,10 @@ main{
   height: 130px;
   border: 1px solid #3282B8;
 }
+  #pokemon-img{
+    width: 130px;
+    height: 130px;
+  }
 .pokemon-types{
   width: auto;
   padding: .3rem;
