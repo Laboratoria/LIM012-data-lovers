@@ -25,6 +25,23 @@ for (let i = 0; i < data.pokemon.length; i += 1) {
     johto.innerHTML += pokemon;
   }
 }
+
+window.onscroll = () => {
+  if (document.documentElement.scrollTop > 100) {
+    document.getElementsByTagName('div')[0].classList.add('show');
+  } else {
+    document.getElementsByTagName('div')[0].classList.remove('show');
+  }
+};
+
+document.querySelector('.go-top-container').addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth',
+  });
+});
+
+
 //
 // console.log(data);
 /*
