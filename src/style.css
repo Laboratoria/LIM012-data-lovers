@@ -150,9 +150,7 @@ main{
   height: auto;
   width: 150px;
   padding: .2rem;
-  /*margin: .1rem;  */  
   border-radius: 0 0 5px 5px;
-  /*background: red;*/
 }
 .pokemon-type{
   display: inline;
