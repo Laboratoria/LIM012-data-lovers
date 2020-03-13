@@ -313,17 +313,20 @@ html {
 }
 
 #modal {
-    background: rgba(190, 116, 219, 0.9);
+    background: rgba(53, 20, 66, 0.548);
     color: #fff;
     position: absolute;
     /* top: -100vh; */
-    margin-top: 90px;
-    margin-left: 35%;
+    /* margin-top: 90px;
+    margin-left: 35%; */
     left: 0;
-    height: 100vh;
+    top: 0;
+    height: 50%;
     width: 100vw;
     transition: all 0.5s;
-    border-radius: 20px;
+    z-index: 3;
+    animation: modal 2s;
+    visibility: hidden;
 }
 
 #mainElements4>button:hover {
