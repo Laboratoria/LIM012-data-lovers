@@ -1,5 +1,7 @@
 import data from "./data/lol/lol.js";
 
+
+
 /*Muestra en interfaz dos mas saludo y letra capital*/
 const primeraInterfaz = document.getElementById("primeraInterfaz");
 const segundaInterfaz = document.getElementById("segundaInterfaz");
@@ -33,9 +35,6 @@ Object.values(championList).map(champion => {
     div.appendChild(p);
     list.appendChild(div);
 })
-
-
-
 
 //busqueda por nombre
 //probando la subida
@@ -93,15 +92,23 @@ if (typeof input.addEventListener != "undefined") {
 
 //[p.btn, p.btn, p.btn, p.btn, p.btn, p.btn, p.btn]
 // p.btn == button == <p class="btn" data-value="ALL">ALL</p>
-let buttons = document.querySelectorAll(".btn");
+let ul = document.querySelector('ul')
+let li = document.querySelectorAll('li');
 
-buttons.forEach((button) => {
+li.forEach(el => {
+    el.addEventListener('click', function() {
+        ul.querySelector('.active').classList.remove('active');
+        el.classList.add('active');
+    })
+
+});
+
+li.forEach((button) => {
 
     button.addEventListener("click", () => {
         // term == Assassin
 
         let term = button.getAttribute("data-value");
-        this.toggleClass("active");
 
 
         if (term === "ALL") {

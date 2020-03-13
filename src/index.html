@@ -37,8 +37,16 @@
                 <input type="text" id="inputName" name="modal" /><label for="name" class="label_name"><span
             class="letraName">ENTER YOUR NAME</span></label>
             </div>
-            <div id="mainElements4"><button id="buttonEnter">ENTER</button></div>
-            <div id="mainElements5"><img src="./assets/riot.jpeg"></div>
+            <div id="mainElements4"><button id="buttonEnter">ENTER</button>
+                <input type="radio" id="buttonEnter1" name="modal" style="visibility:hidden" />
+                <input type="radio" id="cerrar-modal" name="modal" /><label for="cerrar-modal">X</label>
+                <div id="modal"></div>
+            </div>
+            <div id="mainElements5">
+                <a href="https://www.riotgames.com/en" class="nav-link" target="_blank">
+                    <img src="./assets/riot.jpeg" id="imgRiot" />
+                </a>
+            </div>
         </main>
     </div>
     <!-- segunda interfaz -->
@@ -64,31 +72,52 @@
             <div class="searchbar">
                 <div class="nameSearch">
                     <img src="assets/search.png" alt="search" />
-                    <input id="searchInputs" type="text" placeholder="search by name" />
+                    <input id="searchInputs" type="text" placeholder="Search" spellcheck="false" />
                 </div>
                 <span class="line"></span>
                 <div class="menu">
-                    <p class="btn" data-value="ALL">ALL</p>
-                    <p class="btn" data-value="Assassin">ASSASSIN</p>
-                    <p class="btn" data-value="Mage">MAGE</p>
-                    <p class="btn" data-value="Fighter">FIGTHER</p>
-                    <p class="btn" data-value="Tank">TANK</p>
-                    <p class="btn" data-value="Support">SUPPORT</p>
-                    <p class="btn" data-value="Marksman">MARKSMAN</p>
+                    <ul>
+                        <li class="active" data-value="ALL"> <a href="#">ALL</a> </li>
+                        <li data-value="Assassin"> <a href="#">ASSASSIN</a> </li>
+                        <li data-value="Mage"> <a href="#">MAGE</a> </li>
+                        <li data-value="Fighter"> <a href="#">FIGTHER</a> </li>
+                        <li data-value="Tank"> <a href="#">TANK</a> </li>
+                        <li data-value="Support"> <a href="#">SUPPORT</a> </li>
+                        <li data-value="Marksman"><a href="#">MARKMAN</a></li>
+                    </ul>
                 </div>
 
                 <span class="line"></span>
                 <div class="difficulty">
                     <img src="assets/arrow.png" alt="" />
-                    <p>Difficulty</p>
+                    <p id="pDificulty">Level</p>
                 </div>
             </div>
         </div>
         <div id="list"></div>
         <div id="filteredList" class="hidden"></div>
+        <h3 id="error" class="hidden"> <img src="./assets/goldSword.png"> Champion not found <img src="./assets/goldSword.png"></h3>
 
-        <h3 id="error" class="hidden">Champion not found</h3>
+        <!-- TERCERAinterfaz MODAL -->
+        <div id="miModal" class="modal">
+            <div class="flex" id="flex">
+                <div class="contenido-modal">
+                    <div class="modal-header flex">
+                        <h2>Titulo de campeon</h2>
+                        <span class="close" id="close">&times</span>
+                    </div>
+                    <div class="modal-body">
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse sapiente tempore omnis, natus quae eos delectus molestias facilis, cupiditate error illum voluptate odit quam corrupti vitae, ipsum ut nostrum ipsa?
 
+                        </p>
+
+                    </div>
+                    <div class="modal footer">
+                        <h3>hecho esta & copyright</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <footer class="footer">
