@@ -9,59 +9,75 @@
     <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy|Rubik&display=swap" rel="stylesheet"> 
     <link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet">
   </head>
+
   <body class="container">
-    <span class="ir-arriba icon-circle-up"></span>
     <header class="head bottom-margin">
 
       <div class="banner">
         <div class="banner-content center">
-          <p>Pokemon Master</p>
-          <img src="/src/assets/legiones.png">
+          <p>Pokepedia</p>
+          <img class="hide" src="/src/assets/legiones.png">
         </div>
       </div>
 
       <nav class="menu">
         <div class="center">
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Filter</a></li>
-            <li><a href="#">+ Options</a></li>
+            <li>
+              <a class="menu-style menu-style" href="#">
+              <span class="icon-home"></span>
+              <span class="hide">Home</span>
+              </a>
+            </li>
+            <li class="menu-style">
+              <span class="icon-filter"></span>
+              <span class="hide">Filter</span>
+            </li>
+            <li class="menu-style">
+              <span class="icon-plus"></span>
+              <span class="hide">Options</span>
+            </li>
           </ul>
           <div>
-            <input type="search" placeholder="Type here">
+            <input class="hide" type="search" placeholder="Type here">
             <span class="icon-search"></span>
           </div>
       </nav>
 
-      <div class="flap"></div>
-
     </header>
     
     <main class="content center">
-      <select id="selection" class="bottom-margin"></select>
+
+      <div class="sort">
+        <select id="selection" class="bottom-margin"></select>
+      </div>
+
       <div class="subtitulos">
         <div class="width-arrow">
           <div class="arrow">
-          <h2>Generacion I - Kanto</h2>
+            <h2>Generacion I - Kanto</h2>
           </div>
         </div>
-        <div class="width-line">
+        <div class="width-line hide">
           <div class="lines"></div>
         </div>
       </div>
+
       <div class="generations" id="kanto"></div>
+
       <div class="subtitulos">
         <div class="width-arrow">
           <div class="arrow">
-          <h2>Generation II - Johto</h2>
+            <h2>Generation II - Johto</h2>
           </div>
         </div>
-        <div class="width-line">
+        <div class="width-line hide">
           <div class="lines"></div>
         </div>
       </div>
+
       <div class="generations" id="johto"></div>
-      </div>
+      <span class="ir-arriba icon-circle-up"></span>
     </main>
     <footer class="footer"></footer>
     <script src="main.js" type="module"></script>
