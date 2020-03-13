@@ -11,7 +11,5 @@ export const dinamicSearchPokemon = (wordIntroduced) => {
     }
   }
   return pokemonFilter;
-}
-
-
+};
 
