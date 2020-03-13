@@ -15,16 +15,9 @@ const colors = { "normal" : "#AAA284", "fire" : "#FF9C06", "grass": "#95C215",
                 "dragon" : "#731E9B","ghost" : "#8968AA","dark" : "#6C695C",
                 "steel" : "#9DAFC0","fairy" : "#FAB3E2","fighting" : "#BD5022",
                 };
-<<<<<<< HEAD
                 
 const createPokemonCard= (index,dataPokemon)=>{
   let divCard=document.createElement("div")
-=======
-
-
-const createPokemonCard= (i,dataNamePokemon,dataImgPokemon,dataTypePokemon)=>{
-    let divCard=document.createElement("div")
->>>>>>> master
     divCard.className="pokemon-card";
     document.getElementById("card-container").appendChild(divCard);
     let divCardName=document.createElement("div");
@@ -33,7 +26,6 @@ const createPokemonCard= (i,dataNamePokemon,dataImgPokemon,dataTypePokemon)=>{
     divCardName.className="pokemon-name";
     divCardImage.className="pokemon-image";
     divCardTypes.className="pokemon-types";
-<<<<<<< HEAD
     document.getElementsByClassName("pokemon-card")[index].appendChild(divCardName);
     document.getElementsByClassName("pokemon-card")[index].appendChild(divCardImage);
     document.getElementsByClassName("pokemon-card")[index].appendChild(divCardTypes);
@@ -62,42 +54,6 @@ const putPokemonTypes = (dataTypesPokemon, divCardTypes) => {
  const showCard = ()=> {
     for (let i=0; i<data.pokemon.length; i++){
         createPokemonCard(i,data.pokemon[i]);
-=======
-    document.getElementsByClassName("pokemon-card")[i].appendChild(divCardName);
-    document.getElementsByClassName("pokemon-card")[i].appendChild(divCardImage);
-    document.getElementsByClassName("pokemon-card")[i].appendChild(divCardTypes);
-    putPokemonName(dataNamePokemon, divCardName);
-    putPokemonImage(dataImgPokemon, divCardImage);
-    console.log(dataTypePokemon);
-    for(let i = 0; i < dataTypePokemon.length; i++) {
-      divCardTypes.appendChild(createPokemonType(dataTypePokemon[i]));
-    }
-}
-
-const putPokemonImage =(dataImgPokemon, divCardImage) =>{
-  let img = document.createElement("IMG");
-  img.id = "pokemon-img";
-  img.setAttribute("src",dataImgPokemon);
-  img.setAttribute("alt", "Imagen Pokemón");
-  divCardImage.appendChild(img);
-}
-
-const putPokemonName = (dataNamePokemon, divCardName) => {
-  divCardName.textContent=dataNamePokemon;
-}
-
-const createPokemonType = (type) => {
-  const divPokemonType = document.createElement("div");
-  divPokemonType.className = "pokemon-type";  
-  divPokemonType.appendChild(document.createTextNode(type));
-  divPokemonType.style.background = colors[type];
-  return divPokemonType;
-}
-
- const showCard = ()=> {
-    for (let i=0; i<data.pokemon.length ; i++){
-        createPokemonCard(i,data.pokemon[i].name,data.pokemon[i].img,data.pokemon[i].type);
->>>>>>> master
     }
   }
 
@@ -111,7 +67,6 @@ const createPokemonType = (type) => {
 }
 showCard();
 
-<<<<<<< HEAD
 
 const searchPokemon = ()=>{
   document.getElementById("card-container").innerHTML ="";
@@ -127,5 +82,3 @@ const searchPokemon = ()=>{
 }
 const inputBarSearch= document.getElementById("input-bar-search");
 inputBarSearch.addEventListener('keyup',searchPokemon);
-=======
->>>>>>> master
