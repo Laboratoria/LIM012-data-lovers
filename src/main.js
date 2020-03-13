@@ -6,7 +6,7 @@ import data from './data/lol/lol.js';
 console.log(example, data);
 
 const myObject = data;
-console.log(myObject.data.Aatrox.img);
+console.log(myObject.data.Aatrox.id);
 
 const botonEnHtml = document.getElementById('botonEnHtml');
 botonEnHtml.addEventListener('click', () => {
