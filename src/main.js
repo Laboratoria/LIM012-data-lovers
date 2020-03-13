@@ -1,13 +1,6 @@
 import { dinamicSearchPokemon } from './data.js';
-// import data from './data/injuries/injuries.js';
-// import data from './data/lol/lol.js';
-// import data from './data/patient/patient.js';
 import data from './data/pokemon/pokemon.js';
 import pokemon from './data/pokemon/pokemon.js';
-// import data from './data/rickandmorty/rickandmorty.js';
-// import data from './data/steam/steam.js';
-// import data from './data/worldbank/worldbank.js';
-
 const colors = { "normal" : "#AAA284", "fire" : "#FF9C06", "grass": "#95C215",
                 "water": "#168CBF","electric":"#F4C313","ice" : "#85EFF5",
                 "flying" : "#20E5F1","poison" : "#C22AF8","ground" : "#AB8709",
@@ -33,6 +26,15 @@ const createPokemonCard= (index,dataPokemon)=>{
     putPokemonImage(dataPokemon.img, divCardImage);
     putPokemonTypes(dataPokemon.type, divCardTypes);
 }
+
+const createPokemonType = (type) => {
+  const divPokemonType = document.createElement("div");
+  divPokemonType.className = "pokemon-type";  
+  divPokemonType.appendChild(document.createTextNode(type));
+  divPokemonType.style.background = colors[type];
+  return divPokemonType;
+}
+
  const putPokemonImage =(dataImgPokemon, divCardImage) =>{
     let img = document.createElement("IMG");
     img.id = "img-pokemon";
@@ -46,39 +48,23 @@ const createPokemonCard= (index,dataPokemon)=>{
   }
 
 const putPokemonTypes = (dataTypesPokemon, divCardTypes) => {
-  console.log(dataTypesPokemon);
   for(let i = 0; i < dataTypesPokemon.length; i++) {
     divCardTypes.appendChild(createPokemonType(dataTypesPokemon[i]));
   }
 }
- const showCard = ()=> {
-    for (let i=0; i<data.pokemon.length; i++){
-        createPokemonCard(i,data.pokemon[i]);
+const showCard = (dataPokemon)=> {
+    for (let i=0; i<dataPokemon.length; i++){
+        createPokemonCard(i,dataPokemon[i]);
     }
   }
-
-
-const createPokemonType = (type) => {
-  const divPokemonType = document.createElement("div");
-  divPokemonType.className = "pokemon-type";  
-  divPokemonType.appendChild(document.createTextNode(type));
-  divPokemonType.style.background = colors[type];
-  return divPokemonType;
-}
-showCard();
-
 
 const searchPokemon = ()=>{
   document.getElementById("card-container").innerHTML ="";
   let wordIntroduced=document.getElementById("input-bar-search").value;
-  for (let i=0; i<data.pokemon.length; i++){
-  let word=data.pokemon[i].name.substring(0, wordIntroduced.length);
-  if( wordIntroduced.length <= data.pokemon[i].name.length && wordIntroduced.length!= 0 && data.pokemon[i].name.length!=0){
-    if(wordIntroduced.toLowerCase() == word.toLowerCase()){
-      console.log(data.pokemon[i].name);
-    }
-  }
-  }
+  showCard(dinamicSearchPokemon(wordIntroduced));
 }
+
+//*******************************************************************
+showCard(data.pokemon);
 const inputBarSearch= document.getElementById("input-bar-search");
 inputBarSearch.addEventListener('keyup',searchPokemon);
