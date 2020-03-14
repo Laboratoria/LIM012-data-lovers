@@ -11,9 +11,14 @@
 </head>
 
 <body>
+
     <main class="main-container">
-        <div class="logo"></div>
+
+        <div class="logo">logo</div>
+
         <nav>
+
+
             <select class="drop-down order-by-type">
                 <option value="" disable selected hidden>TYPE</option>
                 <option value=""></option>
@@ -27,9 +32,21 @@
                 <option value="ascending">Z - A</option>
             </select>
 
+
             <input type="search" id="search-by-name" class="search-by-name" placeholder="i.e. 'bulbasaur'">
 
         </nav>
+
+        <section class="row">
+
+            <div class="pokemon-card">
+                <div class="pokemon-number"></div>
+                <div class="pokemon-image"></div>
+                <div class="pokemon-name"></div>
+            </div>
+
+        </section>
+
     </main>
     <script src="main.js" type="module"></script>
 </body>

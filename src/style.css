@@ -6,9 +6,81 @@
     background: url(background-hero.png);
 }
 
+.logo {
+    width: 506px;
+    height: 241px;
+    left: 467px;
+    top: 0px;
+    background: blue;
+    color: white;
+}
+
 .drop-down {
     background: linear-gradient(99.65deg, rgba(255, 255, 255, 0.8) 2.78%, rgba(255, 255, 255, 0.8) 97.53%), #B5FEA7;
-    border: 2px solid rgba(0, 0, 0, 0.6);
-    border-radius: 25px;
+    border: 1px solid #000000;
     padding: 10px 20px 10px 20px;
+    width: 150px;
+}
+
+.search-by-name {
+    width: 290px;
+    height: 44px;
+    left: 968px;
+    top: 273px;
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    padding: 10px 20px 10px 20px;
+    width: 150px;
+}
+
+.pokemon-card {
+    width: 144px;
+    height: 176px;
+    left: 82px;
+    top: 371px;
+    background: #EFB9FD;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.97);
+    border-radius: 25px;
+}
+
+.pokemon-number {
+    width: 87px;
+    height: 33px;
+    left: 110px;
+    top: 371px;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #333333;
+}
+
+.pokemon-image {
+    width: 142px;
+    height: 106px;
+    left: 83px;
+    top: 405px;
+    background: linear-gradient(126.38deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), #C5F3F1;
+}
+
+.pokemon-name {
+    width: 92px;
+    height: 43px;
+    left: 110px;
+    top: 504px;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 17px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #333333;
 }
