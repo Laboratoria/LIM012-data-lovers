@@ -13,7 +13,7 @@ body {
     position: absolute;
     width: 250px;
     height: 125px;
-    left: 550px;
+    left: 570px;
     top: 20px;
     color: white;
     background: url(img/pokemon-go-logo.png);
@@ -32,7 +32,7 @@ body {
 
 .order-by-type {
     position: absolute;
-    left: 155px;
+    left: 170px;
     top: 165px;
 }
 
@@ -46,7 +46,7 @@ body {
     position: absolute;
     width: 200px;
     height: 30px;
-    left: 1025px;
+    left: 1040px;
     top: 165px;
     background: #FFFFFF;
     border: 1px solid #000000;
@@ -61,13 +61,14 @@ body {
 }
 
 .one {
-    margin-left: 150px;
+    margin-left: 165px;
     margin-top: 225px;
 }
 
 .two {
-    margin-left: 150px;
+    margin-left: 165px;
     margin-top: 50px;
+    margin-bottom: 30px;
 }
 
 .pokemon-card {
@@ -120,4 +121,8 @@ body {
     align-items: center;
     text-align: center;
     color: #333333;
+}
+
+.pagination {
+    text-align: center;
 }
