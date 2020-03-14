@@ -11,42 +11,43 @@ body {
 
 .logo {
     position: absolute;
-    width: 300px;
-    height: 150px;
-    left: 500px;
-    top: 10px;
+    width: 250px;
+    height: 125px;
+    left: 550px;
+    top: 20px;
     color: white;
     background: url(img/pokemon-go-logo.png);
     background-repeat: no-repeat;
-    background-size: 70%;
+    background-size: 80%;
 }
 
 .drop-down {
     background: #B5FEA7;
     border: 1px solid #000000;
-    padding: 10px 20px 10px 20px;
-    width: 200px;
+    padding-left: 10px;
+    height: 30px;
+    width: 150px;
     font-size: 15px;
 }
 
 .order-by-type {
     position: absolute;
-    left: 100px;
-    top: 175px;
+    left: 155px;
+    top: 165px;
 }
 
 .order-alphabetically {
     position: absolute;
-    left: 325px;
-    top: 175px;
+    left: 350px;
+    top: 165px;
 }
 
 .search-by-name {
     position: absolute;
     width: 200px;
-    height: 40px;
-    left: 968px;
-    top: 175px;
+    height: 30px;
+    left: 1025px;
+    top: 165px;
     background: #FFFFFF;
     border: 1px solid #000000;
     padding: 10px 20px 10px 20px;
@@ -55,17 +56,25 @@ body {
 
 .row {
     display: flex;
-    flex-direction: column;
-    width: 100%;
-    align-items: stretch;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.one {
+    margin-left: 150px;
+    margin-top: 225px;
+}
+
+.two {
+    margin-left: 150px;
+    margin-top: 50px;
 }
 
 .pokemon-card {
-    position: absolute;
-    left: 100px;
-    top: 250px;
-    width: 140px;
-    height: 160px;
+    align-self: flex-start;
+    width: 120px;
+    height: 140px;
+    margin-right: 60px;
     background: #EFB9FD;
     border: 1px solid #000000;
     box-sizing: border-box;
@@ -90,8 +99,8 @@ body {
 }
 
 .pokemon-image {
-    width: 138px;
-    height: 92px;
+    width: 118px;
+    height: 75px;
     left: 83px;
     top: 400px;
     background: linear-gradient(126.38deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), #C5F3F1;
@@ -99,7 +108,7 @@ body {
 
 .pokemon-name {
     width: 92px;
-    height: 43px;
+    height: 45px;
     left: 110px;
     top: 504px;
     font-family: Lato;
