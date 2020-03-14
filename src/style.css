@@ -6,40 +6,66 @@
 body {
     background: url(img/background-hero.png);
     background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .logo {
-    width: 506px;
-    height: 241px;
-    left: 467px;
-    top: 0px;
+    position: absolute;
+    width: 300px;
+    height: 150px;
+    left: 500px;
+    top: 10px;
     color: white;
     background: url(img/pokemon-go-logo.png);
+    background-repeat: no-repeat;
+    background-size: 70%;
 }
 
 .drop-down {
     background: #B5FEA7;
     border: 1px solid #000000;
     padding: 10px 20px 10px 20px;
-    width: 150px;
+    width: 200px;
+    font-size: 15px;
+}
+
+.order-by-type {
+    position: absolute;
+    left: 100px;
+    top: 175px;
+}
+
+.order-alphabetically {
+    position: absolute;
+    left: 325px;
+    top: 175px;
 }
 
 .search-by-name {
-    width: 150px;
+    position: absolute;
+    width: 200px;
     height: 40px;
     left: 968px;
-    top: 273px;
+    top: 175px;
     background: #FFFFFF;
     border: 1px solid #000000;
     padding: 10px 20px 10px 20px;
     width: 150px;
 }
 
+.row {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: stretch;
+}
+
 .pokemon-card {
-    width: 144px;
-    height: 176px;
-    left: 82px;
-    top: 371px;
+    position: absolute;
+    left: 100px;
+    top: 250px;
+    width: 140px;
+    height: 160px;
     background: #EFB9FD;
     border: 1px solid #000000;
     box-sizing: border-box;
@@ -64,10 +90,10 @@ body {
 }
 
 .pokemon-image {
-    width: 142px;
-    height: 106px;
+    width: 138px;
+    height: 92px;
     left: 83px;
-    top: 405px;
+    top: 400px;
     background: linear-gradient(126.38deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), #C5F3F1;
 }
 
