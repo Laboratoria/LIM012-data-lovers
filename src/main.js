@@ -28,9 +28,9 @@ for (let i = 0; i < data.pokemon.length; i += 1) {
 
 window.onscroll = () => {
   if (document.documentElement.scrollTop > 100) {
-    document.getElementsByTagName('div')[0].classList.add('show');
+    document.querySelector('.go-top-container').classList.add('show');
   } else {
-    document.getElementsByTagName('div')[0].classList.remove('show');
+    document.querySelector('.go-top-container').classList.remove('show');
   }
 };
 
@@ -40,8 +40,6 @@ document.querySelector('.go-top-container').addEventListener('click', () => {
     behavior: 'smooth',
   });
 });
-
-
 //
 // console.log(data);
 /*

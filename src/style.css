@@ -26,6 +26,7 @@
     position: -webkit-sticky; /* Safari */
     top: -100px;
     z-index: 10;
+    box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.35);
 }
 
 .banner {
@@ -145,7 +146,7 @@ a {
     display: inline-block;
     text-align: center;
     border-radius: 5px;
-    box-shadow: 5px 5px 9px rgba(0, 0, 0, 0.15), -3px -3px 10px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.35);
     font-size: 1em;
     color: #3B4859;
     cursor: pointer;
@@ -240,6 +241,7 @@ h2 {
     transform: translate(-50%,-50%) scale(0);
     transition: .3s;
     z-index: -1;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.35);
 }
 
 .show{
