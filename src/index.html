@@ -6,11 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Data Lovers</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-    <div id="root"></div>
+    <main class="main-container">
+        <div class="logo"></div>
+        <nav>
+            <select class="drop-down order-by-type">
+                <option value="" disable selected hidden>TYPE</option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+            </select>
+
+            <select class="drop-down order-alphabetically">
+                <option value="" disable selected hidden>ORDER BY</option>
+                <option value="descending">A - Z</option>
+                <option value="ascending">Z - A</option>
+            </select>
+
+            <input type="search" id="search-by-name" class="search-by-name" placeholder="i.e. 'bulbasaur'">
+
+        </nav>
+    </main>
     <script src="main.js" type="module"></script>
 </body>
 

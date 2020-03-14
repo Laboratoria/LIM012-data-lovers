@@ -1,3 +1,14 @@
 * {
     box-sizing: border-box;
 }
+
+.main-container {
+    background: url(background-hero.png);
+}
+
+.drop-down {
+    background: linear-gradient(99.65deg, rgba(255, 255, 255, 0.8) 2.78%, rgba(255, 255, 255, 0.8) 97.53%), #B5FEA7;
+    border: 2px solid rgba(0, 0, 0, 0.6);
+    border-radius: 25px;
+    padding: 10px 20px 10px 20px;
+}
