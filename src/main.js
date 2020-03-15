@@ -31,14 +31,6 @@ const createPokemonType = (type) => {
   return divPokemonType;
 };
 
-const createPokemonTypeButton = (type) => {
-  const buttonPokemonType = document.createElement('button');
-  buttonPokemonType.className = 'pokemon-type';
-  buttonPokemonType.className += 'pokemon-type-button';
-  buttonPokemonType.appendChild(document.createTextNode(type));
-  buttonPokemonType.style.background = typeColors[type];
-  return buttonPokemonType;
-};
 
 const putPokemonImage = (dataImgPokemon, divCardImage) => {
   const img = document.createElement('IMG');
@@ -48,7 +40,7 @@ const putPokemonImage = (dataImgPokemon, divCardImage) => {
   divCardImage.appendChild(img);
 };
 
-/* eslint no-param-reassign: ["error", { "props": false }] */
+/* eslint no-param-reassign: ['error', { 'props': false }] */
 const putPokemonName = (dataNamePokemon, divCardName) => {
   divCardName.textContent = dataNamePokemon;
 };
@@ -89,27 +81,58 @@ const searchPokemon = () => {
   showCard(dinamicSearchPokemon(wordIntroduced));
 };
 
+
+const createTypeButton = (type) => {
+  const buttonPokemonType = document.createElement('button');
+  buttonPokemonType.className = 'pokemon-type';
+  buttonPokemonType.className += ' pokemon-type-button';
+  const iconPokemonType = document.createElement('img');
+  iconPokemonType.className = 'icon-pokemon-type';
+  iconPokemonType.setAttribute('src', `images/${type}.png`);
+  buttonPokemonType.appendChild(iconPokemonType);
+  buttonPokemonType.appendChild(document.createTextNode(type));
+  buttonPokemonType.style.background = typeColors[type];
+  return buttonPokemonType;
+};
+
+const pokemonTypes = Object.keys(typeColors);
+
+const putPokemonTypesOnLateralMenu = (aside) => {
+  const typesConteiner = document.createElement('div');
+  typesConteiner.id = 'types-container';
+  for (let key = 0; key < pokemonTypes.length; key += 1) {
+    typesConteiner.appendChild(createTypeButton(pokemonTypes[key]));
+  }
+  aside.appendChild(typesConteiner);
+};
+
+// let showLateralMenu = false;
+let firstShowLateralMenu = false;
+const showLateralMenu = () => {
+  // console.log('mostran menu lateral');
+  const asideLateralMenu = document.getElementsByTagName('aside')[0];
+  if (firstShowLateralMenu === false) {
+    putPokemonTypesOnLateralMenu(asideLateralMenu);
+    firstShowLateralMenu = true;
+  }
+  // asideLateralMenu.style.display = 'inline-block';
+  asideLateralMenu.style.width = '80%';
+};
+
+const hideLateralMenu = () => {
+  const asideLateralMenu = document.getElementsByTagName('aside')[0];
+  // asideLateralMenu.style.display = 'none';
+  asideLateralMenu.style.width = '0';
+};
+
 const inputBarSearch = document.getElementById('input-bar-search');
 inputBarSearch.addEventListener('keyup', searchPokemon);
 
-const putPokemonTypesOnLateralMenu = (aside) => {
-  for (let i = 0; i < typeColors.length; i += 1) {
-    aside.appendChild(createPokemonTypeButton(typeColors[i]));
-  }
-};
+const buttonFilterPokemon = document.getElementsByClassName('button-filter')[0];
+const buttonOrderPokemon = document.getElementsByClassName('button-filter')[1];
+const buttonCloseLateralMenu = document.getElementById('btn-close');
 
-let showLateralMenu = false;
-const showOrHideLateralMenu = (asideTypes) => {
-  if (showLateralMenu === false) {
-    asideTypes.style.display = 'inline';
-    showLateralMenu = true;
-  } else {
-    asideTypes.style.display = 'none';
-    showLateralMenu = false;
-  }
-};
-const buttonsFilterPokemon = document.getElementsByClassName('button-filter');
-const asideLateralMenu = document.getElementsByTagName('aside');
-buttonsFilterPokemon[0].addEventListener('click', showOrHideLateralMenu(asideLateralMenu[0]));
-buttonsFilterPokemon[1].addEventListener('click', showOrHideLateralMenu(asideLateralMenu[0]));
-putPokemonTypesOnLateralMenu(asideLateralMenu);
+buttonFilterPokemon.addEventListener('click', showLateralMenu);
+buttonOrderPokemon.addEventListener('click', showLateralMenu);
+buttonCloseLateralMenu.addEventListener('click', hideLateralMenu);
+buttonCloseLateralMenu.addEventListener('click', hideLateralMenu);
