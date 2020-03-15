@@ -27,6 +27,7 @@ header,footer{
   margin: 0;  
   height: auto;
   padding: .2em;
+  text-align: center;
 
 }
   #logo-pokemon{
@@ -51,8 +52,12 @@ nav{
     }
 
 aside{
-  display: none;
+  margin: 0;
+  width: 50%;
+  background:red;
+  /*display: none;*/
 }
+
 main{
   height: auto;
   padding: 1rem;

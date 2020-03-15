@@ -1,7 +1,7 @@
 import { dinamicSearchPokemon } from './data.js';
 // import data from './data/pokemon/pokemon.js';
 
-const colors = {
+const typeColors = {
   normal: '#AAA284',
   fire: '#FF9C06',
   grass: '#95C215',
@@ -27,8 +27,17 @@ const createPokemonType = (type) => {
   const divPokemonType = document.createElement('div');
   divPokemonType.className = 'pokemon-type';
   divPokemonType.appendChild(document.createTextNode(type));
-  divPokemonType.style.background = colors[type];
+  divPokemonType.style.background = typeColors[type];
   return divPokemonType;
+};
+
+const createPokemonTypeButton = (type) => {
+  const buttonPokemonType = document.createElement('button');
+  buttonPokemonType.className = 'pokemon-type';
+  buttonPokemonType.className += 'pokemon-type-button';
+  buttonPokemonType.appendChild(document.createTextNode(type));
+  buttonPokemonType.style.background = typeColors[type];
+  return buttonPokemonType;
 };
 
 const putPokemonImage = (dataImgPokemon, divCardImage) => {
@@ -82,3 +91,25 @@ const searchPokemon = () => {
 
 const inputBarSearch = document.getElementById('input-bar-search');
 inputBarSearch.addEventListener('keyup', searchPokemon);
+
+const putPokemonTypesOnLateralMenu = (aside) => {
+  for (let i = 0; i < typeColors.length; i += 1) {
+    aside.appendChild(createPokemonTypeButton(typeColors[i]));
+  }
+};
+
+let showLateralMenu = false;
+const showOrHideLateralMenu = (asideTypes) => {
+  if (showLateralMenu === false) {
+    asideTypes.style.display = 'inline';
+    showLateralMenu = true;
+  } else {
+    asideTypes.style.display = 'none';
+    showLateralMenu = false;
+  }
+};
+const buttonsFilterPokemon = document.getElementsByClassName('button-filter');
+const asideLateralMenu = document.getElementsByTagName('aside');
+buttonsFilterPokemon[0].addEventListener('click', showOrHideLateralMenu(asideLateralMenu[0]));
+buttonsFilterPokemon[1].addEventListener('click', showOrHideLateralMenu(asideLateralMenu[0]));
+putPokemonTypesOnLateralMenu(asideLateralMenu);
