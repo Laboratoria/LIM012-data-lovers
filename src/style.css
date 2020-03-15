@@ -5,7 +5,7 @@
 
 body {
     background: url(img/background-hero.png);
-    background-size: cover;
+    background-size: auto;
     background-repeat: no-repeat;
 }
 
@@ -14,7 +14,7 @@ body {
     width: 250px;
     height: 125px;
     left: 570px;
-    top: 20px;
+    top: 15px;
     color: white;
     background: url(img/pokemon-go-logo.png);
     background-repeat: no-repeat;
@@ -22,7 +22,7 @@ body {
 }
 
 .drop-down {
-    background: #B5FEA7;
+    background: #d7f5ef;
     border: 1px solid #000000;
     padding-left: 10px;
     height: 30px;
@@ -33,13 +33,13 @@ body {
 .order-by-type {
     position: absolute;
     left: 170px;
-    top: 165px;
+    top: 160px;
 }
 
 .order-alphabetically {
     position: absolute;
     left: 350px;
-    top: 165px;
+    top: 160px;
 }
 
 .search-by-name {
@@ -47,10 +47,10 @@ body {
     width: 200px;
     height: 30px;
     left: 1040px;
-    top: 165px;
-    background: #FFFFFF;
+    top: 160px;
+    background: #d7f5ef;
     border: 1px solid #000000;
-    padding: 10px 20px 10px 20px;
+    padding: 10px 10px;
     width: 150px;
 }
 
@@ -62,12 +62,12 @@ body {
 
 .one {
     margin-left: 165px;
-    margin-top: 225px;
+    margin-top: 220px;
 }
 
 .two {
     margin-left: 165px;
-    margin-top: 50px;
+    margin-top: 40px;
     margin-bottom: 30px;
 }
 
@@ -85,7 +85,7 @@ body {
 
 .pokemon-number {
     width: 87px;
-    height: 33px;
+    height: 30px;
     left: 110px;
     top: 371px;
     font-family: Lato;
@@ -101,7 +101,7 @@ body {
 
 .pokemon-image {
     width: 118px;
-    height: 75px;
+    height: 78px;
     left: 83px;
     top: 400px;
     background: linear-gradient(126.38deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), #C5F3F1;
@@ -109,7 +109,7 @@ body {
 
 .pokemon-name {
     width: 92px;
-    height: 45px;
+    height: 30px;
     left: 110px;
     top: 504px;
     font-family: Lato;
@@ -124,5 +124,13 @@ body {
 }
 
 .pagination {
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pagination a {
+    color: #d7f5ef;
+    font-weight: bolder;
+    padding: 8px 16px;
 }
