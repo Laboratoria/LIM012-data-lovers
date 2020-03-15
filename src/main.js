@@ -1,10 +1,8 @@
 import data from "./data/lol/lol.js";
 import {
   filterByName,
+  filteredbyClass
 } from "./data.js"
-import {
-  filteredbyClass,
-} from "./data.js";
 
 /*Muestra en interfaz dos mas saludo y letra capital*/
 const primeraInterfaz = document.getElementById("primeraInterfaz");
@@ -108,7 +106,7 @@ li.forEach(el => {
 });
 
 li.forEach(button => {
-  button.addEventListener("click", evt => {
+  button.addEventListener("click", () => {
     let term = button.getAttribute("data-value");
     // <p class="btn" data-value="ALL">ALL</p>
     if (term === "ALL") {

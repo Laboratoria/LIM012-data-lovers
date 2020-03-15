@@ -5,6 +5,7 @@ export const filterByName = (championList, term) => {
       return champion;
     }
   });
+  console.log(filteredChampions)
   return filteredChampions;
 };
 
@@ -14,13 +15,6 @@ export const filteredbyClass = (championList, term) => {
       return champion;
     }
   });
+  console.log(filteredbyClass)
   return filteredbyClass;
-};
-
-export const filteredDifficulty = () => {
-  return 'hola';
-};
-
-export const anotherExample = () => {
-  return 'OMG';
 };
