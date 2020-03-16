@@ -1,9 +1,10 @@
-// estas funciones son de ejemplo
+//Funcionalidad
 
 export const example = () => {
-  return 'example';
+  console.log('Hola console');
+  return 'Soy el return de example';
 };
 
-export const anotherExample = () => {
-  return 'OMG';
-};
+// export const search=()=>{
+  
+// }

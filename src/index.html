@@ -5,8 +5,53 @@
     <title>Data Lovers</title>
     <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
-    <div id="root"></div>
+    <header>
+      <nav>
+        <ul>
+          <li>Home</li>
+          <li>Pokedex</li>
+          <li>Candy Cal</li>
+          <li>Compare</li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div id="screen1" class="active">
+        <img src="img\pockLog.png" alt="logo">
+        <input type="text" name="" id="inputSearch" placeholder="Find your pokemon here!">
+        <img id="searchIcon" src="img\lupita.png" alt="lensIcon">   
+      </div>
+      
+      <div id="screen2" class="inactive">
+        <!-- <section id="s2img">
+          <span>numero</span>
+          <img src="" alt="pokemonImage">
+          <span id="namePok"></span>
+        </section> -->
+        <!-- <section id="s2about">
+          <p>About
+            <img src="" alt="type">
+          </p>
+        </section>
+        <section id="s2info">
+          <p>Type: <span>"Show type here"</span></p>
+          <p>Height: <span>"Show height here"</span></p>
+          <p>Weight: <span>"Show weight here"</span></p>
+          <p>Special Attack: <span>"Show special Attack here"</span></p>
+        </section>
+        <section id="weakRes">
+          <p>Weakness: <span>"Show weakness here"</span></p>
+          <p>Resistance: <span>"Show resist here"</span></p>
+        </section> -->
+      </div>  
+    </main>
+    
+   <footer>
+    <span>© 2020 Pokemon, Inc. All rights reserved.</span>
+   </footer>
+    
     <script src="main.js" type="module"></script>
   </body>
 </html>

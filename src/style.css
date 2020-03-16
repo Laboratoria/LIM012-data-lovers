@@ -1,0 +1,36 @@
+body{
+     background-image:url("img/pokBack.jpg");
+     background-size:cover;
+     color: #ffffff;
+}
+ul{
+    list-style: none;
+    display: inline;
+}
+nav{
+
+}
+
+#screen1 img{
+   
+}
+input{
+
+}
+
+
+section{
+    
+}
+
+.active{
+    display: block;
+}
+
+.inactive{
+    display: none;
+}
+
+span{
+    font-family: cursive;
+}
