@@ -1,4 +1,4 @@
-# Atletas Olímpicos
+# Atletas Olímpicos [ ESTE SERA NUESTRO TRABAJO ]
 
 El máximo sueño de muchos atletas es poder representar a su país como deportistas en los Juegos Olímpicos. Para ello deben invertir miles de horas de entrenamiento para estar preparados física y técnicamente y con la mejor táctica de juego. Sin embargo la preparación de un atleta va mucho más allá, deben estudiar las estadísticas de Juegos Olímpicos pasados, conocer cuáles fueron los participantes más destacados y en qué disciplinas, para luego poder investigar sobre ellos y sus tácticas de juego a mayor profundidad.
 
