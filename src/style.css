@@ -1,136 +1,138 @@
-* {
+html {
     box-sizing: border-box;
-    font-family: Lato;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
 }
 
 body {
     background: url(img/background-hero.png);
     background-size: auto;
     background-repeat: no-repeat;
+    font-family: Lato;
 }
 
-.logo {
+.logo-image {
     position: absolute;
-    width: 250px;
-    height: 125px;
-    left: 570px;
-    top: 15px;
-    color: white;
+    width: 50%;
+    height: 50%;
+    left: 37%;
+    top: 2%;
     background: url(img/pokemon-go-logo.png);
     background-repeat: no-repeat;
-    background-size: 80%;
+    background-size: 55%;
+}
+
+.filter-bar {
+    display: flex;
+    flex-flow: row nowrap;
+    margin-top: 10.5%;
+    margin-left: 5%;
+    width: 82.5%;
 }
 
 .drop-down {
     background: #d7f5ef;
     border: 1px solid #000000;
-    padding-left: 10px;
-    height: 30px;
-    width: 150px;
-    font-size: 15px;
-}
-
-.order-by-type {
-    position: absolute;
-    left: 170px;
-    top: 160px;
-}
-
-.order-alphabetically {
-    position: absolute;
-    left: 350px;
-    top: 160px;
+    border-radius: 5px;
+    padding: 0.3%;
+    padding-right: 5%;
+    font-size: 0.8em;
+    margin-left: 5%;
 }
 
 .search-by-name {
-    position: absolute;
-    width: 200px;
-    height: 30px;
-    left: 1040px;
-    top: 160px;
+    margin-left: auto;
     background: #d7f5ef;
     border: 1px solid #000000;
     padding: 10px 10px;
     width: 150px;
 }
 
+.magnifying-glass {
+    height: 3.5%;
+    width: 3.5%;
+}
+
+
+/* grid system - mobile first */
+
 .row {
     display: flex;
-    flex-direction: row;
+    flex-flow: row wrap;
     justify-content: flex-start;
+    margin-left: 9%;
 }
 
-.one {
-    margin-left: 165px;
-    margin-top: 220px;
+[class*="col-"] {
+    margin-right: 5%;
+    margin-top: 3%;
+    margin-bottom: 1.5%;
 }
 
-.two {
-    margin-left: 165px;
-    margin-top: 40px;
-    margin-bottom: 30px;
-}
 
-.pokemon-card {
-    align-self: flex-start;
-    width: 120px;
-    height: 140px;
-    margin-right: 60px;
-    background: #EFB9FD;
-    border: 1px solid #000000;
-    box-sizing: border-box;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.97);
-    border-radius: 25px;
-}
+/* Desktop screen sizes */
 
-.pokemon-number {
-    width: 87px;
-    height: 30px;
-    left: 110px;
-    top: 371px;
-    font-family: Lato;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 18px;
-    line-height: 22px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    color: #333333;
-}
-
-.pokemon-image {
-    width: 118px;
-    height: 78px;
-    left: 83px;
-    top: 400px;
-    background: linear-gradient(126.38deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), #C5F3F1;
-}
-
-.pokemon-name {
-    width: 92px;
-    height: 30px;
-    left: 110px;
-    top: 504px;
-    font-family: Lato;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 14px;
-    line-height: 17px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    color: #333333;
-}
-
-.pagination {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.pagination a {
-    color: #d7f5ef;
-    font-weight: bolder;
-    padding: 8px 16px;
+@media only screen and (min-width: 768px) {
+    .logo-image {
+        position: absolute;
+        width: 25%;
+        height: 20%;
+        left: 41.5%;
+        top: 2%;
+        background: url(img/pokemon-go-logo.png);
+        background-repeat: no-repeat;
+        background-size: 55%;
+    }
+    .col-1 {
+        flex: 0 0 8%;
+        background: #EFB9FD;
+        border: 1px solid #000000;
+        box-sizing: border-box;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.97);
+        border-radius: 25px;
+    }
+    .pokemon-number {
+        width: 87px;
+        height: 30px;
+        left: 110px;
+        top: 371px;
+        line-height: 22px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        color: #333333;
+    }
+    .pokemon-image {
+        width: 118px;
+        height: 78px;
+        left: 83px;
+        top: 400px;
+        background: linear-gradient(126.38deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), #C5F3F1;
+    }
+    .pokemon-name {
+        width: 92px;
+        height: 30px;
+        left: 110px;
+        top: 504px;
+        font-size: 14px;
+        line-height: 17px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        color: #333333;
+    }
+    .pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .pagination a {
+        color: #d7f5ef;
+        font-weight: bolder;
+        padding: 8px 16px;
+    }
 }

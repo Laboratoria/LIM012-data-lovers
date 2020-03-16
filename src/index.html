@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>PokeDesk</title>
+    <title>PokéDesk</title>
     <link rel="shortcut icon" href="img/favicon-32.png" type="image/x-icon" />
     <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
@@ -13,15 +13,11 @@
 
 <body>
 
-    <main class="main-container">
+    <header>
 
+        <div class="logo-image"></div>
 
-        <a href="#">
-            <div class="logo"></div>
-        </a>
-
-        <nav>
-
+        <div class="filter-bar">
 
             <select class="drop-down order-by-type">
                 <option value="" disabled selected>TYPE</option>
@@ -54,106 +50,32 @@
 
 
             <input type="search" id="search-by-name" class="search-by-name" placeholder="i.e. 'bulbasaur'">
+            <img src="img/magnifying-glass.png" alt="magnifying-glass" class="magnifying-glass" />
 
-        </nav>
+        </div>
+    </header>
 
-        <section class="row one">
-            <a href="#">
-                <div class="pokemon-card">
-                    <div class="pokemon-number">
-                        <p class="pokemon-number"></p>
-                    </div>
-                    <div class="pokemon-image"></div>
-                    <div class="pokemon-name">
-                        <p class="pokemon-name"></p>
-                    </div>
-                </div>
-            </a>
+    <div class="row">
 
-            <div class="pokemon-card">
-                <div class="pokemon-number"></div>
-                <div class="pokemon-image"></div>
-                <div class="pokemon-name"></div>
-            </div>
-
-            <div class="pokemon-card">
-                <div class="pokemon-number"></div>
-                <div class="pokemon-image"></div>
-                <div class="pokemon-name"></div>
-            </div>
-
-            <div class="pokemon-card">
-                <div class="pokemon-number"></div>
-                <div class="pokemon-image"></div>
-                <div class="pokemon-name"></div>
-            </div>
-
-            <div class="pokemon-card">
-                <div class="pokemon-number"></div>
-                <div class="pokemon-image"></div>
-                <div class="pokemon-name"></div>
-            </div>
-
-            <div class="pokemon-card">
-                <div class="pokemon-number"></div>
-                <div class="pokemon-image"></div>
-                <div class="pokemon-name"></div>
-            </div>
-
-        </section>
-
-        <section class="row two">
-
-            <div class="pokemon-card">
-                <div class="pokemon-number"></div>
-                <div class="pokemon-image"></div>
-                <div class="pokemon-name"></div>
-            </div>
-
-            <div class="pokemon-card">
-                <div class="pokemon-number"></div>
-                <div class="pokemon-image"></div>
-                <div class="pokemon-name"></div>
-            </div>
-
-            <div class="pokemon-card">
-                <div class="pokemon-number"></div>
-                <div class="pokemon-image"></div>
-                <div class="pokemon-name"></div>
-            </div>
-
-            <div class="pokemon-card">
-                <div class="pokemon-number"></div>
-                <div class="pokemon-image"></div>
-                <div class="pokemon-name"></div>
-            </div>
-
-            <div class="pokemon-card">
-                <div class="pokemon-number"></div>
-                <div class="pokemon-image"></div>
-                <div class="pokemon-name"></div>
-            </div>
-
-            <div class="pokemon-card">
-                <div class="pokemon-number"></div>
-                <div class="pokemon-image"></div>
-                <div class="pokemon-name"></div>
-            </div>
-
-        </section>
-
-        <div class="pagination">
-            <a href="#">&laquo;</a>
-            <a href="#">&lsaquo;</a>
-            <a href="#">1</a>
-            <a href="#">2</a>
-            <a href="#">3</a>
-            <a href="#">4</a>
-            <a href="#">&rsaquo;</a>
-            <a href="#">&raquo;</a>
+        <div class="col-1">
+            <div class="pokemon-number"></div>
+            <div class="pokemon-image"></div>
+            <div class="pokemon-name"></div>
         </div>
 
-    </main>
+    </div>
+
+    <div class="pagination">
+        <a href="#">&laquo;</a>
+        <a href="#">&lsaquo;</a>
+        <a href="#">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">&rsaquo;</a>
+        <a href="#">&raquo;</a>
+    </div>
+
     <script src="main.js" type="module"></script>
 </body>
 
