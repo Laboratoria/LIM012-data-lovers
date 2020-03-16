@@ -12,7 +12,7 @@ body {
     background: url(img/background-hero.png);
     background-size: auto;
     background-repeat: no-repeat;
-    font-family: Lato;
+    font-family: 'Lato', sans-serif;
 }
 
 .logo-image {

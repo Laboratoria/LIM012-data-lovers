@@ -35,3 +35,11 @@ historia para el usuario
 que puede darle click
 - deberia ser todo en una sola página, evitar hacer 2 páginas diferentes
 - las historias deben ser diferentes  e intentar cumplir con todos los objetivos de aprendizaje
+
+Feedback N°5: (Coach Gaby) 11/03
+- 
+
+Feedback N°6: (usuario) 12/03
+- el color de los botones debería ser del mismo color que las barras desplegables
+- 
+
