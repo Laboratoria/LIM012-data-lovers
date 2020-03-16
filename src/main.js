@@ -127,6 +127,14 @@ const hideLateralMenu = () => {
 
 const inputBarSearch = document.getElementById('input-bar-search');
 inputBarSearch.addEventListener('keyup', searchPokemon);
+inputBarSearch.addEventListener('keypress', (e)=> {
+  let key = e.keyCode || e.which;
+  let tecla = String.fromCharCode(key).toLowerCase();
+  const letras = " áéíóúabcdefghijklmnñopqrstuvwxyz";
+
+ if(letras.indexOf(tecla)==-1){
+     event.preventDefault();
+ }}, false);
 
 const buttonFilterPokemon = document.getElementsByClassName('button-filter')[0];
 const buttonOrderPokemon = document.getElementsByClassName('button-filter')[1];

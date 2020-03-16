@@ -3,7 +3,7 @@ import data from './data/pokemon/pokemon.js';
 export const dinamicSearchPokemon = (wordIntroduced) => {
   const pokemonFilter = [];
   let word;
-  for (let i = 0; i < data.pokemon.length; i++) {
+  for (let i = 0; i < data.pokemon.length; i += 1) {
     word = data.pokemon[i].name.substring(0, wordIntroduced.length);
     if (wordIntroduced.length <= data.pokemon[i].name.length && wordIntroduced.length !== 0) {
       if (wordIntroduced.toLowerCase() === word.toLowerCase()) {
