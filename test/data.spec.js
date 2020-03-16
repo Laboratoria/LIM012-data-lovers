@@ -1,23 +1,20 @@
-import { example, anotherExample } from '../src/data.js';
+import { dinamicSearchPokemon } from '../src/data.js';
 
-
-describe('example', () => {
-  it('is a function', () => {
-    expect(typeof example).toBe('function');
+// primer sprint : test de segunda historia [16 de Marzo]
+describe('dinamicSearchPokemon', () => {
+  it('deberia ser una funcion', () => {
+    expect(typeof dinamicSearchPokemon).toBe('function');
   });
 
-  it('returns `example`', () => {
-    expect(example()).toBe('example');
-  });
-});
-
-
-describe('anotherExample', () => {
-  it('is a function', () => {
-    expect(typeof anotherExample).toBe('function');
+  it('deberia retornar mensaje para "piic"', () => {
+    const numberOfResult = dinamicSearchPokemon('piic').length;
+    expect(numberOfResult).toEqual(0);
   });
 
-  it('returns `anotherExample`', () => {
-    expect(anotherExample()).toBe('OMG');
+  it('retorna una lista de pokemones con nombre que coincida con "ch"', () => {
+    const result = dinamicSearchPokemon('pikachu');
+    for (let i = 0; i < result.length; i += 1) {
+      expect(result[i].name).toContain('pikachu');
+    }
   });
 });
