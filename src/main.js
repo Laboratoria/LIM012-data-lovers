@@ -1,4 +1,5 @@
-import { dinamicSearchPokemon } from './data.js';
+import { dinamicSearchPokemon} from './data.js';
+
 import data from './data/pokemon/pokemon.js';
 
 const typeColors = {
@@ -30,7 +31,6 @@ const createPokemonType = (type) => {
   divPokemonType.style.background = typeColors[type];
   return divPokemonType;
 };
-
 
 const putPokemonImage = (dataImgPokemon, divCardImage) => {
   const img = document.createElement('IMG');
