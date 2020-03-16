@@ -31,7 +31,7 @@
 
 .banner {
     height: 100px;
-    background: url(/src/assets/pokebolas-01.png);
+    background: url(assets/pokebolas-01.png);
     line-height: 100px;
 }
 
