@@ -669,6 +669,17 @@ li.active a {
     padding: 6px;
 }
 
+.builds {
+    background-color: #0ca6beb7;
+    border-radius: 25px 0px 25px 0px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    height: 50px;
+    text-align: center;
+    color: #dfc981;
+    align-items: center;
+    text-decoration: none;
+}
+
 
 /*modal*/
-  

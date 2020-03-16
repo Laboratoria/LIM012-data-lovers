@@ -1,19 +1,19 @@
 // estas funciones son de ejemplo
- _feature-branches_
 export const example = () => {
-  return "example";
+    return "example";
 };
 
 export const anotherExample = () => {
-  return "OMG";
-=======
+    return "OMG";
+}
+
 export const data = () => {
     return 'example';
 };
 
 export const anotherExample = () => {
     return 'OMG';
-master
+    master
 };
 
 export default data;
