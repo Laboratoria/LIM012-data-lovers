@@ -10,5 +10,5 @@ console.log(myObject.data.Aatrox.id);
 
 const botonEnHtml = document.getElementById('botonEnHtml');
 botonEnHtml.addEventListener('click', () => {
-  document.getElementById('img').src = myObject.data.Aatrox.img;
+  document.getElementById('img').src = myObject.data.Aatrox.splash;
 });
