@@ -9,11 +9,14 @@ html {
 }
 
 body {
-    background: url(img/background-hero.png);
+    background: url(img/background-pokemon.png);
     background-size: auto;
     background-repeat: no-repeat;
     font-family: 'Lato', sans-serif;
 }
+
+
+/* grid system - mobile first */
 
 .logo-image {
     position: absolute;
@@ -29,8 +32,8 @@ body {
 .filter-bar {
     display: flex;
     flex-flow: row nowrap;
-    margin-top: 10.5%;
-    margin-left: 5%;
+    margin-top: 27.5%;
+    margin-left: 25%;
     width: 82.5%;
 }
 
@@ -45,20 +48,14 @@ body {
 }
 
 .search-by-name {
-    margin-left: auto;
-    background: #d7f5ef;
-    border: 1px solid #000000;
-    padding: 10px 10px;
-    width: 150px;
+    display: none;
 }
 
 .magnifying-glass {
-    height: 3.5%;
-    width: 3.5%;
+    height: 5%;
+    width: 5%;
+    margin-left: 5%;
 }
-
-
-/* grid system - mobile first */
 
 .row {
     display: flex;
@@ -67,7 +64,13 @@ body {
     margin-left: 9%;
 }
 
-[class*="col-"] {
+.pokemon-card {
+    flex: 0 0 8%;
+    background: #EFB9FD;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.97);
+    border-radius: 25px;
     margin-right: 5%;
     margin-top: 3%;
     margin-bottom: 1.5%;
@@ -87,7 +90,27 @@ body {
         background-repeat: no-repeat;
         background-size: 55%;
     }
-    .col-1 {
+    .filter-bar {
+        display: flex;
+        flex-flow: row nowrap;
+        margin-top: 10.5%;
+        margin-left: 5%;
+        width: 82.5%;
+    }
+    .search-by-name {
+        display: inline-block;
+        margin-left: auto;
+        background: #d7f5ef;
+        border: 1px solid #000000;
+        padding: 10px 10px;
+        width: 150px;
+    }
+    .magnifying-glass {
+        height: 3.5%;
+        width: 3.5%;
+        margin-left: 0;
+    }
+    .pokemon-card {
         flex: 0 0 8%;
         background: #EFB9FD;
         border: 1px solid #000000;
@@ -127,7 +150,7 @@ body {
     }
     .pagination {
         display: flex;
-        justify-content: center;
+        margin-left: 36.5%;
         align-items: center;
     }
     .pagination a {

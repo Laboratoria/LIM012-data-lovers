@@ -1,5 +1,1 @@
-// estas funciones son de ejemplo
-
-export const example = () => 'example';
-
-export const anotherExample = () => 'OMG';
+export const filterByType = () => 'example';
