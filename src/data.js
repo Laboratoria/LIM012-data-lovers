@@ -13,3 +13,13 @@ export const dinamicSearchPokemon = (wordIntroduced) => {
   }
   return pokemonFilter;
 };
+
+export const onlyText = (e) => {
+  const key = e.keyCode || e.which;
+  const tecla = String.fromCharCode(key).toLowerCase();
+  const letras = ' áéíóúabcdefghijklmnñopqrstuvwxyz';
+
+  if (letras.indexOf(tecla) === -1) {
+    e.preventDefault();
+  }
+};

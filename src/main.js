@@ -1,4 +1,4 @@
-import { dinamicSearchPokemon} from './data.js';
+import { dinamicSearchPokemon, onlyText } from './data.js';
 
 import data from './data/pokemon/pokemon.js';
 
@@ -88,7 +88,7 @@ const searchPokemon = () => {
     showCard(dinamicSearchPokemon(wordIntroduced));
   } else if (numberOfResult === 0 && wordIntroduced.length !== 0) {
     showMessageOfSearch(cardContainer);
-  }else{
+  } else {
     showCard(data.pokemon);
   }
 };
@@ -137,14 +137,7 @@ const hideLateralMenu = () => {
 
 const inputBarSearch = document.getElementById('input-bar-search');
 inputBarSearch.addEventListener('keyup', searchPokemon);
-inputBarSearch.addEventListener('keypress', (e)=> {
-  let key = e.keyCode || e.which;
-  let tecla = String.fromCharCode(key).toLowerCase();
-  const letras = " áéíóúabcdefghijklmnñopqrstuvwxyz";
-
- if(letras.indexOf(tecla)==-1){
-     event.preventDefault();
- }}, false);
+inputBarSearch.addEventListener('keypress', onlyText, false);
 
 const buttonFilterPokemon = document.getElementsByClassName('button-filter')[0];
 const buttonOrderPokemon = document.getElementsByClassName('button-filter')[1];
