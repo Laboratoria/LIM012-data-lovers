@@ -6970,4 +6970,4 @@ export default {
       }
     }
   }
-};
+} ;
