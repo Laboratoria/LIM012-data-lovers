@@ -13,17 +13,19 @@
 }
 
 body{
-  --color-blue-1: #1B262C;
-  --color-blue-2: #0F4C75;
-  --color-blue-3: #3282B8;
-  --color-blue-4: #EEEEEE;
+  --color-blue-1: #151E23;
+  --color-blue-2: #003e51;
+  --color-blue-3: #04617e;
+  --color-blue-4: #fff;
 
 }
 .root{
   width: 100%;
-  background: #eee;
+  /* background:var(--color-blue-1); */
+  background-image: linear-gradient(to right, #051937, #002c47, #003e51, #005156, #2a6258);
   display: grid;
   grid-template-rows: repeat(5,auto);
+  /* overflow-x: hidden; */
 }
 
 header,footer{
@@ -47,10 +49,11 @@ nav{
 }
   nav span{
     width: auto;
-    padding-right: .5rem;
+    /* padding-right: .5rem; */
+    padding: .5em .5em .5em 0;
   }
     #logo-pokedex{
-      font-size: 1rem;
+      font-size: .8em;
       color: white;
       font-weight: bolder;        
       font-family: 'Rammetto One', cursive;
@@ -104,7 +107,6 @@ aside{
 }
   .pokemon-type-button{
     border: none;
-    background: blue;
     width: 100px;
     padding: .5rem;
     text-transform: capitalize;
@@ -163,10 +165,10 @@ main{
 }
 .button-filter{
   display: inline-block;
-  background: #fff;
+  background:var(--color-blue-4);
   margin: 0;
   padding: 1em 0;
-  color: #3282B8;
+  color: var(--color-blue-3);
   font-size: 14px;  
   width: 49.5%;  
   border: none;
@@ -177,19 +179,23 @@ main{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  color: var(--color-blue-4);
+  min-height: 400px;
 }
 .pokemon-card{
   width: 150px;
   height:200px;
-  box-shadow: 0 5px 10px rgb(93, 95, 94);
-  border-radius: 5px;
+  /* box-shadow: 0 5px 10px rgb(93, 95, 94); */
+  border-radius: 10px 0 10px 0;
   margin: 7px;
+  border: 2px solid var(--color-blue-4);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background:#00818a;  
+  /* background:#a2b4b8;   */
   box-shadow: 10px;
+  /* opacity: 0.5 */
 }
 .pokemon-name{
   padding: .3rem 0;
@@ -197,7 +203,7 @@ main{
   height: 25px ;
   text-align: center;
   text-transform: capitalize;
-  color: white;
+  color:var(--color-blue-4);
 }
   #img-pokemon{
     width: 140px;
@@ -210,7 +216,7 @@ main{
 }
   .pokemon-type{
     border-radius: 3px;
-    color: white;
+    color: var(--color-blue-4);
     font-size: 12px;
     display: inline;
     padding: .3rem;

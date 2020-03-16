@@ -1,5 +1,5 @@
 import { dinamicSearchPokemon } from './data.js';
-// import data from './data/pokemon/pokemon.js';
+import data from './data/pokemon/pokemon.js';
 
 const typeColors = {
   normal: '#AAA284',
@@ -75,10 +75,22 @@ const showCard = (dataPokemon) => {
   }
 };
 
+const showMessageOfSearch = (container) => {
+  container.innerHTML = '<p>Lo sentimos, no encontramos resultados que coincidan con su búsqueda</p>';
+};
+
 const searchPokemon = () => {
-  document.getElementById('card-container').innerHTML = '';
+  const cardContainer = document.getElementById('card-container');
+  cardContainer.innerHTML = '';
   const wordIntroduced = document.getElementById('input-bar-search').value;
-  showCard(dinamicSearchPokemon(wordIntroduced));
+  const numberOfResult = dinamicSearchPokemon(wordIntroduced).length;
+  if (numberOfResult > 0) {
+    showCard(dinamicSearchPokemon(wordIntroduced));
+  } else if (numberOfResult === 0 && wordIntroduced.length !== 0) {
+    showMessageOfSearch(cardContainer);
+  }else{
+    showCard(data.pokemon);
+  }
 };
 
 
@@ -115,13 +127,11 @@ const showLateralMenu = () => {
     putPokemonTypesOnLateralMenu(asideLateralMenu);
     firstShowLateralMenu = true;
   }
-  // asideLateralMenu.style.display = 'inline-block';
   asideLateralMenu.style.width = '80%';
 };
 
 const hideLateralMenu = () => {
   const asideLateralMenu = document.getElementsByTagName('aside')[0];
-  // asideLateralMenu.style.display = 'none';
   asideLateralMenu.style.width = '0';
 };
 
@@ -144,3 +154,14 @@ buttonFilterPokemon.addEventListener('click', showLateralMenu);
 buttonOrderPokemon.addEventListener('click', showLateralMenu);
 buttonCloseLateralMenu.addEventListener('click', hideLateralMenu);
 buttonCloseLateralMenu.addEventListener('click', hideLateralMenu);
+
+
+const loadPage = () => {
+  const wordIntroduced = document.getElementById('input-bar-search').value;
+  if (wordIntroduced.length === 0) {
+    showCard(data.pokemon);
+  }
+};
+
+
+window.onload = loadPage;
