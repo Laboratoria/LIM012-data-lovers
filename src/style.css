@@ -8,7 +8,7 @@
     font-family: 'Rubik', sans-serif;
 }
 
-.bottom-margin {
+.margin-bottom {
     margin-bottom: 3em;
 }
 
@@ -128,10 +128,19 @@ a {
     cursor: pointer;
 }
 
-.generations {
+.cards-distribution {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    /* border: 1px solid black; */
+    margin-bottom: 1.5em;
+    width: 100%;
+}
+
+.distribution-search {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
     /* border: 1px solid black; */
     margin-bottom: 1.5em;
     width: 100%;
@@ -162,7 +171,7 @@ a {
     text-align: left;
 }
 
-.subtitulos {
+.subtitles {
     /* width: 100%; */
     /* border: 1px solid black; */
     height: 40px;
