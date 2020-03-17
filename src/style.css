@@ -4,7 +4,6 @@
   outline: none;
   box-sizing: border-box;
 }
-
 /*Tipos de letras 
 - font-family: 'Cuprum', sans-serif;
 - font-family: 'Trade Winds', cursive;
@@ -21,7 +20,6 @@
 Invision https://mararodriguez597039.invisionapp.com/freehand/datalovers-lol-AYIeTKBpY?v=X6JP0IPtqctW100IADvc3w%3D%3D&linkshare=urlcopied
 Links FIGMA https://www.figma.com/file/lr2q13Jdqztgdy6ag3oV7a/Untitled?node-id=77%3A177
 TRELLO : https://trello.com/b/ZbxxiHvY/datalovers */
-
 body,
 html {
   margin: 0;
@@ -226,7 +224,6 @@ html {
   letter-spacing: 10px;
   font-size: 25px;
   /*
-    
     cursor: pointer;
     
     text-shadow: #B48643; */
@@ -235,7 +232,6 @@ html {
     border-bottom: 3px solid #B48643;
      */
 }
-
 /* #mainElements3 input:hover {
     border-bottom: 3px solid #07CBE9;
     letter-spacing: 10px;
@@ -245,9 +241,10 @@ html {
 
 .label_name {
   position: absolute;
-  width: 102%;
+  width: 100%;
   height: 50%;
   bottom: 0px;
+  /* margin-left: 25px; */
   margin-bottom: 75px;
   padding-bottom: 5px;
   color: wheat;
@@ -260,11 +257,11 @@ html {
 .label_name::after {
   content: "";
   position: absolute;
-  width: 98%;
+  width: 100%;
   height: 100%;
   bottom: -1, 2px;
-  left: 3px;
-  margin-right: -1px;
+  left: 0px;
+  /* margin-right: -1px; */
   /* border-bottom: 2px solid red; */
   transform: translateX(-100%);
   transition: transform 0.3s ease;
@@ -272,7 +269,10 @@ html {
 
 .letraName {
   position: absolute;
-  left: 90px;
+  /* text-align: center; */
+  /* width: 400px;
+        margin-top: 40%; */
+  left: 30px;
   transition: all 0.3s ease;
   bottom: 0px;
 }
@@ -286,9 +286,9 @@ html {
 }
 
 #inputName:focus + .label_name .letraName {
-  transform: translateY(-230%);
+  transform: translateY(-180%);
   font-size: 15px;
-  left: 68px;
+  left: 10px;
   letter-spacing: 9px;
   text-shadow: 1px 1px 8px #feb412, 0 0 1em #07cbe9, 0 0 0.2em #07cbe9;
 }
@@ -699,11 +699,12 @@ li.active a {
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f1f1f1;
+  background-color: #dfdfdf;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
   padding: 7px;
+  color: #a87e3e;
   cursor: pointer;
 }
 
@@ -719,5 +720,3 @@ li.active a {
 .dropdown:hover .dropdown-content {
   display: block;
 }
-
-/*modal*/
