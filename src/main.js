@@ -29,11 +29,7 @@ const championList = lol.data;
       console.log(champioF);
     
 
-   /*for(let i = 0; i< championList.length; i++){
-    const rolChampions = championList[i].tags;
-    let fighter=[];
-    for( let j = 0; j < rolChampions.length; j++){
-      if(rolChampions[j]==='Fighter'){
+   /*for(let i = 0; i< championList.length; i++){git
         fighter.push(rolChampions[j]);
         console.log(fighter);
       }
