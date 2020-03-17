@@ -18,3 +18,38 @@ export const filteredbyClass = (championList, term) => {
   console.log(filteredbyClass)
   return filteredbyClass;
 };
+
+export const filteredByDifficulty = (championList, term) => {
+  let filteredByDifficult;
+  console.log(term)
+
+  if (term === "1") {
+    console.log(term)
+    filteredByDifficult = Object.values(championList).filter(champion => {
+      if (champion.info.difficulty < 4) {
+        return champion
+      }
+    })
+  }
+
+  if (term === "2") {
+    console.log(term)
+    filteredByDifficult = Object.values(championList).filter(champion => {
+      if (champion.info.difficulty > 3 && champion.info.difficulty < 7) {
+        return champion
+      }
+    })
+  }
+
+  if (term === "3") {
+    console.log(term)
+    filteredByDifficult = Object.values(championList).filter(champion => {
+      if (champion.info.difficulty > 6) {
+        return champion
+      }
+    })
+  }
+
+  console.log(filteredByDifficult.length)
+  return filteredByDifficult;
+};
