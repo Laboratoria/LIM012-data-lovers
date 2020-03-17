@@ -1,7 +1,5 @@
 //Funcionalidad
 import { inputSearchElem } from './main.js';
-
-
 //muestro la info
 export const showInfo=(pokes)=>{
   const inputValue=inputSearchElem.value;
@@ -37,7 +35,5 @@ export const showInfo=(pokes)=>{
           return 'El nombre ingresado no es correcto';
       }   
 }
-
-
 //<p>Special Attack: <span>${poke.special-attack}</span></p> 
 
