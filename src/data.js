@@ -5,7 +5,7 @@ export const filterByName = (championList, term) => {
       return champion;
     }
   });
-  console.log(filteredChampions)
+
   return filteredChampions;
 };
 
@@ -15,16 +15,13 @@ export const filteredbyClass = (championList, term) => {
       return champion;
     }
   });
-  console.log(filteredbyClass)
   return filteredbyClass;
 };
 
 export const filteredByDifficulty = (championList, term) => {
   let filteredByDifficult;
-  console.log(term)
 
   if (term === "1") {
-    console.log(term)
     filteredByDifficult = Object.values(championList).filter(champion => {
       if (champion.info.difficulty < 4) {
         return champion
@@ -33,7 +30,6 @@ export const filteredByDifficulty = (championList, term) => {
   }
 
   if (term === "2") {
-    console.log(term)
     filteredByDifficult = Object.values(championList).filter(champion => {
       if (champion.info.difficulty > 3 && champion.info.difficulty < 7) {
         return champion
@@ -42,7 +38,6 @@ export const filteredByDifficulty = (championList, term) => {
   }
 
   if (term === "3") {
-    console.log(term)
     filteredByDifficult = Object.values(championList).filter(champion => {
       if (champion.info.difficulty > 6) {
         return champion
@@ -50,6 +45,5 @@ export const filteredByDifficulty = (championList, term) => {
     })
   }
 
-  console.log(filteredByDifficult.length)
   return filteredByDifficult;
 };
