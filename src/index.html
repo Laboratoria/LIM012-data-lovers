@@ -104,14 +104,26 @@
 
             <span class="line"></span>
             <div class="difficulty levelBtn">
-              <img id="arrow" src="assets/arrow.png" alt="" />
               <div class="dropdown">
+                <img id="arrow" src="assets/arrow.png" alt="" />
                 <span>Level</span>
                 <div id="myDropdown" class="dropdown-content">
                   <span>difficulty of the champion</span>
-                  <div class="difficulty1" data-value="1" id="easy">easy</div>
-                  <div class="difficulty1" data-value="2" id="medium">medium</div>
-                  <div class="difficulty1" data-value="3" id="hard">hard</div>
+                  <div class="difficulty1" data-value="1" id="easy">
+                    <div class="levelFull"></div>
+                    <div class="levelEmpty"></div>
+                    <div class="levelEmpty"></div>
+                  </div>
+                  <div class="difficulty1" data-value="2" id="medium">
+                    <div class="levelFull"></div>
+                    <div class="levelFull"></div>
+                    <div class="levelEmpty"></div>
+                  </div>
+                  <div class="difficulty1" data-value="3" id="hard">
+                    <div class="levelFull"></div>
+                    <div class="levelFull"></div>
+                    <div class="levelFull"></div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -123,7 +135,7 @@
 
       <h3 id="error" class="hidden">
         <img src="./assets/goldSword.png" /> Champion not found
-        <img src="./assets/goldSword.png" />
+        <img src="./assets/shield1.png" />
       </h3>
 
       <div class="corner">

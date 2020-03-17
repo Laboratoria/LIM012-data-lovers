@@ -28,7 +28,7 @@ html {
   color: #333;
   /* overflow-x: hidden; */
   /* overflow-y: hidden; */
-  background: url(./assets/backNegro.jpeg);
+  background: url(./assets/backNegro.png);
   background-size: cover;
   height: 100%;
   width: 100%;
@@ -455,7 +455,7 @@ html {
 /*SEGUNDA INTERFAZ */
 
 #secondScreen {
-  background-image: url(assets/backNegro.jpeg);
+  background-image: url(./assets/backNegro.png);
   background-size: cover;
   width: 100vw;
 }
@@ -558,10 +558,7 @@ html {
 }
 
 .difficulty {
-  display: grid;
-  grid-template-columns: 2% 98%;
-  grid-gap: 25px;
-  padding-top: 12px;
+  margin-top: 5%;
 }
 
 ul {
@@ -618,14 +615,58 @@ li.active a {
   text-decoration: none;
   background-color: rgb(218, 213, 213);
 }
+#myDropdown:hover {
+  display: flex;
+  flex-direction: column;
+}
+
+.levelFull {
+  width: 40px;
+  height: 15px;
+  border: 3px solid rgb(56, 55, 55);
+  background: rgb(8, 215, 247);
+  -webkit-transform: skew(20deg);
+  -moz-transform: skew(20deg);
+  -ms-transform: skew(20deg);
+  -o-transform: skew(20deg);
+  transform: skew(20deg);
+}
+#easy {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding-left: -8px;
+}
+#medium {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding-left: -8px;
+}
+#hard {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding-left: -8px;
+}
+.levelEmpty {
+  width: 40px;
+  height: 15px;
+  border: 3px solid rgb(153, 149, 149);
+  background: rgba(8, 215, 247, 0.26);
+  -webkit-transform: skew(20deg);
+  -moz-transform: skew(20deg);
+  -ms-transform: skew(20deg);
+  -o-transform: skew(20deg);
+  transform: skew(20deg);
+}
+
 #searchInputs {
   border: 0;
   background-color: rgb(218, 213, 213);
   color: #a87e3e;
   width: 130px;
+  height: 35px;
   margin-left: 2px;
   font-size: 20px;
-  margin-top: -16px;
+  margin-top: -8px;
   font-family: "Marcellus SC", serif;
 }
 
