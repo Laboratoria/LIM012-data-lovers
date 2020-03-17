@@ -40,7 +40,7 @@
             </li>
           </ul>
           <div>
-            <input class="hide" type="search" placeholder="Type here">
+            <input id="filter-search" class="hide" type="search" placeholder="Type here">
             <span class="icon-search"></span>
           </div>
       </nav>
@@ -49,8 +49,12 @@
     
     <main class="content center">
 
-      <div class="sort">
-        <select id="selection" class="bottom-margin"></select>
+      <div class="sort-container">
+        <select id="selection" class="bottom-margin">
+          <option value="sort-option">Sort</option>
+          <option value="A-Z">A-Z</option>
+          <option value="Z-A">Z-A</option>
+        </select>
       </div>
 
       <div class="subtitulos bottom-margin">
