@@ -1,22 +1,11 @@
-// import { example } from './data.js';
+import { pokemonCard } from './data.js';
 import data from './data/pokemon/pokemon.js';
 
 const sectionContent = document.querySelector('.content');
-// Creando card de pokemon
-const pokemonCard = (arrayData) => {
-  const pokemon = `
-    <div class="pokemon-card">
-      <p class="pokemon-number left">${arrayData.num}</p>
-      <img class="pokemon-image" src="${arrayData.img}">
-      <p class="pokemon-name">${arrayData.name}</p> 
-    </div>
-    `;
-  return pokemon;
-};
-
+//
 // Obteniendo todos los pokemones y separando por generación
 const allDataByGenerations = () => {
-  sectionContent.classList.remove('cards-distribution');
+  sectionContent.classList.remove('distribution-search');
   // Subtitulo Kanto
   const subKanto = document.createElement('div');
   subKanto.className = 'subtitles margin-bottom';
@@ -65,7 +54,7 @@ const searchInput = document.querySelector('#filter-search');
 const search = () => {
   sectionContent.innerHTML = '';
   const inputText = searchInput.value.toLowerCase();
-  sectionContent.classList.add('cards-distribution');
+  sectionContent.classList.add('distribution-search');
   if (inputText === '') {
     allDataByGenerations();
   } else {
