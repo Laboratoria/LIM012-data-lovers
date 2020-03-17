@@ -1,16 +1,17 @@
+*{
+    box-sizing: border-box;
+}
 
 @media(min-width:1024px){
     .flex-container {
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
-        /*align-items: center;
-        align-content: center;*/
+        justify-content: space-evenly;
     }
-
+    
     .class-img {
-        margin: 1em;
-        padding: 1em, 0em;
+        margin: 0em;
+        padding-top: 2em;
         width: 35em;
         height: 30em;
     }
@@ -20,8 +21,14 @@
         font-family: 'Acme', sans-serif;    
         font-weight: bolder;
         text-align: center;
+        background-color: #C4C4C4;
         margin: 0;     
-        
-        
+        padding: 0.5em;                
+    }
+
+    .header {
+        height: 20em;
+        top: 0;
+        width: 85%;  
     }
 }
