@@ -1,11 +1,15 @@
 import data from './data/pokemon/pokemon.js';
 
 const pokemonRow = document.querySelector('.row');
+const pokemonCard = document.createElement('div');
 
-document.body.onload = showPokemon;
+const showPokemon = () => {
+    for (let i = 0; i <= 5; i++) {
+        pokemonCard.classList.add('pokemon-card');
+        pokemonRow.appendChild(pokemonCard);
+    }
+}
 
-const showPokemon = (arr) => {
-        arr.forEach((obj) => {
-                const mainCard = document.createElement("div");
-                pokemonRow.appendChild(mainCard));
-        }
+showPokemon();
+
+console.log(data.pokemon)

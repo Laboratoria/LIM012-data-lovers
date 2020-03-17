@@ -1,1 +1,1 @@
-export const filterByType = () => 'example';
+export const filterByType = () => 'write your function here';
