@@ -1,5 +1,3 @@
-//DOM
-//{} cuando solo llamas a una funcion determinada no a toda la hoja
 
 import data from './data/pokemon/pokemon.js';
 import {showInfo} from './data.js';
@@ -22,5 +20,3 @@ const showScreen2=()=>{
 
 }
 searchIconElem.addEventListener('click',showScreen2); 
-
-//pokemones.map(showInfo)
