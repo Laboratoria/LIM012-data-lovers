@@ -1,12 +1,12 @@
 import lol from './data/lol/lol.js';
 //console.log(lol.data); 
 //import {seeAllChampions} from './data.js';
-const championList = lol.data;
-    console.log(championList);
+const allchampionList = lol.data;
+    console.log(allchampionList);
  let list = document.querySelector("#root");
     console.log(root);
      //objects
- Object.values(championList).forEach(champion => {
+ Object.values(allchampionList).forEach(champion => {
     const div = document.createElement("div");
     const img = document.createElement("img");
     const p = document.createElement("p");
