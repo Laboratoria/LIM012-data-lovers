@@ -21,11 +21,9 @@ body{
 }
 .root{
   width: 100%;
-  /* background:var(--color-blue-1); */
   background-image: linear-gradient(to right, #051937, #002c47, #003e51, #005156, #2a6258);
   display: grid;
   grid-template-rows: repeat(5,auto);
-  /* overflow-x: hidden; */
 }
 
 header,footer{
@@ -35,6 +33,7 @@ header,footer{
   padding: .2em;
   text-align: center;
   color: antiquewhite;
+  width: 100%;
 
 }
   #logo-pokemon{
@@ -220,4 +219,57 @@ main{
     display: inline;
     padding: .3rem;
     margin: .3em;
+  }
+  /* pantalla desktop*/
+
+  @media (min-width: 800px) {
+    .root{
+      background-image: linear-gradient(to right, #051937, #002c47, #003e51, #005156, #2a6258);
+      display: grid;
+      grid-template-areas:"head head "
+                          "nav nav"
+                          "sidebar top-filter "
+                          "sidebar main"
+                          "foot foot";  
+    }
+    header{
+      grid-area: head;
+      min-width: 100%;
+    }
+    footer{
+      grid-area: foot;
+      height: 30vh;
+    }
+    nav{
+      grid-area: nav;
+      position: static;
+    }
+    aside{
+      grid-area: sidebar;      
+      position: static;
+      transition: none;
+      width: 25vw;
+      background: var(--color-blue-2);
+      margin: .5em;
+      top:none;
+    }
+      #btn-close {
+        display: none;
+      }
+    main{
+      grid-area: main;
+      height: 100vh;
+      margin: .5em;
+      width: 72vw;
+      padding: .2em;
+    }
+    .top-filter{
+      grid-area: top-filter;
+      margin: .5em;
+      width: 72vw;
+      height: 10vh;
+      position: static;
+      display: block;
+    }
+    
   }
