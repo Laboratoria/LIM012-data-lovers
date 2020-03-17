@@ -5,34 +5,80 @@
 body{
     background-image:url("img/pokBack.jpg");
     background-size:cover;
-}
-#container{
     color: #fff;
-    width: 90%;
-    max-width: 1000px;
+    width: 80%;
+    height: 80%;
     margin: 20px auto;
     display: grid;
     grid-gap: 20px;
     grid-template-rows: 1fr 5fr 1fr;
 }
-header  ul li{
+ul{
     list-style: none;
-    padding: 2em;
-    float: right;
+    display:flex;
+    justify-content:flex-end;
+    font-size: 18px;
+    
+}
+#screen2{
+    
+    backdrop-filter: brightness(0.4);
+    
+}
+.s2{
+    color: rgb(223, 235, 231);
+    margin: 5px;
+    width: 200px;
+    text-align: justify;
+    
+}
+
+.logo{
+    width: 80%;
+    height: 180%;
+    padding-left: 10%;
+    
+}
+#screen1{
+   padding-top: 18%;
+
+}
+#inputSearch{
+    outline: none;
+    background-color:transparent;
+    width: 90%;
+    height: 100%;
+    border: none;
+    border-bottom: 3px solid rgb(250, 249, 247);
+    color: #fff;
+    font-size:25px;
+    text-align: center;
+    
+}
+#inputSearch::placeholder{
+    color: #fff;
+    font-size:25px;
+    text-align: center;
+}
+#searchIcon{
+   width: 5%;
+   cursor: pointer;
+}
+li{
+    cursor: pointer;
+    margin: 2em;
 }
 #screen1 {
     display: block;
     margin: auto;
     display: grid;
-    grid-template-rows: 5fr 2fr;
-}
-main{
-    text-align:center
+    grid-template-rows: 8fr 2fr;
+    
 }
 footer{
     position: absolute;
     bottom: 0;
 }
 #screen2{
-    display:none;
+    display: none;
 }
