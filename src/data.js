@@ -1,5 +1,3 @@
 // estas funciones son de ejemplo
-
-export const example = () => 'example';
-
-export const anotherExample = () => 'OMG';
+//seeAllChampions: (champion) => {
+//export default seeAllChampions;
