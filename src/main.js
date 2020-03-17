@@ -1,4 +1,4 @@
-import { dinamicSearchPokemon } from './data.js';
+import { dinamicSearchPokemon, filterPokemon } from './data.js';
 
 import data from './data/pokemon/pokemon.js';
 
@@ -166,5 +166,7 @@ const loadPage = () => {
   }
 };
 
-
 window.onload = loadPage;
+/* console.log(filterPokemon('type', 'water'));
+console.log(filterPokemon('resistant', 'water'));
+console.log(filterPokemon('weaknesses', 'water'));*/

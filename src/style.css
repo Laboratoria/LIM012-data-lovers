@@ -191,7 +191,7 @@ main{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* background:#a2b4b8;   */
+  background:var(--color-blue-2);
   box-shadow: 10px;
   /* opacity: 0.5 */
 }
