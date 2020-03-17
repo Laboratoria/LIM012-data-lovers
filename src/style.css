@@ -128,7 +128,7 @@ main{
   margin: 0;
   padding: .3em;
   width: 60%;
-  border-radius: 3px 0 0 3px;
+  border-radius: 3px;
   max-width: 500px;
   min-width: 100px;
   border:none;
@@ -136,13 +136,12 @@ main{
   color: #333333;
   right: 0;
 }
-  #button-icon-bar-search{
+  #icon-bar-search{
     margin: 0;
     padding:.5em;
     height: auto;
     right: 0;
     border-radius: 0 3px 3px 0;
-    background: var(--color-blue-3);
     border: none;    
   }
     #img-icon-bar-search{

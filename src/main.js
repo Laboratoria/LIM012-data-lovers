@@ -1,4 +1,4 @@
-import { dinamicSearchPokemon, onlyText } from './data.js';
+import { dinamicSearchPokemon } from './data.js';
 
 import data from './data/pokemon/pokemon.js';
 
@@ -133,6 +133,16 @@ const showLateralMenu = () => {
 const hideLateralMenu = () => {
   const asideLateralMenu = document.getElementsByTagName('aside')[0];
   asideLateralMenu.style.width = '0';
+};
+
+const onlyText = (e) => {
+  const key = e.keyCode || e.which;
+  const tecla = String.fromCharCode(key).toLowerCase();
+  const letras = ' áéíóúabcdefghijklmnñopqrstuvwxyz';
+
+  if (letras.indexOf(tecla) === -1) {
+    e.preventDefault();
+  }
 };
 
 const inputBarSearch = document.getElementById('input-bar-search');
