@@ -58,7 +58,6 @@
                 <h3 class="saludo" id="nombreIngresado"></h3>
             </div>
         </div>
-        hola hola hola
 
         <div id="secondScreen">
             <div class="mainTittle">
@@ -82,26 +81,61 @@
                     <span class="line"></span>
                     <div class="menu">
                         <ul>
-                            <li class="active" data-value="ALL"><a href="#">ALL</a></li>
-                            <li data-value="Assassin"><a href="#">ASSASSIN</a></li>
-                            <li data-value="Mage"><a href="#">MAGE</a></li>
-                            <li data-value="Fighter"><a href="#">FIGTHER</a></li>
-                            <li data-value="Tank"><a href="#">TANK</a></li>
-                            <li data-value="Support"><a href="#">SUPPORT</a></li>
-                            <li data-value="Marksman"><a href="#">MARKMAN</a></li>
+                            <li class="active" data-value="ALL"><a>ALL</a></li>
+                            <li data-value="Assassin"><a>ASSASSIN</a></li>
+                            <li data-value="Mage"><a>MAGE</a></li>
+                            <li data-value="Fighter"><a>FIGTHER</a></li>
+                            <li data-value="Tank"><a>TANK</a></li>
+                            <li data-value="Support"><a>SUPPORT</a></li>
+                            <li data-value="Marksman"><a>MARKMAN</a></li>
                         </ul>
                     </div>
 
                     <span class="line"></span>
                     <div class="difficulty">
                         <img src="assets/arrow.png" alt="" />
-                        <p id="pDificulty">Level</p>
+
+
+                        <div class="dropdown">
+                            <span id="pDificulty">Level</span>
+                            <div class="dropdown-content">
+                                <p>
+
+                                    <div></div>
+
+
+                                    <div></div>
+
+
+                                    <div></div>
+
+                                </p>
+
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div id="list"></div>
-        <div id="filteredList" class="hidden"></div>
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p>Some text in the Modal..</p>
+            </div>
+
+        </div>
+        <div id="list">
+
+        </div>
+
+        <div id="filteredList" class="hidden">
+
+        </div>
+
+
 
         <h3 id="error" class="hidden">
             <img src="./assets/goldSword.png" /> Champion not found
@@ -122,6 +156,9 @@
         </div>
       </div>
     </div>
+  <button id="myBtn">Open Modal</button>
+
+
     <footer class="footer">
       <div class="right">
         <p>&copy; 2020 &nbsp;| &nbsp; Todos los Derechos Reservados</p>
