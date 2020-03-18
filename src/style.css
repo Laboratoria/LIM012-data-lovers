@@ -15,15 +15,6 @@ body {
   color: lavenderblush;
 }
 
-/* #background {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  background-color: rgba(0, 0, 0, 0.447);
-  border: 1px solid yellowgreen;
-  z-index: 3;
-} */
-
 #generalContainer {
   height: 100%;
   background-color: rgba(12, 12, 1, 0.632);
@@ -57,7 +48,7 @@ header {
   /*PROPIEDADES FLEX*/
   /* display: block; */
   /*porque también es un elemento padre*/
-  border: 2px solid black;
+  /* border: 2px solid black; */
   font-family: 'Bangers',
     cursive;
 }
@@ -65,12 +56,13 @@ header {
 #logo_Lol {
   width: 50%;
   justify-content: center;
+  padding-bottom: 4%;
 
 }
 
 #logo {
   grid-auto-rows: auto;
-  border: 2px solid black;
+  /* border: 2px solid black; */
   display: grid;
   justify-items: center;
   margin-top: 6%;
@@ -102,6 +94,8 @@ header {
   border-style: double;
   border-width: 8px;
   border-color: #282626;
+  margin-left: 6%;
+  margin-right: 6%;
 }
 
 #contador {
@@ -118,7 +112,7 @@ header {
   background-color: black;
   width: 100%;
   height: auto;
-  /* top: calc(50% - 56.13px/2 - 29.44px); */
+
 }
 
 #detail_diamont_Riot1 {
@@ -133,7 +127,9 @@ header {
 
 
 .buscadores {
-  border: 2px solid red;
+  margin-top: 1%;
+  margin-bottom: 4%;
+  /* border: 2px solid red; */
   width: 100%;
   height: 80%;
   padding: 0;
@@ -220,16 +216,36 @@ li {
 
 #main {
   height: 100%;
-  border: 2px solid white;
+  /* border: 2px solid white; */
   /* background-color: rgba(12, 12, 1, 0.632); */
 }
 
-.dinamic_information {
-  height: 80px;
-  background-color: lawngreen;
-  border: 2px solid black;
+
+
+
+
+#root {
+  color: #DFC981;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  padding-left: 6%;
+  padding-right: 5%;
+
 }
 
+.nameOfChampion {
+  font-size: 20px;
+  text-align: center;
+  margin-top: 2%;
+  margin-bottom: 10%;
+}
+
+.imageOfChampion {
+  width: 95%;
+  height: 16rem;
+  border: #DFC981 1px solid;
+
+}
 
 footer {
   border: 2px solid black;
