@@ -1,12 +1,12 @@
 import lol from './data/lol/lol.js';
 //console.log(lol.data); 
 //import {seeAllChampions} from './data.js';
-const allchampionList = lol.data;
-    console.log(allchampionList);
+const allChampionList = lol.data;
+    console.log(allChampionList);
  let list = document.querySelector("#root");
     console.log(root);
      //objects
- Object.values(allchampionList).forEach(champion => {
+ Object.values(allChampionList).forEach(champion => {
     const div = document.createElement("div");
     const img = document.createElement("img");
     const p = document.createElement("p");
@@ -18,18 +18,22 @@ const allchampionList = lol.data;
       div.appendChild(p);
       list.appendChild(div);
     });
+    
+    const filterChamp = Object.keys(allChampionList).filter((key)=>{
+      return allChampionList[key] <= Fighter;
+    }).map((key)=> {
+      return allChampionList[key]
+    }) ; 
+    console.log(filterChamp) 
+    /*
+  const fighterChampions = newArray.filter(function(fighter) {
+      //fighter is equivalent of object
+      return(fighter[1].tags["Assassin"]);
+    });
+    console.log(fighterChampions);
+    
 
-    let role = lol.data;
-    // console.log(role)
-    
-    let newArray = Object.entries(role)
-    console.log(newArray);
-    
-    const champioF = newArray.filter((tags => tags === "Fighter"));
-      console.log(champioF);
-    
-
-   /*for(let i = 0; i< championList.length; i++){git
+   for(let i = 0; i< championList.length; i++){git
         fighter.push(rolChampions[j]);
         console.log(fighter);
       }
