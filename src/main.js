@@ -1,4 +1,4 @@
-import { pokemonCard } from './data.js';
+import { pokemonCard, search } from './data.js';
 import data from './data/pokemon/pokemon.js';
 
 const sectionContent = document.querySelector('.content');
@@ -50,35 +50,24 @@ window.addEventListener('load', () => {
 // Guardando input para buscar
 const searchInput = document.querySelector('#filter-search');
 //
-// Función para buscar pokemones
-const search = () => {
+// Evento del input que ejecuta la funcion seach
+searchInput.addEventListener('input', () => {
   sectionContent.innerHTML = '';
   const inputText = searchInput.value.toLowerCase();
   sectionContent.classList.add('distribution-search');
   if (inputText === '') {
     allDataByGenerations();
   } else {
-    // recorriendo cada pokemon
-    data.pokemon.forEach((property) => {
-      // guardando en una variable el nombre del pokemon
-      const nameP = property.name;
-      const lengthText = inputText.length;
-      // buscando pokemones con las letras ingresadas
-      if (nameP.slice(0, lengthText) === inputText) {
-        sectionContent.innerHTML += pokemonCard(property);
-      }
+    data.pokemon.forEach((element) => {
+      sectionContent.innerHTML += search(element, inputText);
     });
-    // mensaje en caso que no se encuentre el pokemon
-    if (sectionContent.innerHTML === '') {
-      sectionContent.innerHTML += `
-        No se ha encontrado el pokemon :(
-      `;
-    }
   }
-};
-// Evento del input que ejecuta la funcion seach
-searchInput.addEventListener('input', () => {
-  search();
+  // mensaje en caso que no se encuentre el pokemon
+  if (sectionContent.innerHTML === '') {
+    sectionContent.innerHTML += `
+    No se ha encontrado el pokemon :(
+  `;
+  }
 });
 //
 // Botón de subir
