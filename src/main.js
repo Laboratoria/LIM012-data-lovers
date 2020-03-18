@@ -1,10 +1,12 @@
 import { pokemonCard, search } from './data.js';
 import data from './data/pokemon/pokemon.js';
-
+// Se crea una variable donde se va a insertar los resultados de las funciones.
 const sectionContent = document.querySelector('.content');
+//
 //
 // Obteniendo todos los pokemones y separando por generación
 const allDataByGenerations = () => {
+  //
   sectionContent.classList.remove('distribution-search');
   // Subtitulo Kanto
   const subKanto = document.createElement('div');
@@ -43,6 +45,9 @@ const allDataByGenerations = () => {
   sectionContent.insertBefore(dataKanto, subJohto);
   sectionContent.appendChild(dataJohto);
 };
+//
+//
+//
 // El evento que llama a la función que inserta todos los pokemones
 window.addEventListener('load', () => {
   allDataByGenerations();
@@ -50,24 +55,31 @@ window.addEventListener('load', () => {
 // Guardando input para buscar
 const searchInput = document.querySelector('#filter-search');
 //
-// Evento del input que ejecuta la funcion seach
+// Evento del input que ejecuta la funcion search
+
+
 searchInput.addEventListener('input', () => {
-  sectionContent.innerHTML = '';
   const inputText = searchInput.value.toLowerCase();
-  sectionContent.classList.add('distribution-search');
+  // Crear el contenedor con createElement para search
+  const searchBox = document.createElement('div');
+  // Agregar una clase a ese contenedor para que tenga su propio estilo.
+  searchBox.classList.add('distribution-search');
+  // Agrego el nuevo div al sctionContent con .appendChild 
+  sectionContent.innerHTML = '';
   if (inputText === '') {
     allDataByGenerations();
   } else {
     data.pokemon.forEach((element) => {
-      sectionContent.innerHTML += search(element, inputText);
+      searchBox.innerHTML += search(element, inputText);
     });
   }
   // mensaje en caso que no se encuentre el pokemon
-  if (sectionContent.innerHTML === '') {
-    sectionContent.innerHTML += `
+  if (searchBox.innerHTML === '') {
+    searchBox.innerHTML += `
     No se ha encontrado el pokemon :(
   `;
   }
+  sectionContent.appendChild(searchBox);
 });
 //
 // Botón de subir
