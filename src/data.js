@@ -11,5 +11,14 @@ export const pokemonCard = (eachPokemon) => {
     `;
   return pokemon;
 };
-
-export const anotherExample = () => 'OMG';
+// Función para buscar pokemones
+export const search = (element, inputText) => {
+  const namePokemon = element.name;
+  const lengthText = inputText.length;
+  let result = '';
+  // buscando pokemones con las letras ingresadas
+  if (namePokemon.slice(0, lengthText) === inputText) {
+    result = pokemonCard(element);
+  }
+  return result;
+};
