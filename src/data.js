@@ -11,11 +11,24 @@ El segundo parámetro, sortBy, nos dice con respecto a cuál de los campos de la
 
 computeStats(data): la función compute o calcular, nos permitirá hacer cálculos estadísticos básicos para ser mostrados de acuerdo a la data proporcionada. */
 
-const allSelection = () => {
+const allSelection = (allchampionList) => {
+    let arrayKeysChampions = Object.keys(allchampionList);
+    let arrayValuesChampions = Object.values(allchampionList);
+    // console.log(prueba2);
+    for (let i = 0; i < arrayKeysChampions.length; i += 1) {
+      // console.log(prueba3[i][1]);
+      // console.log(prueba2[i].tags);
+      let roleChampions = arrayValuesChampions[i].tags;
+      // console.log(roleChampions);
+      for (let j = 0; j < roleChampions.length; j += 1) {
+        // console.log(roleChampions[j]) /*aparecen todos los roles */
+        if (roleChampions[j] === "Fighter") {
 
+          // console.log(arrayValuesChampions[i].name);
+          // console.log(arrayValuesChampions[i].splash);
 
-}
+        }
 
-export const example = () => 'example';
+        // export const example = () => 'example';
 
-export const anotherExample = () => 'OMG';
+        export const anotherExample = () => 'OMG';
