@@ -180,20 +180,43 @@ main{
   color: var(--color-blue-4);
   min-height: 400px;
 }
-
 #card-container2{
   display: grid;
   grid-template-columns: auto;
-  grid-gap:10px;
-  padding: 10px;
   width: 100%;
-  height: 800px;
+  height: 750px;
 }
  .div-container-filter{
    border: 1px solid black;
    width: 100%;
    height: 100%;
+   display: grid;
+   grid-template-columns: auto auto auto;
  }
+  .div-container-filter p{
+   font-size:large;
+   width: 100%;
+   height: 100%;
+   grid-column: 1/4;
+  }
+  .div-card-container-filter{
+    width: 100%;
+    height: 220px;
+  }
+  .button-back{
+    width: 10%;
+    height: 20%;
+    align-self: center;
+    justify-self: start;
+  }
+  .button-next{
+    width: 10%;
+    height: 20%;
+    align-self: center;
+    justify-self: end;
+  }
+
+
 
 .pokemon-card{
   width: 150px;

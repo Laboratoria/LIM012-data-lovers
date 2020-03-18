@@ -98,6 +98,7 @@ const createTypeButton = (type) => {
   const buttonPokemonType = document.createElement('button');
   buttonPokemonType.className = 'pokemon-type';
   buttonPokemonType.className += ' pokemon-type-button';
+  buttonPokemonType.setAttribute('value', type);
   const iconPokemonType = document.createElement('img');
   iconPokemonType.className = 'icon-pokemon-type';
   iconPokemonType.setAttribute('src', `images/${type}.png`);
@@ -168,34 +169,50 @@ const loadPage = () => {
 
 window.onload = loadPage;
 
+const createRow = (container, textInRow) => {
+  const div = document.createElement('div');
+  div.className = 'div-container-filter';
+  const prr = document.createElement('p');
+  div.appendChild(prr);
+  prr.textContent = textInRow;
+  const btnBack = document.createElement('img');
+  btnBack.className = 'button-back';
+  btnBack.setAttribute('src', 'images/back.png');
+  div.appendChild(btnBack);
+  const cardContainer = document.createElement('div');
+  cardContainer.className = 'div-card-container-filter'
+  div.appendChild(cardContainer);
+  const btnNext = document.createElement('img');
+  btnNext.className = 'button-next';
+  btnNext.setAttribute('src', 'images/next.png');
+  div.appendChild(btnNext);
+
+  container.appendChild(div);
+};
+
 const divideDivs = () => {
   const divCardContainer = document.getElementById('card-container');
   divCardContainer.innerHTML = '';
   const divContainer2 = document.createElement('div');
   divContainer2.id = 'card-container2';
   divCardContainer.appendChild(divContainer2);
-  const divType = document.createElement('div');
-  const divResistence = document.createElement('div');
-  const divWeaknesses = document.createElement('div');
-  divType.className = 'div-container-filter';
-  divResistence.className = 'div-container-filter';
-  divWeaknesses.className = 'div-container-filter';
-  divContainer2.appendChild(divType);
-  divContainer2.appendChild(divResistence);
-  divContainer2.appendChild(divWeaknesses);
-  const pType = document.createElement('p');
-  const pResistence = document.createElement('p');
-  const pWeaknesses = document.createElement('p');
-  divType.appendChild(pType);
-  divResistence.appendChild(pResistence);
-  divWeaknesses.appendChild(pWeaknesses);
-  pType.textContent = ' Pokemones tipo:';
-  pResistence.textContent = ' Pokemones resistentes a:';
-  pWeaknesses.textContent = ' Pokemones débiles a:';
+  createRow(divContainer2, 'Pokemones tipo');
+  createRow(divContainer2, 'Pokemones resistentes al tipo');
+  createRow(divContainer2, 'Pokemones débiles al tipo');
 };
 
 divideDivs();
+const filterPokemonByType = (type) => {
+  // console.log(`pokemones de tipo: ${type}`);
+  const resultTypes = filterPokemon('type', type);
+  console.log(resultTypes);
+};
 
-/* console.log(filterPokemon('type', 'water'));
-console.log(filterPokemon('resistant', 'water'));
-console.log(filterPokemon('weaknesses', 'water'));*/
+
+const buttons = document.querySelectorAll('.pokemon-type-button');
+buttons.forEach((element) => {
+  console.log('me muero de hambre');
+  element.addEventListener('click', filterPokemonByType(element.value));
+});
+
+// window.onload = loadPage;
