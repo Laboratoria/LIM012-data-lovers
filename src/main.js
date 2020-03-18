@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { dinamicSearchPokemon, filterPokemon } from './data.js';
 
 import data from './data/pokemon/pokemon.js';
@@ -51,16 +52,17 @@ const putPokemonTypes = (dataTypesPokemon, divCardTypes) => {
   }
 };
 
-const createPokemonCard = (index, dataPokemon) => {
+const createPokemonCard = (index, dataPokemon, container) => {
   const divCard = document.createElement('div');
   divCard.className = 'pokemon-card';
-  document.getElementById('card-container').appendChild(divCard);
+  container.appendChild(divCard);
   const divCardName = document.createElement('div');
   const divCardImage = document.createElement('div');
   const divCardTypes = document.createElement('div');
   divCardName.className = 'pokemon-name';
   divCardImage.className = 'pokemon-image';
   divCardTypes.className = 'pokemon-types';
+  console.log('creando tarjeta');
   document.getElementsByClassName('pokemon-card')[index].appendChild(divCardName);
   document.getElementsByClassName('pokemon-card')[index].appendChild(divCardImage);
   document.getElementsByClassName('pokemon-card')[index].appendChild(divCardTypes);
@@ -69,9 +71,10 @@ const createPokemonCard = (index, dataPokemon) => {
   putPokemonTypes(dataPokemon.type, divCardTypes);
 };
 
-const showCard = (dataPokemon) => {
+const showCard = (dataPokemon, container) => {
   for (let i = 0; i < dataPokemon.length; i += 1) {
-    createPokemonCard(i, dataPokemon[i]);
+    console.log('tarjeta'+ i);
+    createPokemonCard(i, dataPokemon[i], container);
   }
 };
 
@@ -85,11 +88,11 @@ const searchPokemon = () => {
   const wordIntroduced = document.getElementById('input-bar-search').value;
   const numberOfResult = dinamicSearchPokemon(wordIntroduced).length;
   if (numberOfResult > 0) {
-    showCard(dinamicSearchPokemon(wordIntroduced));
+    showCard(dinamicSearchPokemon(wordIntroduced), document.getElementById('card-container'));
   } else if (numberOfResult === 0 && wordIntroduced.length !== 0) {
     showMessageOfSearch(cardContainer);
   } else {
-    showCard(data.pokemon);
+    showCard(data.pokemon, document.getElementById('card-container'));
   }
 };
 
@@ -111,8 +114,7 @@ const createTypeButton = (type) => {
 const pokemonTypes = Object.keys(typeColors);
 
 const putPokemonTypesOnLateralMenu = (aside) => {
-  const typesConteiner = document.createElement('div');
-  typesConteiner.id = 'types-container';
+  const typesConteiner = document.getElementById('types-container');
   for (let key = 0; key < pokemonTypes.length; key += 1) {
     typesConteiner.appendChild(createTypeButton(pokemonTypes[key]));
   }
@@ -120,14 +122,14 @@ const putPokemonTypesOnLateralMenu = (aside) => {
 };
 
 // let showLateralMenu = false;
-let firstShowLateralMenu = false;
+// let firstShowLateralMenu = false;
 const showLateralMenu = () => {
   // console.log('mostran menu lateral');
   const asideLateralMenu = document.getElementsByTagName('aside')[0];
-  if (firstShowLateralMenu === false) {
-    putPokemonTypesOnLateralMenu(asideLateralMenu);
-    firstShowLateralMenu = true;
-  }
+  // if (firstShowLateralMenu === false) {
+  //   putPokemonTypesOnLateralMenu(asideLateralMenu);
+  //   firstShowLateralMenu = true;
+  // }
   asideLateralMenu.style.width = '80%';
 };
 
@@ -161,17 +163,21 @@ buttonCloseLateralMenu.addEventListener('click', hideLateralMenu);
 
 
 const loadPage = () => {
+  const asideLateralMenu = document.getElementsByTagName('aside')[0];
+  putPokemonTypesOnLateralMenu(asideLateralMenu);
   const wordIntroduced = document.getElementById('input-bar-search').value;
   if (wordIntroduced.length === 0) {
-    showCard(data.pokemon);
+    showCard(data.pokemon, document.getElementById('card-container'));
   }
 };
 
 window.onload = loadPage;
 
-const createRow = (container, textInRow) => {
+const createRow = (container, textInRow, dataPokemon) => {
+  console.log('createRow');
   const div = document.createElement('div');
   div.className = 'div-container-filter';
+  container.appendChild(div);
   const prr = document.createElement('p');
   div.appendChild(prr);
   prr.textContent = textInRow;
@@ -180,39 +186,43 @@ const createRow = (container, textInRow) => {
   btnBack.setAttribute('src', 'images/back.png');
   div.appendChild(btnBack);
   const cardContainer = document.createElement('div');
-  cardContainer.className = 'div-card-container-filter'
+  cardContainer.className = 'div-card-container-filter';
   div.appendChild(cardContainer);
   const btnNext = document.createElement('img');
   btnNext.className = 'button-next';
   btnNext.setAttribute('src', 'images/next.png');
   div.appendChild(btnNext);
-
-  container.appendChild(div);
+  showCard(dataPokemon, cardContainer);
 };
 
-const divideDivs = () => {
+const filterPokemonByType = (type) => {
+  const cardContainer = document.getElementById('card-container');
+  cardContainer.innerHTML = '';
+  const resultTypes = filterPokemon('type', type);
+  const resultResistant = filterPokemon('resistant', type);
+  const resultWeaknesses = filterPokemon('weaknesses', type);
+  return [resultTypes, resultResistant, resultWeaknesses];
+};
+
+const divideDivs = (arrayDataPokemon) => {
   const divCardContainer = document.getElementById('card-container');
   divCardContainer.innerHTML = '';
   const divContainer2 = document.createElement('div');
   divContainer2.id = 'card-container2';
   divCardContainer.appendChild(divContainer2);
-  createRow(divContainer2, 'Pokemones tipo');
-  createRow(divContainer2, 'Pokemones resistentes al tipo');
-  createRow(divContainer2, 'Pokemones débiles al tipo');
-};
-
-divideDivs();
-const filterPokemonByType = (type) => {
-  // console.log(`pokemones de tipo: ${type}`);
-  const resultTypes = filterPokemon('type', type);
-  console.log(resultTypes);
+  createRow(divContainer2, 'Pokemones tipo', arrayDataPokemon[0]);
+  //console.log(arrayDataPokemon[0]);
+  //createRow(divContainer2, 'Pokemones resistentes al tipo', arrayDataPokemon[1]);
+  //createRow(divContainer2, 'Pokemones débiles al tipo', arrayDataPokemon[2]);
 };
 
 
-const buttons = document.querySelectorAll('.pokemon-type-button');
-buttons.forEach((element) => {
-  console.log('me muero de hambre');
-  element.addEventListener('click', filterPokemonByType(element.value));
+window.onload = loadPage;
+
+document.addEventListener('click', (element) => {
+  if (element.target && element.target.className === 'pokemon-type pokemon-type-button') {
+    console.log('click');
+    console.log(filterPokemonByType(element.target.value));
+    divideDivs(filterPokemonByType(element.target.value));
+  }
 });
-
-// window.onload = loadPage;
