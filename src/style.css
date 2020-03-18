@@ -1,18 +1,352 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* font-family: 'Bangers',
+    cursive; */
+
+  /*asegura que el relleno y el borde estén incluidos en el ancho y alto del total de la caja, así cuando se pone float ese borde es considerado para ser ubicado a la derecha*/
+}
+
+html,
+body {
+  background-image: url(assets/background.jpg);
+  background-size: inherit;
+  color: lavenderblush;
+}
+
+#generalContainer {
+  height: 100%;
+  background-color: rgba(12, 12, 1, 0.632);
+  /* background-color: rgba(4, 4, 4, 0.173); */
+  width: 100%;
+  /* max-width: 1000px; */
+  /*para que no se pase los 1000px de ancho y tener todo correctamente*/
+  margin: auto;
+  /*PROPIEDADES FLEX*/
+  display: flex;
+  /*Al ser padre de todos los elementos, permite manipularlosfacilmente*/
+  /* es como si se pusiera*/
+  flex-direction: column;
+  flex-wrap: wrap;
+  /*si un elemento se baja cuando ya no ingresa en el width
+  */
+  color: antiquewhite;
+}
+
+body {
+  background-color: yellowgreen;
+}
+
+header {
+  /*al ser hijo y padre*/
+  height: 100%;
+  /* background-color: rgba(12, 12, 1, 0.632); */
+  width: 100%;
+  /*así abarca todo el documento*/
+  /* padding: 20px; */
+  /*PROPIEDADES FLEX*/
+  /* display: block; */
+  /*porque también es un elemento padre*/
+  /* border: 2px solid black; */
+  font-family: 'Bangers',
+    cursive;
+}
+
+#logo_Lol {
+  width: 50%;
+  justify-content: center;
+  padding-bottom: 4%;
+
+}
+
+#logo {
+  grid-auto-rows: auto;
+  /* border: 2px solid black; */
+  display: grid;
+  justify-items: center;
+  margin-top: 6%;
+}
+
+#buttons_colection_champions {
+  /* display: grid;
+  grid-template-columns: auto auto;
+  justify-content: space-around;
+  display: flex; */
+  /*Al ser padre de todos los elementos, permite manipularlosfacilmente*/
+  /* es como si se pusiera*/
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  /* size: 4rem; */
+}
+
+#button_colection,
+#contador {
+  background-color: #B09D57;
+  width: 15em;
+  height: 2em;
+  border-radius: 2em;
+  font-family: 'Bangers',
+    cursive;
+  font-size: 1.5em;
+  color: #464242;
+  border-style: double;
+  border-width: 8px;
+  border-color: #282626;
+  margin-left: 6%;
+  margin-right: 6%;
+}
+
+#contador {
+  padding: 0.1em;
+  text-align: center;
+}
+
+#detail_logo {
+  border: 2px solid black;
+}
+
+.detail_diamont_Riot {
+  /* display: flex; */
+  background-color: black;
+  width: 100%;
+  height: auto;
+
+}
+
+#detail_diamont_Riot1 {
+  width: auto;
+  height: 50%;
+}
+
+#detail_diamont_Riot2 {
+  width: auto;
+  height: 50%;
+}
+
+
+.buscadores {
+  margin-top: 1%;
+  margin-bottom: 4%;
+  /* border: 2px solid red; */
+  width: 100%;
+  height: 80%;
+  padding: 0;
+  /* font-family: 'Bangers',
+    cursive; */
+  /* display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center; */
+  /* margin-top: 2%;
+  margin-left: 5%;
+  border: 0.1rem solid blue;
+  text-align: right;
+  padding: 16% 20% 0% 0%; */
+}
+
+ul,
+li {
+  list-style: none;
+  /* width: 30%; */
+}
+
+.filtros {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.filtros li a {
+  /*todos los elementos a que esten dentro de li que estén dentro de filtros*/
+  /* background-color: black; */
+  color: aliceblue;
+  background-color: #464242;
+  text-decoration: none;
+  /*se quita el subrayado*/
+  padding: 0.2em;
+  display: block;
+  font-family: 'Righteous',
+    cursive;
+  /*por que actualmente están en displayLine, por eso se ven juntos, ahora en bloque*/
+  border-style: double;
+  border-width: 8px;
+  border-color: #B09D57;
+  font-size: 1rem;
+  width: 150%;
+  margin-top: 4%;
+
+}
+
+.filtros li a:hover {
+  background-color: gray;
+  border-radius: 2em;
+}
+
+.filtros>li {
+  float: left;
+  background-color: #B09D57;
+  width: 8em;
+  height: 2em;
+  border-radius: 2em;
+  font-family: 'Bangers',
+    cursive;
+  font-size: 1.1em;
+  /* color: #464242; */
+  border-style: double;
+  border-width: 8px;
+  border-color: #282626;
+  /*padding-top: 0.00001em; */
+  text-align: center;
+  /*con esto deberian estar ordenados de manera horizontal*/
+  color: #464242;
+}
+
+.filtros li ul {
+  display: none;
+  position: absolute;
+  /*la lista desplegable es de la misma medida que el botón*/
+}
+
+
+.filtros li:hover>ul {
+  display: block;
+}
+
+#main {
+  height: 100%;
+  /* border: 2px solid white; */
+  /* background-color: rgba(12, 12, 1, 0.632); */
+}
+
+
+
+
 
 #root {
   color: #DFC981;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  padding: 3rem;
+  padding-left: 6%;
+  padding-right: 5%;
+
 }
 
 .nameOfChampion {
   font-size: 20px;
   text-align: center;
+  margin-top: 2%;
+  margin-bottom: 10%;
 }
 
 .imageOfChampion {
-  width: 100%;
-  object-fit: scale-down;
+  width: 95%;
+  height: 16rem;
   border: #DFC981 1px solid;
+
+}
+
+footer {
+  border: 2px solid black;
+  background-color: rgb(11, 11, 3);
+
+  font-family: 'Righteous',
+    cursive;
+}
+
+#play_links {
+  /* display: grid;
+  grid-template-columns: 50% 50%; */
+  display: flex;
+  flex-direction: row;
+  /* flex-wrap: wrap; */
+  text-align-last: end;
+  margin-top: 2%;
+  margin-left: 6%;
+  /* width: auto;
+  height: auto; */
+}
+
+#img_Riot {
+  width: 100%;
+  height: auto;
+}
+
+#img_ratings {
+  width: 70%;
+  height: auto;
+}
+
+#final_information {
+  /* display: grid;
+  grid-template-columns: auto auto auto;
+  justify-content: space-between; */
+  text-align: center;
+  /* display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; */
+  font-family: 'Righteous',
+    cursive;
+  font-size: 11px;
+  color: #7e7e7e;
+  /* border: 2px solid greenyellow; */
+  line-height: 200%;
+  /* max-width: 500px */
+}
+
+#gitHub {
+  /* display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; */
+  align-items: center;
+  /* border: 2px solid yellow; */
+  width: auto;
+  height: 50px;
+  background-color: #B09D57;
+}
+
+#gitHub>a>img {
+  width: 50px;
+  height: 50px;
+  background-color: #B09D57;
+  border: 1px solid #B09D57;
+}
+
+#final_conditions>a {
+  color: #7e7e7e;
+}
+
+#final_conditions>a:hover {
+  color: gold;
+}
+
+#rolesFighter {
+  background-color: red;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  padding-left: 6%;
+  padding-right: 5%;
+}
+
+.nameOfChampionRole {
+  font-size: 20px;
+  text-align: center;
+  margin-top: 2%;
+  background-color: green;
+}
+
+.imageOfChampionRole {
+  width: 95%;
+  height: 16rem;
+  border: #DFC981 1px solid;
+  background-color: yellow;
+}
+
+.roleTagsOfChampions {
+  font-size: 20px;
+  text-align: center;
+  margin-top: 2%;
+  margin-bottom: 10%;
+  background-color: green;
 }

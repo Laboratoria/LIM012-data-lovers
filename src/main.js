@@ -1,78 +1,68 @@
+/*interacción con el DOM event listeners o event handlers, se usan las que estàn en data.js */
+import {
+  example
+} from './data.js';
+// import data from './data/atletas/atletas.js';
 import lol from './data/lol/lol.js';
-//console.log(lol.data); 
-//import {seeAllChampions} from './data.js';
-const allChampionList = lol.data;
-    console.log(allChampionList);
- let list = document.querySelector("#root");
-    console.log(root);
-     //objects
- Object.values(allChampionList).forEach(champion => {
-    const div = document.createElement("div");
-    const img = document.createElement("img");
-    const p = document.createElement("p");
-      p.className = "nameOfChampion";
-      img.className = "imageOfChampion";
-      p.innerHTML = `${champion.name}`;
-      img.src = `${champion.splash}`;
-      div.appendChild(img);
-      div.appendChild(p);
-      list.appendChild(div);
-    });
-    
-    const filterChamp = Object.keys(allChampionList).filter((key){
-      return allChampionList[key] <= Fighter;
-    }).map((key)=> {
-      return allChampionList[key]
-    }) ; 
-    console.log(filterChamp) 
-    /*
-  const fighterChampions = newArray.filter(function(fighter) {
-      //fighter is equivalent of object
-      return(fighter[1].tags["Assassin"]);
-    });
-    console.log(fighterChampions);
-    
+// import data from './data/pokemon/pokemon.js';
 
-   for(let i = 0; i< championList.length; i++){git
-        fighter.push(rolChampions[j]);
-        console.log(fighter);
-      }
+const allchampionList = lol.data;
+// console.log(allchampionList);
+let list = document.querySelector("#root");
+// console.log(root);
+//objects
+Object.values(allchampionList).forEach(champion => {
+  const div = document.createElement("div");
+  const img = document.createElement("img");
+  const p = document.createElement("p");
+  p.className = "nameOfChampion";
+  img.className = "imageOfChampion";
+  p.innerHTML = `${champion.name}`;
+  img.src = `${champion.splash}`;
+  div.appendChild(img);
+  div.appendChild(p);
+  list.appendChild(div);
+});
+
+
+
+let listRole = document.querySelector("#rolesFighter");
+
+// let rol = lol.data;
+
+
+let arrayKeysChampions = Object.keys(allchampionList);
+let arrayValuesChampions = Object.values(allchampionList);
+// console.log(prueba2);
+let prueba3 = Object.entries(allchampionList); /*solo para hacer las pruebas */
+
+for (let i = 0; i < arrayKeysChampions.length; i++) {
+  // console.log(prueba3[i][1]);
+  // console.log(prueba2[i].tags);
+  let roleChampions = arrayValuesChampions[i].tags;
+  // console.log(roleChampions);
+  for (let j = 0; j < roleChampions.length; j++) {
+    // console.log(roleChampions[j]) /*aparecen todos los roles */
+
+    if (roleChampions[j] === "Fighter") {
+
+      const divRole = document.createElement("div");
+      const imgRole = document.createElement("img");
+      const pName = document.createElement("p");
+      const pTags = document.createElement("p");
+      pName.className = "nameOfChampionRole";
+      imgRole.className = "imageOfChampionRole";
+      pTags.className = "roleTagsOfChampions";
+      pName.innerHTML = arrayValuesChampions[i].name;
+      imgRole.src = arrayValuesChampions[i].splash;
+      pTags.innerHTML = arrayValuesChampions[i].tags;
+      divRole.appendChild(imgRole);
+      divRole.appendChild(pName);
+      divRole.appendChild(pTags);
+      listRole.appendChild(divRole);
+      // console.log(arrayValuesChampions[i].name);
+      // console.log(arrayValuesChampions[i].splash);
     }
   }
-   let filteredbyClass = Object.values(championList).filter(champion => {
-      if (champion.tags.indexOf(term) != -1) {
-        return champion;
-      }
-    });
-    console.log(filteredbyClass)
- const allChampion = lol.data;
-for (let i = 0; i < champion.length; i++){
-  console.log(champion[i].tags)
 }
- let filterFighters = document.querySelector("#filterFighters");
- console.log(filterFighters);
- Object.keys().filter(tags["Fighter"]).push(filterFighters);
- console.log(filterFighters);
-  
-  const fighterChampion = lol.data ;
-  
-  let filtersFigh = fighterChampion
-  for (const filterFi in fighterChampion) {
-      const filterFi = fighterChampion
-     
-    }
-  console.log(filtersFigh);
-  console.log(filterFighters);
-  Object.values(fighterChampion).map( champion => {
-    const div = document.createElement("div");
-    const img = document.createElement("img");
-    const p = document.createElement("p");
-      p.className = "tagOfChampion";
-      img.className = "imageOfChampion";
-      p.innerHTML = `${champion["tags"]}`;
-      img.src = `${champion.splash}`;
-      div.appendChild(img);
-      div.appendChild(p);
-      list.appendChild(div);
-    });*/
-  
+/*con mayúsucla Object */
