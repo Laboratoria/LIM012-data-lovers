@@ -19,7 +19,7 @@ const allChampionList = lol.data;
       list.appendChild(div);
     });
     
-    const filterChamp = Object.keys(allChampionList).filter((key)=>{
+    const filterChamp = Object.keys(allChampionList).filter((key){
       return allChampionList[key] <= Fighter;
     }).map((key)=> {
       return allChampionList[key]
