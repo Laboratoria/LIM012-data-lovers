@@ -26,9 +26,9 @@ const allSelection = (allchampionList) => {
 
           // console.log(arrayValuesChampions[i].name);
           // console.log(arrayValuesChampions[i].splash);
-
-        }
-
+        };
+        };
+    }};
         // export const example = () => 'example';
 
-        export const anotherExample = () => 'OMG';
+        //export const anotherExample = () => 'OMG'
