@@ -24,25 +24,25 @@ export const filteredByDifficulty = (championList, term) => {
   if (term === "1") {
     filteredByDifficult = Object.values(championList).filter(champion => {
       if (champion.info.difficulty < 4) {
-        return champion
+        return champion;
       }
-    })
+    });
   }
 
   if (term === "2") {
     filteredByDifficult = Object.values(championList).filter(champion => {
       if (champion.info.difficulty > 3 && champion.info.difficulty < 7) {
-        return champion
+        return champion;
       }
-    })
+    });
   }
 
   if (term === "3") {
     filteredByDifficult = Object.values(championList).filter(champion => {
       if (champion.info.difficulty > 6) {
-        return champion
+        return champion;
       }
-    })
+    });
   }
 
   return filteredByDifficult;
