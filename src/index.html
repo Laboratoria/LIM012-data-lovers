@@ -8,7 +8,13 @@
   <body>
     <header>
       <h1 class>League of Legend (icono)</h1>
-      <div>Buscar por nombre</div>
+      <div>
+       <form class="formBuscador">
+         <input type="text" id="buscador" placeholder="Buscar por campeon">
+         <button id="botonBuscar" class="botonBuscador"></button>
+
+       </form>
+      </div>
     </header>
     <main>
       <nav class="menu">
@@ -19,10 +25,14 @@
         <li class="habilidades">Habilidades</li>
       </nav>
       <section class="listaDeCampeones">
-        <figure class="campeon">
+        <!--<figure class="campeon">
           <img class="campeonImagen" src="http://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ahri_0.jpg"></img>
           <figcaption class="campeonNombre">"Aatrox"</figcaption>
-        </figure>
+        </figure>>-->
+        <img id="foto"> 
+        <div id="galeria"></div>
+       
+      
       </section>
     </main>
     <footer>
