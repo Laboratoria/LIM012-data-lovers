@@ -98,6 +98,7 @@ const createTypeButton = (type) => {
   const buttonPokemonType = document.createElement('button');
   buttonPokemonType.className = 'pokemon-type';
   buttonPokemonType.className += ' pokemon-type-button';
+  buttonPokemonType.setAttribute('value', type);
   const iconPokemonType = document.createElement('img');
   iconPokemonType.className = 'icon-pokemon-type';
   iconPokemonType.setAttribute('src', `images/${type}.png`);
@@ -166,7 +167,26 @@ const loadPage = () => {
   }
 };
 
-window.onload = loadPage;
-/* console.log(filterPokemon('type', 'water'));
-console.log(filterPokemon('resistant', 'water'));
-console.log(filterPokemon('weaknesses', 'water'));*/
+const filterPokemonByType = (type) => {
+  // console.log(`pokemones de tipo: ${type}`);
+  const resultTypes = filterPokemon('type', type);
+  console.log(resultTypes);
+  /* const resultResistant = filterPokemon('resistant', type);
+  const resultWeaknesses = filterPokemon('weaknesses', type); */
+  /* showCard(resultTypes);
+  showCard(resultResistant);
+  showCard(resultWeaknesses);*/
+};
+
+/* const buttonsType = document.getElementsByClassName('pokemon-type-button');
+for (const button of buttonsType) {
+  button.addEventListener('click', filterPokemonByType(buttonsType[i].value));
+} */
+
+const buttons = document.querySelectorAll('.pokemon-type-button');
+buttons.forEach((element) => {
+  console.log('me muero de hambre');
+  element.addEventListener('click', filterPokemonByType(element.value));
+});
+
+// window.onload = loadPage;
