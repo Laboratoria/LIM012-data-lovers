@@ -13,3 +13,21 @@ export const dinamicSearchPokemon = (wordIntroduced) => {
   }
   return pokemonFilter;
 };
+
+export const filterPokemon = (whichFilter, pokemonType) => {
+  let result = [];
+  switch (whichFilter) {
+    case 'type':
+      result = data.pokemon.filter(pk => pk.type.includes(pokemonType));
+      break;
+    case 'resistant':
+      result = data.pokemon.filter(pokemon => pokemon.resistant.includes(pokemonType));
+      break;
+    case 'weaknesses':
+      result = data.pokemon.filter(pokemon => pokemon.weaknesses.includes(pokemonType));
+      break;
+    default:
+      // do nothing
+  }
+  return result;
+};

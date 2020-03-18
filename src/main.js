@@ -1,4 +1,4 @@
-import { dinamicSearchPokemon } from './data.js';
+import { dinamicSearchPokemon, filterPokemon } from './data.js';
 
 import data from './data/pokemon/pokemon.js';
 
@@ -166,5 +166,36 @@ const loadPage = () => {
   }
 };
 
-
 window.onload = loadPage;
+
+const divideDivs = () => {
+  const divCardContainer = document.getElementById('card-container');
+  divCardContainer.innerHTML = '';
+  const divContainer2 = document.createElement('div');
+  divContainer2.id = 'card-container2';
+  divCardContainer.appendChild(divContainer2);
+  const divType = document.createElement('div');
+  const divResistence = document.createElement('div');
+  const divWeaknesses = document.createElement('div');
+  divType.className = 'div-container-filter';
+  divResistence.className = 'div-container-filter';
+  divWeaknesses.className = 'div-container-filter';
+  divContainer2.appendChild(divType);
+  divContainer2.appendChild(divResistence);
+  divContainer2.appendChild(divWeaknesses);
+  const pType = document.createElement('p');
+  const pResistence = document.createElement('p');
+  const pWeaknesses = document.createElement('p');
+  divType.appendChild(pType);
+  divResistence.appendChild(pResistence);
+  divWeaknesses.appendChild(pWeaknesses);
+  pType.textContent = ' Pokemones tipo:';
+  pResistence.textContent = ' Pokemones resistentes a:';
+  pWeaknesses.textContent = ' Pokemones débiles a:';
+};
+
+divideDivs();
+
+/* console.log(filterPokemon('type', 'water'));
+console.log(filterPokemon('resistant', 'water'));
+console.log(filterPokemon('weaknesses', 'water'));*/
