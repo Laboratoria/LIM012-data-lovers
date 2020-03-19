@@ -545,8 +545,6 @@ margin-left: 35%; */
   transform: perspective(600px) rotateY(0deg);
   transform-style: preserve-3d;
   transition: all ease .5s;
-  margin: 1rem;
-  padding-bottom: 1rem;
 }
 
 .card:hover {
@@ -898,4 +896,6 @@ li.active a {
   text-align: center;
   color: #a87e3e;
   font-size: 20px;
+  font-family: 'Marcellus SC', serif;
+  font-weight: bold;
 }
