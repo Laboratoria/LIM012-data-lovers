@@ -5,8 +5,10 @@
 body{
     background-image:url("img/pokBack.jpg");
     background-size:cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
     color: #fff;
-    width: 80%;
+    
     height: 80%;
     margin: 20px auto;
     display: grid;
@@ -17,6 +19,7 @@ ul{
     list-style: none;
     display:flex;
     justify-content:flex-end;
+    position: fixed;
     font-size: 18px;
     
 }
@@ -68,6 +71,7 @@ li{
     cursor: pointer;
     margin: 2em;
 }
+
 #screen1 {
     display: block;
     margin: auto;
@@ -76,9 +80,44 @@ li{
     
 }
 footer{
-    position: absolute;
+    position: fixed;
     bottom: 0;
+    width: 100%;
+    background-color: rgba(66, 168, 57, 0.795);
+    padding-left: 5em;
+    font-size: 18px;
 }
 #screen2{
     display: none;
 }
+.s3{
+    
+    width: 140px;
+    height: 150px;
+    background-color: #ffffff;
+    border-color:#b13b3b;
+    border-radius: 20px;
+	color:rgb(82, 82, 88);
+	font-size: 21px;
+    text-align: center;
+    margin-bottom: 15px;
+    margin-left: 20px;
+    padding: 30px 20px;
+    float: left;
+   
+    /* display:flex;
+    flex-direction: column;
+    padding: 30px 20px;
+     */
+}
+.Screen3{
+    
+    margin-top: 15em;
+    margin-left: 10em;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+ 
+}
+
