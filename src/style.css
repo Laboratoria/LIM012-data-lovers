@@ -889,11 +889,16 @@ li.active a {
 }
 
 #btnPlayFree {
-  text-decoration: none;
+  display: grid;
+  grid-template-columns: 1fr, 1fr;
   border-radius: 25px 0px 25px 0px;
   width: 20%;
   text-align: center;
   align-items: center;
   background-color: rgba(255, 255, 255, 0.733);
   color: #07cbe9
+}
+
+#playFree {
+  text-decoration: none;
 }
