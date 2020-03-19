@@ -8,8 +8,64 @@ import data from './data/lol/lol.js';
 console.log(data.data);
 
 const allChampion = data.data;
+const arrObjetos = [Object.values(allChampion)];
+//console.log(arrObjetos);
+
+const btnMostrar = document.getElementById('btnMostrar');
+//const btnOrdenar = document.getElementById('btnOrdenar');
+const contenedor = document.getElementById('contenedor')
+
+const crearTemplate = (arr) => {
+  //console.log(arr);
+  let stringTemplate = '';
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < arr[i].length; j++) {
+    stringTemplate += `<div>     
+     <img src = ${arr[i][j]['splash']}>
+     <p>${arr[i][j]['id']}</p>
+   </div>`;
+   //console.log(arr[0][0].id);
+  }
+  return stringTemplate
+  }
+  return stringTemplate
+}
+
+btnMostrar.addEventListener('click', () => {
+  contenedor.innerHTML = crearTemplate(arrObjetos);
+})
+
+/*
+btnOrdenar.addEventListener('click', () => {
+  contenedor.innerHTML = '';
+  contenedor.innerHTML = crearTemplate(ordenarArray(arrObjetos))
+})
+*/
 
 //MOSTRAR LOS VALORES DE LOS OBJETOS EN LA PANTALLA
+/*function compare(a, b) {
+  if (a < b) {
+    return -1;
+  }
+  if (a > b) {
+    return 1;
+  }
+  // a debe ser igual b
+  return 0;
+}
+
+arrayChampion.sort(function compare(a, b) {
+  if (a.id > b.id) {
+    return 1;
+  }
+  if (a.id < b.id) {
+    return -1;
+  }
+  // a must be equal to b
+  return 0;
+});
+*/
+/*
 Object.values(allChampion).map(champion => {
   const newElement = document.createElement('div'); 
   const img = document.createElement('img');
@@ -21,60 +77,22 @@ Object.values(allChampion).map(champion => {
   img.src = `${champion.splash}`
   p.innerHTML = `${champion.name}`         
   let all = document.getElementById('all');
-  all.appendChild(newElement);   
-});
+  all.appendChild(newElement); 
+});*/
 
-
-const btnZA = document.getElementById('btnZA');
-btnZA.addEventListener('click', () => {
-document.getElementById("all").style.visibility = 'hidden';
-const newArray = document.createElement('div'); 
-const img = document.createElement('img');
-img.classList.add('class-img');
-const p = document.createElement('p');
-p.classList.add('class-name');
-newArray.appendChild(img);
-newArray.appendChild(p);
-const result = Object.keys(allChampion).sort().reverse();
-result.forEach(agregarElementos);
-function agregarElementos(item, index){         
-  document.getElementById("array").innerHTML += index + ":" + item + "<br>"; 
-}
-  let array = document.getElementById('array');
-array.appendChild(newArray); 
-});
 /*
-const result = Object.keys(allChampion).sort().reverse();
-result.forEach(agregarElementos);
-function agregarElementos(item, index){
-  document.getElementById("array").innerHTML += index + ":" + item + "<br>"; 
-}
-console.log('Arreglo', result);
-});
-
-
-img.src = `${champion.splash}`
-p.innerHTML = `${champion.name}`
-*/
-
-/*const result = Object.keys(allChampion).sort().reverse();
-//document.getElementById("div").innerHTML = Object.keys(allChampion).sort().reverse();;
-console.log('Arreglo', result);
-
-result.forEach(agregarElementos);
-function agregarElementos(item, index){
-  document.getElementById("array").innerHTML += index + ":" + item + "<br>"; 
-}
-
-
-
-  var lista=document.getElementById("all"); 
-  array.forEach(function(data,index){
-  var linew= document.createElement("div");    
-  var contenido = document.createTextNode(data.name);
-  lista.appendChild(linew);
-  linew.appendChild(contenido);
-  
-  })
+const crearTemplate = (arr) => {
+  //console.log(arr);
+  let stringTemplate = '';
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < arr.length; j++) {
+    stringTemplate += `<div>     
+     <img src = ${arr[i][j]['splash']}>
+     <p>${arr[i][j]['id']}</p>
+   </div>`;
+   //console.log(arr[0][0].id);
   }
-  agregarElementos(result);*/
+  return stringTemplate
+  }
+  return stringTemplate
+}*/
