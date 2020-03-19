@@ -181,6 +181,26 @@ section{
   color: var(--color-blue-4);
   
 }
+.carousel{
+  width: auto;
+  height: auto;
+  border: black solid 1px;
+  /* display: block; */
+  margin: 1em;
+  padding: 1em;
+}  
+  .carousel button{
+    height: 200px;
+    width: 50px;
+    /* display: inline-block; */
+  }
+  .cards-carousel{
+    /* display: inline-block; */
+    /* width: auto;
+    height: auto; */
+    background: yellow;
+    display: inline-flex;
+  }
 #card-container2{
   display: grid;
   grid-template-columns: auto;
@@ -281,11 +301,6 @@ section{
   
 }
 
-
-/* @media screen and (min-width: 768px) and (max-width:1023px){
- 
-} */
-  
   
   @media screen and (min-width: 1024px) {        
     section{
