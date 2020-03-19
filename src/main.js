@@ -27,7 +27,7 @@ const typeColors = {
 let resultTypes = [];
 let resultResistant = [];
 let resultWeaknesses = [];
-let typeChoosed ="";
+let typeChoosed = '';
 
 
 const createPokemonType = (type) => {
@@ -163,14 +163,17 @@ buttonOrderPokemon.addEventListener('click', showLateralMenu);
 buttonCloseLateralMenu.addEventListener('click', hideLateralMenu);
 buttonCloseLateralMenu.addEventListener('click', hideLateralMenu);
 
-const showAllByFilter = () => {
+const showAllByFilter = (whichFilter) => {
   const divCardContainer = document.getElementById('card-container');
   divCardContainer.classList.add('card-container-flex');
-  showCard(resultTypes,divCardContainer);
+  divCardContainer.innerHTML = '';
+  showCard(filterPokemon(whichFilter, typeChoosed), divCardContainer);
 };
 
 const showMore = document.getElementsByClassName('show-more');
-showMore[1].addEventListener('click', showAllByFilter);
+showMore[0].addEventListener('click', function(){showAllByFilter("type")});
+showMore[1].addEventListener('click', function(){showAllByFilter("resistant")});
+showMore[2].addEventListener('click', function(){showAllByFilter("weaknesses")});
 
 const loadPage = () => {
   const asideLateralMenu = document.getElementsByTagName('aside')[0];
@@ -254,6 +257,6 @@ document.addEventListener('click', (element) => {
   if (element.target && element.target.className === 'pokemon-type pokemon-type-button') {
     // divideDivs(filterPokemonByType(element.target.value));
     filterPokemonByType(element.target.value);
+    typeChoosed = element.target.value;
   }
-    
-};
+});

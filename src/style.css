@@ -219,6 +219,7 @@ section{
   text-decoration: underline;
   grid-column: 3/5;
   justify-self: end;
+  cursor: hand;
 }
   .prev,
   .next {
