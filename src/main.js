@@ -7,7 +7,6 @@ const sectionContent = document.querySelector('.content');
 // Obteniendo todos los pokemones y separando por generación
 const allDataByGenerations = () => {
   //
-  sectionContent.classList.remove('distribution-search');
   // Subtitulo Kanto
   const subKanto = document.createElement('div');
   subKanto.className = 'subtitles margin-bottom';
@@ -18,6 +17,7 @@ const allDataByGenerations = () => {
     <div class="line hide"></div>
     `;
   sectionContent.appendChild(subKanto);
+  //
   // Subtitulo Johto
   const subJohto = document.createElement('div');
   subJohto.className = 'subtitles margin-bottom';
@@ -28,7 +28,8 @@ const allDataByGenerations = () => {
     <div class="line hide"></div>
     `;
   sectionContent.appendChild(subJohto);
-  // Contenedor de pokemones Kanto
+  //
+  // Pokemones Kanto
   const dataKanto = document.createElement('div');
   dataKanto.className = 'cards-distribution';
   // Contenedor de pokemones Kanto
@@ -47,40 +48,41 @@ const allDataByGenerations = () => {
 };
 //
 //
-//
-// El evento que llama a la función que inserta todos los pokemones
+// El evento que llama a la función que inserta todos los pokemones al iniciar la página
 window.addEventListener('load', () => {
   allDataByGenerations();
 });
+//
+//
 // Guardando input para buscar
 const searchInput = document.querySelector('#filter-search');
-//
 // Evento del input que ejecuta la funcion search
-
-
 searchInput.addEventListener('input', () => {
   const inputText = searchInput.value.toLowerCase();
   // Crear el contenedor con createElement para search
   const searchBox = document.createElement('div');
-  // Agregar una clase a ese contenedor para que tenga su propio estilo.
   searchBox.classList.add('distribution-search');
-  // Agrego el nuevo div al sctionContent con .appendChild 
   sectionContent.innerHTML = '';
+  // Llamar a las funciones correspondientes de acuerdo al estado del input
   if (inputText === '') {
     allDataByGenerations();
+    sectionContent.removeChild(searchBox);
   } else {
+    // Iterando cada elemento del array y llamando a la función que crea las cards
     data.pokemon.forEach((element) => {
       searchBox.innerHTML += search(element, inputText);
     });
   }
-  // mensaje en caso que no se encuentre el pokemon
+  // Mensaje en caso que no se encuentre el pokemon
   if (searchBox.innerHTML === '') {
     searchBox.innerHTML += `
     No se ha encontrado el pokemon :(
   `;
   }
+  // Insertando el resultado de la búsqueda al DOM
   sectionContent.appendChild(searchBox);
 });
+//
 //
 // Botón de subir
 window.onscroll = () => {

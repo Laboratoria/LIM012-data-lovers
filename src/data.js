@@ -7,10 +7,10 @@ export const pokemonCard = (eachPokemon) => {
       <p class="pokemon-number left">${eachPokemon.num}</p>
       <img class="pokemon-image" src="${eachPokemon.img}">
       <p class="pokemon-name">${eachPokemon.name}</p> 
-    </div>
-    `;
+    </div>`;
   return pokemon;
 };
+//
 // Función para buscar pokemones
 export const search = (element, inputText) => {
   const namePokemon = element.name;
