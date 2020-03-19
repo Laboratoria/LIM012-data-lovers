@@ -1,5 +1,9 @@
-https://luzcry.github.io/LIM012-data-lovers/src/index.html
+link de gh pages✨
+https://luzcry.github.io/LIM012-data-lovers/src/index.html 🌟
+No olvides darle a la estrellita ⭐
+
 # Definición del producto DIGITAL: 💻
+
 
 ## Investigación UX: ✏️
  
