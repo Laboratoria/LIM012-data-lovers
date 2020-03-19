@@ -4,29 +4,29 @@ import { inputSearchElem } from './main.js';
 export const showInfo=(pokes)=>{
   const inputValue=inputSearchElem.value;
   let info='';
-  console.log(`Lei input ${inputValue}`)
+//   console.log(`Lei input ${inputValue}`)
       pokes.forEach((poke)=>{
-          if(inputValue==poke.name){
-              info= `
+         if(inputValue==poke.name){
+             info= `
+              <p id="namePok"> ${poke.name}</p>
               <section id="s2img">
-                  <span>${poke.num}</span>
+                  <span class="circle">${poke.num}</span>
                   <img src="${poke.img}" alt="pokemonImage">
-                  <span id="namePok"> ${poke.name}</span>
               </section> 
               <section id="s2about">
-                  <p>About:<span>${poke.about}</p>
-              </section>
-              <section id="s2info">
-                  <p>Type: <span>${poke.type}</span></p>
-                  <p>Height: <span>${poke.size.height}</span></p>
-                  <p>Weight: <span>${poke.size.weight}</span></p>      
-              </section>
-              <section id="weakRes">
-                  <p>Weakness: <span>${poke.weaknesses}</span></p>
-                  <p>Resistance: <span>${poke.resistant}</span></p>
-              </section>
+                    <p id="about" class="infoCont"> <span>${poke.about}</span></p>
+                    <div id="s2info" class="infoCont data">
+                        <p>Type:<span>${poke.type}</span></p>
+                        <p>Height:<span>${poke.size.height}</span></p>
+                        <p>Weight:<span>${poke.size.weight}</span></p>      
+                    </div>
+                    <div id="weakRes" class="infoCont data">
+                        <p>Weakness:<span>${poke.weaknesses}</span></p>
+                        <p>Resistance:<span>${poke.resistant}</span></p>
+                    </div>
+               </section>
               `
-          }
+         }
       });
       if(info){
           return info;
@@ -36,4 +36,3 @@ export const showInfo=(pokes)=>{
       }   
 }
 //<p>Special Attack: <span>${poke.special-attack}</span></p> 
-
