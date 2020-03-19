@@ -48,7 +48,7 @@ Object.values(championList).map((champion) => {
   backCard.appendChild(backCardInfo);
   const championName = document.createElement('div');
   const championNameImage = document.createElement('img');
-  championNameImage.src = `${champion.img}`;
+  championNameImage.src = './assets/espada.png';
   championName.appendChild(championNameImage);
   backCardInfo.appendChild(championName);
   const backCardInfoTitle = document.createElement('h3');
@@ -127,66 +127,22 @@ if (typeof input.addEventListener != "undefined") {
       filteredList.innerHTML = "";
       //filteredList ==  <div id="filteredList" ></div>
       Object.values(filteredChampions).map(champion => {
-        const div = document.createElement('div');
-        div.className = 'card';
-        div.style.backgroundImage = `url("${champion.splash}")`;
-        const p = document.createElement('p');
-        p.className = 'championName';
+        const div = document.createElement("div");
+        const img = document.createElement("img");
+        const p = document.createElement("p");
+        p.className = "championName";
+        img.className = "championSplash";
+        img.src = `${champion.splash}`;
         p.innerHTML = `${champion.name}`;
+        div.appendChild(img);
         div.appendChild(p);
-
-        const backCard = document.createElement('div');
-        backCard.className = 'back-card';
-        const backCardInfo = document.createElement('div');
-        backCardInfo.className = 'back-card__info';
-        backCard.appendChild(backCardInfo);
-        const championName = document.createElement('div');
-        const championNameImage = document.createElement('img');
-        championNameImage.src = `${champion.img}`;
-        championName.appendChild(championNameImage);
-        backCardInfo.appendChild(championName);
-        const backCardInfoTitle = document.createElement('h3');
-        backCardInfoTitle.innerHTML = champion.title;
-        backCardInfo.appendChild(backCardInfoTitle);
-        const championBox = document.createElement('div');
-        championBox.className = 'champion-box';
-        const championClass = document.createElement('div');
-        championClass.className = 'champion-class';
-        const championClassText = document.createElement('p');
-        championClassText.innerHTML = 'CLASS';
-        championClass.appendChild(championClassText);
-        championBox.appendChild(championClass);
-        const championDifficult = document.createElement('div');
-        championDifficult.className = 'champion-difficulty';
-        const championDifficultText = document.createElement('p');
-        championDifficultText.innerHTML = 'DIFFICULTY';
-        championDifficult.appendChild(championDifficultText);
-        championBox.appendChild(championDifficult);
-
-        const championStats = document.createElement('div');
-        championStats.className = 'champion-stats';
-
-        Object.entries(champion.info).map(([key, value]) => {
-          const championStatsText = document.createElement('p');
-          championStatsText.className = 'champion-stats__item';
-          championStatsText.innerHTML = `${key}: ${value}`;
-          championStats.appendChild(championStatsText);
-        });
-
-        backCardInfo.appendChild(championStats);
-
-        const moreStatsButton = document.createElement('div');
-        moreStatsButton.className = 'more-stats';
-        moreStatsButton.innerHTML = 'More stats';
-        backCardInfo.appendChild(moreStatsButton);
-        div.appendChild(backCard);
         filteredList.appendChild(div);
       });
     },
     false
   );
 }
-filteredList.innerHTML = "";
+
 //[p.btn, p.btn, p.btn, p.btn, p.btn, p.btn, p.btn]
 // p.btn == button == <p class="btn" data-value="ALL">ALL</p>
 let ul = document.querySelector('ul');
@@ -222,59 +178,15 @@ li.forEach(button => {
 
     //filteredList ==  <div id="filteredList" ></div>
     Object.values(filteredChampions).map(champion => {
-      const div = document.createElement('div');
-      div.className = 'card';
-      div.style.backgroundImage = `url("${champion.splash}")`;
-      const p = document.createElement('p');
-      p.className = 'championName';
+      const div = document.createElement("div");
+      const img = document.createElement("img");
+      const p = document.createElement("p");
+      p.className = "championName";
+      img.className = "championSplash";
+      img.src = `${champion.splash}`;
       p.innerHTML = `${champion.name}`;
+      div.appendChild(img);
       div.appendChild(p);
-
-      const backCard = document.createElement('div');
-      backCard.className = 'back-card';
-      const backCardInfo = document.createElement('div');
-      backCardInfo.className = 'back-card__info';
-      backCard.appendChild(backCardInfo);
-      const championName = document.createElement('div');
-      const championNameImage = document.createElement('img');
-      championNameImage.src = `${champion.img}`;
-      championName.appendChild(championNameImage);
-      backCardInfo.appendChild(championName);
-      const backCardInfoTitle = document.createElement('h3');
-      backCardInfoTitle.innerHTML = champion.title;
-      backCardInfo.appendChild(backCardInfoTitle);
-      const championBox = document.createElement('div');
-      championBox.className = 'champion-box';
-      const championClass = document.createElement('div');
-      championClass.className = 'champion-class';
-      const championClassText = document.createElement('p');
-      championClassText.innerHTML = 'CLASS';
-      championClass.appendChild(championClassText);
-      championBox.appendChild(championClass);
-      const championDifficult = document.createElement('div');
-      championDifficult.className = 'champion-difficulty';
-      const championDifficultText = document.createElement('p');
-      championDifficultText.innerHTML = 'DIFFICULTY';
-      championDifficult.appendChild(championDifficultText);
-      championBox.appendChild(championDifficult);
-
-      const championStats = document.createElement('div');
-      championStats.className = 'champion-stats';
-
-      Object.entries(champion.info).map(([key, value]) => {
-        const championStatsText = document.createElement('p');
-        championStatsText.className = 'champion-stats__item';
-        championStatsText.innerHTML = `${key}: ${value}`;
-        championStats.appendChild(championStatsText);
-      });
-
-      backCardInfo.appendChild(championStats);
-
-      const moreStatsButton = document.createElement('div');
-      moreStatsButton.className = 'more-stats';
-      moreStatsButton.innerHTML = 'More stats';
-      backCardInfo.appendChild(moreStatsButton);
-      div.appendChild(backCard);
       filteredList.appendChild(div);
     });
   });
@@ -299,61 +211,43 @@ difficulty1.forEach(option => {
 
     //filteredList ==  <div id="filteredList" ></div>
     Object.values(filteredChampions).map(champion => {
-      const div = document.createElement('div');
-      div.className = 'card';
-      div.style.backgroundImage = `url("${champion.splash}")`;
-      const p = document.createElement('p');
-      p.className = 'championName';
+      const div = document.createElement("div");
+      const img = document.createElement("img");
+      const p = document.createElement("p");
+      p.className = "championName";
+      img.className = "championSplash";
+      img.src = `${champion.splash}`;
       p.innerHTML = `${champion.name}`;
+      div.appendChild(img);
       div.appendChild(p);
-
-      const backCard = document.createElement('div');
-      backCard.className = 'back-card';
-      const backCardInfo = document.createElement('div');
-      backCardInfo.className = 'back-card__info';
-      backCard.appendChild(backCardInfo);
-      const championName = document.createElement('div');
-      const championNameImage = document.createElement('img');
-      championNameImage.src = `${champion.img}`;
-      championName.appendChild(championNameImage);
-      backCardInfo.appendChild(championName);
-      const backCardInfoTitle = document.createElement('h3');
-      backCardInfoTitle.innerHTML = champion.title;
-      backCardInfo.appendChild(backCardInfoTitle);
-      const championBox = document.createElement('div');
-      championBox.className = 'champion-box';
-      const championClass = document.createElement('div');
-      championClass.className = 'champion-class';
-      const championClassText = document.createElement('p');
-      championClassText.innerHTML = 'CLASS';
-      championClass.appendChild(championClassText);
-      championBox.appendChild(championClass);
-      const championDifficult = document.createElement('div');
-      championDifficult.className = 'champion-difficulty';
-      const championDifficultText = document.createElement('p');
-      championDifficultText.innerHTML = 'DIFFICULTY';
-      championDifficult.appendChild(championDifficultText);
-      championBox.appendChild(championDifficult);
-
-      const championStats = document.createElement('div');
-      championStats.className = 'champion-stats';
-
-      Object.entries(champion.info).map(([key, value]) => {
-        const championStatsText = document.createElement('p');
-        championStatsText.className = 'champion-stats__item';
-        championStatsText.innerHTML = `${key}: ${value}`;
-        championStats.appendChild(championStatsText);
-      });
-
-      backCardInfo.appendChild(championStats);
-
-      const moreStatsButton = document.createElement('div');
-      moreStatsButton.className = 'more-stats';
-      moreStatsButton.innerHTML = 'More stats';
-      backCardInfo.appendChild(moreStatsButton);
-      div.appendChild(backCard);
       filteredList.appendChild(div);
     });
   })
 });
-filteredList.innerHTML = "";
+
+
+// Get the modal
+let modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+let btn = document.getElementsByClassName("championSplash");
+
+// Get the <span> element that closes the modal
+let span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal
+btn.onclick = function () {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function () {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function (event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+};

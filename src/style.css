@@ -370,7 +370,6 @@ margin-top: 40%; */
     border: 1px solid #07cbe9;
     background-color: transparent;
     font-family: "Marcellus SC", serif;
-
 }
 
 #buttonEnter1 {
@@ -497,6 +496,7 @@ margin-left: 35%; */
     text-align: center;
 }
 
+
 /*SEGUNDA INTERFAZ */
 
 #secondScreen {
@@ -538,7 +538,6 @@ margin-left: 35%; */
     grid-gap: 3rem;
     padding-bottom: 0;
     transition: .4s ease-in-out;
-
 }
 
 #filteredList {
@@ -548,6 +547,7 @@ margin-left: 35%; */
     padding: 3rem;
     grid-gap: 3rem;
 }
+
 
 /* #filteredList p {
     font-size: 22px;
@@ -561,6 +561,7 @@ margin-left: 35%; */
     grid-template-columns: 12% 20%;
     margin-top: -18px;
 }
+
 
 /*CARD*/
 
@@ -577,7 +578,6 @@ margin-left: 35%; */
     transform: perspective(600px) rotateY(0deg);
     transform-style: preserve-3d;
     transition: all ease .5s;
-
 }
 
 .card:hover {
@@ -588,24 +588,24 @@ margin-left: 35%; */
     transform: rotateY(180deg);
 }
 
+
 /*Backcard*/
 
 .back-card {
-  width: 100%;
-  height: 100%;
-  background: #704efae8;
-  display: flex;
-  border: 1px solid #07cbe9;
-  position: absolute;
-  top: 0;
-  font-family: "Marcellus SC", serif;
-  color: #fff;
-  overflow: auto;
-  box-shadow: inset 0 0 1.25rem #07cbe9, 0 0 1.25rem #07cbe9;
-  transform: perspective(600px) rotateY(180deg);
-  backface-visibility: hidden;
-  transition: all ease 0.5s;
-
+    width: 100%;
+    height: 100%;
+    background: #704efae8;
+    display: flex;
+    border: 1px solid #07cbe9;
+    position: absolute;
+    top: 0;
+    font-family: "Marcellus SC", serif;
+    color: #fff;
+    overflow: auto;
+    box-shadow: inset 0 0 1.25rem #07cbe9, 0 0 1.25rem #07cbe9;
+    transform: perspective(600px) rotateY(180deg);
+    backface-visibility: hidden;
+    transition: all ease .5s;
 }
 
 .back-card__info {
@@ -622,17 +622,11 @@ margin-left: 35%; */
     font-size: 12.8px;
 }
 
-.championNameImage {
-  width: 100px;
-  height: 100px;
-}
-
 .champion-name p {
-  
-  font-family: "Trade Winds", cursive;
-  font-size: 22px;
-  color: #dfc981;
-
+    font-family: 'Trade Winds', cursive;
+    font-size: 22px;
+    color: #dfc981;
+}
 
 .champion-name img {
     height: 20px;
@@ -667,15 +661,16 @@ margin-left: 35%; */
     padding: 4px 8px;
 }
 
+
 /* front card */
 
 .championName {
-  position: absolute;
-  top: 100%;
-  font-size: 20px;
-  text-align: center;
-  font-family: "Trade Winds", cursive;
-  transition: all ease 0.5s;
+    position: absolute;
+    top: 100%;
+    font-size: 20px;
+    text-align: center;
+    font-family: "Trade Winds", cursive;
+    transition: all ease .5s;
 }
 
 .championName:hover {
@@ -695,18 +690,18 @@ margin-left: 35%; */
     animation: 10s ease infinite;
 }
 
+
 /*nav bar second screen*/
 
 .searchbar {
-
-  border: #dfc981;
-  height: 50px;
-  background-color: rgb(218, 213, 213);
-  color: #a87e3e;
-  display: grid;
-  grid-template-columns: 13% 1% 1fr 1% 10%;
-  padding-left: 16px;
-  font-family: "Marcellus SC", serif;
+    border: #dfc981;
+    height: 50px;
+    background-color: rgb(218, 213, 213);
+    color: #dfc981;
+    display: grid;
+    grid-template-columns: 13% 1% 1fr 1% 10%;
+    padding-left: 16px;
+    font-family: "Marcellus SC", serif;
 }
 
 .nameSearch {
@@ -745,8 +740,8 @@ li.active a {
     letter-spacing: 4px;
 }
 
-.menu > p {
-  align-self: center;
+.menu>p {
+    align-self: center;
 }
 
 .hidden {
