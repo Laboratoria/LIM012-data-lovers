@@ -60,7 +60,6 @@ btnOrdenar.addEventListener('click', () => {
   
 });*/
 
-
 const result = Object.values(allChampion).sort().reverse()
 
 result.map((champion) =>{
