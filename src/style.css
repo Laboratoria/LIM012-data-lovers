@@ -329,7 +329,7 @@ margin-top: 40%; */
   text-transform: capitalize;
 }
 
-#inputName:focus+.label_name .letraName {
+#inputName:focus + .label_name .letraName {
   transform: translateY(-180%);
   font-size: 15px;
   left: 10px;
@@ -354,7 +354,7 @@ margin-top: 40%; */
   grid-column: 2/3;
 }
 
-#mainElements4>button {
+#mainElements4 > button {
   width: 80%;
   height: 60%;
   outline: none;
@@ -389,7 +389,7 @@ margin-left: 35%; */
   animation: modal 2s;
 }
 
-#mainElements4>button:hover {
+#mainElements4 > button:hover {
   box-shadow: 0 0 1.25rem #feb412, 0 0 1.25rem #feb412;
   text-shadow: 1px 1px 8px #feb412, 0 0 1em #07cbe9, 0 0 0.2em #07cbe9;
   letter-spacing: 6px;
@@ -489,7 +489,6 @@ margin-left: 35%; */
   text-align: center;
 }
 
-
 /*SEGUNDA INTERFAZ */
 
 #secondScreen {
@@ -530,7 +529,7 @@ margin-left: 35%; */
   padding: 3rem;
   grid-gap: 3rem;
   padding-bottom: 0;
-  transition: .4s ease-in-out;
+  transition: 0.4s ease-in-out;
 }
 
 #filteredList {
@@ -540,7 +539,6 @@ margin-left: 35%; */
   padding: 3rem;
   grid-gap: 3rem;
 }
-
 
 /* #filteredList p {
     font-size: 22px;
@@ -554,7 +552,6 @@ margin-left: 35%; */
   grid-template-columns: 12% 20%;
   margin-top: -18px;
 }
-
 
 /*CARD*/
 
@@ -570,7 +567,7 @@ margin-left: 35%; */
   position: relative;
   transform: perspective(600px) rotateY(0deg);
   transform-style: preserve-3d;
-  transition: all ease .5s;
+  transition: all ease 0.5s;
 }
 
 .card:hover {
@@ -580,7 +577,6 @@ margin-left: 35%; */
 .card:hover .championName {
   transform: rotateY(180deg);
 }
-
 
 /*Backcard*/
 
@@ -598,7 +594,7 @@ margin-left: 35%; */
   box-shadow: inset 0 0 1.25rem #07cbe9, 0 0 1.25rem #07cbe9;
   transform: perspective(600px) rotateY(180deg);
   backface-visibility: hidden;
-  transition: all ease .5s;
+  transition: all ease 0.5s;
 }
 
 .back-card__info {
@@ -616,11 +612,12 @@ margin-left: 35%; */
 }
 
 .championNameImage {
-  width: 60px;
+  width: 100px;
+  height: 100px;
 }
 
 .champion-name p {
-  font-family: 'Trade Winds', cursive;
+  font-family: "Trade Winds", cursive;
   font-size: 22px;
   color: #dfc981;
 }
@@ -658,7 +655,6 @@ margin-left: 35%; */
   padding: 4px 8px;
 }
 
-
 /* front card */
 
 .championName {
@@ -667,7 +663,7 @@ margin-left: 35%; */
   font-size: 20px;
   text-align: center;
   font-family: "Trade Winds", cursive;
-  transition: all ease .5s;
+  transition: all ease 0.5s;
 }
 
 .championName:hover {
@@ -687,14 +683,13 @@ margin-left: 35%; */
   animation: 10s ease infinite;
 }
 
-
 /*nav bar second screen*/
 
 .searchbar {
   border: #dfc981;
   height: 50px;
   background-color: rgb(218, 213, 213);
-  color: #dfc981;
+  color: #a87e3e;
   display: grid;
   grid-template-columns: 13% 1% 1fr 1% 10%;
   padding-left: 16px;
@@ -737,7 +732,7 @@ li.active a {
   letter-spacing: 4px;
 }
 
-.menu>p {
+.menu > p {
   align-self: center;
 }
 
