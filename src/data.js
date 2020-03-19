@@ -1,20 +1,49 @@
 export const filterByName = (championList, term) => {
-    let filteredChampions = Object.values(championList).filter((champion) => {
-        //indexof da -1 si no encuentra resultados
-        if (champion.name.toLowerCase().indexOf(term) != -1) {
-            return champion;
-        }
-    });
-    console.log(filteredChampions);
-    return filteredChampions;
+  let filteredChampions = Object.values(championList).filter(champion => {
+    //indexof da -1 si no encuentra resultados
+    if (champion.name.toLowerCase().indexOf(term) != -1) {
+      return champion;
+    }
+  });
+
+  return filteredChampions;
 };
 
 export const filteredbyClass = (championList, term) => {
-    let filteredbyClass = Object.values(championList).filter((champion) => {
-        if (champion.tags.indexOf(term) != -1) {
-            return champion;
-        }
+  let filteredbyClass = Object.values(championList).filter(champion => {
+    if (champion.tags.indexOf(term) != -1) {
+      return champion;
+    }
+  });
+  return filteredbyClass;
+};
+
+export const filteredByDifficulty = (championList, term) => {
+  let filteredByDifficult;
+
+  if (term === "1") {
+    filteredByDifficult = Object.values(championList).filter(champion => {
+      if (champion.info.difficulty < 4) {
+        return champion;
+      }
     });
-    console.log(filteredbyClass);
-    return filteredbyClass;
+  }
+
+  if (term === "2") {
+    filteredByDifficult = Object.values(championList).filter(champion => {
+      if (champion.info.difficulty > 3 && champion.info.difficulty < 7) {
+        return champion;
+      }
+    });
+  }
+
+  if (term === "3") {
+    filteredByDifficult = Object.values(championList).filter(champion => {
+      if (champion.info.difficulty > 6) {
+        return champion;
+      }
+    });
+  }
+
+  return filteredByDifficult;
 };
