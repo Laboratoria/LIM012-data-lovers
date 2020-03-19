@@ -174,39 +174,55 @@ section{
 }
 
 #card-container{
-  /* display: flex; */
-  /* flex-wrap: wrap; */
-  /* justify-content: center; */
   width: auto;
   color: var(--color-blue-4);
-  
 }
-
   .card-container-flex{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    
   }
   .card-container-normal{
     display: block;
     /* justify-content: center; */    
+  }
+  .card-container-grid{
+    display: grid;
+    grid-template-columns: auto;
+    width: 100%;
+    height: 750px;
   }
 
 .carousel{  
   margin: 1em 0;
   /* background: tomato; */
   /* height: 215px; */
+  display: grid;
+   grid-template-columns: 5% 45% 45% 5%;
+   grid-template-rows: 10% 90% ;
   min-width: 200px;
   width: auto;
   height: auto;
+  padding: 3%;
   /* position: relative; */
 }  
 .carousel > *{
+  border: 1px solid black;
   display: inline;
+}
+.carousel > p{
+    font-size:large;
+    grid-column: 1/3;
+}
+.carousel .show-more{
+  font-size:large;
+  text-decoration: underline;
+  grid-column: 3/5;
+  justify-self: end;
 }
   .prev,
   .next {
+    align-self: center;
     cursor: pointer;
     margin: 20% 0;
     /* position: absolute; */
@@ -226,8 +242,11 @@ section{
     background-color: rgba(0, 0, 0, 0.8);
 }
   .cards-carousel{
-    background: yellow;
-    display: inline-flex;
+    /*display: inline-flex;*/
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    grid-column: 2/4;
   }
 #card-container2{
   display: grid;

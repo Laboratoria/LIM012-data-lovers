@@ -27,7 +27,7 @@ const typeColors = {
 let resultTypes = [];
 let resultResistant = [];
 let resultWeaknesses = [];
-const numberOfCards = 3;
+let typeChoosed ="";
 
 
 const createPokemonType = (type) => {
@@ -72,7 +72,7 @@ const createPokemonCard = (index, dataPokemon, container) => {
   putPokemonTypes(dataPokemon.type, divCardTypes);
   divCard.appendChild(divCardName);
   divCard.appendChild(divCardImage);
-  divCard.appendChild(divCardTypes);  
+  divCard.appendChild(divCardTypes);
 };
 
 const showCard = (dataPokemon, container) => {
@@ -163,6 +163,14 @@ buttonOrderPokemon.addEventListener('click', showLateralMenu);
 buttonCloseLateralMenu.addEventListener('click', hideLateralMenu);
 buttonCloseLateralMenu.addEventListener('click', hideLateralMenu);
 
+const showAllByFilter = () => {
+  const divCardContainer = document.getElementById('card-container');
+  divCardContainer.classList.add('card-container-flex');
+  showCard(resultTypes,divCardContainer);
+};
+
+const showMore = document.getElementsByClassName('show-more');
+showMore[1].addEventListener('click', showAllByFilter);
 
 const loadPage = () => {
   const asideLateralMenu = document.getElementsByTagName('aside')[0];
@@ -198,17 +206,13 @@ const loadPage = () => {
 //   showCard(dataPokemon, cardContainer);
 // };
 
-const showPokemonInSections = () => {
+const showPokemonInSections = (numberOfCards) => {
   const divCardContainer = document.getElementById('card-container');
   divCardContainer.classList.remove('card-container-flex');
   const divSections = divCardContainer.getElementsByClassName('cards-carousel');
   divSections[0].innerHTML = '';
   divSections[1].innerHTML = '';
   divSections[2].innerHTML = '';
-
-  console.log(divSections[0].className);
-  console.log(divSections[1].className);
-  console.log(divSections[2].className);
   for (let i = 0; i < numberOfCards; i += 1) {
     createPokemonCard(i, resultTypes[i], divSections[0]);
     createPokemonCard(i, resultResistant[i], divSections[1]);
@@ -220,7 +224,7 @@ const filterPokemonByType = (type) => {
   resultTypes = filterPokemon('type', type);
   resultResistant = filterPokemon('resistant', type);
   resultWeaknesses = filterPokemon('weaknesses', type);
-  showPokemonInSections();
+  showPokemonInSections(4);
 };
   // divCardContainer.classList.add('card-container-normal');
 
@@ -251,4 +255,5 @@ document.addEventListener('click', (element) => {
     // divideDivs(filterPokemonByType(element.target.value));
     filterPokemonByType(element.target.value);
   }
-});
+    
+};
