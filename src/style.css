@@ -677,7 +677,27 @@ margin-left: 35%; */
   display: grid;
   grid-template-columns: 5% 95%;
   grid-gap: 20px;
+  width: 100%;
   padding-top: 16px;
+}
+
+
+@media (max-width: 960px) {
+  .searchbar {
+    top: 0px;
+    border: #dfc981;
+    height: 20px;
+    background-color: rgb(218, 213, 213);
+    color: #ab8347;
+    display: grid;
+    grid-template-columns: 13% 1% 1fr 1% 10%;
+    padding-left: 16px;
+    font-family: "Marcellus SC", serif;
+  }
+
+  .searchInputs {
+    height: 20px;
+  }
 }
 
 ul {
@@ -736,14 +756,16 @@ li.active a {
 }
 
 #searchInputs {
+  display: inline-block;
   border: 0;
   background-color: rgb(218, 213, 213);
   color: #a87e3e;
-  width: 130px;
+  width: 100%;
   margin-left: 2px;
   font-size: 24px;
   margin-top: -16px;
   font-family: "Marcellus SC", serif;
+  box-sizing: border-box;
 }
 
 #searchInputs:hover {
