@@ -67,6 +67,7 @@ arrayChampion.sort(function compare(a, b) {
 */
 /*
 Object.values(allChampion).map(champion => {
+/*Object.values(allChampion).map(champion => {
   const newElement = document.createElement('div'); 
   const img = document.createElement('img');
   img.classList.add('class-img');
@@ -96,3 +97,22 @@ const crearTemplate = (arr) => {
   }
   return stringTemplate
 }*/
+  
+const result = Object.values(allChampion).sort().reverse()
+
+result.map((champion) =>{
+  const newElement = document.createElement('div'); 
+  const img = document.createElement('img');
+  img.classList.add('class-img');
+  const p = document.createElement('p');
+  p.classList.add('class-name');
+  newElement.appendChild(img);
+  newElement.appendChild(p);
+  img.src = `${champion.splash}`
+  p.innerHTML = `${champion.name}`         
+  let all = document.getElementById('all');
+  all.appendChild(newElement);
+});
+
+
+console.log(result);
