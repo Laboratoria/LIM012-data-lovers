@@ -73,7 +73,7 @@ const createPokemonCard = (index, dataPokemon, container) => {
 
 const showCard = (dataPokemon, container) => {
   for (let i = 0; i < dataPokemon.length; i += 1) {
-    console.log('tarjeta'+ i);
+    // console.log('tarjeta'+ i);
     createPokemonCard(i, dataPokemon[i], container);
   }
 };
@@ -121,16 +121,15 @@ const putPokemonTypesOnLateralMenu = (aside) => {
   aside.appendChild(typesConteiner);
 };
 
-// let showLateralMenu = false;
-// let firstShowLateralMenu = false;
+
 const showLateralMenu = () => {
-  // console.log('mostran menu lateral');
   const asideLateralMenu = document.getElementsByTagName('aside')[0];
-  // if (firstShowLateralMenu === false) {
-  //   putPokemonTypesOnLateralMenu(asideLateralMenu);
-  //   firstShowLateralMenu = true;
-  // }
-  asideLateralMenu.style.width = '80%';
+  // console.log(window.screen.width);
+  if (window.screen.width < 768) {
+    asideLateralMenu.style.width = '80%';
+  } else {
+    asideLateralMenu.style.width = '50%';
+  }
 };
 
 const hideLateralMenu = () => {
@@ -168,6 +167,7 @@ const loadPage = () => {
   const wordIntroduced = document.getElementById('input-bar-search').value;
   if (wordIntroduced.length === 0) {
     showCard(data.pokemon, document.getElementById('card-container'));
+    // showCard(data.pokemon.slice(0, 16));
   }
 };
 
@@ -211,9 +211,15 @@ const divideDivs = (arrayDataPokemon) => {
   divContainer2.id = 'card-container2';
   divCardContainer.appendChild(divContainer2);
   createRow(divContainer2, 'Pokemones tipo', arrayDataPokemon[0]);
-  //console.log(arrayDataPokemon[0]);
-  //createRow(divContainer2, 'Pokemones resistentes al tipo', arrayDataPokemon[1]);
-  //createRow(divContainer2, 'Pokemones débiles al tipo', arrayDataPokemon[2]);
+  // console.log(arrayDataPokemon[0]);
+  // createRow(divContainer2, 'Pokemones resistentes al tipo', arrayDataPokemon[1]);
+  // createRow(divContainer2, 'Pokemones débiles al tipo', arrayDataPokemon[2]);
+  // const resultResistant = filterPokemon('resistant', type);
+  // const resultWeaknesses = filterPokemon('weaknesses', type);
+
+  // showCard(resultTypes);
+  // showCard(resultResistant);
+  // showCard(resultWeaknesses);
 };
 
 
@@ -221,8 +227,8 @@ window.onload = loadPage;
 
 document.addEventListener('click', (element) => {
   if (element.target && element.target.className === 'pokemon-type pokemon-type-button') {
-    console.log('click');
-    console.log(filterPokemonByType(element.target.value));
+    // console.log('click');
+    // console.log(filterPokemonByType(element.target.value));
     divideDivs(filterPokemonByType(element.target.value));
   }
 });

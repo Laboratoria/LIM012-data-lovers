@@ -7,6 +7,9 @@
 	font-family: 'Aldrich', sans-serif;
 
 }
+html{
+  height: 100%;
+}
 .label{
   padding: .5em;
   margin: .5em;
@@ -21,8 +24,8 @@ body{
 }
 .root{
   width: 100%;
-  background-image: linear-gradient(to right, #051937, #002c47, #003e51, #005156, #2a6258);
-  /* background: #002c47; */
+  /* background-image: linear-gradient(to right, #051937, #002c47, #003e51, #005156, #2a6258); */
+  background: #a4e2cd;
   display: grid;
   grid-template-rows: repeat(5,auto);
 }
@@ -35,17 +38,23 @@ header,footer{
   text-align: center;
   color: antiquewhite;
   width: 100%;
+  position: relative;
 
 }
   #logo-pokemon{
     height: 100px;    
+  }
+  footer{
+    margin-top: 1em;
   }
 
 nav{
   background:var(--color-blue-2);
   top: 0;
   padding: .5rem;
-  height: 50px;  
+  height: 50px;
+  display: flex;
+  position:sticky;  
 }
   nav span{
     width: auto;
@@ -59,17 +68,8 @@ nav{
     }
 
 aside{
-  height: 100vh;
-  width: 0;
-  background:var(--color-blue-1);
-  position: fixed;  
-  top: 0;
-  left: 0;
-  z-index: 0;  
-  transition: 0.5s;
-  overflow: hidden;
-  /* min-width:300px ; */
-  
+  height: 100%;
+  width: 0;  
 }
 .header-menu{
   height: 3em;
@@ -120,14 +120,11 @@ aside{
     width: 20px;
     margin: 0 .5em;
   }
-section{
-  background: violet;
-  margin: 0;
-  padding: 0;
-}
-main{
-  height: auto;
-  padding: 1rem;
+section{  
+  /* padding: 0; */
+  height: 100%;
+  width: 100%;
+  justify-content: center;
 }
 
 #input-bar-search{
@@ -154,13 +151,7 @@ main{
       height: 20px;
       margin: 0;
     }
-#navbar,
-.top-filter{
-  display: flex;
-  position: sticky;  
-  width: 100%;
-  min-width: 370px;  
-}
+
 
 .top-filter{  
   top: 50px;
@@ -178,13 +169,17 @@ main{
   border: none;
   font-weight: bolder;
 }
+.top-pagination{
+  display: none;
+}
 
 #card-container{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  width: auto;
   color: var(--color-blue-4);
-  min-height: 400px;
+  
 }
 #card-container2{
   display: grid;
@@ -255,74 +250,98 @@ main{
     height:140px;
   }
 .pokemon-types{
-  width: auto;
   padding: .3rem;
   height: 30px;
 }
-  .pokemon-type{
-    border-radius: 3px;
-    color: var(--color-blue-4);
-    font-size: 12px;
-    display: inline;
-    padding: .3rem;
-    margin: .3em;
+.pokemon-type{
+  border-radius: 3px;
+  color: var(--color-blue-4);
+  font-size: 12px;
+  display: inline;
+  padding: .3rem;
+  margin: .3em;
+}
+
+
+@media screen and (max-width:1023px){ 
+  .top-filter{
+    display: flex;
+    position: sticky;    
+    min-width: 370px;  
   }
+  aside{    
+    background:var(--color-blue-3);
+    position: fixed;  
+    top: 0;
+    left: 0;
+    z-index: 0;  
+    transition: 0.5s;
+    overflow: hidden;  
+  }  
+  
+}
 
-  /* pantalla desktop*/
 
-  @media (min-width: 800px) {
-    .root{
+/* @media screen and (min-width: 768px) and (max-width:1023px){
+ 
+} */
+  
+  
+  @media screen and (min-width: 1024px) {        
+    section{
       display: grid;
-      grid-template-areas:"head head "
-                          "nav nav"
-                          "sidebar top-filter "
-                          "sidebar main"
-                          "foot foot";  
-    }
-    header{
-      grid-area: head;
-      min-width: 100%;
-    }
-    footer{
-      grid-area: foot;
-      height: 30vh;
-    }
-    nav{
-      grid-area: nav;
-      position: static;
-    }
+      grid-template-areas:"sidebar  top  top"
+                          "sidebar main main";
+      grid-template-rows: 80px auto;
+      grid-template-columns: 300px auto;
+      grid-gap: 1em;
+      padding: .5em;
+      min-width: 716px;  
+    }      
     aside{
-      grid-area: sidebar;      
-      position: static;
-      width: 25vw;
-      background: var(--color-blue-2);
-      margin: .5em;
-      margin-left: 3em;
-    }
+      grid-area: sidebar;  
+      width: 100%;
+      min-width: 300px;
+      background: var(--color-blue-3);
+      height: 100%;
+    }    
       #btn-close {
         display: none;
       }
+    
+    .top-pagination{
+      grid-area: top;
+      background: #fff;
+      display: inline;
+      padding: 1em;
+    }
+      .pagination-button{        
+        background: var(--color-blue-3);
+        color: #fff;
+        padding: .5em;      
+        font-size: .8em;
+      }
     main{
       grid-area: main;
-      height: 100vh;
-      margin: .5em;
-      width: 70vw;
-      padding: .2em;
-      /* background: tomato; */
+      height: 100%;
+      width: auto;
+      max-width: 840px;
+      background: #749b94;
+      padding: .5em;
     }
     .top-filter{
-      grid-area: top-filter;
-      margin: .5em;
-      width: 70vw;
-      height: 10vh;
-      position: static;
-      display: block;
+      display: none;
     }
-      .button-filter{
-        display: none;
-      }
+    .button-filter{
+      display: none;
+    }
     #aside{
       display: block;
       position: static;      
-    }      
+    }  
+    footer{
+      height: 300px;
+    }    
   }
+
+
