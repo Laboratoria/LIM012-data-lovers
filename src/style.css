@@ -615,6 +615,10 @@ margin-left: 35%; */
   font-size: 12.8px;
 }
 
+.championNameImage {
+  width: 60px;
+}
+
 .champion-name p {
   font-family: 'Trade Winds', cursive;
   font-size: 22px;
