@@ -97,14 +97,20 @@ a {
     font-size: 1em;
 }
 
+#btn-search {
+    display: none;
+}
+
 .icon-search {
     color: #FFF;
     font-size: 23px;
-    padding: 6px;
-    cursor: pointer;
 }
 
-.menu-style:hover, .icon-search:hover {
+label {
+    padding: 6px;
+}
+
+.menu-style:hover {
     color: rgba(0, 0, 0, 0.7);
 }
 
@@ -301,6 +307,10 @@ h2 {
         font-size: 25px;
         padding: 5px 7px;
         border-left: 3px solid #FFF;
+    }
+
+    .icon-search:hover {
+        color: rgba(0, 0, 0, 0.7);
     }
 
     .icon-search:hover {
