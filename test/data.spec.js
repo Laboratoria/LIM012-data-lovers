@@ -1,13 +1,16 @@
-import { example, anotherExample } from '../src/data.js';
+//import { example, anotherExample } from '../src/data.js';
+import { crearTemplate } from '../src/data.js';
 
+import data from "../src/data/lol/lol.js";
+let allChampion = data.data;
 
-describe('example', () => {
+describe('crearTemplate', () => {
   it('is a function', () => {
-    expect(typeof example).toBe('function');
+    expect(typeof crearTemplate).toBe('function');
   });
 
-  it('returns `example`', () => {
-    expect(example()).toBe('example');
+  it('returns Campeon Aatrox', () => {
+    expect(crearTemplate(allChampion,'Aatrox')).toBe([allChampion.Aatrox]);
   });
 });
 
