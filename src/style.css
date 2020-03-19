@@ -1,4 +1,3 @@
-
 *{
     margin: 0;
     padding: 0;
@@ -9,7 +8,6 @@ body{
     background-attachment: fixed;
     background-repeat: no-repeat;
     color: #fff;
-    
     height: 80%;
     margin: 20px auto;
     display: grid;
@@ -20,32 +18,25 @@ ul{
     list-style: none;
     display:flex;
     justify-content:flex-end;
-    position: fixed;
+    /* position: fixed; */
     font-size: 18px;
-    
 }
 #screen2{
-    
     backdrop-filter: brightness(0.4);
-    
 }
 .s2{
     color: rgb(223, 235, 231);
     margin: 5px;
     width: 200px;
     text-align: justify;
-    
 }
-
 .logo{
     width: 80%;
     height: 180%;
     padding-left: 10%;
-    
 }
 #screen1{
    padding-top: 18%;
-
 }
 #inputSearch{
     outline: none;
@@ -57,7 +48,6 @@ ul{
     color: #fff;
     font-size:25px;
     text-align: center;
-    
 }
 #inputSearch::placeholder{
     color: #fff;
@@ -72,13 +62,11 @@ li{
     cursor: pointer;
     margin: 2em;
 }
-
 #screen1 {
     display: block;
     margin: auto;
     display: grid;
     grid-template-rows: 8fr 2fr;
-    
 }
 footer{
     position: fixed;
@@ -92,7 +80,6 @@ footer{
     display: none;
 }
 .s3{
-    
     width: 140px;
     height: 150px;
     background-color: #ffffff;
@@ -105,19 +92,16 @@ footer{
     margin-left: 20px;
     padding: 30px 20px;
     float: left;
-   
     /* display:flex;
     flex-direction: column;
     padding: 30px 20px;
      */
 }
 .Screen3{
-    
     margin-top: 15em;
     margin-left: 10em;
     position: absolute;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
- 
 }
