@@ -43,30 +43,7 @@ btnOrdenar.addEventListener('click', () => {
 */
 
 //MOSTRAR LOS VALORES DE LOS OBJETOS EN LA PANTALLA
-/*function compare(a, b) {
-  if (a < b) {
-    return -1;
-  }
-  if (a > b) {
-    return 1;
-  }
-  // a debe ser igual b
-  return 0;
-}
 
-arrayChampion.sort(function compare(a, b) {
-  if (a.id > b.id) {
-    return 1;
-  }
-  if (a.id < b.id) {
-    return -1;
-  }
-  // a must be equal to b
-  return 0;
-});
-*/
-/*
-Object.values(allChampion).map(champion => {
 /*Object.values(allChampion).map(champion => {
   const newElement = document.createElement('div'); 
   const img = document.createElement('img');
@@ -79,25 +56,10 @@ Object.values(allChampion).map(champion => {
   p.innerHTML = `${champion.name}`         
   let all = document.getElementById('all');
   all.appendChild(newElement); 
+
+  
 });*/
 
-/*
-const crearTemplate = (arr) => {
-  //console.log(arr);
-  let stringTemplate = '';
-  for (let i = 0; i < arr.length; i++) {
-    for (let j = 0; j < arr.length; j++) {
-    stringTemplate += `<div>     
-     <img src = ${arr[i][j]['splash']}>
-     <p>${arr[i][j]['id']}</p>
-   </div>`;
-   //console.log(arr[0][0].id);
-  }
-  return stringTemplate
-  }
-  return stringTemplate
-}*/
-  
 const result = Object.values(allChampion).sort().reverse()
 
 result.map((champion) =>{
