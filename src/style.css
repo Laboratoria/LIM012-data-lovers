@@ -219,7 +219,7 @@ html {
     margin-top: 5px;
     display: grid;
     grid-template-columns: 33% 33% 34%;
-    grid-template-rows: 25% 20% 20% 8% 10%;
+    grid-template-rows: 25% 20% 20% 12% 10%;
 }
 
 #mainElements1 {
@@ -247,7 +247,7 @@ html {
     height: 90%;
     width: 100%;
     /* margin: 0.1875rem 0rem 0rem 0.3125rem; */
-    padding-top: 80px;
+    margin-top: 80px;
 }
 
 #mainElements3 {
@@ -275,6 +275,7 @@ html {
     text-transform: capitalize;
     outline: none;
     text-align: center;
+    font-size: 20px;
     padding-top: 53px;
     background-color: transparent;
     font-family: 'Roboto', sans-serif;
@@ -315,10 +316,10 @@ html {
     position: absolute;
     bottom: 5px;
     left: 0;
-    margin: 0 20% 0 28%;
+    margin: 0 20% 0 20%;
     transition: all 0.3s ease;
     font-family: 'Roboto', sans-serif;
-    font-size: 14px;
+    font-size: 18px;
     color: #dfc981;
     /* text-shadow: turquoise; */
 }
@@ -326,9 +327,9 @@ html {
 .form input:focus+.label_name .content-name,
 .form input:valid+.label_name .content-name {
     transform: translateY(-150%);
-    margin: 0 17% 0 19%;
+    margin: 0 3% 0 2%;
     /* padding: 0 140px 0 140px; */
-    font-size: 10px;
+    font-size: 20px;
     letter-spacing: 5px;
     color: turquoise;
     font-family: 'Roboto', sans-serif;
@@ -351,6 +352,7 @@ html {
     color: wheat;
     font-size: 25px;
     margin-left: 12%;
+    margin-top: 12px;
     border: 1px solid #07cbe9;
     background-color: transparent;
     font-family: "Marcellus SC", serif;
@@ -543,6 +545,7 @@ margin-left: 35%; */
     margin-left: 41%;
     grid-template-columns: 12% 20%;
     margin-top: -18px;
+    padding-top: 10px;
 }
 
 

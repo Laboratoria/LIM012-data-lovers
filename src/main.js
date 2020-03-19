@@ -28,7 +28,6 @@ let list = document.querySelector('#list');
 
 //object values le saca los valores de key en forma de arreglo
 Object.values(championList).map((champion) => {
-<<<<<<< HEAD
     const div = document.createElement('div');
     div.className = 'card';
     div.style.backgroundImage = `url("${champion.splash}")`;
@@ -83,62 +82,6 @@ Object.values(championList).map((champion) => {
     backCardInfo.appendChild(moreStatsButton);
     div.appendChild(backCard);
     list.appendChild(div);
-=======
-  const div = document.createElement('div');
-  div.className = 'card';
-  div.style.backgroundImage = `url("${champion.splash}")`;
-  const p = document.createElement('p');
-  p.className = 'championName';
-  p.innerHTML = `${champion.name}`;
-  div.appendChild(p);
-
-  const backCard = document.createElement('div');
-  backCard.className = 'back-card';
-  const backCardInfo = document.createElement('div');
-  backCardInfo.className = 'back-card__info';
-  backCard.appendChild(backCardInfo);
-  const championName = document.createElement('div');
-  const championNameImage = document.createElement('img');
-  championNameImage.src = `${champion.img}`;
-  championName.appendChild(championNameImage);
-  backCardInfo.appendChild(championName);
-  const backCardInfoTitle = document.createElement('h3');
-  backCardInfoTitle.innerHTML = champion.title;
-  backCardInfo.appendChild(backCardInfoTitle);
-  const championBox = document.createElement('div');
-  championBox.className = 'champion-box';
-  const championClass = document.createElement('div');
-  championClass.className = 'champion-class';
-  const championClassText = document.createElement('p');
-  championClassText.innerHTML = 'CLASS';
-  championClass.appendChild(championClassText);
-  championBox.appendChild(championClass);
-  const championDifficult = document.createElement('div');
-  championDifficult.className = 'champion-difficulty';
-  const championDifficultText = document.createElement('p');
-  championDifficultText.innerHTML = 'DIFFICULTY';
-  championDifficult.appendChild(championDifficultText);
-  championBox.appendChild(championDifficult);
-
-  const championStats = document.createElement('div');
-  championStats.className = 'champion-stats';
-
-  Object.entries(champion.info).map(([key, value]) => {
-    const championStatsText = document.createElement('p');
-    championStatsText.className = 'champion-stats__item';
-    championStatsText.innerHTML = `${key}: ${value}`;
-    championStats.appendChild(championStatsText);
-  });
-
-  backCardInfo.appendChild(championStats);
-
-  const moreStatsButton = document.createElement('div');
-  moreStatsButton.className = 'more-stats';
-  moreStatsButton.innerHTML = 'More stats';
-  backCardInfo.appendChild(moreStatsButton);
-  div.appendChild(backCard);
-  list.appendChild(div);
->>>>>>> 660a7a39bc991bc75c8e6fa248fa8d724800440c
 });
 
 //busqueda por nombre
@@ -159,7 +102,6 @@ if (typeof input.addEventListener != 'undefined') {
               return champion;
           }
       });*/
-<<<<<<< HEAD
             let filteredChampions = filterByName(championList, term);
             //mensaje de error en la busqueda por nombre
             if (term.length != 0) {
@@ -240,88 +182,6 @@ if (typeof input.addEventListener != 'undefined') {
     );
 }
 filteredList.innerHTML = '';
-=======
-      let filteredChampions = filterByName(championList, term);
-      //mensaje de error en la busqueda por nombre
-      if (term.length != 0) {
-        list.classList.add("hidden");
-        filteredList.classList.remove("hidden");
-      } else {
-        list.classList.remove("hidden");
-        filteredList.classList.add("hidden");
-      }
-      let errorMessage = document.querySelector("#error");
-      if (filteredChampions.length === 0) {
-        errorMessage.classList.remove("hidden");
-      } else {
-        errorMessage.classList.add("hidden");
-      }
-
-      //vaciar arreglo para que no se duplique
-      filteredList.innerHTML = "";
-      //filteredList ==  <div id="filteredList" ></div>
-      Object.values(filteredChampions).map(champion => {
-        const div = document.createElement('div');
-        div.className = 'card';
-        div.style.backgroundImage = `url("${champion.splash}")`;
-        const p = document.createElement('p');
-        p.className = 'championName';
-        p.innerHTML = `${champion.name}`;
-        div.appendChild(p);
-
-        const backCard = document.createElement('div');
-        backCard.className = 'back-card';
-        const backCardInfo = document.createElement('div');
-        backCardInfo.className = 'back-card__info';
-        backCard.appendChild(backCardInfo);
-        const championName = document.createElement('div');
-        const championNameImage = document.createElement('img');
-        championNameImage.src = `${champion.img}`;
-        championName.appendChild(championNameImage);
-        backCardInfo.appendChild(championName);
-        const backCardInfoTitle = document.createElement('h3');
-        backCardInfoTitle.innerHTML = champion.title;
-        backCardInfo.appendChild(backCardInfoTitle);
-        const championBox = document.createElement('div');
-        championBox.className = 'champion-box';
-        const championClass = document.createElement('div');
-        championClass.className = 'champion-class';
-        const championClassText = document.createElement('p');
-        championClassText.innerHTML = 'CLASS';
-        championClass.appendChild(championClassText);
-        championBox.appendChild(championClass);
-        const championDifficult = document.createElement('div');
-        championDifficult.className = 'champion-difficulty';
-        const championDifficultText = document.createElement('p');
-        championDifficultText.innerHTML = 'DIFFICULTY';
-        championDifficult.appendChild(championDifficultText);
-        championBox.appendChild(championDifficult);
-
-        const championStats = document.createElement('div');
-        championStats.className = 'champion-stats';
-
-        Object.entries(champion.info).map(([key, value]) => {
-          const championStatsText = document.createElement('p');
-          championStatsText.className = 'champion-stats__item';
-          championStatsText.innerHTML = `${key}: ${value}`;
-          championStats.appendChild(championStatsText);
-        });
-
-        backCardInfo.appendChild(championStats);
-
-        const moreStatsButton = document.createElement('div');
-        moreStatsButton.className = 'more-stats';
-        moreStatsButton.innerHTML = 'More stats';
-        backCardInfo.appendChild(moreStatsButton);
-        div.appendChild(backCard);
-        filteredList.appendChild(div);
-      });
-    },
-    false
-  );
-}
-filteredList.innerHTML = "";
->>>>>>> 660a7a39bc991bc75c8e6fa248fa8d724800440c
 //[p.btn, p.btn, p.btn, p.btn, p.btn, p.btn, p.btn]
 // p.btn == button == <p class="btn" data-value="ALL">ALL</p>
 let ul = document.querySelector('ul');
@@ -352,7 +212,6 @@ li.forEach((button) => {
         return champion;
       }
     });*/
-<<<<<<< HEAD
         filteredList.innerHTML = '';
         let filteredChampions = filteredbyClass(championList, term);
 
@@ -413,67 +272,6 @@ li.forEach((button) => {
             div.appendChild(backCard);
             filteredList.appendChild(div);
         });
-=======
-    filteredList.innerHTML = "";
-    let filteredChampions = filteredbyClass(championList, term);
-
-    //filteredList ==  <div id="filteredList" ></div>
-    Object.values(filteredChampions).map(champion => {
-      const div = document.createElement('div');
-      div.className = 'card';
-      div.style.backgroundImage = `url("${champion.splash}")`;
-      const p = document.createElement('p');
-      p.className = 'championName';
-      p.innerHTML = `${champion.name}`;
-      div.appendChild(p);
-
-      const backCard = document.createElement('div');
-      backCard.className = 'back-card';
-      const backCardInfo = document.createElement('div');
-      backCardInfo.className = 'back-card__info';
-      backCard.appendChild(backCardInfo);
-      const championName = document.createElement('div');
-      const championNameImage = document.createElement('img');
-      championNameImage.src = `${champion.img}`;
-      championName.appendChild(championNameImage);
-      backCardInfo.appendChild(championName);
-      const backCardInfoTitle = document.createElement('h3');
-      backCardInfoTitle.innerHTML = champion.title;
-      backCardInfo.appendChild(backCardInfoTitle);
-      const championBox = document.createElement('div');
-      championBox.className = 'champion-box';
-      const championClass = document.createElement('div');
-      championClass.className = 'champion-class';
-      const championClassText = document.createElement('p');
-      championClassText.innerHTML = 'CLASS';
-      championClass.appendChild(championClassText);
-      championBox.appendChild(championClass);
-      const championDifficult = document.createElement('div');
-      championDifficult.className = 'champion-difficulty';
-      const championDifficultText = document.createElement('p');
-      championDifficultText.innerHTML = 'DIFFICULTY';
-      championDifficult.appendChild(championDifficultText);
-      championBox.appendChild(championDifficult);
-
-      const championStats = document.createElement('div');
-      championStats.className = 'champion-stats';
-
-      Object.entries(champion.info).map(([key, value]) => {
-        const championStatsText = document.createElement('p');
-        championStatsText.className = 'champion-stats__item';
-        championStatsText.innerHTML = `${key}: ${value}`;
-        championStats.appendChild(championStatsText);
-      });
-
-      backCardInfo.appendChild(championStats);
-
-      const moreStatsButton = document.createElement('div');
-      moreStatsButton.className = 'more-stats';
-      moreStatsButton.innerHTML = 'More stats';
-      backCardInfo.appendChild(moreStatsButton);
-      div.appendChild(backCard);
-      filteredList.appendChild(div);
->>>>>>> 660a7a39bc991bc75c8e6fa248fa8d724800440c
     });
 });
 
@@ -482,7 +280,6 @@ li.forEach((button) => {
   <div class="difficulty1" data-value="2" id="medium" href="#">medium</div>,
   <div class="difficulty1" data-value="3" id="hard" href="#">hard</div>]
 */
-<<<<<<< HEAD
 let difficulty1 = document.querySelectorAll('.difficulty1');
 difficulty1.forEach((option) => {
     option.addEventListener('click', () => {
@@ -551,80 +348,6 @@ difficulty1.forEach((option) => {
             div.appendChild(backCard);
             filteredList.appendChild(div);
         });
-=======
-let difficulty1 = document.querySelectorAll(".difficulty1");
-difficulty1.forEach(option => {
-  option.addEventListener("click", () => {
-    let term = option.getAttribute("data-value");
-
-    list.classList.add("hidden");
-    filteredList.classList.remove("hidden");
-
-
-    filteredList.innerHTML = "";
-    let filteredChampions = filteredByDifficulty(championList, term);
-
-    //filteredList ==  <div id="filteredList" ></div>
-    Object.values(filteredChampions).map(champion => {
-      const div = document.createElement('div');
-      div.className = 'card';
-      div.style.backgroundImage = `url("${champion.splash}")`;
-      const p = document.createElement('p');
-      p.className = 'championName';
-      p.innerHTML = `${champion.name}`;
-      div.appendChild(p);
-
-      const backCard = document.createElement('div');
-      backCard.className = 'back-card';
-      const backCardInfo = document.createElement('div');
-      backCardInfo.className = 'back-card__info';
-      backCard.appendChild(backCardInfo);
-      const championName = document.createElement('div');
-      const championNameImage = document.createElement('img');
-      championNameImage.src = `${champion.img}`;
-      championName.appendChild(championNameImage);
-      backCardInfo.appendChild(championName);
-      const backCardInfoTitle = document.createElement('h3');
-      backCardInfoTitle.innerHTML = champion.title;
-      backCardInfo.appendChild(backCardInfoTitle);
-      const championBox = document.createElement('div');
-      championBox.className = 'champion-box';
-      const championClass = document.createElement('div');
-      championClass.className = 'champion-class';
-      const championClassText = document.createElement('p');
-      championClassText.innerHTML = 'CLASS';
-      championClass.appendChild(championClassText);
-      championBox.appendChild(championClass);
-      const championDifficult = document.createElement('div');
-      championDifficult.className = 'champion-difficulty';
-      const championDifficultText = document.createElement('p');
-      championDifficultText.innerHTML = 'DIFFICULTY';
-      championDifficult.appendChild(championDifficultText);
-      championBox.appendChild(championDifficult);
-
-      const championStats = document.createElement('div');
-      championStats.className = 'champion-stats';
-
-      Object.entries(champion.info).map(([key, value]) => {
-        const championStatsText = document.createElement('p');
-        championStatsText.className = 'champion-stats__item';
-        championStatsText.innerHTML = `${key}: ${value}`;
-        championStats.appendChild(championStatsText);
-      });
-
-      backCardInfo.appendChild(championStats);
-
-      const moreStatsButton = document.createElement('div');
-      moreStatsButton.className = 'more-stats';
-      moreStatsButton.innerHTML = 'More stats';
-      backCardInfo.appendChild(moreStatsButton);
-      div.appendChild(backCard);
-      filteredList.appendChild(div);
->>>>>>> 660a7a39bc991bc75c8e6fa248fa8d724800440c
     });
 });
-<<<<<<< HEAD
 filteredList.innerHTML = '';
-=======
-filteredList.innerHTML = "";
->>>>>>> 660a7a39bc991bc75c8e6fa248fa8d724800440c
