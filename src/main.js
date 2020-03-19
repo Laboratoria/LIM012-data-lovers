@@ -29,7 +29,6 @@ Object.values(allChampionList).forEach(champion => {
 })};
 
 
-
 let listRole = document.querySelector("#rolesFighter");
 // let rol = lol.data;
 let arrayKeysChampions = Object.keys(allChampionList);
@@ -45,7 +44,9 @@ let prueba3 = Object.entries(allChampionList); /*solo para hacer las pruebas */
   for (let j = 0; j < roleChampions.length; j++) {
     // console.log(roleChampions[j]) /*aparecen todos los roles
 
-    if (roleChampions[j] === "Fighter") {
+  const functionFilterRol = allSelection(allchampionList, typeRol)
+  console.log(functionFilterRol);
+  console.log(typeof functionFilterRol);
 
       const divRole = document.createElement("div");
       const imgRole = document.createElement("img");
@@ -65,7 +66,6 @@ let prueba3 = Object.entries(allChampionList); /*solo para hacer las pruebas */
       // console.log(arrayValuesChampions[i].splash);
     }
   }
-}
 //Esta sección es del buscador. (aun falta terminar)
 document.querySelector('#searchTexto').addEventListener('keyup', () => {
   let findChampion = [];

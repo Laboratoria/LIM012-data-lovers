@@ -1,14 +1,23 @@
-import { example, anotherExample } from '../src/data.js';
+import {
+  // example,
+  // anotherExample
+} from '../src/data.js';
 
 
 describe('example', () => {
-  it('is a function', () => {
+  it('debería ser una función', () => {
     expect(typeof example).toBe('function');
   });
 
-  it('returns `example`', () => {
-    expect(example()).toBe('example');
+  it('debería retornar true para "Fighter"', () => {
+    expect(example("Fighter")).toBe('true')
   });
+
+
+
+
+
+
 });
 
 

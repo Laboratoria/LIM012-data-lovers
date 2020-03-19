@@ -345,7 +345,7 @@ footer {
 }
 
 #rolesFighter {
-  background-color: red;
+  background-color: goldenrod;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   padding-left: 6%;
