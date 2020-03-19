@@ -1,5 +1,18 @@
-// estas funciones son de ejemplo
+const x = {
+  mostrarAtletasConSuDeporte: (data) => {
+  // eslint-disable-next-line arrow-body-style
+    const atletasConDeporte = data.atletas.map((a) => {
+      return {
+        nombre: a.nombre,
+        deporte: a.deporte,
+        equipo: a.noc,
+      };
+    });
 
+    return atletasConDeporte;
+  },
+};
+
+export const buscador = x;
 export const example = () => 'example';
-
 export const anotherExample = () => 'OMG';
