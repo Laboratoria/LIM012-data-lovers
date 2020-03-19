@@ -1,5 +1,6 @@
 //Funcionalidad en data
 import { inputSearchElem } from './main.js';
+
 //muestro la info
 export const showInfo=(pokes)=>{
   const inputValue=inputSearchElem.value;

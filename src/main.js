@@ -5,6 +5,7 @@ import {showInfo, showAllData} from './data.js';
 
 
 const pokemones=data.pokemon;
+
 export const inputSearchElem=document.getElementById("inputSearch");
 const searchIconElem=document.getElementById("searchIcon");
 const screen1Elem=document.getElementById('screen1');
@@ -19,6 +20,7 @@ const showScreen2=()=>{
     screen1Elem.style.display="none";
     screen3Elem.style.display='none';
     screen2Elem.style.display="block";
+
     screen2Elem.innerHTML=` Hay ${pokemones.length} pokemones
     ${showInfo(data.pokemon)}`
 }
