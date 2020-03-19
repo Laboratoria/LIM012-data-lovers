@@ -174,30 +174,58 @@ section{
 }
 
 #card-container{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  /* display: flex; */
+  /* flex-wrap: wrap; */
+  /* justify-content: center; */
   width: auto;
   color: var(--color-blue-4);
   
 }
-.carousel{
+
+  .card-container-flex{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+  }
+  .card-container-normal{
+    display: block;
+    /* justify-content: center; */    
+  }
+
+.carousel{  
+  margin: 1em 0;
+  /* background: tomato; */
+  /* height: 215px; */
+  min-width: 200px;
   width: auto;
   height: auto;
-  border: black solid 1px;
-  /* display: block; */
-  margin: 1em;
-  padding: 1em;
+  /* position: relative; */
 }  
-  .carousel button{
-    height: 200px;
-    width: 50px;
-    /* display: inline-block; */
+.carousel > *{
+  display: inline;
+}
+  .prev,
+  .next {
+    cursor: pointer;
+    margin: 20% 0;
+    /* position: absolute; */
+    /* top: 50%; */
+    width: auto;
+    padding: 1em;
+    /* margin-top: -50px; */
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
   }
+  .prev:hover,
+  .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
   .cards-carousel{
-    /* display: inline-block; */
-    /* width: auto;
-    height: auto; */
     background: yellow;
     display: inline-flex;
   }
