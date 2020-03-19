@@ -1,6 +1,5 @@
-//Funcionalidad
+//Funcionalidad en data
 import { inputSearchElem } from './main.js';
-
 //muestro la info
 export const showInfo=(pokes)=>{
   const inputValue=inputSearchElem.value;
@@ -36,4 +35,12 @@ export const showInfo=(pokes)=>{
           return 'El nombre ingresado no es correcto';
       }   
 }
-
+export const showAllData=(data)=>{
+    return `
+    <section class="s3">
+          <span class="circle">${data.num}</span>
+          <img class="imgPok" src="${data.img}" alt="pokemonImage">
+          <span class="namePok"> ${data.name}</span>
+    </section>
+    `
+}
