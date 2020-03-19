@@ -1,32 +1,33 @@
 import data from './data/lol/lol.js';
 import { filterByName, filteredbyClass, filteredByDifficulty } from './data.js';
 
-/*Muestra en interfaz dos mas saludo y letra capital*/
-const primeraInterfaz = document.getElementById('primeraInterfaz');
-const segundaInterfaz = document.getElementById('segundaInterfaz');
-primeraInterfaz.style.display = 'block';
-segundaInterfaz.style.display = 'none';
+/*Muestra la interfaz 2, hidden la 2 y saluda con el nombe ingresado y su primera letra[0]UpperCase*/
+const firstScreen = document.getElementById('firstScreen');
+const secondScreen = document.getElementById('secondScreen');
+firstScreen.style.display = 'block';
+secondScreen.style.display = 'none';
 
 document.getElementById('buttonEnter').addEventListener('click', () => {
     const name = document.getElementById('inputName').value;
     const newStr = `${name[0].toUpperCase()}${name.slice(1)}`;
-    const parrafo = document.getElementById('nombreIngresado');
-    const welcome = document.querySelector('.cuadraditoDsaludo');
+    const parrafo = document.getElementById('nameInput');
+    const welcome = document.querySelector('.welcomeAdvertisement');
     parrafo.innerHTML = `!\n Welcome ${newStr}\n !`;
-    segundaInterfaz.style.display = 'block';
-    primeraInterfaz.style.display = 'none';
+    secondScreen.style.display = 'block';
+    firstScreen.style.display = 'none';
     window.scroll({
         top: 0
     });
     setTimeout(() => (welcome.style.display = 'none'), 3000);
 });
 
-/*Muestra de la lista de campeones*/
+/*Muestra la lista de campeones en el DIV id="list"*/
 
 const championList = data.data;
 let list = document.querySelector('#list');
 
-//object values le saca los valores de key en forma de arreglo
+/*Object values saca los valores de key en forma de Array, mostramos los key de FRONT CARD y los key:values del backCard*/
+
 Object.values(championList).map((champion) => {
     const div = document.createElement('div');
     div.className = 'card';
@@ -84,25 +85,19 @@ Object.values(championList).map((champion) => {
     list.appendChild(div);
 });
 
-//busqueda por nombre
-//probando la subida
+//Busqueda por nombre
 let input = document.querySelector('#searchInputs');
 let filteredList = document.querySelector('#filteredList');
 
-//target : lo que sea a lo que se le aplique add event listener
+//Target : lo que sea a lo que se le aplique add event listener
 if (typeof input.addEventListener != 'undefined') {
     input.addEventListener(
         'keyup',
         (evt) => {
             let term = evt.target.value.toLowerCase();
 
-            /*let filteredChampions = Object.values(championList).filter(champion => {
-          //indexof da -1 si no encuentra resultados
-          if (champion.name.toLowerCase().indexOf(term) != -1) {
-              return champion;
-          }
-      });*/
             let filteredChampions = filterByName(championList, term);
+
             //mensaje de error en la busqueda por nombre
             if (term.length != 0) {
                 list.classList.add('hidden');
@@ -111,6 +106,7 @@ if (typeof input.addEventListener != 'undefined') {
                 list.classList.remove('hidden');
                 filteredList.classList.add('hidden');
             }
+
             let errorMessage = document.querySelector('#error');
             if (filteredChampions.length === 0) {
                 errorMessage.classList.remove('hidden');
@@ -182,8 +178,8 @@ if (typeof input.addEventListener != 'undefined') {
     );
 }
 filteredList.innerHTML = '';
-//[p.btn, p.btn, p.btn, p.btn, p.btn, p.btn, p.btn]
-// p.btn == button == <p class="btn" data-value="ALL">ALL</p>
+
+//Diseño de hover para que mantenga su posicion
 let ul = document.querySelector('ul');
 let li = document.querySelectorAll('li');
 
@@ -194,7 +190,7 @@ li.forEach((el) => {
     });
 });
 
-/*para recrrer cada clase */
+//Para recorrer cada Clase
 li.forEach((button) => {
     button.addEventListener('click', () => {
         let term = button.getAttribute('data-value');
