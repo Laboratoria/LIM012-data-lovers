@@ -3,8 +3,9 @@
 import lol from './data/lol/lol.js';
 // import data from './data/pokemon/pokemon.js';
 import {
-  searchWord
+  searchWord , allSelection
 } from './data.js';
+
 const allChampionList = lol.data;
 //const nameChampion = infoChampionList(allChampionList) ( es de viviana NO LO BORRES)
 // console.log(allchampionList);
@@ -13,8 +14,8 @@ let list = document.querySelector("#root");
 const textToSearch = document.querySelector('#searchTexto');
 //console.log(textToSearch);
 //objects
-const seeAllChampion = (seeChampion)=>{
-Object.values(allchampionList).forEach(champion => {
+  const seeAllChampion = (seeChampion)=>{
+Object.values(allChampionList).forEach(champion => {
   const div = document.createElement("div");
   const img = document.createElement("img");
   const p = document.createElement("p");
