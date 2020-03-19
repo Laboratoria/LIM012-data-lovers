@@ -1,1 +1,2 @@
-export const filterByType = () => 'write your function here';
+export const filterByType = (pokemonList, type) => pokemonList.filter(pokemon => pokemon.type.includes(type));
+};

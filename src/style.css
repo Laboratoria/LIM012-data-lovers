@@ -21,8 +21,6 @@ body {
 .filter-bar {
     display: flex;
     flex-flow: row nowrap;
-    margin-top: 27.5%;
-    margin-left: 23%;
 }
 
 .drop-down {
@@ -62,20 +60,16 @@ body {
 
 /* grid system - mobile first */
 
-.logo-image {
-    position: absolute;
-    width: 40%;
-    height: 40%;
-    left: 30%;
-    top: 2%;
-    background: url(img/pokemon-go-logo.png);
-    background-repeat: no-repeat;
-    background-size: 90%;
+.logo-image{
+    width: 100%;
+    max-width: 150px;
+    margin-left: 30%;
+    margin-top: 5%;
+    margin-bottom: 5%;
 }
 
-.filter-bar{
-    height: 40px;
-    margin-left: 35px;
+.filter-bar {
+margin-left: 10%;
 }
 
 .search-by-name {
@@ -113,8 +107,8 @@ body {
 }
 
 .pokemon-image {
-    width: 118px;
-    height: 78px;
+    width: 116px;
+    height: 70px;
     background: linear-gradient(126.38deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), #C5F3F1;
 }
 
@@ -135,19 +129,16 @@ body {
 
 @media only screen and (min-width: 768px) {
 
-    .logo-image {
-        position: absolute;
-        width: 25%;
-        height: 20%;
-        left: 41.5%;
-        top: 2%;
-        background: url(img/pokemon-go-logo.png);
-        background-repeat: no-repeat;
-        background-size: 55%;
+    .logo-image{
+        width: 100%;
+        max-width: 250px;
+        margin-left: 40%;
+        margin-top: 2%;
+        margin-bottom: 0;
     }
 
     .filter-bar {
-        margin-top: 10.5%;
+        margin-top: 2.5%;
         margin-left: 5%;
         width: 82.5%;
     }
