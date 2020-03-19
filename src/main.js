@@ -1,16 +1,19 @@
 /*interacción con el DOM event listeners o event handlers, se usan las que estàn en data.js */
-import {
-  example
-} from './data.js';
 // import data from './data/atletas/atletas.js';
 import lol from './data/lol/lol.js';
 // import data from './data/pokemon/pokemon.js';
-
-const allchampionList = lol.data;
+import {
+  searchWord
+} from './data.js';
+const allChampionList = lol.data;
+//const nameChampion = infoChampionList(allChampionList) ( es de viviana NO LO BORRES)
 // console.log(allchampionList);
 let list = document.querySelector("#root");
 // console.log(root);
+const textToSearch = document.querySelector('#searchTexto');
+//console.log(textToSearch);
 //objects
+const seeAllChampion = (seeChampion)=>{
 Object.values(allchampionList).forEach(champion => {
   const div = document.createElement("div");
   const img = document.createElement("img");
@@ -22,27 +25,24 @@ Object.values(allchampionList).forEach(champion => {
   div.appendChild(img);
   div.appendChild(p);
   list.appendChild(div);
-});
+})};
 
 
 
 let listRole = document.querySelector("#rolesFighter");
-
 // let rol = lol.data;
-
-
-let arrayKeysChampions = Object.keys(allchampionList);
-let arrayValuesChampions = Object.values(allchampionList);
+let arrayKeysChampions = Object.keys(allChampionList);
+let arrayValuesChampions = Object.values(allChampionList);
 // console.log(prueba2);
-let prueba3 = Object.entries(allchampionList); /*solo para hacer las pruebas */
+let prueba3 = Object.entries(allChampionList); /*solo para hacer las pruebas */
 
-for (let i = 0; i < arrayKeysChampions.length; i++) {
+ for (let i = 0; i < arrayKeysChampions.length; i++) {
   // console.log(prueba3[i][1]);
   // console.log(prueba2[i].tags);
   let roleChampions = arrayValuesChampions[i].tags;
   // console.log(roleChampions);
   for (let j = 0; j < roleChampions.length; j++) {
-    // console.log(roleChampions[j]) /*aparecen todos los roles */
+    // console.log(roleChampions[j]) /*aparecen todos los roles
 
     if (roleChampions[j] === "Fighter") {
 
@@ -65,4 +65,11 @@ for (let i = 0; i < arrayKeysChampions.length; i++) {
     }
   }
 }
-/*con mayúsucla Object */
+//Esta sección es del buscador. (aun falta terminar)
+document.querySelector('#searchTexto').addEventListener('keyup', () => {
+  let findChampion = [];
+  findChampion = searchWord(seeChampion, textToSearch.value);
+  list.innerHTML = seeAllChampion(findChampion);
+});
+
+/*con mayúscula Object */

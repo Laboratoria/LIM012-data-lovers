@@ -109,9 +109,10 @@ header {
 
 .detail_diamont_Riot {
   /* display: flex; */
-  background-color: black;
+ /* background-color: "";*/
   width: 100%;
   height: auto;
+  
 
 }
 
@@ -144,6 +145,28 @@ header {
   border: 0.1rem solid blue;
   text-align: right;
   padding: 16% 20% 0% 0%; */
+}
+
+#searchTexto {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  float: left;
+  background-color: #B09D57;
+  width: 8em;
+  height: 2em;
+  border-radius: 2em;
+  font-family: 'Bangers',
+    cursive;
+  font-size: 1.1em;
+  /* color: #464242; */
+  border-style: double;
+  border-width: 8px;
+  border-color: #282626;
+  /*padding-top: 0.00001em; */
+  text-align: center;
+  /*con esto deberian estar ordenados de manera horizontal*/
+  color: #464242;
 }
 
 ul,

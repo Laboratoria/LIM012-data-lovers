@@ -11,9 +11,9 @@ El segundo parámetro, sortBy, nos dice con respecto a cuál de los campos de la
 
 computeStats(data): la función compute o calcular, nos permitirá hacer cálculos estadísticos básicos para ser mostrados de acuerdo a la data proporcionada. */
 
-const allSelection = (allchampionList) => {
-    let arrayKeysChampions = Object.keys(allchampionList);
-    let arrayValuesChampions = Object.values(allchampionList);
+const allSelection = (allChampionList) => {
+    let arrayKeysChampions = Object.keys(allChampionList);
+    let arrayValuesChampions = Object.values(allChampionList);
     // console.log(prueba2);
     for (let i = 0; i < arrayKeysChampions.length; i += 1) {
       // console.log(prueba3[i][1]);
@@ -29,6 +29,27 @@ const allSelection = (allchampionList) => {
         };
         };
     }};
+export const searchWord = (data, text) => {
+       console.log('data', data);
+       console.log('text', text);
+       console.log(typeof (text));
+      let enterText = '';
+      const allFindChampion = [];
+      enterText = text.toLowerCase();
+      // console.log('text en minuscula de data', enterText);
+      // console.log(typeof (enterText));
+      for (let a = 0; a < data.length; a += 1) {
+        let name = '';
+        name = data[a].name.toLowerCase();
+        // console.log('nombre', name);
+        // console.log('prueba3.9', name.startsWith(enterText));
+        if (name.startsWith(enterText) === true) {
+          // console.log('prueba4', name.startsWith(enterText));
+          allFindChampion.push(data[a]);
+        }
+      }
+      return allFindChampion;
+    };
         // export const example = () => 'example';
 
         //export const anotherExample = () => 'OMG'
