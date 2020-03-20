@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import { dinamicSearchPokemon, filterPokemon } from './data.js';
+import { dinamicSearchPokemon, filterPokemon, orderBy } from './data.js';
 
 import data from './data/pokemon/pokemon.js';
 
@@ -29,6 +29,9 @@ let resultResistant = [];
 let resultWeaknesses = [];
 let typeChoosed = '';
 
+const showMessageOfSearch = (container) => {
+  container.innerHTML = '<p>Lo sentimos, no encontramos resultados que coincidan con su búsqueda</p>';
+};
 
 const createPokemonType = (type) => {
   const divPokemonType = document.createElement('div');
@@ -58,31 +61,31 @@ const putPokemonTypes = (dataTypesPokemon, divCardTypes) => {
 };
 
 const createPokemonCard = (index, dataPokemon, container) => {
-  const divCard = document.createElement('div');
-  divCard.className = 'pokemon-card';
-  container.appendChild(divCard);
-  const divCardName = document.createElement('div');
-  const divCardImage = document.createElement('div');
-  const divCardTypes = document.createElement('div');
-  divCardName.className = 'pokemon-name';
-  divCardImage.className = 'pokemon-image';
-  divCardTypes.className = 'pokemon-types';
-  putPokemonName(dataPokemon.name, divCardName);
-  putPokemonImage(dataPokemon.img, divCardImage);
-  putPokemonTypes(dataPokemon.type, divCardTypes);
-  divCard.appendChild(divCardName);
-  divCard.appendChild(divCardImage);
-  divCard.appendChild(divCardTypes);
+  if (typeof dataPokemon !== 'undefined') {
+    const divCard = document.createElement('div');
+    divCard.className = 'pokemon-card';
+    container.appendChild(divCard);
+    const divCardName = document.createElement('div');
+    const divCardImage = document.createElement('div');
+    const divCardTypes = document.createElement('div');
+    divCardName.className = 'pokemon-name';
+    divCardImage.className = 'pokemon-image';
+    divCardTypes.className = 'pokemon-types';
+    putPokemonName(dataPokemon.name, divCardName);
+    putPokemonImage(dataPokemon.img, divCardImage);
+    putPokemonTypes(dataPokemon.type, divCardTypes);
+    divCard.appendChild(divCardName);
+    divCard.appendChild(divCardImage);
+    divCard.appendChild(divCardTypes);
+  } else {
+    showMessageOfSearch(container);
+  }
 };
 
 const showCard = (dataPokemon, container) => {
   for (let i = 0; i < dataPokemon.length; i += 1) {
     createPokemonCard(i, dataPokemon[i], container);
   }
-};
-
-const showMessageOfSearch = (container) => {
-  container.innerHTML = '<p>Lo sentimos, no encontramos resultados que coincidan con su búsqueda</p>';
 };
 
 const searchPokemon = () => {
@@ -275,3 +278,4 @@ document.addEventListener('click', (element) => {
     typeChoosed = element.target.value;
   }
 });
+ orderBy();

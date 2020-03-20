@@ -1,3 +1,4 @@
+/* eslint-disable no-plusplus */
 import data from './data/pokemon/pokemon.js';
 
 export const dinamicSearchPokemon = (wordIntroduced) => {
@@ -30,4 +31,8 @@ export const filterPokemon = (whichFilter, pokemonType) => {
       // do nothing
   }
   return result;
+};
+
+export const orderBy = () => {
+  //do nothing
 };

@@ -212,16 +212,23 @@ section{
 .carousel > p{
     font-size:large;
     grid-column: 1/3;
+    font-size: large;
+    color: var(--color-blue-2);
 }
 .title{
   width: 100%;
+  padding-top: 3%;
+  padding-left: 2%;
+  font-size: x-large;
+  color: var(--color-blue-2);
 }
 .carousel .show-more{
   font-size:large;
   text-decoration: underline;
   grid-column: 3/5;
   justify-self: end;
-  cursor: hand;
+  cursor: pointer;
+  color: var(--color-blue-2);
 }
   .prev,
   .next {

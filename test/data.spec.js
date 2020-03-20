@@ -45,4 +45,9 @@ describe('dinamicSearchPokemon', () => {
       expect(result[i].weaknesses).toContain('rock');
     }
   });
+
+  it('retorna una lista vacía de pokemones tipo normal', () => {
+    const numberOfResult = filterPokemon('weaknesses', 'normal').length;
+    expect(numberOfResult).toEqual(0);
+  });
 });
