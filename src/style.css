@@ -41,14 +41,7 @@ body {
 header {
   /*al ser hijo y padre*/
   height: 100%;
-  /* background-color: rgba(12, 12, 1, 0.632); */
   width: 100%;
-  /*así abarca todo el documento*/
-  /* padding: 20px; */
-  /*PROPIEDADES FLEX*/
-  /* display: block; */
-  /*porque también es un elemento padre*/
-  /* border: 2px solid black; */
   font-family: 'Bangers',
     cursive;
 }
@@ -69,16 +62,11 @@ header {
 }
 
 #buttons_colection_champions {
-  /* display: grid;
-  grid-template-columns: auto auto;
-  justify-content: space-around;
-  display: flex; */
-  /*Al ser padre de todos los elementos, permite manipularlosfacilmente*/
-  /* es como si se pusiera*/
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  /* size: 4rem; */
+  margin-bottom: 2rem;
+
 }
 
 #button_colection,
@@ -108,7 +96,6 @@ header {
 }
 
 .detail_diamont_Riot {
-  /* display: flex; */
   background-color: black;
   width: 100%;
   height: auto;
@@ -135,15 +122,6 @@ header {
   padding: 0;
   /* font-family: 'Bangers',
     cursive; */
-  /* display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center; */
-  /* margin-top: 2%;
-  margin-left: 5%;
-  border: 0.1rem solid blue;
-  text-align: right;
-  padding: 16% 20% 0% 0%; */
 }
 
 ul,
@@ -174,7 +152,7 @@ li {
   border-width: 8px;
   border-color: #B09D57;
   font-size: 1rem;
-  width: 150%;
+  width: 17.1rem;
   margin-top: 4%;
 
 }
@@ -187,19 +165,20 @@ li {
 .filtros>li {
   float: left;
   background-color: #B09D57;
-  width: 8em;
-  height: 2em;
+  width: 15em;
+  padding-top: 0.5%;
+  height: 2.5em;
   border-radius: 2em;
   font-family: 'Bangers',
     cursive;
-  font-size: 1.1em;
+  font-size: 1.2em;
   /* color: #464242; */
   border-style: double;
   border-width: 8px;
   border-color: #282626;
-  /*padding-top: 0.00001em; */
+  /* padding-top: 0.00001em; */
   text-align: center;
-  /*con esto deberian estar ordenados de manera horizontal*/
+  /* align-content: center; */
   color: #464242;
 }
 
@@ -214,15 +193,11 @@ li {
   display: block;
 }
 
-#main {
+.main {
   height: 100%;
   /* border: 2px solid white; */
   /* background-color: rgba(12, 12, 1, 0.632); */
 }
-
-
-
-
 
 #root {
   color: #DFC981;
@@ -236,16 +211,36 @@ li {
 .nameOfChampion {
   font-size: 20px;
   text-align: center;
-  margin-top: 2%;
-  margin-bottom: 10%;
+  /* margin-bottom: 10%; */
+  background-color: rgb(52, 55, 66);
+  font-family: 'Righteous',
+    cursive;
+  height: 3rem;
+  padding-top: 0.6rem;
+  width: 95%;
+  align-content: center;
 }
 
 .imageOfChampion {
   width: 95%;
   height: 16rem;
-  border: #DFC981 1px solid;
+  border: rgb(52, 55, 66) 0.5vh solid;
 
 }
+
+.tagsOfChampion {
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 10%;
+  background-color: rgb(52, 55, 66);
+  font-family: 'Righteous',
+    cursive;
+  height: 3rem;
+  padding-top: 0.6rem;
+  width: 95%;
+  align-content: center;
+}
+
 
 footer {
   border: 2px solid black;
@@ -319,34 +314,4 @@ footer {
 
 #final_conditions>a:hover {
   color: gold;
-}
-
-#rolesFighter {
-  background-color: goldenrod;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  padding-left: 6%;
-  padding-right: 5%;
-}
-
-.nameOfChampionRole {
-  font-size: 20px;
-  text-align: center;
-  margin-top: 2%;
-  background-color: green;
-}
-
-.imageOfChampionRole {
-  width: 95%;
-  height: 16rem;
-  border: #DFC981 1px solid;
-  background-color: yellow;
-}
-
-.roleTagsOfChampions {
-  font-size: 20px;
-  text-align: center;
-  margin-top: 2%;
-  margin-bottom: 10%;
-  background-color: green;
 }

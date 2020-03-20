@@ -11,16 +11,13 @@ computeStats(data): la función compute o calcular, nos permitirá hacer cálcul
 
 export const allSelection = (allchampionList, typeRol) => {
   let arrayValuesChampions = Object.values(allchampionList);
-  arrayValuesChampions.filter((championsList) => {
-    if (championsList.tags.indexOf(typeRol) != -1) {
-      return championsList;
-      // return {
-      //   name: (championsList.name),
-      //   splash: (championsList.splash),
-      //   tags: (championsList.tags)
-    }
+  return arrayValuesChampions.filter((championsList) => {
+    /*La clave está en que es booleano, entonces es true para arrayValuesChampios..... y al ser false pues según yo no devuelve nada*/
+    /*Filter devuelve valores vuleanos */
+    /*retorna el array de los values, pero ahora filtremos con el callback*/
+    return championsList.tags.indexOf(typeRol) >= 0
+    /*De este nuevo array de valores queremos encontrar aquellos que coincidan con el tag equivalente a typeRol que le vamos a pasar, pero este tiene que existir, por tanto tiene que tener un índice mayor a 0, que si al revés pues este no existe*/
   })
-  return arrayValuesChampions;
 }
 export const example = () => 'example';
 
