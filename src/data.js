@@ -34,5 +34,4 @@ export const filterPokemon = (whichFilter, pokemonType) => {
 };
 
 export const orderBy = () => {
-  //do nothing
 };

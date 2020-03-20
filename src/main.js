@@ -27,6 +27,8 @@ const typeColors = {
 let resultTypes = [];
 let resultResistant = [];
 let resultWeaknesses = [];
+
+let isContainerSection = false;
 let typeChoosed = '';
 
 const showMessageOfSearch = (container) => {
@@ -90,6 +92,12 @@ const showCard = (dataPokemon, container) => {
 
 const searchPokemon = () => {
   const cardContainer = document.getElementById('card-container');
+  if (isContainerSection === true) {
+    console.log('modo busqueda de pokemones');
+    document.getElementById('card-container-section').style.display = 'none';
+    isContainerSection = false;
+    cardContainer.style.display = 'flex';
+  }
   cardContainer.innerHTML = '';
   const wordIntroduced = document.getElementById('input-bar-search').value;
   const numberOfResult = dinamicSearchPokemon(wordIntroduced).length;
@@ -120,14 +128,15 @@ const createTypeButton = (type) => {
 const pokemonTypes = Object.keys(typeColors);
 
 const putPokemonTypesOnLateralMenu = (aside) => {
-  const typesConteiner = document.getElementById('types-container');
+  const typesConteiner = document.createElement('div');
+  typesConteiner.id = 'types-container';
   for (let key = 0; key < pokemonTypes.length; key += 1) {
     typesConteiner.appendChild(createTypeButton(pokemonTypes[key]));
   }
   aside.appendChild(typesConteiner);
 };
 
-
+// let showLateralMenu = false;
 const showLateralMenu = () => {
   const asideLateralMenu = document.getElementsByTagName('aside')[0];
   if (window.screen.width < 768) {
@@ -167,10 +176,14 @@ buttonCloseLateralMenu.addEventListener('click', hideLateralMenu);
 
 const showAllByFilter = (whichFilter) => {
   const divCardContainer = document.getElementById('card-container');
-  divCardContainer.classList.add('card-container-flex');
+  /* divCardContainer.classList.add('card-container-flex'); */
+  divCardContainer.style.display = 'flex';
+  document.getElementById('card-container-section').style.display = 'none';
+  isContainerSection = false;
   divCardContainer.innerHTML = '';
   const title = document.createElement('p');
   title.className = 'title';
+
   switch (whichFilter) {
     case 'type':
       title.textContent = `Pokemones tipo ${typeChoosed}`;
@@ -197,48 +210,36 @@ const loadPage = () => {
   const asideLateralMenu = document.getElementsByTagName('aside')[0];
   putPokemonTypesOnLateralMenu(asideLateralMenu);
   const wordIntroduced = document.getElementById('input-bar-search').value;
-  if (wordIntroduced.length === 0) {
+  if (wordIntroduced.length === 0 && isContainerSection === false) {
     showCard(data.pokemon, document.getElementById('card-container'));
-    showCard(data.pokemon.slice(0, 16));
   }
 };
 
-// window.onload = loadPage;
+const putCardsOnSlider = (items, container) => {
+  for (let i = 0; i < items.length; i += 1) {
+    createPokemonCard(i, items[i], container);
+  }
+};
 
-// const createRow = (container, textInRow, dataPokemon) => {
-//   console.log('createRow');
-//   const div = document.createElement('div');
-//   div.className = 'div-container-filter';
-//   container.appendChild(div);
-//   const prr = document.createElement('p');
-//   div.appendChild(prr);
-//   prr.textContent = textInRow;
-//   const btnBack = document.createElement('img');
-//   btnBack.className = 'button-back';
-//   btnBack.setAttribute('src', 'images/back.png');
-//   div.appendChild(btnBack);
-//   const cardContainer = document.createElement('div');
-//   cardContainer.className = 'div-card-container-filter';
-//   div.appendChild(cardContainer);
-//   const btnNext = document.createElement('img');
-//   btnNext.className = 'button-next';
-//   btnNext.setAttribute('src', 'images/next.png');
-//   div.appendChild(btnNext);
-//   showCard(dataPokemon, cardContainer);
-// };
-
-const showPokemonInSections = (numberOfCards) => {
-  const divCardContainer = document.getElementById('card-container');
-  divCardContainer.classList.remove('card-container-flex');
-  const divSections = divCardContainer.getElementsByClassName('cards-carousel');
+const showPokemonInSections = () => {
+  const divContainerSections = document.getElementById('card-container-section');
+  if (isContainerSection === false) {
+    isContainerSection = true;
+    console.log('modo filtro por seciciones');
+    document.getElementById('card-container').style.display = 'none';
+    divContainerSections.style.display = 'block';
+  }
+  const divSections = divContainerSections.getElementsByClassName('slide-cards');
   divSections[0].innerHTML = '';
   divSections[1].innerHTML = '';
   divSections[2].innerHTML = '';
-  for (let i = 0; i < numberOfCards; i += 1) {
-    createPokemonCard(i, resultTypes[i], divSections[0]);
-    createPokemonCard(i, resultResistant[i], divSections[1]);
-    createPokemonCard(i, resultWeaknesses[i], divSections[2]);
-  }
+  console.log(divSections[0].className);
+  console.log(divSections[1].className);
+  console.log(divSections[2].className);
+
+  putCardsOnSlider(resultTypes, divSections[0]);
+  putCardsOnSlider(resultResistant, divSections[1]);
+  putCardsOnSlider(resultWeaknesses, divSections[2]);
 };
 
 const filterPokemonByType = (type) => {
@@ -247,27 +248,36 @@ const filterPokemonByType = (type) => {
   resultWeaknesses = filterPokemon('weaknesses', type);
   showPokemonInSections(4);
 };
-  // divCardContainer.classList.add('card-container-normal');
 
-// const divideDivs = (arrayDataPokemon) => {
-//   const divCardContainer = document.getElementById('card-container');
-//   divCardContainer.innerHTML = '';
-//   // const divContainer2 = document.createElement('div');
-//   // divContainer2.id = 'card-container2';
-//   // divCardContainer.appendChild(divContainer2);
-//   // createRow(divContainer2, 'Pokemones tipo', arrayDataPokemon[0]);
-//   // console.log(arrayDataPokemon[0]);
-//   // createRow(divContainer2, 'Pokemones resistentes al tipo', arrayDataPokemon[1]);
-//   // createRow(divContainer2, 'Pokemones débiles al tipo', arrayDataPokemon[2]);
-//   // const resultResistant = filterPokemon('resistant', type);
-//   // const resultWeaknesses = filterPokemon('weaknesses', type);
+/* let position = 0;
 
-//   // showCard(resultTypes, divCardContainer);
-//   // showCard(resultResistant);
-//   // showCard(resultWeaknesses);
-//   // filterPokemonByType();
-// };
+const translateX = (pos, slide) => {
+  slide.style.left = `${pos * -150}px`;
+};
 
+  const goToNextItem = (event) => {
+  const slide = document.getElementById(`slide-cards ${event.value}`);
+  const visibleItems = (slide.width === 630) ? 4 : 2;
+  const itemsCardsHidden = slide.getElementsByClassName('pokemon-card').length - visibleItems;
+  if (position >= 0 && position < itemsCardsHidden) {
+    position += 1;
+    translateX(position, slide);
+  }
+};
+
+const goToPrevItem = (event) => {
+  const slide = document.getElementById(`slide-cards ${event.value}`);
+  if (position > 0) {
+    position -= 1;
+    translateX(position, slide);
+  }
+};
+
+const ctrlPrevButtons = document.getElementsByClassName('ctrl-prev');
+const ctrlNextButtons = document.getElementsByClassName('ctrl-next'); */
+
+/* ctrlPrevButtons[0].addEventListener('click', goToPrevItem);
+ctrlNextButtons[0].addEventListener('click', goToNextItem); */
 
 window.onload = loadPage;
 
@@ -278,4 +288,4 @@ document.addEventListener('click', (element) => {
     typeChoosed = element.target.value;
   }
 });
- orderBy();
+orderBy();

@@ -15,6 +15,7 @@
       <header id="header">
         <img id = "logo-pokemon" src="images/1200px-Pokémon_GO_logo.svg.png" alt="">
       </header>
+
       <nav id="navbar">
         <span id="logo-pokedex">POKEDEX</span>
         <input type="text" id="input-bar-search" placeholder="Nombre de Pókemon">
@@ -22,60 +23,71 @@
           <img src="images/buscar.png" alt="" id="img-icon-bar-search">
         </div>
       </nav>
+
       <div class="top-filter">
         <button class="button-filter">Filtrar por</button>
         <button class="button-filter">Ordenar por</button>
       </div>
 
       <section id="section-conteiner">
-        <div class="top-pagination">
-          <!-- <a   class="pagination-button">1</a>
-          <a   class="pagination-button">1</a>
-          <a   class="pagination-button">1</a> -->
+        <div class="top-pagination">          
         </div>
+
         <aside id="sidebar">
           <div class="header-menu">
             <span class="label">Tipos</span> 
             <button id="btn-close">
               <img src="images/close.png" alt="" id="btn-close-img">
             </button>
-          </div>
-          <div id="types-container">            
-          </div>
-         
+          </div>       
         </aside>
-        <main id = "main">
-          <div id = "card-container" class="card-container-flex">
-            <div class="carousel carousel-pokemon-type">
-              <p>Pokemones de tipo</p>
-              <a class="show-more">Ver más </a>
-              <a class="prev">❮</a>
-              <div class="cards-carousel type"></div>
-              <a class="next">❯</a>
-            </div>
 
-            <div class="carousel carousel-pokemon-resistant">
-              <p>Pokemones resistentes al tipo</p>
-              <a class="show-more">Ver más </a>
-              <a class="prev">❮</a>
-              <div class="cards-carousel resistant" ></div>
-              <a class="next">❯</a>
-            </div>
-            <div class="carousel carousel-pokemon-weaknesses">
-              <p>Pokemones débiles al tipo</p>
-              <a class="show-more">Ver más </a>
-              <a class="prev">❮</a>
-              <div class="cards-carousel weaknesses" ></div>
-              <a class="next">❯</a>
+        <main id = "main">
+
+          <div id = "card-container" class="card-container-flex">           
+          </div>        
+        
+          <div id = "card-container-section" >            
+            <div class="slider carousel-pokemon-type">
+              <div class="title-slider">
+                <p>Pokemones de tipo</p>
+                <a class="show-more" >Ver más </a>
+              </div>
+              <div class="slide-cards type"></div>                
+              <button class="ctrl-btn ctrl-prev" value="type" >❮</button> 
+              <button class="ctrl-btn ctrl-next" value="type">❯</button>
             </div>
             
-          </div>
+            <div class="slider carousel-pokemon-resistant">
+              <div class="title-slider">
+                <p>Pokemones resistentes al tipo</p>
+                <a class="show-more">Ver más </a>
+              </div>
+              <div class="slide-cards resistant" ></div>                
+              <button class="ctrl-btn ctrl-prev" value="resistant" >❮</button> 
+              <button class="ctrl-btn ctrl-next" value="resistant">❯</button>
+            </div>
+            <div class="slider carousel-pokemon-weaknesses">
+              <div class="title-slider">
+                <p>Pokemones débiles al tipo</p>
+                <a class="show-more">Ver más </a>
+              </div>
+              <div class="slide-cards weaknesses" ></div>
+              <button class="ctrl-btn ctrl-prev" value="weaknesses">❮</button> 
+              <button class="ctrl-btn ctrl-next" value="weaknesses">❯</button>
+            </div>          
+          </div>  
+
         </main>
 
       </section>
+
       <footer id="footer"> Pie de pagina</footer>
+
     </div>
+
     <script src="main.js" type="module"></script>
+    
   </body>
    
    
