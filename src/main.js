@@ -167,13 +167,29 @@ const showAllByFilter = (whichFilter) => {
   const divCardContainer = document.getElementById('card-container');
   divCardContainer.classList.add('card-container-flex');
   divCardContainer.innerHTML = '';
+  const title = document.createElement('p');
+  title.className = 'title';
+  switch (whichFilter) {
+    case 'type':
+      title.textContent = 'Pokemones tipo ' + typeChoosed;
+      break;
+    case 'resistant':
+      title.textContent = 'Pokemones resistentes al tipo ' + typeChoosed;
+      break;
+    case 'weaknesses':
+      title.textContent = 'Pokemones debiles al tipo '+ typeChoosed;
+      break;
+    default:
+      //do nothing
+  }
+  divCardContainer.appendChild(title);
   showCard(filterPokemon(whichFilter, typeChoosed), divCardContainer);
 };
 
 const showMore = document.getElementsByClassName('show-more');
-showMore[0].addEventListener('click', function(){showAllByFilter("type")});
-showMore[1].addEventListener('click', function(){showAllByFilter("resistant")});
-showMore[2].addEventListener('click', function(){showAllByFilter("weaknesses")});
+showMore[0].addEventListener('click', function() {showAllByFilter("type")});
+showMore[1].addEventListener('click', function() {showAllByFilter("resistant")});
+showMore[2].addEventListener('click', function() {showAllByFilter("weaknesses")});
 
 const loadPage = () => {
   const asideLateralMenu = document.getElementsByTagName('aside')[0];
@@ -210,6 +226,7 @@ const loadPage = () => {
 // };
 
 const showPokemonInSections = (numberOfCards) => {
+  console.log('muestra pokemones y secciones');
   const divCardContainer = document.getElementById('card-container');
   divCardContainer.classList.remove('card-container-flex');
   const divSections = divCardContainer.getElementsByClassName('cards-carousel');

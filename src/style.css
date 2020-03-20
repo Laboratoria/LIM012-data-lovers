@@ -207,12 +207,14 @@ section{
   /* position: relative; */
 }  
 .carousel > *{
-  border: 1px solid black;
   display: inline;
 }
 .carousel > p{
     font-size:large;
     grid-column: 1/3;
+}
+.title{
+  width: 100%;
 }
 .carousel .show-more{
   font-size:large;
