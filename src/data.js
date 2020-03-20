@@ -1,4 +1,4 @@
-//Funcionalidad
+//Funcionalidad en data
 import { inputSearchElem } from './main.js';
 //muestro la info
 export const showInfo=(pokes)=>{
@@ -35,4 +35,14 @@ export const showInfo=(pokes)=>{
           return 'El nombre ingresado no es correcto';
       }   
 }
-//<p>Special Attack: <span>${poke.special-attack}</span></p> 
+export const showAllData=(data)=>{
+    return `
+    <section class="s3">
+          <section id="s2img">
+                  <span class="circle">${poke.num}</span>
+                  <img src="${poke.img}" alt="pokemonImage">
+              </section> 
+          <span class="namePok"> ${data.name}</span>
+    </section>
+    `
+}

@@ -9,35 +9,45 @@ body{
     display: flex;
     flex-direction:column ;
     justify-content: space-around;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
 
 }
 ul{
-    background-color:green;
+    /* background-color:green; */
+   
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
     justify-content:flex-end;
 }
+
 li{
     margin: 1% 2%;
     font-family: 'Fahkwang', sans-serif;
+    cursor: pointer;
+    /* margin: 2em; */
 }
 main{
     background-color:blueviolet;
     /* padding: 0%; */
-    /* padding:2%; */
+    padding:2%;
 }
 #screen1{
-    background-color: aqua;
+    /* background-color: aqua; */
     display: flex;
     flex-direction: column;
     /* justify-content: space-between ; */
     align-items: center;
-    align-items: space-between;
+    /* justify-content: center; */
+    /* align-items: space-between; */
     /* margin: 2% 3%; */
     padding: 2%;
+    
 }
+
+
 #screen1 img:first-child { 
     align-self: center;
     /* background-color: darkblue; */
@@ -47,18 +57,33 @@ main{
 .inputCont{
     display:flex;
     flex-wrap: nowrap;
+    justify-content: center;
     margin-bottom: 5%;
-    margin-left:9%;
+    margin-left:7%;
+    border-style: solid;
+    border-color: transparent;
+    border-bottom-color: #ffffff;
+    /* width: 5%; */
     /* background-color: crimson; */
  }
  input{
     background-color: transparent;
     border-color: transparent;
-    border-bottom-color: #ffffff;
+    /* outline: none; */
     /* width: 100%; */
 }
+#searchIcon{
+    /* width: 5%; */
+    cursor: pointer;
+ }
+
+
+
 ::placeholder { 
     color:#ffffff ;
+    text-align: center;
+    /* padding-left: 2%; */
+    /* background-color: black; */
 }
  
 #screen2{
@@ -142,8 +167,12 @@ span{
     flex-wrap: nowrap;
 }
 footer{ 
-    position: relative;
+    position: fixed;
+    width: 100%;
     bottom: 0%;
+    background-color: rgba(66, 168, 57, 0.795);
+    display: flex;
+    justify-content: center;
 }
 .active{
     display: block;
