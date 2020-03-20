@@ -1,4 +1,4 @@
-import { filterByGeneration, search } from './data.js';
+import { filterByGeneration, search, order } from './data.js';
 import data from './data/pokemon/pokemon.js';
 // Se crea una variable donde se va a insertar los resultados de las funciones.
 const sectionContent = document.querySelector('.content');
@@ -33,6 +33,7 @@ const generation = (geNumber, geName) => {
 
 // Obteniendo todos los pokemones y separando por generación
 const allDataByGenerations = () => {
+  sectionContent.innerHTML = '';
   // Creando sección Kanto
   sectionContent.appendChild(generation('I', 'Kanto'));
   const dataKanto = document.createElement('div');
@@ -51,7 +52,7 @@ const allDataByGenerations = () => {
 
 // El evento que llama a la función que inserta todos los pokemones al iniciar la página
 window.addEventListener('load', () => {
-  allDataByGenerations();
+  allDataByGenerations(data.pokemon);
 });
 
 // Guardando input para buscar
@@ -73,6 +74,21 @@ searchInput.addEventListener('input', () => {
     searchBox.innerHTML += 'No se ha encontrado el pokemon :(';
     sectionContent.appendChild(searchBox);
   } else {
+    allDataByGenerations();
+  }
+});
+
+const selection = document.getElementById('selection');
+selection.addEventListener('change', () => {
+  const chosenOrder = selection.value;
+  sectionContent.innerHTML = '';
+  const cardsContainer = document.createElement('div');
+  cardsContainer.className = 'cards-distribution';
+  // Llamando a la función para ordenar y crear las cards
+  cardsContainer.innerHTML += pokemonCards(order(data.pokemon, chosenOrder));
+  sectionContent.appendChild(cardsContainer);
+  // Mostrando la data completo por generaciones como defecto
+  if (chosenOrder === 'default') {
     allDataByGenerations();
   }
 });
