@@ -1,4 +1,4 @@
-import { dinamicSearchPokemon } from '../src/data.js';
+import { dinamicSearchPokemon, filterPokemon } from '../src/data.js';
 
 // primer sprint : test de segunda historia [16 de Marzo]
 describe('dinamicSearchPokemon', () => {
@@ -22,6 +22,27 @@ describe('dinamicSearchPokemon', () => {
     const result = dinamicSearchPokemon('pikachu');
     for (let i = 0; i < result.length; i += 1) {
       expect(result[i].name).toContain('pikachu');
+    }
+  });
+
+  it('retorna una lista de pokemones que coincida con el tipo agua', () => {
+    const result = filterPokemon('type', 'water');
+    for (let i = 0; i < result.length; i += 1) {
+      expect(result[i].type).toContain('water');
+    }
+  });
+
+  it('retorna una lista de pokemones que son resistentes al tipo fuego', () => {
+    const result = filterPokemon('resistant', 'fire');
+    for (let i = 0; i < result.length; i += 1) {
+      expect(result[i].resistant).toContain('fire');
+    }
+  });
+
+  it('retorna una lista de pokemones que son debiles al tipo roca', () => {
+    const result = filterPokemon('weaknesses', 'rock');
+    for (let i = 0; i < result.length; i += 1) {
+      expect(result[i].weaknesses).toContain('rock');
     }
   });
 });

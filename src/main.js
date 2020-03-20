@@ -28,7 +28,8 @@ let resultTypes = [];
 let resultResistant = [];
 let resultWeaknesses = [];
 
-let sectionTime = false;
+let isContainerSection = false;
+let typeChoosed = '';
 
 
 const createPokemonType = (type) => {
@@ -88,10 +89,10 @@ const showMessageOfSearch = (container) => {
 
 const searchPokemon = () => {
   const cardContainer = document.getElementById('card-container');
-  if (sectionTime === true) {
+  if (isContainerSection === true) {
     console.log('modo busqueda de pokemones');
     document.getElementById('card-container-section').style.display = 'none';
-    sectionTime = false;
+    isContainerSection = false;
     cardContainer.style.display = 'flex';
   }
   cardContainer.innerHTML = '';
@@ -170,12 +171,43 @@ buttonOrderPokemon.addEventListener('click', showLateralMenu);
 buttonCloseLateralMenu.addEventListener('click', hideLateralMenu);
 buttonCloseLateralMenu.addEventListener('click', hideLateralMenu);
 
+const showAllByFilter = (whichFilter) => {
+  const divCardContainer = document.getElementById('card-container');
+  /* divCardContainer.classList.add('card-container-flex'); */
+  divCardContainer.style.display = 'flex';
+  document.getElementById('card-container-section').style.display = 'none';
+  isContainerSection = false;
+  divCardContainer.innerHTML = '';
+  const title = document.createElement('p');
+  title.className = 'title';
+
+  switch (whichFilter) {
+    case 'type':
+      title.textContent = `Pokemones tipo ${typeChoosed}`;
+      break;
+    case 'resistant':
+      title.textContent = `Pokemones resistentes al tipo ${typeChoosed}`;
+      break;
+    case 'weaknesses':
+      title.textContent = `Pokemones debiles al tipo ${typeChoosed}`;
+      break;
+    default:
+      // do nothing
+  }
+  divCardContainer.appendChild(title);
+  showCard(filterPokemon(whichFilter, typeChoosed), divCardContainer);
+};
+
+const showMore = document.getElementsByClassName('show-more');
+showMore[0].addEventListener('click', () => { showAllByFilter('type'); });
+showMore[1].addEventListener('click', () => { showAllByFilter('resistant'); });
+showMore[2].addEventListener('click', () => { showAllByFilter('weaknesses'); });
 
 const loadPage = () => {
   const asideLateralMenu = document.getElementsByTagName('aside')[0];
   putPokemonTypesOnLateralMenu(asideLateralMenu);
   const wordIntroduced = document.getElementById('input-bar-search').value;
-  if (wordIntroduced.length === 0 && sectionTime === false) {
+  if (wordIntroduced.length === 0 && isContainerSection === false) {
     showCard(data.pokemon, document.getElementById('card-container'));
   }
 };
@@ -188,8 +220,8 @@ const putCardsOnSlider = (items, container) => {
 
 const showPokemonInSections = () => {
   const divContainerSections = document.getElementById('card-container-section');
-  if (sectionTime === false) {
-    sectionTime = true;
+  if (isContainerSection === false) {
+    isContainerSection = true;
     console.log('modo filtro por seciciones');
     document.getElementById('card-container').style.display = 'none';
     divContainerSections.style.display = 'block';
@@ -211,7 +243,7 @@ const filterPokemonByType = (type) => {
   resultTypes = filterPokemon('type', type);
   resultResistant = filterPokemon('resistant', type);
   resultWeaknesses = filterPokemon('weaknesses', type);
-  showPokemonInSections();
+  showPokemonInSections(4);
 };
 
 /* let position = 0;
@@ -250,5 +282,6 @@ document.addEventListener('click', (element) => {
   if (element.target && element.target.className === 'pokemon-type pokemon-type-button') {
     // divideDivs(filterPokemonByType(element.target.value));
     filterPokemonByType(element.target.value);
+    typeChoosed = element.target.value;
   }
 });

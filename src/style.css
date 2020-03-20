@@ -177,7 +177,6 @@ section{
 #card-container-section{
   width: auto;
   color: var(--color-blue-4);
-  
 }
   #card-container-section{
     display: none;
@@ -187,17 +186,41 @@ section{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    
-  }  
+  }
+  .card-container-normal{
+    display: block;
+    /* justify-content: center; */    
+  }
+  .card-container-grid{
+    display: grid;
+    grid-template-columns: auto;
+    width: 100%;
+    height: 750px;
+  }
 
 .slider{  
   margin: 1em 0;
+  /*display: grid;
+  grid-template-rows: 10% 90% ; 
+  grid-template-columns: 5% 45% 45% 5%;*/
   min-width: 200px;
   width: 100%;
   height: auto;
   position: relative;
-  /* background: var(--color-blue-3); */
 }  
+  .title-slider{
+    padding: 1em;
+    width: 100%;
+    background: #338374;
+    position: relative;
+  }
+  .title-slider > * {
+    display: inline;
+  }
+  .title-slider a{
+    position: absolute;
+    right: 1em;
+  }
   .ctrl-btn{
     cursor: pointer;
     top:40%;
@@ -222,13 +245,16 @@ section{
     right: 0;
   }
   .slide-cards{    
+    /*flex-wrap: wrap;
+    grid-column: 2/4;
+    justify-content: cencter; */
     display: flex;
     overflow-x: scroll;
     transition: 0.3s left ease-in-out;
   }
-  /*.slide-cards::-webkit-scrollbar {
+  .slide-cards::-webkit-scrollbar {
     display: none;
-  }*/
+  }
 
  .div-container-filter{
    border: 1px solid black;
