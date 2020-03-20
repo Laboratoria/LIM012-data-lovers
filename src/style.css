@@ -11,6 +11,7 @@
 html,
 body {
   background-image: url(assets/background.jpg);
+  background-repeat: round;
   background-size: inherit;
   color: lavenderblush;
 }
@@ -116,16 +117,10 @@ header {
 
 }
 
-#detail_diamont_Riot1 {
+#detail_diamont_Riot1 , #detail_diamont_Riot2 {
   width: auto;
   height: 50%;
 }
-
-#detail_diamont_Riot2 {
-  width: auto;
-  height: 50%;
-}
-
 
 .buscadores {
   margin-top: 1%;
@@ -243,10 +238,6 @@ li {
   /* background-color: rgba(12, 12, 1, 0.632); */
 }
 
-
-
-
-
 #root {
   color: #DFC981;
   display: grid;
@@ -264,7 +255,7 @@ li {
 }
 
 .imageOfChampion {
-  width: 95%;
+  width: 16rem;
   height: 16rem;
   border: #DFC981 1px solid;
 
