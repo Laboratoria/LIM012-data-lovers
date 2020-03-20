@@ -4,7 +4,7 @@
 // import { example } from './data.js';
 import data from './data/lol/lol.js';
 
-import { crearTemplate } from './data.js';
+// import { crearTemplate } from './data.js';
 
 // import data from './data/atletas/atletas.js';
 
@@ -15,10 +15,25 @@ import { crearTemplate } from './data.js';
 const allChampion = data.data;
 const arrObjetos = [Object.values(allChampion)];
 // console.log(arrObjetos);
-
-const btnMostrar = document.getElementById('btnMostrar');
-// const btnOrdenar = document.getElementById('btnOrdenar');
 const contenedor = document.getElementById('contenedor');
+
+// const btnMostrar = document.getElementById('btnMostrar');
+// const btnOrdenar = document.getElementById('btnOrdenar');
+
+const crearTemplate = arr => {
+  let stringTemplate = '';
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < arr[i].length; j++) {
+      stringTemplate += `<div class="class-div">     
+<img class="class-img" alt="Imagen de ${arr[i][j].id}" src=${arr[i][j].splash}>
+<p class="class-name">${arr[i][j].id}</p>
+</div>`;
+      // console.log(arr[0][0].id);
+    }
+    return stringTemplate;
+  }
+  return stringTemplate;
+};
 
 window.onload = () => {
   contenedor.innerHTML = crearTemplate(arrObjetos);

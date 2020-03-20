@@ -4,7 +4,7 @@ import { crearTemplate } from '../src/data.js';
 
 import data from '../src/data/lol/lol.js';
 
-const allChampion = data.data;
+/* const allChampion = data.data;
 const arrObjetos = [Object.values(allChampion)];
 
 describe('crearTemplate', () => {
@@ -15,7 +15,7 @@ describe('crearTemplate', () => {
   it('returns stringTemplate', () => {
     expect(crearTemplate(arrObjetos)).toBe([arrObjetos]);
   });
-});
+}); */
 
 /* describe('anotherExample', () => {
   it('is a function', () => {
