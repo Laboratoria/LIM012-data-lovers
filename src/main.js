@@ -97,8 +97,7 @@ iconSearch.addEventListener('click', () => {
   searchInput.focus();
 });
 
-searchInput.addEventListener('focusout', () => {
-  sectionContent.innerHTML = '';
-  allDataByGenerations();
-  searchInput.value = '';
-});
+// searchInput.addEventListener('focusout', () => {
+//   sectionContent.innerHTML = '';
+//   allDataByGenerations();
+// });
