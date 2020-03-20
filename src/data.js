@@ -1,8 +1,8 @@
-
-//AQUI MANEJAMOS LAS FUNCIONES
+/* eslint-disable no-plusplus */
+// AQUI MANEJAMOS LAS FUNCIONES
 
 // estas funciones son de ejemplo
-//export const example = () => 'example';  
-//export const anotherExample = () => 'OMG';
+// export const example = () => 'example';
+// export const anotherExample = () => 'OMG';
 
-
+// export
