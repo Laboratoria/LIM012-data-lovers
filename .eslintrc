@@ -5,14 +5,27 @@
     "jest/globals": true
   },
   "extends": [
-    "airbnb-base"
+    "airbnb-base",
+    "prettier",
+    "plugin:prettier/recommended"
   ],
-  "plugins": ["jest"],
+  "plugins": [
+    "jest",
+    "prettier"
+  ],
   "parserOptions": {
     "ecmaVersion": 2018,
     "sourceType": "module"
   },
   "rules": {
+    "prettier/prettier": [
+      "error",
+      {
+        "trailingComa": "es5",
+        "singleQuote": true,
+        "tabWidth": 2
+      }
+    ],
     "linebreak-style": 0,
     "prefer-destructuring": 0,
     "import/extensions": 0,
