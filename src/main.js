@@ -8,7 +8,7 @@ const pokemonRow = document.querySelector('.stack');
 
 const showPokemon = (arr) => {
   arr.forEach((obj) => {
-    let pokemonCard = document.createElement('div');
+    const pokemonCard = document.createElement('div');
     pokemonCard.classList.add('pokemon-card');
     pokemonCard.innerHTML = `
         <div class="pokemon-number">${obj.num}</div>
@@ -16,16 +16,15 @@ const showPokemon = (arr) => {
         <div class= "pokemon-name">${obj.name}</div>
         `;
     pokemonRow.appendChild(pokemonCard);
-  }
-  );
+  });
 };
 
 showPokemon(data.pokemon);
 
 const orderByType = document.querySelector('#order-by-type');
 
-orderByType.addEventListener('change', () => {    
+orderByType.addEventListener('change', () => {
   const chosenType = orderByType.value;
+  console.log({chosenType});
   showPokemon(filterByType(data.pokemon, chosenType));
 });
-
