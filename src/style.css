@@ -18,11 +18,13 @@ ul{
     padding: 0;
     display: flex;
     justify-content:flex-end;
+    
 }
 li{
     margin: 1% 2%;
     font-family: 'Fahkwang', sans-serif;
-}
+    cursor: pointer;
+    }
 main{
     /* background-color:blueviolet; */
     padding:2%;
