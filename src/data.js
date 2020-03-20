@@ -9,45 +9,16 @@ sortData(data, sortBy, sortOrder): esta función sort u ordenar recibe tres par�
 El segundo parámetro, sortBy, nos dice con respecto a cuál de los campos de la data se quiere ordenar. El tercer parámetro, sortOrder, indica si se quiere ordenar de manera ascendente o descendente.
 computeStats(data): la función compute o calcular, nos permitirá hacer cálculos estadísticos básicos para ser mostrados de acuerdo a la data proporcionada. */
 
-export const allSelection = (allChampionList) => {
-    let arrayKeysChampions = Object.keys(allChampionList);
-    let arrayValuesChampions = Object.values(allChampionList);
-    // console.log(prueba2);
-    for (let i = 0; i < arrayKeysChampions.length; i += 1) {
-      // console.log(prueba3[i][1]);
-      // console.log(prueba2[i].tags);
-      let roleChampions = arrayValuesChampions[i].tags;
-      // console.log(roleChampions);
-      for (let j = 0; j < roleChampions.length; j += 1) {
-        // console.log(roleChampions[j]) /*aparecen todos los roles */
-        if (roleChampions[j] === "Fighter") {
-
-          // console.log(arrayValuesChampions[i].name);
-          // console.log(arrayValuesChampions[i].splash);
-        };
-        };
-}};
-export const searchWord = (data, text) => {
-       console.log('data', data);
-       console.log('text', text);
-       console.log(typeof (text));
-      let enterText = '';
-      const allFindChampion = [];
-      enterText = text.toLowerCase();
-      // console.log('text en minuscula de data', enterText);
-      // console.log(typeof (enterText));
-      for (let a = 0; a < data.length; a += 1) {
-        let name = '';
-        name = data[a].name.toLowerCase();
-        // console.log('nombre', name);
-        // console.log('prueba3.9', name.startsWith(enterText));
-        if (name.startsWith(enterText) === true) {
-          // console.log('prueba4', name.startsWith(enterText));
-          allFindChampion.push(data[a]);
-        }
-      }
-      return allFindChampion;
-    };
-        // export const example = () => 'example';
+export const allSelection = (allchampionList, typeRol) => {
+  let arrayValuesChampions = Object.values(allchampionList);
+  return arrayValuesChampions.filter((championsList) => {
+    /*La clave está en que es booleano, entonces es true para arrayValuesChampios..... y al ser false pues según yo no devuelve nada*/
+    /*Filter devuelve valores vuleanos */
+    /*retorna el array de los values, pero ahora filtremos con el callback*/
+    return championsList.tags.indexOf(typeRol) >= 0
+    /*De este nuevo array de valores queremos encontrar aquellos que coincidan con el tag equivalente a typeRol que le vamos a pasar, pero este tiene que existir, por tanto tiene que tener un índice mayor a 0, que si al revés pues este no existe*/
+  })
+}
+export const example = () => 'example';
 
         //export const anotherExample = () => 'OMG'

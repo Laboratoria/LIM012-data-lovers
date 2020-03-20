@@ -1,76 +1,62 @@
 /*interacción con el DOM event listeners o event handlers, se usan las que estàn en data.js */
-// import data from './data/atletas/atletas.js';
-import lol from './data/lol/lol.js';
-// import data from './data/pokemon/pokemon.js';
 import {
-  searchWord , allSelection
+  allSelection
 } from './data.js';
+import lol from './data/lol/lol.js';
 
 const allChampionList = lol.data;
 //const nameChampion = infoChampionList(allChampionList) ( es de viviana NO LO BORRES)
 // console.log(allchampionList);
-let list = document.querySelector("#root");
-// console.log(root);
-const textToSearch = document.querySelector('#searchTexto');
-//console.log(textToSearch);
-//objects
-  const seeAllChampion = (seeChampion)=>{
-Object.values(allChampionList).forEach(champion => {
-  const div = document.createElement("div");
-  const img = document.createElement("img");
-  const p = document.createElement("p");
-  p.className = "nameOfChampion";
-  img.className = "imageOfChampion";
-  p.innerHTML = `${champion.name}`;
-  img.src = `${champion.splash}`;
-  div.appendChild(img);
-  div.appendChild(p);
-  list.appendChild(div);
-})};
 
+const allChampions = () => {
+  let list = document.querySelector("#root");
+  Object.values(allChampionList).forEach(champion => {
+    const div = document.createElement("div");
+    const img = document.createElement("img");
+    const p = document.createElement("p");
+    p.className = "nameOfChampion";
+    img.className = "imageOfChampion";
+    p.innerHTML = `${champion.name}`;
+    img.src = `${champion.splash}`;
+    div.appendChild(img);
+    div.appendChild(p);
+    list.appendChild(div);
+  })
+}
 
-let listRole = document.querySelector("#rolesFighter");
-// let rol = lol.data;
-let arrayKeysChampions = Object.keys(allChampionList);
-let arrayValuesChampions = Object.values(allChampionList);
-// console.log(prueba2);
-let prueba3 = Object.entries(allChampionList); /*solo para hacer las pruebas */
+let buttonAllChampions = document.getElementById('button_colection');
+buttonAllChampions.addEventListener('click', allChampions)
 
- for (let i = 0; i < arrayKeysChampions.length; i++) {
-  // console.log(prueba3[i][1]);
-  // console.log(prueba2[i].tags);
-  let roleChampions = arrayValuesChampions[i].tags;
-  // console.log(roleChampions);
-  for (let j = 0; j < roleChampions.length; j++) {
-    // console.log(roleChampions[j]) /*aparecen todos los roles
+let liRoles = document.querySelectorAll('.Roles');
+// console.log(typeof liRoles); /*is an object*/
+liRoles.forEach((option) => {
+  option.addEventListener('click', () => {
+    // const functionRoles = () => {
+    let typeRol = option.getAttribute('data-value')
+    // console.log(typeRol);
+    const functionFilterRol = allSelection(allchampionList, typeRol)
+    console.log(functionFilterRol);
 
-  const functionFilterRol = allSelection(allchampionList, typeRol)
-  console.log(functionFilterRol);
-  console.log(typeof functionFilterRol);
-
-      const divRole = document.createElement("div");
-      const imgRole = document.createElement("img");
-      const pName = document.createElement("p");
-      const pTags = document.createElement("p");
-      pName.className = "nameOfChampionRole";
-      imgRole.className = "imageOfChampionRole";
-      pTags.className = "roleTagsOfChampions";
-      pName.innerHTML = arrayValuesChampions[i].name;
-      imgRole.src = arrayValuesChampions[i].splash;
-      pTags.innerHTML = arrayValuesChampions[i].tags;
-      divRole.appendChild(imgRole);
-      divRole.appendChild(pName);
-      divRole.appendChild(pTags);
-      listRole.appendChild(divRole);
-      // console.log(arrayValuesChampions[i].name);
-      // console.log(arrayValuesChampions[i].splash);
-    }
-  }
-//Esta sección es del buscador. (aun falta terminar)
-document.querySelector('#searchTexto').addEventListener('keyup', () => {
-  let findChampion = [];
-  findChampion = searchWord(seeChampion, textToSearch.value);
-  list.innerHTML = seeAllChampion(findChampion);
-});
-
-/*con mayúscula Object */
+    let list = document.querySelector("#root");
+    list.innerHTML = '';
+    /*Llamamos otra vez al div que contiene list y en la linea de abajo la vaciamos, la limpiamos para que vuelva a pintar lo nuevo que vamos a darle */
+    // console.log(root);
+    Object.values(functionFilterRol).forEach(champion => {
+      /*Generalmente se busca el valor, entonces volvemos a usar object.values para acceder a los valores de lo importado */
+      const div = document.createElement("div");
+      const img = document.createElement("img");
+      const p = document.createElement("p");
+      const p2 = document.createElement("p");
+      p.className = "nameOfChampion";
+      p2.className = "tagsOfChampion";
+      img.className = "imageOfChampion";
+      p.innerHTML = `${champion.name}`;
+      p2.innerHTML = `${champion.tags}`;
+      img.src = `${champion.splash}`;
+      div.appendChild(img);
+      div.appendChild(p);
+      div.appendChild(p2);
+      list.appendChild(div);
+    });
+  })
+})
