@@ -97,17 +97,11 @@ a {
     font-size: 1em;
 }
 
-#btn-search {
-    display: none;
-}
-
 .icon-search {
     color: #FFF;
     font-size: 23px;
-}
-
-label {
     padding: 6px;
+    order: 1;
 }
 
 .menu-style:hover {
@@ -262,6 +256,7 @@ h2 {
 .show{
     z-index: 10;
 }
+
 .show .go-top {
     animation: popup .1s ease-in-out;
     width: 3.7rem;
@@ -303,17 +298,34 @@ h2 {
         box-sizing: content-box;
     }
 
+    #filter-search {
+        position: absolute;
+        top: 95px;
+        left: 0;
+        width: 88%;
+        height: 40px;
+        display: none;
+        opacity: 100%;    
+    }
+
+    .icon-search:hover ~ #filter-search {
+        display: block;
+    }
+
+    #filter-search:focus {
+        display: block;
+    }
+
+
     .icon-search {
         font-size: 25px;
         padding: 5px 7px;
         border-left: 3px solid #FFF;
+        cursor: pointer;
     }
 
     .icon-search:hover {
         color: rgba(0, 0, 0, 0.7);
-    }
-
-    .icon-search:hover {
         font-size: 25px;
         padding: 5px 7px;
         border-left: 3px solid #FFF;

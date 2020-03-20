@@ -91,3 +91,14 @@ document.querySelector('.go-top-container').addEventListener('click', () => {
     behavior: 'smooth',
   });
 });
+
+const iconSearch = document.querySelector('.icon-search');
+iconSearch.addEventListener('click', () => {
+  searchInput.focus();
+});
+
+searchInput.addEventListener('focusout', () => {
+  sectionContent.innerHTML = '';
+  allDataByGenerations();
+  searchInput.value = '';
+});
