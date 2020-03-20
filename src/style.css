@@ -122,24 +122,19 @@ header {
 }
 
 #searchTexto {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
   float: left;
   background-color: #B09D57;
-  width: 8em;
-  height: 2em;
+  width: 15em;
+  padding-top: 0.5%;
+  height: 2.5em;
   border-radius: 2em;
   font-family: 'Bangers',
     cursive;
-  font-size: 1.1em;
-  /* color: #464242; */
+  font-size: 1.2em;
   border-style: double;
   border-width: 8px;
   border-color: #282626;
-  /*padding-top: 0.00001em; */
   text-align: center;
-  /*con esto deberian estar ordenados de manera horizontal*/
   color: #464242;
 }
 
