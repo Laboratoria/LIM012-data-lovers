@@ -127,7 +127,6 @@ const putPokemonTypesOnLateralMenu = (aside) => {
 
 const showLateralMenu = () => {
   const asideLateralMenu = document.getElementsByTagName('aside')[0];
-  // console.log(window.screen.width);
   if (window.screen.width < 768) {
     asideLateralMenu.style.width = '80%';
   } else {
@@ -171,34 +170,34 @@ const showAllByFilter = (whichFilter) => {
   title.className = 'title';
   switch (whichFilter) {
     case 'type':
-      title.textContent = 'Pokemones tipo ' + typeChoosed;
+      title.textContent = `Pokemones tipo ${typeChoosed}`;
       break;
     case 'resistant':
-      title.textContent = 'Pokemones resistentes al tipo ' + typeChoosed;
+      title.textContent = `Pokemones resistentes al tipo ${typeChoosed}`;
       break;
     case 'weaknesses':
-      title.textContent = 'Pokemones debiles al tipo '+ typeChoosed;
+      title.textContent = `Pokemones debiles al tipo ${typeChoosed}`;
       break;
     default:
-      //do nothing
+      // do nothing
   }
   divCardContainer.appendChild(title);
   showCard(filterPokemon(whichFilter, typeChoosed), divCardContainer);
 };
 
 const showMore = document.getElementsByClassName('show-more');
-showMore[0].addEventListener('click', function() {showAllByFilter("type")});
-showMore[1].addEventListener('click', function() {showAllByFilter("resistant")});
-showMore[2].addEventListener('click', function() {showAllByFilter("weaknesses")});
+showMore[0].addEventListener('click', () => { showAllByFilter('type'); });
+showMore[1].addEventListener('click', () => { showAllByFilter('resistant'); });
+showMore[2].addEventListener('click', () => { showAllByFilter('weaknesses'); });
 
 const loadPage = () => {
   const asideLateralMenu = document.getElementsByTagName('aside')[0];
   putPokemonTypesOnLateralMenu(asideLateralMenu);
   const wordIntroduced = document.getElementById('input-bar-search').value;
-  // if (wordIntroduced.length === 0) {
-  //   showCard(data.pokemon, document.getElementById('card-container'));
-  //   showCard(data.pokemon.slice(0, 16));
-  // }
+  if (wordIntroduced.length === 0) {
+    showCard(data.pokemon, document.getElementById('card-container'));
+    showCard(data.pokemon.slice(0, 16));
+  }
 };
 
 // window.onload = loadPage;
@@ -226,7 +225,6 @@ const loadPage = () => {
 // };
 
 const showPokemonInSections = (numberOfCards) => {
-  console.log('muestra pokemones y secciones');
   const divCardContainer = document.getElementById('card-container');
   divCardContainer.classList.remove('card-container-flex');
   const divSections = divCardContainer.getElementsByClassName('cards-carousel');
