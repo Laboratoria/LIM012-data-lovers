@@ -8,16 +8,16 @@ export const filterByName = (championList, term) => {
 
   return filteredChampions;
 };
-
+//ordenar de la Z-A
 export const filteredbyClass = (championList, term) => {
   let filteredbyClass = Object.values(championList).filter(champion => {
-    if (champion.tags.indexOf(term) != -1) {
+    if (champion.tags.indexOf(term) !== -1) {
       return champion;
     }
   });
   return filteredbyClass;
 };
-
+//ajustar una funcion que aglomere las funciones repetitivas
 export const filteredByDifficulty = (championList, term) => {
   let filteredByDifficult;
 
