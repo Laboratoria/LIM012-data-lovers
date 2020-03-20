@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { dinamicSearchPokemon, filterPokemon } from './data.js';
 
 import data from './data/pokemon/pokemon.js';
@@ -22,6 +23,12 @@ const typeColors = {
   fairy: '#FAB3E2',
   fighting: '#BD5022',
 };
+
+let resultTypes = [];
+let resultResistant = [];
+let resultWeaknesses = [];
+
+let sectionTime = false;
 
 
 const createPokemonType = (type) => {
@@ -51,27 +58,27 @@ const putPokemonTypes = (dataTypesPokemon, divCardTypes) => {
   }
 };
 
-const createPokemonCard = (index, dataPokemon) => {
+const createPokemonCard = (index, dataPokemon, container) => {
   const divCard = document.createElement('div');
   divCard.className = 'pokemon-card';
-  document.getElementById('card-container').appendChild(divCard);
+  container.appendChild(divCard);
   const divCardName = document.createElement('div');
   const divCardImage = document.createElement('div');
   const divCardTypes = document.createElement('div');
   divCardName.className = 'pokemon-name';
   divCardImage.className = 'pokemon-image';
   divCardTypes.className = 'pokemon-types';
-  document.getElementsByClassName('pokemon-card')[index].appendChild(divCardName);
-  document.getElementsByClassName('pokemon-card')[index].appendChild(divCardImage);
-  document.getElementsByClassName('pokemon-card')[index].appendChild(divCardTypes);
   putPokemonName(dataPokemon.name, divCardName);
   putPokemonImage(dataPokemon.img, divCardImage);
   putPokemonTypes(dataPokemon.type, divCardTypes);
+  divCard.appendChild(divCardName);
+  divCard.appendChild(divCardImage);
+  divCard.appendChild(divCardTypes);
 };
 
-const showCard = (dataPokemon) => {
+const showCard = (dataPokemon, container) => {
   for (let i = 0; i < dataPokemon.length; i += 1) {
-    createPokemonCard(i, dataPokemon[i]);
+    createPokemonCard(i, dataPokemon[i], container);
   }
 };
 
@@ -81,15 +88,21 @@ const showMessageOfSearch = (container) => {
 
 const searchPokemon = () => {
   const cardContainer = document.getElementById('card-container');
+  if (sectionTime === true) {
+    console.log('modo busqueda de pokemones');
+    document.getElementById('card-container-section').style.display = 'none';
+    sectionTime = false;
+    cardContainer.style.display = 'flex';
+  }
   cardContainer.innerHTML = '';
   const wordIntroduced = document.getElementById('input-bar-search').value;
   const numberOfResult = dinamicSearchPokemon(wordIntroduced).length;
   if (numberOfResult > 0) {
-    showCard(dinamicSearchPokemon(wordIntroduced));
+    showCard(dinamicSearchPokemon(wordIntroduced), document.getElementById('card-container'));
   } else if (numberOfResult === 0 && wordIntroduced.length !== 0) {
     showMessageOfSearch(cardContainer);
   } else {
-    showCard(data.pokemon);
+    showCard(data.pokemon, document.getElementById('card-container'));
   }
 };
 
@@ -120,15 +133,13 @@ const putPokemonTypesOnLateralMenu = (aside) => {
 };
 
 // let showLateralMenu = false;
-let firstShowLateralMenu = false;
 const showLateralMenu = () => {
-  // console.log('mostran menu lateral');
   const asideLateralMenu = document.getElementsByTagName('aside')[0];
-  if (firstShowLateralMenu === false) {
-    putPokemonTypesOnLateralMenu(asideLateralMenu);
-    firstShowLateralMenu = true;
+  if (window.screen.width < 768) {
+    asideLateralMenu.style.width = '80%';
+  } else {
+    asideLateralMenu.style.width = '50%';
   }
-  asideLateralMenu.style.width = '80%';
 };
 
 const hideLateralMenu = () => {
@@ -161,32 +172,82 @@ buttonCloseLateralMenu.addEventListener('click', hideLateralMenu);
 
 
 const loadPage = () => {
+  const asideLateralMenu = document.getElementsByTagName('aside')[0];
+  putPokemonTypesOnLateralMenu(asideLateralMenu);
   const wordIntroduced = document.getElementById('input-bar-search').value;
-  if (wordIntroduced.length === 0) {
-    showCard(data.pokemon);
+  if (wordIntroduced.length === 0 && sectionTime === false) {
+    showCard(data.pokemon, document.getElementById('card-container'));
   }
 };
 
-const filterPokemonByType = (type) => {
-  // console.log(`pokemones de tipo: ${type}`);
-  const resultTypes = filterPokemon('type', type);
-  console.log(resultTypes);
-  /* const resultResistant = filterPokemon('resistant', type);
-  const resultWeaknesses = filterPokemon('weaknesses', type); */
-  /* showCard(resultTypes);
-  showCard(resultResistant);
-  showCard(resultWeaknesses);*/
+const putCardsOnSlider = (items, container) => {
+  for (let i = 0; i < items.length; i += 1) {
+    createPokemonCard(i, items[i], container);
+  }
 };
 
-/* const buttonsType = document.getElementsByClassName('pokemon-type-button');
-for (const button of buttonsType) {
-  button.addEventListener('click', filterPokemonByType(buttonsType[i].value));
-} */
+const showPokemonInSections = () => {
+  const divContainerSections = document.getElementById('card-container-section');
+  if (sectionTime === false) {
+    sectionTime = true;
+    console.log('modo filtro por seciciones');
+    document.getElementById('card-container').style.display = 'none';
+    divContainerSections.style.display = 'block';
+  }
+  const divSections = divContainerSections.getElementsByClassName('slide-cards');
+  divSections[0].innerHTML = '';
+  divSections[1].innerHTML = '';
+  divSections[2].innerHTML = '';
+  console.log(divSections[0].className);
+  console.log(divSections[1].className);
+  console.log(divSections[2].className);
 
-const buttons = document.querySelectorAll('.pokemon-type-button');
-buttons.forEach((element) => {
-  console.log('me muero de hambre');
-  element.addEventListener('click', filterPokemonByType(element.value));
+  putCardsOnSlider(resultTypes, divSections[0]);
+  putCardsOnSlider(resultResistant, divSections[1]);
+  putCardsOnSlider(resultWeaknesses, divSections[2]);
+};
+
+const filterPokemonByType = (type) => {
+  resultTypes = filterPokemon('type', type);
+  resultResistant = filterPokemon('resistant', type);
+  resultWeaknesses = filterPokemon('weaknesses', type);
+  showPokemonInSections();
+};
+let position = 0;
+
+const translateX = (pos, slide) => {
+  slide.style.left = `${pos * -150}px`;
+};
+
+const goToNextItem = (event) => {
+  const slide = document.getElementById(`slide-cards ${event.value}`);
+  const visibleItems = (slide.width === 630) ? 4 : 2;
+  const itemsCardsHidden = slide.getElementsByClassName('pokemon-card').length - visibleItems;
+  if (position >= 0 && position < itemsCardsHidden) {
+    position += 1;
+    translateX(position, slide);
+  }
+};
+
+const goToPrevItem = (event) => {
+  const slide = document.getElementById(`slide-cards ${event.value}`);
+  if (position > 0) {
+    position -= 1;
+    translateX(position, slide);
+  }
+};
+
+const ctrlPrevButtons = document.getElementsByClassName('ctrl-prev');
+const ctrlNextButtons = document.getElementsByClassName('ctrl-next');
+
+/* ctrlPrevButtons[0].addEventListener('click', goToPrevItem);
+ctrlNextButtons[0].addEventListener('click', goToNextItem); */
+
+window.onload = loadPage;
+
+document.addEventListener('click', (element) => {
+  if (element.target && element.target.className === 'pokemon-type pokemon-type-button') {
+    // divideDivs(filterPokemonByType(element.target.value));
+    filterPokemonByType(element.target.value);
+  }
 });
-
-// window.onload = loadPage;
