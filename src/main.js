@@ -5,17 +5,22 @@ import data from './data/atletas/atletas.js';
 const atletasConDeporte = buscador.mostrarAtletasConSuDeporte(data);
 
 for (let index = 0; index < atletasConDeporte.length; index++) {
-    var ulAtleta = document.createElement("ul");
+    let ulAtleta = document.createElement("ul");
     
-    var liNombre = document.createElement("li");                
-    var textNombre = document.createTextNode(atletasConDeporte[index].nombre);  
+    let liNombre = document.createElement("li");                
+    let textNombre = document.createTextNode(atletasConDeporte[index].nombre);  
     liNombre.appendChild(textNombre);
     ulAtleta.appendChild(liNombre);
 
-    var liDeporte = document.createElement("li");                
-    var textDeporte = document.createTextNode(atletasConDeporte[index].deporte);        
+    let liDeporte = document.createElement("li");                
+    let textDeporte = document.createTextNode(atletasConDeporte[index].deporte);        
     liDeporte.appendChild(textDeporte);
     ulAtleta.appendChild(liDeporte);
+
+    let liEquipo = document.createElement("li");                
+    let textEquipo = document.createTextNode(atletasConDeporte[index].equipo);        
+    liEquipo.appendChild(textEquipo);
+    ulAtleta.appendChild(liEquipo);
 
     document.getElementById("root").appendChild(ulAtleta);       
 }
