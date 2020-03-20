@@ -124,7 +124,8 @@ const createTypeButton = (type) => {
 const pokemonTypes = Object.keys(typeColors);
 
 const putPokemonTypesOnLateralMenu = (aside) => {
-  const typesConteiner = document.getElementById('types-container');
+  const typesConteiner = document.createElement('div');
+  typesConteiner.id = 'types-container';
   for (let key = 0; key < pokemonTypes.length; key += 1) {
     typesConteiner.appendChild(createTypeButton(pokemonTypes[key]));
   }
