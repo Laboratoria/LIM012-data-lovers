@@ -124,8 +124,7 @@ const createTypeButton = (type) => {
 const pokemonTypes = Object.keys(typeColors);
 
 const putPokemonTypesOnLateralMenu = (aside) => {
-  const typesConteiner = document.createElement('div');
-  typesConteiner.id = 'types-container';
+  const typesConteiner = document.getElementById('types-container');
   for (let key = 0; key < pokemonTypes.length; key += 1) {
     typesConteiner.appendChild(createTypeButton(pokemonTypes[key]));
   }
@@ -213,13 +212,14 @@ const filterPokemonByType = (type) => {
   resultWeaknesses = filterPokemon('weaknesses', type);
   showPokemonInSections();
 };
-let position = 0;
+
+/* let position = 0;
 
 const translateX = (pos, slide) => {
   slide.style.left = `${pos * -150}px`;
 };
 
-const goToNextItem = (event) => {
+  const goToNextItem = (event) => {
   const slide = document.getElementById(`slide-cards ${event.value}`);
   const visibleItems = (slide.width === 630) ? 4 : 2;
   const itemsCardsHidden = slide.getElementsByClassName('pokemon-card').length - visibleItems;
@@ -238,7 +238,7 @@ const goToPrevItem = (event) => {
 };
 
 const ctrlPrevButtons = document.getElementsByClassName('ctrl-prev');
-const ctrlNextButtons = document.getElementsByClassName('ctrl-next');
+const ctrlNextButtons = document.getElementsByClassName('ctrl-next'); */
 
 /* ctrlPrevButtons[0].addEventListener('click', goToPrevItem);
 ctrlNextButtons[0].addEventListener('click', goToNextItem); */
