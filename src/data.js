@@ -22,42 +22,20 @@ const pokedex = {
     });
     return dataPokemon;
   },
-  // Creando subtítulo de Generación
-  generations: (geNumber, geName) => {
-    const subtitle = document.createElement('div');
-    subtitle.className = 'subtitles margin-bottom';
-    subtitle.innerHTML = `
-    <div class="arrow">
-      <h2>Generacion ${geNumber} - ${geName}</h2>
-    </div>
-    <div class="line hide"></div>
-    `;
-    return subtitle;
-  },
-  showSearch: (pokemons, inputText) => {
-    sectionContent.innerHTML = '';
-    const searchResult = [];
-    if (inputText === '') {
-      allDataByGenerations();
-      sectionContent.removeChild(searchBox);
-    } else {
-      pokemons.forEach((element) => {
-      searchBox.innerHTML += search(element, inputText);
+  search: (dataP, inputText) => {
+    const result = [];
+    // buscando pokemones con las letras ingresadas
+    dataP.forEach((eachPokemon) => {
+      const namePokemon = eachPokemon.name;
+      const lengthText = inputText.length;
+      if (namePokemon.slice(0, lengthText) === inputText) {
+        result.push(eachPokemon);
+      }
     });
-    return searchResult;
-  }
-  // mensaje en caso que no se encuentre el pokemon
-  if (searchBox.innerHTML === '') {
-    searchBox.innerHTML += `
-    No se ha encontrado el pokemon :(
-  `;
-  }
-  return
-  
+    return result;
+  },
 };
 export default pokedex;
-
-
 
 /*
 // Obteniendo todos los pokemones y separando por generación
