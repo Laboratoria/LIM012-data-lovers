@@ -1,13 +1,16 @@
 @import url('https://fonts.googleapis.com/css?family=Fahkwang&display=swap');
 *{
     box-sizing: content-box;
+    color: #ffffff;
 }
 body{
     background-image:url("img/pokBack.jpg");
     background-size:cover;
     display: flex;
-    background-attachment: fixed;
     flex-direction:column ;
+    justify-content: space-around;
+    background-attachment: fixed;
+    
     /* background-repeat: no-repeat; */
     color: #FFFFFF;
 }
@@ -18,7 +21,6 @@ ul{
     padding: 0;
     display: flex;
     justify-content:flex-end;
-    
 }
 li{
     margin: 1% 2%;
@@ -35,56 +37,65 @@ main{
     flex-direction: column;
     /* justify-content: space-between ; */
     align-items: center;
-    align-items: space-between;
-    margin: 2% 3%;
-    padding: 2%;
-   
+    /* justify-content: center; */
+    /* align-items: space-between; */
+    /* margin: 2% 3%; */
+    padding: 2%; 
 }
 #screen1 img:first-child { 
     align-self: center;
     /* background-color: darkblue; */
     width: 60%;
     margin-bottom: 5%;
-    
-    /* weight: */  
 }
 .inputCont{
     display:flex;
     flex-wrap: nowrap;
+    justify-content: center;
     margin-bottom: 5%;
-    margin-left:9%;
-    /* background-color: crimson; */
+    margin-left:7%;
+    border-style: solid;
+    border-color: transparent;
+    border-bottom-color: #ffffff;
+    /* width: 5%; */
  }
  input{
     background-color: transparent;
-    color: #FFFFFF;
     border-color: transparent;
-    border-bottom-color: #FFFFFF;
+    /* outline: none; */
     /* width: 100%; */
 }
+#searchIcon{
+    /* width: 5%; */
+    cursor: pointer;
+ }
 ::placeholder { 
     color:#ffffff ;
+    text-align: center;
+    /* padding-left: 2%; */
+    /* background-color: black; */
 }
  
 #screen2{
     /* background-color: black ; */
-    box-sizing: content-box;
-    display:flex;
-    align-items:space-between;
+    backdrop-filter: brightness(0.4);
+    margin: 0%;
+    /* display:flex; */
+    /* align-items:space-between; */
 }
 section{
-    border-color:#ffffff;
     display: flex;
-    margin: 1% 5%;
+    /* margin: 1% ; */
 }
 p{
-    font-weight: bold;
+    /* font-weight: bold; */
     /* font-family: 'gadugi'; */
 }
 span{
     font-weight: normal;
 }
 #namePok{
+
     margin-bottom: 1%;
     font-weight: bold; 
     font-size: 2em;
@@ -97,10 +108,10 @@ span{
     /* background-color:aquamarine; */
     flex-direction:column;
     align-items:center ;  
-    padding: 2%;
+    /* padding: 2%; */
 }
 #s2img img{
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     /* Falta hacer la imagen responsive */
     border-style: solid;
     border-color:#feca57 ;
@@ -124,7 +135,7 @@ span{
     display: flex;
     justify-content:space-around;
     flex-wrap: wrap;
-    padding: 3%;
+    padding: 0.5% 3%;
 }
 /* #about{
     flex-basis: 50%; 
@@ -145,13 +156,16 @@ span{
     display: flex;
     flex-wrap: nowrap;
 }
+
 footer{ 
     position: fixed;
     width: 100%;
+    bottom: 0%;
     height: 5%;
     margin: 0;
     background-color: #2c924b;
-    bottom: 0%;
+    /*display: flex;
+    justify-content: center;*/
 }
 .active{
     display: block;
@@ -180,5 +194,6 @@ footer{
     display: flex;
     flex-flow: row wrap;
 }
+
 
 

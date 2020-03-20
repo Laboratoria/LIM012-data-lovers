@@ -15,8 +15,7 @@ const showScreen2=()=>{
     screen1Elem.style.display="none";
     screen3Elem.style.display='none';
     screen2Elem.style.display="block";
-    screen2Elem.innerHTML=` Hay ${pokemones.length} pokemones
-    ${showInfo(data.pokemon)}`
+    screen2Elem.innerHTML=`${showInfo(pokemones)}`
 }
 //Menu boton Home
 searchIconElem.addEventListener('click',showScreen2); 

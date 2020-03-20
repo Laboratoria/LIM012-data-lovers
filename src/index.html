@@ -7,29 +7,31 @@
   </head>
   <body>
     <header>
-        <nav> 
-            <ul>
-              <li id="home"> Home </li>
-              <li id="pokedex"> Pokedex </li>
-              <li id="candiesCalc"> Candies Calc </li>
-              <li id="compare"> Compare </li>
-          </ul>
-        </nav>
+      <nav>
+        <ul>
+          <li id="home"> Home </li>
+          <li id="pokedex"> Pokedex </li>
+          <li id="candiesCalc"> Candies Calc </li>
+          <li id="compare"> Compare </li>
+        </ul>
+      </nav>
     </header>
     <main>
-      <section id="screen1">
-         <img src="img/pockLog.png" alt="logo" class="logo">
-          <section class="inputCont">
-              <input type="text" name="" id="inputSearch" placeholder="Find your pokemon here!">
-              <img src="img\lupita.png" id="searchIcon" alt="lensIcon">
-          </section>
-      </section>
-      <section id="screen2" class="Screen2"></section>
-      <section id="screen3" class="Screen3"></section>
+      <div id="screen1" class="Screen1 active">
+        <img src="img/pockLog.png" alt="logo" class="logo">
+        <div class="inputCont" >
+          <input type="text" name="" id="inputSearch"  placeholder="Find your pokemon here!">
+          <img id="searchIcon" src="img\lupita.png"   alt="lensIcon">  
+        </div>
+      </div>
+      <div id="screen2" class="Screen2 inactive">
+      </div>
+      <div id="screen3" class="Screen3 inactive">
+      </div>
     </main>
-    <footer>
-        <p>@ Pokemon Inc All Right Reserved</p>
-    </footer>
+   <footer>
+    <span>© 2020 Pokemon, Inc. All rights reserved.</span>
+   </footer>
     <script src="main.js" type="module"></script>
   </body>
 </html>

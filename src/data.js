@@ -4,10 +4,10 @@ import { inputSearchElem } from './main.js';
 export const showInfo=(pokes)=>{
   const inputValue=inputSearchElem.value;
   let info='';
-  console.log(`Lei input ${inputValue}`)
+//   console.log(`Lei input ${inputValue}`)
       pokes.forEach((poke)=>{
-          if(inputValue==poke.name){
-              info= `
+         if(inputValue==poke.name){
+             info= `
               <p id="namePok"> ${poke.name}</p>
               <section id="s2img">
                   <span class="circle">${poke.num}</span>
@@ -26,7 +26,7 @@ export const showInfo=(pokes)=>{
                     </div>
                </section>
               `
-          }
+         }
       });
       if(info){
           return info;
@@ -38,8 +38,10 @@ export const showInfo=(pokes)=>{
 export const showAllData=(data)=>{
     return `
     <section class="s3">
-          <span class="circle">${data.num}</span>
-          <img class="imgPok" src="${data.img}" alt="pokemonImage">
+          <section id="s2img">
+                  <span class="circle">${poke.num}</span>
+                  <img src="${poke.img}" alt="pokemonImage">
+              </section> 
           <span class="namePok"> ${data.name}</span>
     </section>
     `
