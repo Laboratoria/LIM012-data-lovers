@@ -29,6 +29,7 @@ const showScreen3=()=>{
     screen3Elem.innerHTML=`${pokemones.map(showAllData).join('')}`
     screen1Elem.style.display='none';
     screen2Elem.style.display='none';
+    screen3Elem.style.display='block';
     
 }
 mPokedex.addEventListener('click',showScreen3);
