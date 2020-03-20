@@ -4,30 +4,45 @@
     <meta charset="utf-8">
     <title>Data Lovers</title>
     <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Spectral:400,800&display=swap" rel="stylesheet">
   </head>
+
   <body>
     <header>
-      <h1 class>League of Legend (icono)</h1>
+      <div class="encabezado">
+        <img class="logo" src= "imagenes/logo.png">
+      </div>
+     
       <div>
-       <form class="formBuscador">
-         <input type="text" id="buscador" placeholder="Buscar por campeon">
-         <button id="botonBuscar" class="botonBuscador">Buscar</button>
-
-       </form>
+        <form class="formBuscador">
+          <input type="text" id="buscador" placeholder="Buscar por campeon">
+          <button id="botonBuscar" class="botonBuscador">Buscar</button>
+        </form>
+        <input type="checkbox" id="btn-menu">
+        <label for="btn-menu">
+          <img src="imagenes/menu-regular-24.png" alt="">
+        </label>
+        <nav class="menu">
+          <ul>
+            <li><a href="#" class="categoria" ></a> Ordenar por</li>
+             <!--<ul class= "item">A - Z</ul>
+             <ul class= "item">Z - A</ul>-->
+            <li><a href="#" class="categoria"></a>Roles </li>
+            <li> <a href="#" class="categoria"></a> Habilidades</li>
+          </ul>
+        </nav>
       </div>
     </header>
+
+
     <main>
-      <nav class="menu">
-        <li class="ordenar">Ordenar por</li>
-          <ul>A - Z</ul>
-          <ul>Z - A</ul>
-        <li class="rol">Roles </li>
-        <li class="habilidades">Habilidades</li>
-      </nav>
-      <section id="galeria" class="galeriaDeCampeones">
-      </section>
-      
+      <section class="lista">
+      <div id="galeria" class="galeriaDeCampeones">
+      </div>
+      </section> 
     </main>
+
+
     <footer>
       <p> Teleticket &copy;2020 - Todos los derechos reservados</p>
     <footer>  
