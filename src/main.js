@@ -2,26 +2,32 @@
 //  AQUI MANEJAMOS EL DOOM
 
 // import { example } from './data.js';
+import data from './data/lol/lol.js';
+
 import { crearTemplate } from './data.js';
 
 // import data from './data/atletas/atletas.js';
-import data from './data/lol/lol.js';
 
 // import data from './data/pokemon/pokemon.js';
 // console.log(example,data);
-console.log(data.data);
+// console.log(data.data);
 
 const allChampion = data.data;
 const arrObjetos = [Object.values(allChampion)];
-console.log(arrObjetos);
+// console.log(arrObjetos);
 
 const btnMostrar = document.getElementById('btnMostrar');
 // const btnOrdenar = document.getElementById('btnOrdenar');
 const contenedor = document.getElementById('contenedor');
 
-btnMostrar.addEventListener('click', () => {
+window.onload = () => {
+  contenedor.innerHTML = crearTemplate(arrObjetos);
+};
+
+/* btnMostrar.addEventListener('click', () => {
   contenedor.innerHTML = crearTemplate(arrObjetos);
 });
+*/
 
 /*
 btnOrdenar.addEventListener('click', () => {

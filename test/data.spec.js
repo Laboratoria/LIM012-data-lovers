@@ -1,22 +1,23 @@
+/* eslint-disable indent */
 // import { example, anotherExample } from '../src/data.js';
 import { crearTemplate } from '../src/data.js';
 
 import data from '../src/data/lol/lol.js';
 
 const allChampion = data.data;
+const arrObjetos = [Object.values(allChampion)];
 
 describe('crearTemplate', () => {
   it('is a function', () => {
     expect(typeof crearTemplate).toBe('function');
   });
 
-  it('returns Campeon Aatrox', () => {
-    expect(crearTemplate(allChampion, 'Aatrox')).toBe([allChampion.Aatrox]);
+  it('returns stringTemplate', () => {
+    expect(crearTemplate(arrObjetos)).toBe([arrObjetos]);
   });
 });
 
-
-describe('anotherExample', () => {
+/* describe('anotherExample', () => {
   it('is a function', () => {
     expect(typeof anotherExample).toBe('function');
   });
@@ -24,4 +25,4 @@ describe('anotherExample', () => {
   it('returns `anotherExample`', () => {
     expect(anotherExample()).toBe('OMG');
   });
-});
+}); */
