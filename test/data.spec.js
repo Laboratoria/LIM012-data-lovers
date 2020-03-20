@@ -1,23 +1,15 @@
-import { example, anotherExample } from '../src/data.js';
+import { showInfo} from '../src/data.js';
+import { inputSearchElem } from '../src/main.js';
 
 
-describe('example', () => {
+describe('showInfo', () => {
   it('is a function', () => {
-    expect(typeof example).toBe('function');
+    expect(typeof showInfo).toBe('function');
   });
 
-  it('returns `example`', () => {
-    expect(example()).toBe('example');
-  });
+ /*  it('', () => {
+    expect(()).toBe();
+  }); */
 });
 
 
-describe('anotherExample', () => {
-  it('is a function', () => {
-    expect(typeof anotherExample).toBe('function');
-  });
-
-  it('returns `anotherExample`', () => {
-    expect(anotherExample()).toBe('OMG');
-  });
-});
