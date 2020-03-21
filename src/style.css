@@ -1,11 +1,7 @@
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
 
-body{
+
+/*body{
   margin: 0;
   font-family: 'Spectral', serif;
   position: absolute;
@@ -16,75 +12,76 @@ body{
 }
 
 
-/*PARTE DE ARRIBA*/
-header{
-    width: 100%;
-    border:8px solid rgb(185, 255, 120);
-    background: #061D29;
-  }
+  /*Encabezado*/
+ /* header{
+      width: 100%;
+      border:8px solid rgb(185, 255, 120);
+      background: #061D29;
+    }
 
-  .logo{
-    width: 250px;
-    height: 120px;
-  }
-  
-  
-  header label{
-    display: none;
-    width:3%;
-    height: 5%;
-  }
-  
-  .menu ul{
-  background:rgba(68, 189, 173, 0.76);
-   margin:0;
-   list-style: none;
-   padding: 0%;
-  display: flex;
-  }
-  
-  
-  
-  .menu li a{
-    display:block;
-    right:15px;
-    color: aliceblue;
-    text-decoration: none;
-  
-  }
-  
-  .formBuscador{
-   display: flex;  
-   justify-content:flex-end;
-  }
-  
-  .menu .categoria{
-    display: block; 
-    flex-direction:row;
-    flex-wrap: wrap;
-    align-content: space-around;
+      .logo{
+        width: 250px;
+        height: 120px;
+      }
+      
+      .formBuscador{
+        display: flex;  
+        justify-content:flex-end;
+        }
+      
+              /*header label{
+                display: none;
+                width:3%;
+                height: 5%;
+              }*/
+      
+/*      .menu ul{
+      background:rgba(68, 189, 173, 0.76);
+      margin:0;
+      list-style: none;
+      padding: 0%;
+      display: flex;
+      }
+      
+      
+      
+      .menu li a{
+        display:block;
+        right:15px;
+        color: aliceblue;
+        text-decoration: none;
+      
+      }
+      
+
+      
+      .menu .categoria{
+        display: block; 
+        flex-direction:row;
+        flex-wrap: wrap;
+        align-content: space-around;
+        
+      }
+
     
-  }
 
+      li{
+        border: 3px solid black;
+        flex-grow: 1;
+        flex-direction: column;
+        
+      }
+
+      
+      .item{
+        border:5px solid  rgba(31, 30, 31, 0.548);
+        flex-direction: column;
+        top: 50%;
+        
+      }
+  
  
-
-  li{
-    border: 3px solid black;
-    flex-grow: 1;
-    flex-direction: column;
-    
-  }
-
-  
-  .item{
-    border:5px solid  rgba(31, 30, 31, 0.548);
-    flex-direction: column;
-    top: 50%;
-    
-  }
-  
- 
-/*AQUI EMPIEZA SECTION= GALERIA*/
+/*AQUI EMPIEZA SECTION= GALERIA
   .galeriaDeCampeones{
     width: 100%;
     display: flex;
@@ -110,4 +107,169 @@ header{
     margin-bottom: 15px;
     box-shadow: 0px 0px 6px 0px rgba(0,0,0,22);
     text-align: center;
+  }*/
+  
+
+
+
+*{
+    margin: 0px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.padre{
+  display: flex;
+  flex-flow: column nowrap;
+  font-family: 'Spectral', serif; 
+  background-image:url(https://i.pinimg.com/originals/50/05/7d/50057dc2df5e0503d5de6f55b6a6df0b.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+}   
+  /*fondo de pantalla
+background-image: url(https://i.pinimg.com/originals/7c/f9/28/7cf92868b50c428c103210ae3391be02.jpg);
+background-repeat: no-repeat;
+background-position: center center;
+background-size: cover;
+background-attachment: fixed;
+background-position: center;
+background-attachment:contain;
+background-size: cover;*/
+a{
+  text-decoration: none;
+}
+  .header{
+    background:rgba(10, 10, 26, 0.616);;
+    display: flex;
+    flex-flow: column nowrap;
+  }
+
+    .encabezado{
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      width: auto;
+      height: 177px;
+      background: #061D29; /*background:rgba (0,0,0,.1) - transparencia de color negro*/
+      border-bottom: 2px solid rgba(235, 178, 24, 0.719);
+    }
+      .logoLol{
+        flex: 1 1 auto;
+
+      }
+        .logo{
+          position: absolute;
+          width: 326px;
+          height: 146px;
+          left: 46px;
+          top: 18px;
+          background:  rgba(0, 0, 0, .0.1);
+          display: flex;
+          align-items: flex-end;
+        }
+      .buscar{
+        background: #061D29;
+        box-sizing: border-box;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 5px;
+
+      }
+        .formBuscador{
+          background: #C4C4C4;
+          flex: 1 1 auto;
+        } /*para enlazar iconos <i class:"" aria-hidden="true></i>"*/
+        .botonBuscar{
+          width: auto;
+        }
+    .menu{
+      background:#31302E;
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+
+    }
+      .opciones{
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        width: 307px;
+        height: 85px;
+      }
+        .opciones a{
+          color: rgba(196, 177, 14, 0.904);
+          font-size: 11px;
+          text-transform: uppercase;
+          padding: 0 10px;
+          letter-spacing: 2px;
+          flex-flow: row wrap;
+          align-items: flex-start;
+        }
+        .opciones a:hover{
+          color:#EFEABB;
+        
+        }
+          .itemO{
+            flex: 3 1 auto;
+          }
+          .itemR{
+            flex: 3 1 auto;
+          }
+          .itemH{
+            flex: 3 1 auto;
+          }
+
+  .main{
+    background: #2A2A34;
+  }
+    .lista{
+      display: flex;
+      flex-flow: row nowrap;
+    }
+      .galeriaDeCampeones{
+        display: flex;
+        flex-flow: row nowrap;
+        flex: 1 1 auto;
+        flex-wrap: wrap;
+      }
+        .casillaCampeon{
+          display: flex;
+          flex-flow: column nowrap;
+          flex: 3 1 auto;
+          box-shadow: 4px 4px 11px rgba(252, 249, 249, 0.27);
+          width: 295px;
+          height: 404px;
+          border: 3px solid rgba(235, 178, 24, 0.719);
+          box-sizing: border-box;
+          box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);  
+        }
+        .imagenCampeon{
+          width: auto;
+          height: 364px;
+        }
+        .nombreCampeon{
+          text-align: center;
+          font-size: 36px;
+          line-height: 40px;
+          color: #FFFFFF;
+  .footer{
+    background: rgb(28, 28, 29);
+    display: flex;
+    justify-content: center;
+  }
+
+  /*responsive para tablet no se si sea necesario,probando*/
+  @media all and (max-width: 800px){
+    .menu{
+      flex-direction: column;
+      height: auto;
+    }
+  }
+
+  @media all and (max-width: 400px){
+    .galeriaDeCampeones{
+      flex-direction: column nowrap;
+      height: auto;
+    }
   }
