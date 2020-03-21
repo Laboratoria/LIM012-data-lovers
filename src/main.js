@@ -2,6 +2,8 @@ import { filterByGeneration, search, order } from './data.js';
 import data from './data/pokemon/pokemon.js';
 // Se crea una variable donde se va a insertar los resultados de las funciones.
 const sectionContent = document.querySelector('.content');
+const filterbox = document.getElementById('filter-box');
+const btnFilter = document.querySelector('button');
 
 // Creando card de pokemon
 const pokemonCards = (allPokemons) => {
@@ -34,6 +36,8 @@ const generation = (geNumber, geName) => {
 // Obteniendo todos los pokemones y separando por generación
 const allDataByGenerations = () => {
   sectionContent.innerHTML = '';
+  // borrando el contenedor del filtrado
+  sectionContent.classList.remove('show');
   // Creando sección Kanto
   sectionContent.appendChild(generation('I', 'Kanto'));
   const dataKanto = document.createElement('div');
@@ -92,6 +96,10 @@ selection.addEventListener('change', () => {
     allDataByGenerations();
   }
 });
+// creando una función que muestre u oculte el contenedor de la barra lateral del filtrado
+btnFilter.addEventListener('click', () => {
+  filterbox.classList.toggle('hide-filter-box');
+}, false);
 
 // Botón de subir
 window.onscroll = () => {
