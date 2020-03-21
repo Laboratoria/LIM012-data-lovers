@@ -11,7 +11,6 @@
 html,
 body {
   background-image: url(assets/background.jpg);
-  background-repeat: round;
   background-size: inherit;
   color: lavenderblush;
 }
@@ -97,18 +96,22 @@ header {
 }
 
 .detail_diamont_Riot {
-  /* display: flex; */
- /* background-color: "";*/
+  background-color: black;
   width: 100%;
   height: auto;
-  
 
 }
 
-#detail_diamont_Riot1 , #detail_diamont_Riot2 {
+#detail_diamont_Riot1 {
   width: auto;
   height: 50%;
 }
+
+#detail_diamont_Riot2 {
+  width: auto;
+  height: 50%;
+}
+
 
 .buscadores {
   margin-top: 1%;
@@ -119,23 +122,6 @@ header {
   padding: 0;
   /* font-family: 'Bangers',
     cursive; */
-}
-
-#searchTexto {
-  float: left;
-  background-color: #B09D57;
-  width: 15em;
-  padding-top: 0.5%;
-  height: 2.5em;
-  border-radius: 2em;
-  font-family: 'Bangers',
-    cursive;
-  font-size: 1.2em;
-  border-style: double;
-  border-width: 8px;
-  border-color: #282626;
-  text-align: center;
-  color: #464242;
 }
 
 ul,
