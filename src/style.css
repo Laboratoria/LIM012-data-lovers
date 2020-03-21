@@ -4,14 +4,53 @@ header {
        height: 276px;
        left: 10%;
        top: 2%;
-       background-color: rgb(83, 217, 226);
       }
+img {
+  width: 100%;
+  height: 276px;
+}
 
-li {
+.menu{
+  position: relative;
+  width: 80%;
+  height: 50px;
+  margin-left: 10%;
+  background-color:#FF5050;
+     
+}
+
+.main-container {
+  position: relative;
+  margin-left: 30%;
+  margin-top: 3%;
+  width: 40%;
+  background-color:rgb(213, 223, 241);
+  border: solid 3px blue;
+  border-radius: 20px 20px ;
+  padding: 20px;
+} 
+
+th {
+  position: relative;
+  margin-left: 40%;
+}             
+
+  li{
+    width:100%;
     display: inline;
-    padding: 5%;
+    text-align:center;
+    padding: 25px;
   }
 
+  ul:nth-child(even){
+    padding: 10px;
+    background-color:rgb(248, 245, 245);
+  }
+  ul:hover{
+    background-color: rgb(248, 183, 183);
+    color:white;
+  }
+ 
 p1 {
    position: absolute;
    width: 100%;
@@ -26,7 +65,7 @@ p1 {
    line-height: 42px;
    text-align: center;
    letter-spacing: 0.2em;
-   color: rgb(15, 14, 14);
+   color: rgb(255, 255, 255);
    }
 
 footer{

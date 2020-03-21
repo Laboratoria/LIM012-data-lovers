@@ -1,15 +1,13 @@
-// estas funciones son de ejemplo
-
-export const newArray = atletas.map((atletas) => {
-
+export const mostrarAtletasConSuDeporte = (data) => {
+// eslint-disable-next-line arrow-body-style
+  const atletasConDeporte = data.atletas.map((a) => {
     return {
-      nombre : atletas.nombre,
-      deporte: atletas.deporte,
-      equipo: atletas.noc
-    }
-    
-  })
-  console.log(newArray)
-  document.getElementById("contenedor").innerHTML = newArray;
-
+      nombre: a.nombre,
+      deporte: a.deporte,
+      equipo: a.equipo,
+    };
+  });
+  return atletasConDeporte;
+};
+export const example = () => 'example';
 export const anotherExample = () => 'OMG';
