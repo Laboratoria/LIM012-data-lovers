@@ -48,8 +48,12 @@ const shows3default=()=>{
     screen1Elem.style.display='none';
     screen2Elem.style.display='none';
     screen3Elem.style.display='block';
+<<<<<<< HEAD
     s3defaultElem.style.display='block';
     s3defaultElem.innerHTML=`${pokemones.map(showAllData).join('')}`
+=======
+    
+>>>>>>> 181ba0a2bcf6e40bc1bf6d8889df17e16f3903f3
 }
 mPokedex.addEventListener('click',shows3default);
 
