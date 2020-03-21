@@ -1,10 +1,28 @@
-import pokedex from './data.js';
-import data from './data/pokemon/pokemon.js';
 
+import { filterByGeneration, search, order } from './data.js';
+import data from './data/pokemon/pokemon.js';
 // Se crea una variable donde se va a insertar los resultados de las funciones.
 const sectionContent = document.querySelector('.content');
+const filterbox = document.getElementById('filter-box');
+const btnFilter = document.querySelector('button');
+
+// Creando card de pokemon
+const pokemonCards = (allPokemons) => {
+  let dataPokemon = '';
+  allPokemons.forEach((eachPokemon) => {
+    const pokemon = `
+    <div class="pokemon-card">
+      <p class="pokemon-number left">${eachPokemon.num}</p>
+      <img class="pokemon-image" src="${eachPokemon.img}">
+      <p class="pokemon-name">${eachPokemon.name}</p> 
+    </div>`;
+    dataPokemon += pokemon;
+  });
+  return dataPokemon;
+};
+
 // Creando subtítulo de Generación
-const generations = (geNumber, geName) => {
+const generation = (geNumber, geName) => {
   const subtitle = document.createElement('div');
   subtitle.className = 'subtitles margin-bottom';
   subtitle.innerHTML = `
@@ -15,28 +33,33 @@ const generations = (geNumber, geName) => {
   `;
   return subtitle;
 };
+
 // Obteniendo todos los pokemones y separando por generación
 const allDataByGenerations = () => {
+  sectionContent.innerHTML = '';
+  // borrando el contenedor del filtrado
+  sectionContent.classList.remove('show');
   // Creando sección Kanto
-  sectionContent.appendChild(generations('I', 'Kanto'));
+  sectionContent.appendChild(generation('I', 'Kanto'));
   const dataKanto = document.createElement('div');
   dataKanto.className = 'cards-distribution';
   // Creando e insertando cards de pokemones
-  dataKanto.innerHTML += pokedex.pokemonCards(pokedex.iteringByGenerations(data.pokemon, 'kanto'));
+  dataKanto.innerHTML += pokemonCards(filterByGeneration(data.pokemon, 'kanto'));
   sectionContent.appendChild(dataKanto);
   // Creando sección Johto
-  sectionContent.appendChild(generations('II', 'Johto'));
+  sectionContent.appendChild(generation('II', 'Johto'));
   const dataJohto = document.createElement('div');
   dataJohto.className = 'cards-distribution';
   // Creando e insertando cards de pokemones
-  dataJohto.innerHTML += pokedex.pokemonCards(pokedex.iteringByGenerations(data.pokemon, 'johto'));
+  dataJohto.innerHTML += pokemonCards(filterByGeneration(data.pokemon, 'johto'));
   sectionContent.appendChild(dataJohto);
 };
-  // El evento que llama a la función que inserta todos los pokemones al iniciar la página
+
+// El evento que llama a la función que inserta todos los pokemones al iniciar la página
 window.addEventListener('load', () => {
-  allDataByGenerations();
+  allDataByGenerations(data.pokemon);
 });
-//
+
 // Guardando input para buscar
 const searchInput = document.querySelector('#filter-search');
 
@@ -48,9 +71,9 @@ searchInput.addEventListener('input', () => {
   searchBox.classList.add('distribution-search');
   sectionContent.innerHTML = '';
   // Buscando pokemones
-  const result = pokedex.search(data.pokemon, inputText);
+  const result = search(data.pokemon, inputText);
   if (inputText.length > 0 && result.length > 0) {
-    searchBox.innerHTML += pokedex.pokemonCards(result);
+    searchBox.innerHTML += pokemonCards(result);
     sectionContent.appendChild(searchBox);
   } else if (inputText.length > 0 && result.length === 0) {
     searchBox.innerHTML += 'No se ha encontrado el pokemon :(';
@@ -59,11 +82,25 @@ searchInput.addEventListener('input', () => {
     allDataByGenerations();
   }
 });
-//
-// Creando el evento change para sort
 
-
-
+const selection = document.getElementById('selection');
+selection.addEventListener('change', () => {
+  const chosenOrder = selection.value;
+  sectionContent.innerHTML = '';
+  const cardsContainer = document.createElement('div');
+  cardsContainer.className = 'cards-distribution';
+  // Llamando a la función para ordenar y crear las cards
+  cardsContainer.innerHTML += pokemonCards(order(data.pokemon, chosenOrder));
+  sectionContent.appendChild(cardsContainer);
+  // Mostrando la data completo por generaciones como defecto
+  if (chosenOrder === 'default') {
+    allDataByGenerations();
+  }
+});
+// creando una función que muestre u oculte el contenedor de la barra lateral del filtrado
+btnFilter.addEventListener('click', () => {
+  filterbox.classList.toggle('hide-filter-box');
+}, false);
 
 // Botón de subir
 window.onscroll = () => {
