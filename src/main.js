@@ -5,7 +5,6 @@ import {
 import lol from './data/lol/lol.js';
 
 const allChampionList = lol.data;
-//const nameChampion = infoChampionList(allChampionList) ( es de viviana NO LO BORRES)
 // console.log(allchampionList);
 
 // console.log(root);
