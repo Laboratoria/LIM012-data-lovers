@@ -1,86 +1,91 @@
-const pokedex = {
-  iteringByGenerations: (pokemons, generation) => {
-    const generationArray = [];
-    for (let i = 0; i < pokemons.length; i += 1) {
-      if (pokemons[i].generation.name === generation) {
-        generationArray.push(pokemons[i]);
-      }
+// Función para buscar pokemones
+export const filterByGeneration = (data, generation) => {
+  const newArray = [];
+  for (let i = 0; i < data.length; i += 1) {
+    if (data[i].generation.name === generation) {
+      newArray.push(data[i]);
     }
-    return generationArray;
-  },
-  // Creando card de pokemon
-  pokemonCards: (allPokemons) => {
-    let dataPokemon = '';
-    allPokemons.forEach((eachPokemon) => {
-      const pokemon = `
-      <div class="pokemon-card">
-        <p class="pokemon-number left">${eachPokemon.num}</p>
-        <img class="pokemon-image" src="${eachPokemon.img}">
-        <p class="pokemon-name">${eachPokemon.name}</p> 
-      </div>`;
-      dataPokemon += pokemon;
-    });
-    return dataPokemon;
-  },
-  search: (dataP, inputText) => {
-    const result = [];
-    // buscando pokemones con las letras ingresadas
-    dataP.forEach((eachPokemon) => {
-      const namePokemon = eachPokemon.name;
-      const lengthText = inputText.length;
-      if (namePokemon.slice(0, lengthText) === inputText) {
-        result.push(eachPokemon);
-      }
-    });
-    return result;
-  },
-};
-export default pokedex;
-
-/*
-// Obteniendo todos los pokemones y separando por generación
-const pokedex = {
-  showByGenerations: (pokemons, pokemonCard) => {
-    const newArray = [];
-  // Iterando la data, llamar a la funcion para crear las cards de cada pokemon e insertarlos al DOM
-    for (let i = 0; i < pokemons.length; i += 1) {
-      if (pokemons[i].generation.name === 'kanto') {
-      dataKanto.innerHTML += pokemonCard(pokemons[i]);
-      } else {
-      dataJohto.innerHTML += pokemonCard(pokemons[i]);
-      }
-    }},
-
-  showSearch: (inputText) => {
-    sectionContent.innerHTML = '';
-    if (inputText === '') {
-      allDataByGenerations();
-      sectionContent.removeChild(searchBox);
-    } else {
-      data.pokemon.forEach((element) => {
-      searchBox.innerHTML += search(element, inputText);
-    });
   }
-  // mensaje en caso que no se encuentre el pokemon
-  if (searchBox.innerHTML === '') {
-    searchBox.innerHTML += `
-    No se ha encontrado el pokemon :(
-  `;
-  }
-  return
-  },
-window.onscroll = () => {
-  if (document.documentElement.scrollTop > 100) {
-    document.querySelector('.go-top-container').classList.add('show');
-  } else {
-    document.querySelector('.go-top-container').classList.remove('show');
-  }
+  return newArray;
 };
 
-document.querySelector('.go-top-container').addEventListener('click', () => {
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth',
+export const search = (data, inputText) => {
+  const result = [];
+  // buscando pokemones con las letras ingresadas
+  data.forEach((eachPokemon) => {
+    const namePokemon = eachPokemon.name;
+    const lengthText = inputText.length;
+    if (namePokemon.slice(0, lengthText) === inputText) {
+      result.push(eachPokemon);
+    }
   });
-});
-*/
+  return result;
+};
+
+// Función para ordenar
+export const order = (data, parameter) => {
+  let newArray = [];
+  let result = 0;
+  // Ordenando la data de forma alfabética ascendente y descendente
+  const sortArray = data.sort((a, b) => {
+    if (a.name > b.name) {
+      result = 1;
+    }
+    if (a.name < b.name) {
+      result = -1;
+    }
+    return result;
+  });
+  if (parameter === 'A-Z') {
+    newArray = sortArray;
+  } else if (parameter === 'Z-A') {
+    newArray = sortArray.reverse();
+  } else {
+    // Ordenando la data por número para la opción por defecto
+    newArray = data.sort((a, b) => {
+      if (a.num > b.num) {
+        result = 1;
+      }
+      if (a.num < b.num) {
+        result = -1;
+      }
+      return result;
+    });
+  }
+  return newArray;
+};
+//   let result = [];
+//   // buscando pokemones con las letras ingresadas
+//   if (parameter === 'A-Z') {
+//     result = data.sort((a, b) => {
+//       if (a.name > b.name) {
+//         return 1;
+//       }
+//       if (a.name < b.name) {
+//         return -1;
+//       }
+//       return 0;
+//     });
+//   } else if (parameter === 'Z-A') {
+//     result = data.sort((a, b) => {
+//       if (a.name < b.name) {
+//         return 1;
+//       }
+//       if (a.name > b.name) {
+//         return -1;
+//       }
+//       return 0;
+//     });
+//   } else {
+//     result = data.sort((a, b) => {
+//       if (a.num > b.num) {
+//         return 1;
+//       }
+//       if (a.num < b.num) {
+//         return -1;
+//       }
+//       return 0;
+//     });
+//   }
+//   return result;
+// };
