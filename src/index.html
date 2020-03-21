@@ -17,16 +17,61 @@
       </nav>
     </header>
     <main>
-      <div id="screen1" class="Screen1 active">
+      <div id="screen1" class="active">
         <img src="img/pockLog.png" alt="logo" class="logo">
         <div class="inputCont" >
           <input type="text" name="" id="inputSearch"  placeholder="Find your pokemon here!">
           <img id="searchIcon" src="img\lupita.png"   alt="lensIcon">  
         </div>
       </div>
-      <div id="screen2" class="Screen2 inactive">
+      <div id="screen2" class="screen inactive">
       </div>
-      <div id="screen3" class="Screen3 inactive">
+      <div id="screen3" class="screen inactive">
+        <p class="namePok">Choose one or both!</p>
+        <div id="Buttons" class="buttons">
+          <select id="selectOrder" onchange="">
+            <option value="">Order by</option>
+            <option value="AZ">A-Z</option>
+            <option value="ZA">Z-A</option>
+            <option value="numUp">Number</option>
+          </select>  
+          <select id="selectType">
+            <option value="">Types</option>
+            <option value="Grass">Grass</option>
+            <option value= "Poison">Poison</option>
+            <option value="Fire">Fire</option>
+            <option value= "Water">Water/option>
+            <option value= "Normal">Ground</option>
+            <option value= "Fighting">Fighting</option>
+            <option value= "Rock">Rock</option>
+            <option value="Ice">Ice </option>
+            <option value= "Flying">Flying</option>
+            <option value= "Bug">Bug</option>
+            <option value="Electric">Electric</option>
+            <option value= "Fairy">Fairy</option>
+            <option value= "Psychic">Psychic</option>
+            <option value="Ghost">Ghost </option>
+            <option value= "Dragon">Drago</option>
+        </select>
+        </div> 
+        <div id="s3default" class="">
+        </div>
+        <div id="s3orderAZ" class="">
+          <p>soyOrderAZenhtml</p>
+        </div>
+        <div id="s3orderZA" class="">
+          <!-- <p>soyOrderZAenhtml</p> -->
+        </div>
+        <div id="s3type" class="">
+          <!-- <p>soyTypeenhtml</p> -->
+        </div>
+      </div>
+      <div id="screen4" class="screen inactive">
+        <p>holaaaa</p>
+      </div>
+      <!-- <a name="s4"><div id="screen4" class="inactive">
+        <p>holaaaa</p>
+      </div></a> -->
       </div>
     </main>
    <footer>

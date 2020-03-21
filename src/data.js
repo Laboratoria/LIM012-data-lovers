@@ -1,6 +1,10 @@
 //Funcionalidad en data
 import { inputSearchElem } from './main.js';
 //muestro la info
+
+
+
+
 export const showInfo=(pokes)=>{
   const inputValue=inputSearchElem.value;
   let info='';
@@ -8,8 +12,8 @@ export const showInfo=(pokes)=>{
       pokes.forEach((poke)=>{
          if(inputValue==poke.name){
              info= `
-              <p id="namePok"> ${poke.name}</p>
-              <section id="s2img">
+              <p class="namePok"> ${poke.name}</p>
+              <section id="imgCont">
                   <span class="circle">${poke.num}</span>
                   <img src="${poke.img}" alt="pokemonImage">
               </section> 
@@ -37,12 +41,36 @@ export const showInfo=(pokes)=>{
 }
 export const showAllData=(data)=>{
     return `
-    <section class="s3">
-          <section id="s2img">
-                  <span class="circle">${poke.num}</span>
-                  <img src="${poke.img}" alt="pokemonImage">
-              </section> 
-          <span class="namePok"> ${data.name}</span>
-    </section>
-    `
+        <div class="s3">
+        <div id="imgCont" class="item">
+            <span class="circle">${data.num}</span>
+            <img src="${data.img}" alt="pokemonImage">
+            <span> ${data.name}</span>
+        </div> 
+        <span class="lor">nel</span>
+        <div class="lor">gel</div>
+        </div>   
+        `
+}
+/* export const orderAZ=(data)=>{
+    return `
+        <div class="s3">
+            <div id="imgCont" class="item">
+                <span class="circle">${data.num}</span>
+                <img src="${data.img}" alt="pokemonImage">
+                <span> ${data.name}</span>
+            </div> 
+        </div>
+        `
+        
+
+}
+ */
+
+export const orderAZ=(poke)=>{
+    let ordered=[];
+    for(let i=0;i<poke.length;i++){
+        ordered[i]+=poke[i].name;
+    }
+    console.log(ordered);
 }
