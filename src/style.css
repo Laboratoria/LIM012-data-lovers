@@ -236,8 +236,8 @@ li {
 }
 
 .imageOfChampion {
-  width: 16rem;
-  height: 16rem;
+  width: 95%;
+  height: 14rem;
   border: rgb(52, 55, 66) 0.5vh solid;
 
 }

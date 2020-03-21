@@ -1,23 +1,27 @@
 import {
+  allSelection,
   // example,
-  // anotherExample
+  anotherExample,
 } from '../src/data.js';
 
 
-describe('example', () => {
+describe('allSelection', () => {
   it('debería ser una función', () => {
-    expect(typeof example).toBe('function');
+    expect(typeof allSelection).toBe('function');
   });
 
   it('debería retornar true para "Fighter"', () => {
-    expect(example("Fighter")).toBe('true')
+    expect(allSelection('Fighter')).toBe(true);
   });
-
-
-
-
-
-
+  it('debería retornar true para "Mage"', () => {
+    expect(allSelection('Mage')).toBe(true);
+  });
+  it('debería retornar true para "Assassin"', () => {
+    expect(allSelection('Assassin')).toBe(true);
+  });
+  it('debería retornar false para "Luchador"', () => {
+    expect(allSelection('Fighter')).toBe(false);
+  });
 });
 
 
