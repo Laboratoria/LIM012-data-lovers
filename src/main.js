@@ -4,7 +4,7 @@ import {
 } from './data.js';
 import lol from './data/lol/lol.js';
 
-const allchampionList = lol.data;
+const allChampionList = lol.data;
 // console.log(allchampionList);
 
 // console.log(root);
@@ -14,7 +14,7 @@ const buttonAllChampions = document.getElementById('button_colection');
 buttonAllChampions.addEventListener('click', () => {
   const list = document.querySelector('#root');
   list.innerHTML = ''; /* Primero lo vacía luego coloca todo a todos los campeones */
-  Object.values(allchampionList).forEach((champion) => {
+  Object.values(allChampionList).forEach((champion) => {
     const div = document.createElement('div');
     const img = document.createElement('img');
     const p = document.createElement('p');
@@ -36,7 +36,7 @@ liRoles.forEach((option) => {
     // const functionRoles = () => {
     const typeRol = option.getAttribute('data-value');
     // console.log(typeRol);
-    const functionFilterRol = allSelection(allchampionList, typeRol);
+    const functionFilterRol = allSelection(allChampionList, typeRol);
     // console.log(functionFilterRol);
     const list = document.querySelector('#root');
     list.innerHTML = '';
