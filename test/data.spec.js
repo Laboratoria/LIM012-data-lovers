@@ -1,20 +1,19 @@
 import {
   allSelection,
   // example,
-  anotherExample,
+  // anotherExample,
 } from '../src/data.js';
-
 
 describe('allSelection', () => {
   it('debería ser una función', () => {
     expect(typeof allSelection).toBe('function');
   });
 
-  it('debería retornar true para "Fighter"', () => {
-    expect(allSelection('Fighter')).toBe(true);
+  it('Fighter existe en el array', () => {
+    expect(allSelection()).toContain('Fifhter');
   });
   it('debería retornar true para "Mage"', () => {
-    expect(allSelection('Mage')).toBe(true);
+    expect(allSelection()).toBe(true);
   });
   it('debería retornar true para "Assassin"', () => {
     expect(allSelection('Assassin')).toBe(true);
@@ -25,12 +24,12 @@ describe('allSelection', () => {
 });
 
 
-describe('anotherExample', () => {
-  it('is a function', () => {
-    expect(typeof anotherExample).toBe('function');
-  });
+// describe('anotherExample', () => {
+//   it('is a function', () => {
+//     expect(typeof anotherExample).toBe('function');
+//   });
 
-  it('returns `anotherExample`', () => {
-    expect(anotherExample()).toBe('OMG');
-  });
-});
+//   it('returns `anotherExample`', () => {
+//     expect(anotherExample()).toBe('OMG');
+//   });
+// });
