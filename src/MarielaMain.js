@@ -1,10 +1,7 @@
-
-import { filterByGeneration, search, order } from './data.js';
+import { filterByGeneration, search } from './data.js';
 import data from './data/pokemon/pokemon.js';
 // Se crea una variable donde se va a insertar los resultados de las funciones.
 const sectionContent = document.querySelector('.content');
-const filterbox = document.getElementById('filter-box');
-const btnFilter = document.querySelector('button');
 
 // Creando card de pokemon
 const pokemonCards = (allPokemons) => {
@@ -36,9 +33,6 @@ const generation = (geNumber, geName) => {
 
 // Obteniendo todos los pokemones y separando por generación
 const allDataByGenerations = () => {
-  sectionContent.innerHTML = '';
-  // borrando el contenedor del filtrado
-  sectionContent.classList.remove('show');
   // Creando sección Kanto
   sectionContent.appendChild(generation('I', 'Kanto'));
   const dataKanto = document.createElement('div');
@@ -57,7 +51,7 @@ const allDataByGenerations = () => {
 
 // El evento que llama a la función que inserta todos los pokemones al iniciar la página
 window.addEventListener('load', () => {
-  allDataByGenerations(data.pokemon);
+  allDataByGenerations();
 });
 
 // Guardando input para buscar
@@ -83,25 +77,6 @@ searchInput.addEventListener('input', () => {
   }
 });
 
-const selection = document.getElementById('selection');
-selection.addEventListener('change', () => {
-  const chosenOrder = selection.value;
-  sectionContent.innerHTML = '';
-  const cardsContainer = document.createElement('div');
-  cardsContainer.className = 'cards-distribution';
-  // Llamando a la función para ordenar y crear las cards
-  cardsContainer.innerHTML += pokemonCards(order(data.pokemon, chosenOrder));
-  sectionContent.appendChild(cardsContainer);
-  // Mostrando la data completo por generaciones como defecto
-  if (chosenOrder === 'default') {
-    allDataByGenerations();
-  }
-});
-// creando una función que muestre u oculte el contenedor de la barra lateral del filtrado
-btnFilter.addEventListener('click', () => {
-  filterbox.classList.toggle('hide-filter-box');
-}, false);
-
 // Botón de subir
 window.onscroll = () => {
   if (document.documentElement.scrollTop > 100) {
@@ -122,7 +97,8 @@ iconSearch.addEventListener('click', () => {
   searchInput.focus();
 });
 
-// searchInput.addEventListener('focusout', () => {
-//   sectionContent.innerHTML = '';
-//   allDataByGenerations();
-// });
+searchInput.addEventListener('focusout', () => {
+  sectionContent.innerHTML = '';
+  allDataByGenerations();
+  searchInput.value = '';
+});

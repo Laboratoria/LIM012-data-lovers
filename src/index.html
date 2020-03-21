@@ -31,32 +31,69 @@
               </a>
             </li>
             <li class="menu-style">
-              <span class="icon-filter"></span>
-              <span class="hide">Filter</span>
+              <button>
+                <span class="icon-filter"></span>
+                <span class="hide">Filter</span>
+              </button>
             </li>
             <li class="menu-style">
               <span class="icon-plus"></span>
               <span class="hide">Options</span>
             </li>
           </ul>
-          <div>
-            <input id="filter-search" class="hide" type="search" placeholder="Type here">
+          <div class="search-section">
             <span class="icon-search"></span>
+            <input id="filter-search" type="search" placeholder="Type here">
           </div>
+        </div>
       </nav>
-
     </header>
     
     <main>
+      <!-- Este es el contenedor que abarcará todos los filtros-->
+      <div id= filter-box class="filter-content">
+        <div class="filter-category">
+          <li class="li-filter limites"><a href="#" class="category-items" category="all">All pokémons</a></li>
+          <li class="li-filter limites"><a href="#" class="filter-by-type" cattegory="type">Filter by type <span></span></a>
+            <div class="sub-menu">
+              <div class="derecho">
+                <ul class="limites">Ghost</ul>
+                <ul class="limites">Psychic</ul>
+                <ul class="limites">Normal</ul>
+                <ul class="limites">Fighting</ul>
+                <ul class="limites">Poison</ul>
+                <ul class="limites">Bug</ul>
+                <ul class="limites">Flying</ul>
+                <ul class="limites">Dark</ul>
+                <ul class="limites">Fairy</ul>
+              </div> 
+              <div class="izquierdo">
+                <ul class="limites">Water</ul>
+                <ul class="limites">Fire</ul>
+                <ul class="limites">Grass</ul>
+                <ul class="limites">Ground</ul>
+                <ul class="limites">Rock</ul>
+                <ul class="limites">Steel</ul>
+                <ul class="limites">Ice</ul>
+                <ul class="limites">Electric</ul>
+                <ul class="limites">Dragon</ul>
+              </div>
+            </div>
+          </li>          
+        </div>
+      </div>
 
-      <section class="content center"></section>
-      <!-- <div class="sort-container">
-        <select id="selection" class="bottom-margin">
-          <option value="sort-option">Sort</option>
+      <div class="sort-container center">
+        <select id="selection" value ="Sort" class="margin-bottom">
+          <option value="sort-option" selected disabled>Sort</option>
+          <option value="default">Default</option>
           <option value="A-Z">A-Z</option>
           <option value="Z-A">Z-A</option>
         </select>
-      </div> -->
+      </div>
+
+      <section class="content center"></section>
+      
 
       <div class="go-top-container">
         <span class="go-top icon-circle-up"></span>

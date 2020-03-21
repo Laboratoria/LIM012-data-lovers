@@ -1,23 +1,27 @@
-import { example, anotherExample } from '../src/data.js';
+import { filterByGeneration, search } from '../src/data.js';
+import data from '../src/data/pokemon/pokemon.js';
 
-
-describe('example', () => {
+describe('filterByGeneration', () => {
   it('is a function', () => {
-    expect(typeof example).toBe('function');
+    expect(typeof filterByGeneration).toBe('function');
   });
 
-  it('returns `example`', () => {
-    expect(example()).toBe('example');
+  it('deberían retornar los pokemones con la generación correspondiente', () => {
+    expect(filterByGeneration(data.pokemon, 'johto')).toEqual(data.pokemon.slice(151));
   });
 });
 
 
-describe('anotherExample', () => {
+describe('search', () => {
   it('is a function', () => {
-    expect(typeof anotherExample).toBe('function');
+    expect(typeof search).toBe('function');
   });
 
-  it('returns `anotherExample`', () => {
-    expect(anotherExample()).toBe('OMG');
+  it('debería retornar un array vacío cuando la búsqueda no coincide con las letras ingresadas', () => {
+    expect(search(data.pokemon, 'xxwe')).toEqual([]);
+  });
+
+  it('debería retornar el pokemon cuyas primeras letras coincidan', () => {
+    expect(search(data.pokemon, 'bul')).toEqual([data.pokemon[0]]);
   });
 });
