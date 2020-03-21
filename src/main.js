@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 //DOM
 //{} cuando solo llamas a una funcion determinada no a toda la hoja
 import data from './data/pokemon/pokemon.js';
@@ -119,3 +120,15 @@ const showfil=(poke)=>{
     s3orderAZElem.style.display='block';
     s3orderAZElem.innerHTML=`holi ${pokemones.map(orderAZ).join('')}`
 }) */
+=======
+import { example } from './data.js';
+// import data from './data/injuries/injuries.js';
+// import data from './data/lol/lol.js';
+// import data from './data/patient/patient.js';
+import data from './data/pokemon/pokemon.js';
+// import data from './data/rickandmorty/rickandmorty.js';
+// import data from './data/steam/steam.js';
+// import data from './data/worldbank/worldbank.js';
+
+console.log(example, data);
+>>>>>>> 7c8a4025034b267d72e9c489da47513f349cef2f
