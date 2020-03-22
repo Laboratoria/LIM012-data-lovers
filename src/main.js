@@ -18,6 +18,28 @@ const mHome= document.getElementById('home');
 const mPokedex=document.getElementById('pokedex');
 const mcompare=document.getElementById('compare');
 //Segunda Pantalla -Buscador
+
+const typeFilter=(poke,tipo)=>{
+    let arr=[];
+    for(let i in poke){
+        for(let j in poke[i].type){
+            if(tipo===poke[i].type[j]){
+                arr.push(poke[i]);
+            }  
+        }
+   /*  for(let i=0;i<poke.length;i++){
+        for(let j=0;j<poke[i].type.length;j++){
+            if(tipo===poke[i].type[j]){
+                arr.push(poke[i]);
+            }  
+        }}
+    */
+    }
+    console.log(arr);
+}
+typeFilter(pokemones,'flying');
+
+
 const showScreen2=()=>{
     screen1Elem.style.display="none";
     screen2Elem.style.display="block";
@@ -40,36 +62,43 @@ const shows3default=()=>{
     s3defaultElem.innerHTML=`${pokemones.map(showAllData).join('')}`
 }
 mPokedex.addEventListener('click',shows3default);
-
+//Boton Select OrderBy
 select1Elem.addEventListener('change',()=>{
-    screen3Elem.style.display='block';
     s3defaultElem.style.display='none';
     s3orderElem.style.display='block';
-  
-    let selct1Value=select1Elem.value;
-  
-    switch(selct1Value){
-        case 'AZ': 
+    let select1Value=select1Elem.value;
+    switch(select1Value){
+        case 'asc': 
             console.log('soyAZ');
-            s3orderElem.innerHTML=`Estas en orderA1 seleccion${selct1Value} y 
-            ${(orderBy(pokemones,'asc'))} 
-            `
-            //${(orderBy(pokemones,'asc')).map(showAllData).join('')}   
+            s3orderElem.innerHTML=`${(orderBy(pokemones,'asc')).map(showAllData).join('')}  `
         break;
-        case 'ZA': 
+        case 'desc': 
             console.log('soyZA');
-            s3orderElem.innerHTML=`Estas en orderA2 seleccion${selct1Value} y
-            ${(orderBy(pokemones,'desc'))}
-            `
-            //${(orderBy(pokemones,'desc')).map(showAllData).join('')}
+            s3orderElem.innerHTML=`${(orderBy(pokemones,'desc')).map(showAllData).join('')}  `
         break;
         case 'numUp': 
             console.log('soyNum');
-            s3orderElem.innerHTML=`Estas en orderA3 seleccion${selct1Value}`
+            s3orderElem.innerHTML=`Estas en orderA3 seleccion${select1Value}`
     }
-    
-    // s3orderElem.innerHTML=`Estas en orderA seleccion${selct1Value}`
 })
+
+
+select2Elem.addEventListener('change',()=>{
+    s3defaultElem.style.display='none';
+    s3typeElem.style.display='block';
+  
+    let select2Value=select2Elem.value;
+  
+    switch(select1Value){
+        case 'AZ': 
+        }
+})
+
+
+
+
+
+
 
 const showfil=(poke)=>{
     /* screen3Elem.style.display='block';

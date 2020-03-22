@@ -35,6 +35,8 @@ export const showInfo=(pokes)=>{
           return 'El nombre ingresado no es correcto';
       }   
 }
+
+
 export const showAllData=(data)=>{
     return `
         <div class="s3">
@@ -48,6 +50,7 @@ export const showAllData=(data)=>{
         </div>   
         `
 }
+
 //Ordena Alfabeticamente
 export const orderBy=(poke,order)=>{
     let arrSort=[];
@@ -63,5 +66,6 @@ export const orderBy=(poke,order)=>{
             return (nameA>nameB)? -1 :((nameA<nameB)?1:0);
         }
     });
-    console.log(arrSort);
+    // console.log(arrSort);
+    return arrSort;
 }
