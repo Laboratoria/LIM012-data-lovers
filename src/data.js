@@ -1,10 +1,6 @@
 //Funcionalidad en data
 import { inputSearchElem } from './main.js';
 //muestro la info
-
-
-
-
 export const showInfo=(pokes)=>{
   const inputValue=inputSearchElem.value;
   let info='';
@@ -52,25 +48,20 @@ export const showAllData=(data)=>{
         </div>   
         `
 }
-/* export const orderAZ=(data)=>{
-    return `
-        <div class="s3">
-            <div id="imgCont" class="item">
-                <span class="circle">${data.num}</span>
-                <img src="${data.img}" alt="pokemonImage">
-                <span> ${data.name}</span>
-            </div> 
-        </div>
-        `
-        
-
-}
- */
-
-export const orderAZ=(poke)=>{
-    let ordered=[];
-    for(let i=0;i<poke.length;i++){
-        ordered[i]+=poke[i].name;
-    }
-    console.log(ordered);
+//Ordena Alfabeticamente
+export const orderBy=(poke,order)=>{
+    let arrSort=[];
+    arrSort=poke.sort((a,b)=>{
+        let nameA=a.name;
+        let nameB=b.name;
+        /* let numA=a.num;
+        let numB=b.num; */
+        if(order==='asc'){
+            return (nameA>nameB)? 1 :((nameA<nameB)?-1:0);
+        }
+        else if(order==='desc'){
+            return (nameA>nameB)? -1 :((nameA<nameB)?1:0);
+        }
+    });
+    console.log(arrSort);
 }
