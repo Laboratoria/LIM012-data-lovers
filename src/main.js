@@ -29,7 +29,10 @@ let resultResistant = [];
 let resultWeaknesses = [];
 
 let isContainerSection = false;
+const positions = [0, 0, 0];
 let typeChoosed = '';
+
+// sliderSystem();
 
 const showMessageOfSearch = (container) => {
   container.innerHTML = '<p>Lo sentimos, no encontramos resultados que coincidan con su búsqueda</p>';
@@ -176,7 +179,6 @@ buttonCloseLateralMenu.addEventListener('click', hideLateralMenu);
 
 const showAllByFilter = (whichFilter) => {
   const divCardContainer = document.getElementById('card-container');
-  /* divCardContainer.classList.add('card-container-flex'); */
   divCardContainer.style.display = 'flex';
   document.getElementById('card-container-section').style.display = 'none';
   isContainerSection = false;
@@ -233,9 +235,6 @@ const showPokemonInSections = () => {
   divSections[0].innerHTML = '';
   divSections[1].innerHTML = '';
   divSections[2].innerHTML = '';
-  console.log(divSections[0].className);
-  console.log(divSections[1].className);
-  console.log(divSections[2].className);
 
   putCardsOnSlider(resultTypes, divSections[0]);
   putCardsOnSlider(resultResistant, divSections[1]);
@@ -249,43 +248,59 @@ const filterPokemonByType = (type) => {
   showPokemonInSections(4);
 };
 
-/* let position = 0;
-
 const translateX = (pos, slide) => {
-  slide.style.left = `${pos * -150}px`;
+  slide.style.left = `${pos * -164}px`;
 };
 
-  const goToNextItem = (event) => {
-  const slide = document.getElementById(`slide-cards ${event.value}`);
-  const visibleItems = (slide.width === 630) ? 4 : 2;
-  const itemsCardsHidden = slide.getElementsByClassName('pokemon-card').length - visibleItems;
-  if (position >= 0 && position < itemsCardsHidden) {
-    position += 1;
-    translateX(position, slide);
+const goToNextItem = (slider, index) => {
+  const visibleItems = (slider.offsetWidth >= 630) ? 4 : 2;
+  const totalItems = slider.getElementsByClassName('pokemon-card').length;
+  const hiddenItems = totalItems - visibleItems;
+  if (positions[index] >= 0 && positions[index] < hiddenItems) {
+    positions[index] += 1;
+    translateX(positions[index], slider);
   }
 };
 
-const goToPrevItem = (event) => {
-  const slide = document.getElementById(`slide-cards ${event.value}`);
-  if (position > 0) {
-    position -= 1;
-    translateX(position, slide);
+const goToPrevItem = (slider, index) => {
+  console.log('prev');
+  if (positions[index] > 0) {
+    positions[index] -= 1;
+    translateX(positions[index], slider);
   }
 };
 
-const ctrlPrevButtons = document.getElementsByClassName('ctrl-prev');
-const ctrlNextButtons = document.getElementsByClassName('ctrl-next'); */
 
-/* ctrlPrevButtons[0].addEventListener('click', goToPrevItem);
-ctrlNextButtons[0].addEventListener('click', goToNextItem); */
+const sliderSystem = () => {
+  const conteinerSection = document.getElementById('card-container-section');
+  const sliders = conteinerSection.getElementsByClassName('slide-cards');
+  const ctrlPrevButtons = document.getElementsByClassName('ctrl-prev');
+  const ctrlNextButtons = document.getElementsByClassName('ctrl-next');
 
-window.onload = loadPage;
-
-document.addEventListener('click', (element) => {
-  if (element.target && element.target.className === 'pokemon-type pokemon-type-button') {
-    // divideDivs(filterPokemonByType(element.target.value));
-    filterPokemonByType(element.target.value);
-    typeChoosed = element.target.value;
+  for (let i = 0; i < 3; i += 1) {
+    ctrlPrevButtons[i].addEventListener('click', () => {
+      goToPrevItem(sliders[i], i);
+    });
+    ctrlNextButtons[i].addEventListener('click', () => {
+      goToNextItem(sliders[i], i);
+    });
   }
-});
+};
+
+const filterSystem = () => {
+  document.addEventListener('click', (element) => {
+    if (element.target && element.target.className === 'pokemon-type pokemon-type-button') {
+      filterPokemonByType(element.target.value);
+      typeChoosed = element.target.value;
+      if (window.screen.width < 1024) {
+        hideLateralMenu();
+      }
+    }
+  });
+};
+
+
 orderBy();
+filterSystem();
+sliderSystem();
+window.onload = loadPage;
