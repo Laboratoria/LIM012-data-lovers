@@ -4,15 +4,33 @@
     <meta charset="utf-8">
     <title>Data Lovers</title>
     <link rel="stylesheet" href="style.css" />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
+   <!--  <header>
+      <div class="menu-bar">
+        <img src="img/icon-menu.png" alt="icon-menu" id="icon-menu1" class="icon-menu">
+      </div>
+      <nav >
+        <ul id="list">
+          <li id="home" href="#"> Home </li>
+          <li id="pokedex" href="#"> Pokedex </li>
+          <li id="candiesCalc" href="#"> Candies Calc </li>
+          <li id="compare" href="#"> Compare </li>
+        </ul>
+      </nav>
+    </header> -->
     <header>
-      <nav>
-        <ul>
-          <li id="home"> Home </li>
-          <li id="pokedex"> Pokedex </li>
-          <li id="candiesCalc"> Candies Calc </li>
-          <li id="compare"> Compare </li>
+      <input type="checkbox" id="btn-menu">
+      <label class="fas fa-bars" for="btn-menu" id="icon"></label>
+      <nav class="menu">
+        <ul id="sub-menu uno">
+          <li id="home" href="#" > Home </li>
+          <li id="pokedex" href="#"> Pokedex </li>
+          <li id="candiesCalc" href="#"> Candies Calc </li>
+          <li id="compare" href="#"> Compare </li>
         </ul>
       </nav>
     </header>
@@ -21,17 +39,18 @@
         <img src="img/pockLog.png" alt="logo" class="logo">
         <div class="inputCont" >
           <input type="text" name="" id="inputSearch"  placeholder="Find your pokemon here!">
-          <img id="searchIcon" src="img\lupita.png"   alt="lensIcon">  
+          <img id="searchIcon" src="img\lupita.png"   alt="lensIcon">
         </div>
       </div>
       <div id="screen2" class="Screen2 inactive">
       </div>
-      <div id="screen3" class="Screen3 inactive">
+      <div id="screen3" name="pokedex" class="Screen3 inactive">
       </div>
     </main>
    <footer>
     <span>© 2020 Pokemon, Inc. All rights reserved.</span>
    </footer>
     <script src="main.js" type="module"></script>
+    <script src="https://kit.fontawesome.com/c4434d88fb.js" crossorigin="anonymous"></script>
   </body>
 </html>
