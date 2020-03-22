@@ -48,41 +48,40 @@
         </div>
       </nav>
     </header>
-    
     <main>
       <!-- Este es el contenedor que abarcará todos los filtros-->
-      <div id= filter-box class="filter-content">
+      <div id= "filter-box" class="filter-content">
         <div class="filter-category">
           <li class="li-filter limites"><a href="#" class="category-items" category="all">All pokémons</a></li>
-          <li class="li-filter limites"><a href="#" class="filter-by-type" cattegory="type">Filter by type <span></span></a>
+          <li class="li-filter limites">
+            <a href="#" class="filter-by-type" cattegory="type">Filter by type<span class="icon-ctrl"></span></a>
             <div class="sub-menu">
               <div class="derecho">
-                <ul class="limites">Ghost</ul>
-                <ul class="limites">Psychic</ul>
-                <ul class="limites">Normal</ul>
-                <ul class="limites">Fighting</ul>
-                <ul class="limites">Poison</ul>
-                <ul class="limites">Bug</ul>
-                <ul class="limites">Flying</ul>
-                <ul class="limites">Dark</ul>
-                <ul class="limites">Fairy</ul>
+                <ul class="limites" id="gosth">Ghost</ul>
+                <ul class="limites" id="psyqchic">Psychic</ul>
+                <ul class="limites" id="normal">Normal</ul>
+                <ul class="limites" id="fighting">Fighting</ul>
+                <ul class="limites" id="poison">Poison</ul>
+                <ul class="limites" id="bug">Bug</ul>
+                <ul class="limites" id="flying">Flying</ul>
+                <ul class="limites" id="dark">Dark</ul>
+                <ul class="limites" id="fairy">Fairy</ul>
               </div> 
               <div class="izquierdo">
-                <ul class="limites">Water</ul>
-                <ul class="limites">Fire</ul>
-                <ul class="limites">Grass</ul>
-                <ul class="limites">Ground</ul>
-                <ul class="limites">Rock</ul>
-                <ul class="limites">Steel</ul>
-                <ul class="limites">Ice</ul>
-                <ul class="limites">Electric</ul>
-                <ul class="limites">Dragon</ul>
+                <ul class="limites" id="water">Water</ul>
+                <ul class="limites" id="fire">Fire</ul>
+                <ul class="limites" id="grass">Grass</ul>
+                <ul class="limites" id="ground">Ground</ul>
+                <ul class="limites" id="rock">Rock</ul>
+                <ul class="limites" id="steel">Steel</ul>
+                <ul class="limites" id="ice">Ice</ul>
+                <ul class="limites" id="electric">Electric</ul>
+                <ul class="limites" id="dragon">Dragon</ul>
               </div>
             </div>
           </li>          
         </div>
       </div>
-
       <div class="sort-container center">
         <select id="selection" value ="Sort" class="margin-bottom">
           <option value="sort-option" selected disabled>Sort</option>
@@ -94,7 +93,6 @@
 
       <section class="content center"></section>
       
-
       <div class="go-top-container">
         <span class="go-top icon-circle-up"></span>
       </div>

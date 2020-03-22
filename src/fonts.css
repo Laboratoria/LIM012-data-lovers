@@ -43,3 +43,6 @@
   content: "\ea5b";
   margin-right: 5px;
 }
+.icon-ctrl:before {
+  content: "\ea50";
+}
