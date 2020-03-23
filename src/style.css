@@ -1,0 +1,43 @@
+#container{
+  width: 100%;
+  height: auto;
+  background: #0000;
+
+  /*agregando flexbox*/
+  display: flex;
+  flex-direction:row;
+  justify-content: space-around;
+  flex-flow: wrap;
+
+}
+#box{
+  width: 250px;
+  height: 300px;
+  margin:20px;
+  background: #ffff;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+/*añadiendo responsive @media query*/
+
+@media screen and (max-width:1200px) {
+  #box{
+    width:40%;
+  }
+}
+
+/*Diseño de las letras*/
+
+#name{
+ font-family: 'Aleo', serif;
+ text-transform: uppercase;
+ font-size: 200%;
+ font-weight: bold;
+}
+
+#title{
+  font-size: 180%;
+  font-family: 'PT Sans Narrow', sans-serif;
+  text-transform: uppercase;
+}
