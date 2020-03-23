@@ -4,7 +4,7 @@ import { example } from './data.js';
 //import data from './data/pokemon/pokemon.js';
 
 //CONSOLE LOGS DE PRUEBA
-
+// prueba erika
 let stringTemplate = '';
 const container=document.getElementById('container');
 const dataTodoCampeones=data.data;
