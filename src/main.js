@@ -4,21 +4,12 @@ import { example } from './data.js';
 //import data from './data/pokemon/pokemon.js';
 
 //CONSOLE LOGS DE PRUEBA
-// prueba erika 2
+
 let stringTemplate = '';
 const container=document.getElementById('container');
-<<<<<<< HEAD
-//const dataTodoCampeones=data.data;
 
 for (const prop in data.data){
-=======
-const dataTodoCampeones=data.data;
-//Prueba
-for (const prop in dataTodoCampeones){
->>>>>>> 1cd3ba6042a5b40b829f48972e8f816b81719f09
-  //console.log(data.data[prop].name)
-  //console.log(data.data[prop].title)
-  stringTemplate+=`
+  stringTemplate+= `
   <div id='box'>
   <img src=${data.data[prop].img}/>
   <p id='name'>${data.data[prop].name}</p>
