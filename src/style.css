@@ -141,7 +141,7 @@ a{
   text-decoration: none;
 }
   .header{
-    background:rgba(10, 10, 26, 0.616);;
+    background:rgba(10, 10, 26, 0.616);
     display: flex;
     flex-flow: column nowrap;
   }
@@ -194,17 +194,18 @@ a{
         display: flex;
         flex-flow: row nowrap;
         align-items: center;
-        width: 307px;
+        width: 687px;
         height: 85px;
       }
         .opciones a{
           color: rgba(196, 177, 14, 0.904);
-          font-size: 11px;
+          font-size: 23px;
           text-transform: uppercase;
           padding: 0 10px;
           letter-spacing: 2px;
           flex-flow: row wrap;
           align-items: flex-start;
+          text-shadow: 1px 1px 2px black;
         }
         .opciones a:hover{
           color:#EFEABB;
@@ -221,7 +222,7 @@ a{
           }
 
   .main{
-    background: #2A2A34;
+    background:rgba(10, 10, 26, 0.911);
   }
     .lista{
       display: flex;
@@ -239,7 +240,7 @@ a{
           flex: 3 1 auto;
           box-shadow: 4px 4px 11px rgba(252, 249, 249, 0.27);
           width: 295px;
-          height: 404px;
+          height: 436px;
           border: 3px solid rgba(235, 178, 24, 0.719);
           box-sizing: border-box;
           box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);  
@@ -252,7 +253,7 @@ a{
           text-align: center;
           font-size: 36px;
           line-height: 40px;
-          color: #FFFFFF;
+          color: #FFFFFF;}
   .footer{
     background: rgb(28, 28, 29);
     display: flex;
@@ -260,7 +261,7 @@ a{
   }
 
   /*responsive para tablet no se si sea necesario,probando*/
-  @media all and (max-width: 800px){
+  /*@media all and (max-width: 800px){
     .menu{
       flex-direction: column;
       height: auto;
@@ -272,4 +273,9 @@ a{
       flex-direction: column nowrap;
       height: auto;
     }
+    .casillaCampeon{
+      width:10px;
+
+    }*/
+
   }
