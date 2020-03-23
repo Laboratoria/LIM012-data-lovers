@@ -1,5 +1,5 @@
-//DOM
-//{} cuando solo llamas a una funcion determinada no a toda la hoja
+//  DOM
+//  {} cuando solo llamas a una funcion determinada no a toda la hoja
 import data from './data/pokemon/pokemon.js';
 import {showInfo, showAllData, orderBy,typeFilter} from './data.js';
 export const inputSearchElem=document.getElementById("inputSearch");

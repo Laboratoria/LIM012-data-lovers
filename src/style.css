@@ -8,73 +8,114 @@ body{
     background-size:cover;
     display: flex;
     flex-direction:column ;
-    justify-content: space-around;
+    /* justify-content: space-around; */
     background-attachment: fixed;
-    
+
     /* background-repeat: no-repeat; */
     color: #FFFFFF;
 }
-ul{
-    /* background-color:green; */
+header {
+    background: #259738d5;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    /* display: flex;
+    flex-direction: row; */
+}
+nav{
+    width: 90%;
+    min-width: 1000px;
+    margin:auto;
+    flex: auto;
+}
+ ul{
+     /* background-color:green; */
     list-style: none;
+    width: 60%;
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content:flex-end;
 }
 li{
-    margin: 1% 2%;
+    /* background-color: crimson; */
     font-family: 'Fahkwang', sans-serif;
     cursor: pointer;
-    }
+    color:#fff;
+    flex: auto;
+    font-size: 20px;
+/*     text-align: right;
+ */    }
+#btn-menu{
+    display: none;
+}
+#icon{
+    display: none;
+}
 main{
     background-color:blueviolet;
     padding:2%;
+    /* align-items: center; */
 }
 #screen1{
-    /* background-color: aqua; */
+    /* background-color: rgba(0, 255, 255, 0.472); */
     display: flex;
     flex-direction: column;
+    /* flex-wrap: wrap; */
     /* justify-content: space-between ; */
     align-items: center;
     /* justify-content: center; */
     /* align-items: space-between; */
     /* margin: 2% 3%; */
-    padding: 2%; 
+    padding: 2%;
+    align-content: center;
+    /* position: fixed; */
 }
-#screen1 img:first-child { 
+#screen1 img:first-child {
     align-self: center;
     /* background-color: darkblue; */
-    width: 60%;
+    max-width: 50%;
     margin-bottom: 5%;
+    margin-top: 20%;
 }
 .inputCont{
-    display:flex;
-    flex-wrap: nowrap;
+    /* background-color: khaki; */
+    /* display:flex;
+    flex-wrap: nowrap; */
     justify-content: center;
+    /* justify-content: center; */
     margin-bottom: 5%;
-    margin-left:7%;
+    /* margin-left:7%; */
     border-style: solid;
     border-color: transparent;
     border-bottom-color: #ffffff;
+    width: 50%;
     /* width: 5%; */
+    display: flex;
  }
  input{
     background-color: transparent;
+    font-size: 30px;
     border-color: transparent;
-    /* outline: none; */
+    outline: none;
     /* width: 100%; */
 }
 #searchIcon{
-    /* width: 5%; */
+    width: 8%;
+    height: 4%;
     cursor: pointer;
  }
-::placeholder { 
+::placeholder {
     color:#ffffff ;
     text-align: center;
     /* padding-left: 2%; */
     /* background-color: black; */
 }
+#screen2{
+    /* background-color: black ; */
+    backdrop-filter: brightness(0.4);
+    margin: 0%;
+    margin-top: 12%; /* para que aparezca debajo del menu */
+    /* display:flex; */
 .screen{
     /* background-color: black ; */
     backdrop-filter: brightness(0.4);
@@ -87,22 +128,28 @@ section{
     display: flex;
     /* margin: 1% ; */
 }
-p{
-    /* font-weight: bold; */
-    /* font-family: 'gadugi'; */
-}
+/* p{
+    font-weight: bold;
+    font-family: 'gadugi';
+} */
 span{
     /* font-weight: normal; */
 }
 .namePok{
     margin-bottom: 1%;
-    font-weight: bold; 
+    font-weight: bold;
     font-size: 2em;
     font-family: Cabin;
-    display: flex; 
+    display: flex;
     justify-content: center;
     text-transform: capitalize;
 }
+#s2img{
+    background-color:aquamarine;
+    flex-direction:column;
+    align-items:center ;
+    /* padding: 2%; */
+  }
 #imgCont{
     background-color:aquamarine;
     display:flex;
@@ -128,7 +175,11 @@ span{
     align-items: center;
     justify-content: center;
     background-color:#feca57;
-    z-index: 2 ; 
+}
+/* Lo separe del circle principal para que no afecte
+el css del que muestra toda la data */
+.ft{
+    z-index: 2 ;
 }
 #s2about{
     display: flex;
@@ -137,9 +188,9 @@ span{
     padding: 0.5% 3%;
 }
 /* #about{
-    flex-basis: 50%; 
-   
-    max-width: 30%; 
+    flex-basis: 50%;
+
+    max-width: 30%;
 } */
 .infoCont{
     background-color: #FECA57;
@@ -185,7 +236,7 @@ span{
     margin: 9px;
 }
 
-footer{ 
+footer{
     position: fixed;
     width: 100%;
     bottom: 0%;
@@ -201,12 +252,174 @@ footer{
 .inactive{
     display: none;
 }
+.imgCont{
+    width: 20%;
+    height: 125%;
+    background-color: #ffffff;
+    border-color:#b13b3b;
+    border-radius: 20px;
+    color:rgb(82, 82, 88);
+    font-size: 21px;
+    text-align: center;
+    margin-bottom: 15px;
 .buttons{
     /* background-color: chartreuse; */
     display: flex;
     justify-content: space-around;
     /* padding: 5%; */
 }
+#screen3{
+    width: 100%;
+    background-color: yellow;
+    margin-top: 15em;
+    display: flex;
+    flex-direction: row;
+
+}
+.namePok{
+    color: black ;
+}
+
+@media screen and (max-width: 500px){
+    body{
+        background-repeat: no-repeat;
+        background-position: center;
+        /* display: flex;
+        flex-direction:column ; */
+        /* justify-content: space-around; */
+        background-attachment: fixed;
+        /* background-repeat: no-repeat; */
+        color: #FFFFFF;
+    }
+
+      header{
+          background-color: transparent;
+      }
+      #icon{
+          display: block;
+          cursor: pointer;
+      }
+      header label {
+          display: block;
+          font-size: 28px;
+          margin-left: 4%;
+          margin-top: 6%;
+      }
+      .menu {
+          position: absolute;
+          top: 62px;
+          left:0;
+          width: 100%;
+          transition: all 1s;
+          transform: translateX(-100%);
+      }
+      .menu ul {
+          display: block;
+          list-style: none;
+          background: rgba(10, 10, 10, 0.856);
+          width: 100vw;
+          height: 100vh;
+            padding-top: 2%;
+      }
+      .menu ul li{
+          margin-left: 4%;
+          margin: 5%;
+          padding: 1%;
+      }
+      .menu ul li:hover{
+          background: rgba(209, 154, 130, 0.418);
+      }
+
+
+      /* .menu ul li:hover ul {
+          display: none;
+      } */
+      #btn-menu:checked ~ .menu {
+          transform: translateX(0%);
+      }
+
+
+   .btn-menu{
+     border: none;
+     outline: none;
+     cursor: pointer;
+   }
+/*     ul :last-child{
+        border:none;
+    }
+    li{
+        border-bottom: 1px solid #FFFFFF;
+        width: 29%;
+    } */
+    #screen1{
+        /* background-color: rgba(0, 255, 255, 0.472); */
+        display: flex;
+        flex-direction: column;
+        /* flex-wrap: wrap; */
+        /* justify-content: space-between ; */
+        /* align-items: center; */
+        margin-top: 50%;
+        /* align-items: space-between; */
+        /* margin: 2% 3%; */
+        padding: 2%;
+        /* align-content: center; */
+        /* position: fixed; */
+    }
+    #screen1 img:first-child {
+        align-self: center;
+        /* background-color: darkblue; */
+        max-width:110%; /* con esto reduzco tamaño a mobile */
+        margin-bottom: 5%;
+        margin-top: 20%;
+    }
+    .inputCont{
+        background-color: rgba(104, 219, 104, 0.486);
+        /* display:flex;
+        flex-wrap: nowrap; */
+        justify-content: center;
+        /* justify-content: center; */
+        margin-bottom: 5%;
+        /* margin-left:7%; */
+        border-style: solid;
+        border-color: transparent;
+        border-bottom-color: #ffffff;
+        width: 100%;
+        /* width: 5%; */
+        display: flex;
+     }
+     input{
+        background-color: transparent;
+        font-size: 20px;
+        border-color: transparent;
+        outline: none;
+         width: 100%;
+    }
+    #searchIcon{
+        width: 8%;
+        height: 4%;
+        cursor: pointer;
+     }
+}
+/* @media screen and (max-width: 375px){
+    .btn-menu{
+        width: 80%;
+        margin: auto;
+
+
+    }
+    nav{
+        position: absolute;
+        background-color: #3939397c;
+        width: 250px;
+        height: 100%;
+
+    }
+    ul li{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+}
+ */
 select{
     background-color: transparent;
     /* background-color: olive; */

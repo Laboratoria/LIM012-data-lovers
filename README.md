@@ -1,93 +1,12 @@
 # Data Lovers
 
-## Índice
 
-* [1. Preámbulo](#1-preámbulo)
-* [2. Resumen del proyecto](#2-resumen-del-proyecto)
-* [3. Objetivos de aprendizaje](#3-objetivos-de-aprendizaje)
-* [4. Consideraciones generales](#4-consideraciones-generales)
-* [5. Criterios de aceptación mínimos del proyecto](#5-criterios-de-aceptación-mínimos-del-proyecto)
-* [6. Hacker edition](#6-hacker-edition)
-* [7. Consideraciones técnicas](#7-consideraciones-técnicas)
-* [8. Pistas, tips y lecturas complementarias](#8-pistas-tips-y-lecturas-complementarias)
-* [9. Checklist](#9-checklist)
-
-***
-
-## 1. Preámbulo
-
-Según [Forbes](https://www.forbes.com/sites/bernardmarr/2018/05/21/how-much-data-do-we-create-every-day-the-mind-blowing-stats-everyone-should-read),
-el 90% de la data que existe hoy ha sido creada durante los últimos dos años.
-Cada día generamos 2.5 millones de terabytes de datos, una cifra sin
-precedentes.
-
-No obstante, los datos por sí mismos son de poca utilidad. Para que esas
-grandes cantidades de datos se conviertan en **información** fácil de leer para
-los usuarios, necesitamos entender y procesar estos datos. Una manera simple de
-hacerlo es creando _interfaces_ y _visualizaciones_.
-
-En la siguiente imagen, podrás ver cómo con la data que que se ve en la parte
-izquierda se puede construir una interfaz amigable y entendible por el usuario
-al lado derecho.
-
-![json-interfaz](https://lh4.googleusercontent.com/Tn-RPXS26pVvOTdUzRT1KVaJ-_QbFs9SpcGLxSPE43fgbHaXtFgMUInuDt7kV41DkT1j8Tt29V0LxQW7SMtC6digOIhfTXSBKdwI08wUwhD3RAqlwy0hjfmhZ2BFe91mtmCSEqysfgk)
-
-## 2. Resumen del proyecto
-
-En este proyecto **construirás una _página web_ para visualizar un
-_conjunto (set) de datos_** que se adecúe a lo que descubras que tu usuario
-necesita.
-
-Como entregable final tendrás una página web que permita **visualizar la data,
-filtrarla, ordenarla y hacer algún cálculo agregado**. Con cálculo agregado
-nos referimos a distintos cálculos que puedes hacer con la data para mostrar
-información aún más relevante para los usuarios (promedio, el valor máximo
-o mínimo, etc).
-
-Esta vez te proponemos una serie de datos de diferentes _temáticas_ para que
-explores y decidas con qué temática te interesa trabajar. Hemos elegido
-específicamente estos sets de datos porque creemos que se adecúan bien a esta
-etapa de tu aprendizaje.
-
-Una vez que definas tu área de interés, buscar entender quién es tu usuario
-y qué necesita saber o ver exactamente; luego podrás construir la interfaz que
-le ayude a interactuar y entender mejor esos datos.
-
-Estos son datos que te proponemos:
-
-* [Pokémon](src/data/pokemon/pokemon.json):
-  En este set encontrarás una lista con los 251 Pokémon de la región de Kanto
-  y Johto, junto con sus respectivas estadísticas usadas en el juego
-  [Pokémon GO](http://pokemongolive.com).
-   - [Investigación con jugadores de Pokémon Go](/src/data/pokemon/README.md)
-
-* [League of Legends - Challenger leaderboard](src/data/lol/lol.json):
-  Este set de datos muestra la lista de campeones en una liga del
-  juego League of Legends (LoL).
-   - [Investigación con jugadores de LoL](/src/data/lol/README.md)
-
-* [Atletas Olímpicos](src/data/atletas/atletas.json).
-  Este set nos proporciona la lista de los atletas que ganaron medallas en las
-  olímpiadas de invierno y verano del siglo XXI.
-   - [Investigación con interesados en atletas olímpicos](/src/data/atletas/README.md)
-
-<!---
-¡Too much information para comenzar (Diego)!
-Una opción serían cálculos estadísticos como el promedio, el máximo o el mínimo,
-por ejemplo, si tenemos una colección que representa a un grupo de personas,
-y cada persona está representada como un _objeto_ con una _propiedad_ `altura`,
-podríamos elegir calcular la altura promedio en el grupo entre otras cosas.
---->
-
-## 3. Objetivos de aprendizaje
+## Objetivos de aprendizaje
 
 El objetivo principal de este proyecto es que, entendiendo las necesidades de
-tus usuarios, aprendas a diseñar y construir una interfaz web donde se pueda
+tus usuarios, se diseñe y construya una interfaz web donde se pueda
 visualizar y manipular data.
 
-Revisa la lista y reflexiona sobre los objetivos que conseguiste en el
-proyecto anterior. Piensa en eso al decidir tu estrategia de trabajo individual
-y de equipo.
 
 ### UX
 
@@ -133,48 +52,161 @@ y de equipo.
 - [ ] Utilizar identificadores descriptivos (Nomenclatura | Semántica).
 - [ ] Utilizar linter para seguir buenas prácticas (ESLINT).
 
-## 4. Consideraciones generales
-
-* Este proyecto se debe resolver en duplas.
-* El proyecto será entregado subiendo tu código a GitHub (commit/push) y la
-  interfaz será desplegada usando [GitHub Pages](https://pages.github.com/).
-* Tiempo para completarlo: Toma como referencia 4 semanas.
-
-## 5. Criterios de aceptación mínimos del proyecto
-
-Los criterios para considerar que has completado este proyecto son:
 
 ### Definición del producto
 
-Documenta brevemente tu trabajo en el archivo `README.md` de tu repositorio,
+<!-- Documenta brevemente tu trabajo en el archivo `README.md` de tu repositorio,
 contándonos cómo fue tu proceso de diseño y cómo crees que el producto resuelve
-el problema (o problemas) que tiene tu usuario.
+el problema (o problemas) que tiene tu usuario. -->
+
+El proyecto "POKEMON" fue diseñado para que pueda ser utilizado por usuarios expertos en batalla del juego "PokemonGo" cuyo objetivo sea encontrar información relevante para batallar y potenciar las habilidades de sus pokemons.
+El diseño presentado resuelve el inconveniente de no tener una información precisa de
+un pokemon en especifico al momento de escoger uno para el combate. Presentamos una ficha técnica con datos escenciales que ayudaran a nuestros usuarios a encontrar esta información.
+Además de tener un buscador para que el acceso a la data sea mucho más rapido. También brindamos el filtrado por tipo para que pueda seleccionar uno en especifico y el ordenar por letra de forma ascendente y descendente para que sea más sencillo encontrar por nombre el pokemon a consultar.
 
 ### Historias de usuario
 
-Una vez que entiendas las necesidades de tus usuarios, escribe las [Historias
-de Usuario](https://es.wikipedia.org/wiki/Historias_de_usuario) que representen
-todo lo que el usuario necesita hacer/ver. Las **Historias de Usuario** deben
-ser el resultado de tu proceso de investigación o _research_ de tus usuarios.
+#### H.U 1:
+Como usuario experto en combate quiero poder filtrar los pokemon por tipo para saber cuál escoger en una batalla y donde encontrarlos.
+1. Criterios de aceptación:
+    * El usuario puede filtrar por tipo de pokemon
+    * Se muestran los pokemones que cumplen con lo seleccionado por el usuario
+    * El usuario puede elegir uno de ellos y ver toda su información
+2. Definición de terminado:
+    * Se muestran todos los pokemones que cumplen con el tipo elegido
+    * Al prototipo se le realizó el test de usabilidad y fue aprobado por el usuario
+    * Se ejecuto el "Unit test" sin errores
+    * El HTML es semantico
+    * El CSS es responsive
+    * Se actualizo el repositorio en GitHub
+    * Es visible en gh-pages
 
-Asegúrate de incluir la definición de terminado (_definition of done_) y los
-Criterios de Aceptación para cada una.
+#### H.U 2:
+Como usuario experto en combate quiero ordenar los pokemon de la A-Z y viceversa
+para facilitar la búsqueda por nombre.
+1. Criterios de aceptación:
+    * El usuario desplega la barra ´´ordenar´´
+    * Elige el orden que desea
+    * Se muestran los pokemones de acuerdo al orden elegido
+    * El usuario puede elegir uno de ellos y ver toda su información
+2. Definición de terminado:
+    * Se muestran todos los pokemones en el orden elegido
+    * Al prototipo se le realizó el test de usabilidad y fue aprobado por el usuario
+    * Se ejecuto el "Unit test" sin errores
+    * El HTML es semantico
+    * El CSS es responsive
+    * Se actualizo el repositorio en GitHub
+    * Es visible en gh-pages
 
-En la medida de lo posible, termina una historia de usuario antes de pasar
-a la siguiente (Cumple con Definición de Terminado + Criterios de Aceptación).
+#### H.U 3:
+Como usuario experto en combate quiero poder buscar por nombre a los pokemones
+para encontrarlos mas facilmente.
+1. Criterios de aceptación:
+    * El buscador es visible para el usuario
+    * El resultado se muestra rápidamente
+    * Cuando el usuario acepta entonces se le redirige a la página de resultados del texto introducido
+    * Se mostraran los resultados al hacer click en la lupa
+2. Definición de terminado:
+    * El buscador es visible para el usuario
+    * El resultado se muestra rápidamente
+    * Cuando el usuario acepta entonces se le redirige a la página de resultados del texto     introducido
+    * Se mostraran los resultados al hacer click en la lupa
+
+#### H.U 4:
+Como usuario experto en combate quiero ver la informacion del pokemon para poder escoger cual deseo usar en determinadas situaciones. _(name,num,about,img,size,type,resistance,weakness,special attack y evolution)_
+1. Criterios de aceptación:
+    * El usuario elige de la manera que desea al pokemon
+    * Se muestra toda la informacion del pokemon elegido
+2. Definición de terminado:
+    * Se muestra la informacion del pokemon elegido
+    * Al prototipo se le realizó el test de usabilidad y fue aprobado por el usuario
+    * Se ejecuto el "Unit test" sin errores
+    * El HTML es semantico
+    * El CSS es responsive
+    * Se actualizo el repositorio en GitHub
+    * Es visible en gh-pages
+
+#### H.U 5:
+Como usuario experto en combate quiero saber cuántos caramelos me faltan para poder hacer evolucionar a mis pokemons.
+1. Criterios de aceptación:
+    * El usuario ingresa el número de camarelos que tiene
+    * Se muestra el número de caramelos que le falta
+2. Definición de terminado:
+    * Al prototipo se le realizó el test de usabilidad y fue aprobado por el usuario
+    * Se ejecuto el "Unit test" sin errores
+    * El HTML es semantico
+    * El CSS es responsive
+    * Se actualizo el repositorio en GitHub
+    * Es visible en gh-pages
+
 
 ### Diseño de la Interfaz de Usuario
 
 #### Prototipo de baja fidelidad
+1. Opción de búsqueda avanzada.
 
-Durante tu trabajo deberás haber hecho e iterado bocetos (_sketches_) de tu
+![PBF-1](https://github.com/katherinChi/LIM012-data-lovers/blob/dataloversKC/prototipo-bajaFidelidad/PBF1.jpg)
+
+2. Opciones para filtrar y ordenar // Ficha técnica de pokemon.
+
+![PBF-2](https://github.com/katherinChi/LIM012-data-lovers/blob/dataloversKC/prototipo-bajaFidelidad/PBF2.jpg)
+
+3. Detalle de la opción por filtrado y resistencia.
+
+![PBF-3](https://github.com/katherinChi/LIM012-data-lovers/blob/dataloversKC/prototipo-bajaFidelidad/PBF3.jpg)
+
+4. Detalle de la opción de filtrado por tipo.
+
+![PBF-4](https://github.com/katherinChi/LIM012-data-lovers/blob/dataloversKC/prototipo-bajaFidelidad/PBF4.jpg)
+
+5. Detalles de la opción del Menu // Comparador de pokemons.
+
+![PBF-5](https://github.com/katherinChi/LIM012-data-lovers/blob/dataloversKC/prototipo-bajaFidelidad/PBF5.jpg)
+
+6. Formulario para ponerse en contacto
+
+![PBF-6](https://github.com/katherinChi/LIM012-data-lovers/blob/dataloversKC/prototipo-bajaFidelidad/PBF6.jpg)
+
+
+##### SKETCH MEJORADO
+<!-- imagen que tenemos en el cel -->
+<!-- Durante tu trabajo deberás haber hecho e iterado bocetos (_sketches_) de tu
 solución usando papel y lápiz. Te recomendamos tomar fotos de todas las
 iteraciones que hagas, que las subas a tu repositorio y las menciones en tu
-`README.md`.
+`README.md`. -->
 
 #### Prototipo de alta fidelidad
+#### Desktop & Mobile
+1. Buscador-Pantalla de inicio
 
-Lo siguiente es diseñar tu Interfaz de Usuario (UI por sus siglas en inglés -
+![PAF-1](https://github.com/katherinChi/LIM012-data-lovers/blob/dataloversKC/prototipo-altaFidelidad/1D.png)
+![PAF-1](https://github.com/katherinChi/LIM012-data-lovers/blob/dataloversKC/prototipo-altaFidelidad/1M.png)
+
+2. Ordenar de forma ascendente y descendente y filtrar por tipo
+
+![PAF-2](https://github.com/katherinChi/LIM012-data-lovers/blob/dataloversKC/prototipo-altaFidelidad/2D.png)
+![PAF-2](https://github.com/katherinChi/LIM012-data-lovers/blob/dataloversKC/prototipo-altaFidelidad/2M.png)
+
+3. Ficha técnica de cada pokemon
+
+![PAF-3](https://github.com/katherinChi/LIM012-data-lovers/blob/dataloversKC/prototipo-altaFidelidad/3D.png)
+![PAF-3](https://github.com/katherinChi/LIM012-data-lovers/blob/dataloversKC/prototipo-altaFidelidad/3M.png)
+
+4. Primera pantalla del comparador
+![PAF-4](https://github.com/katherinChi/LIM012-data-lovers/blob/dataloversKC/prototipo-altaFidelidad/4D.png)
+![PAF-4](https://github.com/katherinChi/LIM012-data-lovers/blob/dataloversKC/prototipo-altaFidelidad/4M.png)
+
+5. Segunda pantalla del comparador (cuando ya escogen a los pokemones a comparar)
+
+![PAF-5](https://github.com/katherinChi/LIM012-data-lovers/blob/dataloversKC/prototipo-altaFidelidad/5D.png)
+![PAF-5](https://github.com/katherinChi/LIM012-data-lovers/blob/dataloversKC/prototipo-altaFidelidad/5M.png)
+
+6. Calculadora de caramelos
+
+![PAF-6](https://github.com/katherinChi/LIM012-data-lovers/blob/dataloversKC/prototipo-altaFidelidad/6D.png)
+![PAF-6](https://github.com/katherinChi/LIM012-data-lovers/blob/dataloversKC/prototipo-altaFidelidad/6M.png)
+
+<!-- Lo siguiente es diseñar tu Interfaz de Usuario (UI por sus siglas en inglés -
 _User Interface_). Para eso debes aprender a utilizar alguna herramienta de
 diseño visual. Nosotros te recomendamos [Figma](https://www.figma.com/) que es
 una herramienta que funciona en el navegador y, además, puedes crear una cuenta
@@ -185,16 +217,33 @@ correspondiente a cada set de datos que elijas.
 
 El diseño debe representar el _ideal_ de tu solución. Digamos que es lo que
 desearías implementar si tuvieras tiempo ilimitado para trabajar. Además, tu
-diseño debe seguir los fundamentos de _visual design_.
+diseño debe seguir los fundamentos de _visual design_. -->
 
 #### Testeos de usabilidad
 
-Durante el reto deberás hacer _tests_ de usabilidad con distintos usuarios, y
+Se realizó el test de usabilidad en 4 usuarios y el resultado mostró lo siguiente:
+##### Usuario 1:
+Mostró demora al localizar los botones necesarios para realizar cada tarea encomendada.
+El tener tanta información conglomerada lo confundía. Para solucionarlo decidimos dejar de lado la opción de búsqueda avanzada y colocar la información que contenía como parte del menu.
+
+##### Usuario 2:
+Reflejo su duda al no saber cuál buscador utilizar, se le dió la tarea de buscar a un pokemon en específico. Sin embargo comentó que lo confundía que el ícono este situado en el menu superior y que también se encuentre en la barra de búsqueda avanzada. Consideró que uno estaba demás. Así que se tomo la decisión de eliminar el ícono de búsqueda de la barra de menú y poner solo una barra de búsqueda en el medio de la pantalla principal.
+
+##### Usuario 3:
+Se noto una mejora considerable respecto al tiempo que le tomaba realizar las tareas brindadas. Sin embargo, lo que esperaba encontrar en el boton candy era totalmente distinto a lo que se imaginaba. Así que fue reemplazado por Candy calc, siendo esta palabra más relacionada al cálculo.
+
+##### Usuario 4:
+El usuario indicó que en la segunda pantalla no sabía si tenía que escoger una opción o las dos para que se puedan filtrar los datos. Por lo que en la parte superior de los filtros hay una indicación respecto a eso (Choose one or both!).
+
+##### Usuario 5:
+Al realizar todas las modificaciones anteriores, el quinto usuario al que se aplico el test de usabilidad, afirmo que consideraba que teniamos un diseño amigable y entendía perfectamente para que era cada boton que mostrabamos. Lo cual fue respaldado con el tiempo de respuesta al realizar las tareas encomendadas.
+
+<!-- Durante el reto deberás hacer _tests_ de usabilidad con distintos usuarios, y
 en base a los resultados, deberás iterar tus diseños. Cuéntanos
 qué problemas de usabilidad detectaste a través de los _tests_ y cómo los
-mejoraste en tu propuesta final.
+mejoraste en tu propuesta final. -->
 
-### Implementación de la Interfaz de Usuario (HTML/CSS/JS)
+<!-- ### Implementación de la Interfaz de Usuario (HTML/CSS/JS)
 
 Luego de diseñar tu interfaz de usuario deberás trabajar en su implementación.
 **No** es necesario que construyas la interfaz exactamente como la diseñaste.
@@ -205,7 +254,7 @@ Como mínimo, tu implementación debe:
 1. Mostrar la data en una interfaz: puede ser un card, una tabla, una lista,
    etc.
 2. Permitir al usuario interactuar para obtener la infomación que necesita.
-   <!--filtrar y ordenar la data.-->
+   <!--filtrar y ordenar la data.
 3. Ser _responsive_, es decir, debe visualizarse sin problemas desde distintos
    tamaños de pantallas: móviles, tablets y desktops.
 4. Que la interfaz siga los fundamentos de _visual design_.
@@ -217,11 +266,11 @@ que  tendrás que escribirlas tú para las funciones que tenga tu código.
 <!--encargadas de  _procesar_, _filtrar_ y _ordenar_ la data, así
 como _calcular_ estadísticas.-->
 
-Tus _pruebas unitarias_ deben dar una cobertura del 70% de _statements_
+<!--Tus _pruebas unitarias_ deben dar una cobertura del 70% de _statements_
 (_sentencias_), _functions_ (_funciones_), _lines_ (_líneas_), y _branches_
 (_ramas_) del archivo `src/data.js` que contenga tus funciones y está detallado
-en la sección de [Consideraciones técnicas](#srcdatajs).
-
+en la sección de [Consideraciones técnicas](#srcdatajs). -->
+<!--
 ## 6. Hacker edition
 
 Las secciones llamadas _Hacker Edition_ son **opcionales**. Si **terminaste**
@@ -399,7 +448,7 @@ Cuando ya estés lista para codear, te sugerimos empezar de esta manera:
   `npm start` para arrancar el servidor web y dirígete a
   `http://localhost:5000` en tu navegador.
 6. A codear se ha dicho! :rocket:
-
+ -->
 <!--
 En este proyecto deberás trabajar colaborativamente. Para ello, una de las
 integrantes del equipo deberá forkear el repositorio del cohort y la otra
@@ -448,7 +497,7 @@ compañera:
   original.
 -->
 
-***
+<!-- ***
 
 ### Contenido de referencia
 
@@ -497,7 +546,7 @@ compañera:
 * [Guía para Data Lovers](https://docs.google.com/presentation/d/e/2PACX-1vQhx9D36NjpH-Daea-ITPUDUzNL8ZiNAprq_7b5PSUrfutk45tEtaOLz2lmd8f54_5jX1hypDM8f8SM/pub?start=false&loop=false&delayms=60000)
 
 ***
-
+ -->
 ## 9. Checklist
 
 * [ ] Usa VanillaJS.
