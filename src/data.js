@@ -11,6 +11,7 @@ export const showInfo = (pokes) => {
               <p id="namePok"> ${poke.name}</p>
               <section id="s2img">
                   <span class="circle ft">${poke.num}</span>
+
                   <img src="${poke.img}" alt="pokemonImage">
               </section>
               <section id="s2about">
@@ -33,10 +34,42 @@ export const showInfo = (pokes) => {
   }
   return 'El nombre ingresado no es correcto';
 };
-export const showAllData = (data) => {
-  return `<div class="imgCont">
-                  <span class="circle">${data.num}</span>
-                  <img src="${data.img}" alt="pokemonImage">
-                  <span class="namePok"> ${data.name}</span>
-            </div>`;
+export const showAllData=(data)=>{
+    return `
+        <div class="s3">
+        <div id="imgCont" class="item">
+            <span class="circle">${data.num}</span>
+            <img src="${data.img}" alt="pokemonImage">
+            <span> ${data.name}</span>
+        </div> 
+        <span class="lor">nel</span>
+        <div class="lor">gel</div>
+        </div>   
+        `
+}
+//Ordena Alfabeticamente
+export const orderBy=(poke,order)=>{
+    let arrSort=[];
+    arrSort=poke.sort((a,b)=>{
+        let nameA=a.name;
+        let nameB=b.name;
+        /* let numA=a.num;
+        let numB=b.num; */
+        if(order==='asc'){
+            return (nameA>nameB)? 1 :((nameA<nameB)?-1:0);
+        }
+        else if(order==='desc'){
+            return (nameA>nameB)? -1 :((nameA<nameB)?1:0);
+        }
+    });
+    // console.log(arrSort);
+    return arrSort;
 };
+//Filtra por tipo
+export const typeFilter=(poke,tipo)=>{
+    let arrFilt= poke.filter((poke)=>{
+         return poke.type.includes(tipo);//retorna un boolean 
+     })
+     console.log(arrFilt);
+     return arrFilt;
+//  typeFilter(pokemones,'flying');
