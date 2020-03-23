@@ -143,8 +143,7 @@ Como usuario experto en combate quiero saber cuántos caramelos me faltan para p
 ### Diseño de la Interfaz de Usuario
 
 #### Prototipo de baja fidelidad
-
-(https://github.com/katherinChi/LIM012-data-lovers/blob/dataloversKC/prototipo-bajaFidelidad/PBF1.jpg)
+![PBF-1](https://github.com/katherinChi/LIM012-data-lovers/blob/dataloversKC/prototipo-bajaFidelidad/PBF1.jpg)
 
 Durante tu trabajo deberás haber hecho e iterado bocetos (_sketches_) de tu
 solución usando papel y lápiz. Te recomendamos tomar fotos de todas las
