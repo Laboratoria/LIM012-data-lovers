@@ -55,9 +55,9 @@ visualizar y manipular data.
 
 ### Definición del producto
 
-Documenta brevemente tu trabajo en el archivo `README.md` de tu repositorio,
+<!-- Documenta brevemente tu trabajo en el archivo `README.md` de tu repositorio,
 contándonos cómo fue tu proceso de diseño y cómo crees que el producto resuelve
-el problema (o problemas) que tiene tu usuario.
+el problema (o problemas) que tiene tu usuario. -->
 
 El proyecto "POKEMON" fue diseñado para que pueda ser utilizado por usuarios expertos en batalla del juego "PokemonGo" cuyo objetivo sea encontrar información relevante para batallar y potenciar las habilidades de sus pokemons.
 El diseño presentado resuelve el inconveniente de no tener una información precisa de
@@ -66,63 +66,68 @@ Además de tener un buscador para que el acceso a la data sea mucho más rapido.
 
 ### Historias de usuario
 
-H.U 1: Como usuario experto en combate quiero poder filtrar los pokemon por tipo para saber cuál escoger en una batalla y donde encontrarlos.
-  Criterios de aceptación:
-      *El usuario puede filtrar por tipo de pokemon
-      *Se muestran los pokemones que cumplen con lo seleccionado por el usuario
-      *El usuario puede elegir uno de ellos y ver toda su información
-  Definición de terminado:
-      *Se muestran todos los pokemones que cumplen con el tipo elegido
-      *Al prototipo se le realizó el test de usabilidad y fue aprobado por el usuario
-      *Se ejecuto el "Unit test" sin errores
-      *El HTML es semantico
-      *El CSS es responsive
-      *Se actualizo el repositorio en GitHub
-      *Es visible en gh-pages
+#### H.U 1:
+Como usuario experto en combate quiero poder filtrar los pokemon por tipo para saber cuál escoger en una batalla y donde encontrarlos.
+1. Criterios de aceptación:
+    * El usuario puede filtrar por tipo de pokemon
+    * Se muestran los pokemones que cumplen con lo seleccionado por el usuario
+    * El usuario puede elegir uno de ellos y ver toda su información
+2. Definición de terminado:
+    * Se muestran todos los pokemones que cumplen con el tipo elegido
+    * Al prototipo se le realizó el test de usabilidad y fue aprobado por el usuario
+    * Se ejecuto el "Unit test" sin errores
+    * El HTML es semantico
+    * El CSS es responsive
+    * Se actualizo el repositorio en GitHub
+    * Es visible en gh-pages
 
-H.U 2: Como usuario experto en combate quiero ordenar los pokemon de la A-Z y viceversa
+#### H.U 2:
+Como usuario experto en combate quiero ordenar los pokemon de la A-Z y viceversa
 para facilitar la búsqueda por nombre.
-  Criterios de aceptación:
-      *El usuario desplega la barra ´´ordenar´´
-      *Elige el orden que desea
-      *Se muestran los pokemones de acuerdo al orden elegido
-      *El usuario puede elegir uno de ellos y ver toda su información
-  Definición de terminado:
-      *Se muestran todos los pokemones en el orden elegido
-      *Al prototipo se le realizó el test de usabilidad y fue aprobado por el usuario
-      *Se ejecuto el "Unit test" sin errores
-      *El HTML es semantico
-      *El CSS es responsive
-      *Se actualizo el repositorio en GitHub
-      *Es visible en gh-pages
+1. Criterios de aceptación:
+    * El usuario desplega la barra ´´ordenar´´
+    * Elige el orden que desea
+    * Se muestran los pokemones de acuerdo al orden elegido
+    * El usuario puede elegir uno de ellos y ver toda su información
+2. Definición de terminado:
+    * Se muestran todos los pokemones en el orden elegido
+    * Al prototipo se le realizó el test de usabilidad y fue aprobado por el usuario
+    * Se ejecuto el "Unit test" sin errores
+    * El HTML es semantico
+    * El CSS es responsive
+    * Se actualizo el repositorio en GitHub
+    * Es visible en gh-pages
 
-H.U 3: Como usuario experto en combate quiero poder buscar por nombre a los pokemones
+#### H.U 3:
+Como usuario experto en combate quiero poder buscar por nombre a los pokemones
 para encontrarlos mas facilmente.
-  Criterios de aceptación:
-      *El buscador es visible para el usuario
-      *El resultado se muestra rápidamente
-      *Cuando el usuario acepta entonces se le redirige a la página de resultados del texto *introducido
-      *Se mostraran los resultados al hacer click en la lupa
-  Definición de terminado:
-      *El buscador es visible para el usuario
-      *El resultado se muestra rápidamente
-      *Cuando el usuario acepta entonces se le redirige a la página de resultados del texto     introducido
-      *Se mostraran los resultados al hacer click en la lupa
+1. Criterios de aceptación:
+    * El buscador es visible para el usuario
+    * El resultado se muestra rápidamente
+    * Cuando el usuario acepta entonces se le redirige a la página de resultados del texto introducido
+    * Se mostraran los resultados al hacer click en la lupa
+2. Definición de terminado:
+    * El buscador es visible para el usuario
+    * El resultado se muestra rápidamente
+    * Cuando el usuario acepta entonces se le redirige a la página de resultados del texto     introducido
+    * Se mostraran los resultados al hacer click en la lupa
 
-H.U 4: Como usuario experto en combate quiero ver la informacion del pokemon para poder escoger cual deseo usar en determinadas situaciones. (name,num,about,img,size,type,resistance,weakness,special attack y evolution)
-  Criterios de aceptación:
-      *El usuario elige de la manera que desea al pokemon
-      *Se muestra toda la informacion del pokemon elegido
-  Definición de terminado:
-      *Se muestra la informacion del pokemon elegido
-      *Al prototipo se le realizó el test de usabilidad y fue aprobado por el usuario
-      *Se ejecuto el "Unit test" sin errores
-      *El HTML es semantico
-      *El CSS es responsive
-      *Se actualizo el repositorio en GitHub
-      *Es visible en gh-pages
+#### H.U 4:
+Como usuario experto en combate quiero ver la informacion del pokemon para poder escoger cual deseo usar en determinadas situaciones. _(name,num,about,img,size,type,resistance,weakness,special attack y evolution)_
+1. Criterios de aceptación:
+    * El usuario elige de la manera que desea al pokemon
+    * Se muestra toda la informacion del pokemon elegido
+2. Definición de terminado:
+    * Se muestra la informacion del pokemon elegido
+    * Al prototipo se le realizó el test de usabilidad y fue aprobado por el usuario
+    * Se ejecuto el "Unit test" sin errores
+    * El HTML es semantico
+    * El CSS es responsive
+    * Se actualizo el repositorio en GitHub
+    * Es visible en gh-pages
 
-H.U 5: Como usuario experto en combate quiero saber cuántos caramelos me faltan para poder hacer evolucionar a mis pokemons.
+#### H.U 5:
+Como usuario experto en combate quiero saber cuántos caramelos me faltan para poder hacer evolucionar a mis pokemons.
 1. Criterios de aceptación:
     * El usuario ingresa el número de camarelos que tiene
     * Se muestra el número de caramelos que le falta
@@ -162,20 +167,20 @@ diseño debe seguir los fundamentos de _visual design_. -->
 #### Testeos de usabilidad
 
 Se realizó el test de usabilidad en 4 usuarios y el resultado mostró lo siguiente:
-Usuario 1:
+#### Usuario 1:
 Mostró demora al localizar los botones necesarios para realizar cada tarea encomendada.
 El tener tanta información conglomerada lo confundía. Para solucionarlo decidimos dejar de lado la opción de búsqueda avanzada y colocar la información que contenía como parte del menu.
 
-Usuario 2:
+#### Usuario 2:
 Reflejo su duda al no saber cuál buscador utilizar, se le dió la tarea de buscar a un pokemon en específico. Sin embargo comentó que lo confundía que el ícono este situado en el menu superior y que también se encuentre en la barra de búsqueda avanzada. Consideró que uno estaba demás. Así que se tomo la decisión de eliminar el ícono de búsqueda de la barra de menú y poner solo una barra de búsqueda en el medio de la pantalla principal.
 
-Usuario 3:
+#### Usuario 3:
 Se noto una mejora considerable respecto al tiempo que le tomaba realizar las tareas brindadas. Sin embargo, lo que esperaba encontrar en el boton candy era totalmente distinto a lo que se imaginaba. Así que fue reemplazado por Candy calc, siendo esta palabra más relacionada al cálculo.
 
-Usuario 4:
+#### Usuario 4:
 El usuario indicó que en la segunda pantalla no sabía si tenía que escoger una opción o las dos para que se puedan filtrar los datos. Por lo que en la parte superior de los filtros hay una indicación respecto a eso (Choose one or both!).
 
-Usuario 5:
+#### Usuario 5:
 Al realizar todas las modificaciones anteriores, el quinto usuario al que se aplico el test de usabilidad, afirmo que consideraba que teniamos un diseño amigable y entendía perfectamente para que era cada boton que mostrabamos. Lo cual fue respaldado con el tiempo de respuesta al realizar las tareas encomendadas.
 
 <!-- Durante el reto deberás hacer _tests_ de usabilidad con distintos usuarios, y
