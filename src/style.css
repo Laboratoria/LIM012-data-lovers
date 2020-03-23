@@ -25,16 +25,14 @@ Invision https://mararodriguez597039.invisionapp.com/freehand/datalovers-lol-AYI
 Links FIGMA https://www.figma.com/file/lr2q13Jdqztgdy6ag3oV7a/Untitled?node-id=77%3A177
 TRELLO : https://trello.com/b/ZbxxiHvY/datalovers */
 
-body,
-html {
+body {
+    width: 100%;
     background: url(./assets/backgroundNero.jpeg);
     background-size: cover;
+    background-attachment: fixed;
     line-height: 1.5;
     font-size: 1rem;
     color: #333;
-    height: 100%;
-    width: 100%;
-    margin: 0;
 }
 
 
@@ -100,6 +98,7 @@ html {
     width: 100%;
     height: 100%;
     display: flex;
+    justify-content: center;
     align-items: center;
     position: absolute;
     top: 0;
@@ -108,25 +107,30 @@ html {
 }
 
 .videoCentral {
-    width: 100%;
+    height: 100%;
+    width: max-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
     z-index: -1;
 }
 
 .videoCentral video {
-    min-width: 100%;
-    min-height: 100%;
+    height: 90%;
+    width: auto;
+}
+
+#boxLine {
+    height: 95%;
+    width: 95%;
+    position: absolute;
+    border: 1px solid rgb(153, 119, 69);
+    z-index: 4;
 }
 
 #logoLOL {
     z-index: 3;
-}
-
-#boxLine {
-    height: 630px;
-    min-width: 74%;
-    position: absolute;
-    border: 1px solid rgb(153, 119, 69);
-    z-index: 4;
 }
 
 .corner {
@@ -191,6 +195,7 @@ html {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 0 1rem;
     margin: 3rem 0;
 }
 
@@ -208,7 +213,7 @@ html {
 }
 
 .form {
-    min-width: max-content;
+    width: max-content;
     display: flex;
     justify-content: center;
     border: none;
@@ -377,6 +382,7 @@ html {
 
 .modal {
     height: 80%;
+    max-height: 500px;
     width: 450px;
     display: flex;
     padding: 1.5rem;
@@ -400,7 +406,7 @@ html {
 }
 
 .modal-roles {
-    font-family: 'Ruda', sans-serif;
+    font-family: "Ruda", sans-serif;
 }
 
 .modal-header img {
@@ -434,7 +440,7 @@ html {
     padding: 0.3rem 0;
     color: #fff;
     line-height: 1rem;
-    font-family: 'Cuprum', sans-serif;
+    font-family: "Cuprum", sans-serif;
 }
 
 .modal-roles {
@@ -457,7 +463,7 @@ html {
 /*FOOTER*/
 
 .footer {
-    min-width: 100%;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     padding: 1rem;
@@ -571,7 +577,7 @@ html {
     grid-gap: 3rem;
     color: #dfc981;
     padding-bottom: 0;
-    transition: .4s ease-in-out;
+    transition: 0.4s ease-in-out;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 }
 
@@ -601,7 +607,7 @@ html {
     position: relative;
     background-size: cover;
     justify-content: center;
-    transition: all ease .5s;
+    transition: all ease 0.5s;
     background-repeat: no-repeat;
     transform-style: preserve-3d;
     border: 0.0625rem solid #e0cb7e;
@@ -638,7 +644,7 @@ html {
     overflow: auto;
     position: absolute;
     background: #704efae8;
-    transition: all ease .5s;
+    transition: all ease 0.5s;
     backface-visibility: hidden;
     border: 0.0625rem solid #07cbe9;
     font-family: "Marcellus SC", serif;
@@ -655,7 +661,7 @@ html {
     font-size: 12px;
     flex-flow: column nowrap;
     justify-content: space-evenly;
-    font-family: 'Cuprum', sans-serif;
+    font-family: "Cuprum", sans-serif;
 }
 
 .back-card__info h3 {
@@ -667,7 +673,7 @@ html {
 .champion-name p {
     color: #dfc981;
     font-size: 1.375rem;
-    font-family: 'Trade Winds', cursive;
+    font-family: "Trade Winds", cursive;
 }
 
 .champion-name img {
@@ -734,7 +740,7 @@ html {
     position: absolute;
     font-size: 1.25rem;
     text-align: center;
-    transition: all ease .5s;
+    transition: all ease 0.5s;
     font-family: "Trade Winds", cursive;
 }
 
@@ -979,4 +985,68 @@ li.active a {
 
 #playFree {
     text-decoration: none;
+}
+
+
+/*MEDIA QUERYS*/
+
+@media (max-width: 1200px) {
+    .videoCentral {
+        height: max-content;
+        width: 90%;
+    }
+    .videoCentral video {
+        height: auto;
+        width: 100%;
+    }
+    #boxLine {
+        height: 105%;
+    }
+    #logoLOL {
+        height: auto;
+        width: 50vmin;
+    }
+}
+
+@media (max-width: 992px) {
+    .header {
+        height: 600px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        height: 500px;
+    }
+    #mainElements1 p {
+        font-size: 23px;
+    }
+    .footer {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    .footer p {
+        margin-top: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .header {
+        height: 350px;
+    }
+    .right p {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 350px) {
+    .header {
+        height: 250px;
+    }
+    .form {
+        width: 90%;
+    }
+    .right p {
+        font-size: 14px;
+    }
 }
