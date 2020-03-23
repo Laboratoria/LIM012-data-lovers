@@ -10,9 +10,6 @@ body{
     flex-direction:column ;
     /* justify-content: space-around; */
     background-attachment: fixed;
-
-    /* background-repeat: no-repeat; */
-    color: #FFFFFF;
 }
 header {
     background: #259738d5;
@@ -116,6 +113,7 @@ main{
     margin: 0%;
     margin-top: 12%; /* para que aparezca debajo del menu */
     /* display:flex; */
+}
 .screen{
     /* background-color: black ; */
     backdrop-filter: brightness(0.4);
@@ -146,6 +144,7 @@ span{
 }
 #s2img{
     background-color:aquamarine;
+    display: flex;
     flex-direction:column;
     align-items:center ;
     /* padding: 2%; */
@@ -207,21 +206,14 @@ el css del que muestra toda la data */
     flex-wrap: nowrap;
 }
 .s3{
-    /* width: 12%;
-    height: 30%;
-    background-color: #ffffff;
-    border-color:#b13b3b;
-    border-radius: 20px;
-    color:rgb(82, 82, 88);
-    font-size: 21px;
-    text-align: center;
-    margin-bottom: 15px;*/
     flex-flow: row wrap;
-    
-    
     display: flex;
     /* flex-wrap: wrap; */
     /* flex-direction: column; */
+}
+#screen3{
+    width: 100%;
+    margin-top: 3em;
 }
 #screen4{
     background-color: blue;
@@ -252,33 +244,13 @@ footer{
 .inactive{
     display: none;
 }
-.imgCont{
-    width: 20%;
-    height: 125%;
-    background-color: #ffffff;
-    border-color:#b13b3b;
-    border-radius: 20px;
-    color:rgb(82, 82, 88);
-    font-size: 21px;
-    text-align: center;
-    margin-bottom: 15px;
 .buttons{
     /* background-color: chartreuse; */
     display: flex;
     justify-content: space-around;
     /* padding: 5%; */
 }
-#screen3{
-    width: 100%;
-    background-color: yellow;
-    margin-top: 15em;
-    display: flex;
-    flex-direction: row;
 
-}
-.namePok{
-    color: black ;
-}
 
 @media screen and (max-width: 500px){
     body{

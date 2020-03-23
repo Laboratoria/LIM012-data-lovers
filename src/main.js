@@ -48,6 +48,7 @@ searchIconElem.addEventListener('click',showScreen2);
 mHome.addEventListener('click',()=>{
     screen1Elem.style.display='flex'
     screen2Elem.style.display='none'
+    screen3Elem.style.display='none'
     s3defaultElem.style.display='none'
     inputSearchElem.value='';
 })
