@@ -85,17 +85,23 @@ header{
   
  
 /*AQUI EMPIEZA SECTION= GALERIA*/
+   
+.casillaCampeon{
+  border: 6px solid red;
+}
+
+
   .galeriaDeCampeones{
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     background: #2A2A34;;
-    
 
+ 
   }
   .imagenCampeon{
-    width: 350px;
-    height: 300px;
+    width: 250px;
+    height: 200px;
     display: wrap;
     margin-left: 5%;
     padding: 5%;

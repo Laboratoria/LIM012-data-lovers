@@ -17,9 +17,6 @@
     "@babel/plugin-transform-modules-commonjs": "^7.2.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^24.8.0",
-    "eslint": "^6.0.1",
-    "eslint-config-airbnb-base": "^13.2.0",
-    "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jest": "^22.1.2",
     "htmlhint": "^0.11.0",
     "jest": "^24.8.0",
@@ -30,6 +27,23 @@
     "opener": "^1.5.1"
   },
   "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.1",
     "eslint-plugin-jest": "^23.8.1"
-  }
+  },
+  "description": "* [1. Preámbulo](#1-preámbulo)\r * [2. Resumen del proyecto](#2-resumen-del-proyecto)\r * [3. Objetivos de aprendizaje](#3-objetivos-de-aprendizaje)\r * [4. Consideraciones generales](#4-consideraciones-generales)\r * [5. Criterios de aceptación mínimos del proyecto](#5-criterios-de-aceptación-mínimos-del-proyecto)\r * [6. Hacker edition](#6-hacker-edition)\r * [7. Consideraciones técnicas](#7-consideraciones-técnicas)\r * [8. Pistas, tips y lecturas complementarias](#8-pistas-tips-y-lecturas-complementarias)\r * [9. Checklist](#9-checklist)",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lourdes0896/LIM012-data-lovers.git"
+  },
+  "keywords": [],
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/Lourdes0896/LIM012-data-lovers/issues"
+  },
+  "homepage": "https://github.com/Lourdes0896/LIM012-data-lovers#readme"
 }
