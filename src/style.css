@@ -127,6 +127,7 @@ a {
     border: 2px solid #3B4859;
     background-color: #F2F2F2;
     cursor: pointer;
+    margin-top: 1.5em;
 }
 
 .cards-distribution {
@@ -269,30 +270,25 @@ h2 {
 .show span{
     transform: translate(-50%, -50%) scale(1);
 }
-
+.center {
+    max-width: 1000px;
+    margin: auto;
+}
 /* Creando estilos para el todo filtrado*/
-
-#btn-filter {
-    display: none; 
-}
-
-header label {
-    color: #FFF;
-    font-size: 23px;
-    padding: 6px;
-    cursor: pointer;
-    display: block;
-}
-header label:hover {
-    color: rgba(0, 0, 0, 0.7);
-}
-
-.filter-menu ul {
+.filter-menu {
     background-image: linear-gradient(to bottom,  #4ab483, #18a18c, #008d8d, #047887, #266378, #266378, #266378);
-    display: block;
+    padding-top: 0;
+    width: 17%;
+    display: inline-block;
+    color: #FFF;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transform: translate(0px, -68px);
+    z-index: 100;
     list-style: none;
     position: absolute;
-    left: 0;
+    top: 209px;
+    text-align: left;
 }
 .filter-menu ul ul{
     display: none;
@@ -300,26 +296,46 @@ header label:hover {
 .filter-menu a {
     position: relative;
     display: block;
-    padding: 10px 15px;
+    padding: 8px 10px;
     color: #fff;
-    text-decoration: none;
-    border: 1px solid white;   
+    text-decoration: none;  
 }
-
 .filter-menu a:hover {
     background: rgba(0,0,0,0.3);
 }
 .filter-menu a span {
-    margin-left: 10px;
+    margin-left: 30%;
+    font-size: 1rem
 }
 .filter-menu ul li:hover ul {
     display: block;
-    position: absolute;
-
+    position: static;
 }
 
-/* Fin de filtrado */
+.limites {
+    border: 1px solid #fff;
+    padding: 0,5px;
+}
 
+.hide-filter-box{
+    display: none;
+    opacity: 0;
+}
+button {
+    display: block;
+    color: #FFF;
+    font-size: 23px;
+    padding: 6px;
+    order: 1;
+    border: transparent;
+    background: transparent;
+    transform: translate(-6px, -6px);
+}
+button:hover {
+    color: rgba(0, 0, 0, 0.7);
+};
+
+/* Fin de filtrado */
 
 @keyframes popup {
     0%{
@@ -409,37 +425,24 @@ header label:hover {
         justify-content: center;
     }
     /* Filter mobile*/
-    .icon-filter {
-        transform: translate(-8px, -5px);
-    }
-    header label {
-        display: block;
-    }
     .filter-menu {
         position: absolute;
-        top: 160px;
+        top: 209px;
         left: 0;
         width: 100%;
-        transform: translateX(-100%);
-        transition: all 0.3s;
     }
     .filter-menu ul {
         display: block;
         background-image: linear-gradient(to bottom,  #4ab483, #18a18c, #008d8d, #047887, #266378, #266378, #266378);
     }
-    .filter-menu ul li:hover ul {
-        display: none;
-    }
     .filter-menu a span {
         position: absolute;
         right: 5px;
     }
-    #btn-filter:checked ~ .filter-menu {
-        transform: translateX(0%);
-    }
+
 }
 
-@media (max-width: 1000px) and (min-width: 600px) {
+@media (max-width: 1300px) and (min-width: 600px) {
     .center {
         width: 90%;
         margin: auto;
@@ -465,5 +468,17 @@ header label:hover {
     .menu-style:first-child {
         border-left: 3px solid #FFF;
     }
+    .filter-menu {
+        position: absolute;
+        top: 209px;
+        left: 0;
+        width: 50%;
+    }
+    .filter-menu a span {
+        position: absolute;
+        margin-left: 50%;
+        font-size: 1rem
+    }
+
     
 }
