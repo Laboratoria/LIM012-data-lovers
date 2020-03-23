@@ -122,18 +122,17 @@ H.U 4: Como usuario experto en combate quiero ver la informacion del pokemon par
       *Se actualizo el repositorio en GitHub
       *Es visible en gh-pages
 
-H.U 5: Como usuario experto en combate quiero saber cuántos caramelos me faltan
-para poder hacer evolucionar a mis pokemons.
-  Criterios de aceptación:
-      *El usuario ingresa el número de camarelos que tiene
-      *Se muestra el número de caramelos que le falta
-  Definición de terminado:
-      *Al prototipo se le realizó el test de usabilidad y fue aprobado por el usuario
-      *Se ejecuto el "Unit test" sin errores
-      *El HTML es semantico
-      *El CSS es responsive
-      *Se actualizo el repositorio en GitHub
-      *Es visible en gh-pages
+H.U 5: Como usuario experto en combate quiero saber cuántos caramelos me faltan para poder hacer evolucionar a mis pokemons.
+1. Criterios de aceptación:
+    * El usuario ingresa el número de camarelos que tiene
+    * Se muestra el número de caramelos que le falta
+2. Definición de terminado:
+    * Al prototipo se le realizó el test de usabilidad y fue aprobado por el usuario
+    * Se ejecuto el "Unit test" sin errores
+    * El HTML es semantico
+    * El CSS es responsive
+    * Se actualizo el repositorio en GitHub
+    * Es visible en gh-pages
 
 
 ### Diseño de la Interfaz de Usuario

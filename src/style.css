@@ -115,6 +115,7 @@ main{
     /* background-color: black ; */
     backdrop-filter: brightness(0.4);
     margin: 0%;
+    margin-top: 12%; /* para que aparezca debajo del menu */
     /* display:flex; */
     /* align-items:space-between; */
 }
