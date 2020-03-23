@@ -8,7 +8,7 @@ import { example } from './data.js';
 let stringTemplate = '';
 const container=document.getElementById('container');
 const dataTodoCampeones=data.data;
-
+//Prueba
 for (const prop in dataTodoCampeones){
   //console.log(data.data[prop].name)
   //console.log(data.data[prop].title)
