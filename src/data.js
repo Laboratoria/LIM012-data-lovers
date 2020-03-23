@@ -33,7 +33,8 @@ export const showInfo = (pokes) => {
   }
   return 'El nombre ingresado no es correcto';
 };
-export const showAllData = data => `
+export const showAllData = (data) => {
+  return `
         <div class="s3">
         <div id="imgCont" class="item">
             <span class="circle">${data.num}</span>
