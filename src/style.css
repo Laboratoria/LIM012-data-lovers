@@ -316,10 +316,6 @@ html {
   text-shadow: 1px 1px 8px #feb412, 0 0 1em #07cbe9, 0 0 0.2em #07cbe9;
 }
 
-#searchInputs {
-  text-transform: capitalize;
-}
-
 #mainElements4 {
   grid-row: 4;
   grid-column: 2/3;
@@ -729,7 +725,7 @@ li.active a {
   padding: 0 6rem 0 6rem;
 }
 
-#searchInputs {
+.searchInputs {
   border: 0;
   background-color: rgb(218, 213, 213);
   color: #a87e3e;
@@ -740,21 +736,22 @@ li.active a {
   margin-top: -16px;
   font-family: "Marcellus SC", serif;
   box-sizing: border-box;
+  text-transform: capitalize;
 }
 
-#searchInputs:hover {
+.searchInputs:hover {
   letter-spacing: 6px;
   color: #795de6;
   text-shadow: 1px 1px 8px #07cbe9, 0 0 1em #07cbe9, 0 0 0.2em #07cbe9;
   font-size: 25px;
 }
 
-#searchInputs::placeholder {
+.searchInputs::placeholder {
   color: #a87e3e;
   padding-right: 5px;
 }
 
-#searchInputs ::placeholder:hover {
+.searchInputs ::placeholder:hover {
   color: #795de6;
 }
 
@@ -787,7 +784,7 @@ li.active a {
   margin-top: 8px;
 }
 
-#myDropdown:hover {
+.dropdown-content:hover {
   display: flex;
   flex-direction: column;
 }
@@ -804,19 +801,7 @@ li.active a {
   transform: skew(20deg);
 }
 
-#easy {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  padding-left: -8px;
-}
-
-#medium {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  padding-left: -8px;
-}
-
-#hard {
+.difficulty1 {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   padding-left: -8px;
@@ -916,7 +901,7 @@ li.active a {
     display: none;
   }
 
-  #searchInputs {
+  .searchInputs {
     border: 0;
     background-color: rgb(218, 213, 213);
     color: #a87e3e;

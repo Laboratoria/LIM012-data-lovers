@@ -90,7 +90,7 @@ Object.values(championList).map((champion) => {
 
 //busqueda por nombre
 //probando la subida
-let input = document.querySelector('#searchInputs');
+let input = document.querySelector('.searchInputs');
 let filteredList = document.querySelector('#filteredList');
 
 //target : lo que sea a lo que se le aplique add event listener
