@@ -1,7 +1,7 @@
 import data from './data/lol/lol.js';
 import { filterByName, filteredbyClass, filteredByDifficulty } from './data.js';
 
-/*Para pasar a otra interfaz SCREEN 1 A SCREEN2 y welcomming*/
+/*PASAR DE INTERFACES 1 a 2, coge valor del input y convierte 1posicion en UPPERCASE,presenta resultado en el div welcomming con tiempo de muestra 3 seg*/
 const keyPressEnter = document.getElementById('inputName');
 const firstScreen = document.getElementById('firstScreen');
 const secondScreen_0 = document.getElementById('secondScreen_0');
@@ -19,25 +19,21 @@ const setName = () => {
     window.scroll({
         top: 0
     });
-    setTimeout(() => (welcome.style.display = 'none'), 3000);
+    setTimeout(() => (welcome.style.display = 'none'), 2000);
 };
 
-/*PASA AL SIGUIENTE SCREEN boton enter*/
+/*PASA AL SIGUIENTE SCREEN boton enter y teclado la 2da linea*/
 document.getElementById('buttonEnter').addEventListener('click', setName);
-
-/*Y ademas por presion de enter en teclado*/
-
 keyPressEnter.addEventListener('keypress', ({ keyCode }) => {
     if (keyCode === 13) setName();
 });
-
 /*-------------------------------------------*/
 
-/*Muestra de la lista de campeones*/
-
+/*MUESTRAS DATA: Por defecto y coge el div donde sera albergado LIST*/
 const championList = data.data;
 const list = document.getElementById('list');
 
+//FUNCION:boton de jugar
 const renderPlayButton = () => {
     const playButton = document.createElement('a');
     playButton.setAttribute('href', 'https://signup.lan.leagueoflegends.com/es/signup/redownload?page_referrer=index');
@@ -48,16 +44,9 @@ const renderPlayButton = () => {
     return playButton;
 };
 
-//object values le saca los valores de key en forma de arreglo
-
-// condition ? true : false
 const renderCards = (championList_data) => {
+    // Es una arreglo()???? si lo es botame el arreglo , si no lo es, transformalo con !! object values le saca los valores de key en forma de arreglo
     const checkData = Array.isArray(championList_data) ? championList_data : Object.values(championList_data);
-
-    // es una arreglo???? si lo es botame el arreglo , si no lo es Palomita, transformalo GIRL!!
-    // let checkData1
-    // if (Array.isArray(championList_data)) checkData1 = championList_data
-    // else checkData1 = Object.values(championList_data)
 
     checkData.map((champion) => {
         /*FRONT CARDS*/
@@ -94,11 +83,6 @@ const renderCards = (championList_data) => {
         const championClass = document.createElement('div');
         championClass.className = 'champion-class';
 
-        // const championClassText = document.createElement('p');
-        // championClassText.innerHTML = 'CLASS';
-        // championClass.appendChild(championClassText);
-        // championBox.appendChild(championClass);
-
         const championStats = document.createElement('div');
         championStats.className = 'champion-stats';
         Object.entries(champion.info).map(([key, value]) => {
@@ -109,7 +93,7 @@ const renderCards = (championList_data) => {
         });
         backCardInfo.appendChild(championStats);
 
-        /*Boton de MORESTATS y playButton*/
+        /*Boton de MORESTATS y playButton (funcion fuera de esta ARRIBA)*/
         const backCardContainer = document.createElement('div');
         backCardContainer.className = 'backCardContainer';
 
@@ -129,7 +113,6 @@ const renderCards = (championList_data) => {
         backCardContainer.appendChild(renderPlayButton());
         backCardContainer.appendChild(moreStatsButton);
         backCardInfo.appendChild(backCardContainer);
-        /*-----------------------------------------------------*/
 
         div.appendChild(backCard);
         list.appendChild(div);
@@ -138,13 +121,15 @@ const renderCards = (championList_data) => {
 
 renderCards(championList);
 
-/*MODAL MORESTATS*/
+/*-----------------------------------------------------*/
 
+/*MODAL MORESTATS*/
 const modalOverlay = document.getElementById('overlay');
 const modalRoles = document.getElementById('modal-roles');
 const modalCloseButton = document.getElementById('closeButton');
 const modalStatsLeft = document.getElementById('modal-stats-left');
 const modalStatsRight = document.getElementById('modal-stats-right');
+
 const closeModal = () => {
     modalStatsLeft.innerHTML = '';
     modalStatsRight.innerHTML = '';
@@ -159,8 +144,7 @@ const modalStatsUncle = (champion) => {
     const moreStatsLeft = moreStats_2.slice(0, 12);
     const moreStatsRight = moreStats_2.slice(12, moreStats_2.length);
 
-    /*casquito del modal TAGS*/
-
+    /*CASCO del modal TAGS*/
     const helmetModal = document.createElement('img');
     helmetModal.setAttribute('src', 'assets/casco.png');
     modalRoles.appendChild(helmetModal);
@@ -192,8 +176,7 @@ window.addEventListener('keypress', ({ keyCode }) => {
 
 /*-------------------------------------------*/
 
-//BUSQUEDA POR NOMBRES (INPUT:SEARCH)
-
+//BUSQUEDA POR NOMBRES
 const input = document.querySelector('#searchInputs');
 
 //target : lo que sea a lo que se le aplique add event listener
@@ -204,16 +187,7 @@ if (typeof input.addEventListener != 'undefined') {
             const term = evt.target.value.toLowerCase();
             const filteredChampions = filterByName(championList, term);
 
-            // if (term.length != 0) {
-            //     list.classList.add('hidden');
-            //     filteredList.classList.remove('hidden');
-            // } else {
-            //     list.classList.remove('hidden');
-            //     filteredList.classList.add('hidden');
-            // }
-
-            //mensaje de error en la busqueda por nombre
-
+            //CHAMPION NOT FOUND
             let errorMessage = document.querySelector('#error');
             if (filteredChampions.length === 0) {
                 errorMessage.classList.remove('hidden');
@@ -231,10 +205,7 @@ if (typeof input.addEventListener != 'undefined') {
     );
 }
 
-// filteredList.innerHTML = '';
-
-/*FUncion para el hover del navbar*/
-
+/*FUNCION: Hover del navbar*/
 const ul = document.querySelector('ul');
 const li = document.querySelectorAll('li');
 
@@ -247,8 +218,7 @@ li.forEach((el) => {
 
 /*---------------------------------------------*/
 
-/*Recorrer CADA CLASE */
-
+/*FILTRADO: De CLASE */
 li.forEach((button) => {
     button.addEventListener('click', () => {
         const term = button.getAttribute('data-value');
@@ -261,11 +231,6 @@ li.forEach((button) => {
     });
 });
 
-/* 
-  [<div class="difficulty1" data-value="1" id="easy" href="#">easy</div>,
-  <div class="difficulty1" data-value="2" id="medium" href="#">medium</div>,
-  <div class="difficulty1" data-value="3" id="hard" href="#">hard</div>]
-*/
 let difficulty1 = document.querySelectorAll('.difficulty1');
 difficulty1.forEach((option) => {
     option.addEventListener('click', () => {
@@ -277,4 +242,3 @@ difficulty1.forEach((option) => {
         renderCards(filteredChampions);
     });
 });
-// filteredList.innerHTML = '';
