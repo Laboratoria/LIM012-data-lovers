@@ -45,7 +45,7 @@ const renderPlayButton = () => {
 };
 
 const renderCards = (championList_data) => {
-    // Es una arreglo()???? si lo es botame el arreglo , si no lo es, transformalo con !! object values le saca los valores de key en forma de arreglo
+    // Es una arreglo()? si lo es MUESTRAME el arreglo , si no lo es, vuelvelo ARRAYS con Object.value (Le saca los valores de key en forma de ARRAY)
     const checkData = Array.isArray(championList_data) ? championList_data : Object.values(championList_data);
 
     checkData.map((champion) => {
