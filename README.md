@@ -167,20 +167,20 @@ diseño debe seguir los fundamentos de _visual design_. -->
 #### Testeos de usabilidad
 
 Se realizó el test de usabilidad en 4 usuarios y el resultado mostró lo siguiente:
-#### Usuario 1:
+##### Usuario 1:
 Mostró demora al localizar los botones necesarios para realizar cada tarea encomendada.
 El tener tanta información conglomerada lo confundía. Para solucionarlo decidimos dejar de lado la opción de búsqueda avanzada y colocar la información que contenía como parte del menu.
 
-#### Usuario 2:
+##### Usuario 2:
 Reflejo su duda al no saber cuál buscador utilizar, se le dió la tarea de buscar a un pokemon en específico. Sin embargo comentó que lo confundía que el ícono este situado en el menu superior y que también se encuentre en la barra de búsqueda avanzada. Consideró que uno estaba demás. Así que se tomo la decisión de eliminar el ícono de búsqueda de la barra de menú y poner solo una barra de búsqueda en el medio de la pantalla principal.
 
-#### Usuario 3:
+##### Usuario 3:
 Se noto una mejora considerable respecto al tiempo que le tomaba realizar las tareas brindadas. Sin embargo, lo que esperaba encontrar en el boton candy era totalmente distinto a lo que se imaginaba. Así que fue reemplazado por Candy calc, siendo esta palabra más relacionada al cálculo.
 
-#### Usuario 4:
+##### Usuario 4:
 El usuario indicó que en la segunda pantalla no sabía si tenía que escoger una opción o las dos para que se puedan filtrar los datos. Por lo que en la parte superior de los filtros hay una indicación respecto a eso (Choose one or both!).
 
-#### Usuario 5:
+##### Usuario 5:
 Al realizar todas las modificaciones anteriores, el quinto usuario al que se aplico el test de usabilidad, afirmo que consideraba que teniamos un diseño amigable y entendía perfectamente para que era cada boton que mostrabamos. Lo cual fue respaldado con el tiempo de respuesta al realizar las tareas encomendadas.
 
 <!-- Durante el reto deberás hacer _tests_ de usabilidad con distintos usuarios, y
