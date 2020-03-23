@@ -33,5 +33,12 @@ export const filterPokemon = (whichFilter, pokemonType) => {
   return result;
 };
 
-export const orderBy = () => {
+export const orderAsc = (dataPokemon, whichOrder) => {
+  const pokemonOrdenedAsc = dataPokemon.sort((a, b) => a.stats[whichOrder] - b.stats[whichOrder]);
+  return pokemonOrdenedAsc;
+};
+
+export const orderDesc = (dataPokemon, whichOrder) => {
+  const pokemonOrdenedDesc = dataPokemon.sort((a, b) => b.stats[whichOrder] - a.stats[whichOrder]);
+  return pokemonOrdenedDesc;
 };

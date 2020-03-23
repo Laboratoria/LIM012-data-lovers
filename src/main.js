@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import { dinamicSearchPokemon, filterPokemon, orderBy } from './data.js';
+import { dinamicSearchPokemon, filterPokemon, orderAsc, orderDesc } from './data.js';
 
 import data from './data/pokemon/pokemon.js';
 
@@ -164,19 +164,6 @@ const onlyText = (e) => {
   }
 };
 
-const inputBarSearch = document.getElementById('input-bar-search');
-inputBarSearch.addEventListener('keyup', searchPokemon);
-inputBarSearch.addEventListener('keypress', onlyText, false);
-
-const buttonFilterPokemon = document.getElementsByClassName('button-filter')[0];
-const buttonOrderPokemon = document.getElementsByClassName('button-filter')[1];
-const buttonCloseLateralMenu = document.getElementById('btn-close');
-
-buttonFilterPokemon.addEventListener('click', showLateralMenu);
-buttonOrderPokemon.addEventListener('click', showLateralMenu);
-buttonCloseLateralMenu.addEventListener('click', hideLateralMenu);
-buttonCloseLateralMenu.addEventListener('click', hideLateralMenu);
-
 const showAllByFilter = (whichFilter) => {
   const divCardContainer = document.getElementById('card-container');
   divCardContainer.style.display = 'flex';
@@ -245,7 +232,7 @@ const filterPokemonByType = (type) => {
   resultTypes = filterPokemon('type', type);
   resultResistant = filterPokemon('resistant', type);
   resultWeaknesses = filterPokemon('weaknesses', type);
-  showPokemonInSections(4);
+  showPokemonInSections();
 };
 
 const translateX = (pos, slide) => {
@@ -299,8 +286,28 @@ const filterSystem = () => {
   });
 };
 
+const inputBarSearch = document.getElementById('input-bar-search');
+inputBarSearch.addEventListener('keyup', searchPokemon);
+inputBarSearch.addEventListener('keypress', onlyText, false);
 
-orderBy();
+const buttonFilterPokemon = document.getElementsByClassName('button-filter')[0];
+const buttonOrderPokemon = document.getElementsByClassName('button-filter')[1];
+const buttonCloseLateralMenu = document.getElementById('btn-close');
+
+buttonFilterPokemon.addEventListener('click', showLateralMenu);
+buttonOrderPokemon.addEventListener('click', showLateralMenu);
+buttonCloseLateralMenu.addEventListener('click', hideLateralMenu);
+buttonCloseLateralMenu.addEventListener('click', hideLateralMenu);
+
 filterSystem();
 sliderSystem();
 window.onload = loadPage;
+
+console.log(orderDesc(data.pokemon, 'base-attack'));
+const dataOrdened = orderDesc(data.pokemon, 'base-attack');
+const array = [];
+
+for (let i = 0; i < dataOrdened.length; i++) {
+  array.push(dataOrdened[i].stats['base-attack']);
+}
+console.log(array);
