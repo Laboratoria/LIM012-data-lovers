@@ -120,6 +120,7 @@ main{
     backdrop-filter: brightness(0.4);
     margin: 0%;
     display:flex;
+    offset-position: ;
     /* margin-top: 3em;  para el screen3 *
     /* align-items:space-between; */
 }
