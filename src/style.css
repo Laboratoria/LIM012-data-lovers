@@ -116,7 +116,8 @@ main{
     backdrop-filter: brightness(0.4);
     margin: 0%;
     margin-top: 12%; /* para que aparezca debajo del menu */
-    /* display:flex; */
+    display:flex;
+}
 .screen{
     /* background-color: black ; */
     backdrop-filter: brightness(0.4);
@@ -136,7 +137,7 @@ section{
 span{
     /* font-weight: normal; */
 }
-.namePok{
+.namePok {
     margin-bottom: 1%;
     font-weight: bold;
     font-size: 2em;
@@ -147,6 +148,7 @@ span{
 }
 #s2img{
     background-color:aquamarine;
+    display: flex;
     flex-direction:column;
     align-items:center ;
     /* padding: 2%; */
@@ -229,7 +231,7 @@ el css del que muestra toda la data */
 }
 .item{
     background-color: cadetblue;
-    display: ;
+    display: flex;
     margin: 2%;
 }
 .lor{
@@ -263,7 +265,8 @@ footer{
     font-size: 21px;
     text-align: center;
     margin-bottom: 15px;
-.buttons{
+}
+.buttons {
     /* background-color: chartreuse; */
     display: flex;
     justify-content: space-around;
@@ -273,13 +276,11 @@ footer{
     width: 100%;
     background-color: yellow;
     margin-top: 15em;
-    display: flex;
-    flex-direction: row;
+    /* display: flex;
+    flex-direction: row; */
 
 }
-.namePok{
-    color: black ;
-}
+
 
 @media screen and (max-width: 500px){
     body{

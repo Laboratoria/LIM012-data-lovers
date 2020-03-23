@@ -25,13 +25,13 @@ const typeFilterA=(poke,tipo)=>{
         for(let j in poke[i].type){
             if(tipo===poke[i].type[j]){
                 arr.push(poke[i]);
-            }  
+            }
         }
    /*  for(let i=0;i<poke.length;i++){
         for(let j=0;j<poke[i].type.length;j++){
             if(tipo===poke[i].type[j]){
                 arr.push(poke[i]);
-            }  
+            }
         }}
     */
     }
@@ -43,12 +43,13 @@ const showScreen2=()=>{
     screen2Elem.style.display="block";
     screen2Elem.innerHTML=`${showInfo(pokemones)}`
 }
-searchIconElem.addEventListener('click',showScreen2); 
+searchIconElem.addEventListener('click',showScreen2);
 //Menu boton Home
 mHome.addEventListener('click',()=>{
     screen1Elem.style.display='flex'
     screen2Elem.style.display='none'
     s3defaultElem.style.display='none'
+    screen3Elem.style.display='none'
     inputSearchElem.value='';
 })
 //Muestra por default Pok
@@ -66,15 +67,15 @@ select1Elem.addEventListener('change',()=>{
     s3orderElem.style.display='block';
     let select1Value=select1Elem.value;
     switch(select1Value){
-        case 'asc': 
+        case 'asc':
             console.log('soyAZ');
             s3orderElem.innerHTML=`${(orderBy(pokemones,'asc')).map(showAllData).join('')}  `
         break;
-        case 'desc': 
+        case 'desc':
             console.log('soyZA');
             s3orderElem.innerHTML=`${(orderBy(pokemones,'desc')).map(showAllData).join('')}  `
         break;
-        case 'numUp': 
+        case 'numUp':
             console.log('soyNum');
             s3orderElem.innerHTML=`Estas en orderA3 seleccion${select1Value}`
     }
@@ -87,5 +88,5 @@ select2Elem.addEventListener('change',()=>{
 
     const changeVal=(val)=>{
         typeFilter(pokemones,select2Value);
-    }        
+    }
 })

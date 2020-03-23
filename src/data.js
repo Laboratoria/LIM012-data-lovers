@@ -8,8 +8,8 @@ export const showInfo = (pokes) => {
   pokes.forEach((poke) => {
     if (inputValue === poke.name) {
       info = `
-              <p id="namePok"> ${poke.name}</p>
-              <section id="s2img">
+              <p class="namePok"> ${poke.name}</p>
+              <section id="imgCont">
                   <span class="circle ft">${poke.num}</span>
 
                   <img src="${poke.img}" alt="pokemonImage">
@@ -41,10 +41,10 @@ export const showAllData=(data)=>{
             <span class="circle">${data.num}</span>
             <img src="${data.img}" alt="pokemonImage">
             <span> ${data.name}</span>
-        </div> 
+        </div>
         <span class="lor">nel</span>
         <div class="lor">gel</div>
-        </div>   
+        </div>
         `
 }
 //Ordena Alfabeticamente
@@ -68,8 +68,9 @@ export const orderBy=(poke,order)=>{
 //Filtra por tipo
 export const typeFilter=(poke,tipo)=>{
     let arrFilt= poke.filter((poke)=>{
-         return poke.type.includes(tipo);//retorna un boolean 
+         return poke.type.includes(tipo);//retorna un boolean
      })
      console.log(arrFilt);
      return arrFilt;
 //  typeFilter(pokemones,'flying');
+};
