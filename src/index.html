@@ -13,7 +13,8 @@
   <body class="container">
     
     <header class="head margin-bottom">
-
+      <input type="checkbox" id="btn-filter">
+      <label for="btn-filter" class= "icon-filter"></label>
       <div class="banner">
         <div class="banner-content center">
           <p>Pokepedia</p>
@@ -31,10 +32,37 @@
               </a>
             </li>
             <li class="menu-style">
-              <button>
-                <span class="icon-filter"></span>
-                <span class="hide">Filter</span>
-              </button>
+              <nav class="filter-menu">
+                <ul>
+                  <li><a href="#">All pokémons</a></li>
+                  <li><a href="#">Filter by  type <span class="icon-arrow-down2"></span></a>
+                    <ul class="sub-menu">
+                      <ul class="derecho">
+                        <li class="limites" id="gosth">Ghost</li>
+                        <li class="limites" id="psyqchic">Psychic</li>
+                        <li class="limites" id="normal">Normal</li>
+                        <li class="limites" id="fighting">Fighting</li>
+                        <li class="limites" id="poison">Poison</li>
+                        <li class="limites" id="bug">Bug</li>
+                        <li class="limites" id="flying">Flying</li>
+                        <li class="limites" id="dark">Dark</li>
+                        <li class="limites" id="fairy">Fairy</li>
+                      </ul> 
+                      <ul class="izquierdo">
+                        <li class="limites" id="water">Water</li>
+                        <li class="limites" id="fire">Fire</li>
+                        <li class="limites" id="grass">Grass</li>
+                        <li class="limites" id="ground">Ground</li>
+                        <li class="limites" id="rock">Rock</li>
+                        <li class="limites" id="steel">Steel</li>
+                        <li class="limites" id="ice">Ice</li>
+                        <li class="limites" id="electric">Electric</li>
+                        <li class="limites" id="dragon">Dragon</li>
+                      </ul>
+                    </ul>
+                  </li>
+                </ul>
+              </nav>
             </li>
             <li class="menu-style">
               <span class="icon-plus"></span>
@@ -47,43 +75,9 @@
           </div>
         </div>
       </nav>
+
     </header>
     <main>      
-      
-      <nav class="filter-menu">
-        <ul>
-          <li><a href="#">All pokémons</a></li>
-          <li><a href="#">Filter by  type <span class="icon-ctrl"></span></a>
-            <ul class="sub-menu">
-              <ul class="derecho">
-                <li class="limites" id="gosth">Ghost</li>
-                <li class="limites" id="psyqchic">Psychic</li>
-                <li class="limites" id="normal">Normal</li>
-                <li class="limites" id="fighting">Fighting</li>
-                <li class="limites" id="poison">Poison</li>
-                <li class="limites" id="bug">Bug</li>
-                <li class="limites" id="flying">Flying</li>
-                <li class="limites" id="dark">Dark</li>
-                <li class="limites" id="fairy">Fairy</li>
-              </ul> 
-              <ul class="izquierdo">
-                <li class="limites" id="water">Water</li>
-                <li class="limites" id="fire">Fire</li>
-                <li class="limites" id="grass">Grass</li>
-                <li class="limites" id="ground">Ground</li>
-                <li class="limites" id="rock">Rock</li>
-                <li class="limites" id="steel">Steel</li>
-                <li class="limites" id="ice">Ice</li>
-                <li class="limites" id="electric">Electric</li>
-                <li class="limites" id="dragon">Dragon</li>
-              </ul>
-            </ul>
-          
-          </li>
-
-        </ul>
-      </nav>
-
       <div class="sort-container center">
         <select id="selection" value ="Sort" class="margin-bottom">
           <option value="sort-option" selected disabled>Sort</option>

@@ -97,16 +97,12 @@ a {
     padding: 0 5px;
     font-size: 1em;
 }
+
 .icon-search {
     color: #FFF;
     font-size: 23px;
     padding: 6px;
     order: 1;
-}
-.icon-ctrl {
-    color: #FFF;
-    font-size: 23px;
-    padding: 6px;
 }
 
 .menu-style:hover {
@@ -116,7 +112,6 @@ a {
 .menu img:hover {
     background-color: rgba(0, 0, 0, 0.7);
 }
-
 
 .center {
     max-width: 1000px;
@@ -275,9 +270,8 @@ h2 {
     transform: translate(-50%, -50%) scale(1);
 }
 
-
 /* Creando estilos para el todo filtrado*/
-.filter-menu {
+.filter-content {
     background-image: linear-gradient(to bottom,  #4ab483, #18a18c, #008d8d, #047887, #266378, #266378, #266378);
     padding-top: 0;
     width: 18%;
@@ -285,7 +279,6 @@ h2 {
     color: #FFF;
     font-size: 18px;
     font-weight: 520;
-    cursor: pointer;
     transform: translate(0px, -68px);
     z-index: 100;
     list-style: none;
@@ -294,52 +287,51 @@ h2 {
     top: 109px;
     text-align: left;
 }
-
-.filter-box {
-    width: 100%;
-}
-.filter-category {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-}
-.sub-menu {
-    display: flex;
-    width: 100%;
-}
-.derecho {
-    display: inline-block;
-    width: 50%;
-} 
-.izquierdo {
-    display: inline-block;
-    width: 50%;
-}
-.limites {
-    border: 1px solid #fff;
-    text-align: center;
-    padding: 2px;
-}
-
-.hide-filter-box{
+#btn-filter {
     display: none;
-    opacity: 0;
 }
-button {
-    display: block;
+header label {
     color: #FFF;
     font-size: 23px;
     padding: 6px;
-    order: 1;
-    border: transparent;
-    background: transparent;
-    transform: translate(-6px, -6px);
+    cursor: pointer;
+    display: none;
 }
-button:hover {
-    color: rgba(0, 0, 0, 0.7);
-};
+.filter-menu ul {
+  /*background-image: linear-gradient(to bottom,  #266378, #266378,  #266378, #047887, #008d8d, #18a18c, #4ab483);*/
+    display: flex;
+    list-style: none;
+}
+.filter ul ul {
+    display: none;
+}
+.filter-menu a {
+    display: block;
+    padding: 15px 20px;
+    color: #fff;
+    text-decoration: none;
+}
+.filter-menu a:hover {
+    background: rgba(0,0,0,0.3);
+}
+.filter-menu a span {
+    margin-left: 10px;
+}
+.filter-menu ul li:hover ul {
+    display: block;
+    position: absolute;
+
+}
+
+.icon-ctrl {
+    color: #FFF;
+    font-size: 23px;
+    padding: 6px;
+}
+
 
 /* Fin de filtrado */
+
 
 @keyframes popup {
     0%{
