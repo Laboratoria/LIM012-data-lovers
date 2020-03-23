@@ -46,7 +46,6 @@ export const showAllData = (data) => {
         </div>
         `;
 };
-
 // Ordena Alfabeticamente
 export const orderBy = (poke, order) => {
   let arrSort = [];
