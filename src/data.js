@@ -11,7 +11,6 @@ export const showInfo = (pokes) => {
               <p class="namePok"> ${poke.name}</p>
               <section id="imgCont">
                   <span class="circle ft">${poke.num}</span>
-
                   <img src="${poke.img}" alt="pokemonImage">
               </section>
               <section id="s2about">
@@ -72,5 +71,6 @@ export const typeFilter=(poke,tipo)=>{
      })
      console.log(arrFilt);
      return arrFilt;
+}
 //  typeFilter(pokemones,'flying');
 };
