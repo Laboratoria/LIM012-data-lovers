@@ -179,32 +179,32 @@ iteraciones que hagas, que las subas a tu repositorio y las menciones en tu
 #### Desktop & Mobile
 1. Buscador-Pantalla de inicio
 
-![PAF-1](https://github.com/katherinChi/LIM012-data-lovers/blob/dataloversKC/prototipo-altaFidelidad/1D.jpg)
-![PAF-1](https://github.com/katherinChi/LIM012-data-lovers/blob/dataloversKC/prototipo-altaFidelidad/1M.jpg)
+![PAF-1](https://github.com/katherinChi/LIM012-data-lovers/blob/dataloversKC/prototipo-altaFidelidad/1D.png)
+![PAF-1](https://github.com/katherinChi/LIM012-data-lovers/blob/dataloversKC/prototipo-altaFidelidad/1M.png)
 
 2. Ordenar de forma ascendente y descendente y filtrar por tipo
 
-![PAF-2](https://github.com/katherinChi/LIM012-data-lovers/blob/dataloversKC/prototipo-altaFidelidad/2D.jpg)
-![PAF-2](https://github.com/katherinChi/LIM012-data-lovers/blob/dataloversKC/prototipo-altaFidelidad/2M.jpg)
+![PAF-2](https://github.com/katherinChi/LIM012-data-lovers/blob/dataloversKC/prototipo-altaFidelidad/2D.png)
+![PAF-2](https://github.com/katherinChi/LIM012-data-lovers/blob/dataloversKC/prototipo-altaFidelidad/2M.png)
 
 3. Ficha técnica de cada pokemon
 
-![PAF-3](https://github.com/katherinChi/LIM012-data-lovers/blob/dataloversKC/prototipo-altaFidelidad/3D.jpg)
-![PAF-3](https://github.com/katherinChi/LIM012-data-lovers/blob/dataloversKC/prototipo-altaFidelidad/3M.jpg)
+![PAF-3](https://github.com/katherinChi/LIM012-data-lovers/blob/dataloversKC/prototipo-altaFidelidad/3D.png)
+![PAF-3](https://github.com/katherinChi/LIM012-data-lovers/blob/dataloversKC/prototipo-altaFidelidad/3M.png)
 
 4. Primera pantalla del comparador
-![PAF-4](https://github.com/katherinChi/LIM012-data-lovers/blob/dataloversKC/prototipo-altaFidelidad/4D.jpg)
-![PAF-4](https://github.com/katherinChi/LIM012-data-lovers/blob/dataloversKC/prototipo-altaFidelidad/4M.jpg)
+![PAF-4](https://github.com/katherinChi/LIM012-data-lovers/blob/dataloversKC/prototipo-altaFidelidad/4D.png)
+![PAF-4](https://github.com/katherinChi/LIM012-data-lovers/blob/dataloversKC/prototipo-altaFidelidad/4M.png)
 
 5. Segunda pantalla del comparador (cuando ya escogen a los pokemones a comparar)
 
-![PAF-5](https://github.com/katherinChi/LIM012-data-lovers/blob/dataloversKC/prototipo-altaFidelidad/5D.jpg)
-![PAF-5](https://github.com/katherinChi/LIM012-data-lovers/blob/dataloversKC/prototipo-altaFidelidad/5M.jpg)
+![PAF-5](https://github.com/katherinChi/LIM012-data-lovers/blob/dataloversKC/prototipo-altaFidelidad/5D.png)
+![PAF-5](https://github.com/katherinChi/LIM012-data-lovers/blob/dataloversKC/prototipo-altaFidelidad/5M.png)
 
 6. Calculadora de caramelos
 
-![PAF-6](https://github.com/katherinChi/LIM012-data-lovers/blob/dataloversKC/prototipo-altaFidelidad/6D.jpg)
-![PAF-6](https://github.com/katherinChi/LIM012-data-lovers/blob/dataloversKC/prototipo-altaFidelidad/6M.jpg)
+![PAF-6](https://github.com/katherinChi/LIM012-data-lovers/blob/dataloversKC/prototipo-altaFidelidad/6D.png)
+![PAF-6](https://github.com/katherinChi/LIM012-data-lovers/blob/dataloversKC/prototipo-altaFidelidad/6M.png)
 
 <!-- Lo siguiente es diseñar tu Interfaz de Usuario (UI por sus siglas en inglés -
 _User Interface_). Para eso debes aprender a utilizar alguna herramienta de
