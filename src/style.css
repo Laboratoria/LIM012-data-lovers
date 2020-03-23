@@ -277,7 +277,7 @@ h2 {
 
 
 /* Creando estilos para el todo filtrado*/
-.filter-content {
+.filter-menu {
     background-image: linear-gradient(to bottom,  #4ab483, #18a18c, #008d8d, #047887, #266378, #266378, #266378);
     padding-top: 0;
     width: 18%;
