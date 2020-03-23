@@ -45,6 +45,7 @@ export const showAllData = (data) => {
         <div class="lor">gel</div>
         </div>
         `;
+};
 // Ordena Alfabeticamente
 export const orderBy = (poke, order) => {
   let arrSort = [];
