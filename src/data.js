@@ -4,7 +4,6 @@ import { inputSearchElem } from './main.js';
 export const showInfo = (pokes) => {
   const inputValue = inputSearchElem.value;
   let info = '';
-  // console.log(`Lei input ${ inputValue }`)
   pokes.forEach((poke) => {
     if (inputValue === poke.name) {
       info = `
@@ -19,6 +18,7 @@ export const showInfo = (pokes) => {
                         <p>Type:<span>${poke.type}</span></p>
                         <p>Height:<span>${poke.size.height}</span></p>
                         <p>Weight:<span>${poke.size.weight}</span></p>
+                        <p>Special Attack:<span>${poke['special-attack']}</span></p>
                     </div>
                     <div id="weakRes" class="infoCont data">
                         <p>Weakness:<span>${poke.weaknesses}</span></p>
@@ -45,8 +45,7 @@ export const showAllData = (data) => {
         <div class="lor">gel</div>
         </div>
         `;
-};
-//  Ordena Alfabeticamente
+// Ordena Alfabeticamente
 export const orderBy = (poke, order) => {
   let arrSort = [];
   arrSort = poke.sort((a, b) => {
@@ -57,19 +56,15 @@ export const orderBy = (poke, order) => {
     if (order === 'asc') {
       return (nameA > nameB) ? 1 : ((nameA < nameB) ? -1 : 0);
     }
-    else if (order === 'desc') {
+    if (order === 'desc') {
       return (nameA > nameB) ? -1 : ((nameA < nameB) ? 1 : 0);
     }
   });
-  // console.log(arrSort);
   return arrSort;
 };
-//  Filtra por tipo
+// Filtra por tipo
 export const typeFilter = (poke, tipo) => {
-  const arrFilt = poke.filter((poke) => {
-    return poke.type.includes(tipo);//  retorna un boolean
-  });
-  console.log(arrFilt);
+  // eslint-disable-next-line no-shadow
+  const arrFilt = poke.filter(poke => poke.type.includes(tipo)); // retorna un boolean
   return arrFilt;
 };
-//  typeFilter(pokemones,'flying');
