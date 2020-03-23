@@ -271,46 +271,41 @@ h2 {
 }
 
 /* Creando estilos para el todo filtrado*/
-.filter-content {
-    background-image: linear-gradient(to bottom,  #4ab483, #18a18c, #008d8d, #047887, #266378, #266378, #266378);
-    padding-top: 0;
-    width: 18%;
-    display: inline-block;
-    color: #FFF;
-    font-size: 18px;
-    font-weight: 520;
-    transform: translate(0px, -68px);
-    z-index: 100;
-    list-style: none;
-    position: sticky;
-    position: -webkit-sticky; /* Safari */
-    top: 109px;
-    text-align: left;
-}
+
 #btn-filter {
-    display: none;
+    display: none; 
 }
+
 header label {
     color: #FFF;
     font-size: 23px;
     padding: 6px;
     cursor: pointer;
-    display: none;
+    display: block;
 }
+header label:hover {
+    color: rgba(0, 0, 0, 0.7);
+}
+
 .filter-menu ul {
-  /*background-image: linear-gradient(to bottom,  #266378, #266378,  #266378, #047887, #008d8d, #18a18c, #4ab483);*/
-    display: flex;
+    background-image: linear-gradient(to bottom,  #4ab483, #18a18c, #008d8d, #047887, #266378, #266378, #266378);
+    display: block;
     list-style: none;
+    position: absolute;
+    left: 0;
 }
-.filter ul ul {
+.filter-menu ul ul{
     display: none;
 }
 .filter-menu a {
+    position: relative;
     display: block;
-    padding: 15px 20px;
+    padding: 10px 15px;
     color: #fff;
     text-decoration: none;
+    border: 1px solid white;   
 }
+
 .filter-menu a:hover {
     background: rgba(0,0,0,0.3);
 }
@@ -322,13 +317,6 @@ header label {
     position: absolute;
 
 }
-
-.icon-ctrl {
-    color: #FFF;
-    font-size: 23px;
-    padding: 6px;
-}
-
 
 /* Fin de filtrado */
 
@@ -420,7 +408,35 @@ header label {
     .banner-content {
         justify-content: center;
     }
-
+    /* Filter mobile*/
+    .icon-filter {
+        transform: translate(-8px, -5px);
+    }
+    header label {
+        display: block;
+    }
+    .filter-menu {
+        position: absolute;
+        top: 160px;
+        left: 0;
+        width: 100%;
+        transform: translateX(-100%);
+        transition: all 0.3s;
+    }
+    .filter-menu ul {
+        display: block;
+        background-image: linear-gradient(to bottom,  #4ab483, #18a18c, #008d8d, #047887, #266378, #266378, #266378);
+    }
+    .filter-menu ul li:hover ul {
+        display: none;
+    }
+    .filter-menu a span {
+        position: absolute;
+        right: 5px;
+    }
+    #btn-filter:checked ~ .filter-menu {
+        transform: translateX(0%);
+    }
 }
 
 @media (max-width: 1000px) and (min-width: 600px) {
@@ -449,4 +465,5 @@ header label {
     .menu-style:first-child {
         border-left: 3px solid #FFF;
     }
+    
 }

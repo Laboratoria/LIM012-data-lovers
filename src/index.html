@@ -13,15 +13,12 @@
   <body class="container">
     
     <header class="head margin-bottom">
-      <input type="checkbox" id="btn-filter">
-      <label for="btn-filter" class= "icon-filter"></label>
       <div class="banner">
         <div class="banner-content center">
           <p>Pokepedia</p>
           <img class="hide" src="assets/legiones.png">
         </div>
       </div>
-
       <nav class="menu">
         <div class="center">
           <ul>
@@ -32,37 +29,8 @@
               </a>
             </li>
             <li class="menu-style">
-              <nav class="filter-menu">
-                <ul>
-                  <li><a href="#">All pokémons</a></li>
-                  <li><a href="#">Filter by  type <span class="icon-arrow-down2"></span></a>
-                    <ul class="sub-menu">
-                      <ul class="derecho">
-                        <li class="limites" id="gosth">Ghost</li>
-                        <li class="limites" id="psyqchic">Psychic</li>
-                        <li class="limites" id="normal">Normal</li>
-                        <li class="limites" id="fighting">Fighting</li>
-                        <li class="limites" id="poison">Poison</li>
-                        <li class="limites" id="bug">Bug</li>
-                        <li class="limites" id="flying">Flying</li>
-                        <li class="limites" id="dark">Dark</li>
-                        <li class="limites" id="fairy">Fairy</li>
-                      </ul> 
-                      <ul class="izquierdo">
-                        <li class="limites" id="water">Water</li>
-                        <li class="limites" id="fire">Fire</li>
-                        <li class="limites" id="grass">Grass</li>
-                        <li class="limites" id="ground">Ground</li>
-                        <li class="limites" id="rock">Rock</li>
-                        <li class="limites" id="steel">Steel</li>
-                        <li class="limites" id="ice">Ice</li>
-                        <li class="limites" id="electric">Electric</li>
-                        <li class="limites" id="dragon">Dragon</li>
-                      </ul>
-                    </ul>
-                  </li>
-                </ul>
-              </nav>
+              <input type="checkbox" id="btn-filter">
+              <label for="btn-filter" class="icon-filter"></label><span class="hide">Filters</span>
             </li>
             <li class="menu-style">
               <span class="icon-plus"></span>
@@ -75,9 +43,42 @@
           </div>
         </div>
       </nav>
-
     </header>
-    <main>      
+    <main> 
+      
+      <nav class="filter-menu">
+        <ul>
+          <li><a href="#">All pokémons</a></li>
+          <li class="sub-menu"><a href="#">Filter by  type <span class="icon-arrow-down2"></span></a>
+            <ul>
+              <div class="options">
+                <div class="left">
+                  <li id="gosth"><a href="#">Ghost</a></li>
+                  <li id="psyqchic"><a href="#">Psychic</a></li>
+                  <li id="normal"><a href="#">Normal</a></li>
+                  <li id="fighting"><a href="#">Fighting</a></li>
+                  <li id="poison"><a href="#">Poison</a></li>
+                  <li id="bug"><a href="#">Bug</a></li>
+                  <li id="flying"><a href="#">Flying</a></li>
+                  <li id="dark"><a href="#">Dark</a></li>
+                  <li id="fairy"><a href="#">Fairy</a></li>
+                </div>
+                <div class="rigth">
+                  <li id="water"><a href="#">Water</a></li>
+                  <li id="fire"><a href="#">Fire</a></li>
+                  <li id="grass"><a href="#">Grass</a></li>
+                  <li id="ground"><a href="#">Ground</a></li>
+                  <li id="rock"><a href="#">Rock</a></li>
+                  <li id="steel"><a href="#">Steel</a></li>
+                  <li id="ice"><a href="#">Ice</a></li>
+                  <li id="electric"><a href="#">Electric</a></li>
+                  <li id="dragon"><a href="#">Dragon</a></li>
+                </div>
+              </div>
+            </ul>
+          </li>
+        </ul>
+      </nav>     
       <div class="sort-container center">
         <select id="selection" value ="Sort" class="margin-bottom">
           <option value="sort-option" selected disabled>Sort</option>
