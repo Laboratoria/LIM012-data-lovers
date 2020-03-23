@@ -35,8 +35,6 @@ export const showInfo=(pokes)=>{
           return 'El nombre ingresado no es correcto';
       }   
 }
-
-
 export const showAllData=(data)=>{
     return `
         <div class="s3">
@@ -50,7 +48,6 @@ export const showAllData=(data)=>{
         </div>   
         `
 }
-
 //Ordena Alfabeticamente
 export const orderBy=(poke,order)=>{
     let arrSort=[];
@@ -69,3 +66,12 @@ export const orderBy=(poke,order)=>{
     // console.log(arrSort);
     return arrSort;
 }
+//Filtra por tipo
+export const typeFilter=(poke,tipo)=>{
+    let arrFilt= poke.filter((poke)=>{
+         return poke.type.includes(tipo);//retorna un boolean 
+     })
+     console.log(arrFilt);
+     return arrFilt;
+ }
+//  typeFilter(pokemones,'flying');

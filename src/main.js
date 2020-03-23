@@ -1,7 +1,7 @@
 //DOM
 //{} cuando solo llamas a una funcion determinada no a toda la hoja
 import data from './data/pokemon/pokemon.js';
-import {showInfo, showAllData, orderBy} from './data.js';
+import {showInfo, showAllData, orderBy,typeFilter} from './data.js';
 export const inputSearchElem=document.getElementById("inputSearch");
 const pokemones=data.pokemon;
 const searchIconElem=document.getElementById("searchIcon");
@@ -19,7 +19,7 @@ const mPokedex=document.getElementById('pokedex');
 const mcompare=document.getElementById('compare');
 //Segunda Pantalla -Buscador
 
-const typeFilter=(poke,tipo)=>{
+const typeFilterA=(poke,tipo)=>{
     let arr=[];
     for(let i in poke){
         for(let j in poke[i].type){
@@ -35,11 +35,9 @@ const typeFilter=(poke,tipo)=>{
         }}
     */
     }
-    console.log(arr);
+    // console.log(arr);
 }
-typeFilter(pokemones,'flying');
-
-
+// typeFilterA(pokemones,'flying');
 const showScreen2=()=>{
     screen1Elem.style.display="none";
     screen2Elem.style.display="block";
@@ -82,33 +80,12 @@ select1Elem.addEventListener('change',()=>{
     }
 })
 
-
 select2Elem.addEventListener('change',()=>{
     s3defaultElem.style.display='none';
     s3typeElem.style.display='block';
-  
     let select2Value=select2Elem.value;
-  
-    switch(select1Value){
-        case 'AZ': 
-        }
+
+    const changeVal=(val)=>{
+        typeFilter(pokemones,select2Value);
+    }        
 })
-
-
-
-
-
-
-
-const showfil=(poke)=>{
-    /* screen3Elem.style.display='block';
-    s3defaultElem.style.display='none'
-    s3orderElem.style.display='block' */
-    let arr=[];
-    for(i=0;i<poke.length;i++){
-        if(poke.type){
-
-        }
-        arr[i]
-    }
-}
