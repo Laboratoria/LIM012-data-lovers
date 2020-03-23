@@ -322,6 +322,7 @@ footer{
         border-bottom: 1px solid #FFFFFF;
         width: 29%;
     } */
+
     #screen1{
         /* background-color: rgba(0, 255, 255, 0.472); */
         display: flex;
@@ -372,6 +373,7 @@ footer{
      }
      #screen2{
         background-color: tomato ;
+
         backdrop-filter: brightness(0.4);
         margin: 0%;
         margin-top: 14%; /* para que aparezca debajo del menu */
