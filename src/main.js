@@ -7,20 +7,19 @@ import { example } from './data.js';
 
 let stringTemplate = '';
 const container=document.getElementById('container');
-const dataTodoCampeones=data.data;
+//const dataTodoCampeones=data.data;
 
-for (const prop in dataTodoCampeones){
+for (const prop in data.data){
   //console.log(data.data[prop].name)
   //console.log(data.data[prop].title)
   stringTemplate+=`
   <div id='box'>
-  <img src=${dataTodoCampeones[prop].img}/>
-  <p id='name'>${dataTodoCampeones[prop].name}</p>
-  <p id='title'>${dataTodoCampeones[prop].title}</p>
+  <img src=${data.data[prop].img}/>
+  <p id='name'>${data.data[prop].name}</p>
+  <p id='title'>${data.data[prop].title}</p>
   </div>
   `
-}
-//console.log(stringTemplate);
+};
 container.innerHTML= stringTemplate;
 
 
