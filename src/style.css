@@ -7,17 +7,25 @@
 	font-family: 'Aldrich', sans-serif;
 
 }
+html{
+  height: 100%;
+  width: 100%;
+}
+.label{
+  padding: .5em;
+  margin: .5em;
+}
 
 body{
-  --color-blue-1: #1B262C;
-  --color-blue-2: #0F4C75;
-  --color-blue-3: #3282B8;
-  --color-blue-4: #EEEEEE;
+  --color-blue-1: #151E23;
+  --color-blue-2: #003e51;
+  --color-blue-3: #04617e;
+  --color-blue-4: #fff;
 
 }
 .root{
-  width: 100%;
-  background: #eee;
+  width: auto;
+  background: #a4e2cd;
   display: grid;
   grid-template-rows: repeat(5,auto);
 }
@@ -27,43 +35,103 @@ header,footer{
   margin: 0;  
   height: auto;
   padding: .2em;
+  text-align: center;
+  color: antiquewhite;
+  width: 100%;
+  position: relative;
 
 }
   #logo-pokemon{
     height: 100px;    
+  }
+  footer{
+    margin-top: 1em;
   }
 
 nav{
   background:var(--color-blue-2);
   top: 0;
   padding: .5rem;
-  height: 50px;  
-}
+  height: 50px;
+  display: flex;
+  position:sticky;
+  z-index: 1;  }
   nav span{
     width: auto;
-    padding-right: .5rem;
-    /* padding: .1rem ;   */
+    padding: .5em .5em .5em 0;
   }
     #logo-pokedex{
-      font-size: 1rem;
+      font-size: .8em;
       color: white;
       font-weight: bolder;        
       font-family: 'Rammetto One', cursive;
     }
 
 aside{
-  display: none;
+  height: 100%;
+  width: 0;  
+  z-index: 0;  
 }
-main{
-  height: auto;
-  padding: 1rem;
+.header-menu{
+  height: 3em;
+  width: 100%;
+  background: var(--color-blue-2);
+  color: antiquewhite;
+  padding: 1em;
+  transition: 0.3s;
+  display: block;
+  min-width:300px ;
+}
+  .header-menu span{
+    margin: .5em;
+    padding: .5em;
+  }
+  #btn-close{   
+    background: none;
+    border: none;
+    position: absolute;
+    margin: 0 .3em;
+    height: 20px;
+    right: 1em;
+    top: 1em;
+    position: absolute;
+    
+  }
+    #btn-close-img{    
+      border: none;      
+      width: 20px;      
+    }
+
+#types-container{  
+  padding: 2em;
+  height: 100vh;
+  min-width:300px ;
+}
+  .pokemon-type-button{
+    border: none;
+    width: 100px;
+    padding: .5rem;
+    text-transform: capitalize;
+    font-size: 1.12em;
+    border-radius: 3px;
+    color: whitesmoke;
+    transition: 0.3s;
+  }
+  .icon-pokemon-type{
+    width: 20px;
+    margin: 0 .5em;
+  }
+section{  
+  height: 100%;
+  width: 100%;
+  justify-content: center;
 }
 
 #input-bar-search{
   margin: 0;
   padding: .3em;
   width: 60%;
-  border-radius: 3px 0 0 3px;
+  border-radius: 3px;
   max-width: 500px;
   min-width: 100px;
   border:none;
@@ -71,26 +139,19 @@ main{
   color: #333333;
   right: 0;
 }
-  #button-icon-bar-search{
+  #icon-bar-search{
     margin: 0;
     padding:.5em;
     height: auto;
     right: 0;
     border-radius: 0 3px 3px 0;
-    background: var(--color-blue-3);
     border: none;    
   }
     #img-icon-bar-search{
       height: 20px;
       margin: 0;
     }
-#navbar,
-.top-filter{
-  display: flex;
-  position: sticky;  
-  width: 100%;
-  min-width: 370px;  
-}
+
 
 .top-filter{  
   top: 50px;
@@ -99,63 +160,305 @@ main{
 }
 .button-filter{
   display: inline-block;
-  background: #fff;
+  background:var(--color-blue-4);
   margin: 0;
   padding: 1em 0;
-  color: #3282B8;
+  color: var(--color-blue-3);
   font-size: 14px;  
   width: 49.5%;  
   border: none;
   font-weight: bolder;
 }
-
-#card-container{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+.top-pagination{
+  display: none;
 }
+
+#card-container,
+#card-container-section{
+  width: auto;
+  color: var(--color-blue-4);
+}
+  #card-container-section{
+    display: none;
+  }
+
+  .card-container-flex{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .card-container-normal{
+    display: block;
+  }
+  .card-container-grid{
+    display: grid;
+    grid-template-columns: auto;
+    width: 100%;
+    height: 750px;
+  }
+  .title{
+    padding: 1em;
+    width: 100%;
+    background: #338374;
+    position: relative;
+  }
+
+.slider{  
+  margin: 1em 0;  
+  min-width: 200px;
+  width: 100%;
+  height: auto;
+  position: relative; 
+  overflow: hidden; 
+  /* background: tomato; */
+  z-index: 0;  
+}  
+.title-slider{
+  padding: 1em;
+  width: 100%;
+  background: #338374;
+  position: relative;
+}
+.title-slider > * {
+  display: inline;
+}
+.title-slider a{
+  position: absolute;
+  right: 1em;
+}
+.show-more{
+  text-decoration: underline;
+  cursor: pointer;
+}
+.slide-cards{       
+  display: flex;
+  transition: 0.3s left ease-in-out;  
+  position: absolute;
+  left: 0;  
+}
+.slide{
+  height: 220px;
+  position: relative;
+  overflow-x: scroll;
+}
+.slide::-webkit-scrollbar {
+  display: none;
+}
+.ctrl-btn{
+  cursor: pointer;
+  top:45%;
+  width: auto;
+  padding: .5em;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  user-select: none;
+  -webkit-user-select: none;
+  position: absolute;
+  border: none;
+  background: none;
+}  
+.ctrl-btn:hover {
+  background-color:#151E23;
+}
+.ctrl-prev{
+  left: 0;
+}
+.ctrl-next{
+  right: 0;
+}
+
+ .div-container-filter{
+   border: 1px solid black;
+   width: 100%;
+   height: 33%;
+   display: grid;
+   grid-template-columns: 5% 90% 5%;
+   grid-template-rows: 10% 90% ;
+   background-attachment: scroll;
+ }
+  .div-container-filter p{
+   font-size:large;
+   grid-column: 1/4;
+  }
+  .div-card-container-filter{
+    width: 100%;
+    height: 220px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: var(--color-blue-4);
+  }
+  .button-back{
+    width: 100%;
+    height: 20%;
+    align-self: center;
+    justify-self: start;
+  }
+  .button-next{
+    width: 100%;
+    height:30%;
+    align-self: center;
+    justify-self: end;
+  }
+
+
 .pokemon-card{
   width: 150px;
   height:200px;
+<<<<<<< HEAD
   /*border: 1px solid #3282B8;*/
   box-shadow: 0 5px 10px rgb(93, 95, 94);
   border-radius: 5px;
+=======
+  border-radius: 10px 0 10px 0;
+>>>>>>> remoto-elena
   margin: 7px;
+  border: 2px solid var(--color-blue-4);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+<<<<<<< HEAD
   background:#00818a;  
+=======
+  background:#338374;
+>>>>>>> remoto-elena
   box-shadow: 10px;
 }
+
 .pokemon-name{
   padding: .3rem 0;
   width: 140px ;
   height: 25px ;
   text-align: center;
   text-transform: capitalize;
-  color: white;
+  color:var(--color-blue-4);
 }
+<<<<<<< HEAD
 .pokemon-image{
   width: 130px;
   height: 130px;
   border: 1px solid #3282B8;
-}
-  #pokemon-img{
-    width: 130px;
-    height: 130px;
+=======
+  #img-pokemon{
+    width: 140px;
+    height:140px;
   }
 .pokemon-types{
-  width: auto;
   padding: .3rem;
   height: 30px;
 }
-  .pokemon-type{
-    border-radius: 3px;
-    color: white;
-    font-size: 12px;
-    display: inline;
-    padding: .3rem;
-    margin: .3em;
+.pokemon-type{
+  border-radius: 3px;
+  color: var(--color-blue-4);
+  font-size: 12px;
+  display: inline;
+  padding: .3rem;
+  margin: .3em;
+}
+
+@media screen and (max-width:699px){
+  .slide{   
+    width: 320px;
+    margin-left: calc((100% - 320px)/2);
 
   }
+>>>>>>> remoto-elena
+}
+
+@media screen and (min-width:700px) and (max-width:1023px){  
+  .slide{
+    width: 650px;
+    margin-left: calc((100% - 650px)/2);
+  }
+}
+ 
+@media screen and (max-width:1023px){ 
+  .top-filter{
+    display: flex;
+    position: sticky;    
+    min-width: 380px;  
+  }
+  aside{    
+    background:var(--color-blue-3);
+    position: fixed;  
+    top: 0;
+    left: 0;
+    z-index: 1;  
+    transition: 0.5s;
+    overflow: hidden;  
+  }  
+  
+}
+
+
+
+  
+  @media screen and (min-width: 1024px) {        
+    section{
+      display: grid;
+      grid-template-areas:"sidebar  top  top"
+                          "sidebar main main";
+      grid-template-rows: 80px auto;
+      grid-template-columns: 300px auto;
+      grid-gap: 1em;
+      padding: .5em;
+      min-width: 716px;  
+    }      
+    aside{
+      grid-area: sidebar;  
+      width: 100%;
+      min-width: 300px;
+      background: var(--color-blue-3);
+      height: 100%;
+    }    
+      #btn-close {
+        display: none;
+      }
+    
+    .top-pagination{
+      grid-area: top;
+      background: #fff;
+      display: inline;
+      padding: 1em;
+    }
+      .pagination-button{        
+        background: var(--color-blue-3);
+        color: #fff;
+        padding: .5em;      
+        font-size: .8em;
+      }
+    nav{
+      position: sticky;
+    }
+    main{
+      grid-area: main;
+      height: 100%;
+      width: auto;
+      max-width: 840px;
+      background: #749b94;
+      padding: .5em;
+    }
+    .top-filter{
+      display: none;
+    }
+    .button-filter{
+      display: none;
+    }
+    #aside{
+      display: block;
+      position: static;      
+    }  
+    footer{
+      height: 300px;
+    }
+    .slide{
+      width: 650px;
+    }        
+  }
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> remoto-elena
