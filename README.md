@@ -1,7 +1,7 @@
 # Data Lovers
 
 
-## 3. Objetivos de aprendizaje
+## Objetivos de aprendizaje
 
 El objetivo principal de este proyecto es que, entendiendo las necesidades de
 tus usuarios, se diseñe y construya una interfaz web donde se pueda
@@ -143,14 +143,68 @@ Como usuario experto en combate quiero saber cuántos caramelos me faltan para p
 ### Diseño de la Interfaz de Usuario
 
 #### Prototipo de baja fidelidad
+1. Opción de búsqueda avanzada.
+
 ![PBF-1](https://github.com/katherinChi/LIM012-data-lovers/blob/dataloversKC/prototipo-bajaFidelidad/PBF1.jpg)
 
-Durante tu trabajo deberás haber hecho e iterado bocetos (_sketches_) de tu
+2. Opciones para filtrar y ordenar // Ficha técnica de pokemon.
+
+![PBF-2](https://github.com/katherinChi/LIM012-data-lovers/blob/dataloversKC/prototipo-bajaFidelidad/PBF2.jpg)
+
+3. Detalle de la opción por filtrado y resistencia.
+
+![PBF-3](https://github.com/katherinChi/LIM012-data-lovers/blob/dataloversKC/prototipo-bajaFidelidad/PBF3.jpg)
+
+4. Detalle de la opción de filtrado por tipo.
+
+![PBF-4](https://github.com/katherinChi/LIM012-data-lovers/blob/dataloversKC/prototipo-bajaFidelidad/PBF4.jpg)
+
+5. Detalles de la opción del Menu // Comparador de pokemons.
+
+![PBF-5](https://github.com/katherinChi/LIM012-data-lovers/blob/dataloversKC/prototipo-bajaFidelidad/PBF5.jpg)
+
+6. Formulario para ponerse en contacto
+
+![PBF-6](https://github.com/katherinChi/LIM012-data-lovers/blob/dataloversKC/prototipo-bajaFidelidad/PBF6.jpg)
+
+
+##### SKETCH MEJORADO
+<!-- imagen que tenemos en el cel -->
+<!-- Durante tu trabajo deberás haber hecho e iterado bocetos (_sketches_) de tu
 solución usando papel y lápiz. Te recomendamos tomar fotos de todas las
 iteraciones que hagas, que las subas a tu repositorio y las menciones en tu
-`README.md`.
+`README.md`. -->
 
 #### Prototipo de alta fidelidad
+#### Desktop & Mobile
+1. Buscador-Pantalla de inicio
+
+![PAF-1](https://github.com/katherinChi/LIM012-data-lovers/blob/dataloversKC/prototipo-altaFidelidad/1D.jpg)
+![PAF-1](https://github.com/katherinChi/LIM012-data-lovers/blob/dataloversKC/prototipo-altaFidelidad/1M.jpg)
+
+2. Ordenar de forma ascendente y descendente y filtrar por tipo
+
+![PAF-2](https://github.com/katherinChi/LIM012-data-lovers/blob/dataloversKC/prototipo-altaFidelidad/2D.jpg)
+![PAF-2](https://github.com/katherinChi/LIM012-data-lovers/blob/dataloversKC/prototipo-altaFidelidad/2M.jpg)
+
+3. Ficha técnica de cada pokemon
+
+![PAF-3](https://github.com/katherinChi/LIM012-data-lovers/blob/dataloversKC/prototipo-altaFidelidad/3D.jpg)
+![PAF-3](https://github.com/katherinChi/LIM012-data-lovers/blob/dataloversKC/prototipo-altaFidelidad/3M.jpg)
+
+4. Primera pantalla del comparador
+![PAF-4](https://github.com/katherinChi/LIM012-data-lovers/blob/dataloversKC/prototipo-altaFidelidad/4D.jpg)
+![PAF-4](https://github.com/katherinChi/LIM012-data-lovers/blob/dataloversKC/prototipo-altaFidelidad/4M.jpg)
+
+5. Segunda pantalla del comparador (cuando ya escogen a los pokemones a comparar)
+
+![PAF-5](https://github.com/katherinChi/LIM012-data-lovers/blob/dataloversKC/prototipo-altaFidelidad/5D.jpg)
+![PAF-5](https://github.com/katherinChi/LIM012-data-lovers/blob/dataloversKC/prototipo-altaFidelidad/5M.jpg)
+
+6. Calculadora de caramelos
+
+![PAF-6](https://github.com/katherinChi/LIM012-data-lovers/blob/dataloversKC/prototipo-altaFidelidad/6D.jpg)
+![PAF-6](https://github.com/katherinChi/LIM012-data-lovers/blob/dataloversKC/prototipo-altaFidelidad/6M.jpg)
 
 <!-- Lo siguiente es diseñar tu Interfaz de Usuario (UI por sus siglas en inglés -
 _User Interface_). Para eso debes aprender a utilizar alguna herramienta de
@@ -189,7 +243,7 @@ en base a los resultados, deberás iterar tus diseños. Cuéntanos
 qué problemas de usabilidad detectaste a través de los _tests_ y cómo los
 mejoraste en tu propuesta final. -->
 
-### Implementación de la Interfaz de Usuario (HTML/CSS/JS)
+<!-- ### Implementación de la Interfaz de Usuario (HTML/CSS/JS)
 
 Luego de diseñar tu interfaz de usuario deberás trabajar en su implementación.
 **No** es necesario que construyas la interfaz exactamente como la diseñaste.
@@ -200,7 +254,7 @@ Como mínimo, tu implementación debe:
 1. Mostrar la data en una interfaz: puede ser un card, una tabla, una lista,
    etc.
 2. Permitir al usuario interactuar para obtener la infomación que necesita.
-   <!--filtrar y ordenar la data.-->
+   <!--filtrar y ordenar la data.
 3. Ser _responsive_, es decir, debe visualizarse sin problemas desde distintos
    tamaños de pantallas: móviles, tablets y desktops.
 4. Que la interfaz siga los fundamentos de _visual design_.
@@ -212,11 +266,11 @@ que  tendrás que escribirlas tú para las funciones que tenga tu código.
 <!--encargadas de  _procesar_, _filtrar_ y _ordenar_ la data, así
 como _calcular_ estadísticas.-->
 
-Tus _pruebas unitarias_ deben dar una cobertura del 70% de _statements_
+<!--Tus _pruebas unitarias_ deben dar una cobertura del 70% de _statements_
 (_sentencias_), _functions_ (_funciones_), _lines_ (_líneas_), y _branches_
 (_ramas_) del archivo `src/data.js` que contenga tus funciones y está detallado
-en la sección de [Consideraciones técnicas](#srcdatajs).
-
+en la sección de [Consideraciones técnicas](#srcdatajs). -->
+<!--
 ## 6. Hacker edition
 
 Las secciones llamadas _Hacker Edition_ son **opcionales**. Si **terminaste**
@@ -394,7 +448,7 @@ Cuando ya estés lista para codear, te sugerimos empezar de esta manera:
   `npm start` para arrancar el servidor web y dirígete a
   `http://localhost:5000` en tu navegador.
 6. A codear se ha dicho! :rocket:
-
+ -->
 <!--
 En este proyecto deberás trabajar colaborativamente. Para ello, una de las
 integrantes del equipo deberá forkear el repositorio del cohort y la otra
@@ -443,7 +497,7 @@ compañera:
   original.
 -->
 
-***
+<!-- ***
 
 ### Contenido de referencia
 
@@ -492,7 +546,7 @@ compañera:
 * [Guía para Data Lovers](https://docs.google.com/presentation/d/e/2PACX-1vQhx9D36NjpH-Daea-ITPUDUzNL8ZiNAprq_7b5PSUrfutk45tEtaOLz2lmd8f54_5jX1hypDM8f8SM/pub?start=false&loop=false&delayms=60000)
 
 ***
-
+ -->
 ## 9. Checklist
 
 * [ ] Usa VanillaJS.
