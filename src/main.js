@@ -5,6 +5,11 @@ import data from './data/pokemon/pokemon.js';
 const sectionContent = document.querySelector('.content');
 const filterbox = document.getElementById('filter-box');
 const btnFilter = document.querySelector('button');
+// creando una función que muestre u oculte el contenedor de la barra lateral del filtrado
+btnFilter.addEventListener('click', () => {
+  filterbox.classList.toggle('hide-filter-box');
+  return false;
+}, false);
 
 // Creando card de pokemon
 const pokemonCards = (allPokemons) => {
@@ -20,6 +25,7 @@ const pokemonCards = (allPokemons) => {
   });
   return dataPokemon;
 };
+// creado para verificar que se guarden los cambios
 
 // Creando subtítulo de Generación
 const generation = (geNumber, geName) => {
@@ -97,10 +103,6 @@ selection.addEventListener('change', () => {
     allDataByGenerations();
   }
 });
-// creando una función que muestre u oculte el contenedor de la barra lateral del filtrado
-btnFilter.addEventListener('click', () => {
-  filterbox.classList.toggle('hide-filter-box');
-}, false);
 
 // Botón de subir
 window.onscroll = () => {
