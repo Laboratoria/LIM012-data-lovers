@@ -34,7 +34,7 @@ const championList = data.data;
 const list = document.getElementById('list');
 
 //FUNCION:boton de jugar
-const renderPlayButton = () => {
+const functionPlayButton = () => {
     const playButton = document.createElement('a');
     playButton.setAttribute('href', 'https://signup.lan.leagueoflegends.com/es/signup/redownload?page_referrer=index');
     playButton.setAttribute('target', '_blank');
@@ -44,7 +44,7 @@ const renderPlayButton = () => {
     return playButton;
 };
 
-const renderCards = (championList_data) => {
+const functionCardsStructure = (championList_data) => {
     // Es una arreglo()? si lo es MUESTRAME el arreglo , si no lo es, vuelvelo ARRAYS con Object.value (Le saca los valores de key en forma de ARRAY)
     const checkData = Array.isArray(championList_data) ? championList_data : Object.values(championList_data);
 
@@ -106,11 +106,11 @@ const renderCards = (championList_data) => {
             modalOverlay.style.display = 'flex';
             modalOverlay.style.top = `${window.pageYOffset}px`;
             playButtonContainer.innerHTML = '';
-            playButtonContainer.appendChild(renderPlayButton());
+            playButtonContainer.appendChild(functionPlayButton());
             modalStatsUncle(champion);
         });
 
-        backCardContainer.appendChild(renderPlayButton());
+        backCardContainer.appendChild(functionPlayButton());
         backCardContainer.appendChild(moreStatsButton);
         backCardInfo.appendChild(backCardContainer);
 
@@ -119,7 +119,7 @@ const renderCards = (championList_data) => {
     });
 };
 
-renderCards(championList);
+functionCardsStructure(championList);
 
 /*-----------------------------------------------------*/
 
@@ -199,7 +199,7 @@ if (typeof input.addEventListener != 'undefined') {
             //vaciar arreglo para que no se duplique
             list.innerHTML = '';
 
-            renderCards(filteredChampions);
+            functionCardsStructure(filteredChampions);
         },
         false
     );
@@ -227,7 +227,7 @@ li.forEach((button) => {
 
         const filteredChampions = filteredbyClass(championList, term);
 
-        renderCards(filteredChampions);
+        functionCardsStructure(filteredChampions);
     });
 });
 
@@ -239,6 +239,6 @@ difficulty1.forEach((option) => {
         list.innerHTML = '';
         const filteredChampions = filteredByDifficulty(championList, term);
 
-        renderCards(filteredChampions);
+        functionCardsStructure(filteredChampions);
     });
 });
