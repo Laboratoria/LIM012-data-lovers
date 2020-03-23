@@ -8,6 +8,7 @@ const btnFilter = document.querySelector('button');
 // creando una función que muestre u oculte el contenedor de la barra lateral del filtrado
 btnFilter.addEventListener('click', () => {
   filterbox.classList.toggle('hide-filter-box');
+  return false;
 }, false);
 
 // Creando card de pokemon
@@ -102,7 +103,6 @@ selection.addEventListener('change', () => {
     allDataByGenerations();
   }
 });
-
 
 // Botón de subir
 window.onscroll = () => {
