@@ -33,12 +33,20 @@ export const filterPokemon = (whichFilter, pokemonType) => {
   return result;
 };
 
-export const orderAsc = (dataPokemon, whichOrder) => {
-  const pokemonOrdenedAsc = dataPokemon.sort((a, b) => a.stats[whichOrder] - b.stats[whichOrder]);
+export const orderBy = (dataPokemon, whichOrder) => {
+  let pokemonOrdenedAsc = [];
+  switch (whichOrder) {
+    case 'max-cp':
+      pokemonOrdenedAsc = dataPokemon.sort((a, b) => a.stats['max-cp'] - b.stats['max-cp']);
+      break;
+    case 'max-hp':
+      pokemonOrdenedAsc = dataPokemon.sort((a, b) => a.stats['max-hp'] - b.stats['max-hp']);
+      break;
+    case 'a-z':
+      pokemonOrdenedAsc = dataPokemon.sort((a, b) => ((a.name <= b.name) ? -1 : 1));
+      break;
+    default:
+      // do nothing
+  }
   return pokemonOrdenedAsc;
-};
-
-export const orderDesc = (dataPokemon, whichOrder) => {
-  const pokemonOrdenedDesc = dataPokemon.sort((a, b) => b.stats[whichOrder] - a.stats[whichOrder]);
-  return pokemonOrdenedDesc;
 };

@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import { dinamicSearchPokemon, filterPokemon } from './data.js';
+import { dinamicSearchPokemon, filterPokemon, orderBy } from './data.js';
 
 import data from './data/pokemon/pokemon.js';
 
@@ -299,7 +299,11 @@ const filterSystem = () => {
   });
 };
 
-const menuSystem = () => {
+const OrderSystem = (data, something) => {
+
+};
+
+const menuSystem = (data) => {
   const filterOptionsContainer = document.getElementById('filter-options-container');
   const buttonOrder = document.getElementsByClassName('btn-menu')[0];
   const buttonFilter = document.getElementsByClassName('btn-menu')[1];
@@ -317,6 +321,10 @@ const menuSystem = () => {
       orderOptions.style.display = 'block';
     }
     orderActive = !orderActive;
+    if (orderActive) {
+      const optionsBtnOrder = document.getElementsByClassName('order-option');
+      optionsBtnOrder[0].addEventListener('click', () => { OrderSystem(data); });
+    }
   });
 
   buttonFilter.addEventListener('click', () => {
@@ -338,3 +346,14 @@ menuSystem();
 filterSystem();
 sliderSystem();
 window.onload = loadPage;
+<<<<<<< HEAD
+=======
+
+const dataOrdened = orderBy(data.pokemon, 'a-z');
+const array = [];
+console.log(dataOrdened);
+for (let i = 0; i < dataOrdened.length; i += 1) {
+  array.push(dataOrdened[i].name);
+}
+console.log(array);
+>>>>>>> 9122f817c87d735b9e22b451a7a5ff6f8c90eda2
