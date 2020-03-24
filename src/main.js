@@ -6,13 +6,22 @@ const filterbox = document.getElementsByTagName('aside')[0];
 const main = document.getElementsByTagName('main')[0];
 // Barra de filtros
 const btnFilter = document.getElementById('filter');
-btnFilter.addEventListener('change', () => {
+btnFilter.addEventListener('click', () => {
   if (btnFilter.checked === true) {
     main.classList.add('adapt');
     filterbox.classList.remove('hide-f');
   } else if (btnFilter.checked === false) {
     main.classList.remove('adapt');
     filterbox.classList.add('hide-f');
+  }
+});
+const btnByType = document.getElementById('filter-by-type');
+const subMenu = document.querySelector('.sub-menu');
+btnByType.addEventListener('click', () => {
+  if (btnByType.checked === true) {
+    subMenu.classList.remove('hide-f');
+  } else if (btnByType.checked === false) {
+    subMenu.classList.add('hide-f');
   }
 });
 // Creando card de pokemon
