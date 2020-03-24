@@ -9,10 +9,35 @@ body{
 a{
     text-decoration: none;
 }
+
+.borrar{
+    display:none !important;
+  }
+  
 .padre{
     display: flex;
     flex-flow: column nowrap;
 }
+.main-container {
+    position: relative;
+    margin-left: 30%;
+    margin-top: 3%;
+    width: 40%;
+    background-color:rgb(213, 223, 241);
+    border: solid 3px blue;
+    border-radius: 20px 20px ;
+    padding: 20px;
+}  
+li{
+    display: inline;
+    padding: 25px;
+  }
+ 
+  ul:nth-child(even){
+    padding: 10px;
+    background-color:rgb(248, 245, 245);
+  }
+
 .margen-interno{
     padding: 0 50px;
 }
@@ -31,6 +56,7 @@ a{
           height: 100px;
           align-items: center;
           border-bottom: 1px solid rgba(255,255,255,.5);
+          list-style: none;
       }
           .logo{
               flex: 1 1 auto;
@@ -76,6 +102,7 @@ a{
         background: #f7f7f7;
         display: flex;
     }
+      
         .articulos {
             background: #f7f7f7;
             flex: 2 1 auto;
@@ -128,8 +155,19 @@ a{
                 padding: 0 10px;
                 letter-spacing: 2px;
             }
+
+        /*.main-container{
+
+        }
+        .mostrar{
+            display: block;
+          }
+            .borrar{
+                display:none;
+                }*/
+                
+                  
         .aside{
-            /*background: #f73f52;*/
             flex: 1 1 auto;
             margin: 10px 5px 10px 0;
         }
@@ -137,7 +175,6 @@ a{
             width: 100%;
         }
             .publicidad {
-               /*background: #ffea85;*/
             }
         h4{
             background: #142850;
@@ -162,6 +199,8 @@ a{
             padding: 0 10px;
             letter-spacing: 2px;
         }
+
+
 @media all and (max-width: 1120px){
     .section{
         flex-direction: column;
