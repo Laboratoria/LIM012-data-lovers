@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import { dinamicSearchPokemon, filterPokemon, orderAsc, orderDesc } from './data.js';
+import { dinamicSearchPokemon, filterPokemon, orderBy } from './data.js';
 
 import data from './data/pokemon/pokemon.js';
 
@@ -303,11 +303,10 @@ filterSystem();
 sliderSystem();
 window.onload = loadPage;
 
-console.log(orderDesc(data.pokemon, 'base-attack'));
-const dataOrdened = orderDesc(data.pokemon, 'base-attack');
+const dataOrdened = orderBy(data.pokemon, 'a-z');
 const array = [];
-
-for (let i = 0; i < dataOrdened.length; i++) {
-  array.push(dataOrdened[i].stats['base-attack']);
+console.log(dataOrdened);
+for (let i = 0; i < dataOrdened.length; i += 1) {
+  array.push(dataOrdened[i].name);
 }
 console.log(array);
