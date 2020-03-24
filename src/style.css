@@ -14,7 +14,7 @@
 }
 
 .center {
-    max-width: 75%;
+    width: 75%;
     margin: auto;
 }
 
@@ -115,7 +115,6 @@ a {
 }
 /* MAIN - SORT */
 .sort-container {
-    display: block;
     text-align: right;    
 }
 .sort-container select {
@@ -253,7 +252,7 @@ h2 {
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.35);
 }
 
-.show{
+.show {
     z-index: 10;
 }
 
@@ -269,50 +268,58 @@ h2 {
     transform: translate(-50%, -50%) scale(1);
 }
 
+.general-container {
+    display: flex;
+    justify-content: space-between;
+}
 /* FILTRADO (HEADER Y MAIN)*/
-#filter:checked ~ .look {
+
+aside {
+    z-index: 20;
+    width: 15%;
+}
+
+#filter:checked ~ .filter-text {
     color: rgba(0,0,0,0.7);
 }
 
 .filter-menu {
     background-image: linear-gradient(to bottom,  #4ab483, #18a18c, #008d8d, #047887, #266378, #266378, #266378);
-    /* padding-top: 0; */
+    box-shadow: 5px 5px 9px rgba(0, 0, 0, 0.15), -3px -3px 10px rgba(0, 0, 0, 0.15);
     display: inline-block;
-    width: 17%;
     color: #FFF;
+    width: 100%;
     font-size: 1.2rem;
     cursor: pointer;
-    transform: translate(0px, -1px);
-    z-index: 100;
+    transform: translate(0px, -68px);
     list-style: none;
     position: sticky;
     top: 108px;
     height: 100vh;
     text-align: left;
-    /* overflow: auto; */
+    overflow: auto;
 }
 
-.filter-menu a {
-    /* position: relative; */
+.li-filter {
     display: block;
     padding: 8px 10px;
     color: #fff;
     text-decoration: none;  
 }
-.filter-menu a:hover {
+.filter-menu li:hover {
     background: rgba(0,0,0,0.3);
 }
 .filter-menu a span {
     margin-left: 30%;
     font-size: 1rem
 }
-.filter-menu ul li:hover ul {
+/* .filter-menu ul li:hover ul {
     display: block;
-    /* position: static; */
-}
+} */
 
 .limits {
-    border: 1px solid #fff;
+    border-top:  1px solid #fff;
+    border-bottom:  1px solid #fff;
     padding: 0,5px;
 }
 
@@ -320,24 +327,10 @@ h2 {
     display: none;
 }
 
-button {
-    display: block;
-    color: #FFF;
-    font-size: 23px;
-    padding: 6px;
-    order: 1;
-    border: transparent;
-    background: transparent;
-    transform: translate(-6px, -6px);
-}
-button:hover {
-    color: rgba(0, 0, 0, 0.7);
-}
-
     /* JS */
 .adapt {
     width: 70%;
-    margin: 0 19%;
+    margin: 0 12% 0 3%;
 }
 
 /* Fin de filtrado */
