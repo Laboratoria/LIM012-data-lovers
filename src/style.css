@@ -91,13 +91,6 @@ aside{
   background:var(--color-blue-2);
   color: white;
 }
-/* #menu-container .menu ul{
-  display: none;
-} */
-/* #ul-order-options{
-  display: none;
-} */
-
 
 #menu-container .menu ul li a{
   background: #424242;
@@ -384,7 +377,9 @@ section{
   .slide{   
     width: 320px;
     margin-left: calc((100% - 320px)/2);
-
+  }
+  #card-container{
+    min-height: 500px;
   }
 }
 
