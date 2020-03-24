@@ -29,10 +29,12 @@
               </a>
             </li>
             <li class="menu-style">
-              <button>
+              <input type="checkbox" id="filter" class="hide-f">
+              
+              <label for="filter" class="hide look">
                 <span class="icon-filter"></span>
-                <span class="hide">Filter</span>
-              </button>
+                <span>Filter</span>
+              </label>
             </li>
             <li class="menu-style">
               <span class="icon-plus"></span>
@@ -45,51 +47,53 @@
           </div>
         </div>
       </nav>
+      <!-- Este es el contenedor que abarcará todos los filtros-->
+      <section id="filter-box" class="hide-f filter-menu">
+        <ul>
+          <li class="li-filter limits"><a href="#" class="category-items" category="all">All pokemons</a></li>
+          <li class="li-filter limits"><a href="#" class="filter-by-type" cattegory="type">Filter by type <span class="icon-arrow-down2"></span></a>
+            <ul class="sub-menu">
+              <ul class="derecho hide-f">
+                <li class="limits" id="gosth"><a href="#">Ghost</a></li>
+                <li class="limits" id="psyqchic"><a href="#">Psychic</a></li>
+                <li class="limits" id="normal"><a href="#">Normal</a></li>
+                <li class="limits" id="fighting"><a href="#">Fighting</a></li>
+                <li class="limits" id="poison"><a href="#">Poison</a></li>
+                <li class="limits" id="bug"><a href="#">Bug</a></li>
+                <li class="limits" id="flying"><a href="#">Flying</a></li>
+                <li class="limits" id="dark"><a href="#">Dark</a></li>
+                <li class="limits" id="fairy"><a href="#">Fairy</a></li>
+              </ul> 
+              <ul class="izquierdo hide-f">
+                <li class="limits" id="water"><a href="#">Water</a></li>
+                <li class="limits" id="fire"><a href="#">Fire</a></li>
+                <li class="limits" id="grass"><a href="#">Grass</a></li>
+                <li class="limits" id="ground"><a href="#">Ground</a></li>
+                <li class="limits" id="rock"><a href="#">Rock</a></li>
+                <li class="limits" id="steel"><a href="#">Steel</a></li>
+                <li class="limits" id="ice"><a href="#">Ice</a></li>
+                <li class="limits" id="electric"><a href="#">Electric</a></li>
+                <li class="limits" id="dragon"><a href="#">Dragon</a></li>
+              </ul>
+            </u>
+          </li>          
+        </ul>
+      </section>
     </header>
+    
     <main> 
-        <!-- Este es el contenedor que abarcará todos los filtros-->
-        <nav id= filter-box class="filter-menu">
-          <ul class="filter-category">
-            <li class="li-filter limites"><a href="#" class="category-items" category="all">All pokémons</a></li>
-            <li class="li-filter limites"><a href="#" class="filter-by-type" cattegory="type">Filter by type <span class="icon-arrow-down2"></span></a>
-              <ul class="sub-menu">
-                <ul class="derecho">
-                  <li class="limites" id="gosth"><a href="#">Ghost</a></li>
-                  <li class="limites" id="psyqchic"><a href="#">Psychic</a></li>
-                  <li class="limites" id="normal"><a href="#">Normal</a></li>
-                  <li class="limites" id="fighting"><a href="#">Fighting</a></li>
-                  <li class="limites" id="poison"><a href="#">Poison</a></li>
-                  <li class="limites" id="bug"><a href="#">Bug</a></li>
-                  <li class="limites" id="flying"><a href="#">Flying</a></li>
-                  <li class="limites" id="dark"><a href="#">Dark</a></li>
-                  <li class="limites" id="fairy"><a href="#">Fairy</a></li>
-                </ul> 
-                <ul class="izquierdo">
-                  <li class="limites" id="water"><a href="#">Water</a></li>
-                  <li class="limites" id="fire"><a href="#">Fire</a></li>
-                  <li class="limites" id="grass"><a href="#">Grass</a></li>
-                  <li class="limites" id="ground"><a href="#">Ground</a></li>
-                  <li class="limites" id="rock"><a href="#">Rock</a></li>
-                  <li class="limites" id="steel"><a href="#">Steel</a></li>
-                  <li class="limites" id="ice"><a href="#">Ice</a></li>
-                  <li class="limites" id="electric"><a href="#">Electric</a></li>
-                  <li class="limites" id="dragon"><a href="#">Dragon</a></li>
-                </ul>
-              </u>
-            </li>          
-          </ul>
-        </nav>  
-      <div class="sort-container center">
+      
+      <section class="sort-container center">
+        <p>Sort</p>
         <select id="selection" value ="Sort" class="margin-bottom">
-          <option value="sort-option" selected disabled>Sort</option>
           <option value="default">Default</option>
           <option value="A-Z">A-Z</option>
           <option value="Z-A">Z-A</option>
         </select>
-      </div>
-
+      </section>
+    
       <section class="content center"></section>
-      
+
       <div class="go-top-container">
         <span class="go-top icon-circle-up"></span>
       </div>

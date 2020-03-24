@@ -1,4 +1,4 @@
-
+/* GENERAL */
 *{
     margin: 0;
     padding: 0;
@@ -14,10 +14,11 @@
 }
 
 .center {
-    max-width: 1000px;
+    max-width: 75%;
     margin: auto;
 }
 
+/* HEADER */
 .head {
     width: 100%;
     height: 160px;
@@ -29,7 +30,7 @@
     z-index: 10;
     box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.35);
 }
-
+/* HEADER - BANNER */
 .banner {
     height: 100px;
     background: url(assets/pokebolas-01.png);
@@ -48,7 +49,7 @@
     font-size: 2.5rem;
     color: #FFF;
 }
-
+/* HEADER - MENU */
 .menu {
     height: 35px;
     border-top: 3px solid #FFF;
@@ -112,12 +113,7 @@ a {
 .menu img:hover {
     background-color: rgba(0, 0, 0, 0.7);
 }
-
-.center {
-    max-width: 1000px;
-    margin: auto;
-}
-
+/* MAIN - SORT */
 .sort-container {
     display: block;
     text-align: right;    
@@ -127,9 +123,12 @@ a {
     border: 2px solid #3B4859;
     background-color: #F2F2F2;
     cursor: pointer;
-    margin-top: 1.5em;
 }
-
+.sort-container p{
+    color: #3B4859;
+    padding-right: 48px;
+}
+/* MAIN - CARDS */
 .cards-distribution {
     display: flex;
     flex-wrap: wrap;
@@ -172,7 +171,7 @@ a {
 .pokemon-number {
     text-align: left;
 }
-
+/* MAIN - SUBITULOS */
 .subtitles {
     /* width: 100%; */
     /* border: 1px solid black; */
@@ -216,7 +215,7 @@ h2 {
     border-style: solid;
     border-color: transparent transparent transparent #F25749;
 }
-
+/* MAIN - BOTÓN ARRIBA */
 .go-top-container {
     position: fixed;
     bottom: 4rem;
@@ -225,7 +224,6 @@ h2 {
     height: 1rem;
     z-index: -3;
 }
-
 
 .got-top span{
     position: absolute;
@@ -270,31 +268,32 @@ h2 {
 .show span{
     transform: translate(-50%, -50%) scale(1);
 }
-.center {
-    max-width: 1000px;
-    margin: auto;
+
+/* FILTRADO (HEADER Y MAIN)*/
+#filter:checked ~ .look {
+    color: rgba(0,0,0,0.7);
 }
-/* Creando estilos para el todo filtrado*/
+
 .filter-menu {
     background-image: linear-gradient(to bottom,  #4ab483, #18a18c, #008d8d, #047887, #266378, #266378, #266378);
-    padding-top: 0;
-    width: 17%;
+    /* padding-top: 0; */
     display: inline-block;
+    width: 17%;
     color: #FFF;
     font-size: 1.2rem;
     cursor: pointer;
-    transform: translate(0px, -68px);
+    transform: translate(0px, -1px);
     z-index: 100;
     list-style: none;
-    position: absolute;
-    top: 209px;
+    position: sticky;
+    top: 108px;
+    height: 100vh;
     text-align: left;
+    /* overflow: auto; */
 }
-.filter-menu ul ul{
-    display: none;
-}
+
 .filter-menu a {
-    position: relative;
+    /* position: relative; */
     display: block;
     padding: 8px 10px;
     color: #fff;
@@ -309,18 +308,18 @@ h2 {
 }
 .filter-menu ul li:hover ul {
     display: block;
-    position: static;
+    /* position: static; */
 }
 
-.limites {
+.limits {
     border: 1px solid #fff;
     padding: 0,5px;
 }
 
-.hide-filter-box{
+.hide-f {
     display: none;
-    opacity: 0;
 }
+
 button {
     display: block;
     color: #FFF;
@@ -333,7 +332,13 @@ button {
 }
 button:hover {
     color: rgba(0, 0, 0, 0.7);
-};
+}
+
+    /* JS */
+.adapt {
+    width: 70%;
+    margin: 0 19%;
+}
 
 /* Fin de filtrado */
 
@@ -355,6 +360,10 @@ button:hover {
 @media (max-width: 600px) {
     .hide {
         display: none;
+    }
+
+    .margin-bottom{
+        margin-bottom: 2em;
     }
 
     .menu-style {
@@ -398,9 +407,9 @@ button:hover {
         border-left: 3px solid #FFF;
     }
 
-    .content {
+    .center {
         width: 90%;
-        display: inline-block;
+        margin: auto;
     }
 
     .pokemon-card {
@@ -479,6 +488,4 @@ button:hover {
         margin-left: 50%;
         font-size: 1rem
     }
-
-    
 }

@@ -1,16 +1,23 @@
 
 import { filterByGeneration, search, order } from './data.js';
 import data from './data/pokemon/pokemon.js';
-// Se crea una variable donde se va a insertar los resultados de las funciones.
+//
 const sectionContent = document.querySelector('.content');
 const filterbox = document.getElementById('filter-box');
-const btnFilter = document.querySelector('button');
-// creando una función que muestre u oculte el contenedor de la barra lateral del filtrado
-btnFilter.addEventListener('click', () => {
-  filterbox.classList.toggle('hide-filter-box');
-  return false;
-}, false);
-
+const sortBox = document.querySelector('.sort-container');
+// Barra de filtros
+const btnFilter = document.getElementById('filter');
+btnFilter.addEventListener('change', () => {
+  if (btnFilter.checked === true) {
+    sortBox.classList.add('adapt');
+    sectionContent.classList.add('adapt');
+    filterbox.classList.remove('hide-f');
+  } else if (btnFilter.checked === false) {
+    sortBox.classList.remove('adapt');
+    sectionContent.classList.remove('adapt');
+    filterbox.classList.add('hide-f');
+  }
+});
 // Creando card de pokemon
 const pokemonCards = (allPokemons) => {
   let dataPokemon = '';
@@ -63,7 +70,7 @@ const allDataByGenerations = () => {
 
 // El evento que llama a la función que inserta todos los pokemones al iniciar la página
 window.addEventListener('load', () => {
-  allDataByGenerations(data.pokemon);
+  allDataByGenerations();
 });
 
 // Guardando input para buscar
@@ -103,7 +110,6 @@ selection.addEventListener('change', () => {
     allDataByGenerations();
   }
 });
-
 // Botón de subir
 window.onscroll = () => {
   if (document.documentElement.scrollTop > 100) {
