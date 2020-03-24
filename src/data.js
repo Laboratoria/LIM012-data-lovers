@@ -1,3 +1,5 @@
+/* eslint-disable id-length */
+/* eslint-disable no-magic-numbers */
 /* eslint-disable no-plusplus */
 // AQUI MANEJAMOS LAS FUNCIONES
 
@@ -6,14 +8,62 @@
 // export const anotherExample = () => 'OMG';
 import data from './data/lol/lol.js';
 
-const allChampion = data.data;
+export const orderChampions = (data, orderBy, orderFrom) => {
 
-export const ordenarAscendente = arrObjetos =>
-  arrObjetos.sort((a, b) => {
-    if (a.name > b.name) {
-      return 1;
+    const datesOfChampions = data;
+
+    if (orderBy === "name" && orderFrom === "az") {   
+
+        datesOfChampions.sort((a, b) => {
+
+            if (a.name > b.name) {
+
+                return 1;
+            
+            }
+            if (a.name < b.name) {
+
+                return -1;
+            
+            }
+            
+            return 0;
+        
+        });
+    
     }
-    return -1;
-  });
+    if (orderBy === "name" && orderFrom === "za") {
 
-export const ordenarDescendente = Object.values(allChampion).reverse();
+        datesOfChampions.sort((a, b) => {
+
+            if (a.name < b.name) {
+
+                return 1;
+            
+            }
+            if (a.name > b.name) {
+
+                return -1;
+            
+            }
+            
+            return 0;
+        
+        });
+    
+    }
+      
+    return datesOfChampions;
+
+};
+
+
+/*export const ordenarAscendente = (arrObjetos) => arrObjetos.sort((a, b) => {
+  if (a.name > b.name) {
+    return 1;
+  }
+  return -1;
+  
+});*/
+
+
