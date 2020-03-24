@@ -10,29 +10,40 @@ a{
     text-decoration: none;
 }
 
-.borrar{
-    display:none !important;
-  }
+
   
 .padre{
     display: flex;
     flex-flow: column nowrap;
 }
+ 
+
+
+.borrar{
+    display:none !important;
+  }
+
+.mostrar{
+  display: block;
+}
+
+
 .main-container {
-    position: relative;
-    margin-left: 30%;
-    margin-top: 3%;
-    width: 40%;
-    background-color:rgb(213, 223, 241);
-    border: solid 3px blue;
-    border-radius: 20px 20px ;
-    padding: 20px;
-}  
-li{
+  position: relative;
+  margin-left: 30%;
+  margin-top: 3%;
+  width: 40%;
+  background-color:rgb(213, 223, 241);
+  border: solid 3px blue;
+  border-radius: 20px 20px ;
+  padding: 20px;
+} 
+
+  li{
     display: inline;
     padding: 25px;
   }
- 
+
   ul:nth-child(even){
     padding: 10px;
     background-color:rgb(248, 245, 245);
@@ -156,15 +167,6 @@ li{
                 letter-spacing: 2px;
             }
 
-        /*.main-container{
-
-        }
-        .mostrar{
-            display: block;
-          }
-            .borrar{
-                display:none;
-                }*/
                 
                   
         .aside{
@@ -234,3 +236,4 @@ li{
           flex-direction: column;
     }
 }
+

@@ -1,4 +1,3 @@
-
 export const athletesView = (data) => {
 // eslint-disable-next-line arrow-body-style
   const paintAthletes = data.atletas.map((a) => {
