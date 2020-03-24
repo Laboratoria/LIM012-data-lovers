@@ -89,6 +89,7 @@ const createPokemonCard = (index, dataPokemon, container) => {
 };
 
 const showCard = (dataPokemon, container) => {
+  container.innerHTML = '';
   for (let i = 0; i < dataPokemon.length; i += 1) {
     createPokemonCard(i, dataPokemon[i], container);
   }
@@ -308,9 +309,18 @@ const menuSystem = (pokemonData) => {
     orderActive = !orderActive;
     if (orderActive) {
       const optionsBtnOrder = document.getElementsByClassName('order-option');
-      optionsBtnOrder[0].addEventListener('click', () => { showCard(orderBy(pokemonData, 'max-cp'), divCardContainer); });
-      optionsBtnOrder[1].addEventListener('click', () => { showCard(orderBy(pokemonData, 'max-hp'), divCardContainer); });
-      optionsBtnOrder[2].addEventListener('click', () => { showCard(orderBy(pokemonData, 'a-z'), divCardContainer); });
+      optionsBtnOrder[0].addEventListener('click', () => {
+        console.log('max-cp');
+        showCard(orderBy(pokemonData, 'max-cp'), divCardContainer);
+      });
+      optionsBtnOrder[1].addEventListener('click', () => {
+        console.log('max-hp');
+        showCard(orderBy(pokemonData, 'max-hp'), divCardContainer);
+      });
+      optionsBtnOrder[2].addEventListener('click', () => {
+        console.log('a-z');
+        showCard(orderBy(pokemonData, 'a-z'), divCardContainer);
+      });
     }
   });
 
