@@ -8,19 +8,18 @@ optionsMenu.forEach((element) => {
     const paintAthletes = athletesView(data);
     if (event.target.id === '1') {
       document.getElementById('root').innerHTML = '';
-      // eslint-disable-next-line no-shadow
-      paintAthletes.forEach((paintAthletes) => {
+      paintAthletes.forEach((element) => {
         const ulAtleta = document.createElement('ul');
         const liNombre = document.createElement('li');
-        const textNombre = document.createTextNode(paintAthletes.nombre);
+        const textNombre = document.createTextNode(element.nombre);
         liNombre.appendChild(textNombre);
         ulAtleta.appendChild(liNombre);
         const liEquipo = document.createElement('li');
-        const textEquipo = document.createTextNode(paintAthletes.equipo);
+        const textEquipo = document.createTextNode(element.equipo);
         liEquipo.appendChild(textEquipo);
         ulAtleta.appendChild(liEquipo);
         const liDeporte = document.createElement('li');
-        const textDeporte = document.createTextNode(paintAthletes.deporte);
+        const textDeporte = document.createTextNode(element.deporte);
         liDeporte.appendChild(textDeporte);
         ulAtleta.appendChild(liDeporte);
         document.getElementById('root').appendChild(ulAtleta);
