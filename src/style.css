@@ -51,21 +51,21 @@ header,footer{
 nav{
   background:var(--color-blue-2);
   top: 0;
-  padding: .5rem;
+  padding: .3rem ;
   height: 50px;
   display: flex;
   position:sticky;
-  z-index: 1;  }
-  nav span{
-    width: auto;
-    padding: .5em .5em .5em 0;
-  }
-    #logo-pokedex{
-      font-size: .8em;
-      color: white;
-      font-weight: bolder;        
-      font-family: 'Rammetto One', cursive;
-    }
+  justify-content: center;
+  z-index: 1;  
+} 
+
+#logo-pokedex{
+  font-weight: bold;
+  padding: .3em .5em ;    
+  font-size: 1em;
+  color: white;
+  font-family: 'Rammetto One', cursive;
+}
 
 aside{
   height: 100%;
@@ -168,7 +168,7 @@ section{
   padding: .3em;
   width: 60%;
   border-radius: 3px;
-  max-width: 500px;
+  max-width: 800px;
   min-width: 100px;
   border:none;
   outline: none;
@@ -232,7 +232,7 @@ section{
     display: grid;
     grid-template-columns: auto;
     width: 100%;
-    height: 750px;
+    height: auto;
   }
   .title{
     padding: 1em;
@@ -416,7 +416,10 @@ section{
 
 
   
-  @media screen and (min-width: 1024px) {        
+  @media screen and (min-width: 1024px) {    
+    #logo-pokedex{
+      padding-right: 8em;
+    }    
     section{
       display: grid;
       grid-template-areas:"menu-container  top  top"
@@ -432,17 +435,21 @@ section{
       width: 100%;
       min-width: 300px;
       background: var(--color-blue-3);
-      height: 100%;
+      height: auto;
     }    
       #btn-close {
         display: none;
       }
     
-    .top-pagination{
+    #top-pagination{
       grid-area: top;
       background: #fff;
       display: inline;
       padding: 1em;
+    }
+    #top-pagination a{
+      padding: 1em;
+      font-size: 1em;
     }
       .pagination-button{        
         background: var(--color-blue-3);
@@ -455,7 +462,7 @@ section{
     }
     main{
       grid-area: main;
-      height: 100%;
+      height: auto;
       width: auto;
       max-width: 840px;
       background: #749b94;
