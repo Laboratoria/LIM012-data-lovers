@@ -1,8 +1,10 @@
 /* eslint-disable indent */
 // import { example, anotherExample } from '../src/data.js';
-import { crearTemplate } from '../src/data.js';
 
-import data from '../src/data/lol/lol.js';
+
+//import { crearTemplate } from '../src/data.js';
+
+//import data from '../src/data/lol/lol.js';
 
 /* const allChampion = data.data;
 const arrObjetos = [Object.values(allChampion)];

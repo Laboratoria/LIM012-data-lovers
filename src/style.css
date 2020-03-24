@@ -1,70 +1,119 @@
-/**{
-    box-sizing: border-box;
-}*/
-
-
-@media(min-width:768px){
-    .flex-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
-    }
-    
-    .class-div {
-        display: inline-block;
-    }
-    
-
-    .class-img {
-        margin: 1em 1em 0em;
-        /*padding-top: 2em;*/
-        width: 28em;
-        height: 18em;
-    }
-
-    .class-name {
-        font-size: x-large;
-        font-family: 'Acme', sans-serif;    
-        font-weight: bolder;
-        text-align: center;
-        background-color: #C4C4C4;
-        margin: -0.15em 0.65em 1em;     
-        padding: 0.52em;            
-    }
-
-    .section-header{
-        display: block;
-        background: #292929;
-
-    }
-
-    .header {        
-        top: 0;
-        width: 80em;
-        padding: 1em;
-        display: inline-block;
-    }
-
-    .logo {
-        display: inline-block;
-        padding: 1em;
-        width: 15em;
-    }
-
-    .class-nav {
-        display: flex;
-        justify-content: space-evenly;
-        background: #292929;
-    }
-    
-    .footer {
-    background: #292929;
-    color: #fff;
-    text-align: center;    
-    position: static;
-    bottom: 0;
-    width: 100%; 
-    font-family: inherit; 
-    }
+/*definiendo nuestro paquete de colores,en css se pueden declarar variables*/
+:root {
+  --color-black: #000;
+  --color-nav-dark: #2d2e2e;
+  --color-main: #f2efef;
+  --color-footer: #d0ff00;
+  --color-white: #fff;
+  --color-borde: #937341;
 }
 
+/*valores por defecto*/
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+}
+
+/*contenedor general*/
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /*altura definida*/
+  font-family: Arial;
+}
+
+.logo {
+  /*background-color: var(--color-black);*/
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  display: flex;
+  flex-flow: column nowrap;
+  height: 120px; /*observacion*/
+}
+.logo {
+}
+
+.main-nav {
+  background-color: var(--color-main);
+}
+
+.nav-container {
+  display: flex;
+  background-color: var(--color-black);
+  margin-top: 08px; /*para poder separar la lista del header*/
+}
+
+.nav-container_item {
+  flex-grow: 1;
+  text-align: center;
+  line-height: 2.5;
+  border: 1px solid var(--color-borde);
+}
+
+.nav-container_item:hover {
+  background-color: var(--color-nav-dark);
+}
+
+.nav-container_link {
+  color: var(--color-borde);
+  display: block; /*es necesario para q el mouse al estar no solo en el nombre sino en su caje muestre el link abajo*/
+}
+/*@media screen and (min-width: 768px) {
+  .nav-container {
+    display: flex;
+  }
+  .nav-container_item {
+    flex-grow: 1;
+  }
+}*/
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /*sirve para el crecimiento de las cajas*/
+  background-color: var(--color-main);
+}
+
+/*.main-container_section {
+  background-color: var(--color-section);
+  flex-grow: 50;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-white);
+}*/
+
+.class-div {
+  display: inline-block;
+}
+
+.class-img {
+  margin: 1em 1em 0em;
+  /*padding-top: 2em;*/
+  width: 28em;
+  height: 18em;
+}
+
+.class-name {
+  font-size: x-large;
+  font-family: 'Acme', sans-serif;
+  font-weight: bolder;
+  text-align: center;
+  background-color: #c4c4c4;
+  margin: -0.15em 0.65em 1em;
+  padding: 0.52em;
+}
+
+.main-footer {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  text-align: center;
+  margin-top: auto;
+  position: static;
+  bottom: 0;
+  width: 100%;
+  font-family: inherit;
+}
