@@ -2,18 +2,16 @@ import { filterByGeneration, search, order } from './data.js';
 import data from './data/pokemon/pokemon.js';
 //
 const sectionContent = document.querySelector('.content');
-const filterbox = document.getElementById('filter-box');
-const sortBox = document.querySelector('.sort-container');
+const filterbox = document.getElementsByTagName('aside')[0];
+const main = document.getElementsByTagName('main')[0];
 // Barra de filtros
 const btnFilter = document.getElementById('filter');
 btnFilter.addEventListener('change', () => {
   if (btnFilter.checked === true) {
-    sortBox.classList.add('adapt');
-    sectionContent.classList.add('adapt');
+    main.classList.add('adapt');
     filterbox.classList.remove('hide-f');
   } else if (btnFilter.checked === false) {
-    sortBox.classList.remove('adapt');
-    sectionContent.classList.remove('adapt');
+    main.classList.remove('adapt');
     filterbox.classList.add('hide-f');
   }
 });
