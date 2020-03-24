@@ -5,6 +5,7 @@ import { example } from './data.js';
 
 //CONSOLE LOGS DE PRUEBA
 //esta es la rama de Isabela
+//esta es nuestra rama
 let stringTemplate = '';
 const container=document.getElementById('container');
 
