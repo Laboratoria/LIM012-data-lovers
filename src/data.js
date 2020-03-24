@@ -1,5 +1,4 @@
 
-
 export const mostrarAtletasConSuDeporte = (data) => {
   // eslint-disable-next-line arrow-body-style
   const atletasConDeporte = data.atletas.map((a) => {
