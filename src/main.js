@@ -113,7 +113,6 @@ const searchPokemon = () => {
   }
 };
 
-
 const createTypeButton = (type) => {
   const buttonPokemonType = document.createElement('button');
   buttonPokemonType.className = 'pokemon-type';
