@@ -10,14 +10,41 @@ img {
   height: 276px;
 }
 
+.borrar{
+  display:none;
+}
+
+.mostrar{
+  display: block;
+}
+
+th{
+  padding: 20px;
+  
+}
+
 .menu{
   position: relative;
+  list-style: none;
+  padding: 0;
   width: 80%;
-  height: 50px;
+  height: 70px;
+  margin-top: 0%;
   margin-left: 10%;
-  background-color:#FF5050;
-     
+  background-color:#f36666;  
 }
+
+.menu li a {
+  position: relative;
+  padding: 4%;
+  text-decoration: none;
+  color: white;
+  
+}
+/*
+.menu li a:hover{
+  background-color: darkgray;
+}*/
 
 .main-container {
   position: relative;
@@ -30,15 +57,8 @@ img {
   padding: 20px;
 } 
 
-th {
-  position: relative;
-  margin-left: 40%;
-}             
-
   li{
-    width:100%;
     display: inline;
-    text-align:center;
     padding: 25px;
   }
 
@@ -46,10 +66,11 @@ th {
     padding: 10px;
     background-color:rgb(248, 245, 245);
   }
-  ul:hover{
+
+  /*ul:hover{
     background-color: rgb(248, 183, 183);
     color:white;
-  }
+  }*/
  
 p1 {
    position: absolute;
