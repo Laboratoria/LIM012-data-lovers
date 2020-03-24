@@ -32,7 +32,8 @@ let isContainerSection = false;
 const positions = [0, 0, 0];
 let typeChoosed = '';
 
-// sliderSystem();
+const divCardContainer = document.getElementById('card-container');
+
 
 const showMessageOfSearch = (container) => {
   container.innerHTML = '<p>Lo sentimos, no encontramos resultados que coincidan con su búsqueda</p>';
@@ -94,22 +95,21 @@ const showCard = (dataPokemon, container) => {
 };
 
 const searchPokemon = () => {
-  const cardContainer = document.getElementById('card-container');
   if (isContainerSection === true) {
     console.log('modo busqueda de pokemones');
     document.getElementById('card-container-section').style.display = 'none';
     isContainerSection = false;
-    cardContainer.style.display = 'flex';
+    divCardContainer.style.display = 'flex';
   }
-  cardContainer.innerHTML = '';
+  divCardContainer.innerHTML = '';
   const wordIntroduced = document.getElementById('input-bar-search').value;
   const numberOfResult = dinamicSearchPokemon(wordIntroduced).length;
   if (numberOfResult > 0) {
-    showCard(dinamicSearchPokemon(wordIntroduced), document.getElementById('card-container'));
+    showCard(dinamicSearchPokemon(wordIntroduced), divCardContainer);
   } else if (numberOfResult === 0 && wordIntroduced.length !== 0) {
-    showMessageOfSearch(cardContainer);
+    showMessageOfSearch(divCardContainer);
   } else {
-    showCard(data.pokemon, document.getElementById('card-container'));
+    showCard(data.pokemon, divCardContainer);
   }
 };
 
@@ -129,13 +129,10 @@ const createTypeButton = (type) => {
 
 const pokemonTypes = Object.keys(typeColors);
 
-const putPokemonTypesOnLateralMenu = (aside) => {
-  const typesConteiner = document.createElement('div');
-  typesConteiner.id = 'types-container';
+const putPokemonTypesOnMenu = (conteiner) => {
   for (let key = 0; key < pokemonTypes.length; key += 1) {
     typesConteiner.appendChild(createTypeButton(pokemonTypes[key]));
   }
-  aside.appendChild(typesConteiner);
 };
 
 // let showLateralMenu = false;
@@ -164,7 +161,6 @@ const onlyText = (e) => {
 };
 
 const showAllByFilter = (whichFilter) => {
-  const divCardContainer = document.getElementById('card-container');
   divCardContainer.style.display = 'flex';
   document.getElementById('card-container-section').style.display = 'none';
   isContainerSection = false;
@@ -194,14 +190,6 @@ showMore[0].addEventListener('click', () => { showAllByFilter('type'); });
 showMore[1].addEventListener('click', () => { showAllByFilter('resistant'); });
 showMore[2].addEventListener('click', () => { showAllByFilter('weaknesses'); });
 
-const loadPage = () => {
-  const asideLateralMenu = document.getElementsByTagName('aside')[0];
-  putPokemonTypesOnLateralMenu(asideLateralMenu);
-  const wordIntroduced = document.getElementById('input-bar-search').value;
-  if (wordIntroduced.length === 0 && isContainerSection === false) {
-    showCard(data.pokemon, document.getElementById('card-container'));
-  }
-};
 
 const putCardsOnSlider = (items, container) => {
   for (let i = 0; i < items.length; i += 1) {
@@ -214,7 +202,7 @@ const showPokemonInSections = () => {
   if (isContainerSection === false) {
     isContainerSection = true;
     console.log('modo filtro por seciciones');
-    document.getElementById('card-container').style.display = 'none';
+    divCardContainer.style.display = 'none';
     divContainerSections.style.display = 'block';
   }
   const divSections = divContainerSections.getElementsByClassName('slide-cards');
@@ -285,27 +273,62 @@ const filterSystem = () => {
   });
 };
 
-const inputBarSearch = document.getElementById('input-bar-search');
-inputBarSearch.addEventListener('keyup', searchPokemon);
-inputBarSearch.addEventListener('keypress', onlyText, false);
+// eslint-disable-next-line no-shadow
+const menuSystem = (pokemonData) => {
+  const filterOptionsContainer = document.getElementById('filter-options-container');
+  const buttonOrder = document.getElementsByClassName('btn-menu')[0];
+  const buttonFilter = document.getElementsByClassName('btn-menu')[1];
+  // const buttonCalculator = document.getElementsByClassName('btn-menu')[2];
+  let orderActive = false;
+  let filterActive = false;
 
-const buttonFilterPokemon = document.getElementsByClassName('button-filter')[0];
-const buttonOrderPokemon = document.getElementsByClassName('button-filter')[1];
-const buttonCloseLateralMenu = document.getElementById('btn-close');
+  putPokemonTypesOnMenu(filterOptionsContainer);
 
-buttonFilterPokemon.addEventListener('click', showLateralMenu);
-buttonOrderPokemon.addEventListener('click', showLateralMenu);
-buttonCloseLateralMenu.addEventListener('click', hideLateralMenu);
-buttonCloseLateralMenu.addEventListener('click', hideLateralMenu);
+  buttonOrder.addEventListener('click', () => {
+    const orderOptions = document.getElementById('ul-order-options');
+    if (orderActive) {
+      orderOptions.style.display = 'none';
+    } else {
+      orderOptions.style.display = 'block';
+    }
+    orderActive = !orderActive;
+    if (orderActive) {
+      const optionsBtnOrder = document.getElementsByClassName('order-option');
+      optionsBtnOrder[0].addEventListener('click', () => { showCard(orderBy(pokemonData, 'max-cp'), divCardContainer); });
+      optionsBtnOrder[1].addEventListener('click', () => { showCard(orderBy(pokemonData, 'max-hp'), divCardContainer); });
+      optionsBtnOrder[2].addEventListener('click', () => { showCard(orderBy(pokemonData, 'a-z'), divCardContainer); });
+    }
+  });
 
+  buttonFilter.addEventListener('click', () => {
+    // const filterOptions = document.getElementById('filter-options-container');
+    if (filterActive) {
+      filterOptionsContainer.style.display = 'none';
+    } else {
+      filterOptionsContainer.style.display = 'block';
+    }
+    filterActive = !filterActive;
+  });
+};
+
+const loadPage = () => {
+  const currentData = data.pokemon;
+  const wordIntroduced = document.getElementById('input-bar-search').value;
+  menuSystem(currentData);
+  if (wordIntroduced.length === 0 && isContainerSection === false) {
+    showCard(currentData, divCardContainer);
+  }
+};
+
+//menuSystem();
 filterSystem();
 sliderSystem();
 window.onload = loadPage;
 
-const dataOrdened = orderBy(data.pokemon, 'a-z');
-const array = [];
-console.log(dataOrdened);
-for (let i = 0; i < dataOrdened.length; i += 1) {
-  array.push(dataOrdened[i].name);
-}
-console.log(array);
+// const dataOrdened = orderBy(data.pokemon, 'a-z');
+// const array = [];
+// console.log(dataOrdened);
+// for (let i = 0; i < dataOrdened.length; i += 1) {
+//   array.push(dataOrdened[i].name);
+// }
+// console.log(array);

@@ -18,11 +18,13 @@
       </header>
 
       <nav id="navbar">
-        <span id="logo-pokedex">POKEDEX</span>
-        <input type="text" id="input-bar-search" placeholder="Nombre de Pókemon">
-        <div id = "icon-bar-search">
-          <img src="images/buscar.png" alt="" id="img-icon-bar-search">
-        </div>
+        <!-- <div id="container-bar-search"> -->
+          <span id="logo-pokedex">POKEDEX</span>
+          <input type="text" id="input-bar-search" placeholder="Nombre de Pókemon">
+          <div id = "icon-bar-search">
+            <img src="images/buscar.png" alt="" id="img-icon-bar-search">
+          </div>
+        <!-- </div> -->
       </nav>
 
       <div class="top-filter">
@@ -31,7 +33,7 @@
       </div>
 
       <section id="section-conteiner">
-        <div class="top-pagination">          
+        <div id="top-pagination">          
         </div>
 
         <aside id="menu-container">
@@ -39,9 +41,9 @@
           <ul class="menu">
             <li><a href="#" class="btn-menu">Ordenar por</a>
               <ul id="ul-order-options" class="no-display">
-                <li><a href="#">Puntos de ataque</a></li>
-                <li><a href="#">Puntos de salud</a></li>
-                <li><a href="#">Alfabeticamente</a></li>
+                <li><a class = "order-option" href="#">Puntos de ataque</a></li>
+                <li><a class = "order-option" href="#">Puntos de salud</a></li>
+                <li><a class = "order-option" href="#">Alfabeticamente</a></li>
               </ul>
             </li>
 
@@ -92,7 +94,7 @@
 
                 <button class="ctrl-btn ctrl-prev" value="resistant" >❮</button> 
                 <button class="ctrl-btn ctrl-next" value="resistant">❯</button>
-                
+
               </div>
             </div>
             
