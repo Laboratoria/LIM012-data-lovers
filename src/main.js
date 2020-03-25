@@ -25,10 +25,6 @@ optionsMenu.forEach((element) => {
         ulAtleta.appendChild(liDeporte);
         document.getElementById('root').appendChild(ulAtleta);
       });
-<<<<<<< HEAD
-   }
-=======
     }
->>>>>>> 848aad6a4bf931e2afe38b4b9060c27fd148378c
   });
 });
