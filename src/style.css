@@ -203,6 +203,7 @@ a {
 }
 
 h2 {
+    font-size: 1.3em;
     color: #ffffff;
     font-family: 'Rubik', sans-serif;
     margin-left: 10px;
@@ -228,22 +229,13 @@ h2 {
     z-index: -3;
 }
 
-.got-top span{
-    position: absolute;
-    font-size: 1.7rem;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0);
-    transition: .3s;
-}
-
 .go-top {
     display: inline-block;
     position: relative;
-    width: 0rem;
-    height: 0rem;
-    font-size: 60px;
-    border-radius: 60%;
+    font-size: 3.7rem;
+    text-align: center;
+    line-height: 3.7rem;
+    border-radius: 50%;
     color:transparent;
     background: linear-gradient(to bottom, #266378, #047887, #008d8d, #18a18c, #4ab483);
     cursor: pointer;
@@ -267,8 +259,20 @@ h2 {
     z-index: 11;
     transform: translate(-50%, -50%) scale(1);
 }
-.show span{
-    transform: translate(-50%, -50%) scale(1);
+
+@keyframes popup {
+    0%{
+        width: 0rem;
+        height: 0rem;
+    }
+    50%{
+        width: 2rem;
+        height: 2rem;
+    }
+    100%{
+        width: 3.7rem;
+        height: 3.7rem;
+    }
 }
 
 /* FILTRADO (HEADER Y MAIN)*/
@@ -333,21 +337,6 @@ aside {
 }
 
 /* Fin de filtrado */
-
-@keyframes popup {
-    0%{
-        width: 0rem;
-        height: 0rem;
-    }
-    50%{
-        width: 2rem;
-        height: 2rem;
-    }
-    100%{
-        width: 3.7rem;
-        height: 3.7rem;
-    }
-}
 
 @media (max-width: 600px) {
     .hide {

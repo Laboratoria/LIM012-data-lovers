@@ -43,7 +43,6 @@ const pokemonCards = (allPokemons) => {
   });
   return dataPokemon;
 };
-// creado para verificar que se guarden los cambios
 
 // Creando subtítulo de Generación
 const generation = (geNumber, geName) => {
