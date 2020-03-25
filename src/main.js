@@ -1,5 +1,8 @@
-import { example } from './data.js';
-import  from './data/atletas/atletas.js';
+//import { example } from './data.js';
+/*console.log(example, data);*/
+//import dataAtletas from './data/atletas/atletas.js'; 
+import dataAtletas from './data/atletas/atletas.js';
+console.log(dataAtletas)
 
 
-console.log(example, data);
+//document.getElementById('app').innerHTML = `hola`
