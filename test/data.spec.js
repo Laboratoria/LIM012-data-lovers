@@ -1,25 +1,30 @@
-/* eslint-disable indent */
-// import { example, anotherExample } from '../src/data.js';
+import { example, anotherExample, orderChampions } from '../src/data';
+import data from '../src/data/lol/lol';
 
+const allChampion = data.data;
+const arrObjetos = Object.values(allChampion);
 
-//import { crearTemplate } from '../src/data.js';
-
-//import data from '../src/data/lol/lol.js';
-
-/* const allChampion = data.data;
-const arrObjetos = [Object.values(allChampion)];
-
-describe('crearTemplate', () => {
+describe('orderChampions', () => {
   it('is a function', () => {
-    expect(typeof crearTemplate).toBe('function');
+    expect(typeof orderChampions).toBe('function');
+  });
+  it('returns `datesOfChampions`', () => {
+    expect(orderChampions(orderChampions(arrObjetos, 'Aatrox', 'Zyra', 'Taric', 'az'))).toBe('Aatrox', 'Taric', 'Zyra');
+  });
+});
+
+describe('example', () => {
+  it('is a function', () => {
+    expect(typeof example).toBe('function');
   });
 
-  it('returns stringTemplate', () => {
-    expect(crearTemplate(arrObjetos)).toBe([arrObjetos]);
+  it('returns `example`', () => {
+    expect(example()).toBe('example');
   });
-}); */
+});
 
-/* describe('anotherExample', () => {
+
+describe('anotherExample', () => {
   it('is a function', () => {
     expect(typeof anotherExample).toBe('function');
   });
@@ -27,4 +32,4 @@ describe('crearTemplate', () => {
   it('returns `anotherExample`', () => {
     expect(anotherExample()).toBe('OMG');
   });
-}); */
+});

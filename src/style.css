@@ -34,6 +34,7 @@ body {
   height: 120px; /*observacion*/
 }
 .logo {
+  margin: 0;
 }
 
 .main-nav {

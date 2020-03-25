@@ -1,90 +1,70 @@
-/* eslint-disable max-len */
+/* eslint-disable import/extensions */
 //  AQUI MANEJAMOS EL DOOM
 
-// import { example } from './data.js';
-import data from "./data/lol/lol.js";
-import {
-    orderChampions
-} from "./data.js";
+// import { example } from './data';
+import { orderChampions } from './data.js';
+import data from './data/lol/lol.js';
 
-import {ordenarAscendente, ordenarDescendente} from "./data.js";
-
-// import { crearTemplate } from './data.js';
 
 // import data from './data/atletas/atletas.js';
-
 // import data from './data/pokemon/pokemon.js';
-// console.log(example,data);
-// console.log(data.data);
 
-const allChampion = data.data,
+// console.log(example, data);
 
-    arrObjetos = Object.values(allChampion),
-    // console.log(arrObjetos);
-    /*const contenedor = document.getElementById("contenedor"),*/
+const allChampion = data.data;
 
-    crearTemplate = (data) => {
- 
-        document.getElementById("box").innerHTML = "";
-        const all = [];
+const arrObjetos = Object.values(allChampion);
 
-        for (let i = 0; i < data.length; i++) {
+/* const contenedor = document.getElementById("contenedor"), */
 
-            all.push(`
-    <div class="class-div">  
-    <img src="${data[i].splash}" class="class-img" alt="splashChampion">
-    <p class="class-name">${data[i].name}</p>
-    </div>`);
-        
-        }
-        
-        return all;
-    
-    };
+const crearTemplate = (arr) => {
+  document.getElementById('box').innerHTML = '';
+  const all = [];
+  // eslint-disable-next-line no-plusplus
+  for (let i = 0; i < arr.length; i++) {
+    all.push(`
+      <div class="class-div">  
+        <img src="${arr[i].splash}" class="class-img" alt="Imagen de ${arr[i].name}">
+        <p class="class-name">${arr[i].name}</p>
+      </div>`);
+  }
+  return all.join(' ');
+};
 
-document.getElementById("box").innerHTML = crearTemplate(arrObjetos);
+document.getElementById('box').innerHTML = crearTemplate(arrObjetos);
 
+document.getElementById('order').addEventListener('change', () => {
+  document.getElementById('box').innerHTML = crearTemplate(orderChampions(arrObjetos, 'name', document.getElementById('order').value));
+  // console.log(orderChampions(arrObjetos, 'name', document.getElementById('order').value));
+});
 
-document.getElementById("order").addEventListener(
-    "change", 
-    () => {
+/* crearTemplate = (arr) => {
 
-        document.getElementById("box").innerHTML = crearTemplate(orderChampions(
-            arrObjetos, 
-            "name",
-            document.getElementById("order").value
-        )); 
+    let stringTemplate = "";
 
-    }
-);
+    for (let i = 0; i < arr.length; i++) {
 
-/*crearTemplate = (arr) => {
+        for (let j = 0; j < arr[i].length; j++) {
 
-        let stringTemplate = "";
-
-        for (let i = 0; i < arr.length; i++) {
-
-            for (let j = 0; j < arr[i].length; j++) {
-
-                stringTemplate += `
-                <div class="class-div">     
+            stringTemplate += `
+                <div class="class-div">
                 <img class="class-img" alt="Imagen de ${arr[i][j].id}" src=${arr[i][j].splash}>
                 <p class="class-name">${arr[i][j].id}</p>
                 </div>`;
-                // console.log(arr[0][0].id);
-                       
-            }
-        
-            return stringTemplate;
-    
+            // console.log(arr[0][0].id);
+
         }
-    
+
         return stringTemplate;
 
-    };
+    }
+
+    return stringTemplate;
+
+};
 
 window.onload = () => {
 
     contenedor.innerHTML = crearTemplate(arrObjetos);
 
-};*/
+}; */
