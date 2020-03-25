@@ -4,25 +4,42 @@
     <meta charset="utf-8">
     <title>Data Lovers</title>
     <link rel="stylesheet" href="style.css" />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
-<<<<<<< HEAD
+   <!--  <header>
+      <div class="menu-bar">
+        <img src="img/icon-menu.png" alt="icon-menu" id="icon-menu1" class="icon-menu">
+      </div>
+      <nav >
+        <ul id="list">
+          <li id="home" href="#"> Home </li>
+          <li id="pokedex" href="#"> Pokedex </li>
+          <li id="candiesCalc" href="#"> Candies Calc </li>
+          <li id="compare" href="#"> Compare </li>
+        </ul>
+      </nav>
+    </header> -->
     <header>
-      <nav>
+      <input type="checkbox" id="btn-menu">
+      <label class="fas fa-bars" for="btn-menu" id="icon"></label>
+      <nav class="menu">
         <ul>
-          <li id="home"> Home </li>
-          <li id="pokedex"> Pokedex </li>
-          <li id="candiesCalc"> Candies Calc </li>
-          <li id="compare"> Compare </li>
+          <li id="home" href="#" > Home </li>
+          <li id="pokedex" href="#"> Pokedex </li>
+          <li id="candiesCalc" href="#"> Candies Calc </li>
+          <li id="compare" href="#"> Compare </li>
         </ul>
       </nav>
     </header>
     <main>
       <div id="screen1" class="active">
-        <img src="img/pockLog.png" alt="logo" class="logo">
+        <img src="img/pockLog.png" alt="logo">
         <div class="inputCont" >
           <input type="text" name="" id="inputSearch"  placeholder="Find your pokemon here!">
-          <img id="searchIcon" src="img\lupita.png"   alt="lensIcon">  
+          <img id="searchIcon" src="img\lupitaa.png"   alt="lensIcon">
         </div>
       </div>
       <div id="screen2" class="screen inactive">
@@ -30,18 +47,18 @@
       <div id="screen3" class="screen inactive">
         <p class="namePok">Choose one or both!</p>
         <div id="Buttons" class="buttons">
-          <select id="selectOrder" onchange="">
+          <select id="selectOrder">
             <option value="">Order by</option>
-            <option value="AZ">A-Z</option>
-            <option value="ZA">Z-A</option>
+            <option value="asc">A-Z</option>
+            <option value="desc">Z-A</option>
             <option value="numUp">Number</option>
-          </select>  
+          </select>
           <select id="selectType">
             <option value="">Types</option>
             <option value="Grass">Grass</option>
             <option value= "Poison">Poison</option>
             <option value="Fire">Fire</option>
-            <option value= "Water">Water/option>
+            <option value= "Water">Water</option>
             <option value= "Normal">Ground</option>
             <option value= "Fighting">Fighting</option>
             <option value= "Rock">Rock</option>
@@ -52,23 +69,30 @@
             <option value= "Fairy">Fairy</option>
             <option value= "Psychic">Psychic</option>
             <option value="Ghost">Ghost </option>
-            <option value= "Dragon">Drago</option>
-        </select>
-        </div> 
-        <div id="s3default" class="">
+            <option value= "Dragon">Dragon</option>
+          </select>
         </div>
-        <div id="s3orderAZ" class="">
-          <p>soyOrderAZenhtml</p>
-        </div>
-        <div id="s3orderZA" class="">
-          <!-- <p>soyOrderZAenhtml</p> -->
-        </div>
-        <div id="s3type" class="">
-          <!-- <p>soyTypeenhtml</p> -->
+        <div id="s3data" class="">
         </div>
       </div>
       <div id="screen4" class="screen inactive">
-        <p>holaaaa</p>
+        <!-- Caluculo probando kathy 
+        <div class="inputCont" >
+          <input type="text" name="" id="inputBuscador"  placeholder="Pokemon">
+          <input type="number" name="" id="numero"  placeholder="Candies you've got">
+          <button id="btn-buscador2">CALCULAR</button>
+        </div>
+        -->
+        <div id="compareBut" class="buttons">
+          <section class="inputCont" >
+            <input type="text" name="inputSearch"  placeholder="Find your pokemon here!">
+            <img name="searchIconComp" src="img\lupitaa.png"   alt="lensIcon">
+          </section>
+          <section class="inputCont" >
+            <input type="text" name="inputSearch"  placeholder="Find your pokemon here!">
+            <img name="searchIconC" src="img\lupitaa.png"   alt="lensIcon">
+          </section>
+        </div>
       </div>
       <!-- <a name="s4"><div id="screen4" class="inactive">
         <p>holaaaa</p>
@@ -78,9 +102,7 @@
    <footer>
     <span>© 2020 Pokemon, Inc. All rights reserved.</span>
    </footer>
-=======
-    <div id="root"></div>
->>>>>>> 7c8a4025034b267d72e9c489da47513f349cef2f
     <script src="main.js" type="module"></script>
+    <script src="https://kit.fontawesome.com/c4434d88fb.js" crossorigin="anonymous"></script>
   </body>
 </html>
