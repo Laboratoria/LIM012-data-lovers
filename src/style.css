@@ -16,6 +16,7 @@ header {
     position: fixed;
     width: 100%;
     top: 0;
+    z-index: 0;/*kathy probando*/
     /* display: flex;
     flex-direction: row; */
 }
@@ -50,10 +51,14 @@ li{
     display: none;
 }
 main{
-    background-color:blueviolet;
+    /* background-color:blueviolet; */
     padding:2%;
     /* align-items: center; */
 }
+/* .screen{
+    padding-top: 50%;
+
+} */
 #screen1{
     /* background-color: rgba(0, 255, 255, 0.472); */
     display: flex;
@@ -112,7 +117,7 @@ main{
     /* background-color: black ; */
     backdrop-filter: brightness(0.4);
     margin: 0%;
-    margin-top: 12%; /* para que aparezca debajo del menu */
+    margin-top: 5%; /* para que aparezca debajo del menu */
     /* display:flex; */
 }
 .screen{
@@ -202,16 +207,21 @@ el css del que muestra toda la data */
     max-width: 50%;
     display: flex;
     flex-wrap: nowrap;
+    /* flex-direction: row; */ /* probando kathy*/
 }
+
 .s3{
-    flex-flow: row wrap;
     display: flex;
+    flex-flow: row wrap;
+    /* width: 20%; */ /* probando kathy */
     /* flex-wrap: wrap; */
     /* flex-direction: column; */
 }
 #screen3{
     width: 100%;
     margin-top: 3em;
+    padding: 3em;
+    /* width: 20%; */ /* probando kathy */
 }
 #screen4{
     background-color: blue;
@@ -256,30 +266,47 @@ footer{
         flex-direction:column ; */
         /* justify-content: space-around; */
         background-attachment: fixed;
+
         /* background-repeat: no-repeat; */
         color: #FFFFFF;
     }
 
       header{
-          background-color: transparent;
+          position: relative;
+          background-color: tomato;
+          /* z-index: 5; */
       }
       #icon{
           display: block;
           cursor: pointer;
+
+      }
+      .screen{
+
       }
       header label {
-          display: block;
+          display: block ;
           font-size: 28px;
           margin-left: 4%;
           margin-top: 6%;
+
+      }
+      main{
+          position: relative;
+          background-color: teal;
+          margin-top: -120%;
+          z-index: 0;
       }
       .menu {
-          position: absolute;
-          top: 62px;
+          position: relative;
+          top: 10%;
           left:0;
           width: 100%;
           transition: all 1s;
           transform: translateX(-100%);
+          z-index: 99;
+
+
       }
       .menu ul {
           display: block;
@@ -341,7 +368,7 @@ footer{
         margin-bottom: 5%;
         margin-top: 20%;
     }
-    .inputCont{
+    .inputCont {
         background-color: rgba(104, 219, 104, 0.486);
         /* display:flex;
         flex-wrap: nowrap; */

@@ -18,7 +18,6 @@ export const showInfo = (pokes) => {
                         <p>Type:<span>${poke.type}</span></p>
                         <p>Height:<span>${poke.size.height}</span></p>
                         <p>Weight:<span>${poke.size.weight}</span></p>
-                        <p>Special Attack:<span>${poke['special-attack']}</span></p>
                     </div>
                     <div id="weakRes" class="infoCont data">
                         <p>Weakness:<span>${poke.weaknesses}</span></p>
@@ -36,14 +35,14 @@ export const showInfo = (pokes) => {
 export const showAllData = (data) => {
   return `
         <div class="s3">
-        <div id="imgCont" class="item">
+          <div id="imgCont" class="item">
             <span class="circle">${data.num}</span>
             <img src="${data.img}" alt="pokemonImage">
             <span> ${data.name}</span>
-        </div>
-        <span class="lor">nel</span>
-        <div class="lor">gel</div>
-        </div>
+          </div>
+          <span class="lor">nel</span>
+          <div class="lor">gel</div>
+          </div>
         `;
 };
 // Ordena Alfabeticamente
@@ -52,13 +51,49 @@ export const orderBy = (poke, order) => {
   arrSort = poke.sort((a, b) => {
     const nameA = a.name;
     const nameB = b.name;
-    /* let numA=a.num;
-        let numB=b.num; */
+    const numA = a.num;
+    const numB = b.num;
     if (order === 'asc') {
-      return (nameA > nameB) ? 1 : ((nameA < nameB) ? -1 : 0);
+      if (nameA > nameB) {
+        return 1;
+      }
+      else {
+        if (nameA < nameB) {
+          return -1;
+        }
+        {
+          return 0;
+        }
+      }
+      /* return (nameA > nameB) ? 1 : ((nameA < nameB) ? -1 : 0); */
     }
     if (order === 'desc') {
-      return (nameA > nameB) ? -1 : ((nameA < nameB) ? 1 : 0);
+      if (nameA > nameB) {
+        return -1;
+      }
+      else {
+        if (nameA < nameB) {
+          return 1;
+        }
+        {
+          return 0;
+        }
+      }
+    }
+    //  numero descendente
+
+    if (order === 'numUp') {
+      if (numA > numB) {
+        return -1;
+      }
+      else {
+        if (numA < numB) {
+        return 1;
+        }
+        {
+         return 0;
+        }
+      }
     }
   });
   return arrSort;
