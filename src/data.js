@@ -1,10 +1,6 @@
-<<<<<<< HEAD
 //Funcionalidad en data
 import { inputSearchElem } from './main.js';
 //muestro la info
-
-
-
 
 export const showInfo=(pokes)=>{
   const inputValue=inputSearchElem.value;
@@ -75,14 +71,3 @@ export const orderAZ=(poke)=>{
     }
     console.log(ordered);
 }
-=======
-// estas funciones son de ejemplo
-
-export const example = () => {
-  return 'example';
-};
-
-export const anotherExample = () => {
-  return 'OMG';
-};
->>>>>>> 7c8a4025034b267d72e9c489da47513f349cef2f
