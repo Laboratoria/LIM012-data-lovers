@@ -6,7 +6,6 @@ import data from './data/atletas/atletas.js';
 const optionsMenu = document.querySelectorAll('li');
 optionsMenu.forEach((element) => {
   element.addEventListener('click', (event) => {
-    debugger;
     document.getElementById('table').classList.remove('borrar');
     const paintAthletes = athletesView(data);
     if (event.target.id === '1') {
@@ -30,7 +29,6 @@ optionsMenu.forEach((element) => {
         ulAtleta.appendChild(liDeporte);
         document.getElementById('root').appendChild(ulAtleta);
       });
-
    }
   });
 });
