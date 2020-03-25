@@ -20,7 +20,7 @@ export const showInfo = (pokes,input) => {
               </section>
                     <div id="hW" class="infoCont">
                       <p>Height:<span>${poke.size.height}</span></p>
-                      <p>Weight:<span>${poke.size.weight}</span></p>  
+                      <p>Weight:<span>${poke.size.weight}</span></p>
                       <p>Base Attack:<span>${poke.stats['base-attack']}</span></p>
                     </div>
                     <p id="about" class="infoCont">${poke.about}</p>
