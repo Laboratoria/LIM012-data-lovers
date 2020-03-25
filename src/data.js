@@ -1,28 +1,29 @@
 //  Funcionalidad en data
-import { inputSearchElem } from './main.js';
 //  muestro la info
-export const showInfo = (pokes) => {
-  const inputValue = inputSearchElem.value;
+export const showInfo = (pokes,input) => {
+  const inputVal = input.value;
   let info = '';
   pokes.forEach((poke) => {
-    if (inputValue === poke.name) {
+    if (inputVal === poke.name) {
       info = `
               <p class="namePok"> ${poke.name}</p>
-              <section id="imgCont">
-                  <span class="circle ft">${poke.num}</span>
-                  <img src="${poke.img}" alt="pokemonImage">
+              <section id=firstRow>
+                <div id="imgCont">
+                    <span class="circle ft">${poke.num}</span>
+                    <img src="${poke.img}" alt="pokemonImage">
+                </div>
+                <div id="s2info" class="infoCont">
+                          <p>Type:<span>${poke.type}</span></p>
+                          <p>Weakness:<span>${poke.weaknesses}</span></p>
+                          <p>Resistance:<br><span>${poke.resistant}</span></p>
+                </div>
               </section>
-              <section id="s2about">
-                    <p id="about" class="infoCont"> <span>${poke.about}</span></p>
-                    <div id="s2info" class="infoCont data">
-                        <p>Type:<span>${poke.type}</span></p>
-                        <p>Height:<span>${poke.size.height}</span></p>
-                        <p>Weight:<span>${poke.size.weight}</span></p>
+                    <div id="hW" class="infoCont">
+                      <p>Height:<span>${poke.size.height}</span></p>
+                      <p>Weight:<span>${poke.size.weight}</span></p>  
+                      <p>Base Attack:<span>${poke.stats['base-attack']}</span></p>
                     </div>
-                    <div id="weakRes" class="infoCont data">
-                        <p>Weakness:<span>${poke.weaknesses}</span></p>
-                        <p>Resistance:<span>${poke.resistant}</span></p>
-                    </div>
+                    <p id="about" class="infoCont">${poke.about}</p>
                </section>
               `;
     }
@@ -34,15 +35,11 @@ export const showInfo = (pokes) => {
 };
 export const showAllData = (data) => {
   return `
-        <div class="s3">
-          <div id="imgCont" class="item">
-            <span class="circle">${data.num}</span>
+        <div id="imgCont" class="item">
+            <span class="circle ft">${data.num}</span>
             <img src="${data.img}" alt="pokemonImage">
             <span> ${data.name}</span>
-          </div>
-          <span class="lor">nel</span>
-          <div class="lor">gel</div>
-          </div>
+        </div>
         `;
 };
 // Ordena Alfabeticamente
