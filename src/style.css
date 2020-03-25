@@ -1,4 +1,4 @@
-
+/* GENERAL */
 *{
     margin: 0;
     padding: 0;
@@ -14,10 +14,15 @@
 }
 
 .center {
-    max-width: 1000px;
+    width: 75%;
     margin: auto;
 }
 
+.general-container {
+    display: flex;
+    justify-content: space-between;
+}
+/* HEADER */
 .head {
     width: 100%;
     height: 160px;
@@ -29,7 +34,7 @@
     z-index: 10;
     box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.35);
 }
-
+/* HEADER - BANNER */
 .banner {
     height: 100px;
     background: url(assets/pokebolas-01.png);
@@ -48,7 +53,7 @@
     font-size: 2.5rem;
     color: #FFF;
 }
-
+/* HEADER - MENU */
 .menu {
     height: 35px;
     border-top: 3px solid #FFF;
@@ -98,10 +103,10 @@ a {
     font-size: 1em;
 }
 
-.icon-search {
+.flaticon-lupa {
     color: #FFF;
     font-size: 23px;
-    padding: 6px;
+    padding: 3px;
     order: 1;
 }
 
@@ -112,14 +117,8 @@ a {
 .menu img:hover {
     background-color: rgba(0, 0, 0, 0.7);
 }
-
-.center {
-    max-width: 1000px;
-    margin: auto;
-}
-
+/* MAIN - SORT */
 .sort-container {
-    display: block;
     text-align: right;    
 }
 .sort-container select {
@@ -127,9 +126,12 @@ a {
     border: 2px solid #3B4859;
     background-color: #F2F2F2;
     cursor: pointer;
-    margin-top: 1.5em;
 }
-
+.sort-container p{
+    color: #3B4859;
+    padding-right: 48px;
+}
+/* MAIN - CARDS */
 .cards-distribution {
     display: flex;
     flex-wrap: wrap;
@@ -172,7 +174,7 @@ a {
 .pokemon-number {
     text-align: left;
 }
-
+/* MAIN - SUBITULOS */
 .subtitles {
     /* width: 100%; */
     /* border: 1px solid black; */
@@ -216,7 +218,7 @@ h2 {
     border-style: solid;
     border-color: transparent transparent transparent #F25749;
 }
-
+/* MAIN - BOTÓN ARRIBA */
 .go-top-container {
     position: fixed;
     bottom: 4rem;
@@ -226,23 +228,13 @@ h2 {
     z-index: -3;
 }
 
-
-.got-top span{
-    position: absolute;
-    font-size: 1.7rem;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0);
-    transition: .3s;
-}
-
 .go-top {
     display: inline-block;
     position: relative;
-    width: 0rem;
-    height: 0rem;
-    font-size: 60px;
-    border-radius: 60%;
+    font-size: 3.7rem;
+    text-align: center;
+    line-height: 3.7rem;
+    border-radius: 50%;
     color:transparent;
     background: linear-gradient(to bottom, #266378, #047887, #008d8d, #18a18c, #4ab483);
     box-shadow: 5px 5px 9px rgba(0, 0, 0, 0.15), -3px -3px 10px rgba(0, 0, 0, 0.15);
@@ -255,7 +247,7 @@ h2 {
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.35);
 }
 
-.show{
+.show {
     z-index: 10;
 }
 
@@ -267,75 +259,6 @@ h2 {
     z-index: 11;
     transform: translate(-50%, -50%) scale(1);
 }
-.show span{
-    transform: translate(-50%, -50%) scale(1);
-}
-.center {
-    max-width: 1000px;
-    margin: auto;
-}
-/* Creando estilos para el todo filtrado*/
-.filter-menu {
-    background-image: linear-gradient(to bottom,  #4ab483, #18a18c, #008d8d, #047887, #266378, #266378, #266378);
-    padding-top: 0;
-    width: 17%;
-    display: inline-block;
-    color: #FFF;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transform: translate(0px, -68px);
-    z-index: 100;
-    list-style: none;
-    position: absolute;
-    top: 209px;
-    text-align: left;
-}
-.filter-menu ul ul{
-    display: none;
-}
-.filter-menu a {
-    position: relative;
-    display: block;
-    padding: 8px 10px;
-    color: #fff;
-    text-decoration: none;  
-}
-.filter-menu a:hover {
-    background: rgba(0,0,0,0.3);
-}
-.filter-menu a span {
-    margin-left: 30%;
-    font-size: 1rem
-}
-.filter-menu ul li:hover ul {
-    display: block;
-    position: static;
-}
-
-.limites {
-    border: 1px solid #fff;
-    padding: 0,5px;
-}
-
-.hide-filter-box{
-    display: none;
-    opacity: 0;
-}
-button {
-    display: block;
-    color: #FFF;
-    font-size: 23px;
-    padding: 6px;
-    order: 1;
-    border: transparent;
-    background: transparent;
-    transform: translate(-6px, -6px);
-}
-button:hover {
-    color: rgba(0, 0, 0, 0.7);
-};
-
-/* Fin de filtrado */
 
 @keyframes popup {
     0%{
@@ -352,9 +275,76 @@ button:hover {
     }
 }
 
+/* FILTRADO (HEADER Y MAIN)*/
+
+aside {
+    z-index: 20;
+    width: 15%;
+}
+
+#filter:checked ~ .filter-text {
+    color: rgba(0,0,0,0.7);
+}
+
+.filter-menu {
+    background-image: linear-gradient(to bottom,  #4ab483, #18a18c, #008d8d, #047887, #266378, #266378, #266378);
+    box-shadow: 5px 5px 9px rgba(0, 0, 0, 0.15), -3px -3px 10px rgba(0, 0, 0, 0.15);
+    display: inline-block;
+    color: #FFF;
+    width: 100%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transform: translate(0px, -68px);
+    list-style: none;
+    position: sticky;
+    top: 108px;
+    height: 100vh;
+    text-align: left;
+    overflow: auto;
+}
+
+.li-filter {
+    display: block;
+    padding: 8px 10px;
+    color: #fff;
+    text-decoration: none;  
+}
+.filter-menu li:hover {
+    background: rgba(0,0,0,0.3);
+}
+.filter-menu a span {
+    margin-left: 30%;
+    font-size: 1rem
+}
+/* .filter-menu ul li:hover ul {
+    display: block;
+} */
+
+.limits {
+    border-top:  1px solid #fff;
+    border-bottom:  1px solid #fff;
+    padding: 0,5px;
+}
+
+.hide-f {
+    display: none;
+}
+
+    /* JS */
+.adapt {
+    width: 70%;
+    margin: 0 12% 0 3%;
+}
+
+/* Fin de filtrado */
+
 @media (max-width: 600px) {
     .hide {
         display: none;
+    }
+
+    .margin-bottom{
+        margin-bottom: 2em;
     }
 
     .menu-style {
@@ -370,13 +360,13 @@ button:hover {
         position: absolute;
         top: 95px;
         left: 0;
-        width: 88%;
+        width: 85%;
         height: 40px;
         display: none;
         opacity: 100%;    
     }
 
-    .icon-search:hover ~ #filter-search {
+    .flaticon-lupa:hover ~ #filter-search {
         display: block;
     }
 
@@ -384,23 +374,23 @@ button:hover {
         display: block;
     }
 
-    .icon-search {
-        font-size: 25px;
+    .flaticon-lupa {
+        font-size: 23px;
         padding: 5px 7px;
         border-left: 3px solid #FFF;
         cursor: pointer;
     }
 
-    .icon-search:hover {
+    .flaticon-lupa:hover {
         color: rgba(0, 0, 0, 0.7);
         font-size: 25px;
         padding: 5px 7px;
         border-left: 3px solid #FFF;
     }
 
-    .content {
-        width: 90%;
-        display: inline-block;
+    .center {
+        width: 95%;
+        margin: auto;
     }
 
     .pokemon-card {
@@ -479,6 +469,4 @@ button:hover {
         margin-left: 50%;
         font-size: 1rem
     }
-
-    
 }

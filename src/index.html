@@ -5,9 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Data Lovers</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="fonts.css">
+    <link rel="stylesheet" href="flaticon.css">
     <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy|Rubik&display=swap" rel="stylesheet"> 
-    <link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet">
   </head>
 
   <body class="container">
@@ -24,77 +23,83 @@
           <ul>
             <li>
               <a class="menu-style menu-style" href="#">
-              <span class="icon-home"></span>
+              <span class="flaticon-casa"></span>
               <span class="hide">Home</span>
               </a>
             </li>
             <li class="menu-style">
-              <button>
-                <span class="icon-filter"></span>
+              <input type="checkbox" id="filter" class="hide-f">
+              
+              <label for="filter" class="filter-text">
+                <span class="flaticon-icon-57164"></span>
                 <span class="hide">Filter</span>
-              </button>
+              </label>
             </li>
             <li class="menu-style">
-              <span class="icon-plus"></span>
+              <span class="flaticon-mas"></span>
               <span class="hide">Options</span>
             </li>
           </ul>
           <div class="search-section">
-            <span class="icon-search"></span>
+            <span class="flaticon-lupa"></span>
             <input id="filter-search" type="search" placeholder="Type here">
           </div>
         </div>
       </nav>
     </header>
-    <main> 
-        <!-- Este es el contenedor que abarcará todos los filtros-->
-        <nav id= filter-box class="filter-menu">
-          <ul class="filter-category">
-            <li class="li-filter limites"><a href="#" class="category-items" category="all">All pokémons</a></li>
-            <li class="li-filter limites"><a href="#" class="filter-by-type" cattegory="type">Filter by type <span class="icon-arrow-down2"></span></a>
-              <ul class="sub-menu">
-                <ul class="derecho">
-                  <li class="limites" id="gosth"><a href="#">Ghost</a></li>
-                  <li class="limites" id="psyqchic"><a href="#">Psychic</a></li>
-                  <li class="limites" id="normal"><a href="#">Normal</a></li>
-                  <li class="limites" id="fighting"><a href="#">Fighting</a></li>
-                  <li class="limites" id="poison"><a href="#">Poison</a></li>
-                  <li class="limites" id="bug"><a href="#">Bug</a></li>
-                  <li class="limites" id="flying"><a href="#">Flying</a></li>
-                  <li class="limites" id="dark"><a href="#">Dark</a></li>
-                  <li class="limites" id="fairy"><a href="#">Fairy</a></li>
-                </ul> 
-                <ul class="izquierdo">
-                  <li class="limites" id="water"><a href="#">Water</a></li>
-                  <li class="limites" id="fire"><a href="#">Fire</a></li>
-                  <li class="limites" id="grass"><a href="#">Grass</a></li>
-                  <li class="limites" id="ground"><a href="#">Ground</a></li>
-                  <li class="limites" id="rock"><a href="#">Rock</a></li>
-                  <li class="limites" id="steel"><a href="#">Steel</a></li>
-                  <li class="limites" id="ice"><a href="#">Ice</a></li>
-                  <li class="limites" id="electric"><a href="#">Electric</a></li>
-                  <li class="limites" id="dragon"><a href="#">Dragon</a></li>
-                </ul>
-              </u>
-            </li>          
-          </ul>
-        </nav>  
-      <div class="sort-container center">
-        <select id="selection" value ="Sort" class="margin-bottom">
-          <option value="sort-option" selected disabled>Sort</option>
-          <option value="default">Default</option>
-          <option value="A-Z">A-Z</option>
-          <option value="Z-A">Z-A</option>
-        </select>
-      </div>
+    <section class="general-container">
+      <!-- Este es el contenedor que abarcará todos los filtros-->
+      <aside class="hide-f ">
+        <ul id="filter-box" class="filter-menu">
+          <li class="li-filter limits">All pokemons</li>
+          <input type="checkbox" class="hide-f" id="filter-by-type">
+          <label for="filter-by-type">
+            <li class="li-filter limits">Filter by type <span class="flaticon-flecha-hacia-abajo"></span></li>
+          </label>
+          <section class="sub-menu hide-f">
+            <ul class="derecho">
+              <li class="limits" id="gosth">Ghost</li>
+              <li class="limits" id="psyqchic">Psychic</li>
+              <li class="limits" id="normal">Normal</li>
+              <li class="limits" id="fighting">Fighting</li>
+              <li class="limits" id="poison">Poison</li>
+              <li class="limits" id="bug">Bug</li>
+              <li class="limits" id="flying">Flying</li>
+              <li class="limits" id="dark">Dark</li>
+              <li class="limits" id="fairy">Fairy</li>
+            </ul> 
+            <ul class="izquierdo">
+              <li class="limits" id="water">Water</li>
+              <li class="limits" id="fire">Fire</li>
+              <li class="limits" id="grass">Grass</li>
+              <li class="limits" id="ground">Ground</li>
+              <li class="limits" id="rock">Rock</li>
+              <li class="limits" id="steel">Steel</li>
+              <li class="limits" id="ice">Ice</li>
+              <li class="limits" id="electric">Electric</li>
+              <li class="limits" id="dragon">Dragon</li>
+            </ul>
+          </section> 
+        </ul>
+      </aside>
+     
+      <main class="center"> 
+        <section class="sort-container">
+          <p>Sort</p>
+          <select id="selection" value ="Sort" class="margin-bottom">
+            <option value="default">Default</option>
+            <option value="A-Z">A-Z</option>
+            <option value="Z-A">Z-A</option>
+          </select>
+        </section>
+        <section class="content"></section>
 
-      <section class="content center"></section>
+        <div class="go-top-container">
+          <span class="go-top flaticon-cheuron"></span>
+        </div>
+      </main>
+    </section>
       
-      <div class="go-top-container">
-        <span class="go-top icon-circle-up"></span>
-      </div>
-      
-    </main>
     <footer class="footer"></footer>
     <script src="main.js" type="module"></script>
   </body>

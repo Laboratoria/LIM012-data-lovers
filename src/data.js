@@ -1,4 +1,4 @@
-// Función para buscar pokemones
+// Función para separar por generación
 export const filterByGeneration = (data, generation) => {
   const newArray = [];
   for (let i = 0; i < data.length; i += 1) {
@@ -8,10 +8,9 @@ export const filterByGeneration = (data, generation) => {
   }
   return newArray;
 };
-
+// Función para buscar pokemones
 export const search = (data, inputText) => {
   const result = [];
-  // buscando pokemones con las letras ingresadas
   data.forEach((eachPokemon) => {
     const namePokemon = eachPokemon.name;
     const lengthText = inputText.length;
