@@ -246,7 +246,6 @@ h2 {
     border-radius: 60%;
     color:transparent;
     background: linear-gradient(to bottom, #266378, #047887, #008d8d, #18a18c, #4ab483);
-    box-shadow: 5px 5px 9px rgba(0, 0, 0, 0.15), -3px -3px 10px rgba(0, 0, 0, 0.15);
     cursor: pointer;
     top: 50%;
     left: 50%;
@@ -427,10 +426,11 @@ aside {
         justify-content: center;
     }
     /* Filter mobile*/
-    .filter-menu {
-        position: absolute;
-        top: 209px;
+    aside {
         left: 0;
+        width: 50%;
+    }
+    .filter-menu {
         width: 100%;
     }
     .filter-menu ul {

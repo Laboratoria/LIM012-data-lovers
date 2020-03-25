@@ -20,6 +20,18 @@ export const search = (data, inputText) => {
   });
   return result;
 };
+// Funcion para filtrar por tipo
+export const filterByType = (pokemonType, typeChose) => {
+  const typesResult = [];
+  for (let i = 0; i < pokemonType.length; i += 1) {
+    for (let z = 0; z < pokemonType[i].type.length; z += 1) {
+      if (pokemonType[i].type[z] === typeChose) {
+        typesResult.push(pokemonType[i]);
+      }
+    }
+  }
+  return typesResult;
+};
 
 // Función para ordenar
 export const order = (data, parameter) => {
