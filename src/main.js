@@ -9,7 +9,6 @@ optionsMenu.forEach((element) => {
     if (event.target.id === '1') {
       document.getElementById('root').innerHTML = '';
       document.getElementById('articulos').classList.add('borrar');
-
       paintAthletes.forEach((element) => {
         const ulAtleta = document.createElement('ul');
         const liNombre = document.createElement('li');
