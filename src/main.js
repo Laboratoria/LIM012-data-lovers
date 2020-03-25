@@ -66,5 +66,5 @@ mCompare.addEventListener('click', () => {
   screen2Elem.style.display = 'none';
   screen3Elem.style.display = 'none';
   screen4Elem.style.display = 'flex';
-  // screen4Elem.innerHTML = `${showInfo(pokemones, inputSearchElem)}`;
+  // screen4Elem.innerHTML = `${showInfo(pokemones, inputSearchIconCElem)}`;
 });
