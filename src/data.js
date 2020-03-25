@@ -18,7 +18,6 @@ export const showInfo = (pokes,input) => {
                           <p>Resistance:<br><span>${poke.resistant}</span></p>
                 </div>
               </section>
-              <section id="s2about">
                     <div id="hW" class="infoCont">
                       <p>Height:<span>${poke.size.height}</span></p>
                       <p>Weight:<span>${poke.size.weight}</span></p>  
@@ -49,13 +48,49 @@ export const orderBy = (poke, order) => {
   arrSort = poke.sort((a, b) => {
     const nameA = a.name;
     const nameB = b.name;
-    /* let numA=a.num;
-        let numB=b.num; */
+    const numA = a.num;
+    const numB = b.num;
     if (order === 'asc') {
-      return (nameA > nameB) ? 1 : ((nameA < nameB) ? -1 : 0);
+      if (nameA > nameB) {
+        return 1;
+      }
+      else {
+        if (nameA < nameB) {
+          return -1;
+        }
+        {
+          return 0;
+        }
+      }
+      /* return (nameA > nameB) ? 1 : ((nameA < nameB) ? -1 : 0); */
     }
     if (order === 'desc') {
-      return (nameA > nameB) ? -1 : ((nameA < nameB) ? 1 : 0);
+      if (nameA > nameB) {
+        return -1;
+      }
+      else {
+        if (nameA < nameB) {
+          return 1;
+        }
+        {
+          return 0;
+        }
+      }
+    }
+    //  numero descendente
+
+    if (order === 'numUp') {
+      if (numA > numB) {
+        return -1;
+      }
+      else {
+        if (numA < numB) {
+        return 1;
+        }
+        {
+         return 0;
+        }
+      }
     }
   });
   return arrSort;

@@ -50,6 +50,10 @@ main{
     backdrop-filter: brightness(0.4);
     margin: 0%;
 }
+/* .screen{
+    padding-top: 50%;
+
+} */
 #screen1{
     /* background-color: orangered; */
     display: flex;
@@ -265,23 +269,36 @@ footer{
         flex-direction:column ; */
         /* justify-content: space-around; */
         background-attachment: fixed;
+
         /* background-repeat: no-repeat; */
         color: #FFFFFF;
     }
 
       header{
-          background-color: transparent;
-          z-index: 99;
+          position: relative;
+          background-color: tomato;
+          /* z-index: 5; */
       }
       #icon{
           display: block;
           cursor: pointer;
+
+      }
+      .screen{
+
       }
       header label {
-          display: block;
+          display: block ;
           font-size: 28px;
           margin-left: 4%;
           margin-top: 6%;
+
+      }
+      main{
+          position: relative;
+          background-color: teal;
+          margin-top: -120%;
+          z-index: 0;
       }
       main{
           position: relative;
@@ -289,12 +306,15 @@ footer{
           z-index: 0;
       }
       .menu {
-          position: absolute;
-          top: 62px;
+          position: relative;
+          top: 10%;
           left:0;
           width: 100%;
           transition: all 1s;
           transform: translateX(-100%);
+          z-index: 99;
+
+
       }
       .menu ul {
           display: block;
@@ -356,7 +376,7 @@ footer{
         margin-bottom: 5%;
         margin-top: 20%;
     }
-    .inputCont{
+    .inputCont {
         background-color: rgba(104, 219, 104, 0.486);
         /* display:flex;
         flex-wrap: nowrap; */
