@@ -38,7 +38,6 @@ const pokemonCards = (allPokemons) => {
   });
   return dataPokemon;
 };
-// creado para verificar que se guarden los cambios
 
 // Creando subtítulo de Generación
 const generation = (geNumber, geName) => {
@@ -131,7 +130,7 @@ document.querySelector('.go-top-container').addEventListener('click', () => {
   });
 });
 
-const iconSearch = document.querySelector('.icon-search');
+const iconSearch = document.querySelector('.flaticon-lupa');
 iconSearch.addEventListener('click', () => {
   searchInput.focus();
 });
