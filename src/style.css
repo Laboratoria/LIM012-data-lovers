@@ -272,12 +272,10 @@ footer{
         /* background-repeat: no-repeat; */
         color: #FFFFFF;
     }
-
-      header{
-          position: relative;
-          background-color: tomato;
-          /* z-index: 5; */
-      }
+       header{
+        background-color: transparent;
+        z-index: 99;
+    }
       #icon{
           display: block;
           cursor: pointer;
