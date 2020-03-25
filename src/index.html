@@ -13,18 +13,12 @@
       <figure class="logo"><img src="img/logo.jpg" alt="" /></figure>
     </header>
     <nav class="main-nav">
-      <select id="order">
-        <option>Order por</option>
+      <ul class="nav-container">    
+       <select class="nav-container_item " id="order">
+        <option>TODOS</option>
         <option value="az">A - Z</option>
         <option value="za">Z - A</option>
-      </select>
-      <ul class="nav-container">
-        <li class="nav-container_item" id="todos">
-          <a href="#" class="nav-container_link">TODOS LOS CAMPEONES</a>
-        </li>
-        <li class="nav-container_item" id="ordenar">
-          <a href="#" class="nav-container_link">ORDENAR DE Z-A</a>
-        </li>
+       </select>   
         <li class="nav-container_item" id="asesinos">
           <a href="#" class="nav-container_link">ASESINOS</a>
         </li>
@@ -51,14 +45,12 @@
     </nav>-->
     <!--<button id="btn">ORDENAR</button>-->
     <main class="main-container">
-      <section id="contenedor"></section>
+      <section class="galeria" id="box"></section>
     </main>
 
     <!--<div class="flex-container" id="all"></div>
     <div id="contenedor"></div>-->
-    <div>
-      <div id="box"></div>
-    </div>
+    
     <script type="module" src="main.js"></script>
     <footer class="main-footer">
       ©2020 Riot Games,Inc. Todos los derechos reservados.<br />

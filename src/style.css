@@ -2,7 +2,7 @@
 :root {
   --color-black: #000;
   --color-nav-dark: #2d2e2e;
-  --color-main: #f2efef;
+  --color-main: #eb6f6f;
   --color-footer: #d0ff00;
   --color-white: #fff;
   --color-borde: #937341;
@@ -20,6 +20,7 @@
 body {
   display: flex;
   flex-direction: column;
+  width: 100%;
   min-height: 100vh; /*altura definida*/
   font-family: Arial;
 }
@@ -33,17 +34,42 @@ body {
   flex-flow: column nowrap;
   height: 120px; /*observacion*/
 }
-.logo {
-}
 
 .main-nav {
   background-color: var(--color-main);
 }
 
+/*trabajando con el select*/
+#order{
+  background-color: var(--color-black);
+  color: var(--color-borde);
+  display: block;
+  outline: none;
+   cursor: pointer; 
+}
+
+#order:hover {
+  background-color: var(--color-nav-dark);
+}
+
+/*intentando reemplazar una img con la flecha de seleccion*/
+/*select.nav-container_item{
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+select.nav-container_item {
+  display: flex;
+  background: url(img/flechas.png) no-repeat right #191c2180;
+  background-position-x: 80%;
+  background-size: 7%;
+}*/
+
 .nav-container {
   display: flex;
   background-color: var(--color-black);
-  margin-top: 08px; /*para poder separar la lista del header*/
+  margin-top: 1%; /*para poder separar la lista del header*/
 }
 
 .nav-container_item {
@@ -61,6 +87,8 @@ body {
   color: var(--color-borde);
   display: block; /*es necesario para q el mouse al estar no solo en el nombre sino en su caje muestre el link abajo*/
 }
+
+
 /*@media screen and (min-width: 768px) {
   .nav-container {
     display: flex;
@@ -86,16 +114,38 @@ body {
   color: var(--color-white);
 }*/
 
+/*trabajando con las imagenes y nombres*/
 .class-div {
   display: inline-block;
+  /*text-align: center;*/
+  margin: 0px 0px 0px 08px;
+   /*padding: 150px 30px 30px 30px;arriba,derecha,abajo,izquierda*/ 
+  /*cursor: pointer;*/
+  position: relative;
+  margin-top: 1%;
+  /*bottom: 40px;*/
+  transform-style: preserve-3d;/*animacion*/
+  transition: 1.5s;/*animacion*/
+  /*display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;*/
+}
+
+.galeria {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
 }
 
 .class-img {
-  margin: 1em 1em 0em;
-  /*padding-top: 2em;*/
-  width: 28em;
-  height: 18em;
+  margin: 0;
+  /*display: inline-block;*/
+  width: 307px;
+  height: 200px;
 }
+
+
 
 .class-name {
   font-size: x-large;

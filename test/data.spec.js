@@ -2,22 +2,22 @@
 // import { example, anotherExample } from '../src/data.js';
 
 
-//import { crearTemplate } from '../src/data.js';
+import { orderChampions } from '../src/data.js';
 
-//import data from '../src/data/lol/lol.js';
+import data from '../src/data/lol/lol.js';
 
-/* const allChampion = data.data;
+const allChampion = data.data;
 const arrObjetos = [Object.values(allChampion)];
 
-describe('crearTemplate', () => {
+describe('orderChampions', () => {
   it('is a function', () => {
-    expect(typeof crearTemplate).toBe('function');
+    expect(typeof orderChampions).toBe('function');
   });
 
-  it('returns stringTemplate', () => {
-    expect(crearTemplate(arrObjetos)).toBe([arrObjetos]);
+  it('returns `datesOfChampions`', () => {
+    expect(orderChampions(arrObjetos, 'name', document.getElementById('order').value)).toBe([arrObjetos, 'name', 'az']);
   });
-}); */
+});
 
 /* describe('anotherExample', () => {
   it('is a function', () => {

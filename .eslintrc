@@ -5,27 +5,14 @@
     "jest/globals": true
   },
   "extends": [
-    "airbnb-base",
-    "prettier",
-    "plugin:prettier/recommended"
+    "airbnb-base"
   ],
-  "plugins": [
-    "jest",
-    "prettier"
-  ],
+  "plugins": ["jest"],
   "parserOptions": {
     "ecmaVersion": 2018,
     "sourceType": "module"
   },
   "rules": {
-    "prettier/prettier": [
-      "error",
-      {
-        "trailingComa": "es5",
-        "singleQuote": true,
-        "tabWidth": 2
-      }
-    ],
     "linebreak-style": 0,
     "prefer-destructuring": 0,
     "import/extensions": 0,
@@ -35,5 +22,5 @@
     "jest/no-identical-title": "error",
     "jest/prefer-to-have-length": "warn",
     "jest/valid-expect": "error"
-  }
+  }   
 }
