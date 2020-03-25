@@ -1,36 +1,102 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Data Lovers</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <header>  
-      <p1 class="p1">OLIMPIC HISTORY</p1>
-      <img src="imagenes/olimpiadas4.jpg" >
+
+<head>
+  <meta charset="utf-8">
+  <title>Data Lovers</title>
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="padre">
+    <header class="header">
+      <div class="menu margen-interno">
+        <div class="logo">
+          <a href="index.html">Olympic History</a>
+        </div>
+        <nav>
+          <ul class="menu">
+            <li><a href="#"><span id="1" class="off">Conoce a los atletas</span></a></li>
+            <li><a href="#"><span id="2" class="off">Deportes</span></a></li>
+            <li><a href="#"><span id="3" class="off">Medallero</span></a></li>
+            <li><a href="#"><span id="4" class="off">Cronología de los Juegos</span></a></li>
+          </ul>
+        </nav>
+        <div class="social"></div>
+      </div>
+      <div class="texto-principal margen-interno">
+        <h1>Los Juegos Olímpicos son el mayor evento deportivo internacional del mundo, en el que compiten atletas
+          representantes de prácticamente todos los países existentes (alrededor de unos 200 en total), a lo largo de
+          varios días de un evento multidisciplinario organizado cada cuatro años. Se trata de uno de los eventos
+          deportivos más televisados y célebres de la contemporaneidad.</h1>
+      </div>
     </header>
-      <nav >
-        <ul class="menu">
-          <li><a id= "1" href="#">CONOCE A LOS ATLETAS</a></li>
-          <li><a id= "2" href="#">DEPORTES</a></li>
-          <li><a id= "3" href="#">MEDALLERO</a></li>
-          <li><a id= "4" href="#">CRONOLOGIA DE LOS JUEGOS</a></li>
-        </ul>
-      </nav >
-      <main id="table" class="borrar">
-        <section class="main-container">
-          <table> 
-          <tr >
-            <th>NOMBRE</th><th>EQUIPO</th><th>DEPORTE</th>
+    <main>
+      <section id="table" class="main-container borrar">
+        <table>
+          <tr>
+            <th>NOMBRE</th>
+            <th>EQUIPO</th>
+            <th>DEPORTE</th>
           </tr>
-          </table>
-          <div id="root"> </div> 
-        </section>
-    </main> 
-    <footer>
-      <p>© Copyright 2020. All rights reserved</p>
+        </table>
+        <div id="root"></div>
+      </section>
+      <section id="articulos"class="section margen-interno">
+        <div class="articulos">
+          <article class="article">
+            <img src="imagenes/correr.jpg">
+            <h3>marzo 2020</h3>
+            <h2>TOP NATACION</h2>
+            <a href="#">Ver más</a>
+          </article>
+          <article class="article">
+            <img src="imagenes/judo.jpg">
+            <h3>marzo 2020</h3>
+            <h2>TOP NATACION</h2>
+            <a href="#">Ver más</a>
+          </article>
+          <article class="article">
+            <img src="imagenes/images.jpg">
+            <h3>marzo 2020</h3>
+            <h2>TOP NATACION</h2>
+            <a href="#">Ver más</a>
+          </article>
+          <article class="article">
+            <img src="imagenes/karate.jpg">
+            <h3>marzo 2020</h3>
+            <h2>TOP NATACION</h2>
+            <a href="#">Ver más</a>
+          </article>
+          <nav class="navegacion"></nav>
+        </div>
+        <aside class="aside">
+          <div class="publicidad">
+            <h4>Noticias</h4>
+            <img src="imagenes/tyty.jpg">
+          </div>
+          <div class="publicidad">
+            <h4>Documentales</h4>
+            <img src="imagenes/6y6y65y.jpg">
+          </div>
+          <div class="publicidad">
+            <h4>Comunicados de Prensa</h4>
+            <img src="imagenes/6y6y65y.jpg">
+          </div>
+        </aside>
+      </section>
+    </main>
+
+   
+    <footer class="footer margen-interno">
+      <nav class="pie">
+        <a href="#"> © Copyright 2020 | By Carmen & Sandy </a>
+      </nav>
     </footer>
-    <script src="main.js" type="module"></script>
-  </body>
+  </div>
+  <script src="main.js" type="module"></script>
+</body>
+
 </html>

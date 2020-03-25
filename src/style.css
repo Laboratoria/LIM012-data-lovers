@@ -1,66 +1,32 @@
-@media all and (max-width: 790px)
-{
-  .main-container{
-    flex-direction: row reverse;
-    font-size:10px;
-  }
-.menu{
-  flex-direction: row reverse;
-  font-size:10px;
-  }
-.p1{
-  flex-direction: row reverse;
-  font-size:26px;
-  }
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+} 
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+a{
+    text-decoration: none;
 }
 
-header {
-       position: relative;
-       width: 80%;
-       height: 276px;
-       left: 10%;
-       top: 2%;
-      }
-img {
-  width: 100%;
-  height: 276px;
+
+  
+.padre{
+    display: flex;
+    flex-flow: column nowrap;
 }
+ 
+
 
 .borrar{
-  display:none;
-}
+    display:none !important;
+  }
 
 .mostrar{
   display: block;
 }
 
-th{
-  padding: 20px;
-  
-}
-
-.menu{
-  position: relative;
-  list-style: none;
-  padding: 0;
-  width: 80%;
-  height: 70px;
-  margin-top: 0%;
-  margin-left: 10%;
-  background-color:#f36666;  
-}
-
-.menu li a {
-  position: relative;
-  padding: 4%;
-  text-decoration: none;
-  color: white;
-  
-}
-/*
-.menu li a:hover{
-  background-color: darkgray;
-}*/
 
 .main-container {
   position: relative;
@@ -83,51 +49,191 @@ th{
     background-color:rgb(248, 245, 245);
   }
 
-  /*ul:hover{
-    background-color: rgb(248, 183, 183);
-    color:white;
-  }*/
- 
-.p1 {
-   position: absolute;
-   width: 100%;
-   height: 38px;
-   left: 40px;
-   top: 70%;
-
-   font-family: Roboto;
-   font-style: normal;
-   font-weight: normal;
-   font-size: 36px;
-   line-height: 42px;
-   text-align: center;
-   letter-spacing: 0.2em;
-   color: rgb(255, 255, 255);
-   }
-
-   .aside{
-    /*background: #f73f52;*/
-    flex: 1 1 auto;
-    margin: 10px 5px 10px 0;
+.margen-interno{
+    padding: 0 50px;
 }
-.aside img{
-    width: 100%;
-}
-    .publicidad {
-       /*background: #ffea85;*/
+    .header{
+      background: url(imagenes/lugares-turisticos-de-medellin_header.jpg);
+      background-position: center;
+      background-attachment: contain;
+      background-size: cover;
+      display: flex;
+      flex-flow: column nowrap;
     }
-h4{
-    background: #142850;
-    color: #fff;
-    padding: 10px;
-    text-transform: uppercase;
+      .menu{
+          background: rgba(0,0,0,.1);
+          display: flex;
+          flex-flow: row nowrap;
+          height: 100px;
+          align-items: center;
+          border-bottom: 1px solid rgba(255,255,255,.5);
+          list-style: none;
+      }
+          .logo{
+              flex: 1 1 auto;
+          }
+                .logo a{
+                    color: #fff;
+                    font-size: 30px;
+                }
+                .logo a:hover{
+                    color: #343434;
+                }
+          .nav{
+              flex: 5 1 auto;
+          }
+                .nav a{
+                    color: #fff;
+                    font-size: 12px;
+                    text-transform: uppercase;
+                    padding: 0 10px;
+                    letter-spacing: 2px;
+                }
+                .nav a:hover{
+                    color: #343434;
+                }
+          .social{
+              flex: 1 1 auto;
+          }
+      .texto-principal{
+          /*background: #f07b3f;*/
+          height: 580px;
+          display: flex;
+          align-items: center;
+      }
+          h1{
+             font-family: 'Lora', serif;
+             font-size: 21px;
+             color: #fff;
+             font-weight: 300;
+             text-align: center;
+             line-height: 1.6;
+          }
+    .section{
+        background: #f7f7f7;
+        display: flex;
+    }
+      
+        .articulos {
+            background: #f7f7f7;
+            flex: 2 1 auto;
+            display: flex;
+            flex-flow: row wrap;
+        }
+            .article{
+                flex:1 1 40%;
+                color:#444;
+                font-size: 13px;
+                letter-spacing: 1px;
+                margin: 10px 10px 0 0px;
+                flex: 1 1 45%;
+                background: #ececec;
+            }
+            .article img{
+                width: 100%;
+            }
+            .article a{
+                color: #fff;
+                font-size: 13px;
+                padding: 10px;
+                background: #142850;
+                margin: 10px 0;
+                display: inline-block;
+            }
+            .article a:hover{
+                background: #546cc3;
+            }
+            h3{
+                color: #fff;
+                font-size: 13px;
+                padding: 10px 0;
+                margin-top: -80px;
+            }
+            h2{
+                font-size: 25px;
+                text-transform: uppercase;
+                padding: 0px 0 10px 0;
+                color: #fff;
+            }
+            .navegacion {
+                background: #70a3c4;
+                flex: 1 1 100%;
+            }
+            .navegacion a{
+                color: #fff;
+                font-size: 11px;
+                text-transform: uppercase;
+                padding: 0 10px;
+                letter-spacing: 2px;
+            }
+
+                
+                  
+        .aside{
+            flex: 1 1 auto;
+            margin: 10px 5px 10px 0;
+        }
+        .aside img{
+            width: 100%;
+        }
+            .publicidad {
+            }
+        h4{
+            background: #142850;
+            color: #fff;
+            padding: 10px;
+            text-transform: uppercase;
+        }
+    .footer{
+        background: #000;
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+    }
+        .pie{
+           /*background: #e6af2e;*/
+           text-align: center;
+        }
+        .pie a{
+            color: #fff;
+            font-size: 11px;
+            text-transform: uppercase;
+            padding: 0 10px;
+            letter-spacing: 2px;
+        }
+
+
+@media all and (max-width: 1120px){
+    .section{
+        flex-direction: column;
+    }
+    .menu{
+        flex-direction: column;
+        height: auto;
+    }
+    .aside{
+        display: flex;
+        justify-content: center;
+    }
+    h1{
+        font-size: 15px;
+    }
+    .texto-principal{
+        height: 450px;
+    }
+}
+@media all and (max-width: 762px){
+    .articulos{
+        flex-direction: column;
+    }
+}
+@media all and (max-width:650px){
+    /*.off{display: none;}*/
+    .nav a{font-size: 12px;}
+}
+@media all and (max-width: 400px){
+    .aside{
+          flex-direction: column;
+    }
 }
 
-
-footer{
-      position: relative;
-      width:80%;
-      height: 132px;
-      left: 10%;
-      background-color: rgb(196, 196, 196, 0.4);
-      }
