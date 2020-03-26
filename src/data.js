@@ -1,13 +1,7 @@
 // Función para buscar pokemones
-export const filterByGeneration = (data, generation) => {
-  const newArray = [];
-  for (let i = 0; i < data.length; i += 1) {
-    if (data[i].generation.name === generation) {
-      newArray.push(data[i]);
-    }
-  }
-  return newArray;
-};
+export const filterByGeneration = (data, generation) => (data.filter((pokemon) => (
+  pokemon.generation.name === generation))
+);
 
 export const search = (data, inputText) => {
   const result = [];
