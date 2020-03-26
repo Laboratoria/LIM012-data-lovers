@@ -1,15 +1,12 @@
+/* eslint-disable import/prefer-default-export */
+// export const example = () => 'example';
+// export const anotherExample = () => 'OMG';
+
 // AQUI MANEJAMOS LAS FUNCIONES
 
-// estas funciones son de ejemplo
-
-export const example = () => 'example';
-
-export const anotherExample = () => 'OMG';
-
-
-export const orderChampions = (lol, orderBy, orderFrom) => {
+export const orderChampions = (lol, orderFrom) => {
   const datesOfChampions = lol;
-  if (orderBy === 'name' && orderFrom === 'az') {
+  if (orderFrom === 'az') {
     datesOfChampions.sort((a, b) => {
       if (a.name > b.name) {
         return 1;
@@ -20,7 +17,7 @@ export const orderChampions = (lol, orderBy, orderFrom) => {
       return 0;
     });
   }
-  if (orderBy === 'name' && orderFrom === 'za') {
+  if (orderFrom === 'za') {
     datesOfChampions.sort((a, b) => {
       if (a.name < b.name) {
         return 1;
@@ -31,15 +28,6 @@ export const orderChampions = (lol, orderBy, orderFrom) => {
       return 0;
     });
   }
-  // console.log(datesOfChampions);
+
   return datesOfChampions;
 };
-
-
-/* export const ordenarAscendente = (arrObjetos) => arrObjetos.sort((a, b) => {
-  if (a.name > b.name) {
-    return 1;
-  }
-  return -1;
-
-}); */
