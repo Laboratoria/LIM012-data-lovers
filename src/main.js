@@ -121,7 +121,7 @@ selection.addEventListener('change', () => {
   }
 });
 
-const filterBox = document.querySelector('.filter-menu');
+const filterBox = document.querySelector('.sub-menu');
 filterBox.addEventListener('click', (e) => {
   const typeChose = e.target.id;
   sectionContent.innerHTML = '';
@@ -130,9 +130,6 @@ filterBox.addEventListener('click', (e) => {
   // Llamar a la función para filtrar por tipo elegido
   filterContainer.innerHTML += pokemonCards(filterByType(data.pokemon, typeChose));
   sectionContent.appendChild(filterContainer);
-  if (typeChose === 'all pokémons' || typeChose === 'filter-by-type') {
-    allDataByGenerations();
-  }
 });
 
 
