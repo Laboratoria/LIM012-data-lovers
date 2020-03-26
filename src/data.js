@@ -1,10 +1,10 @@
 export const athletesView = (data) => {
 // eslint-disable-next-line arrow-body-style
-  const paintAthletes = data.atletas.map((a) => {
+  const paintAthletes = data.atletas.map((atleta) => {
     return {
-      nombre: a.nombre,
-      deporte: a.deporte,
-      equipo: a.equipo,
+      nombre: atleta.nombre,
+      deporte: atleta.deporte,
+      equipo: atleta.equipo,
     };
   });
   return paintAthletes;
