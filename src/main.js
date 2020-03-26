@@ -389,8 +389,5 @@ const loadPage = () => {
   }
 };
 
-// menuSystem();
-// filterSystem();
-// filterSystemLink();
 sliderSystem();
 window.onload = loadPage;
