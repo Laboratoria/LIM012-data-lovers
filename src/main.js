@@ -131,7 +131,7 @@ const pokemonTypes = Object.keys(typeColors);
 
 const putPokemonTypesOnMenu = (conteiner) => {
   for (let key = 0; key < pokemonTypes.length; key += 1) {
-    typesConteiner.appendChild(createTypeButton(pokemonTypes[key]));
+    conteiner.appendChild(createTypeButton(pokemonTypes[key]));
   }
 };
 
@@ -325,10 +325,13 @@ filterSystem();
 sliderSystem();
 window.onload = loadPage;
 
-// const dataOrdened = orderBy(data.pokemon, 'a-z');
-// const array = [];
-// console.log(dataOrdened);
-// for (let i = 0; i < dataOrdened.length; i += 1) {
-//   array.push(dataOrdened[i].name);
-// }
-// console.log(array);
+ const dataOrdened = orderBy(data.pokemon, 'a-z');
+ const array = [];
+ console.log(dataOrdened.name);
+ for (let i = 0; i < dataOrdened.length; i += 1) {
+   array.push(dataOrdened[i].name);
+ }
+ console.log(array);
+
+/*const buttonReverseOrder = document.getElementById('button-reverse');
+buttonReverseOrder.addEventListener('click', () => { showCard(pokemonData, divCardContainer); });*/

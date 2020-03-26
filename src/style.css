@@ -200,9 +200,16 @@ section{
   border: none;
   font-weight: bolder;
 }
-.top-pagination{
-  display: none;
+#top-pagination{
+  display: flex;
+  justify-content: end;
+  padding-top: 3%;
+  padding-right: 7%;
 }
+  #button-reverse{
+    width: 15px;
+    height: 15px;
+  }
 
 #card-container,
 #card-container-section{
@@ -437,10 +444,10 @@ section{
       }
     
     #top-pagination{
-      grid-area: top;
-      background: #fff;
-      display: inline;
-      padding: 1em;
+      display: flex;
+      justify-content: end;
+      padding-top: 3%;
+      padding-right: 7%;
     }
     #top-pagination a{
       padding: 1em;

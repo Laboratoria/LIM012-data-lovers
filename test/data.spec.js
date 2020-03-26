@@ -1,4 +1,6 @@
-import { dinamicSearchPokemon, filterPokemon } from '../src/data.js';
+import { dinamicSearchPokemon, filterPokemon, orderBy } from './data.js';
+
+import data from './data/pokemon/pokemon.js';
 
 // primer sprint : test de segunda historia [16 de Marzo]
 describe('dinamicSearchPokemon', () => {
@@ -43,6 +45,33 @@ describe('dinamicSearchPokemon', () => {
     const result = filterPokemon('weaknesses', 'rock');
     for (let i = 0; i < result.length; i += 1) {
       expect(result[i].weaknesses).toContain('rock');
+    }
+  });
+
+  it(' Verifica que se ordena de menor a mayor max-cp', () => {
+    const dataOrdened = orderBy(data.pokemon, 'max-cp');
+    const array = [dataOrdened[0]];
+    for (let i = 1; i < dataOrdened.length; i += 1) {
+      array.push(dataOrdened[i].stats['max-cp']);
+      expect(array[i - 1]).toBeLessThanOrEqual(array[i]);
+    }
+  });
+
+  it(' Verifica que se ordena de menor a mayor max-hp', () => {
+    const dataOrdened = orderBy(data.pokemon, 'max-hp');
+    const array = [dataOrdened[0]];
+    for (let i = 1; i < dataOrdened.length; i += 1) {
+      array.push(dataOrdened[i].stats['max-hp']);
+      expect(array[i - 1]).toBeLessThanOrEqual(array[i]);
+    }
+  });
+
+  it(' Ordena de menor a mayor alfabéticamente', () => {
+    const dataOrdened = orderBy(data.pokemon, 'a-z');
+    const array = [dataOrdened[0]];
+    for (let i = 1; i < dataOrdened.length; i += 1) {
+      array.push(dataOrdened[i].name);
+      expect(array[i - 1].localeCompare(array[i])).toBe(-1);
     }
   });
 });
