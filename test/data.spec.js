@@ -1,39 +1,21 @@
 import { orderChampions } from '../src/data.js';
 
 const data = [
-  {
-    name: 'Aatrox',
-  },
-  {
-    name: 'Zyra',
-  },
-  {
-    name: 'Diana',
-  },
+  { name: 'Aatrox' },
+  { name: 'Zyra' },
+  { name: 'Diana' },
 ];
 
 const firstOrder = [
-  {
-    name: 'Aatrox',
-  },
-  {
-    name: 'Diana',
-  },
-  {
-    name: 'Zyra',
-  },
+  { name: 'Aatrox' },
+  { name: 'Diana' },
+  { name: 'Zyra' },
 ];
 
 const secondOrder = [
-  {
-    name: 'Zyra',
-  },
-  {
-    name: 'Diana',
-  },
-  {
-    name: 'Aatrox',
-  },
+  { name: 'Zyra' },
+  { name: 'Diana' },
+  { name: 'Aatrox' },
 ];
 
 describe('orderChampions', () => {

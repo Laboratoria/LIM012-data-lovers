@@ -36,7 +36,7 @@ body {
 }
 
 .main-nav {
-  background-color: var(--color-main);
+  background-color: var(--color-borde);
 }
 
 /*trabajando con el select*/
@@ -102,7 +102,7 @@ select.nav-container_item {
   display: flex;
   flex-direction: column;
   flex-grow: 1; /*sirve para el crecimiento de las cajas*/
-  background-color: var(--color-main);
+  background-color: var(--color-borde);
 }
 
 /*.main-container_section {
@@ -153,7 +153,7 @@ select.nav-container_item {
   font-weight: bolder;
   text-align: center;
   background-color: #c4c4c4;
-  margin: -0.15em 0.65em 1em;
+  margin: -0.15em 0.02em 1em;
   padding: 0.52em;
 }
 
