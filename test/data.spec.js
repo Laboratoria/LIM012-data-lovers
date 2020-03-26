@@ -1,4 +1,9 @@
-import { filterByGeneration, search, order } from '../src/data.js';
+import {
+  filterByGeneration,
+  search,
+  order,
+  filterByType,
+} from '../src/data.js';
 
 const data = [
   {
@@ -346,6 +351,33 @@ const toEqual6 = [
     ],
   },
 ];
+const toEqual7 = [
+  {
+    num: '001',
+    name: 'bulbasaur',
+    generation: {
+      num: 'generation i',
+      name: 'kanto',
+    },
+    pokemonRarity: 'normal',
+    type: [
+      'grass',
+      'poison',
+    ],
+  },
+  {
+    num: '024',
+    name: 'arbok',
+    generation: {
+      num: 'generation i',
+      name: 'kanto',
+    },
+    pokemonRarity: 'normal',
+    type: [
+      'poison',
+    ],
+  },
+];
 
 describe('filterByGeneration', () => {
   it('is a function', () => {
@@ -388,5 +420,16 @@ describe('order', () => {
 
   it('debería retornar el array completo ordenado de forma ascendente', () => {
     expect(order(data, 'default')).toEqual(toEqual6);
+  });
+});
+
+// Test para filtrar por tipo
+describe('filterByType', () => {
+  it('is a function', () => {
+    expect(typeof filterByType).toBe('function');
+  });
+
+  it('debería retornar el array de pokemones que tienen el mismo tipo', () => {
+    expect(filterByType(data, 'poison')).toEqual(toEqual7);
   });
 });
