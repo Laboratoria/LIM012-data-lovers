@@ -287,7 +287,6 @@ showMore[2].addEventListener('click', () => { showAllByFilter('weaknesses'); });
 const putCardsOnSlider = (items, container) => {
   for (let i = 0; i < items.length; i += 1) {
     createPokemonCard(i, items[i], container);
->>>>>>> remoto-elena
   }
 };
 
