@@ -3,33 +3,24 @@
 
 // AQUI MANEJAMOS LAS FUNCIONES
 
-export const orderChampions = (lol, orderBy, orderFrom) => {
-  const datesOfChampions = lol;
+export const orderChampions = (data, orderFrom) => {
+  const datesOfChampions = data;
 
-  if (orderBy === 'name' && orderFrom === 'az') {
+  if (orderFrom === 'az') {
     datesOfChampions.sort((a, b) => {
       if (a.name > b.name) {
         return 1;
       }
-      if (a.name < b.name) {
-        return -1;
-      }
-
-      return 0;
+      return -1;
     });
   }
-  if (orderBy === 'name' && orderFrom === 'za') {
+  if (orderFrom === 'za') {
     datesOfChampions.sort((a, b) => {
       if (a.name < b.name) {
         return 1;
       }
-      if (a.name > b.name) {
-        return -1;
-      }
-
-      return 0;
+      return -1;
     });
   }
-
   return datesOfChampions;
 };

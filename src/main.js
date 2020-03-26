@@ -12,9 +12,8 @@ import {
 
 const allChampion = data.data;
 const arrObjetos = Object.values(allChampion);
-// console.log(arrObjetos);
+
 const crearTemplate = (arr) => {
-  document.getElementById('box').innerHTML = '';
   const all = [];
   for (let i = 0; i < arr.length; i++) {
     all.push(`
@@ -23,11 +22,12 @@ const crearTemplate = (arr) => {
       <p class="class-name">${arr[i].name}</p>
       </div>`);
   }
-  return all.join(' ');
+  return all.join('');
 };
 
 document.getElementById('box').innerHTML = crearTemplate(arrObjetos);
 
 document.getElementById('order').addEventListener('change', () => {
-  document.getElementById('box').innerHTML = crearTemplate(orderChampions(arrObjetos, 'name', document.getElementById('order').value));
+  const order = document.getElementById('order').value;
+  document.getElementById('box').innerHTML = crearTemplate(orderChampions(arrObjetos, order));
 });

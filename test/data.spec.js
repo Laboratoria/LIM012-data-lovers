@@ -1,30 +1,51 @@
-/* eslint-disable indent */
-// import { example, anotherExample } from '../src/data.js';
-
-
 import { orderChampions } from '../src/data.js';
 
-import data from '../src/data/lol/lol.js';
+const data = [
+  {
+    name: 'Aatrox',
+  },
+  {
+    name: 'Zyra',
+  },
+  {
+    name: 'Diana',
+  },
+];
 
-const allChampion = data.data;
-const arrObjetos = [Object.values(allChampion)];
+const firstOrder = [
+  {
+    name: 'Aatrox',
+  },
+  {
+    name: 'Diana',
+  },
+  {
+    name: 'Zyra',
+  },
+];
+
+const secondOrder = [
+  {
+    name: 'Zyra',
+  },
+  {
+    name: 'Diana',
+  },
+  {
+    name: 'Aatrox',
+  },
+];
 
 describe('orderChampions', () => {
   it('is a function', () => {
     expect(typeof orderChampions).toBe('function');
   });
 
-  it('returns `datesOfChampions`', () => {
-    expect(orderChampions(arrObjetos, 'name', document.getElementById('order').value)).toBe([arrObjetos, 'name', 'az']);
+  it('return sort champions from AZ', () => {
+    expect(orderChampions(data, 'az')).toEqual(firstOrder);
+  });
+
+  it('return sort champions from ZA', () => {
+    expect(orderChampions(data, 'za')).toEqual(secondOrder);
   });
 });
-
-/* describe('anotherExample', () => {
-  it('is a function', () => {
-    expect(typeof anotherExample).toBe('function');
-  });
-
-  it('returns `anotherExample`', () => {
-    expect(anotherExample()).toBe('OMG');
-  });
-}); */
