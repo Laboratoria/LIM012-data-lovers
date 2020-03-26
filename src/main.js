@@ -1,64 +1,63 @@
+/* eslint-disable no-restricted-syntax */
+
 import lol from './data/lol/lol.js';
+// import { ascendente, descendente } from './data.js';
 
 const listaTodos = lol.data; // en esta variable guardo los objetos de la data
-// console.log(listaTodos);
 const lista = document.querySelector('#galeria'); // selecciono la parte donde voy a poner la informacion
-// que seleccionaré y lo guardo en una variable
-// console.log(lista);
+// const cargarVista = (listaTodos) => {
+const resultado = () => {
+  Object.values(listaTodos).forEach((campeones) => {
+    const casilla = document.createElement('div');
+    const foto = document.createElement('img');
+    const nombre = document.createElement('p');
+    nombre.className = 'nombreCampeon'; // le pongo un class nombre para editarle los estilos
+    foto.className = 'imagenCampeon';
+    nombre.innerHTML = `${campeones.name}`;
+    foto.src = `${campeones.splash}`;
+    casilla.className = 'casillaCampeon';
+    casilla.appendChild(foto);
+    casilla.appendChild(nombre);
+    lista.appendChild(casilla);
+  });
+};
+// };
+// cargarVista(listaTodos);
+// console.log(cargarVista);
 
-Object.values(listaTodos).forEach((campeones) => {
-  const casilla = document.createElement('div');
-  const foto = document.createElement('img');
-  const nombre = document.createElement('p');
-  casilla.className = 'casillaCampeon';
-  nombre.className = 'nombreCampeon'; // le pongo un class nombre para editarle los estilos
-  foto.className = 'imagenCampeon';
-  nombre.innerHTML = `${campeones.name}`;
-  foto.src = `${campeones.splash}`;
-
-  casilla.appendChild(foto);
-  casilla.appendChild(nombre);
-  lista.appendChild(casilla);
+/* boton de ordenar */
+/* const AZ = document.getElementById('ascendente');
+AZ.addEventListener('click', () => {
+  lista.innerHTML = cargarVista(ascendente(listaTodos));
 });
+const ZA = document.getElementById('descendente');
+ZA.addEventListener('click', () => {
+  lista.innerHTML = cargarVista(descendente(listaTodos));
+}); */
 
-const buscarCampeon = document.getElementById('botonBuscar');
-buscarCampeon.addEventListener('click', (Busqueda) => {
-  Busqueda.preventDefault();
-  const campeonBuscado = document.getElementById('buscador').value;
-  /* console.log(campeonBuscado); */
-  const campeonEncontrado = Object.values(listaTodos).filter((campeones) => (campeones.name === campeonBuscado));
-  /* console.log(campeonEncontrado); */
-});
+/* input buscar campeon */
+const buscar = document.querySelector('#buscar');
+const botonBuscar = document.querySelector('#botonBuscar');
+const filtrar = () => {
+  // console.log(buscar.value);
+  resultado.innerHTML = ''; // para q no se concatene con el += y siempre comience en cero
+  const texto = buscar.value.toLowerCase();// lo que se ingresa en el input tiene que estar en minucula para poder compararlo
+  for (const campeonBuscado of listaTodos) { // hacemos un recorrido para buscar
+    const nombre = campeonBuscado.name.toLowerCase(); // campeonBuscado esta tomando el primero, en el primer ciclo pero a la propiedad name pasado a minuscula para que pueda ser comparado
+    if (nombre.indexOf(texto) !== -1) { // evalua lo ingresado(texto) y si coindice lo q escriba lo retorna cualquiera excepto -1 (tiene que ser distinto a -1 por que quiere decir que lo encontro)
+      // no me coge el codigo, con la variable resultado
+      resultado.innerHTML += `   
+      <div>${campeonBuscado.img} - ${campeonBuscado.name}</div}
+      `;
+    }
+  }
+  if (resultado.innerHTML === '') {
+    resultado.innerHTML += `   
+    ${'No hay coincidencias'} 
+    `;
+  }
+};
+botonBuscar.addEventListener('click', filtrar); // evento si utiliza el boton
+buscar.addEventListener('keyup', filtrar); // evento mientras va escribiendo le aparecen las opcines en la parte de abajo
 
-
-/* const listaCampeones=lol.data;
-console.log(listaCampeones);
-
-const imagen = lol.data.Aatrox.splash;
-const foto=document.getElementById("foto");
-foto.src=imagen;
-
-const campeon= lol.data.Aatrox.name;
-const galeria=document.getElementById("galeria");
-galeria.innerHTML = campeon;
-
-const mostrarNombres= Object.keys(lol.data);
-console.log(mostrarNombres);
-
-
-const mostrarImagen= Object.values(lol.data.src.splash);
-console.log(mostrarImagen); */
-
-
-/* const mostrarTodos= " ";
-for (mostrarTodos in lol.data){
-    console.log(lol.data[mostrarTodos]);
-} */
-
-
-/* for (campeon in data){
-   console.log (data [campeon];
-} */
-
-
-// console.log(example, data);
+filtrar(); // para que siempre se mantenga la funcion

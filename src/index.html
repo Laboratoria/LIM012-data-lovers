@@ -17,58 +17,39 @@
         <div class="buscar">
             <form class="formBuscador">
               <button id="botonBuscar" class="botonBuscador"><img src="imagenes\search-regular-24.png"></button>
-              <input type="search id="buscador" placeholder="Buscar por campeon">
+              <input type="search" id="buscar" placeholder="Buscar por campeon">
             </form>
         </div>
       </div>
-     
-      <div>
-<<<<<<< HEAD
+      <!--<div>
 
-        <!--<input type="checkbox" id="btn-menu">
-=======
-        <form class="formBuscador">
-          <input type="search" id="buscador" placeholder="Buscar por campeon">
-          <button id="botonBuscar" class="botonBuscador">Buscar</button>
-        </form>
         <input type="checkbox" id="btn-menu">
->>>>>>> 7576524baf5b435a1de945fd32e93106ac675583
         <label for="btn-menu">
           <img src="imagenes/menu-regular-24.png" alt="">
-        </label>-->
-      </div>
-      
-    
+        </label>
+      </div>-->
       <div class="menu">
         <nav >
-          <ul class="opciones">
-            <div class="itemO"><a href="#" class="categoria" >Ordenar por</a></div>
-             <!--<ul class= "item">A - Z</ul>
-             <ul class= "item">Z - A</ul>-->
-             <div class="itemR"><a href="#" class="categoria">Roles </a></div>
-             <div class="itemH"><a href="#" class="categoria">Habilidades</a></div>
-          </ul>
+          <select name="opciones" id="ordenar" class="selectStyle">
+            <option value="" selected disabled>Ordenar</option>
+            <option id="ascendente">A - Z</option>
+            <option id="descendente">Z - A</option>
+          </select>
+          <select name="opciones" id="roles" class="selectStyle">
+            <option value="" selected disabled>Roles</option>
+          </select>
+          <select name="opciones" id="habilidades" class="selectStyle">
+            <option value="" selected disabled>Habilidades</option>
+          </select>
         </nav>
       </div>
     </header>
-
-
     <main class="main">
       <section class="lista">
       <div id="galeria" class="galeriaDeCampeones"> <!--id="galeria"/volver a ponerlo cuando termine el css-->
       </div>
-
-
-      <select name="orderMaxCP" id="oderMaxCP" class="selectStyle">
-        <option value="" selected disabled>Max CP</option>
-        <option value="ascendente">Ascendente</option>
-        <option value="descendente">Descendente</option>
-      </select>
-
       </section> 
     </main>
-
-
     <footer class="footer">
       <p> Teleticket &copy;2020 - Todos los derechos reservados</p>
     <footer>  
