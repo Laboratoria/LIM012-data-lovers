@@ -290,10 +290,10 @@ const sliderSystem = () => {
 };
 
 const filterSystem = (btn, container) => {
-  const desktopMode = (window.screen.width >= desktopSize);
-  if (desktopMode) {
-    let filterActive = false;
-    btn.addEventListener('click', () => {
+  // const desktopMode = (window.innerWidth >= desktopSize);
+  let filterActive = false;
+  btn.addEventListener('click', () => {
+    if (window.innerWidth >= desktopSize) {
       if (filterActive) {
         container.style.display = 'none';
         filterActive = false;
@@ -301,14 +301,14 @@ const filterSystem = (btn, container) => {
         container.style.display = 'block';
         filterActive = true;
       }
-    });
-  }
+    }
+  });
 
   for (let i = 0; i < optionsFilter.length; i += 1) {
     optionsFilter[i].addEventListener('click', () => {
       filterPokemonByType(optionsFilter[i].value);
       typeChoosed = optionsFilter[i].value;
-      if (desktopMode === false) {
+      if ((window.innerWidth >= desktopSize) === false) {
         hideLateralMenu();
       }
     });
@@ -334,9 +334,9 @@ const orderSystem = (btn) => {
   const optionsBtnOrder = document.getElementsByClassName('order-option');
   const orderOptions = document.getElementById('ul-order-options');
 
-  const desktopMode = (window.screen.width >= desktopSize);
-  if (desktopMode) {
-    btn.addEventListener('click', () => {
+  // const desktopMode = (window.innerWidth >= desktopSize);
+  btn.addEventListener('click', () => {
+    if (window.innerWidth >= desktopSize) {
       if (orderActive) {
         orderOptions.style.display = 'none';
         orderActive = false;
@@ -345,8 +345,8 @@ const orderSystem = (btn) => {
         orderActive = true;
       }
       console.log(`orderActive: ${orderActive}`);
-    });
-  }
+    }
+  });
 
   for (let i = 0; i < optionsBtnOrder.length; i += 1) {
     optionsBtnOrder[i].addEventListener('click', () => {
@@ -356,7 +356,7 @@ const orderSystem = (btn) => {
         orderSimpleData(whichOrder[i]);
       }
 
-      if (desktopMode === false) {
+      if ((window.innerWidth >= desktopSize) === false) {
         hideLateralMenu();
       }
     });

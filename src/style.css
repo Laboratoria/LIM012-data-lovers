@@ -404,6 +404,10 @@ section{
     z-index: 1;  
     transition: 0.5s;
     overflow: hidden;  
+  } 
+  .section-order-by  li ul,
+  #filter-options{
+        display: block;
   }  
   
 }
