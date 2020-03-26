@@ -15,38 +15,38 @@
      
       <div>
         <form class="formBuscador">
+          <button id="botonTodos" class="botonTodos">TODOS</button>
           <input type="search" id="buscador" placeholder="Buscar por campeon">
-          <button id="botonBuscar" class="botonBuscador">Buscar</button>
+
         </form>
         <input type="checkbox" id="btn-menu">
         <label for="btn-menu">
           <img src="imagenes/menu-regular-24.png" alt="">
         </label>
-        <nav class="menu">
-          <ul>
-            <li><a href="#" class="categoria" ></a> Ordenar por</li>
-             <!--<ul class= "item">A - Z</ul>
-             <ul class= "item">Z - A</ul>-->
-            <li><a href="#" class="categoria"></a>Roles </li>
-            <li> <a href="#" class="categoria"></a> Habilidades</li>
-          </ul>
-        </nav>
+        <div class="menu">
+          <nav >
+            <select name="opciones" id="ordenar" class="selectStyle">
+              <option value="" selected disabled>Ordenar</option>
+              <option id="ascendente">A - Z</option>
+              <option id="descendente">Z - A</option>
+            </select>
+            <select name="opciones" id="roles" class="selectStyle">
+              <option value="" selected disabled>Roles</option>
+            </select>
+            <select name="opciones" id="habilidades" class="selectStyle">
+              <option value="" selected disabled>Habilidades</option>
+            </select>
+          </nav>
+        </div>
       </div>
     </header>
-
+ 
 
     <main>
       <section class="lista">
-      <div id="galeria" class="galeriaDeCampeones">
+      <div id="galeria" class="galeriaDeCampeones">  
       </div>
-
-
-      <select name="orderMaxCP" id="oderMaxCP" class="selectStyle">
-        <option value="" selected disabled>Max CP</option>
-        <option value="ascendente">Ascendente</option>
-        <option value="descendente">Descendente</option>
-      </select>
-
+      <div id="error">No se encontraron resultados</div>
       </section> 
     </main>
 
