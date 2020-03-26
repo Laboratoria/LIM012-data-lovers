@@ -1,5 +1,4 @@
 export const athletesView = (data) => {
-// eslint-disable-next-line arrow-body-style
   const paintAthletes = data.atletas.map((a) => {
     return {
       nombre: a.nombre,
@@ -9,5 +8,15 @@ export const athletesView = (data) => {
   });
   return paintAthletes;
 };
-export const example = () => 'example';
+export const ordenAs = (paintAthletes) => {
+  const ascendente = paintAthletes.sort((prev, next) => {
+    if (prev.nombre > next.nombre) {
+      return 1;
+    } if (prev.nombre < next.nombre) {
+      return -1;
+    } return 0;
+  });
+  return ascendente;
+};
+
 export const anotherExample = () => 'OMG';
