@@ -1,13 +1,22 @@
 export const athletesView = (data) => {
-// eslint-disable-next-line arrow-body-style
-  const paintAthletes = data.atletas.map((atleta) => {
+  const paintAthletes = data.atletas.map((a) => {
     return {
-      nombre: atleta.nombre,
-      deporte: atleta.deporte,
-      equipo: atleta.equipo,
+      nombre: a.nombre,
+      deporte: a.deporte,
+      equipo: a.equipo,
     };
   });
   return paintAthletes;
 };
-export const example = () => 'example';
+export const ordenAs = (paintAthletes) => {
+  const ascendente = paintAthletes.sort((prev, next) => {
+    if (prev.nombre > next.nombre) {
+      return 1;
+    } if (prev.nombre < next.nombre) {
+      return -1;
+    } return 0;
+  });
+  return ascendente;
+};
+
 export const anotherExample = () => 'OMG';

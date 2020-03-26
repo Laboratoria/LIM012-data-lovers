@@ -10,8 +10,6 @@ a{
     text-decoration: none;
 }
 
-
-  
 .padre{
     display: flex;
     flex-flow: column nowrap;
@@ -26,22 +24,35 @@ a{
 .mostrar{
   display: block;
 }
-
-
 .main-container {
   position: relative;
   margin-left: 30%;
   margin-top: 3%;
   width: 40%;
   background-color:rgb(213, 223, 241);
-  border: solid 3px blue;
-  border-radius: 20px 20px ;
+  border: solid 3px #142850;
+  border-radius: 10px 10px ;
   padding: 20px;
 } 
+   .btn{
+    margin-left: 80%;
+    color: #fff;
+    font-size: 18px;
+    background-color: #142850;
+   }
+      select{
+       margin-left: 82%;
+       color: #fff;
+       font-size: 14px;
+       background-color: #142850;
+       }
+    th{
+    padding: 15px;
+    }
 
   li{
     display: inline;
-    padding: 25px;
+    padding: 15px;
   }
 
   ul:nth-child(even){
@@ -61,7 +72,7 @@ a{
       flex-flow: column nowrap;
     }
       .menu{
-          background: rgba(0,0,0,.1);
+          background: #fff;
           display: flex;
           flex-flow: row nowrap;
           height: 100px;
@@ -73,11 +84,11 @@ a{
               flex: 1 1 auto;
           }
                 .logo a{
-                    color: #fff;
+                    color: #343434;
                     font-size: 30px;
                 }
                 .logo a:hover{
-                    color: #343434;
+                    color: #e23b3b;
                 }
           .nav{
               flex: 5 1 auto;
@@ -90,7 +101,7 @@ a{
                     letter-spacing: 2px;
                 }
                 .nav a:hover{
-                    color: #343434;
+                    color: #e23b3b;
                 }
           .social{
               flex: 1 1 auto;
@@ -99,7 +110,7 @@ a{
           /*background: #f07b3f;*/
           height: 580px;
           display: flex;
-          align-items: center;
+          align-items: top;
       }
           h1{
              font-family: 'Lora', serif;
@@ -107,7 +118,7 @@ a{
              color: #fff;
              font-weight: 300;
              text-align: center;
-             line-height: 1.6;
+             line-height: 1.8;
           }
     .section{
         background: #f7f7f7;
@@ -176,8 +187,7 @@ a{
         .aside img{
             width: 100%;
         }
-            .publicidad {
-            }
+           
         h4{
             background: #142850;
             color: #fff;
