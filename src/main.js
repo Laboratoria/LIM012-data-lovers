@@ -6,9 +6,7 @@
 //  AQUI MANEJAMOS EL DOOM
 
 import data from './data/lol/lol.js';
-import {
-  orderChampions,
-} from './data.js';
+import { orderChampions } from './data.js';
 
 const allChampion = data.data;
 const arrObjetos = Object.values(allChampion);
@@ -18,7 +16,7 @@ const crearTemplate = (arr) => {
   for (let i = 0; i < arr.length; i++) {
     all.push(`
       <div class="class-div">  
-      <img src="${arr[i].splash}" class="class-img" alt="splashChampion">
+      <img src="${arr[i].splash}" class="class-img" alt="Imagen de ${arr[i].name}">
       <p class="class-name">${arr[i].name}</p>
       </div>`);
   }
