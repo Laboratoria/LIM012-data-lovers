@@ -1,3 +1,5 @@
+/* eslint-disable no-restricted-syntax */
+
 import lol from './data/lol/lol.js';
 import { filtroNombre, ordenarCampeones } from './data.js';
 

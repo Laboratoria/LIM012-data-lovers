@@ -2,15 +2,24 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Data Lovers</title>
     <link rel="stylesheet" href="style.css" />
     <link href="https://fonts.googleapis.com/css?family=Spectral:400,800&display=swap" rel="stylesheet">
   </head>
 
-  <body>
-    <header>
+  <body class="padre">
+    <header class="header">
       <div class="encabezado">
-        <img class="logo" src= "imagenes/logo.png">
+        <div class="logoLol">
+          <a href="index.htlm"><img src= "imagenes/logo.png" class="logo" ></a><!--src= "imagenes/logo.png"/volver a ponerlo cuando termine el css-->
+        </div>
+        <div class="buscar">
+            <form class="formBuscador">
+              <button id="botonBuscar" class="botonBuscador"><img src="imagenes\search-regular-24.png"></button>
+              <input type="search" id="buscar" placeholder="Buscar por campeon">
+            </form>
+        </div>
       </div>
      
       <div>
@@ -49,9 +58,7 @@
       <div id="error">No se encontraron resultados</div>
       </section> 
     </main>
-
-
-    <footer>
+    <footer class="footer">
       <p> Teleticket &copy;2020 - Todos los derechos reservados</p>
     <footer>  
     <script src="main.js" type="module"></script>

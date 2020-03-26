@@ -21,6 +21,7 @@ export const filtroNombre = (data, texto) => {
     if (texto === campeones.name.toLowerCase().substring(0, longitudcadenaBuscada)) {
       return campeones; // retorna el objeto encontrado
     }
+
   });
 
   return filtroCampeones; // retornamos el array de objetos encontrados
