@@ -11,10 +11,7 @@ export const orderChampions = (lol, orderFrom) => {
       if (a.name > b.name) {
         return 1;
       }
-      if (a.name < b.name) {
-        return -1;
-      }
-      return 0;
+      return -1;
     });
   }
   if (orderFrom === 'za') {
@@ -22,12 +19,8 @@ export const orderChampions = (lol, orderFrom) => {
       if (a.name < b.name) {
         return 1;
       }
-      if (a.name > b.name) {
-        return -1;
-      }
-      return 0;
+      return -1;
     });
   }
-
   return datesOfChampions;
 };
