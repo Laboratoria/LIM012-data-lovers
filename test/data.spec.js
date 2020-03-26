@@ -51,25 +51,29 @@ describe('dinamicSearchPokemon', () => {
 
   it(' Verifica que se ordena de menor a mayor max-cp', () => {
     const dataOrdened = orderBy(data.pokemon, 'max-cp');
-    const array = [dataOrdened[0]];
+    // eslint-disable-next-line radix
+    const array = [parseInt(dataOrdened[0].stats['max-cp'])];
     for (let i = 1; i < dataOrdened.length; i += 1) {
-      array.push(dataOrdened[i].stats['max-cp']);
+      // eslint-disable-next-line radix
+      array.push(parseInt(dataOrdened[i].stats['max-cp']));
       expect(array[i - 1]).toBeLessThanOrEqual(array[i]);
     }
   });
 
   it(' Verifica que se ordena de menor a mayor max-hp', () => {
     const dataOrdened = orderBy(data.pokemon, 'max-hp');
-    const array = [dataOrdened[0]];
+    // eslint-disable-next-line radix
+    const array = [parseInt(dataOrdened[0].stats['max-hp'])];
     for (let i = 1; i < dataOrdened.length; i += 1) {
-      array.push(dataOrdened[i].stats['max-hp']);
+      // eslint-disable-next-line radix
+      array.push(parseInt(dataOrdened[i].stats['max-hp']));
       expect(array[i - 1]).toBeLessThanOrEqual(array[i]);
     }
   });
 
   it(' Ordena de menor a mayor alfabéticamente', () => {
     const dataOrdened = orderBy(data.pokemon, 'a-z');
-    const array = [dataOrdened[0]];
+    const array = [dataOrdened[0].name];
     for (let i = 1; i < dataOrdened.length; i += 1) {
       array.push(dataOrdened[i].name);
       expect(array[i - 1].localeCompare(array[i])).toBe(-1);
