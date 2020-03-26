@@ -1,24 +1,29 @@
 // estas funciones son de ejemplo
 
-// export const example = () => 'example';
-// export const anotherExample = () => 'OMG';
-export const ascendente = (listaTodos) => {
-  const ordenAZ = listaTodos.sort((campeon1, campeon2) => {
-    if (campeon1.name < campeon2.name) return -1;
-    if (campeon1.name > campeon2.name) return 1;
-    return 0;
-  });
-  return ordenAZ;
+export const ordenarCampeones = (listaTodos, texto) => {
+  let ordenarLista;
+
+  if (texto === 'az') {
+    ordenarLista = Object.values(listaTodos).sort();
+  }
+  if (texto === 'za') {
+    ordenarLista = Object.values(listaTodos)
+      .sort()
+      .reverse();
+  }
+  return ordenarLista;
 };
 
 
-export const descendente = (listaTodos) => {
-  const ordenZA = listaTodos.sort((campeon1, campeon2) => {
-    if (campeon1.name > campeon2.name) return -1;
-    if (campeon1.name < campeon2.name) return 1;
-    return 0;
-  });
-  return ordenZA;
-};
+export const filtroNombre = (data, texto) => {
+  const longitudcadenaBuscada = texto.length;
+  const filtroCampeones = Object.values(data).filter((campeones) => {
+    if (texto === campeones.name.toLowerCase().substring(0, longitudcadenaBuscada)) {
+      return campeones; // retorna el objeto encontrado
+    }
 
-// export const anotherExample = () => 'OMG';
+  });
+
+  return filtroCampeones; // retornamos el array de objetos encontrados
+};
+export const anotherExample = () => 'OMG';

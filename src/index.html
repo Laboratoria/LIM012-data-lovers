@@ -21,33 +21,41 @@
             </form>
         </div>
       </div>
-      <!--<div>
+     
+      <div>
+        <form class="formBuscador">
+          <button id="botonTodos" class="botonTodos">TODOS</button>
+          <input type="search" id="buscador" placeholder="Buscar por campeon">
 
+        </form>
         <input type="checkbox" id="btn-menu">
         <label for="btn-menu">
           <img src="imagenes/menu-regular-24.png" alt="">
         </label>
-      </div>-->
-      <div class="menu">
-        <nav >
-          <select name="opciones" id="ordenar" class="selectStyle">
-            <option value="" selected disabled>Ordenar</option>
-            <option id="ascendente">A - Z</option>
-            <option id="descendente">Z - A</option>
-          </select>
-          <select name="opciones" id="roles" class="selectStyle">
-            <option value="" selected disabled>Roles</option>
-          </select>
-          <select name="opciones" id="habilidades" class="selectStyle">
-            <option value="" selected disabled>Habilidades</option>
-          </select>
-        </nav>
+        <div class="menu">
+          <nav >
+            <select name="opciones" id="ordenar" class="selectStyle">
+              <option value="" selected disabled>Ordenar</option>
+              <option id="ascendente">A - Z</option>
+              <option id="descendente">Z - A</option>
+            </select>
+            <select name="opciones" id="roles" class="selectStyle">
+              <option value="" selected disabled>Roles</option>
+            </select>
+            <select name="opciones" id="habilidades" class="selectStyle">
+              <option value="" selected disabled>Habilidades</option>
+            </select>
+          </nav>
+        </div>
       </div>
     </header>
-    <main class="main">
+ 
+
+    <main>
       <section class="lista">
-      <div id="galeria" class="galeriaDeCampeones"> <!--id="galeria"/volver a ponerlo cuando termine el css-->
+      <div id="galeria" class="galeriaDeCampeones">  
       </div>
+      <div id="error">No se encontraron resultados</div>
       </section> 
     </main>
     <footer class="footer">
