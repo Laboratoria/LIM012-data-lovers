@@ -7,6 +7,7 @@
     <link rel="shortcut icon" href="#">    
     <link rel="stylesheet" href="style.css" />
     <link href="https://fonts.googleapis.com/css?family=Aldrich&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Rammetto+One&display=swap" rel="stylesheet">
 
   </head>
@@ -17,11 +18,13 @@
       </header>
 
       <nav id="navbar">
-        <span id="logo-pokedex">POKEDEX</span>
-        <input type="text" id="input-bar-search" placeholder="Nombre de Pókemon">
-        <div id = "icon-bar-search">
-          <img src="images/buscar.png" alt="" id="img-icon-bar-search">
-        </div>
+        <!-- <div id="container-bar-search"> -->
+          <span id="logo-pokedex">POKEDEX</span>
+          <input type="text" id="input-bar-search" placeholder="Nombre de Pókemon">
+          <div id = "icon-bar-search">
+            <img src="images/buscar.png" alt="" id="img-icon-bar-search">
+          </div>
+        <!-- </div> -->
       </nav>
 
       <div class="top-filter">
@@ -30,16 +33,34 @@
       </div>
 
       <section id="section-conteiner">
-        <div class="top-pagination">          
+        <div id="top-pagination">          
         </div>
 
-        <aside id="sidebar">
-          <div class="header-menu">
-            <span class="label">Tipos</span> 
-            <button id="btn-close">
-              <img src="images/close.png" alt="" id="btn-close-img">
-            </button>
-          </div>       
+        <aside class="menu-container">
+          <button id="btn-close">
+            <img src="images/close.png" alt="" id="btn-close-img">
+          </button>
+
+          <div class="menu section-order-by">
+            <li ><a href="#" class="menu-option" id="menu-btn-order">Order by</a>
+              <ul id="ul-order-options">
+                <li><a class = "order-option" href="#">Puntos de ataque</a></li>
+                <li><a class = "order-option" href="#">Puntos de salud</a></li>
+                <li><a class = "order-option" href="#">Alfabeticamente</a></li>
+              </ul>
+            </li>           
+          </div>
+          <div class="menu section-filter-by">
+            <li><a href="#" class="menu-option" id="menu-btn-filter">Filter by</a></li>
+            <div id="filter-options">
+
+            </div>            
+          </div>
+          <div class="menu section-calculate">
+            <li><a href="#" class="menu-option" id="menu-btn-calc">Calculate</a></li>
+          </div>
+          
+
         </aside>
 
         <main id = "main">
@@ -74,7 +95,7 @@
 
                 <button class="ctrl-btn ctrl-prev" value="resistant" >❮</button> 
                 <button class="ctrl-btn ctrl-next" value="resistant">❯</button>
-                
+
               </div>
             </div>
             
