@@ -1,7 +1,7 @@
-import { dinamicSearchPokemon, filterPokemon, orderBy } from './data.js';
+import { dinamicSearchPokemon, filterPokemon, orderBy } from '../src/data.js';
 
 // eslint-disable-next-line import/no-unresolved
-import data from './data/pokemon/pokemon.js';
+import data from '../src/data/pokemon/pokemon.js';
 
 // primer sprint : test de segunda historia [16 de Marzo]
 describe('dinamicSearchPokemon', () => {
