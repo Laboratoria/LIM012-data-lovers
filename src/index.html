@@ -36,30 +36,31 @@
         <div id="top-pagination">          
         </div>
 
-        <aside id="menu-container">
-          
-          <ul class="menu">
-            <li><a href="#" class="btn-menu">Ordenar por</a>
-              <ul id="ul-order-options" class="no-display">
+        <aside class="menu-container">
+          <button id="btn-close">
+            <img src="images/close.png" alt="" id="btn-close-img">
+          </button>
+
+          <div class="menu section-order-by">
+            <li ><a href="#" class="menu-option" id="menu-btn-order">Order by</a>
+              <ul id="ul-order-options">
                 <li><a class = "order-option" href="#">Puntos de ataque</a></li>
                 <li><a class = "order-option" href="#">Puntos de salud</a></li>
                 <li><a class = "order-option" href="#">Alfabeticamente</a></li>
               </ul>
-            </li>
+            </li>           
+          </div>
+          <div class="menu section-filter-by">
+            <li><a href="#" class="menu-option" id="menu-btn-filter">Filter by</a></li>
+            <div id="filter-options">
 
-            <li><a href="#" class="btn-menu">Filtrar por</a>
-              <div id="filter-options-container" class="no-display">                
-              </div>
-            </li>
-            <li><a href="#" class="btn-menu">Calcular</a></li>
-          </ul>
+            </div>            
+          </div>
+          <div class="menu section-calculate">
+            <li><a href="#" class="menu-option" id="menu-btn-calc">Calculate</a></li>
+          </div>
+          
 
-          <!-- <div class="header-menu">
-            <span class="label">Tipos</span> 
-            <button id="btn-close">
-              <img src="images/close.png" alt="" id="btn-close-img">
-            </button>
-          </div>        -->
         </aside>
 
         <main id = "main">
