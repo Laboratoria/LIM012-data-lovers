@@ -4,8 +4,9 @@
 
 // AQUI MANEJAMOS LAS FUNCIONES
 
-export const orderChampions = (lol, orderFrom) => {
-  const datesOfChampions = lol;
+export const orderChampions = (data, orderFrom) => {
+  const datesOfChampions = data;
+
   if (orderFrom === 'az') {
     datesOfChampions.sort((a, b) => {
       if (a.name > b.name) {
