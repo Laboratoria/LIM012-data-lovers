@@ -152,7 +152,7 @@ a {
 
 .pokemon-card {
     width: 170px;
-    height: 170px;
+    height: 195px;
     background-color: #FFF;
     margin-bottom: 3em;
     padding: 1em;
@@ -162,7 +162,6 @@ a {
     box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.35);
     font-size: 1em;
     color: #3B4859;
-    cursor: pointer;
 }
 
 .pokemon-name {
@@ -173,6 +172,22 @@ a {
 
 .pokemon-number {
     text-align: left;
+}
+.button {
+    list-style: none;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 5px;
+    width: 40%;
+    color: #333333;
+    background-color: #ffffff;
+    cursor: pointer;
+}
+#features {
+    border: 1.5px solid  #4AB483;
+}
+#attacks {
+    border: 1.5px solid #F25749;
 }
 /* MAIN - SUBITULOS */
 .subtitles {
