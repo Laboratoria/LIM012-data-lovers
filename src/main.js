@@ -50,7 +50,7 @@ const generation = (geNumber, geName) => {
   subtitle.className = 'subtitles margin-bottom';
   subtitle.innerHTML = `
   <div class="arrow">
-    <h2>Generacion ${geNumber} - ${geName}</h2>
+    <h2>Generacion ${geNumber}: ${geName}</h2>
   </div>
   <div class="line hide"></div>
   `;
@@ -105,7 +105,7 @@ searchInput.addEventListener('input', () => {
     allDataByGenerations();
   }
 });
-
+// Sort
 const selection = document.getElementById('selection');
 selection.addEventListener('change', () => {
   const chosenOrder = selection.value;
@@ -120,8 +120,8 @@ selection.addEventListener('change', () => {
     allDataByGenerations();
   }
 });
-
-const filterBox = document.querySelector('.filter-menu');
+// Filter
+const filterBox = document.querySelector('.sub-menu');
 filterBox.addEventListener('click', (e) => {
   const typeChose = e.target.id;
   sectionContent.innerHTML = '';
@@ -130,38 +130,12 @@ filterBox.addEventListener('click', (e) => {
   // Llamar a la función para filtrar por tipo elegido
   filterContainer.innerHTML += pokemonCards(filterByType(data.pokemon, typeChose));
   sectionContent.appendChild(filterContainer);
-  if (typeChose === 'all pokémons' || typeChose === 'filter-by-type') {
-    allDataByGenerations();
-  }
 });
-
-
-/*
-const pokemonTypes = data.pokemon;
-const holi = [];
-pokemonTypes.filter((eachPokemon) => {
-  if (eachPokemon.type) {
-    holi.push(eachPokemon.type);
-  }
+// All pokémons
+const allPokemons = document.getElementById('all-pokemons');
+allPokemons.addEventListener('click', () => {
+  allDataByGenerations();
 });
-console.log(holi);
-
-*/
-/*
-.map((eachPokemon) => {
-    return eachPokemon.type;
-  });
-console.log(pokemonTypes);
-*/
-/*
-const types = [];
-for (let i = 0; i < data.pokemon.length; i += 1) {
-  if (data.pokemon.type === 'grass') {
-    types.push(data.pokemon[i]);
-    console.log(types);
-  }
-}
-*/
 
 // Botón de subir
 window.onscroll = () => {
