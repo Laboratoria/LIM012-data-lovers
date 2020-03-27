@@ -39,10 +39,13 @@ let typeChoosed = '';
 
 const divCardContainer = document.getElementById('card-container');
 const divSectionsContainer = document.getElementById('card-container-section');
+const modalMode = document.getElementById('modal-mode');
 
 const divOrderBy = document.getElementsByClassName('menu')[0];
 const divFilterBy = document.getElementsByClassName('menu')[1];
 // const divCalcuBy= document.getElementsByClassName('menu')[2];
+
+const modalWindow = document.getElementById('modal-window');
 
 const showMessageOfSearch = (container) => {
   container.innerHTML = '<p>Lo sentimos, no encontramos resultados que coincidan con su búsqueda</p>';
@@ -58,7 +61,7 @@ const createPokemonType = (type) => {
 
 const putPokemonImage = (dataImgPokemon, divCardImage) => {
   const img = document.createElement('IMG');
-  img.id = 'img-pokemon';
+  img.className = 'img-pokemon';
   img.setAttribute('src', dataImgPokemon);
   img.setAttribute('alt', 'Imagen Pokemón');
   divCardImage.appendChild(img);
@@ -86,6 +89,7 @@ const createPokemonCard = (index, dataPokemon, container) => {
     divCardName.className = 'pokemon-name';
     divCardImage.className = 'pokemon-image';
     divCardTypes.className = 'pokemon-types';
+    divCard.id = dataPokemon.name;
     putPokemonName(dataPokemon.name, divCardName);
     putPokemonImage(dataPokemon.img, divCardImage);
     putPokemonTypes(dataPokemon.type, divCardTypes);
@@ -181,7 +185,8 @@ inputBarSearch.addEventListener('keypress', onlyText, false);
 
 const buttonFilterPokemon = document.getElementsByClassName('button-filter')[0];
 const buttonOrderPokemon = document.getElementsByClassName('button-filter')[1];
-const buttonCloseLateralMenu = document.getElementById('btn-close');
+const btnCloseMenu = document.getElementById('close-menu');
+const btnCloseModal = document.getElementById('close-modal');
 
 buttonFilterPokemon.addEventListener('click', () => {
   showLateralMenu('filter');
@@ -189,7 +194,11 @@ buttonFilterPokemon.addEventListener('click', () => {
 buttonOrderPokemon.addEventListener('click', () => {
   showLateralMenu('order');
 });
-buttonCloseLateralMenu.addEventListener('click', hideLateralMenu);
+btnCloseMenu.addEventListener('click', hideLateralMenu);
+btnCloseModal.addEventListener('click', () => {
+  modalWindow.style.display = 'none';
+  modalMode.style.display = 'none';
+});
 
 const showAllByFilter = (whichFilter) => {
   divCardContainer.style.display = 'flex';
@@ -379,6 +388,86 @@ const menuSystem = () => {
   orderSystem(buttonOrder);
   filterSystem(buttonFilter, divFilterOptions);
 };
+const createIconType = (type) => {
+  const iconType = document.createElement('img');
+  iconType.className = 'icon-medium';
+  iconType.setAttribute('src', `images/${type}-icon.png`);
+  return iconType;
+};
+
+const showEvolution = (currentPokemon, container, prev, next) => {
+  container.innerHTML = '';
+  console.log(prev);
+  if (prev !== undefined) {
+    for (let i = 0; i < prev.length; i += 1) {
+      const divContainer = document.createElement('div');
+      divContainer.className = 'div-evolution-img';
+      const img = document.createElement('img');
+      img.className = 'pokemon-img-small';
+      const pokemon = data.pokemon.find(pk => pk.name === prev[i].name);
+      img.setAttribute('src', pokemon.img);
+      divContainer.append(img);
+      container.append(img);
+    }
+  }
+  const imgCurr = document.createElement('img');
+  imgCurr.className = 'pokemon-img-small';
+  imgCurr.style.border = 'rgb(238, 222, 76) solid 1px';
+  imgCurr.setAttribute('src', currentPokemon);
+  container.append(imgCurr);
+
+  // console.log(next);
+  if (next !== undefined) {
+    for (let i = 0; i < next.length; i += 1) {
+      const divContainer = document.createElement('div');
+      divContainer.className = 'div-evolution-img';
+      const img = document.createElement('img');
+      img.className = 'pokemon-img-small';
+      const pokemon = data.pokemon.find(pk => pk.name === next[i].name);
+      img.setAttribute('src', pokemon.img);
+      divContainer.append(img);
+      container.append(img);
+    }
+  }
+};
+
+const showInfoPokemon = (name) => {
+  modalWindow.style.display = 'block';
+  const pokemon = data.pokemon.find(pk => pk.name === name);
+  document.getElementById('img-pokemon-modal').setAttribute('src', pokemon.img);
+  document.getElementById('div-pokemon-name-modal').textContent = pokemon.name;
+  document.getElementById('height').textContent = pokemon.size.height;
+  document.getElementById('region').textContent = pokemon.generation.name;
+  document.getElementById('weight').textContent = pokemon.size.weight;
+  const types = document.getElementById('types');
+  const resistant = document.getElementById('resistant');
+  const weaknesses = document.getElementById('weaknesses');
+  types.innerHTML = '';
+  resistant.innerHTML = '';
+  weaknesses.innerHTML = '';
+  for (let i = 0; i < pokemon.type.length; i += 1) {
+    types.append(createIconType(pokemon.type[i]));
+  }
+  for (let i = 0; i < pokemon.resistant.length; i += 1) {
+    resistant.append(createIconType(pokemon.resistant[i]));
+  }
+  for (let i = 0; i < pokemon.weaknesses.length; i += 1) {
+    weaknesses.append(createIconType(pokemon.weaknesses[i]));
+  }
+  document.getElementById('max-cp').textContent = pokemon.stats['max-cp'];
+  document.getElementById('max-hp').textContent = pokemon.stats['max-hp'];
+  const specialAttacks = document.getElementById('special-attacks');
+  specialAttacks.innerHTML = '';
+  for (let i = 0; i < pokemon['special-attack'].length; i += 1) {
+    const span = document.createElement('span');
+    span.className = 'text-aling label-data';
+    span.textContent = pokemon['special-attack'][i].name;
+    specialAttacks.append(span);
+  }
+  const evolution = document.getElementById('evolution');
+
+  showEvolution(pokemon.img, evolution, pokemon.evolution['prev-evolution'], pokemon.evolution['next-evolution']);
+};
 
 const loadPage = () => {
   currentData = data.pokemon;
@@ -386,6 +475,13 @@ const loadPage = () => {
   menuSystem();
   if (wordIntroduced.length === 0 && isContainerSection === false) {
     showCard(currentData, divCardContainer);
+  }
+  const listOfPokemonCards = document.getElementsByClassName('pokemon-card');
+  for (let i = 0; i < listOfPokemonCards.length; i += 1) {
+    listOfPokemonCards[i].addEventListener('click', () => {
+      modalMode.style.display = 'block';
+      showInfoPokemon(listOfPokemonCards[i].id);
+    });
   }
 };
 

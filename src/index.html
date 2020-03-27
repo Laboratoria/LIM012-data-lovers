@@ -7,24 +7,88 @@
     <link rel="shortcut icon" href="#">    
     <link rel="stylesheet" href="style.css" />
     <link href="https://fonts.googleapis.com/css?family=Aldrich&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Rammetto+One&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Thambi+2|Roboto+Mono&display=swap" rel="stylesheet">
+    
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
   </head>
   <body>
     <div class="root">
-      <header id="header">
+      <header id="header-page">        
         <img id = "logo-pokemon" src="images/1200px-Pokémon_GO_logo.svg.png" alt="">
       </header>
-
+      <div id="modal-mode">        
+        <div id="modal-window" class="fixed">
+        <img src="images/close.png" alt="" id="close-modal" class="icon-small btn-close-img">
+        <div id="div-img-modal" >          
+          <img src="" id="img-pokemon-modal" class="pokemon-img-medium">          
+          
+        </div>        
+        <section id="body-modal" class="modal-font flex-wrap">  
+          <div id="div-pokemon-name-modal" class="text-aling"></div>          
+          
+          <div class="column-1 flex-wrap">
+            <img src="images/cintam.png" alt="" class="icon-medium icon-center">
+            <div class="text-aling">
+              <span class="label-section ">Height</span>
+              <span id="height" class="data-section-2"></span>
+            </div>
+            
+            
+          </div>
+          <div class="column-1 flex-wrap">
+            <img src="images/balanza.png" alt="" class="icon-medium icon-center ">
+            <div class="text-aling">
+              <span class="label-section">Weight</span>
+              <span id="weight" class="data-section-2"></span>
+            </div>          
+          </div>
+          <div class="column-1 flex-wrap">
+            <img src="images/world.png" alt="" class="icon-medium icon-center">
+            <div class="text-aling">
+              <span class="label-section ">Region</span>
+              <span id="region" class="data-section-2"></span>
+            </div>
+          </div>
+          <div class="column-2" id = "sections-types">
+            <p class="label-section text-aling"> Type</p>            
+            <div id = "types" class="section-modal flex-wrap"></div>
+            <p class="label-section text-aling"> Resistant</p>            
+            <div id = "resistant" class="section-modal flex-wrap"></div>
+            <p class="label-section text-aling"> Weaknesses</p>            
+            <div id = "weaknesses" class="section-modal flex-wrap"></div>
+          </div>
+          <div class="column-2 flex-wrap">
+            <div class="column-2 text-aling">
+              <span class="label-section ">Max-CP</span>
+              <span id="max-cp" class="data-section-2"></span>
+            </div>
+            <div class="column-2 text-aling">              
+              <span class="label-section ">Max-HP</span>
+              <span id="max-hp" class="data-section-2"></span>
+            </div>
+            <span class="label-section ">Special Atacks</span>
+            <div id="special-attacks" class="column-3">
+            </div>            
+            
+          </div>
+          <p class="label-section text-aling ">EVOLUTION</p>            
+          <div id="evolution" class="column-3 flex-wrap"></div>
+          
+        </section>
+      </div>
+      </div>
+      
+      
+      
       <nav id="navbar">
-        <!-- <div id="container-bar-search"> -->
-          <span id="logo-pokedex">POKEDEX</span>
-          <input type="text" id="input-bar-search" placeholder="Nombre de Pókemon">
+        <span id="logo-pokedex">POKEDEX</span>
+        <input type="text" id="input-bar-search" placeholder="Nombre de Pókemon">
           <div id = "icon-bar-search">
             <img src="images/buscar.png" alt="" id="img-icon-bar-search">
           </div>
-        <!-- </div> -->
       </nav>
 
       <div class="top-filter">
@@ -32,14 +96,13 @@
         <button class="button-filter">Ordenar por</button>
       </div>
 
-      <section id="section-conteiner">
+      <section id="section-body-conteiner">
         <div id="top-pagination">          
         </div>
 
-        <aside class="menu-container">
-          <button id="btn-close">
-            <img src="images/close.png" alt="" id="btn-close-img">
-          </button>
+        <aside class="menu-container">        
+            <img src="images/close.png" alt="" id="close-menu" class="btn-close-img icon-small">
+          
 
           <div class="menu section-order-by">
             <li ><a href="#" class="menu-option" id="menu-btn-order">Order by</a>
