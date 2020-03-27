@@ -14,11 +14,7 @@ export const ordenAs = (p1) => {
   const ascendente = p1.sort((prev, next) => {
     if (prev.nombre > next.nombre) {
       return 1;
-    } if (prev.nombre < next.nombre) {
-      return -1;
-    } return 0;
+    } return -1;
   });
   return ascendente;
 };
-
-export const anotherExample = () => 'OMG';

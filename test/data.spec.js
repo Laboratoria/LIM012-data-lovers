@@ -40,7 +40,6 @@ describe('athletesView', () => {
   it('is a function', () => {
     expect(typeof athletesView).toBe('function');
   });
-
   it('Deberia retornar un array con las propiedades: nombre, equipo, noc', () => {
     const output = [
       {
@@ -62,7 +61,6 @@ describe('athletesView', () => {
     expect(athletesView(input)).toEqual(output);
   });
 });
-
 
 describe('ordenAs', () => {
   it('is a function', () => {

@@ -9,18 +9,18 @@ body{
 a{
     text-decoration: none;
 }
-
+ 
 .padre{
     display: flex;
     flex-flow: column nowrap;
 }
  
-
-
+ 
+ 
 .borrar{
     display:none !important;
   }
-
+ 
 .mostrar{
   display: block;
 }
@@ -49,22 +49,22 @@ a{
     th{
     padding: 15px;
     }
-
+ 
   li{
     display: inline;
     padding: 15px;
   }
-
+ 
   ul:nth-child(even){
     padding: 10px;
     background-color:rgb(248, 245, 245);
   }
-
+ 
 .margen-interno{
     padding: 0 50px;
 }
     .header{
-      background: url(imagenes/olimpiadas5.jpg);
+      background: url(Imagenes/olimpiadas5.jpg);
       background-position: center;
       background-attachment: contain;
       background-size: cover;
@@ -177,7 +177,7 @@ a{
                 padding: 0 10px;
                 letter-spacing: 2px;
             }
-
+ 
                 
                   
         .aside{
@@ -211,8 +211,8 @@ a{
             padding: 0 10px;
             letter-spacing: 2px;
         }
-
-
+ 
+ 
 @media all and (max-width: 1120px){
     .section{
         flex-direction: column;
@@ -246,4 +246,5 @@ a{
           flex-direction: column;
     }
 }
+
 
