@@ -1,6 +1,6 @@
 import { orderChampions } from '../src/data.js';
 
-const data = [
+const array = [
   { name: 'Aatrox' },
   { name: 'Zyra' },
   { name: 'Diana' },
@@ -24,10 +24,10 @@ describe('orderChampions', () => {
   });
 
   it('return sort champions from AZ', () => {
-    expect(orderChampions(data, 'az')).toEqual(firstOrder);
+    expect(orderChampions(array, 'az')).toEqual(firstOrder);
   });
 
   it('return sort champions from ZA', () => {
-    expect(orderChampions(data, 'za')).toEqual(secondOrder);
+    expect(orderChampions(array, 'za')).toEqual(secondOrder);
   });
 });

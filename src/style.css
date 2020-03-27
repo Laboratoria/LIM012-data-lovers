@@ -27,16 +27,18 @@ body {
 
 .logo {
   /*background-color: var(--color-black);*/
-  background-position: center;
+  /*background-position: center;
   background-attachment: fixed;
   background-size: cover;
-  display: flex;
   flex-flow: column nowrap;
   height: 120px; /*observacion*/
+  display: flex;
+  text-align: center;
+  align-self: center;
 }
 
 .main-nav {
-  background-color: var(--color-borde);
+  background-color: var(--color-white);
 }
 
 /*trabajando con el select*/
@@ -102,7 +104,7 @@ select.nav-container_item {
   display: flex;
   flex-direction: column;
   flex-grow: 1; /*sirve para el crecimiento de las cajas*/
-  background-color: var(--color-borde);
+  background-color: var(--color-white);
 }
 
 /*.main-container_section {
