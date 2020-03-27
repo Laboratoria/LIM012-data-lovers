@@ -50,7 +50,7 @@ const generation = (geNumber, geName) => {
   subtitle.className = 'subtitles margin-bottom';
   subtitle.innerHTML = `
   <div class="arrow">
-    <h2>Generacion ${geNumber} - ${geName}</h2>
+    <h2>Generacion ${geNumber}: ${geName}</h2>
   </div>
   <div class="line hide"></div>
   `;
