@@ -15,6 +15,7 @@ export const search = (data, inputText) => {
   });
   return result;
 };
+
 // Funcion para filtrar por tipo
 export const filterByType = (pokemonType, typeChose) => {
   const typesResult = [];
@@ -60,38 +61,3 @@ export const order = (data, parameter) => {
   }
   return newArray;
 };
-//   let result = [];
-//   // buscando pokemones con las letras ingresadas
-//   if (parameter === 'A-Z') {
-//     result = data.sort((a, b) => {
-//       if (a.name > b.name) {
-//         return 1;
-//       }
-//       if (a.name < b.name) {
-//         return -1;
-//       }
-//       return 0;
-//     });
-//   } else if (parameter === 'Z-A') {
-//     result = data.sort((a, b) => {
-//       if (a.name < b.name) {
-//         return 1;
-//       }
-//       if (a.name > b.name) {
-//         return -1;
-//       }
-//       return 0;
-//     });
-//   } else {
-//     result = data.sort((a, b) => {
-//       if (a.num > b.num) {
-//         return 1;
-//       }
-//       if (a.num < b.num) {
-//         return -1;
-//       }
-//       return 0;
-//     });
-//   }
-//   return result;
-// };
