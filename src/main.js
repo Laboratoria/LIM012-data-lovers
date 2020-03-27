@@ -1,6 +1,4 @@
-/* eslint-disable no-loop-func */
-/* eslint-disable no-console */
-import { dinamicSearchPokemon, filterPokemon, orderBy } from './data.js';
+import { dinamicSearchPokemon, filterPokemon, orderBy, changeOrder } from './data.js';
 
 import data from './data/pokemon/pokemon.js';
 
@@ -36,13 +34,16 @@ const optionsFilter = [];
 let isContainerSection = false;
 const positions = [0, 0, 0];
 let typeChoosed = '';
-
+let deg = 0;
 const divCardContainer = document.getElementById('card-container');
 const divSectionsContainer = document.getElementById('card-container-section');
+const divTopPagination = document.getElementById('top-pagination');
 
 const divOrderBy = document.getElementsByClassName('menu')[0];
 const divFilterBy = document.getElementsByClassName('menu')[1];
 // const divCalcuBy= document.getElementsByClassName('menu')[2];
+
+const btnChangeOrder = document.getElementById('btn-change-order');
 
 const showMessageOfSearch = (container) => {
   container.innerHTML = '<p>Lo sentimos, no encontramos resultados que coincidan con su búsqueda</p>';
@@ -74,6 +75,9 @@ const putPokemonTypes = (dataTypesPokemon, divCardTypes) => {
     divCardTypes.appendChild(createPokemonType(dataTypesPokemon[i]));
   }
 };
+const putPokemonCPHP = (dataCPHPpokemon, divCardCPHP) => {
+  divCardCPHP.textContent = dataCPHPpokemon;
+};
 
 const createPokemonCard = (index, dataPokemon, container) => {
   if (typeof dataPokemon !== 'undefined') {
@@ -83,15 +87,19 @@ const createPokemonCard = (index, dataPokemon, container) => {
     const divCardName = document.createElement('div');
     const divCardImage = document.createElement('div');
     const divCardTypes = document.createElement('div');
+    const divCardCPHP = document.createElement('div');
     divCardName.className = 'pokemon-name';
     divCardImage.className = 'pokemon-image';
     divCardTypes.className = 'pokemon-types';
+    divCardCPHP.className = 'pokemon-name';
     putPokemonName(dataPokemon.name, divCardName);
     putPokemonImage(dataPokemon.img, divCardImage);
     putPokemonTypes(dataPokemon.type, divCardTypes);
+    putPokemonCPHP(`cp:${dataPokemon.stats['max-cp']}/hp:${dataPokemon.stats['max-hp']}`, divCardCPHP);
     divCard.appendChild(divCardName);
     divCard.appendChild(divCardImage);
     divCard.appendChild(divCardTypes);
+    divCard.appendChild(divCardCPHP);
   } else {
     showMessageOfSearch(container);
   }
@@ -106,7 +114,6 @@ const showCard = (dataPokemon, container) => {
 
 const searchPokemon = () => {
   if (isContainerSection === true) {
-    console.log('modo busqueda de pokemones');
     divSectionsContainer.style.display = 'none';
     isContainerSection = false;
     divCardContainer.style.display = 'flex';
@@ -175,6 +182,16 @@ const onlyText = (e) => {
   }
 };
 
+const changeOrderCurrentData = (dataPokemon, container) => {
+  btnChangeOrder.addEventListener('click', () => {
+    const imgChange = document.getElementById('btn-change-order');
+    deg += 180;
+    console.log(deg);
+    imgChange.style.transform = `rotate(${deg}deg)`;
+    showCard(changeOrder(dataPokemon), container);
+  });
+};
+
 const inputBarSearch = document.getElementById('input-bar-search');
 inputBarSearch.addEventListener('keyup', searchPokemon);
 inputBarSearch.addEventListener('keypress', onlyText, false);
@@ -194,10 +211,9 @@ buttonCloseLateralMenu.addEventListener('click', hideLateralMenu);
 const showAllByFilter = (whichFilter) => {
   divCardContainer.style.display = 'flex';
   divSectionsContainer.style.display = 'none';
+  divTopPagination.style.display = 'block';
   isContainerSection = false;
   const title = document.createElement('p');
-  title.className = 'title';
-
   switch (whichFilter) {
     case 'type':
       title.textContent = `Pokemones tipo ${typeChoosed}`;
@@ -211,16 +227,17 @@ const showAllByFilter = (whichFilter) => {
     default:
       // do nothing
   }
-  divCardContainer.appendChild(title);
+  divTopPagination.appendChild(title);
   currentData = filterPokemon(whichFilter, typeChoosed);
   showCard(currentData, divCardContainer);
+  deg = 0;
+  changeOrderCurrentData(currentData, divCardContainer);
 };
 
 const showMore = document.getElementsByClassName('show-more');
 showMore[0].addEventListener('click', () => { showAllByFilter('type'); });
 showMore[1].addEventListener('click', () => { showAllByFilter('resistant'); });
 showMore[2].addEventListener('click', () => { showAllByFilter('weaknesses'); });
-
 
 const putCardsOnSlider = (items, container) => {
   for (let i = 0; i < items.length; i += 1) {
@@ -231,9 +248,9 @@ const putCardsOnSlider = (items, container) => {
 const showPokemonInSections = () => {
   if (!isContainerSection) {
     isContainerSection = true;
-    console.log('modo filtro por seciciones');
     divCardContainer.style.display = 'none';
     divSectionsContainer.style.display = 'block';
+    divTopPagination.style.display = 'none';
   }
   const divSections = divSectionsContainer.getElementsByClassName('slide-cards');
   divSections[0].innerHTML = '';
@@ -266,7 +283,6 @@ const goToNextItem = (slider, index) => {
 };
 
 const goToPrevItem = (slider, index) => {
-  console.log('prev');
   if (positions[index] > 0) {
     positions[index] -= 1;
     translateX(positions[index], slider);
@@ -326,6 +342,8 @@ const orderSections = (option) => {
 const orderSimpleData = (option) => {
   currentData = orderBy(currentData, option);
   showCard(currentData, divCardContainer);
+  deg = 0;
+  changeOrderCurrentData(currentData, divCardContainer);
 };
 
 const orderSystem = (btn) => {
@@ -386,6 +404,8 @@ const loadPage = () => {
   menuSystem();
   if (wordIntroduced.length === 0 && isContainerSection === false) {
     showCard(currentData, divCardContainer);
+    deg = 0;
+    changeOrderCurrentData(currentData, divCardContainer);
   }
 };
 

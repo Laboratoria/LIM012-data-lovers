@@ -2,17 +2,17 @@
 import data from './data/pokemon/pokemon.js';
 
 export const dinamicSearchPokemon = (wordIntroduced) => {
-  const pokemonFilter = [];
+  const pokemon = [];
   let word;
   for (let i = 0; i < data.pokemon.length; i += 1) {
     word = data.pokemon[i].name.substring(0, wordIntroduced.length);
     if (wordIntroduced.length <= data.pokemon[i].name.length && wordIntroduced.length !== 0) {
       if (wordIntroduced.toLowerCase() === word.toLowerCase()) {
-        pokemonFilter.push(data.pokemon[i]);
+        pokemon.push(data.pokemon[i]);
       }
     }
   }
-  return pokemonFilter;
+  return pokemon;
 };
 
 export const filterPokemon = (whichFilter, pokemonType) => {
@@ -50,3 +50,5 @@ export const orderBy = (dataPokemon, whichOrder) => {
   }
   return pokemonOrdened;
 };
+
+export const changeOrder = dataPokemon => dataPokemon.reverse();

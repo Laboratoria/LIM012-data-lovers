@@ -109,7 +109,6 @@ aside{
     height: 20px;
     right: 1em;
     top: 1em;
-    position: absolute;
     
   }
     #btn-close-img{    
@@ -186,10 +185,22 @@ section{
   border: none;
   font-weight: bolder;
 }
-.top-pagination{
+#top-pagination{
   display: none;
+  display: flex;
+  justify-content: end ;
+  padding-right: 5%;
+  padding-top: 3%;
 }
-
+  #btn-change-order{
+    width: 30px;
+    height: 30px;
+    justify-self: end;
+  }
+    #btn-change-order-img{
+      width: 100%;
+      height: 100%;
+    }
 #card-container,
 #card-container-section{
   width: auto;
@@ -337,19 +348,16 @@ section{
 .pokemon-name{
   padding: .3rem 0;
   width: 140px ;
-  height: 25px ;
+  height: 15px ;
   text-align: center;
   text-transform: capitalize;
   color:var(--color-blue-4);
 }
   #img-pokemon{
-    width: 140px;
-    height:140px;
+    width: 135px;
+    height:130px;
   }
-.pokemon-types{
-  padding: .3rem;
-  height: 30px;
-}
+
 .pokemon-type{
   border-radius: 3px;
   color: var(--color-blue-4);
@@ -449,20 +457,10 @@ section{
     
     #top-pagination{
       grid-area: top;
-      background: #fff;
-      display: inline;
-      padding: 1em;
+      display: flex;
+      padding-right: 5%;
+      padding-top: 3%;
     }
-    #top-pagination a{
-      padding: 1em;
-      font-size: 1em;
-    }
-      .pagination-button{        
-        background: var(--color-blue-3);
-        color: #fff;
-        padding: .5em;      
-        font-size: .8em;
-      }
     nav{
       position: sticky;
     }
@@ -490,5 +488,4 @@ section{
       
           
   }
-
-
+  
