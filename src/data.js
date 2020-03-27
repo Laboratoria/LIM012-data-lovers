@@ -1,13 +1,12 @@
 export const athletesView = (data) => {
-  const paintAthletes = data.atletas.map((a) => {
-    return {
-      nombre: a.nombre,
-      deporte: a.deporte,
-      equipo: a.equipo,
-    };
-  });
+  const paintAthletes = data.atletas.map(a => ({
+    nombre: a.nombre,
+    deporte: a.deporte,
+    equipo: a.equipo,
+  }));
   return paintAthletes;
 };
+
 export const ordenAs = (paintAthletes) => {
   const ascendente = paintAthletes.sort((prev, next) => {
     if (prev.nombre > next.nombre) {
