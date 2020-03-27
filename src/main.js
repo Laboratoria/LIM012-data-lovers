@@ -35,10 +35,10 @@ const pokemonCards = (allPokemons) => {
   allPokemons.forEach((eachPokemon) => {
     const pokemon = `
     <div class="pokemon-card">
-      <p class="pokemon-number left">${eachPokemon.num}</p>
+      <p class="pokemon-number">${eachPokemon.num}</p>
       <img class="pokemon-image" src="${eachPokemon.img}">
       <p class="pokemon-name">${eachPokemon.name}</p> 
-      <div>
+      <div class="button-container">
         <button class ="button" id="features">Features</button>
         <button class ="button" id="attacks">Attacks</button>
       </div>
@@ -172,7 +172,7 @@ iconSearch.addEventListener('click', () => {
 // for(let i = 0; i < data.pokemon.length; i += 1) {
 data.pokemon.forEach((eachPokemon) => {
   const buscar = eachPokemon['quick-move'];
-// const dataAtack = buscar.name;
+  // const dataAtack = buscar.name;
   console.log(buscar);
 });
 // searchInput.addEventListener('focusout', () => {

@@ -148,7 +148,7 @@
 
 .pokemon-card {
     width: 170px;
-    height: 195px;
+    height: 200px;
     background-color: #FFF;
     margin-bottom: 3em;
     padding: 1em;
@@ -169,21 +169,37 @@
 .pokemon-number {
     text-align: left;
 }
+
+.button-container {
+    margin-top: 8px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
 .button {
     list-style: none;
     padding: 5px;
-    margin: 5px;
     border-radius: 5px;
     width: 40%;
     color: #333333;
     background-color: #ffffff;
     cursor: pointer;
 }
+
 #features {
     border: 1.5px solid  #4AB483;
 }
 #attacks {
     border: 1.5px solid #F25749;
+}
+
+#features:hover {
+    background-color: #4AB483;
+    color: #fff;
+}
+#attacks:hover {
+    background-color: #F25749;
+    color: #fff;
 }
 /* MAIN - SUBITULOS */
 .subtitles {
