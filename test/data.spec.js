@@ -1,6 +1,7 @@
+/* eslint-disable import/extensions */
 import { orderChampions } from '../src/data.js';
 
-const array = [
+const property = [
   { name: 'Aatrox' },
   { name: 'Zyra' },
   { name: 'Diana' },
@@ -24,10 +25,10 @@ describe('orderChampions', () => {
   });
 
   it('return sort champions from AZ', () => {
-    expect(orderChampions(array, 'az')).toEqual(firstOrder);
+    expect(orderChampions(property, 'az')).toEqual(firstOrder);
   });
 
   it('return sort champions from ZA', () => {
-    expect(orderChampions(array, 'za')).toEqual(secondOrder);
+    expect(orderChampions(property, 'za')).toEqual(secondOrder);
   });
 });

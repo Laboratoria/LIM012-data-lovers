@@ -2,7 +2,7 @@
 :root {
   --color-black: #000;
   --color-nav-dark: #2d2e2e;
-  --color-main: #eb6f6f;
+  --color-main: #F2EFEF;
   --color-footer: #d0ff00;
   --color-white: #fff;
   --color-borde: #937341;
@@ -25,17 +25,30 @@ body {
   font-family: Arial;
 }
 
-.logo {
+.main-header{
+  background: url(img/logo2.jpg);
+  /*display: flex;*/
+  background-color: var(--color-black);
+  height: 98px;
+  /*align-self: center;*/
   /*background-color: var(--color-black);*/
   /*background-position: center;
   background-attachment: fixed;
-  background-size: cover;
-  flex-flow: column nowrap;
-  height: 120px; /*observacion*/
-  display: flex;
-  text-align: center;
-  align-self: center;
+  background-size: cover;*/
+  /*display: flex;*/
+  /*flex-flow: column nowrap;*/
 }
+
+/*.logo {
+  align-self: center;
+  /*background-color: var(--color-black);*/
+  /*background-position: center;
+  background-attachment: fixed;
+  background-size: cover;*/
+  /*display: flex;*/
+  /*flex-flow: column nowrap;*/
+  /*height: 120px; observacion
+}*/
 
 .main-nav {
   background-color: var(--color-white);
@@ -47,7 +60,7 @@ body {
   color: var(--color-borde);
   display: block;
   outline: none;
-   cursor: pointer; 
+  cursor: pointer; 
 }
 
 #order:hover {
@@ -72,6 +85,7 @@ select.nav-container_item {
   display: flex;
   background-color: var(--color-black);
   margin-top: 1%; /*para poder separar la lista del header*/
+  flex-wrap: wrap;/*envoltura flexibe*/
 }
 
 .nav-container_item {
@@ -89,7 +103,6 @@ select.nav-container_item {
   color: var(--color-borde);
   display: block; /*es necesario para q el mouse al estar no solo en el nombre sino en su caje muestre el link abajo*/
 }
-
 
 /*@media screen and (min-width: 768px) {
   .nav-container {
@@ -120,7 +133,7 @@ select.nav-container_item {
 .class-div {
   display: inline-block;
   /*text-align: center;*/
-  margin: 0px 0px 0px 08px;
+  /*margin: 0px 0px 0px 00px;*/
    /*padding: 150px 30px 30px 30px;arriba,derecha,abajo,izquierda*/ 
   /*cursor: pointer;*/
   position: relative;
@@ -147,19 +160,41 @@ select.nav-container_item {
   height: 200px;
 }
 
-
+@font-face{
+  font-family: 'Acme', sans-serif; /*tipo de letra(fuente)*/
+  src: url('fonts/Acme-Regular.ttf'); /*fuente personalizada desde mi carpeta*/
+}
 
 .class-name {
   font-size: x-large;
-  font-family: 'Acme', sans-serif;
+  font-family: 'Acme', sans-serif;/*lo menciono para que aqui se utilize la fuente*/
   font-weight: bolder;
   text-align: center;
   background-color: #c4c4c4;
-  margin: -0.15em 0.02em 1em;
-  padding: 0.52em;
+  margin-top: -0.15em;
+  padding: 0.10em;/**/
 }
 
-.main-footer {
+.main-footer{
+  background: url(img/facebook.png);
+  background-position: center;
+  background-attachment: fixed;
+  background-size: 30px;
+  background-repeat: no-repeat;
+  /*-webkit-appearance: none;
+  -moz-appearance: none;
+  flex-grow: 1;
+  text-align: center;
+  line-height: 2.5;*/
+  background-color: var(--color-black);
+  color: var(--color-white);
+  text-align: center;
+  
+  /*display: flex;*/
+  /*flex-flow: column nowrap;*/
+}
+
+/*.main-footer {
   background-color: var(--color-black);
   color: var(--color-white);
   text-align: center;
@@ -168,4 +203,4 @@ select.nav-container_item {
   bottom: 0;
   width: 100%;
   font-family: inherit;
-}
+}*/

@@ -4,11 +4,11 @@
 
 // AQUI MANEJAMOS LAS FUNCIONES
 
-export const orderChampions = (array, orderFrom) => {
-  const newArray = array;
+export const orderChampions = (property, orderFrom) => {
+  const datesOfChampions = property;
 
   if (orderFrom === 'az') {
-    newArray.sort((a, b) => {
+    datesOfChampions.sort((a, b) => {
       if (a.name > b.name) {
         return 1;
       }
@@ -16,12 +16,12 @@ export const orderChampions = (array, orderFrom) => {
     });
   }
   if (orderFrom === 'za') {
-    newArray.sort((a, b) => {
+    datesOfChampions.sort((a, b) => {
       if (a.name < b.name) {
         return 1;
       }
       return -1;
     });
   }
-  return newArray;
+  return datesOfChampions;
 };
