@@ -44,13 +44,13 @@ const pokemonCards = (allPokemons) => {
   return dataPokemon;
 };
 
-// Creando subtítulo de Generación
-const generation = (geNumber, geName) => {
+// Creando subtítulos
+const createSub = (principal, second) => {
   const subtitle = document.createElement('div');
   subtitle.className = 'subtitles margin-bottom';
   subtitle.innerHTML = `
   <div class="arrow">
-    <h2>Generacion ${geNumber}: ${geName}</h2>
+    <h2>${principal}: ${second}</h2>
   </div>
   <div class="line hide"></div>
   `;
@@ -63,14 +63,14 @@ const allDataByGenerations = () => {
   // borrando el contenedor del filtrado
   sectionContent.classList.remove('show');
   // Creando sección Kanto
-  sectionContent.appendChild(generation('I', 'Kanto'));
+  sectionContent.appendChild(createSub('Generation I', 'Kanto'));
   const dataKanto = document.createElement('div');
   dataKanto.className = 'cards-distribution';
   // Creando e insertando cards de pokemones
   dataKanto.innerHTML += pokemonCards(filterByGeneration(data.pokemon, 'kanto'));
   sectionContent.appendChild(dataKanto);
   // Creando sección Johto
-  sectionContent.appendChild(generation('II', 'Johto'));
+  sectionContent.appendChild(createSub('Generation II', 'Johto'));
   const dataJohto = document.createElement('div');
   dataJohto.className = 'cards-distribution';
   // Creando e insertando cards de pokemones
@@ -125,6 +125,7 @@ const filterBox = document.querySelector('.sub-menu');
 filterBox.addEventListener('click', (e) => {
   const typeChose = e.target.id;
   sectionContent.innerHTML = '';
+  sectionContent.appendChild(createSub('Type', e.target.id));
   const filterContainer = document.createElement('div');
   filterContainer.className = 'cards-distribution';
   // Llamar a la función para filtrar por tipo elegido
@@ -134,7 +135,14 @@ filterBox.addEventListener('click', (e) => {
 // All pokémons
 const allPokemons = document.getElementById('all-pokemons');
 allPokemons.addEventListener('click', () => {
+  pokemonCards(order(data.pokemon, ''));
   allDataByGenerations();
+});
+// HOME
+const home = document.getElementById('home');
+home.addEventListener('click', () => {
+  // eslint-disable-next-line no-restricted-globals
+  location.reload();
 });
 
 // Botón de subir
