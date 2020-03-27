@@ -176,16 +176,12 @@ a {
 }
 /* MAIN - SUBITULOS */
 .subtitles {
-    /* width: 100%; */
-    /* border: 1px solid black; */
     height: 40px;
     display: flex;
     align-items: center;
 }
 
 .line{
-    /* border: 1px solid black; */
-    /* display: inline-block; */
     width: 75%; 
     height: 5px;
     background-color: #F25749;
@@ -350,6 +346,29 @@ aside {
 .li-mits {
     border-top:  0.5px solid #fff;
     border-bottom:  0.5px solid #fff;
+}
+
+.sub-menu {
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+.li-mits {
+    border-right: 0.5px solid #FFF;
+}
+
+table td {
+    height: 30px;
+    font-size: 0.9em;
+}
+
+table td:hover, .li-filter:hover {
+    background: rgba(0,0,0,0.3);
+}
+
+tr {
+    border-bottom: 0.5px solid #FFF;
 }
 
 .hide-f {
