@@ -4,11 +4,13 @@ import {
 } from './data.js';
 import data from './data/atletas/atletas.js';
 
+const arrAtletas = data.atletas;
+
 const optionsMenu = document.querySelectorAll('li');
 optionsMenu.forEach((element) => {
   element.addEventListener('click', (event) => {
     document.getElementById('table').classList.remove('borrar');
-    const paintAthletes = athletesView(data);
+    const paintAthletes = athletesView(arrAtletas);
     if (event.target.id === '1') {
       document.getElementById('root').innerHTML = '';
       document.getElementById('articulos').classList.add('borrar');
@@ -33,7 +35,7 @@ optionsMenu.forEach((element) => {
 });
 const alfhabeticOrder = document.getElementById('btn');
 alfhabeticOrder.addEventListener('click', () => {
-  const ascendente = ordenAs(athletesView(data));
+  const ascendente = ordenAs(athletesView(arrAtletas));
   document.getElementById('root').innerHTML = '';
   ascendente.forEach((item) => {
     const ulAtleta = document.createElement('ul');
