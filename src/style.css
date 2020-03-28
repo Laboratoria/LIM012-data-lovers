@@ -2,7 +2,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  height: relative;
 }
 
 body {
@@ -10,18 +9,78 @@ body {
   color: aliceblue;
 }
 
+:root {
+  --color-border: rgba(255, 255, 255, 0.9);
+  --color-size: rgba(255, 255, 255, 0.89);
+  --color-description: #97969F;
+}
+
 .header {
   background: #B10505;
+  margin-top: 43px;
+  height: 7rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  margin-top: 1rem;
+  margin-left: 1.7rem;
+}
+
+.navegador {
+  display: flex;
 }
 
 .navegador a {
   color: #ffffff;
-  text-align: center;
   text-decoration: none;
+  font-size: 30px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
 }
 
 .navegador a:hover {
   background: #e74d3c88;
+}
+
+.background {
+  background-image: url(./img/background.jpg);
+  height: calc(100vh - 155px);
+  background-position: center;
+  background-size: cover;
+}
+
+.title {
+  width: 60%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title1 {
+  background-color: rgba(196, 196, 196, 0.31);
+  border: 5px solid var(--color-border);
+  width: 46%;
+  height: 80px;
+  padding: 6px 0;
+  margin: 95px 199px 0 0;
+  font-size: 50px;
+  text-align: center;
+}
+
+.title2 {
+  margin-top: 0.7em;
+  font-size: 50px;
+}
+
+.subtitle {
+  display: block;
+  margin-top: 0.4em;
 }
 
 .container {
@@ -35,48 +94,20 @@ body {
 
 .cards {
   background: rgba(20, 29, 38, 0.603);
-  border: double;
+  border: 1px solid var(--color-border);
   width: 524px;
   height: 200px;
   margin: 10px;
   display: flex;
-  justify-content: center
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
-.title {
+.titleh2 {
   font-size: 20px;
 }
 
-
-footer .links {
-  background: #c0392b;
-  background: #c03a2bab;
-  display: flex;
-  flex-wrap: wrap;
+.description {
+  color: var(--color-description);
 }
-
-
-footer .links a:hover {
-  background: #E74C3C;
-  background: rgba(231, 77, 60, 0.726);
-}
-
-footer .social a {
-  display: inline-block;
-}
-
-@media screen and (max-width: 800px) {
-  @media screen and (max-width: 800px) {
-    .container {
-      flex-direction: column;
-    }
-
-    footer .social a {
-      flex: 0;
-    }
-
-    @media screen and (max-width: 600px) {
-      @media screen and (max-width: 400px) {
-        aside {
-          flex-direction: column;
-        }
