@@ -1,101 +1,70 @@
-//  Funcionalidad en data
-//  muestro la info
-export const showAllData = poke => `
-              <p class="namePok"> ${poke.name}</p>
-              <section id=firstRow>
-                <div class="imgCont">
-                    <span class="circle">${poke.num}</span>
-                    <img src="${poke.img}" alt="pokemonImage">
-                </div>
-                <div id="s2info" class="infoCont">
-                          <p>Type:<span>${poke.type}</span></p>
-                          <p>Weakness:<span>${poke.weaknesses}</span></p>
-                          <p>Resistance:<br><span>${poke.resistant}</span></p>
-                </div>
-              </section>
-                    <div id="hW" class="infoCont">
-                      <p>Height:<span>${poke.size.height}</span></p>
-                      <p>Weight:<span>${poke.size.weight}</span></p>  
-                      <p>Base Attack:<span>${poke.stats['base-attack']}</span></p>
-                    </div>
-                    <p id="about" class="infoCont">${poke.about}</p>
-               </section>
-              `;
-// Muestra solo un poco
-export const showInfo = data => `
-        <div class="imgCont">
-            <span class="circle">${data.num}</span>
-            <img src="${data.img}" alt="pokemonImage">
-            <span> ${data.name}</span>
-            <p id="${data.num}" class="more">More</p>
-        </div>
-        `;
-// Ordena Alfabeticamente
-export const orderBy = (poke, order) => {
-  let arrSort = [];
-  arrSort = poke.sort((a, b) => {
-    const nameA = a.name;
-    const nameB = b.name;
-    const numA = a.num;
-    const numB = b.num;
-    if (order === 'asc') {
-      if (nameA > nameB) {
-        return 1;
-      }
+//  DOM
+//  {} cuando solo llamas a una funcion determinada no a toda la hoja
+import data from './data/pokemon/pokemon.js';
+import {
+  searcher, showInfo, orderBy, typeFilter,
+} from './data.js';
 
-      if (nameA < nameB) {
-        return -1;
-      }
-      {
-        return 0;
-      }
-      /* return (nameA > nameB) ? 1 : ((nameA < nameB) ? -1 : 0); */
-    }
-    if (order === 'desc') {
-      if (nameA > nameB) {
-        return -1;
-      }
+const pokemones = data.pokemon;
+const inputSearchElem = document.getElementById('inputSearch');
+const searchIconElem = document.getElementById('searchIcon');
+const screen1Elem = document.getElementById('screen1');
+const screen2Elem = document.getElementById('screen2');
+const screen3Elem = document.getElementById('screen3');
+const screen4Elem = document.getElementById('screen4');
+const select1Elem = document.getElementById('selectOrder');
+const select2Elem = document.getElementById('selectType');
+const s3dataElem = document.getElementById('s3data');
+const mHome = document.querySelector('#home');
+const mPokedex = document.querySelector('#pokedex');
+const mCompare = document.querySelector('#compare');
 
-      if (nameA < nameB) {
-        return 1;
-      }
-      {
-        return 0;
-      }
-    }
-    //  numero descendente
+// Segunda Pantalla -Buscador
+searchIconElem.addEventListener('click', () => {
+  screen1Elem.style.display = 'none';
+  screen2Elem.style.display = 'block';
+  const inputVal = inputSearchElem.value;
+  screen2Elem.innerHTML = `${searcher(pokemones, inputVal)}`;
+});
+// Menu boton Home
+mHome.addEventListener('click', () => {
+  screen1Elem.style.display = 'flex';
+  screen2Elem.style.display = 'none';
+  screen3Elem.style.display = 'none';
+  screen4Elem.style.display = 'none';
+  inputSearchElem.value = '';
+});
+// Muestra por default Pok
+mPokedex.addEventListener('click', () => {
+  screen1Elem.style.display = 'none';
+  screen2Elem.style.display = 'none';
+  screen3Elem.style.display = 'flex';
+  s3dataElem.innerHTML = `${pokemones.map(showInfo).join('')}`;
+});
+// Muestra Info al tocar al pokemon
+s3dataElem.addEventListener('click', (e)=>{
+  const numClick = e.target.id;
+  const clicked = pokemones.find(poke => poke.num === numClick);
+  screen2Elem.style.display = 'block';
+  //visibility = 'visible';
+  screen3Elem.style.display = 'none';
+  screen2Elem.innerHTML = `${searcher(pokemones, numClick)}`;
+})
+// Boton Select OrderBy
+select1Elem.addEventListener('change', () => {
+  const select1Value = select1Elem.value;
+  s3dataElem.innerHTML = `${(orderBy(pokemones, select1Value)).map(showInfo).join('')}`;
+});
+select2Elem.addEventListener('change', () => {
+  const select2Value = select2Elem.value.toLowerCase();
+  s3dataElem.innerHTML = `${(typeFilter(pokemones, select2Value)).map(showInfo).join('')}`;
+});
 
-    if (order === 'numUp') {
-      if (numA > numB) {
-        return -1;
-      }
+mCompare.addEventListener('click', () => {
+  screen1Elem.style.display = 'none';
+  screen2Elem.style.display = 'none';
+  screen3Elem.style.display = 'none';
+  screen4Elem.style.display = 'flex';
+  // screen4Elem.innerHTML = `${showInfo(pokemones, inputSearchIconCElem)}`;
+});
 
-      if (numA < numB) {
-        return 1;
-      }
-      {
-        return 0;
-      }
-    }
-  });
-  return arrSort;
-};
-// Filtra por tipo
-export const typeFilter = (poke, tipo) => {
-  // eslint-disable-next-line no-shadow
-  const arrFilt = poke.filter(poke => poke.type.includes(tipo)); // retorna un boolean
-  return arrFilt;
-};
-// Buscador
-export const searcher = (data, value) => {
-  let info = '';
-  data.forEach((poke) => {
-    if (value === poke.name || value === poke.num) {
-      info = showAllData(poke);
-    }
-  });
-  if (info) {
-    return info;
-  }
-  return 'El nombre ingresado no es correcto';
-};
