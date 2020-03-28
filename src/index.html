@@ -14,12 +14,6 @@
         <div class="logoLol">
           <a href="index.htlm"><img src= "imagenes/logo.png" class="logo" ></a><!--src= "imagenes/logo.png"/volver a ponerlo cuando termine el css-->
         </div>
-        <div class="buscar">
-            <form class="formBuscador">
-              <button id="botonBuscar" class="botonBuscador"><img src="imagenes\search-regular-24.png"></button>
-              <input type="search" id="buscar" placeholder="Buscar por campeon">
-            </form>
-        </div>
       </div>
      
       <div>
@@ -36,8 +30,8 @@
           <nav >
             <select name="opciones" id="ordenar" class="selectStyle">
               <option value="" selected disabled>Ordenar</option>
-              <option id="ascendente">A - Z</option>
-              <option id="descendente">Z - A</option>
+              <option value="ascendente">A - Z</option>
+              <option value="descendente">Z - A</option>
             </select>
             <select name="opciones" id="roles" class="selectStyle">
               <option value="" selected disabled>Roles</option>
@@ -57,6 +51,34 @@
       </div>
       <div id="error">No se encontraron resultados</div>
       </section> 
+      <section class="roles" id="rolesCampeones">
+        <div>
+          <button id="luchador" class="luchador"></button>
+          <h2>LUCHADOR</h2>
+        </div>
+        <div>
+          <button id="tirador" class="tirador"></button>
+          <h2>TIRADOR</h2>
+        </div>
+        <div>
+          <button id="hechicero" class="hechicero"></button>
+          <h2>HECHICERO</h2>
+        </div>
+        <div>
+          <button id="asesino" class="asesino"></button>
+          <h2>ASESINO</h2>
+        </div>
+        <div>
+          <button id="tanque" class="tanque"></button>
+          <h2>TANQUE</h2>
+        </div>
+        <div>
+          <button id="apoyo" class="apoyo"></button>
+          <h2>APOYO</h2>
+        </div>
+        <div id="filtroRoles" class="filtroRoles">  
+        </div>
+      </section>
     </main>
     <footer class="footer">
       <p> Teleticket &copy;2020 - Todos los derechos reservados</p>
