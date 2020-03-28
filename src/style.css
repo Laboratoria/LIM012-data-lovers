@@ -107,7 +107,6 @@
     margin-bottom: 15px;
     box-shadow: 0px 0px 6px 0px rgba(0,0,0,22);
     text-align: center;
-<<<<<<< HEAD
   }*/
   
 
@@ -247,8 +246,8 @@ a{
           box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);  
         }
         .imagenCampeon{
-          width: auto;
-          height: 364px;
+          width: 299px;
+          height: 35  0px;
         }
         .nombreCampeon{
           text-align: center;
@@ -279,13 +278,10 @@ a{
 
     }*/
 
-=======
-  }
 
   #error {
     background: #707b15;
     padding: 10px 10px 10px 10px;
     display: none;
 }
->>>>>>> d4e5fb2c575fd263cde2ed4f58b2ebef4045609b
   
