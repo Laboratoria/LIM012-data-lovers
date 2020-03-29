@@ -54,30 +54,12 @@ body {
   font-family: Arial;
 }
 
+/*el header solo contiene una imagen*/
 .main-header{
   background: url(img/logo2.jpg);
-  /*display: flex;*/
   background-color: var(--color-black);
   height: 98px;
-  /*align-self: center;*/
-  /*background-color: var(--color-black);*/
-  /*background-position: center;
-  background-attachment: fixed;
-  background-size: cover;*/
-  /*display: flex;*/
-  /*flex-flow: column nowrap;*/
 }
-
-/*.logo {
-  align-self: center;
-  /*background-color: var(--color-black);*/
-  /*background-position: center;
-  background-attachment: fixed;
-  background-size: cover;*/
-  /*display: flex;*/
-  /*flex-flow: column nowrap;*/
-  /*height: 120px; observacion
-}*/
 
 .main-nav {
   background-color: var(--color-white);
@@ -89,26 +71,13 @@ body {
   color: var(--color-borde);
   display: block;
   outline: none;
-  cursor: pointer; 
+  cursor: pointer;
+  flex-grow: 0;
 }
 
 #orderAlphabetically:hover {
   background-color: var(--color-nav-dark);
 }
-
-/*intentando reemplazar una img con la flecha de seleccion*/
-/*select.nav-container_item{
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-}
-
-select.nav-container_item {
-  display: flex;
-  background: url(img/flechas.png) no-repeat right #191c2180;
-  background-position-x: 80%;
-  background-size: 7%;
-}*/
 
 .nav-container {
   display: flex;
@@ -143,31 +112,13 @@ select.nav-container_item {
   background-size: cover; */
 }
 
-/*.main-container_section {
-  background-color: var(--color-section);
-  flex-grow: 50;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: var(--color-white);
-}*/
-
 /*trabajando con las imagenes y nombres*/
 .class-div {
   display: inline-block;
-  /*text-align: center;*/
-  /*margin: 0px 0px 0px 00px;*/
-   /*padding: 150px 30px 30px 30px;arriba,derecha,abajo,izquierda*/ 
-  /*cursor: pointer;*/
   position: relative;
   margin-top: 1%;
-  /*bottom: 40px;*/
   transform-style: preserve-3d;/*animacion*/
   transition: 1.5s;/*animacion*/
-  /*display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;*/
 }
 
 .galeria {
@@ -178,7 +129,6 @@ select.nav-container_item {
 
 .class-img {
   margin: 0;
-  /*display: inline-block;*/
   width: 307px;
   height: 200px;
 }
@@ -195,7 +145,18 @@ select.nav-container_item {
   text-align: center;
   background-color: #c4c4c4;
   margin-top: -0.15em;
-  padding: 0.10em;/**/
+  padding: 0.10em;
+  text-transform: uppercase;
+}
+
+.class-tags{
+  font-size: x-large;
+  font-family: 'Acme', sans-serif;/*lo menciono para que aqui se utilize la fuente*/
+  font-weight: bolder;
+  text-align: center;
+  background-color: #c4c4c4;
+  margin-top: -0.15em;
+  padding: 0.10em;
 }
 
 .main-footer{
@@ -204,35 +165,16 @@ select.nav-container_item {
   background-attachment: fixed;
   background-size: 30px;
   background-repeat: no-repeat;
-  /*-webkit-appearance: none;
-  -moz-appearance: none;
-  flex-grow: 1;
-  text-align: center;
-  line-height: 2.5;*/
   background-color: var(--color-black);
   color: var(--color-white);
   text-align: center;
-  
-  /*display: flex;*/
-  /*flex-flow: column nowrap;*/
 }
 
-/*.main-footer {
-  background-color: var(--color-black);
-  color: var(--color-white);
-  text-align: center;
-  margin-top: auto;
-  position: static;
-  bottom: 0;
-  width: 100%;
-  font-family: inherit;
-}*/
-
-@media screen and (max-width: 320px) {
+/*@media screen and (min-width: 768px) {
   .nav-container {
     display: flex;
   }
   .nav-container_item {
     flex-grow: 1;
   }
-}
+}*/
