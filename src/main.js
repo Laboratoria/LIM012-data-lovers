@@ -1,8 +1,8 @@
+/* eslint-disable import/named */
 /* eslint-disable no-undef */
-/* eslint-disable space-infix-ops */
-/* eslint-disable comma-spacing */
-/* eslint-disable array-callback-return */
+/* eslint-disable max-len */
 /* eslint-disable spaced-comment */
+/* eslint-disable no-multiple-empty-lines */
 /* eslint-disable import/extensions */
 /* eslint-disable no-plusplus */
 // import data from './data/atletas/atletas.js';
@@ -12,15 +12,11 @@
 //  AQUI MANEJAMOS EL DOOM
 
 import data from './data/lol/lol.js';
-import { sortData , filterData } from './data.js';
-
-console.log(data.data);
+import { sortData, filterData } from './data.js';
 
 const allChampion = data.data;
 const arrObjetos = Object.values(allChampion);
 
-
-// Funcion para pintar toda la data en el HTML usando appendChild y createElement
 const crearTemplate = (arr) => {
   arr.forEach((champion) => {
     const newElement = document.createElement('div');
@@ -39,11 +35,53 @@ const crearTemplate = (arr) => {
 };
 crearTemplate(arrObjetos);
 
-/*********************************************** */
-// otra forma de pintar en el html toda la data de campeones
+// ORDENAR DATA
+const orderAlphabetically = document.getElementById('orderAlphabetically');
+orderAlphabetically.addEventListener('change', () => {
+  const sortingOut = orderAlphabetically.value;
+  container.innerHTML = '';
+  crearTemplate(sortData(arrObjetos, 'name', sortingOut));
+});
 
-// document.getElementById('box').innerHTML = crearTemplate(arrObjetos);
+// FILTRAR DATA
+const assassin = document.getElementById('assassin');
+assassin.addEventListener('click', () => {
+  container.innerHTML = '';
+  crearTemplate(filterData(arrObjetos, 'Assassin'));
+});
 
+const fighter = document.getElementById('fighter');
+fighter.addEventListener('click', () => {
+  container.innerHTML = '';
+  crearTemplate(filterData(arrObjetos, 'Fighter'));
+});
+
+const mage = document.getElementById('mage');
+mage.addEventListener('click', () => {
+  container.innerHTML = '';
+  crearTemplate(filterData(arrObjetos, 'Mage'));
+});
+
+const marksman = document.getElementById('marksman');
+marksman.addEventListener('click', () => {
+  container.innerHTML = '';
+  crearTemplate(filterData(arrObjetos, 'Marksman'));
+});
+
+const support = document.getElementById('support');
+support.addEventListener('click', () => {
+  container.innerHTML = '';
+  crearTemplate(filterData(arrObjetos, 'Support'));
+});
+
+const tank = document.getElementById('tank');
+tank.addEventListener('click', () => {
+  container.innerHTML = '';
+  crearTemplate(filterData(arrObjetos, 'Tank'));
+});
+
+
+//opcion2
 /*const crearTemplate = (arr) => {
   const all = [];
   for (let i = 0; i < arr.length; i++) {
@@ -54,63 +92,42 @@ crearTemplate(arrObjetos);
       </div>`);
   }
   return all.join('');
-};*/
+};
 
-/*******************************/
-// Lamando a la funcion ordenar
-const orderAlphabetically = document.getElementById('orderAlphabetically');
-orderAlphabetically.addEventListener('click',() => {
-  const sortingOut = orderAlphabetically.value;
-  container.innerHTML='';
-  crearTemplate(sortData(arrObjetos, 'name', sortingOut));
+document.getElementById('box').innerHTML = crearTemplate(arrObjetos);
+
+document.getElementById('order').addEventListener('change', () => {
+  const order = document.getElementById('order').value;
+  document.getElementById('box').innerHTML = crearTemplate(orderChampions(arrObjetos, 'name', order));
+});*/
+
+//opcion1 original
+/*document.getElementById('order').addEventListener('change', () => {
+  document.getElementById('box').innerHTML = crearTemplate(orderChampions(arrObjetos, 'name', document.getElementById('order').value));
+});*/
+
+
+/*document.getElementById('fighter').addEventListener('click', () => {
+  document.getElementById('box').innerHTML = crearTemplate(filterData(arrObjetos, 'Fighter'));
+});*/
+
+/*document.getElementById('tank').addEventListener('click', () => {
+  document.getElementById('box').innerHTML = crearTemplate(filterData(arrObjetos, 'Tank'));
+});*/
+
+/*document.getElementById('mage').addEventListener('click', () => {
+  document.getElementById('box').innerHTML = crearTemplate(filterData(arrObjetos, 'Mage'));
 });
 
-/**************************************** */
-// //otra forma de llamar a la funcion de ordenar alfabeticamente
-// document.querySelector('#order').addEventListener('change', () => {
-//   const order = document.querySelector('#order').value;
-//   document.getElementById('box').innerHTML = crearTemplate(orderChampions(arrObjetos, order));
-// });
-
-// console.log(arrObjetos);
-// console.log(arrObjetos[0].tags);
-
-
-/************************************************ */
-// #1 lemi probando modificacion del DOM para filtrar por rol
-
-const fighter = document.getElementById('fighter');
-fighter.addEventListener('click',() => {
-  container.innerHTML='';
-  crearTemplate(filterData(arrObjetos, 'Fighter'));
+document.getElementById('assassin').addEventListener('click', () => {
+  document.getElementById('box').innerHTML = crearTemplate(filterData(arrObjetos, 'Assassin'));
 });
 
-const tank = document.getElementById('tank');
-tank.addEventListener('click',() => {
-  container.innerHTML='';
-  crearTemplate(filterData(arrObjetos, 'Tank'));
+document.getElementById('support').addEventListener('click', () => {
+  document.getElementById('box').innerHTML = crearTemplate(filterData(arrObjetos, 'Support'));
 });
 
-const mage = document.getElementById('mage');
-mage.addEventListener('click',() => {
-  container.innerHTML='';
-  crearTemplate(filterData(arrObjetos, 'Mage'));
-});
+document.getElementById('marksman').addEventListener('click', () => {
+  document.getElementById('box').innerHTML = crearTemplate(filterData(arrObjetos, 'Marksman'));
+});*/
 
-const assassin = document.getElementById('assassin');
-assassin.addEventListener('click',() => {
-  container.innerHTML= '';
-  crearTemplate(filterData(arrObjetos, 'Assassin'));
-});
-
-const support = document.getElementById('support');
-support.addEventListener('click',() => {
-  container.innerHTML='';
-  crearTemplate(filterData(arrObjetos, 'Support'));
-});
-
-const marksman = document.getElementById('marksman');
-marksman.addEventListener('click',() => {
-  container.innerHTML='';
-  crearTemplate(filterData(arrObjetos, 'Marksman'));
-});
