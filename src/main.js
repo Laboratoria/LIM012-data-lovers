@@ -32,19 +32,20 @@ btnByType.addEventListener('click', () => {
 // Creando card de pokemon
 const pokemonCards = (allPokemons) => {
   let dataPokemon = '';
-  allPokemons.forEach((eachPokemon) => {
+
+  for (let i = 0; i < allPokemons.length; i += 1) {
     const pokemon = `
     <div class="pokemon-card">
-      <p class="pokemon-number">${eachPokemon.num}</p>
-      <img class="pokemon-image" src="${eachPokemon.img}">
-      <p class="pokemon-name">${eachPokemon.name}</p> 
+      <p class="pokemon-number">${allPokemons[i].num}</p>
+      <img class="pokemon-image" src="${allPokemons[i].img}">
+      <p class="pokemon-name">${allPokemons[i].name}</p> 
       <div class="button-container">
-        <button class ="button" id="features">Features</button>
-        <button class ="button" id="attacks">Attacks</button>
+        <button class="button features" id="${allPokemons[i].num - 1}">Features</button>
+        <button class="button attacks" id="${allPokemons[i].num - 1}">Attacks</button>
       </div>
     </div>`;
     dataPokemon += pokemon;
-  });
+  }
   return dataPokemon;
 };
 
@@ -85,6 +86,125 @@ const allDataByGenerations = () => {
 // El evento que llama a la función que inserta todos los pokemones al iniciar la página
 window.addEventListener('load', () => {
   allDataByGenerations();
+
+  // Modal del pokemon
+
+  // Función que retorna array de evoluciones según pokemon
+  const nextEvolutions = (keys, array, evolution) => {
+    const arrayTwo = array[keys.indexOf(evolution)];
+    const arrPokemons = [];
+
+    if (arrayTwo.length === 1) {
+      const arrayThree = Object.values(arrayTwo[0]);
+      arrPokemons.push(arrayTwo[0].name);
+
+      for (let i = 0; i < arrayThree.length; i += 1) {
+        if (typeof arrayThree[i] === 'object') {
+          arrPokemons.push(arrayThree[i][0].name);
+        }
+      }
+    } else {
+      // Eevee
+      for (let i = 0; i < arrayTwo.length; i += 1) {
+        arrPokemons.push(arrayTwo[i].name);
+      }
+    }
+    return arrPokemons;
+  };
+
+  // Función para crear card del Pokemon
+  const cardContainer = document.querySelector('.cards');
+  const createCard = (pokemon) => {
+    cardContainer.innerHTML = `
+    <section class="pokemon-name2">${pokemon.num} - ${pokemon.name}</section>
+    <section class="info-container">
+        <div class="sub-container-img">
+            <p class="subtitle2">${pokemon['pokemon-rarity']}</p>
+            <div class="pokemon-screen">
+                <div class="screen-border"></div>              
+                <img class="screen-img" src="${pokemon.img}">
+            </div>
+        </div>
+        <div class="sub-container-text">
+            <p class="subtitle2">generation</p>
+            <p class="p-bottom">N° ${pokemon.generation.num.slice(10).toUpperCase()} - ${pokemon.generation.name}</p>
+            <p class="subtitle2">type</p>
+            <p class="p-bottom" id="pokemon-type"></p>
+            <p class="subtitle2">size</p>
+            <p class="">Height: ${pokemon.size.height}</p>
+            <p class="">Weight: ${pokemon.size.weight}</p>
+        </div>
+    </section>
+    <section class="info-container">
+        <table class="table-container t1">
+            <tr>
+                <th colspan="2">Encounter</th>
+                <th>Spawn chance</th>
+            </tr>
+            <tr>
+                <td>Base flee rate</td>
+                <td class ="num-cel">${(pokemon.encounter['base-flee-rate'] * 100).toFixed(2)}%</td>
+                <td class ="num-cel" colspan="2" rowspan="2">${(pokemon['spawn-chance'] * 100).toFixed(2)}%</td>
+            </tr>
+            <tr>
+                <td>Base capture rate</td>
+                <td class ="num-cel">${(pokemon.encounter['base-capture-rate'] * 100).toFixed(2)}%</td>
+            </tr>
+        </table>
+    </section>
+
+    <section class="evolutions"></section>
+    `;
+
+    const type = document.getElementById('pokemon-type');
+    pokemon.type.forEach((typeP) => {
+      type.innerHTML += `<span> ${typeP}</span>`;
+    });
+
+    const evolutionContainer = document.querySelector('.evolutions');
+    const pEvolution = pokemon.evolution;
+    const arrayOne = Object.values(pEvolution);
+    const keysArrayOne = Object.keys((pEvolution));
+
+    if (Object.prototype.hasOwnProperty.call(pEvolution, 'prev-evolution') && Object.prototype.hasOwnProperty.call(pEvolution, 'next-evolution')) {
+      evolutionContainer.innerHTML += `
+      <p>Pre-evolution ${arrayOne[keysArrayOne.indexOf('prev-evolution')][0].name}</p>
+      <p>Next-evolution ${arrayOne[keysArrayOne.indexOf('next-evolution')][0].name}</p>
+      `;
+    } else if (Object.prototype.hasOwnProperty.call(pEvolution, 'prev-evolution')) {
+      const arr = nextEvolutions(keysArrayOne, arrayOne, 'prev-evolution');
+
+      arr.forEach((eachPokemon) => {
+        evolutionContainer.innerHTML += `
+          <p>Pre-evolution ${eachPokemon}</p>
+          `;
+      });
+    } else if (Object.prototype.hasOwnProperty.call(pEvolution, 'next-evolution')) {
+      const arr = nextEvolutions(keysArrayOne, arrayOne, 'next-evolution');
+
+      arr.forEach((eachPokemon) => {
+        evolutionContainer.innerHTML += `
+        <p>Next-evolution ${eachPokemon}</p>
+        `;
+      });
+    } else {
+      evolutionContainer.innerHTML += `
+      <p>Este pokemon no tiene evoluciones</p>
+      `;
+    }
+  };
+
+  const close = document.querySelector('.close');
+  const modalContainer = document.querySelector('.modal-container');
+  // Llamando a las funciones para crear el modal de características
+  sectionContent.addEventListener('click', (e) => {
+    modalContainer.classList.toggle('modal-close');
+    createCard(data.pokemon[e.target.id]);
+  });
+
+  close.addEventListener('click', () => {
+    modalContainer.classList.toggle('modal-close');
+  });
 });
 
 // Guardando input para buscar
@@ -168,14 +288,3 @@ const iconSearch = document.querySelector('.flaticon-lupa');
 iconSearch.addEventListener('click', () => {
   searchInput.focus();
 });
-// const stats = [];
-// for(let i = 0; i < data.pokemon.length; i += 1) {
-data.pokemon.forEach((eachPokemon) => {
-  const buscar = eachPokemon['quick-move'];
-  // const dataAtack = buscar.name;
-  console.log(buscar);
-});
-// searchInput.addEventListener('focusout', () => {
-//   sectionContent.innerHTML = '';
-//   allDataByGenerations();
-// });
