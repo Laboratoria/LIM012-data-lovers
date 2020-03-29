@@ -33,7 +33,7 @@ body {
 }
 
 .main-nav {
-  background-color: var(--color-main);
+  background-color: var(--color-white);
 }
 
 /*trabajando con el select*/
@@ -46,7 +46,7 @@ body {
   flex-grow: 0;
 }
 
-#order:hover {
+#orderAlphabetically:hover {
   background-color: var(--color-nav-dark);
 }
 
@@ -70,14 +70,14 @@ body {
 
 .nav-container_link {
   color: var(--color-borde);
-  display: block; /*es necesario para q el mouse al estar no solo en el nombre sino en su caje muestre el link abajo*/
+  display: block; /*es necesario para q el mouse al estar no solo en el nombre sino en su caja muestre el link abajo*/
 }
 
 .main-container {
   display: flex;
   flex-direction: column;
   flex-grow: 1; /*sirve para el crecimiento de las cajas*/
-  background-color: var(--color-main);
+  background-color: var(--color-white);
 }
 
 /*trabajando con las imagenes y nombres*/

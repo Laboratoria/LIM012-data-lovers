@@ -1,8 +1,9 @@
+/* eslint-disable import/named */
 /* eslint-disable no-undef */
 /* eslint-disable import/extensions */
 // import data from './data/atletas/atletas.js';
 // import data from './data/pokemon/pokemon.js';
-// console.log(example,data);
+
 
 //  AQUI MANEJAMOS EL DOOM
 
