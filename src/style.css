@@ -8,6 +8,35 @@
   --color-borde: #937341;
 }
 
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+a {
+  text-decoration: none;
+}
+
+.body {
+  margin: 0%; /*no parece afectar que la barra de nav suba un poco y se pegue a la caja de botones*/
+}
+
+.nav{
+  padding: 0 2rem;
+  background: var(--color-footer);
+position: relative;
+}
+
+nav .nav-brand a{
+  display: block;
+  padding: 1rem 0;
+  font-family: Arial, Helvetica, sans-serif;
+font-size: 1.6rem;
+}
+
+nav .nav-items
+
+/* css de lemi */
 /*valores por defecto*/
 * {
   margin: 0;
@@ -109,6 +138,9 @@ select.nav-container_item {
   flex-direction: column;
   flex-grow: 1; /*sirve para el crecimiento de las cajas*/
   background-color: var(--color-white);
+  /* background: url(./img/environment.png); //probando donde iba la imagen del fondo
+  background-repeat: no-repeat;
+  background-size: cover; */
 }
 
 /*.main-container_section {
