@@ -55,7 +55,7 @@ body {
 }
 
 /*trabajando con el select*/
-#order{
+#orderAlphabetically{
   background-color: var(--color-black);
   color: var(--color-borde);
   display: block;
@@ -63,7 +63,7 @@ body {
   cursor: pointer; 
 }
 
-#order:hover {
+#orderAlphabetically:hover {
   background-color: var(--color-nav-dark);
 }
 
@@ -101,17 +101,8 @@ select.nav-container_item {
 
 .nav-container_link {
   color: var(--color-borde);
-  display: block; /*es necesario para q el mouse al estar no solo en el nombre sino en su caje muestre el link abajo*/
+  display: block; /*es necesario para q el mouse al estar no solo en el nombre sino en su caja muestre el link abajo*/
 }
-
-/*@media screen and (min-width: 768px) {
-  .nav-container {
-    display: flex;
-  }
-  .nav-container_item {
-    flex-grow: 1;
-  }
-}*/
 
 .main-container {
   display: flex;
@@ -204,3 +195,12 @@ select.nav-container_item {
   width: 100%;
   font-family: inherit;
 }*/
+
+@media screen and (max-width: 320px) {
+  .nav-container {
+    display: flex;
+  }
+  .nav-container_item {
+    flex-grow: 1;
+  }
+}

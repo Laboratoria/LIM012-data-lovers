@@ -13,13 +13,34 @@
       <!--<figure class="logo"><img src="img/logo2.jpg" alt="collage de campeones" /></figure>-->
     </header>
     <nav class="main-nav">
-      <ul class="nav-container">    
-       <select name="order" id="order" class="nav-container_item">
-        <option value="TODOS" disabled selected >TODOS</option>
-        <option value="az">A - Z</option>
-        <option value="za">Z - A</option>
-       </select>   
-        <li class="nav-container_item" id="asesinos">
+      <ul class="nav-container">
+
+       <select name="orderAlphabetically" id="orderAlphabetically" class="nav-container_item">
+        <option value="ascendente">TODOS</option>
+        <option value="ascendente">A - Z</option>
+        <option value="descendente">Z - A</option>
+       </select>
+
+       <li class="nav-container_item" id="luchadores">
+        <button id="fighter" value="fighter" class="nav-container_link">LUCHADORES</button>
+       </li>
+       <li class="nav-container_item" id="tanques">
+        <button id="tank" value="tank" class="nav-container_link">TANQUES</button>
+       </li>
+       <li class="nav-container_item" id="magos">
+        <button id="mage" value="mage" class="nav-container_link">MAGOS</button>
+       </li>
+       <li class="nav-container_item" id="asesinos">
+        <button id="assassin" value="assassin" class="nav-container_link">ASESINOS</button>
+       </li>
+       <li class="nav-container_item" id="soportes">
+        <button id="support" value="support" class="nav-container_link">SOPORTES</button>
+       </li>
+       <li class="nav-container_item" id="tiradores">
+        <button id="marksman" value="marksman" class="nav-container_link">TIRADORES</button>
+       </li>
+
+        <!-- <li class="nav-container_item" id="asesinos">
           <a href="#" class="nav-container_link">ASESINOS</a>
         </li>
         <li class="nav-container_item" id="luchadores">
@@ -36,7 +57,7 @@
         </li>
         <li class="nav-container_item" id="tanques">
           <a href="#" class="nav-container_link">TANQUES</a>
-        </li>
+        </li> -->
       </ul>
     </nav>
     <!--<nav class="class-nav">
@@ -45,7 +66,7 @@
     </nav>-->
     <!--<button id="btn">ORDENAR</button>-->
     <main class="main-container">
-      <section class="galeria" id="box"></section>
+      <section class="galeria" id="container"></section>
     </main>
 
   <div class="flex-container" id="all"></div>
