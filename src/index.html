@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>Data Lovers</title>
+    <title>League of Legends</title>
     <link rel="icon" type="image/png" href="./img/icono.png" />
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -14,43 +14,36 @@
     </header>
     <nav class="main-nav">
       <ul class="nav-container">    
-       <select name="order" id="order" class="nav-container_item ">
-        <option>TODOS</option>
-        <option value="az">A - Z</option>
-        <option value="za">Z - A</option>
-       </select>   
-        <li class="nav-container_item" id="asesinos">
+       <select name="order" id="orderAlphabetically" class="nav-container_item ">
+        <option value="todos">TODOS</option>
+        <option value="ascendente">A - Z</option>
+        <option value="descendente">Z - A</option>
+       </select>                    
+        <li class="nav-container_item" id="assassin">
           <a href="#" class="nav-container_link">ASESINOS</a>
         </li>
-        <li class="nav-container_item" id="luchadores">
+        <li class="nav-container_item" id="fighter">
           <a href="#" class="nav-container_link">LUCHADORES</a>
         </li>
-        <li class="nav-container_item" id="magos">
+        <li class="nav-container_item" id="mage">
           <a href="#" class="nav-container_link">MAGOS</a>
         </li>
-        <li class="nav-container_item" id="tiradores">
+        <li class="nav-container_item" id="marksman">
           <a href="#" class="nav-container_link">TIRADORES</a>
         </li>
-        <li class="nav-container_item" id="soportes">
+        <li class="nav-container_item" id="support">
           <a href="#" class="nav-container_link">SOPORTES</a>
         </li>
-        <li class="nav-container_item" id="tanques">
+        <li class="nav-container_item" id="tank">
           <a href="#" class="nav-container_link">TANQUES</a>
         </li>
       </ul>
     </nav>
-    <!--<nav class="class-nav">
-      <button id="btnMostrar">Mostrar todos</button>
-    <button type="button" id="btnZA"> Ordenar Z - A </button>
-    </nav>-->
-    <!--<button id="btn">ORDENAR</button>-->
+   
     <main class="main-container">
-      <section class="galeria" id="box"></section>
+      <section class="galeria" id="container"></section>
     </main>
 
-  <!--<div class="flex-container" id="all"></div>
-    <div id="contenedor"></div>-->
-    
     <script type="module" src="main.js"></script>
     
     <footer class="main-footer">

@@ -55,7 +55,7 @@ body {
 }
 
 /*trabajando con el select*/
-#order{
+#orderAlphabetically{
   background-color: var(--color-black);
   color: var(--color-borde);
   display: block;
