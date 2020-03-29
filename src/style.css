@@ -4,7 +4,7 @@
 	box-sizing: border-box;
 	text-decoration: none;
 	list-style: none;
-	font-family: 'Aldrich', sans-serif;
+	/* font-family: 'Aldrich', sans-serif; */
 
 }
 html{
@@ -23,6 +23,151 @@ body{
   --color-blue-4: #fff;
 
 }
+.modal-font{
+  font-family: 'Baloo Thambi 2', cursive;
+  font-size: 1em;
+}
+#modal-mode{
+  width:100%; 
+	height:100%; 
+	background: rgba(27, 25, 25, 0.801);
+	position:fixed;
+	top:0;
+	left:0;
+  display:none;
+  z-index: 2;
+}
+#modal-window{
+  top:20%;
+  left: calc((100% - 600px)/2);
+  background: #fff;
+  border-radius: 1em;
+  z-index: 2;
+  width:600px;  
+  height: 60%;
+  display: none;  
+  box-shadow: 0 0 20px rgb(33, 36, 35); 
+  transition: 100s;
+
+}
+.fixed{
+  position: fixed;
+}
+.flex-wrap{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+ #div-img-modal{
+  z-index: 0;
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  top:-100px;
+  background: #fff;
+  /* border-top: #151E23 solid 2px; */
+  color:#eee;
+  border-radius: 8em;
+  left:  calc((100% - 200px)/2);
+  } #img-pokemon-modal{
+    margin: 20px calc((100% - 120px)/2);
+  }
+  #body-modal{
+    position: absolute;
+    top:60px;
+    height: 80%;
+    width: 100%;    
+    border-top: #a4e2cd solid 1px;
+    padding: 10px 0;
+    
+  } #div-pokemon-name-modal{           
+      font-size: 1em;
+      font-weight: bolder;
+      position: absolute;
+      top :-10px;
+      background:#fff;      
+      width: 150px;
+      left: calc((100% - 150px)/2);
+      color: #04617e;
+      text-transform: capitalize;
+    
+    }    
+    .column-1{
+      width: 30%;
+      height: 50px;
+      border-bottom: #a4e2cd solid 2px;
+      margin: 3px;      
+    }
+    .column-2{      
+      margin: 3px 1px;
+      width: 48%;      
+    }
+    .column-3{
+      width: 100%;      
+    }     
+    .icon-medium{
+      width: 30px;
+      height: 30px;
+      margin: 2px;
+    }
+    .icon-center{
+      margin-left: calc((100% - 90px)/2);
+      margin-top: 5px;                  
+    }
+    .text-aling{
+      text-align: center;
+    }
+    .data-section-2{
+      font-size: 16px;
+      display: block;      
+    }.label-section{   
+      font-weight: bolder;
+      color: #338374;
+      font-size: 12px;      
+    }.label-data{
+      display: block;
+    }
+    .section-modal{
+      width: 100%;      
+      text-align: center;
+    }
+    #sections-types{
+      border-right: #a4e2cd solid 2px;
+    }
+    .pokemon-img-small{
+      width: 80px;
+      height: 80px;
+      border: #fff solid 1px;
+      border-radius: unset;
+      margin: 3px;
+    }    
+    .pokemon-img-medium{
+      width: 120px;
+      height: 120px;
+      margin: 2px;
+      border: #fff solid 1px;
+      border-radius: unset;
+    }
+    .div-evolution-img{
+      width: 80px;
+      height: 80px;
+      border-radius: 100px;
+      margin:1px ;
+      background: #b4b0b0;
+    } 
+    #evolution{
+      background: #333333;
+      height: auto;
+      padding: 1em;
+    }   
+
+
+
+
+
+
+
+
 .root{
   width: auto;
   background: #a4e2cd;
@@ -30,7 +175,7 @@ body{
   grid-template-rows: repeat(5,auto);
 }
 
-header,footer{
+#header-page,footer{
   background: var(--color-blue-1);
   margin: 0;  
   height: auto;
@@ -71,15 +216,7 @@ aside{
   height: 100%;
   width: 0;  
   z-index: 0; 
-  /* padding: 1em;  */
 }
-/* .menu-option{
-  display: block;
-  padding: 1em;
-  font-size: 1em;
-  font-weight: bold;
-
-} */
 .section-order-by  li a,
 .menu-option{
   border-bottom: #fff solid  1px;
@@ -100,20 +237,19 @@ aside{
 }
 .section-order-by  li ul a{
   background: var(--color-blue-1);
-}
-  #btn-close{   
-    background: none;
-    border: none;
-    position: absolute;
-    margin: 0 .3em;
+}  
+  .icon-small{
+    width: 20px;
     height: 20px;
     right: 1em;
     top: 1em;
     
   }
-    #btn-close-img{    
-      border: none;      
-      width: 20px;      
+  .btn-close-img{      
+    position: absolute;
+    background: orange;
+    right: 1em;
+    top: 1em;        
     }
 
 #types-container{  
@@ -136,7 +272,7 @@ aside{
     margin: 0 .5em;
   }
 section{  
-  height: 100%;
+  height: inherit;
   width: 100%;
   justify-content: center;
 }
@@ -171,8 +307,6 @@ section{
   top: 50px;
   background-color: #fff;  
   z-index: 1;
-  /* position: sticky; */
-
 }
 .button-filter{
   display: inline-block;
@@ -188,14 +322,23 @@ section{
 #top-pagination{
   display: none;
   display: flex;
-  justify-content: end ;
+  justify-content: end;
   padding-right: 5%;
   padding-top: 3%;
+  background-color: var(--color-blue-3);
+}
+ #top-pagination-p{
+ width: 90%;
+ text-align: left;
+ text-transform: capitalize;
+ color: white;
+
 }
   #btn-change-order{
+
     width: 30px;
     height: 30px;
-    justify-self: end;
+    visibility: hidden;
   }
     #btn-change-order-img{
       width: 100%;
@@ -336,7 +479,7 @@ section{
   height:200px;
   border-radius: 10px 0 10px 0;
   margin: 7px;
-  border: 2px solid var(--color-blue-4);
+  border: 2px solid var(--color-blue-3);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -347,11 +490,11 @@ section{
 
 .pokemon-name{
   padding: .3rem 0;
-  width: 140px ;
-  height: 15px ;
+  width: 100%;
   text-align: center;
   text-transform: capitalize;
   color:var(--color-blue-4);
+  align-self: start;
 }
   #img-pokemon{
     width: 135px;
@@ -363,9 +506,21 @@ section{
   color: var(--color-blue-4);
   font-size: 12px;
   display: inline;
-  padding: .3rem;
+  padding: .2rem;
   margin: .3em;
 }
+.pokemon-cp-hp{
+  width: 120px;
+  text-align: left;
+  font-size: 9px;
+  border-radius: 0 5px 5px 0;
+  align-self: start;
+  background: var(--color-blue-3);
+  padding-top: 5px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
 
 @media screen and (max-width:699px){
   .slide{   
@@ -417,14 +572,18 @@ section{
   #filter-options{
         display: block;
   }  
-  
+  #modal-window{    
+    width: 95%;
+    left: calc(5%/2);    
+  }  
+
 }
   
   @media screen and (min-width: 1024px) {    
     #logo-pokedex{
       padding-right: 8em;
     }    
-    section{
+    #section-body-conteiner{
       display: grid;
       grid-template-areas:"menu-container  top  top"
                           "menu-container main main";
@@ -460,6 +619,13 @@ section{
       display: flex;
       padding-right: 5%;
       padding-top: 3%;
+      background-color: var(--color-blue-3);
+    }
+    #top-pagination-p{
+      width: 90%;
+      text-align: left;
+      text-transform: capitalize;
+      color: white;
     }
     nav{
       position: sticky;

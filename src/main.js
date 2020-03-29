@@ -1,4 +1,6 @@
-import { dinamicSearchPokemon, filterPokemon, orderBy, changeOrder } from './data.js';
+import {
+  dinamicSearchPokemon, filterPokemon, orderBy, changeOrder,
+} from './data.js';
 
 import data from './data/pokemon/pokemon.js';
 
@@ -35,15 +37,19 @@ let isContainerSection = false;
 const positions = [0, 0, 0];
 let typeChoosed = '';
 let deg = 0;
+const titleTop = document.getElementById('top-pagination-p');
 const divCardContainer = document.getElementById('card-container');
 const divSectionsContainer = document.getElementById('card-container-section');
 const divTopPagination = document.getElementById('top-pagination');
+const modalMode = document.getElementById('modal-mode');
+const imgChange = document.getElementById('btn-change-order');
 
 const divOrderBy = document.getElementsByClassName('menu')[0];
 const divFilterBy = document.getElementsByClassName('menu')[1];
 // const divCalcuBy= document.getElementsByClassName('menu')[2];
 
 const btnChangeOrder = document.getElementById('btn-change-order');
+const modalWindow = document.getElementById('modal-window');
 
 const showMessageOfSearch = (container) => {
   container.innerHTML = '<p>Lo sentimos, no encontramos resultados que coincidan con su búsqueda</p>';
@@ -59,7 +65,7 @@ const createPokemonType = (type) => {
 
 const putPokemonImage = (dataImgPokemon, divCardImage) => {
   const img = document.createElement('IMG');
-  img.id = 'img-pokemon';
+  img.className = 'img-pokemon';
   img.setAttribute('src', dataImgPokemon);
   img.setAttribute('alt', 'Imagen Pokemón');
   divCardImage.appendChild(img);
@@ -88,14 +94,15 @@ const createPokemonCard = (index, dataPokemon, container) => {
     const divCardImage = document.createElement('div');
     const divCardTypes = document.createElement('div');
     const divCardCPHP = document.createElement('div');
+    divCardCPHP.className = 'pokemon-cp-hp';
     divCardName.className = 'pokemon-name';
     divCardImage.className = 'pokemon-image';
     divCardTypes.className = 'pokemon-types';
-    divCardCPHP.className = 'pokemon-name';
+    divCard.id = dataPokemon.name;
     putPokemonName(dataPokemon.name, divCardName);
     putPokemonImage(dataPokemon.img, divCardImage);
     putPokemonTypes(dataPokemon.type, divCardTypes);
-    putPokemonCPHP(`cp:${dataPokemon.stats['max-cp']}/hp:${dataPokemon.stats['max-hp']}`, divCardCPHP);
+    putPokemonCPHP(`CP:${dataPokemon.stats['max-cp']} - HP:${dataPokemon.stats['max-cp']}`, divCardCPHP);
     divCard.appendChild(divCardName);
     divCard.appendChild(divCardImage);
     divCard.appendChild(divCardTypes);
@@ -182,13 +189,15 @@ const onlyText = (e) => {
   }
 };
 
-const changeOrderCurrentData = (dataPokemon, container) => {
+const changeOrderCurrentData = (container) => {
+  deg = 0;
   btnChangeOrder.addEventListener('click', () => {
-    const imgChange = document.getElementById('btn-change-order');
+    console.log('cambiar');
     deg += 180;
     console.log(deg);
     imgChange.style.transform = `rotate(${deg}deg)`;
-    showCard(changeOrder(dataPokemon), container);
+    currentData=changeOrder(currentData);
+    showCard(currentData, container);
   });
 };
 
@@ -198,7 +207,8 @@ inputBarSearch.addEventListener('keypress', onlyText, false);
 
 const buttonFilterPokemon = document.getElementsByClassName('button-filter')[0];
 const buttonOrderPokemon = document.getElementsByClassName('button-filter')[1];
-const buttonCloseLateralMenu = document.getElementById('btn-close');
+const btnCloseMenu = document.getElementById('close-menu');
+const btnCloseModal = document.getElementById('close-modal');
 
 buttonFilterPokemon.addEventListener('click', () => {
   showLateralMenu('filter');
@@ -206,32 +216,20 @@ buttonFilterPokemon.addEventListener('click', () => {
 buttonOrderPokemon.addEventListener('click', () => {
   showLateralMenu('order');
 });
-buttonCloseLateralMenu.addEventListener('click', hideLateralMenu);
+btnCloseMenu.addEventListener('click', hideLateralMenu);
+btnCloseModal.addEventListener('click', () => {
+  modalWindow.style.display = 'none';
+  modalMode.style.display = 'none';
+});
 
 const showAllByFilter = (whichFilter) => {
   divCardContainer.style.display = 'flex';
+  btnChangeOrder.style.visibility = 'visible';
   divSectionsContainer.style.display = 'none';
-  divTopPagination.style.display = 'block';
   isContainerSection = false;
-  const title = document.createElement('p');
-  switch (whichFilter) {
-    case 'type':
-      title.textContent = `Pokemones tipo ${typeChoosed}`;
-      break;
-    case 'resistant':
-      title.textContent = `Pokemones resistentes al tipo ${typeChoosed}`;
-      break;
-    case 'weaknesses':
-      title.textContent = `Pokemones debiles al tipo ${typeChoosed}`;
-      break;
-    default:
-      // do nothing
-  }
-  divTopPagination.appendChild(title);
   currentData = filterPokemon(whichFilter, typeChoosed);
+  titleTop.textContent = typeChoosed+'-'+whichFilter+' pokemons';
   showCard(currentData, divCardContainer);
-  deg = 0;
-  changeOrderCurrentData(currentData, divCardContainer);
 };
 
 const showMore = document.getElementsByClassName('show-more');
@@ -239,26 +237,20 @@ showMore[0].addEventListener('click', () => { showAllByFilter('type'); });
 showMore[1].addEventListener('click', () => { showAllByFilter('resistant'); });
 showMore[2].addEventListener('click', () => { showAllByFilter('weaknesses'); });
 
-const putCardsOnSlider = (items, container) => {
-  for (let i = 0; i < items.length; i += 1) {
-    createPokemonCard(i, items[i], container);
-  }
-};
-
 const showPokemonInSections = () => {
   if (!isContainerSection) {
     isContainerSection = true;
     divCardContainer.style.display = 'none';
+    btnChangeOrder.style.visibility = 'hidden';
     divSectionsContainer.style.display = 'block';
-    divTopPagination.style.display = 'none';
   }
   const divSections = divSectionsContainer.getElementsByClassName('slide-cards');
   divSections[0].innerHTML = '';
   divSections[1].innerHTML = '';
   divSections[2].innerHTML = '';
-  putCardsOnSlider(resultTypes, divSections[0]);
-  putCardsOnSlider(resultResistant, divSections[1]);
-  putCardsOnSlider(resultWeaknesses, divSections[2]);
+  showCard(resultTypes, divSections[0]);
+  showCard(resultResistant, divSections[1]);
+  showCard(resultWeaknesses, divSections[2]);
 };
 
 const filterPokemonByType = (type) => {
@@ -308,6 +300,8 @@ const sliderSystem = () => {
 const filterSystem = (btn, container) => {
   // const desktopMode = (window.innerWidth >= desktopSize);
   let filterActive = false;
+  titleTop.textContent= '';
+  const titleSlider = document.getElementsByClassName('title-slider-p');
   btn.addEventListener('click', () => {
     if (window.innerWidth >= desktopSize) {
       if (filterActive) {
@@ -321,14 +315,19 @@ const filterSystem = (btn, container) => {
   });
 
   for (let i = 0; i < optionsFilter.length; i += 1) {
+    btnChangeOrder.style.visibility = 'visible';
     optionsFilter[i].addEventListener('click', () => {
       filterPokemonByType(optionsFilter[i].value);
       typeChoosed = optionsFilter[i].value;
+      titleSlider[0].textContent = typeChoosed+'-type pokemons';
+      titleSlider[1].textContent = typeChoosed+'-resistant pokemons';
+      titleSlider[2].textContent = typeChoosed+'-weaknesses pokemons' ;
       if ((window.innerWidth >= desktopSize) === false) {
         hideLateralMenu();
       }
     });
   }
+
 };
 
 
@@ -342,8 +341,6 @@ const orderSections = (option) => {
 const orderSimpleData = (option) => {
   currentData = orderBy(currentData, option);
   showCard(currentData, divCardContainer);
-  deg = 0;
-  changeOrderCurrentData(currentData, divCardContainer);
 };
 
 const orderSystem = (btn) => {
@@ -362,23 +359,23 @@ const orderSystem = (btn) => {
         orderOptions.style.display = 'block';
         orderActive = true;
       }
-      console.log(`orderActive: ${orderActive}`);
     }
   });
 
   for (let i = 0; i < optionsBtnOrder.length; i += 1) {
     optionsBtnOrder[i].addEventListener('click', () => {
+      btnChangeOrder.style.visibility = 'visible';
       if (isContainerSection) {
         orderSections(whichOrder[i]);
       } else {
         orderSimpleData(whichOrder[i]);
       }
-
       if ((window.innerWidth >= desktopSize) === false) {
         hideLateralMenu();
       }
     });
   }
+  changeOrderCurrentData(divCardContainer);
 };
 
 // eslint-disable-next-line no-shadow
@@ -397,6 +394,86 @@ const menuSystem = () => {
   orderSystem(buttonOrder);
   filterSystem(buttonFilter, divFilterOptions);
 };
+const createIconType = (type) => {
+  const iconType = document.createElement('img');
+  iconType.className = 'icon-medium';
+  iconType.setAttribute('src', `images/${type}-icon.png`);
+  return iconType;
+};
+
+const showEvolution = (currentPokemon, container, prev, next) => {
+  container.innerHTML = '';
+  console.log(prev);
+  if (prev !== undefined) {
+    for (let i = 0; i < prev.length; i += 1) {
+      const divContainer = document.createElement('div');
+      divContainer.className = 'div-evolution-img';
+      const img = document.createElement('img');
+      img.className = 'pokemon-img-small';
+      const pokemon = data.pokemon.find(pk => pk.name === prev[i].name);
+      img.setAttribute('src', pokemon.img);
+      divContainer.append(img);
+      container.append(img);
+    }
+  }
+  const imgCurr = document.createElement('img');
+  imgCurr.className = 'pokemon-img-small';
+  imgCurr.style.border = 'rgb(238, 222, 76) solid 1px';
+  imgCurr.setAttribute('src', currentPokemon);
+  container.append(imgCurr);
+
+  // console.log(next);
+  if (next !== undefined) {
+    for (let i = 0; i < next.length; i += 1) {
+      const divContainer = document.createElement('div');
+      divContainer.className = 'div-evolution-img';
+      const img = document.createElement('img');
+      img.className = 'pokemon-img-small';
+      const pokemon = data.pokemon.find(pk => pk.name === next[i].name);
+      img.setAttribute('src', pokemon.img);
+      divContainer.append(img);
+      container.append(img);
+    }
+  }
+};
+
+const showInfoPokemon = (name) => {
+  modalWindow.style.display = 'block';
+  const pokemon = data.pokemon.find(pk => pk.name === name);
+  document.getElementById('img-pokemon-modal').setAttribute('src', pokemon.img);
+  document.getElementById('div-pokemon-name-modal').textContent = pokemon.name;
+  document.getElementById('height').textContent = pokemon.size.height;
+  document.getElementById('region').textContent = pokemon.generation.name;
+  document.getElementById('weight').textContent = pokemon.size.weight;
+  const types = document.getElementById('types');
+  const resistant = document.getElementById('resistant');
+  const weaknesses = document.getElementById('weaknesses');
+  types.innerHTML = '';
+  resistant.innerHTML = '';
+  weaknesses.innerHTML = '';
+  for (let i = 0; i < pokemon.type.length; i += 1) {
+    types.append(createIconType(pokemon.type[i]));
+  }
+  for (let i = 0; i < pokemon.resistant.length; i += 1) {
+    resistant.append(createIconType(pokemon.resistant[i]));
+  }
+  for (let i = 0; i < pokemon.weaknesses.length; i += 1) {
+    weaknesses.append(createIconType(pokemon.weaknesses[i]));
+  }
+  document.getElementById('max-cp').textContent = pokemon.stats['max-cp'];
+  document.getElementById('max-hp').textContent = pokemon.stats['max-hp'];
+  const specialAttacks = document.getElementById('special-attacks');
+  specialAttacks.innerHTML = '';
+  for (let i = 0; i < pokemon['special-attack'].length; i += 1) {
+    const span = document.createElement('span');
+    span.className = 'text-aling label-data';
+    span.textContent = pokemon['special-attack'][i].name;
+    specialAttacks.append(span);
+  }
+  const evolution = document.getElementById('evolution');
+
+  showEvolution(pokemon.img, evolution, pokemon.evolution['prev-evolution'], pokemon.evolution['next-evolution']);
+};
 
 const loadPage = () => {
   currentData = data.pokemon;
@@ -404,8 +481,13 @@ const loadPage = () => {
   menuSystem();
   if (wordIntroduced.length === 0 && isContainerSection === false) {
     showCard(currentData, divCardContainer);
-    deg = 0;
-    changeOrderCurrentData(currentData, divCardContainer);
+  }
+  const listOfPokemonCards = document.getElementsByClassName('pokemon-card');
+  for (let i = 0; i < listOfPokemonCards.length; i += 1) {
+    listOfPokemonCards[i].addEventListener('click', () => {
+      modalMode.style.display = 'block';
+      showInfoPokemon(listOfPokemonCards[i].id);
+    });
   }
 };
 
