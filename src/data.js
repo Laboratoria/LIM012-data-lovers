@@ -45,12 +45,10 @@ export const sortData = (data, sortBy, sortOrder) => {
 export const filterData = (data, condition) => {
   const filtering = data.filter((obj) => {
     const filterByRole = [];
-    if (condition !== 'all') {
-      for (let i = 0; i < obj.tags.length; i++) {
-        if (obj.tags[i] === condition) {
-          filterByRole.push(obj.tags[i]);
-          return filterByRole;
-        }
+    for (let i = 0; i < obj.tags.length; i++) {
+      if (obj.tags[i] === condition) {
+        filterByRole.push(obj.tags[i]);
+        return filterByRole;
       }
     }
     return false;
