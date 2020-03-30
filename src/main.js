@@ -278,7 +278,7 @@ const sliderSystem = () => {
 };
 
 const filterSystem = (btn, container) => {
-  let filterActive = false;
+  // let filterActive = false;
   titleTop.textContent = '';
   const titleSlider = document.getElementsByClassName('title-slider-p');
   console.log(btn);
@@ -330,22 +330,22 @@ const orderSimpleData = (option) => {
 
 const orderSystem = (btn) => {
   const whichOrder = ['max-cp', 'max-hp', 'a-z'];
-  let orderActive = false;
+  // let orderActive = false;
   const optionsBtnOrder = document.getElementsByClassName('order-option');
-  const orderOptions = document.getElementById('ul-order-options');
+  // const orderOptions = document.getElementById('ul-order-options');
 
   // const desktopMode = (window.innerWidth >= desktopSize);
-  btn.addEventListener('click', () => {
-    if (window.innerWidth >= desktopSize) {
-      if (orderActive) {
-        orderOptions.style.display = 'none';
-        orderActive = false;
-      } else {
-        orderOptions.style.display = 'block';
-        orderActive = true;
-      }
-    }
-  });
+  // btn.addEventListener('click', () => {
+  //   if (window.innerWidth >= desktopSize) {
+  //     if (orderActive) {
+  //       orderOptions.style.display = 'none';
+  //       orderActive = false;
+  //     } else {
+  //       orderOptions.style.display = 'block';
+  //       orderActive = true;
+  //     }
+  //   }
+  // });
 
   for (let i = 0; i < optionsBtnOrder.length; i += 1) {
     optionsBtnOrder[i].addEventListener('click', () => {

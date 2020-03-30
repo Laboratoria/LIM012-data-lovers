@@ -539,7 +539,10 @@ section{
   #modal-window{    
     width: 95%;
     left: calc(5%/2);    
-  }  
+  }
+  .slide{
+    width: 95%;
+  }
 
 }
   
