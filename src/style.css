@@ -186,18 +186,18 @@
     cursor: pointer;
 }
 
-.features {
+#features {
     border: 1.5px solid  #4AB483;
 }
-.attacks {
+#attacks {
     border: 1.5px solid #F25749;
 }
 
-.features:hover {
+#features:hover {
     background-color: #4AB483;
     color: #fff;
 }
-.attacks:hover {
+#attacks:hover {
     background-color: #F25749;
     color: #fff;
 }

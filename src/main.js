@@ -40,8 +40,8 @@ const pokemonCards = (allPokemons) => {
       <img class="pokemon-image" src="${allPokemons[i].img}">
       <p class="pokemon-name">${allPokemons[i].name}</p> 
       <div class="button-container">
-        <button class="button features" id="${allPokemons[i].num - 1}">Features</button>
-        <button class="button attacks" id="${allPokemons[i].num - 1}">Attacks</button>
+        <button class="button" data-modal="${allPokemons[i].num - 1}" id="features">Features</button>
+        <button class="button" data-modal="${allPokemons[i].num - 1}" id="attacks">Attacks</button>
       </div>
     </div>`;
     dataPokemon += pokemon;
@@ -92,37 +92,40 @@ window.addEventListener('load', () => {
   // Función que retorna array de evoluciones según pokemon
   const nextEvolutions = (keys, array, evolution) => {
     const arrayTwo = array[keys.indexOf(evolution)];
-    const arrPokemons = [];
+    const arrIndex = [];
 
     if (arrayTwo.length === 1) {
       const arrayThree = Object.values(arrayTwo[0]);
-      arrPokemons.push(arrayTwo[0].name);
+      arrIndex.push(parseInt(arrayTwo[0].num, 10) - 1);
 
       for (let i = 0; i < arrayThree.length; i += 1) {
         if (typeof arrayThree[i] === 'object') {
-          arrPokemons.push(arrayThree[i][0].name);
+          arrIndex.push(parseInt(arrayThree[i][0].num, 10) - 1);
         }
       }
     } else {
       // Eevee
       for (let i = 0; i < arrayTwo.length; i += 1) {
-        arrPokemons.push(arrayTwo[i].name);
+        if (arrayTwo[i].num < 251) {
+          arrIndex.push(parseInt(arrayTwo[i].num, 10) - 1);
+        } else {
+          arrIndex.push(arrayTwo[i].name);
+        }
       }
     }
-    return arrPokemons;
+    return arrIndex;
   };
 
   // Función para crear card del Pokemon
   const cardContainer = document.querySelector('.cards');
-  const createCard = (pokemon) => {
+  const createCard = (pokemon, index) => {
     cardContainer.innerHTML = `
-    <section class="pokemon-name2">${pokemon.num} - ${pokemon.name}</section>
+    <section class="pokemon-name2"><div class="h-modal"></div>${pokemon.num} - ${pokemon.name}</section>
     <section class="info-container">
         <div class="sub-container-img">
             <p class="subtitle2">${pokemon['pokemon-rarity']}</p>
             <div class="pokemon-screen">
-                <div class="screen-border"></div>              
-                <img class="screen-img" src="${pokemon.img}">
+              <img class="screen-img" src="${pokemon.img}">
             </div>
         </div>
         <div class="sub-container-text">
@@ -131,34 +134,37 @@ window.addEventListener('load', () => {
             <p class="subtitle2">type</p>
             <p class="p-bottom" id="pokemon-type"></p>
             <p class="subtitle2">size</p>
-            <p class="">Height: ${pokemon.size.height}</p>
-            <p class="">Weight: ${pokemon.size.weight}</p>
+            <p >Height: ${pokemon.size.height}</p>
+            <p >Weight: ${pokemon.size.weight}</p>
         </div>
     </section>
     <section class="info-container">
-        <table class="table-container t1">
-            <tr>
-                <th colspan="2">Encounter</th>
-                <th>Spawn chance</th>
-            </tr>
-            <tr>
-                <td>Base flee rate</td>
-                <td class ="num-cel">${(pokemon.encounter['base-flee-rate'] * 100).toFixed(2)}%</td>
-                <td class ="num-cel" colspan="2" rowspan="2">${(pokemon['spawn-chance'] * 100).toFixed(2)}%</td>
-            </tr>
-            <tr>
-                <td>Base capture rate</td>
-                <td class ="num-cel">${(pokemon.encounter['base-capture-rate'] * 100).toFixed(2)}%</td>
-            </tr>
-        </table>
+      <div class="column">
+        <p class="subtitle2 h-stat">Encounter</p>
+        <div class="number-data">
+          <p>Base flee rate</p>
+          <p class="num-cel">${(pokemon.encounter['base-flee-rate'] * 100).toFixed(1)}%</p>
+        </div>
+        <div class="number-data">
+          <p>Base capture rate</p>
+          <p class="num-cel">${(pokemon.encounter['base-capture-rate'] * 100).toFixed(1)}%</p>
+        </div>
+      </div>
+      <div class="column">
+        <p class="subtitle2 h-stat">Spawn chance</p>
+        <p class="num-cel">${(pokemon['spawn-chance'] * 100).toFixed(2)}%</p>
+      </div>
     </section>
 
-    <section class="evolutions"></section>
+    <section class="info-container">
+      <p class="subtitle2 t-evol">Evolutions</p>
+      <div class="evolutions"></div>
+    </section>
     `;
 
     const type = document.getElementById('pokemon-type');
     pokemon.type.forEach((typeP) => {
-      type.innerHTML += `<span> ${typeP}</span>`;
+      type.innerHTML += `<span>  ${typeP}</span>`;
     });
 
     const evolutionContainer = document.querySelector('.evolutions');
@@ -168,38 +174,73 @@ window.addEventListener('load', () => {
 
     if (Object.prototype.hasOwnProperty.call(pEvolution, 'prev-evolution') && Object.prototype.hasOwnProperty.call(pEvolution, 'next-evolution')) {
       evolutionContainer.innerHTML += `
-      <p>Pre-evolution ${arrayOne[keysArrayOne.indexOf('prev-evolution')][0].name}</p>
-      <p>Next-evolution ${arrayOne[keysArrayOne.indexOf('next-evolution')][0].name}</p>
+      <div class="eachContainer">
+        <img src="${data.pokemon[index - 1].img}"
+        <p>Pre-evolution</p>
+        <p>${arrayOne[keysArrayOne.indexOf('prev-evolution')][0].name}</p>
+      </div>
+      <div class="eachContainer">
+        <img src="${data.pokemon[index + 1].img}"
+        <p>Next-evolution</p>
+        <p>${arrayOne[keysArrayOne.indexOf('next-evolution')][0].name}</p>
+      </div>
       `;
     } else if (Object.prototype.hasOwnProperty.call(pEvolution, 'prev-evolution')) {
       const arr = nextEvolutions(keysArrayOne, arrayOne, 'prev-evolution');
-
       arr.forEach((eachPokemon) => {
         evolutionContainer.innerHTML += `
-          <p>Pre-evolution ${eachPokemon}</p>
-          `;
+        <div class="eachContainer">
+          <img src="${data.pokemon[eachPokemon].img}"
+          <p>Pre-evolution</p>
+          <p>${data.pokemon[eachPokemon].name}</p>
+        </div>
+        `;
       });
     } else if (Object.prototype.hasOwnProperty.call(pEvolution, 'next-evolution')) {
       const arr = nextEvolutions(keysArrayOne, arrayOne, 'next-evolution');
-
-      arr.forEach((eachPokemon) => {
-        evolutionContainer.innerHTML += `
-        <p>Next-evolution ${eachPokemon}</p>
-        `;
-      });
+      if (arr.length > 2) {
+        arr.forEach((eachPokemon) => {
+          if (typeof eachPokemon === 'number') {
+            evolutionContainer.innerHTML += `
+            <div class="eachContainer2">
+              <img src="${data.pokemon[eachPokemon].img}"
+              <p>${data.pokemon[eachPokemon].name}</p>
+            </div>
+            `;
+          } else {
+            evolutionContainer.innerHTML += `
+            <div class="otherGen">
+              <p>${eachPokemon}</p>
+            </div>
+            `;
+          }
+        });
+      } else {
+        arr.forEach((eachPokemon) => {
+          evolutionContainer.innerHTML += `
+          <div class="eachContainer">
+            <img src="${data.pokemon[eachPokemon].img}"
+            <p>Next-evolution</p>
+            <p>${data.pokemon[eachPokemon].name}</p>
+          </div>
+          `;
+        });
+      }
     } else {
       evolutionContainer.innerHTML += `
-      <p>Este pokemon no tiene evoluciones</p>
+      <p>This pokemons doesn't have evolutions</p>
       `;
     }
   };
-
   const close = document.querySelector('.close');
   const modalContainer = document.querySelector('.modal-container');
   // Llamando a las funciones para crear el modal de características
   sectionContent.addEventListener('click', (e) => {
-    modalContainer.classList.toggle('modal-close');
-    createCard(data.pokemon[e.target.id]);
+    if (e.target.id === 'features') {
+      modalContainer.classList.toggle('modal-close');
+      const index = parseInt(e.target.attributes['data-modal'].value, 10);
+      createCard(data.pokemon[index], index);
+    }
   });
 
   close.addEventListener('click', () => {

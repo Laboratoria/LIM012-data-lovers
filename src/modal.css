@@ -1,3 +1,8 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
 .modal-container {
     /* opacity: 0; */
     position: fixed;
@@ -22,38 +27,40 @@
 
 .close {
     position: absolute;
-    right: -30px;
+    right: -35px;
     font-size: 1.3em;
+    background-color: #4AB483;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 2px solid #000;
+    border: 2px solid #FFF;
     border-radius: 50%;
     width: 1.2em;
     height: 1.2em;
-    color: #000;
+    color: #FFF;
     cursor: pointer;
 }
 
 .cards {
+    overflow: auto;
     width: 400px;
-    border: 1px solid #000000;
-    background-color: #fff;
+    background-color: rgb(228, 226, 226);
     font-size: 0.8em;
     text-transform: capitalize;
     border-radius: 15px;
+    padding-bottom: 10px;
 }
 
 .pokemon-name2 {
     height: 50px;
     line-height: 50px;
-    padding-left: 10px;
-    background-color: #FF4646;
+    padding-left: 15px;
+    background-color: #4AB483;
     border-radius: 13px 13px 0 0;
     color: white;
     text-transform: capitalize;
     font-weight: bold;
-    font-size: 1.3em;
+    font-size: 1.5em;
 }   
 
 .info-container {
@@ -66,138 +73,130 @@
 .sub-container {
     width: 50%;
     margin-top: 10px;
-    /* border: 1px solid #000000; */
 }
 
 .sub-container-img {
     width: 60%;
     margin-top: 10px;
     padding-top: 10px;
-    /* border: 1px solid #000000; */
 }
 
 .sub-container-text {
     width: 40%;
     margin-top: 10px;
-    /* border: 1px solid #000000; */
 }
 
 .pokemon-screen {
+    box-sizing: border-box;
     width: 90%;
-    background-color: #C4C4C4;
-    border: 1px solid #000000;
+    background-color: #FFF;
+    border: 10px solid #4AB483;
     padding: 20px 0;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-    height: 100px;
-}
-
-.screen-border {
-    width: 80%;
-    background-color: #fff;
-    border: 1px solid #000000;
-    position: absolute;
-    top: 20px;
-    bottom: 20px;
+    height: 140px;
 }
 
 .screen-img {
     position: absolute;
+    height: 95%;
 }
 
 .subtitle2 {
     font-weight: bold;
-    margin-top: 7px;
-}
-
-p{
-    line-height: 1.4em;
 }
 
 .p-bottom {
     padding-bottom: 10px;
     margin-bottom: 10px;
-    border-bottom: 1px solid #FF4646;
-}
-
-.sub-container-text p {
-    padding-left: 10px;
-}
-
-.table-container {
-    width: 100%;
-}
-
-.t1 {
-    margin-top: 8px;
+    border-bottom: 1px solid #4AB483;
 }
 
 .num-cel {
     text-align: center;
     font-weight: bold;
 }
-table {
-    border-collapse: collapse;
-}
 
-.t1 th {
-    border-bottom: #FF4646 1px solid;
-    height: 25px;
-}
-
-.t1 td {
-    height: 20px;
-}
-
-.t1 th:nth-child(2) {
+.column {
     width: 50%;
+    text-align: center;
+    box-sizing: border-box;
+    line-height: 1.7em;
 }
 
-.t1 td:nth-child(2), .t1 th:first-child {
-    border-right:  1px solid #FF4646;
+.column:first-child {
+    float: left;
 }
 
-.info-container:nth-child(4) {
+.column:last-child {
+    border-left: 1px solid #4AB483;
+    float: right;
+}
+
+.number-data {
+    display: flex;
     justify-content: space-between;
 }
 
-.border-container {
-    padding: 5px;
-    margin-top: 8px;
-    width: 45%;
-    border:  1px solid #FF4646;
-    border-radius: 5px;
+.h-stat {
+    border-bottom: 1px solid #4AB483;
 }
 
-.t2 tr {
-    border-bottom:  1px solid #000; 
+.info-container:last-child {
+ flex-direction: column;
+ align-items: center;
+ margin-top: 20px;
 }
 
-.t2 tr:last-child {
-    border: none;
-}
-
-.t2 td:first-child {
-    border-right:  1px solid #000; 
-}
-
-.t2 td:last-child  {
-    text-align: center;
-}
-
-.border-container p {
-    margin-bottom: 3px;
-}
-
-.border-container span {
-    display: inline-block;
-    margin-right: 5px;
-}
-
-.evolution {
+.evolutions {
+    width: 100%;
     display: flex;
-    width: 80%;
     justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding: 5px;
+    margin-top: 5px;
+    text-transform: unset;
+}
+
+.eachContainer {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #FFF;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.eachContainer img {
+    width: 70%;
+}
+
+.eachContainer2 {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #FFF;
+    border-radius: 5px;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+
+.eachContainer2 img {
+    width: 50%;
+}
+
+.otherGen {
+    width: 25%;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFF;
+    border-radius: 5px;
+    padding: 5px;
+    margin-bottom: 5px;
 }
