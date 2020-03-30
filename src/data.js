@@ -49,7 +49,6 @@ export const orderBy = (poke, order) => {
       {
         return 0;
       }
-
       /* return (nameA > nameB) ? 1 : ((nameA < nameB) ? -1 : 0); */
     }
     if (order === 'desc') {
