@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css?family=Fahkwang&display=swap');
-
 *{
     box-sizing: content-box;
     color: #ffffff;
@@ -9,8 +8,6 @@ body{
     background-size:cover;
     background-attachment: fixed;
 }
-<<<<<<< HEAD
-=======
 .container{
     position: fixed;
     width: 50%;
@@ -34,7 +31,6 @@ body{
 
 
 
->>>>>>> ad6771bc932222bf7784eebde4133cc835ab9b3a
 header {
     background: #259738d5;
     position: fixed;
@@ -78,10 +74,7 @@ main{
 }
 /* .screen{
     padding-top: 50%;
-<<<<<<< HEAD
 
-=======
->>>>>>> ad6771bc932222bf7784eebde4133cc835ab9b3a
 } */
 #screen1{
     /* background-color: orangered; */
@@ -122,25 +115,13 @@ main{
     /* width: 100%; */
 }
 #searchIcon{
-<<<<<<< HEAD
-    /* width: 8%;
-    height: 4%; */
-=======
->>>>>>> ad6771bc932222bf7784eebde4133cc835ab9b3a
     cursor: pointer;
  }
 ::placeholder {
     color:#ffffff ;
     text-align: center;
     font-size: 1,23em;
-<<<<<<< HEAD
-    /* font-weight: 700; */
     font-family: 'Fahkwang', sans-serif;
-    /* padding-left: 2%; */
-    /* background-color: black; */
-=======
-    font-family: 'Fahkwang', sans-serif;
->>>>>>> ad6771bc932222bf7784eebde4133cc835ab9b3a
 }
 #screen2{
     padding-bottom: 3%;
@@ -172,11 +153,7 @@ p{
     padding: 1%10%;
     align-content:space-around;
 }
-<<<<<<< HEAD
-#imgCont{
-=======
 .imgCont{
->>>>>>> ad6771bc932222bf7784eebde4133cc835ab9b3a
     /* background-color:aquamarine; */
     display:flex;
     flex-direction:column;
@@ -193,19 +170,9 @@ p{
     align-items: center;
     justify-content: center;
     background-color:#feca57;
-<<<<<<< HEAD
-}
-/* Lo separe del circle principal para que no afecte
-el css del que muestra toda la data */
-.ft{
-    z-index: 2 ;
-}
-#imgCont img{
-=======
     z-index: 2 ;
 }
 .imgCont img{
->>>>>>> ad6771bc932222bf7784eebde4133cc835ab9b3a
     background-color: #ffffff;
     border-style: solid;
     border-color:#feca57 ;
@@ -216,11 +183,6 @@ el css del que muestra toda la data */
     padding: 2%;
     z-index: 1 ;
 }
-<<<<<<< HEAD
-#s2info{
-    padding: 4%;
-    margin:5% 1%;  
-=======
 .imgCont:hover{
     -webkit-transform: scale(1.1);
     -ms-transform: scale(1.1);
@@ -228,8 +190,7 @@ el css del que muestra toda la data */
 }
 #s2info{
     padding: 4%;
-    margin:5% 1%;
->>>>>>> ad6771bc932222bf7784eebde4133cc835ab9b3a
+    margin:5% 1%;  
     max-height: 2%;
     max-width: 50%;
     font-size: 1em;
@@ -237,11 +198,7 @@ el css del que muestra toda la data */
 }
 #s2about{
     justify-content:space-around;
-<<<<<<< HEAD
     padding: 0.5% 10%; 
-=======
-    padding: 0.5% 10%;
->>>>>>> ad6771bc932222bf7784eebde4133cc835ab9b3a
     display:flex;
     flex-direction: column;
 }
@@ -264,8 +221,6 @@ el css del que muestra toda la data */
 #screen3{
     width: 100%;
     margin-top: 5em;
-<<<<<<< HEAD
-    /* display: flex; */
     flex-direction: column;
 }
 .buttons{
@@ -283,57 +238,6 @@ select,option{
     padding-right: 9%;
     padding-left: 2%;
     /* padding-top: 3%; */
-}
-
-#s3data{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-#screen4{
-    width: 100%;
-    margin-top: 5em;
-    display: flex;
-    flex-direction: column;
-}
-#screen4 section{
-    background-color: pink;
-    margin: 2%;
-    max-width: 30%;
-}
-#compareBut{
-    background-color: purple;
-    margin: 5%;
-}
-
-footer{
-    position: fixed;
-    width: 100%;
-    bottom: 0%;
-    height: 5%;
-    margin: 0;
-    background-color: #2c924b;
-    /*display: flex;
-    justify-content: center;*/
-=======
-    flex-direction: column;
-}
-.buttons{
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
-select,option{
-    background-color: transparent;
-    /* background-color: olive; */
-    border-style: solid;
-    border-color: transparent;
-    border-bottom-color: #ffffff;
-    padding: 1%;
-    padding-right: 9%;
-    padding-left: 2%;
-    /* padding-top: 3%; */
->>>>>>> ad6771bc932222bf7784eebde4133cc835ab9b3a
 }
 .active{
     display: block;
@@ -342,173 +246,6 @@ select,option{
     display: none;
 }
 
-<<<<<<< HEAD
-@media screen and (max-width: 500px){
-    body{
-        background-repeat: no-repeat;
-        background-position: center;
-        /* display: flex;
-        flex-direction:column ; */
-        /* justify-content: space-around; */
-        background-attachment: fixed;
-
-        /* background-repeat: no-repeat; */
-        color: #FFFFFF;
-    }
-
-      header{
-          position: relative;
-          background-color: tomato;
-          /* z-index: 5; */
-      }
-      #icon{
-          display: block;
-          cursor: pointer;
-
-      }
-      .screen{
-
-      }
-      header label {
-          display: block ;
-          font-size: 28px;
-          margin-left: 4%;
-          margin-top: 6%;
-
-      }
-      main{
-          position: relative;
-          background-color: teal;
-          margin-top: -120%;
-          z-index: 0;
-      }
-      main{
-          position: relative;
-          margin-top: 15%;
-          z-index: 0;
-      }
-      .menu {
-          position: relative;
-          top: 10%;
-          left:0;
-          width: 100%;
-          transition: all 1s;
-          transform: translateX(-100%);
-          z-index: 99;
-
-
-      }
-      .menu ul {
-          display: block;
-          list-style: none;
-          background: rgba(10, 10, 10, 0.856);
-          width: 100vw;
-          height: 100vh;
-            padding-top: 2%;
-      }
-      .menu ul li{
-          margin-left: 4%;
-          margin: 5%;
-          padding: 1%;
-      }
-      .menu ul li:hover{
-          background: rgba(209, 154, 130, 0.418);
-      }
-
-
-      /* .menu ul li:hover ul {
-          display: none;
-      } */
-      #btn-menu:checked ~ .menu {
-          transform: translateX(0%);
-      }
-
-
-   .btn-menu{
-     border: none;
-     outline: none;
-     cursor: pointer;
-   }
-/*     ul :last-child{
-        border:none;
-    }
-    li{
-        border-bottom: 1px solid #FFFFFF;
-        width: 29%;
-    } */
-
-    #screen1{
-        /* background-color: rgba(0, 255, 255, 0.472); */
-        display: flex;
-        flex-direction: column;
-        /* flex-wrap: wrap; */
-        /* justify-content: space-between ; */
-        /* align-items: center; */
-        margin-top: 50%;
-        /* align-items: space-between; */
-        /* margin: 2% 3%; */
-        padding: 2%;
-        /* align-content: center; */
-        /* position: fixed; */
-    }
-    #screen1 img:first-child {
-        align-self: center;
-        /* background-color: darkblue; */
-        max-width:110%; /* con esto reduzco tamaño a mobile */
-        margin-bottom: 5%;
-        margin-top: 20%;
-    }
-    .inputCont {
-        background-color: rgba(104, 219, 104, 0.486);
-        /* display:flex;
-        flex-wrap: nowrap; */
-        justify-content: center;
-        /* justify-content: center; */
-        margin-bottom: 5%;
-        /* margin-left:7%; */
-        border-style: solid;
-        border-color: transparent;
-        border-bottom-color: #ffffff;
-        width: 100%;
-        /* width: 5%; */
-        display: flex;
-     }
-     input{
-        background-color: transparent;
-        font-size: 20px;
-        border-color: transparent;
-        outline: none;
-         width: 100%;
-    }
-    #searchIcon{
-        width: 8%;
-        height: 4%;
-        cursor: pointer;
-     }
-     #screen2{
-        background-color: tomato ;
-        backdrop-filter: brightness(0.4);
-        margin: 0%;
-        margin-top: 14%; /* para que aparezca debajo del menu */
-
-        /* display:flex; */
-        /* align-items:space-between; */
-    }
-}
-/* @media screen and (max-width: 375px){
-    .btn-menu{
-        width: 80%;
-        margin: auto;
-
-
-    }
-    nav{
-        position: absolute;
-        background-color: #3939397c;
-        width: 250px;
-        height: 100%;
-
-=======
 #s3data{
     display: flex;
     flex-wrap: wrap;
@@ -703,21 +440,19 @@ footer{
     .btn-menu{
         width: 80%;
         margin: auto;
+
+
     }
     nav{
         position: absolute;
         background-color: #3939397c;
         width: 250px;
         height: 100%;
->>>>>>> ad6771bc932222bf7784eebde4133cc835ab9b3a
+
     }
     ul li{
         display: flex;
         flex-direction: column-reverse;
     }
 }
-<<<<<<< HEAD
  */
-=======
- */
->>>>>>> ad6771bc932222bf7784eebde4133cc835ab9b3a
