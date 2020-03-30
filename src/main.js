@@ -36,6 +36,8 @@ let currentData = [];
 const optionsFilter = [];
 
 let isContainerSection = false;
+let isContainerShowMore = false;
+let showMoreSection = '';
 const positions = [0, 0, 0];
 let typeChoosed = '';
 
@@ -76,6 +78,7 @@ const createPokemonCard = (index, pokemon, container) => {
   if (typeof pokemon !== 'undefined') {
     const card = document.createElement('div');
     card.className = 'pokemon-card  flex-wrap font';
+    card.id = pokemon.name;
     card.innerHTML = `<span class="pokemon-name">${pokemon.name}</span>              
                       <img class="pokemon-img" src="${pokemon.img}" >
                       <span class="pokemon-cp-hp">MAX CP ${pokemon.stats['max-cp']} / MAX HP ${pokemon.stats['max-cp']}</span>`;
@@ -169,10 +172,24 @@ const changeOrderCurrentData = (container) => {
   btnChangeOrder.addEventListener('click', () => {
     console.log('cambiar');
     deg += 180;
-    console.log(deg);
     imgChange.style.transform = `rotate(${deg}deg)`;
-    currentData = changeOrder(currentData);
-    showCard(currentData, container);
+    if (isContainerSection === false) {
+      if (isContainerShowMore) {
+        if (showMoreSection === 'type') {
+          resultTypes = changeOrder(resultTypes);
+          showCard(resultTypes, divCardContainerFlex);
+        } else if (showMoreSection === 'resistant') {
+          resultResistant = changeOrder(resultResistant);
+          showCard(resultResistant, divCardContainerFlex);
+        } else {
+          resultWeaknesses = changeOrder(resultWeaknesses);
+          showCard(resultWeaknesses, divCardContainerFlex);
+        }
+      } else {
+        currentData = changeOrder(currentData);
+        showCard(currentData, divCardContainerFlex);
+      }
+    }
   });
 };
 
@@ -205,6 +222,7 @@ const showAllByFilter = (whichFilter) => {
   btnChangeOrder.style.visibility = 'visible';
   divCardContainerBlock.style.display = 'none';
   isContainerSection = false;
+  isContainerShowMore = true;
   // currentData = filterPokemon(whichFilter, typeChoosed);
   switch (whichFilter) {
     case 'type':
@@ -219,17 +237,25 @@ const showAllByFilter = (whichFilter) => {
     default:
       // nothing
   }
-  // console.log(currentData);
   titleTop.textContent = `${typeChoosed}-${whichFilter} Pokemons`;
 };
 
 const showMore = document.getElementsByClassName('show-more');
-showMore[0].addEventListener('click', () => { showAllByFilter('type'); });
-showMore[1].addEventListener('click', () => { showAllByFilter('resistant'); });
-showMore[2].addEventListener('click', () => { showAllByFilter('weaknesses'); });
+showMore[0].addEventListener('click', () => {
+  showAllByFilter('type');
+  showMoreSection = 'type';
+});
+showMore[1].addEventListener('click', () => {
+  showAllByFilter('resistant');
+  showMoreSection = 'resistant';
+});
+showMore[2].addEventListener('click', () => {
+  showAllByFilter('weaknesses');
+  showMoreSection = 'weaknesses';
+});
 
 const showPokemonInSections = () => {
-  if (!isContainerSection) {
+  if (isContainerSection === false) {
     isContainerSection = true;
     divCardContainerFlex.style.display = 'none';
     btnChangeOrder.style.visibility = 'hidden';
@@ -291,30 +317,13 @@ const sliderSystem = () => {
 };
 
 const filterSystem = (btn, container) => {
-  // let filterActive = false;
   titleTop.textContent = '';
   const titleSlider = document.getElementsByClassName('title-slider-p');
-  console.log(btn);
-  // btn.addEventListener('click', () => {
-  //   console.log('====================');
-  //   if (window.innerWidth >= desktopSize) {
-  //     if (filterActive) {
-  //       console.log('open-filter');
-  //       container.style.display = 'none';
-  //       filterActive = false;
-  //     } else {
-  //       console.log('open-filter');
-  //       container.style.display = 'block';
-  //       filterActive = true;
-  //     }
-  //   }
-  // });
 
   for (let i = 0; i < optionsFilter.length; i += 1) {
     btnChangeOrder.style.visibility = 'visible';
     optionsFilter[i].addEventListener('click', () => {
-      // console.log(optionsFilter[i]);
-
+      isContainerShowMore = false;
       filterPokemonByType(optionsFilter[i].textContent);
       typeChoosed = optionsFilter[i].textContent;
       titleSlider[0].textContent = `${typeChoosed}-type pokemons`;
@@ -342,22 +351,7 @@ const orderSimpleData = (option) => {
 
 const orderSystem = (btn) => {
   const whichOrder = ['max-cp', 'max-hp', 'a-z'];
-  // let orderActive = false;
   const optionsBtnOrder = document.getElementsByClassName('order-option');
-  // const orderOptions = document.getElementById('ul-order-options');
-
-  // const desktopMode = (window.innerWidth >= desktopSize);
-  // btn.addEventListener('click', () => {
-  //   if (window.innerWidth >= desktopSize) {
-  //     if (orderActive) {
-  //       orderOptions.style.display = 'none';
-  //       orderActive = false;
-  //     } else {
-  //       orderOptions.style.display = 'block';
-  //       orderActive = true;
-  //     }
-  //   }
-  // });
 
   for (let i = 0; i < optionsBtnOrder.length; i += 1) {
     optionsBtnOrder[i].addEventListener('click', () => {
