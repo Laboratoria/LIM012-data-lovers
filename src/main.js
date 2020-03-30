@@ -3,11 +3,8 @@ import {
   search,
   order,
   filterByType,
-  dpsMoves,
-  epsMoves,
-  stabAttack,
-  dpsAttack,
-  epsAttack,
+  dpsCalculate,
+  epsCalculate,
 } from './data.js';
 import data from './data/pokemon/pokemon.js';
 //
@@ -181,20 +178,23 @@ const attackCard = (pokemon) => {
       <li>Base-damage: ${quickMove['base-damage']}</li>
       <li>Energy: ${quickMove.energy}</li>
       <li>Move-duration-seg: ${quickMove['move-duration-seg']}</li>
-      <li>DPS: ${dpsMoves(quickMove, pokemon.type)}</li>
-      <li>EPS: ${epsMoves(pokemon['quick-move'], pokemon['move-duration-seg']).toFixed(1)}</li>
+      <li>DPS: ${dpsCalculate(quickMove, pokemon.type)}</li>
+      <li>EPS: ${epsCalculate(quickMove)}</li>
     </ul>
-   `;
+  `;
   });
   pokemon['special-attack'].forEach((attack) => {
     specialAttackContainer += `
-      <ul>
-        <li>${attack.name}</li>
-        <li>${stabAttack(pokemon['special-attack'], pokemon.type, attack.type)}</li>
-        <li>${dpsAttack(pokemon['special-attack'], stabAttack(pokemon['special-attack'], pokemon.type, attack.type)).toFixed(2)}</li>
-        <li>${epsAttack(pokemon['special-attack']).toFixed(2)}</li>
-      </ul>
-        `;
+    <ul>
+      <li>Name: ${attack.name}</li>
+      <li>Type: ${attack.type}</li>
+      <li>Base-damage: ${attack['base-damage']}</li>
+      <li>Energy: ${attack.energy}</li>
+      <li>Move-duration-seg: ${attack['move-duration-seg']}</li>
+      <li>DPS: ${dpsCalculate(attack, pokemon.type)}</li>
+      <li>EPS: ${epsCalculate(attack)}</li>
+    </ul>
+  `;
   });
   attackModal.innerHTML = `
     <div class="allAttack">
@@ -234,13 +234,6 @@ const attackCard = (pokemon) => {
         </div>
         <div>
             <h3>Special-attacks</h3>
-            <div id="special-attacks">
-                <div>Name</div>
-                <div>Type</div>
-                <div>Base-damage</div>
-                <div>Energy</div>
-                <div>move-duration-seg</div>
-            </div>
             ${specialAttackContainer}
         </div>
   </div>
