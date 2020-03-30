@@ -249,4 +249,4 @@ const attackCard = (pokemon) => {
     weaknesses.innerHTML += `<span> ${weakness}</span>`;
   });
 };
-attackCard(data.pokemon[2]);
+attackCard(data.pokemon[3]);
