@@ -215,16 +215,6 @@ showMore[0].addEventListener('click', () => { showAllByFilter('type'); });
 showMore[1].addEventListener('click', () => { showAllByFilter('resistant'); });
 showMore[2].addEventListener('click', () => { showAllByFilter('weaknesses'); });
 
-<<<<<<< HEAD
-
-const putCardsOnSlider = (items, container) => {
-  for (let i = 0; i < items.length; i += 1) {
-    createPokemonCard(i, items[i], container);
-  }
-};
-
-=======
->>>>>>> remoto-elena
 const showPokemonInSections = () => {
   if (!isContainerSection) {
     isContainerSection = true;
