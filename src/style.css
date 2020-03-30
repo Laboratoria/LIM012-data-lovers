@@ -298,11 +298,19 @@ footer{
         color: #FFFFFF;
     }
 
+<<<<<<< HEAD
     header{
         background-color: transparent;
         z-index: 99;
     }
     #icon{
+=======
+       header{
+        background-color: transparent;
+        z-index: 99;
+    }
+      #icon{
+>>>>>>> 25cc46e9f101f05a39d5471352252a33bdd40222
           display: block;
           cursor: pointer;
 
