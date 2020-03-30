@@ -17,10 +17,5 @@ export const ordenAs = (p1) => {
     } return -1;
   });
   return ascendente;
+// eslint-disable-next-line eol-last
 };
-
-export const filtrarDeporte = (theObject) => {
-  const tipoDeDeporte = theObject.filter(array => {
-    return array.deporte === SVGFEDisplacementMapElement.value;
-  });
-}

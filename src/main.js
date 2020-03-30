@@ -53,10 +53,5 @@ alfhabeticOrder.addEventListener('click', () => {
     ulAtleta.appendChild(liDeporte);
     document.getElementById('root').appendChild(ulAtleta);
   });
-});
-
-const selectElement = document.querySelector("#optionSports");
-selectElement.addEventListener("change", (event) => {
-  const SportType = theObjet.filter(item=> {
-  return item.deporte === optionsMenu.value;
+// eslint-disable-next-line eol-last
 });
