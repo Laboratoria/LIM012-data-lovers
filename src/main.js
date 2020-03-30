@@ -205,9 +205,22 @@ const showAllByFilter = (whichFilter) => {
   btnChangeOrder.style.visibility = 'visible';
   divCardContainerBlock.style.display = 'none';
   isContainerSection = false;
-  currentData = filterPokemon(whichFilter, typeChoosed);
-  titleTop.textContent = `${typeChoosed}-${whichFilter} pokemons`;
-  showCard(currentData, divCardContainerFlex);
+  // currentData = filterPokemon(whichFilter, typeChoosed);
+  switch (whichFilter) {
+    case 'type':
+      showCard(resultTypes, divCardContainerFlex);
+      break;
+    case 'resistant':
+      showCard(resultResistant, divCardContainerFlex);
+      break;
+    case 'weaknesses':
+      showCard(resultWeaknesses, divCardContainerFlex);
+      break;
+    default:
+      // nothing
+  }
+  // console.log(currentData);
+  titleTop.textContent = `${typeChoosed}-${whichFilter} Pokemons`;
 };
 
 const showMore = document.getElementsByClassName('show-more');
@@ -300,10 +313,10 @@ const filterSystem = (btn, container) => {
   for (let i = 0; i < optionsFilter.length; i += 1) {
     btnChangeOrder.style.visibility = 'visible';
     optionsFilter[i].addEventListener('click', () => {
-      console.log(optionsFilter[i]);
+      // console.log(optionsFilter[i]);
 
       filterPokemonByType(optionsFilter[i].textContent);
-      typeChoosed = optionsFilter[i].value;
+      typeChoosed = optionsFilter[i].textContent;
       titleSlider[0].textContent = `${typeChoosed}-type pokemons`;
       titleSlider[1].textContent = `${typeChoosed}-resistant pokemons`;
       titleSlider[2].textContent = `${typeChoosed}-weaknesses pokemons`;
@@ -319,7 +332,6 @@ const orderSections = (option) => {
   resultTypes = orderBy(resultTypes, option);
   resultResistant = orderBy(resultResistant, option);
   resultWeaknesses = orderBy(resultWeaknesses, option);
-  
   showPokemonInSections();
 };
 
