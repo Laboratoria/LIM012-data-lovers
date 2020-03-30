@@ -25,7 +25,7 @@ const crearTemplate = (arr) => {
     h3.classList.add('class-tags');
     img.src = `${champion.splash}`;
     p.innerHTML = `${champion.name}`;
-    h3.innerHTML = `${champion.tags}`;
+    h3.innerHTML = `${champion.tags.join(', ')}`;
     newElement.appendChild(img);
     newElement.appendChild(p);
     newElement.appendChild(h3);
