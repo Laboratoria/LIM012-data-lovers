@@ -1,0 +1,275 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+}
+body {
+    font-family: sans-serif;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(160, 155, 155);
+    background-size: cover;
+    transition: all .1s ease-in-out;
+    animation: banner 16s infinite linear;
+}
+header {
+    width: 100%;
+    background: rgb(37, 35, 35);
+}
+#btn-menu {
+    display: none;
+}
+header label {
+    display: none;
+    width: 30px;
+    height: 30px;
+    padding: 10px;
+    border-right:1px solid #fff
+}
+header label:hover {
+    cursor: pointer;
+    background: #feb412;
+}
+.menu ul {
+    margin:0;
+    list-style:none;
+    padding:0;
+    display:flex;
+    
+}
+.menu li {
+    flex-grow: 1;
+    text-align: center;
+    border-right: 1px solid #fff;
+}
+.menu li:hover {
+    background: #feb412;
+}
+.menu li a {
+    display: block;
+    padding: 15px 20px;
+    color: #fff;
+    text-decoration: none;
+}
+
+@keyframes banner{
+  0%{
+    background-image: url("imagenes/3.jpg");
+  }
+  25%{
+    background-image: url("imagenes/3.jpg");
+  }
+  26%{
+    background-image: url("imagenes/4.jpg");
+  }
+  50%{
+    background-image: url("imagenes/4.jpg");
+  }
+  51%{
+    background-image: url("imagenes/5.jpg");
+  }
+  75%{
+    background-image: url("imagenes/5.jpg");
+  }
+  76%{
+    background-image: url("imagenes/6.jpeg");
+  }
+  100%{
+    background-image: url("imagenes/6.jpeg");
+  }
+} 
+@media (max-width:750px){
+    body {
+      background-size: cover;
+    }
+    header label{
+        display: block;
+        width: 70px;
+        height: 50px;
+    }
+    .menu {
+        position: absolute;
+        background: rgb(37, 35, 35); 
+        width: 70%;        
+        margin-left: -70%;
+        transition: all 0.5s;
+    }
+    .menu ul {
+        flex-direction: column;
+    }
+    .menu li {
+        border-top: 1px solid #fff;
+    }
+    #btn-menu:checked ~ .menu {
+        margin:0;
+
+    }
+} 
+
+/*LISTADO DE CAMPEONES */
+#secondScreen {
+display: none;
+padding-top: 5%;  
+}
+.styleList {
+    width: 120px;
+    height: 30px;
+    background: rgba(255, 255, 255, 0.801);
+    border-radius: 6px;
+    font-size: 15px;
+    text-align: center;
+    margin-left: 62px;
+}
+
+/* BOTON BUSCAR */
+.searching {
+color: rgb(39, 36, 35);
+font-size: 20px;
+margin: 0px 15px;
+margin-left: 850px;
+}
+#inputBuscar {
+width: 200px;
+height: 30px;
+background: rgba(255, 255, 255, 0.801);
+border: 1px solid #554F4F;
+box-sizing: border-box;
+border-radius: 8px;
+font-size:15px;
+  }
+.btnRoles {
+margin-left: 610px;
+}
+
+#contentList {
+    color: #d1cabc;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    padding: 4rem;
+    grid-gap: 4rem;
+}
+.championSplash {
+    width: 100%;
+    height: 100%;
+} 
+.imgSplash {
+    width: 100%;
+    height: 100%;
+}
+/* .imgSplash:hover {
+    transform: rotateY(180deg);
+    animation: 10s ease infinite;
+} */
+.name {
+    position: absolute;
+    font-size: 1.5rem;
+    margin-left: 10%;
+    transition: all ease 0.5s;
+    font-family: "Trade Winds", cursive;
+}
+.name {
+    position: absolute;
+    font-size: 1.5rem;
+    margin-left: 10%;
+    transition: all ease 0.5s;
+    font-family: "Trade Winds", cursive;
+}
+
+/* #secondScreen #contentList .galeria_img {
+  position: flex;
+  width: 200px;
+  height: 200px;
+  margin: 10px;
+  box-sizing: border-box;
+  display: inline-block;
+  border-radius: 6px;
+}   */
+#thirdScreen {
+  display: none;
+} 
+/* BOTÓN DE CONOCE A LOS CAMPEONES */
+.bttnM {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  
+}
+.btnMostrar {
+  position: relative;
+  top: 500px;
+  border-radius: 6px;
+  height: 50px;
+  z-index: 1; 
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: medium;
+  background-color: transparent;
+  box-shadow: 0 0 1.25rem #feb412, 0 0 1.25rem #feb412;
+  text-shadow: 1px 1px 8px #feb412, 0 0 1em #feb412, 0 0 0.2em #feb412;
+  letter-spacing: 6px;
+} 
+#btnMostrar:hover {
+  border: 0.0625rem solid #c7e907;
+  outline: none;
+  color: rgb(8, 6, 3);
+  font-size: 2rem;
+}
+/*TERCERA PANTALLA*/
+.videoIntro {
+    position:relative;
+    text-align: center;
+}
+
+/* ASESINOS */
+.asesino {
+  position:relative;
+  text-align: center;
+  top: 50px;
+  font-size: 200%;
+}
+.roles {
+position:relative;
+text-align: center;
+letter-spacing: 50px;
+}
+#fourthScreen {
+  display:none;
+}
+.optionsAsse {
+  position: relative;
+  text-align: left;
+}
+.searchChampionsA {
+  position: relative;
+  text-align: right;
+}
+/*APLICANDO CLASSLIST */
+/* .one {
+    display: none;
+}
+.two {
+    display: block;
+}
+.four {
+    display:none;
+} */
+#contentListAsse {
+    color: #d1cabc;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    padding: 4rem;
+    grid-gap: 4rem;
+}
+.tags {
+    position: absolute;
+    font-size: 1.5rem;
+    margin-left: 5%;
+    transition: all ease 0.5s;
+    font-family: "Trade Winds", cursive;
+    font-size: 80%;
+    color:rgb(177, 153, 20);
+}
