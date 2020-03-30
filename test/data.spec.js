@@ -80,16 +80,6 @@ describe('ordenAs', () => {
         noc: 'ITA',
       },
       {
-        nombre: 'Nataliya Andrivna Burdeina',
-        genero: 'F',
-        altura: '165',
-        peso: '63',
-        fecha: 1974,
-        deporte: 'Archery',
-        equipo: 'Ukraine',
-        noc: 'UKR',
-      },
-      {
         nombre: 'Matteo Bisiani',
         genero: 'M',
         altura: '184',
@@ -98,6 +88,16 @@ describe('ordenAs', () => {
         deporte: 'Archery',
         equipo: 'Italy',
         noc: 'ITA',
+      },
+      {
+        nombre: 'Nataliya Andrivna Burdeina',
+        genero: 'F',
+        altura: '165',
+        peso: '63',
+        fecha: 1974,
+        deporte: 'Archery',
+        equipo: 'Ukraine',
+        noc: 'UKR',
       },
     ];
     expect(ordenAs(input)).toEqual(twoOutput);
