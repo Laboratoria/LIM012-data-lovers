@@ -66,20 +66,19 @@ export const dpsCalculate = (quick, pokemonType) => {
   let dps = 0;
   const baseDamage = Number(quick['base-damage']);
   const time = Number(quick['move-duration-seg']);
-  dps = baseDamage / time;
+  dps = (baseDamage / time).toFixed(2);
   for (let i = 0; i < pokemonType.length; i += 1) {
     if (pokemonType[i] === quick.type) {
       let stab = 0;
       stab = baseDamage + ((20 * baseDamage) / 100);
-      dps = stab / time;
+      dps = (stab / time).toFixed(1);
     }
   }
-  console.log(dps);
   return dps;
 };
 
 export const epsCalculate = (quick) => {
   const energy = Number(quick.energy);
   const time = Number(quick['move-duration-seg']);
-  return energy / time;
+  return (energy / time).toFixed(1);
 };

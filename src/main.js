@@ -168,9 +168,6 @@ const attackCard = (pokemon) => {
   let quickMoveContainer = '';
   let specialAttackContainer = '';
   pokemon['quick-move'].forEach((quickMove) => {
-    console.log(quickMove);
-    // console.log(quickMove.type);
-    console.log(pokemon.type);
     quickMoveContainer += `
     <ul>
       <li>Name: ${quickMove.name}</li>
@@ -249,4 +246,4 @@ const attackCard = (pokemon) => {
     weaknesses.innerHTML += `<span> ${weakness}</span>`;
   });
 };
-attackCard(data.pokemon[2]);
+attackCard(data.pokemon[5]);
