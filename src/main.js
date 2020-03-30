@@ -170,7 +170,7 @@ window.addEventListener('load', () => {
     const evolutionContainer = document.querySelector('.evolutions');
     const pEvolution = pokemon.evolution;
     const arrayOne = Object.values(pEvolution);
-    const keysArrayOne = Object.keys((pEvolution));
+    const keysArrayOne = Object.keys(pEvolution);
 
     if (Object.prototype.hasOwnProperty.call(pEvolution, 'prev-evolution') && Object.prototype.hasOwnProperty.call(pEvolution, 'next-evolution')) {
       evolutionContainer.innerHTML += `
@@ -264,7 +264,7 @@ searchInput.addEventListener('input', () => {
     searchBox.innerHTML += pokemonCards(result);
     sectionContent.appendChild(searchBox);
   } else if (inputText.length > 0 && result.length === 0) {
-    searchBox.innerHTML += 'No se ha encontrado el pokemon :(';
+    searchBox.innerHTML += 'Pokemon not found :(';
     sectionContent.appendChild(searchBox);
   } else {
     allDataByGenerations();
