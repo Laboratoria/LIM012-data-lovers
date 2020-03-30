@@ -6,117 +6,176 @@
     <title>Data Lovers</title>
     <link rel="shortcut icon" href="#">    
     <link rel="stylesheet" href="style.css" />
-    <link href="https://fonts.googleapis.com/css?family=Aldrich&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Rammetto+One&display=swap" rel="stylesheet">
-
+    <!-- <link href="https://s.googleapis.com/css?family=Aldrich&display=swap" rel="stylesheet">
+    <link href="https://s.googleapis.com/css?family=Rammetto+One&display=swap" rel="stylesheet">
+    <link href="https://s.googleapis.com/css?family=Baloo+Thambi+2|Roboto+Mono&display=swap" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Thambi+2&display=swap" rel="stylesheet">
+            
   </head>
   <body>
+
     <div class="root">
-      <header id="header">
-        <img id = "logo-pokemon" src="images/1200px-Pokémon_GO_logo.svg.png" alt="">
+      <header id="header-page">        
+        <img id = "logo-pokemon" src="images/header5.jpg" alt="">
+        <!-- <img id = "logo-pokemon" src="images/header4.png" alt=""> -->
       </header>
 
-      <nav id="navbar">
-        <!-- <div id="container-bar-search"> -->
-          <span id="logo-pokedex">POKEDEX</span>
-          <input type="text" id="input-bar-search" placeholder="Nombre de Pókemon">
+      <div id="modal-mode">        
+        <div id="modal-window" class="fixed">
+        <img src="images/close.png" alt="" id="close-modal" class="icon-small btn-close-img">
+        <div id="div-img-modal" >          
+          <img src="" id="img-pokemon-modal" class="pokemon-img-medium">          
+          
+        </div>        
+        <section id="body-modal" class="modal- flex-wrap">  
+          <div id="div-pokemon-name-modal" class="font"></div>          
+          
+          <div class="column-1 flex-wrap">
+            <img src="images/cintam.png" alt="" class="icon-medium icon-center">
+            <div class="font">
+              <span class="label-section ">Height</span>
+              <span id="height" class="data-section-2"></span>
+            </div>
+            
+            
+          </div>
+          <div class="column-1 flex-wrap">
+            <img src="images/balanza.png" alt="" class="icon-medium icon-center ">
+            <div class="font">
+              <span class="label-section">Weight</span>
+              <span id="weight" class="data-section-2"></span>
+            </div>          
+          </div>
+          <div class="column-1 flex-wrap">
+            <img src="images/world.png" alt="" class="icon-medium icon-center">
+            <div class="font">
+              <span class="label-section ">Region</span>
+              <span id="region" class="data-section-2"></span>
+            </div>
+          </div>
+          <div class="column-2 font" id = "sections-types">
+            <p class="label-section text-aling"> Type</p>            
+            <div id = "types" class="section-modal flex-wrap"></div>
+            <p class="label-section text-aling"> Resistant</p>            
+            <div id = "resistant" class="section-modal flex-wrap"></div>
+            <p class="label-section text-aling"> Weaknesses</p>            
+            <div id = "weaknesses" class="section-modal flex-wrap"></div>
+          </div>
+          <div class="column-2 flex-wrap">
+            <div class="column-2 font">
+              <span class="label-section ">Max-CP</span>
+              <span id="max-cp" class="data-section-2"></span>
+            </div>
+            <div class="column-2 font">              
+              <span class="label-section ">Max-HP</span>
+              <span id="max-hp" class="data-section-2"></span>
+            </div>
+            <span class="label-section font ">Special Atacks</span>
+            <div id="special-attacks" class="column-3 font">
+            </div>            
+            
+          </div>
+          <p class="label-section font">EVOLUTION</p>            
+          <div id="evolution" class="column-3 flex-wrap"></div>
+          
+        </section>
+      </div>
+      </div>
+                
+      <nav id="navbar" class="sticky">        
+        <input type="text" id="input-bar-search" placeholder="Nombre de Pókemon">
           <div id = "icon-bar-search">
             <img src="images/buscar.png" alt="" id="img-icon-bar-search">
           </div>
-        <!-- </div> -->
       </nav>
 
-      <div class="top-filter">
-        <button class="button-filter">Filtrar por</button>
-        <button class="button-filter">Ordenar por</button>
+      <div class="top-menu sticky flex-wrap">
+        <a class="top-menu-option option">Filtrar por</a>
+        <a class="top-menu-option option">Ordenar por</a>
+        <a class="top-menu-option option">Calculate</a>
       </div>
+        
+      <section id="section-body-conteiner">
 
-      <section id="section-conteiner">
-        <div id="top-pagination">          
+        <div id="top-pagination">
+          <p id="top-pagination-p"> </p>
+          <div id="btn-change-order">
+            <img src="images/change-order.png" id="btn-change-order-img">
+          </div>  
         </div>
 
-        <aside class="menu-container">
-          <button id="btn-close">
-            <img src="images/close.png" alt="" id="btn-close-img">
-          </button>
-
-          <div class="menu section-order-by">
-            <li ><a href="#" class="menu-option" id="menu-btn-order">Order by</a>
+        <aside id="lateral-menu">        
+          <img src="images/close.png"  id="close-menu" class="btn-close-img icon-small">          
+          
+          <div class="menu section-order-by ">
+            <li ><a href="#" class="option menu-option " id="menu-btn-order">Order by</a>
               <ul id="ul-order-options">
-                <li><a class = "order-option" href="#">Puntos de ataque</a></li>
-                <li><a class = "order-option" href="#">Puntos de salud</a></li>
-                <li><a class = "order-option" href="#">Alfabeticamente</a></li>
+                <li class = "option order-option" href="#">Puntos de ataque</li>
+                <li class = "option order-option" href="#">Puntos de salud</li>
+                <li class = "option order-option" href="#">Alfabeticamente</li>
               </ul>
             </li>           
           </div>
-          <div class="menu section-filter-by">
-            <li><a href="#" class="menu-option" id="menu-btn-filter">Filter by</a></li>
-            <div id="filter-options">
 
-            </div>            
-          </div>
+          <div class="menu section-filter-by ">
+            <li ><a href="#" class="option menu-option " id="menu-btn-filter">Filter by</a>            
+              <ul id="ul-filter-options">                
+              </ul>
+            </li>     
+          </div>                      
+
           <div class="menu section-calculate">
-            <li><a href="#" class="menu-option" id="menu-btn-calc">Calculate</a></li>
-          </div>
-          
+            <li ><a href="#" class="option menu-option" id="menu-btn-calc">Calculate</a></li>
+          </div> 
 
         </aside>
 
         <main id = "main">
 
-          <div id = "card-container" class="card-container-flex">           
-          </div>        
-        
-          <div id = "card-container-section" >            
+          <div id ="card-container-flex" class="flex-wrap"> </div>
+                
+          <div id = "card-container-block" >   
+
             <div class="slider carousel-pokemon-type">
-              <div class="title-slider">
-                <p>Pokemones de tipo</p>
-                <a class="show-more" >Ver más </a>
-              </div>
+              <div class="title-slider font"><p class="title-slider-p"></p><a class="show-more" >Ver más</a> </div>
               <div class="slide">
-
                 <div class="slide-cards type"></div>                
-
                 <button class="ctrl-btn ctrl-prev" value="type" >❮</button> 
                 <button class="ctrl-btn ctrl-next" value="type">❯</button>
-
               </div>
             </div>
             
             <div class="slider carousel-pokemon-resistant">
-              <div class="title-slider">
-                <p>Pokemones resistentes al tipo</p>
-                <a class="show-more">Ver más </a>
-              </div>
+              <div class="title-slider"><p class="title-slider-p"> </p><a class="show-more">Ver más</a></div>
               <div class="slide">
-
                 <div class="slide-cards resistant" ></div>                
-
                 <button class="ctrl-btn ctrl-prev" value="resistant" >❮</button> 
                 <button class="ctrl-btn ctrl-next" value="resistant">❯</button>
-
               </div>
             </div>
             
             <div class="slider carousel-pokemon-weaknesses">
-              <div class="title-slider">
-                <p>Pokemones débiles al tipo</p>
-                <a class="show-more">Ver más </a>
-              </div>
+              <div class="title-slider"><p class="title-slider-p"> </p><a class="show-more">Ver más </a></div>
               <div class="slide">
                 <div class="slide-cards weaknesses" ></div>
                 <button class="ctrl-btn ctrl-prev" value="weaknesses">❮</button> 
                 <button class="ctrl-btn ctrl-next" value="weaknesses">❯</button>
               </div>
             </div>          
+
           </div>  
 
         </main>
 
       </section>
 
-      <footer id="footer"> Pie de pagina</footer>
+      <footer id="footer" >
+        <img src="images/nature.png" alt="" id="img-footer">
+        <div id="div-info-footer">
+          <h2 class="font"><img src="images/normal.png" class="icon-small">POKEDEX</h2>
+          <h4 class="font"> Created by Elena Gordillo & Yudith Cumba</h4>
+        </div>
+      </footer>
 
     </div>
 
