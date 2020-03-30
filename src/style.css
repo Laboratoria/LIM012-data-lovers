@@ -297,12 +297,20 @@ footer{
         /* background-repeat: no-repeat; */
         color: #FFFFFF;
     }
+<<<<<<< HEAD
 
     header{
         background-color: transparent;
         z-index: 99;
     }
     #icon{
+=======
+       header{
+        background-color: transparent;
+        z-index: 99;
+    }
+      #icon{
+>>>>>>> 2bf96d11634f0ca0ee770aca48d92e4b1fe35b17
           display: block;
           cursor: pointer;
 

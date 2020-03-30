@@ -15,7 +15,7 @@ export const showAllData = poke => `
               </section>
                     <div id="hW" class="infoCont">
                       <p>Height:<span>${poke.size.height}</span></p>
-                      <p>Weight:<span>${poke.size.weight}</span></p>  
+                      <p>Weight:<span>${poke.size.weight}</span></p>
                       <p>Base Attack:<span>${poke.stats['base-attack']}</span></p>
                     </div>
                     <p id="about" class="infoCont">${poke.about}</p>
@@ -49,7 +49,6 @@ export const orderBy = (poke, order) => {
       {
         return 0;
       }
-
       /* return (nameA > nameB) ? 1 : ((nameA < nameB) ? -1 : 0); */
     }
     if (order === 'desc') {
