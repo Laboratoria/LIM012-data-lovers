@@ -176,16 +176,12 @@ a {
 }
 /* MAIN - SUBITULOS */
 .subtitles {
-    /* width: 100%; */
-    /* border: 1px solid black; */
     height: 40px;
     display: flex;
     align-items: center;
 }
 
 .line{
-    /* border: 1px solid black; */
-    /* display: inline-block; */
     width: 75%; 
     height: 5px;
     background-color: #F25749;
@@ -303,28 +299,8 @@ aside {
     overflow: auto;
 }
 .sub.menu {
-    display: inline-block;
+    /* display: flex; */
     width: 100%;
-}
-.derecho {
-    display: inline-block;
-    text-align: center;
-    box-sizing: content-box;
-    width: 49%;
-    font-size: 0.9rem;
-    list-style: none;
-    border: 0.5px solid white;
-    margin: 0px;
-} 
-.izquierdo {
-    display: inline-block;
-    box-sizing: content-box;
-    width: 49%;
-    text-align: center;
-    font-size: 0.9rem;
-    list-style: none;
-    border: 0.5px solid white;
-    margin: 0px;
 }
 
 .li-filter {
@@ -333,10 +309,8 @@ aside {
     color: #fff;
     text-decoration: none;  
 }
-.filter-menu li:hover {
-    background: rgba(0,0,0,0.3);
-}
-.filter-menu a span {
+
+.filter-menu span {
     margin-left: 30%;
     font-size: 1rem
 }
@@ -348,6 +322,29 @@ aside {
     border-top:  1px solid #fff;
     border-bottom:  1px solid #fff;
     padding: 0,5px;
+}
+
+.sub-menu {
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+.li-mits {
+    border-right: 0.5px solid #FFF;
+}
+
+table td {
+    height: 30px;
+    font-size: 0.9em;
+}
+
+table td:hover, .li-filter:hover {
+    background: rgba(0,0,0,0.3);
+}
+
+tr {
+    border-bottom: 0.5px solid #FFF;
 }
 
 .hide-f {

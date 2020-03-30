@@ -15,6 +15,7 @@ export const search = (data, inputText) => {
   });
   return result;
 };
+
 // Funcion para filtrar por tipo
 export const filterByType = (pokemonType, typeChose) => {
   const typesResult = [];

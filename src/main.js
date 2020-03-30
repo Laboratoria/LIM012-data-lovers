@@ -56,7 +56,7 @@ const generation = (geNumber, geName) => {
   subtitle.className = 'subtitles margin-bottom';
   subtitle.innerHTML = `
   <div class="arrow">
-    <h2>Generacion ${geNumber} - ${geName}</h2>
+    <h2>Generacion ${geNumber}: ${geName}</h2>
   </div>
   <div class="line hide"></div>
   `;
@@ -111,7 +111,7 @@ searchInput.addEventListener('input', () => {
     allDataByGenerations();
   }
 });
-
+// Sort
 const selection = document.getElementById('selection');
 selection.addEventListener('change', () => {
   const chosenOrder = selection.value;
@@ -126,7 +126,7 @@ selection.addEventListener('change', () => {
     allDataByGenerations();
   }
 });
-
+// Filter
 const filterBox = document.querySelector('.sub-menu');
 filterBox.addEventListener('click', (e) => {
   const typeChose = e.target.id;
@@ -137,6 +137,12 @@ filterBox.addEventListener('click', (e) => {
   filterContainer.innerHTML += pokemonCards(filterByType(data.pokemon, typeChose));
   sectionContent.appendChild(filterContainer);
 });
+// All pokémons
+const allPokemons = document.getElementById('all-pokemons');
+allPokemons.addEventListener('click', () => {
+  allDataByGenerations();
+});
+
 // Botón de subir
 window.onscroll = () => {
   if (document.documentElement.scrollTop > 100) {
