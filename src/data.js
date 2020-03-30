@@ -18,3 +18,9 @@ export const ordenAs = (p1) => {
   });
   return ascendente;
 };
+
+export const filtrarDeporte = (theObject) => {
+  const tipoDeDeporte = theObject.filter(array => {
+    return array.deporte === SVGFEDisplacementMapElement.value;
+  });
+}
