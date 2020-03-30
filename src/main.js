@@ -3,69 +3,90 @@ import { example } from './data.js';
  import dataLol from './data/lol/lol.js';
 //import data from './data/pokemon/pokemon.js';
 
-/*let stringTemplate = '';
-let container = document.getElementById('container');
+let listadoHeroes = [];
 
-let conteo = 0;
-
-for (const prop in dataLol.data){
-  conteo++;
-  stringTemplate+= `
-  <div id='box'>
-  <img src=${dataLol.data[prop].img}/>
-  <p id='name' class="ejemplo">${dataLol.data[prop].name}</p>
-  <p id='title'>${dataLol.data[prop].title}</p>
-  </div>
-  `;
-}
-  console.log(conteo);
- container.innerHTML= stringTemplate;
-
- conteo = 0;
- for (const prop in dataLol.data){
-  if (dataLol.data[prop].tags.indexOf("Tank") != -1){
-    conteo++;
-   stringTemplate+= `
-  <div id='box'>
-  <img src=${dataLol.data[prop].img}/>
-  <p id='name' class="">${dataLol.data[prop].name}</p>
-  <p id='title'>${dataLol.data[prop].title}</p>
-  </div>`
-       }
-   }
-   console.log(conteo);
-
-  container.innerHTML= stringTemplate;
-  
-  console.log(stringTemplate);*/
-
-  const dataFiltradoRol = (evento)=> {
-    //debugger;
-    // console.log(rol.target.value);
-    let rol = evento.target == undefined ? evento : evento.target.value;
-    let stringTemplate = '';
-    let container = document.getElementById('container');
-  
-    for (const prop in dataLol.data){
-      if (rol == '-1' || dataLol.data[prop].tags.indexOf(rol) != -1){
-  
-        stringTemplate+= `
-        <div id='box' class="box">
-          <img src=${dataLol.data[prop].img} class="imgCampeon"/>
-          <p id='name' class="nameCamp">${dataLol.data[prop].name}</p>
-          <p id='title'class="titleCamp">${dataLol.data[prop].title}</p>
-        </div>`
-  
-      }
+  const ascendente = ( a, b) => {
+    if ( a.name < b.name ){
+      return -1;
     }
-    
-    container.innerHTML= stringTemplate;
+    if ( a.name > b.name ){
+      return 1;
+    }
+    return 0;
   }
 
-  // dataFiltradoRol('Tank');
+  const descendente = ( a, b) => {
+    if ( a.name < b.name ){
+      return 1;
+    }
+    if ( a.name > b.name ){
+      return -1;
+    }
+    return 0;
+  }
 
+
+  const dataFiltradoRol = (evento)=> {
+
+    let rol = evento.target == undefined ? evento : evento.target.value;
+    let listOrden = document.getElementById("orden");
+    // let stringTemplate = '';
+    // let container = document.getElementById('container');
+    listadoHeroes = [];
+
+    for (const prop in dataLol.data){
+      if (rol == '-1' || dataLol.data[prop].tags.indexOf(rol) != -1)
+      {
+        listadoHeroes.push(dataLol.data[prop]);
+        // stringTemplate += `
+        // <div id='box' class="box">
+        //   <img src=${dataLol.data[prop].img} class="imgCampeon"/>
+        //   <p id='name' class="nameCamp">${dataLol.data[prop].name}</p>
+        //   <p id='title'class="titleCamp">${dataLol.data[prop].title}</p>
+        // </div>`
+
+      }
+    }
+
+    dataFiltradoOrden(listOrden.value);
+    // container.innerHTML= stringTemplate;
+  }
+
+  const dataFiltradoOrden = (evento) => {
+
+    let orden = evento.target == undefined ? evento : evento.target.value;
+    let stringTemplate = '';
+    let container = document.getElementById('container');
+    let listOrden = [];
+
+    if (orden == "AZ")
+      listOrden = listadoHeroes.sort(ascendente);
+    else
+      listOrden = listadoHeroes.sort(descendente);
+
+    for (const item in listOrden)
+    {
+          stringTemplate += `
+          <div id='box' class="box">
+            <img src=${listOrden[item].img} class="imgCampeon"/>
+            <p id='name' class="nameCamp">${listOrden[item].name}</p>
+            <p id='title'class="titleCamp">${listOrden[item].title}</p>
+          </div>`
+    }
+
+    container.innerHTML= stringTemplate;
+
+  }
+
+
+/* Ejecucion del filtro roles "Todos" */
+dataFiltradoRol('-1');
+
+/* Agregar eventos */
   let listRoles = document.getElementById("roles");
+  let listOrden = document.getElementById("orden");
 
   listRoles.addEventListener("change", dataFiltradoRol);
+  listOrden.addEventListener("change", dataFiltradoOrden);
 
-  dataFiltradoRol('-1');
+
