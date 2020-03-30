@@ -1,11 +1,77 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <title>Data Lovers</title>
-    <link rel="stylesheet" href="style.css" />
+            <meta charset="utf-8">
+            <title>Data Lovers</title>
+            <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
+
+      <header>
+            <div class="headerNombre">
+              <p>Boletín<br>OLÍMPICO</p>
+            </div>
+            <div class="headerFecha">
+              <p>Marzo, 2020</p>
+            </div>
+      </header>
+
+      <nav class="menu">
+            <a href="#" class="barra" id="inicio">Inicio</a>
+            <a href="#" class="barra" id="medallero">Medallero</a>
+            <a href="#" class="barra" id="atletas">Atletas</a>
+            <a href="#" class="barra" id="paises">Países</a>
+            <a href="#" class="barra" id="deportes">Deportes</a>
+      </nav>
+
+      <main>
+            <div id="barraInicio" class="menuInicio">
+              <img src="img/facemasks.jpg" alt="">
+              <img src="img/rusia.jpg" alt="">
+            </div>
+
+            <div id="barraMedallero" class="menuMedallero hide">
+
+                    <div id="summer" class="summer">
+                      <h2>Olimpiadas Verano</h2>
+
+                      <button id="btnSidney"><img src="img/sidney2000.png" alt="Sidney 2000"></button>
+                      <button id="btnAtenas"><img src="img/atenas2004.png" alt="Atenas 2004"></button>
+                      <button id="btnBeijing"><img src="img/beijing2008.png" alt="Beijing 2008"></button>
+                      <button id="btnLondres"><img src="img/londres2012.png" alt="Londres 2012"></button>
+                      <button id="btnRio"><img src="img/rio2016.png" alt="Rio 2016"></button>
+                    </div>
+
+                    <div id="winter" class="winter">
+                      <h2>Olimpiadas Invierno</h2>
+                      <button id="btnSalt"><img src="img/salt2002.png" alt="Salt Lake 2002"></button>
+                      <button id="btnTurin"><img src="img/turin2006.jpg" alt="Turin 2006"></button>
+                      <button id="btnVncvr"><img src="img/vncvr2010.png" alt="Vancouver 2010"></button>
+                      <button id="btnSochi"><img src="img/sochi2014.jpg" alt="Sochi 2014"></button>
+                      <button id="btnPyeong"><img src="img/pyeong2018.png" alt="Pyeong Chang 2018"></button>
+                    </div>
+
+            </div>
+
+            <select id="filtroAz" class="filtroAz hide" name="OrdenAZ">
+              <option value="a-z">A-Z</option>
+              <option value="z-a">Z-A</option>
+            </select>
+            <div id="datageneral" class="menuAtletas hide">
+            </div>
+
+      </main>
+
+  <footer>
+        <div class="auspiciadores">
+            <p>Auspiciadores:</p>
+             <a title="" href="http://www.asics.com"><img src="img/asics.png" alt="Asics"/></a>
+             <a title="" href="https://www.technogym.com"><img src="img/technogym.png" alt="Technogym"/></a>
+             <a title="" href="http://www.lining.com"><img src="img/lining.png" alt="Li-ning"/></a>
+        </div>
+  </footer>
+
     <div id="root"></div>
     <script src="main.js" type="module"></script>
   </body>

@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css?family=Questrial&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+*{
+  margin:0;
+  padding: 0;
+}
+
+.hide{
+  display: none;
+}
+
+header{
+  display: flex;
+  padding: 28px;
+  display: inline-block;
+}
+
+.headerNombre{
+  color: #1D4E89;
+  font-size: 42px;
+  font-family: 'Questrial', sans-serif;
+}
+
+.headerFecha{
+  font-family: 'Questrial', sans-serif
+}
+
+nav{
+  background-image: url("img/menuimagen.png");
+  background-size: cover;
+  display: flex;
+  justify-content: space-around;
+  font-size: 28px;
+  padding: 21px;
+}
+
+a{
+  text-decoration: none;
+  font-family: 'Questrial', sans-serif;
+  color: #ffff;
+}
+
+.menuInicio{
+
+}
+
+.menuInicio img{
+  display: flex;
+  width: 46%;
+  margin: 0px auto;
+  display: inline-block;
+}
+
+.encabezado{
+  margin-bottom: 2%;
+  display: flex;
+  color: #179a13;
+  font-weight: 300;
+  margin-left: 6%;
+}
+
+.encabezado div{
+  font-size: 1.1rem;
+  display: flex;
+}
+
+.menuAtletas{
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+.fila{
+  margin: 1.5%;
+  display: flex;
+  border-bottom-width: thin;
+  border-bottom-style: solid;
+  border-color: #1D4E89;
+}
+
+.columna{
+  font-family: 'Questrial', sans-serif;
+  font-size: 0.9rem;
+  flex-basis: 33%;
+  margin-left: 3%;
+}
+
+.column{
+  font-family: 'Questrial', sans-serif;
+  font-size: 0.9rem;
+  flex-basis: 25%;
+}
+
+.colum{
+  font-family: 'Questrial', sans-serif;
+  font-size: 0.9rem;
+  flex-basis: 5%;
+  margin-right: 4%;
+  text-align: right;
+}
+
+.menuMedallero{
+  display: float;
+  justify-content: space-between;
+}
+
+
+.menuMedallero img{
+  justify-content: space-between;
+  width: 90px;
+}
+
+.menuMedallero button{
+  width: 5%;
+}
+
+footer{
+  display: flex;
+  background-color: #1D4E89;
+  padding: 28px;
+  bottom: 0;
+}
+
+.auspiciadores img{
+  width: 7%;
+}
