@@ -3,7 +3,6 @@ import {
   search,
   order,
   filterByType,
-  stabMoves,
   dpsMoves,
   epsMoves,
   stabAttack,
@@ -169,27 +168,31 @@ iconSearch.addEventListener('click', () => {
 // });
 const attackModal = document.querySelector('.attacks');
 const attackCard = (pokemon) => {
-  let quickMovesContainer = '';
+  let quickMoveContainer = '';
   let specialAttackContainer = '';
-  pokemon['quick-move'].forEach((quickMoves, index) => {
-    quickMovesContainer += `
-      <ul>
-        <li>Name: ${quickMoves.name}</li>
-        <li>Type: ${quickMoves.type}</li>
-        <li>Base-damage: ${quickMoves['base-damage']}</li>
-        <li>${stabMoves(pokemon['quick-move'], pokemon.type, quickMoves.type)[index]}</li>
-        <li>${dpsMoves(pokemon['quick-move'], stabMoves(pokemon['quick-move'], pokemon.type, quickMoves.type)[index])[index].toFixed(1)}</li>
-        <li>${epsMoves(pokemon['quick-move'], pokemon['move-duration-seg'])[index].toFixed(1)}</li>
-      </ul>
+  pokemon['quick-move'].forEach((quickMove) => {
+    console.log(quickMove);
+    // console.log(quickMove.type);
+    console.log(pokemon.type);
+    quickMoveContainer += `
+    <ul>
+      <li>Name: ${quickMove.name}</li>
+      <li>Type: ${quickMove.type}</li>
+      <li>Base-damage: ${quickMove['base-damage']}</li>
+      <li>Energy: ${quickMove.energy}</li>
+      <li>Move-duration-seg: ${quickMove['move-duration-seg']}</li>
+      <li>DPS: ${dpsMoves(quickMove, pokemon.type)}</li>
+      <li>EPS: ${epsMoves(pokemon['quick-move'], pokemon['move-duration-seg']).toFixed(1)}</li>
+    </ul>
    `;
   });
-  pokemon['special-attack'].forEach((attack, index) => {
+  pokemon['special-attack'].forEach((attack) => {
     specialAttackContainer += `
       <ul>
         <li>${attack.name}</li>
-        <li>${stabAttack(pokemon['special-attack'], pokemon.type, attack.type)[index]}</li>
-        <li>${dpsAttack(pokemon['special-attack'], stabAttack(pokemon['special-attack'], pokemon.type, attack.type)[index])[index].toFixed(2)}</li>
-        <li>${epsAttack(pokemon['special-attack'])[index].toFixed(2)}</li>
+        <li>${stabAttack(pokemon['special-attack'], pokemon.type, attack.type)}</li>
+        <li>${dpsAttack(pokemon['special-attack'], stabAttack(pokemon['special-attack'], pokemon.type, attack.type)).toFixed(2)}</li>
+        <li>${epsAttack(pokemon['special-attack']).toFixed(2)}</li>
       </ul>
         `;
   });
@@ -227,7 +230,7 @@ const attackCard = (pokemon) => {
         </div>
         <div>
             <h3>Quick-moves</h3>
-            ${quickMovesContainer}
+            ${quickMoveContainer}
         </div>
         <div>
             <h3>Special-attacks</h3>
@@ -244,8 +247,6 @@ const attackCard = (pokemon) => {
 `;
   const resistant = document.getElementById('resistant-container');
   const weaknesses = document.getElementById('weaknesses-container');
-  const quickMoves = document.getElementById('quick-move');
-  const specialAttack = document.getElementById('special-attacks');
 
   pokemon.resistant.forEach((resist) => {
     resistant.innerHTML += `<span> ${resist}</span>`;
@@ -254,22 +255,5 @@ const attackCard = (pokemon) => {
   pokemon.weaknesses.forEach((weakness) => {
     weaknesses.innerHTML += `<span> ${weakness}</span>`;
   });
-  /*
-  pokemon['quick-move'].forEach((quick) => {
-    quickMoves.innerHTML += `<span> ${quick.name}</span>`;
-  });
-  pokemon['quick-move'].forEach((quick) => {
-    quickMoves.innerHTML += `<span> ${quick.type}</span>`;
-  });
-  pokemon['quick-move'].forEach((quick) => {
-    quickMoves.innerHTML += `<span> ${quick['base-damage']}</span>`;
-  });
-  pokemon['quick-move'].forEach((quick) => {
-    quickMoves.innerHTML += `<span> ${quick.energy}</span>`;
-  });
-  pokemon['quick-move'].forEach((quick) => {
-    quickMoves.innerHTML += `<span> ${quick['move-duration-seg']}</span>`;
-  });
-  */
 };
 attackCard(data.pokemon[2]);

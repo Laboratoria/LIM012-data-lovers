@@ -62,34 +62,27 @@ export const order = (data, parameter) => {
   return newArray;
 };
 
-export const stabMoves = (attackType, pokemonType, attack) => {
-  const resultStab = attackType.map((data) => {
-    if (pokemonType[0] === attack || pokemonType[1] === attack) {
-      const dañoBase = parseInt(data['base-damage']);
-      const porcentaje = parseInt(20*(dañoBase)/100);
-      const calculo = dañoBase + porcentaje;
-      return calculo;
+export const dpsMoves = (quick, pokemonType) => {
+  let dps = 0;
+  const baseDamage = Number(quick['base-damage']);
+  const time = Number(quick['move-duration-seg']);
+  dps = baseDamage / time;
+  for (let i = 0; i < pokemonType.length; i += 1) {
+    if (pokemonType[i] === quick.type) {
+      let stab = 0;
+      stab = baseDamage + ((20 * baseDamage) / 100);
+      dps = stab / time;
     }
-    return dañoBase;
-  });
-  return resultStab;
+  }
+  console.log(dps);
+  return dps;
 };
 
-export const dpsMoves = (attackType,stab) => {
-  const resultDpsMoves = attackType.map((data) => {
-    const baseDamage = parseInt(data['base-damage']);
-    const time = parseInt(data['move-duration-seg']);
-    const calculo = parseInt(baseDamage * stabMoves / time);
-    return calculo;
-  });
-  return resultDpsMoves;
-};
-
-export const epsMoves = (attackType) => {
-  const resultEpesMoves = attackType.map((data) => {
-    const time = parseInt(data['move-duration-seg']);
-    const energy = parseInt(data.energy);
-    const calculo = parseInt(energy / time);
+export const epsMoves = (quick) => {
+  const resultEpesMoves = quick.map((data) => {
+    const time = Number(data['move-duration-seg']);
+    const energy = Number(data.energy);
+    const calculo = Number(energy / time);
     return calculo;
   });
   return resultEpesMoves;
