@@ -32,19 +32,20 @@ btnByType.addEventListener('click', () => {
 // Creando card de pokemon
 const pokemonCards = (allPokemons) => {
   let dataPokemon = '';
-  allPokemons.forEach((eachPokemon) => {
+
+  for (let i = 0; i < allPokemons.length; i += 1) {
     const pokemon = `
     <div class="pokemon-card">
-      <p class="pokemon-number">${eachPokemon.num}</p>
-      <img class="pokemon-image" src="${eachPokemon.img}">
-      <p class="pokemon-name">${eachPokemon.name}</p> 
+      <p class="pokemon-number">${allPokemons[i].num}</p>
+      <img class="pokemon-image" src="${allPokemons[i].img}">
+      <p class="pokemon-name">${allPokemons[i].name}</p> 
       <div class="button-container">
-        <button class ="button" id="features">Features</button>
-        <button class ="button" id="attacks">Attacks</button>
+        <button class="button" data-modal="${allPokemons[i].num - 1}" id="features">Features</button>
+        <button class="button" data-modal="${allPokemons[i].num - 1}" id="attacks">Attacks</button>
       </div>
     </div>`;
     dataPokemon += pokemon;
-  });
+  }
   return dataPokemon;
 };
 
@@ -85,6 +86,166 @@ const allDataByGenerations = () => {
 // El evento que llama a la función que inserta todos los pokemones al iniciar la página
 window.addEventListener('load', () => {
   allDataByGenerations();
+
+  // Modal del pokemon
+
+  // Función que retorna array de evoluciones según pokemon
+  const nextEvolutions = (keys, array, evolution) => {
+    const arrayTwo = array[keys.indexOf(evolution)];
+    const arrIndex = [];
+
+    if (arrayTwo.length === 1) {
+      const arrayThree = Object.values(arrayTwo[0]);
+      arrIndex.push(parseInt(arrayTwo[0].num, 10) - 1);
+
+      for (let i = 0; i < arrayThree.length; i += 1) {
+        if (typeof arrayThree[i] === 'object') {
+          arrIndex.push(parseInt(arrayThree[i][0].num, 10) - 1);
+        }
+      }
+    } else {
+      // Eevee
+      for (let i = 0; i < arrayTwo.length; i += 1) {
+        if (arrayTwo[i].num < 251) {
+          arrIndex.push(parseInt(arrayTwo[i].num, 10) - 1);
+        } else {
+          arrIndex.push(arrayTwo[i].name);
+        }
+      }
+    }
+    return arrIndex;
+  };
+
+  // Función para crear card del Pokemon
+  const cardContainer = document.querySelector('.cards');
+  const createCard = (pokemon, index) => {
+    cardContainer.innerHTML = `
+    <section class="pokemon-name2"><div class="h-modal"></div>${pokemon.num} - ${pokemon.name}</section>
+    <section class="info-container">
+        <div class="sub-container-img">
+            <p class="subtitle2">${pokemon['pokemon-rarity']}</p>
+            <div class="pokemon-screen">
+              <img class="screen-img" src="${pokemon.img}">
+            </div>
+        </div>
+        <div class="sub-container-text">
+            <p class="subtitle2">generation</p>
+            <p class="p-bottom">N° ${pokemon.generation.num.slice(10).toUpperCase()} - ${pokemon.generation.name}</p>
+            <p class="subtitle2">type</p>
+            <p class="p-bottom" id="pokemon-type"></p>
+            <p class="subtitle2">size</p>
+            <p >Height: ${pokemon.size.height}</p>
+            <p >Weight: ${pokemon.size.weight}</p>
+        </div>
+    </section>
+    <section class="info-container">
+      <div class="column">
+        <p class="subtitle2 h-stat">Encounter</p>
+        <div class="number-data">
+          <p>Base flee rate</p>
+          <p class="num-cel">${(pokemon.encounter['base-flee-rate'] * 100).toFixed(1)}%</p>
+        </div>
+        <div class="number-data">
+          <p>Base capture rate</p>
+          <p class="num-cel">${(pokemon.encounter['base-capture-rate'] * 100).toFixed(1)}%</p>
+        </div>
+      </div>
+      <div class="column">
+        <p class="subtitle2 h-stat">Spawn chance</p>
+        <p class="num-cel">${(pokemon['spawn-chance'] * 100).toFixed(2)}%</p>
+      </div>
+    </section>
+
+    <section class="info-container">
+      <p class="subtitle2 t-evol">Evolutions</p>
+      <div class="evolutions"></div>
+    </section>
+    `;
+
+    const type = document.getElementById('pokemon-type');
+    pokemon.type.forEach((typeP) => {
+      type.innerHTML += `<span>  ${typeP}</span>`;
+    });
+
+    const evolutionContainer = document.querySelector('.evolutions');
+    const pEvolution = pokemon.evolution;
+    const arrayOne = Object.values(pEvolution);
+    const keysArrayOne = Object.keys((pEvolution));
+
+    if (Object.prototype.hasOwnProperty.call(pEvolution, 'prev-evolution') && Object.prototype.hasOwnProperty.call(pEvolution, 'next-evolution')) {
+      evolutionContainer.innerHTML += `
+      <div class="eachContainer">
+        <img src="${data.pokemon[index - 1].img}"
+        <p>Pre-evolution</p>
+        <p>${arrayOne[keysArrayOne.indexOf('prev-evolution')][0].name}</p>
+      </div>
+      <div class="eachContainer">
+        <img src="${data.pokemon[index + 1].img}"
+        <p>Next-evolution</p>
+        <p>${arrayOne[keysArrayOne.indexOf('next-evolution')][0].name}</p>
+      </div>
+      `;
+    } else if (Object.prototype.hasOwnProperty.call(pEvolution, 'prev-evolution')) {
+      const arr = nextEvolutions(keysArrayOne, arrayOne, 'prev-evolution');
+      arr.forEach((eachPokemon) => {
+        evolutionContainer.innerHTML += `
+        <div class="eachContainer">
+          <img src="${data.pokemon[eachPokemon].img}"
+          <p>Pre-evolution</p>
+          <p>${data.pokemon[eachPokemon].name}</p>
+        </div>
+        `;
+      });
+    } else if (Object.prototype.hasOwnProperty.call(pEvolution, 'next-evolution')) {
+      const arr = nextEvolutions(keysArrayOne, arrayOne, 'next-evolution');
+      if (arr.length > 2) {
+        arr.forEach((eachPokemon) => {
+          if (typeof eachPokemon === 'number') {
+            evolutionContainer.innerHTML += `
+            <div class="eachContainer2">
+              <img src="${data.pokemon[eachPokemon].img}"
+              <p>${data.pokemon[eachPokemon].name}</p>
+            </div>
+            `;
+          } else {
+            evolutionContainer.innerHTML += `
+            <div class="otherGen">
+              <p>${eachPokemon}</p>
+            </div>
+            `;
+          }
+        });
+      } else {
+        arr.forEach((eachPokemon) => {
+          evolutionContainer.innerHTML += `
+          <div class="eachContainer">
+            <img src="${data.pokemon[eachPokemon].img}"
+            <p>Next-evolution</p>
+            <p>${data.pokemon[eachPokemon].name}</p>
+          </div>
+          `;
+        });
+      }
+    } else {
+      evolutionContainer.innerHTML += `
+      <p>This pokemons doesn't have evolutions</p>
+      `;
+    }
+  };
+  const close = document.querySelector('.close');
+  const modalContainer = document.querySelector('.modal-container');
+  // Llamando a las funciones para crear el modal de características
+  sectionContent.addEventListener('click', (e) => {
+    if (e.target.id === 'features') {
+      modalContainer.classList.toggle('modal-close');
+      const index = parseInt(e.target.attributes['data-modal'].value, 10);
+      createCard(data.pokemon[index], index);
+    }
+  });
+
+  close.addEventListener('click', () => {
+    modalContainer.classList.toggle('modal-close');
+  });
 });
 
 // Guardando input para buscar
@@ -168,14 +329,3 @@ const iconSearch = document.querySelector('.flaticon-lupa');
 iconSearch.addEventListener('click', () => {
   searchInput.focus();
 });
-// const stats = [];
-// for(let i = 0; i < data.pokemon.length; i += 1) {
-data.pokemon.forEach((eachPokemon) => {
-  const buscar = eachPokemon['quick-move'];
-  // const dataAtack = buscar.name;
-  console.log(buscar);
-});
-// searchInput.addEventListener('focusout', () => {
-//   sectionContent.innerHTML = '';
-//   allDataByGenerations();
-// });
