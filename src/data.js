@@ -66,7 +66,7 @@ export const dpsCalculate = (quick, pokemonType) => {
   let dps = 0;
   const baseDamage = Number(quick['base-damage']);
   const time = Number(quick['move-duration-seg']);
-  dps = (baseDamage / time).toFixed(2);
+  dps = (baseDamage / time).toFixed(1);
   for (let i = 0; i < pokemonType.length; i += 1) {
     if (pokemonType[i] === quick.type) {
       let stab = 0;

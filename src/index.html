@@ -6,6 +6,7 @@
     <title>Data Lovers</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="flaticon.css">
+    <link rel="stylesheet" href="modal.css">
     <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy|Rubik&display=swap" rel="stylesheet"> 
   </head>
 
@@ -21,11 +22,9 @@
       <nav class="menu">
         <div class="center">
           <ul>
-            <li>
-              <a class="menu-style menu-style" href="#">
+            <li class="menu-style" id="home">
               <span class="flaticon-casa"></span>
               <span class="hide">Home</span>
-              </a>
             </li>
             <li class="menu-style">
               <input type="checkbox" id="filter" class="hide-f">
@@ -34,10 +33,6 @@
                 <span class="flaticon-icon-57164"></span>
                 <span class="hide">Filter</span>
               </label>
-            </li>
-            <li class="menu-style">
-              <span class="flaticon-mas"></span>
-              <span class="hide">Options</span>
             </li>
           </ul>
           <div class="search-section">
@@ -50,55 +45,41 @@
     <section class="general-container">
       <!-- Este es el contenedor que abarcará todos los filtros-->
       <aside class="hide-f ">
-        <ul id="filter-box" class="filter-menu">
-          <li class="li-filter limits" id="all-pokemons">All pokémons</li>
+        <ul class="filter-menu">
+          <li class="li-filter" id="all-pokemons">All pokémons</li>
           <input type="checkbox" class="hide-f" id="filter-by-type">
           <label for="filter-by-type">
-          <li class="li-filter limits">Filter by type <span class="flaticon-flecha-hacia-abajo"></span></li>
+            <li class="li-filter">Filter by type <span class="flaticon-flecha-hacia-abajo"></span></li>
           </label>
-          <table class="sub-menu hide-f">
-            <tr>
-              <td id="ghost" class="li-mits">Ghost</td>
-              <td id="water">Water</td>
-            </tr>
-            <tr>
-              <td id="psychic" class="li-mits">Psychic</td>
-              <td id="fire">Fire</td>
-            </tr>
-            <tr>
-              <td id="normal" class="li-mits">Normal</td>
-              <td id="grass">Grass</td>
-            </tr>
-            <tr>
-              <td id="fighting" class="li-mits">Fighting</td>
-              <td id="ground">Ground</td>
-            </tr>
-            <tr>
-              <td id="rock" class="li-mits">Rock</td>
-              <td id="poison">Poison</td>
-            </tr>
-            <tr>
-              <td id="bug" class="li-mits">Bug</td>
-              <td id="steel">Steel</td>
-            </tr>
-            <tr>
-              <td id="flying" class="li-mits">Flying</td>
-              <td id="ice">Ice</td>
-            </tr>
-            <tr>
-              <td id="dark" class="li-mits">Dark</td>
-              <td id="electric">Electric</td>
-            </tr>
-            <tr>
-              <td id="fairy" class="li-mits">Fairy</td>
-              <td id="dragon">Dragon</td>
-            </tr>
-          </table> 
+          <section class="sub-menu hide-f">
+            <ul class="left">
+              <li class="li-mits" id="ghost">Ghost</li>
+              <li class="li-mits" id="psychic">Psychic</li>
+              <li class="li-mits" id="normal">Normal</li>
+              <li class="li-mits" id="fighting">Fighting</li>
+              <li class="li-mits" id="poison">Poison</li>
+              <li class="li-mits" id="bug">Bug</li>
+              <li class="li-mits" id="flying">Flying</li>
+              <li class="li-mits" id="dark">Dark</li>
+              <li class="li-mits" id="fairy">Fairy</li>
+            </ul> 
+            <ul class="right">
+              <li class="li-mits" id="water">Water</li>
+              <li class="li-mits" id="fire">Fire</li>
+              <li class="li-mits" id="grass">Grass</li>
+              <li class="li-mits" id="ground">Ground</li>
+              <li class="li-mits" id="rock">Rock</li>
+              <li class="li-mits" id="steel">Steel</li>
+              <li class="li-mits" id="ice">Ice</li>
+              <li class="li-mits" id="electric">Electric</li>
+              <li class="li-mits" id="dragon">Dragon</li>
+            </ul>
+          </section> 
         </ul>
       </aside>
      
       <main class="center"> 
-        <section class="attacks"></section>
+        
         
         <section class="sort-container">
           <p>Sort</p>
@@ -110,13 +91,20 @@
         </section>
         <section class="content"></section>
 
+        <section class="modal-container modal-close">
+          <div class="modal">
+              <p class="close">x</p>
+              <section class="cards"></section>
+          </div>
+        </section>
+
         <div class="go-top-container">
           <span class="go-top flaticon-cheuron"></span>
         </div>
       </main>
     </section>
       
-    <footer class="footer"></footer>
+    <!-- <footer class="footer"></footer> -->
     <script src="main.js" type="module"></script>
   </body>
 </html>
