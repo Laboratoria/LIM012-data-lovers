@@ -5,41 +5,55 @@
     <title>League of Legends</title>
     <link rel="icon" type="image/png" href="./img/icono.png" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="menu.css">
   </head>
   
   <body class="body-container">
-    <header class="main-header">
-      <!--<figure class="icono"><img src="img/icono.png" alt="" /></figure>-->
-      <!--<figure class="logo"><img src="img/logo2.jpg" alt="collage de campeones" /></figure>-->
-    </header>
-    <nav class="main-nav">
-      <ul class="nav-container">    
-       <select name="order" id="orderAlphabetically" class="nav-container_item ">
-        <option value="todos">TODOS</option>
-        <option value="ascendente">ORDEN ASCENDENTE</option>
-        <option value="descendente">ORDEN DESCENDENTE</option>
-       </select>                    
-        <li class="nav-container_item" id="assassin">
-          <a href="#" class="nav-container_link">ASESINOS</a>
-        </li>
-        <li class="nav-container_item" id="fighter">
-          <a href="#" class="nav-container_link">LUCHADORES</a>
-        </li>
-        <li class="nav-container_item" id="mage">
-          <a href="#" class="nav-container_link">MAGOS</a>
-        </li>
-        <li class="nav-container_item" id="marksman">
-          <a href="#" class="nav-container_link">TIRADORES</a>
-        </li>
-        <li class="nav-container_item" id="support">
-          <a href="#" class="nav-container_link">SOPORTES</a>
-        </li>
-        <li class="nav-container_item" id="tank">
-          <a href="#" class="nav-container_link">TANQUES</a>
-        </li>
+    <header class="header">
+      <!-- <a href="/" class="logo">CORP</a>-->
+        <figure class="logo"><img src="img/logo2.jpg" alt="collage de campeones" /></figure>
+      <input class="menu-btn" type="checkbox" id="menu-btn" />
+      <label class="menu-icon" for="menu-btn"><span class="nav-icon"></span></label>
+      <!-- <ul class="menu">
+          <li><a href="#dont">Follow</a></li>
+          <li><a href="#forget">Andrew</a></li>
       </ul>
-    </nav>
-   
+      </header> -->
+
+      <!-- <nav class="main-nav"> -->
+        <ul class="menu">
+            <li class="nav-container_item">
+              <a class="nav-container_link">
+                <select name="order" id="orderAlphabetically" class="nav-container_item">
+                  <option value="ascendente">TODOS</option>
+                  <option value="ascendente">ORDEN ASCENDENTE</option>
+                  <option value="descendente">ORDEN DESCENDENTE</option>
+                </select>
+              </a>
+            </li>
+            <li class="nav-container_item" id="assassin">
+             <a href="#" class="nav-container_link">ASESINOS</a>
+            </li>
+            <li class="nav-container_item" id="fighter">
+             <a href="#" class="nav-container_link">LUCHADORES</a>
+            </li>
+            <li class="nav-container_item" id="mage">
+             <a href="#" class="nav-container_link">MAGOS</a>
+            </li>
+            <li class="nav-container_item" id="marksman">
+             <a href="#" class="nav-container_link">TIRADORES</a>
+            </li>
+            <li class="nav-container_item" id="support">
+             <a href="#" class="nav-container_link">SOPORTES</a>
+            </li>
+            <li class="nav-container_item" id="tank">
+             <a href="#" class="nav-container_link">TANQUES</a>
+            </li>
+        </ul>
+      <!-- </nav> -->
+
+    </header>
+       
     <main class="main-container">
       <section class="galeria" id="container"></section>
     </main>

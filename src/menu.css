@@ -1,0 +1,137 @@
+body {
+    margin: 0;
+    font-family: Helvetica, sans-serif;
+    /* background-color: #bbb; pinta todo el body de gris*/
+  }
+  
+  /* a { el color de la letra de los botones (negro)
+    color: #000;
+  } */
+  
+  /* header */
+  
+  .header {
+    background-color: #fff;
+    box-shadow: 2px 2px 4px 0 rgba(0,0,0,.1);
+    position: fixed; /*fixed ancor the menu at the top hace que no se expanda el banner pero las imagenes de los campeones quedan por debajo*/
+    width: 100%;
+    z-index: 3;
+  }
+  
+  .header ul {
+    margin: 0; /*set the menu to the top left*/
+    padding: 0; /*set the menu to the top left*/
+    list-style: none; /*remove the bullet or number even thought yoy can't see them*/
+    overflow: hidden; /*if anything flows out of bound it gets hidden*/
+    /* background-color: #fff; */
+  }
+
+  .header li a {
+    display: block; /*es necesario para q el mouse al estar no solo en el nombre sino en su caja muestre la mano*/
+    /*padding: 20px 20px; se achico para los roles 300px desktop sigue ancho*/ 
+    /* border-right: 1px solid #f4f4f4; */
+    text-decoration: none;
+  }
+  
+  .header li a:hover,
+  .header .menu-btn:hover {
+    background-color: #2d2e2e; /*color del fondo del boton cuando se hace hover*/
+  }
+  
+  .header .logo {
+    display: block;
+    float: left;
+    /* font-size: 2em; */
+    padding: 0; /*controla el espacio entre el borde de la pantalla y la imagen del banner con el logo*/
+    /* text-decoration: none; */
+  }
+  
+  /* menu */
+  
+  .header .menu {
+    clear: both;
+    max-height: 0;
+    transition: max-height .2s ease-out;/*hace que el despliegue tenga estilo, no solo mostrar y desaparecer*/
+  }
+  
+  /* menu icon */
+  
+  .header .menu-icon {
+    cursor: pointer;
+    float: right; /*posiciona las 3 barras hacia la derecha*/
+    padding: 18px 20px; /*altura y ancho de la caja (ancho de la pantalla)que contiene el menu hamburguesa*/
+    position: relative;
+    user-select: none;
+  }
+  
+  .header .menu-icon .nav-icon {/*dandole estilo a la raya del medio*/
+    background: #333;
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: background .2s ease-out;
+    width: 18px;
+  }
+  
+  .header .menu-icon .nav-icon:before,
+  .header .menu-icon .nav-icon:after {
+    background: #333;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+  }
+  
+  .header .menu-icon .nav-icon:before { /*barra de abajo*/
+    top: 5px;
+  }
+  
+  .header .menu-icon .nav-icon:after {/*barra de arriba*/
+    top: -5px;
+  }
+  
+  /* menu btn */
+  
+  .header .menu-btn {
+    display: none;
+  }
+  /*animacion del boton cuando se hace check sobre el*/
+  .header .menu-btn:checked ~ .menu {
+    max-height: 300px; /*altura de la barra desplegada*/
+  }
+  
+  .header .menu-btn:checked ~ .menu-icon .nav-icon {/*override the next 2 rules when the label is checked*/
+    background: transparent;
+  }
+  
+  .header .menu-btn:checked ~ .menu-icon .nav-icon:before {
+    transform: rotate(-45deg);
+    top:0; /*para poner el centro de cada raya a la misma altura y se cree la x*/
+  }
+  
+  .header .menu-btn:checked ~ .menu-icon .nav-icon:after {
+    transform: rotate(45deg);
+    top:0;
+  }
+  
+  
+  /* 48em = 768px @ 16pt font */
+  
+  @media (min-width: 1024px) { /*48em mas pequeño que tablet 768px*/
+    .header li {
+      float: left; /*pone todos los botones apilados a la izquierda*/
+    }
+    .header li a {
+      /* padding: 20px 30px; ajusta el ancho de los botones de rol en modo desktop*/
+    }
+    .header .menu {
+      clear: none; /*para que no flote a la izquierda*/
+      float: right; /*ya puede flotar a la derecha*/
+      max-height: none; /*se pone none porque ya se definio antes el max-height: 240px;*/
+    }
+    .header .menu-icon {
+      display: none; /*desaparece la x para pantallas de tablet o desktop*/
+    }
+  }

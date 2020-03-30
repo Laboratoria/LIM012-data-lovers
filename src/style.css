@@ -18,50 +18,54 @@
 
 /*contenedor general*/
 body {
-  display: flex;
-  flex-direction: column;
+  
+  /* display: flex;
+  flex-direction: column; */
   width: 100%;
   min-height: 100vh; /*altura definida*/
   font-family: Arial;
 }
 
-/*el header solo contiene una imagen*/
-.main-header{
-  background: url(img/logo2.jpg);
+/*el main-header solo contiene una imagen AHORA SE LLAMA header*/
+/* .logo{ 
   background-color: var(--color-black);
   height: 98px;
-}
+} */
 
-.main-nav {
+/* .main-nav {
   background-color: var(--color-white);
-}
+} */
 
 /*trabajando con el select*/
 #orderAlphabetically{
   background-color: var(--color-black);
   color: var(--color-borde);
-  display: block;
+  /* display: inline-block; */
   outline: none;
-  cursor: pointer;
-  flex-grow: 0;
+  cursor: pointer;  
+  padding: 0.63rem 0;
+  /* flex-grow: 0; */
+  font-size: 1rem;
+  border: 1px none var(--color-borde);
 }
 
 #orderAlphabetically:hover {
   background-color: var(--color-nav-dark);
 }
 
-.nav-container {
-  display: flex;
+.menu {
   background-color: var(--color-black);
-  margin-top: 1%; /*para poder separar la lista del header*/
-  flex-wrap: wrap;/*envoltura flexibe*/
+  /* margin-top: 1%; para poder separar la lista del header, NO MODIFICA ESA DISTANCIA */
+  /* flex-wrap: wrap;envoltura flexible */
 }
 
-.nav-container_item {
-  flex-grow: 1;
+.nav-container_item {  
   text-align: center;
   line-height: 2.5;
+  padding-left: 2.7rem;
+  padding-right: 2.7rem;
   border: 1px solid var(--color-borde);
+  
 }
 
 .nav-container_item:hover {
@@ -73,18 +77,19 @@ body {
   display: block; /*es necesario para q el mouse al estar no solo en el nombre sino en su caja muestre el link abajo*/
 }
 
-.main-container {
+/*.main-container {
   display: flex;
   flex-direction: column;
   flex-grow: 1; /*sirve para el crecimiento de las cajas*/
-  background-color: var(--color-white);
+  /*background-color: var(--color-white);
 }
 
 /*trabajando con las imagenes y nombres*/
 .class-div {
   display: inline-block;
   position: relative;
-  margin-top: 1%;
+  top: 8em; /*para separar el div del borde superior, antes la imagen se metia por dentro del logo y botones*/
+  margin-top: 1.9%;
   transform-style: preserve-3d;/*animacion*/
   transition: 1.5s;/*animacion*/
 }
@@ -113,6 +118,7 @@ body {
   text-align: center;
   background-color: #c4c4c4;
   margin-top: -0.15em;
+  margin-bottom: -0.5em;
   padding: 0.10em;
   text-transform: uppercase;
 }
@@ -133,16 +139,60 @@ body {
   background-attachment: fixed;
   background-size: 30px;
   background-repeat: no-repeat;
-  background-color: var(--color-black);
-  color: var(--color-white);
+  background-color: var(--nav-black);
+  color: var(--color-black);
   text-align: center;
+  position: relative; /*the element is positioned absolutely to its first positioned parent*/
+  bottom: 0;
+  width: 100%; 
 }
 
-/*@media screen and (min-width: 768px) {
-  .nav-container {
+@media (max-width: 340px) {
+  .class-div {
+    display: inline-block;
+    position: relative;
+    top: 8em; /*para separar el div del borde superior, antes la imagen se metia por dentro del logo y botones*/
+    margin-top: 1.9%;
+    transform-style: preserve-3d;/*animacion*/
+    transition: 1.5s;/*animacion*/
+  }
+  
+  .galeria {
     display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
   }
-  .nav-container_item {
-    flex-grow: 1;
+  
+  .class-img {
+    margin: 0;
+    width: 200px;
+    height: 100px;
   }
-}*/
+  
+  @font-face{
+    font-family: 'Acme', sans-serif; /*tipo de letra(fuente)*/
+    src: url('fonts/Acme-Regular.ttf'); /*fuente personalizada desde mi carpeta*/
+  }
+  
+  .class-name {
+    font-size: xx-small;
+    font-family: 'Acme', sans-serif;/*lo menciono para que aqui se utilize la fuente*/
+    font-weight: lighter;
+    text-align: center;
+    background-color: #c4c4c4;
+    margin-top: -0.15em;
+    margin-bottom: -0.5em;
+    padding: 0.10em;
+    text-transform: uppercase;
+  }
+  
+  .class-tags{
+    font-size: xx-small;
+    font-family: 'Acme', sans-serif;/*lo menciono para que aqui se utilize la fuente*/
+    font-weight: lighter;
+    text-align: center;
+    background-color: #c4c4c4;
+    margin-top: -0.15em;
+    padding: 0.10em;
+  }
+}
