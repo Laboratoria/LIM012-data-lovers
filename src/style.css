@@ -520,6 +520,17 @@ aside {
     .banner-content {
         justify-content: center;
     }
+
+    .button {
+        list-style: none;
+        font-size: 1em;
+        padding: 3px;
+        border-radius: 5px;
+        width: 40%;
+        color: #333333;
+        background-color: #ffffff;
+        cursor: pointer;
+    }
     /* Filter mobile*/
     aside {
         z-index: 20;

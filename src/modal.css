@@ -198,3 +198,38 @@
     padding: 5px;
     margin-bottom: 5px;
 }
+
+@media (max-width: 1300px) and (min-width: 600px) {
+
+}
+
+
+
+@media (max-width: 600px) {
+    .cards {
+        width: 300px;
+    }
+
+    .screen-img {
+        position: absolute;
+        width: 99%;
+    }
+
+    .close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 1.3em;
+        background-color: transparent;
+        border: 0;
+        border-radius: 50%;
+        width: 1.2em;
+        height: 1.2em;
+        color: #FFF;
+        cursor: pointer;
+    }
+    
+    .close:hover {
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+}
