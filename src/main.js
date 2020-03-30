@@ -34,7 +34,7 @@ let resultResistant = [];
 let resultWeaknesses = [];
 let currentData = [];
 const optionsFilter = [];
-
+const optionsBtnOrder = [];
 let isContainerSection = false;
 let isContainerShowMore = false;
 let showMoreSection = '';
@@ -79,9 +79,10 @@ const createPokemonCard = (index, pokemon, container) => {
     const card = document.createElement('div');
     card.className = 'pokemon-card  flex-wrap font';
     card.id = pokemon.name;
-    card.innerHTML = `<span class="pokemon-name">${pokemon.name}</span>              
-                      <img class="pokemon-img" src="${pokemon.img}" >
-                      <span class="pokemon-cp-hp">MAX CP ${pokemon.stats['max-cp']} / MAX HP ${pokemon.stats['max-cp']}</span>`;
+    card.innerHTML = `<span class="pokemon-name">${pokemon.name}</span>
+                      <span class="pokemon-cp-hp">MAX CP ${pokemon.stats['max-cp']} / MAX HP ${pokemon.stats['max-cp']}</span>              
+                      <img class="pokemon-img" src="${pokemon.img}">
+                      <span class= "pokemon-about" > ${pokemon.about}</span>`;
     putPokemonTypes(pokemon.type, card);
     container.append(card);
   } else {
@@ -170,7 +171,6 @@ const onlyText = (e) => {
 const changeOrderCurrentData = (container) => {
   deg = 0;
   btnChangeOrder.addEventListener('click', () => {
-    console.log('cambiar');
     deg += 180;
     imgChange.style.transform = `rotate(${deg}deg)`;
     if (isContainerSection === false) {
@@ -323,6 +323,9 @@ const filterSystem = (btn, container) => {
   for (let i = 0; i < optionsFilter.length; i += 1) {
     btnChangeOrder.style.visibility = 'visible';
     optionsFilter[i].addEventListener('click', () => {
+      console.log(optionsFilter);
+      optionsFilter.forEach(element => element.style.background = 'rgb(43, 41, 41)');
+      optionsFilter[i].style.background = '#0F4C75';
       isContainerShowMore = false;
       filterPokemonByType(optionsFilter[i].textContent);
       typeChoosed = optionsFilter[i].textContent;
@@ -355,6 +358,10 @@ const orderSystem = (btn) => {
 
   for (let i = 0; i < optionsBtnOrder.length; i += 1) {
     optionsBtnOrder[i].addEventListener('click', () => {
+      for (let i = 0; i < optionsBtnOrder.length; i += 1) {
+      optionsBtnOrder[i].style.background = 'rgb(43, 41, 41)'
+      }
+      optionsBtnOrder[i].style.background = '#0F4C75';
       btnChangeOrder.style.visibility = 'visible';
       if (isContainerSection) {
         orderSections(whichOrder[i]);
