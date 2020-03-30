@@ -122,7 +122,7 @@
   display: flex;
   flex-flow: column nowrap;
   font-family: 'Spectral', serif; 
-  background-image:url(https://i.pinimg.com/originals/50/05/7d/50057dc2df5e0503d5de6f55b6a6df0b.jpg);
+  background: url(https://lh3.googleusercontent.com/proxy/2P8R5PuREY79It_7MDep_BZQj32qdpsXGj_rzb6eEYvJEL6_xSWGaEpjvGGvM2-4ZipM5dUT9KiZVcmeBAf11OK4l5cBsbA7RRrRN1cwa5pwKw);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -227,6 +227,7 @@ a{
     .lista{
       display: flex;
       flex-flow: row nowrap;
+      background:rgba(6, 6, 19, 0.747);
     }
       .galeriaDeCampeones{
         display: flex;
@@ -240,14 +241,14 @@ a{
           flex: 3 1 auto;
           box-shadow: 4px 4px 11px rgba(252, 249, 249, 0.27);
           width: 295px;
-          height: 436px;
+          height: 370px;
           border: 3px solid rgba(235, 178, 24, 0.719);
           box-sizing: border-box;
           box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);  
         }
         .imagenCampeon{
-          width: 299px;
-          height: 35  0px;
+          width: 290px;
+          height: 300px;
         }
         .nombreCampeon{
           text-align: center;
@@ -278,6 +279,7 @@ a{
 
     }*/
 
+  
 
   #error {
     background: #707b15;
