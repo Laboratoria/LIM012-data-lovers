@@ -35,7 +35,7 @@ let resultResistant = [];
 let resultWeaknesses = [];
 let currentData = [];
 const optionsFilter = [];
-
+// const optionsOrder = [];
 let isContainerSection = false;
 let isContainerShowMore = false;
 let showMoreSection = '';
@@ -80,9 +80,10 @@ const createPokemonCard = (index, pokemon, container) => {
     const card = document.createElement('div');
     card.className = 'pokemon-card  flex-wrap font';
     card.id = pokemon.name;
-    card.innerHTML = `<span class="pokemon-name">${pokemon.name}</span>              
-    <img class="pokemon-img" src="${pokemon.img}" >
-    <span class="pokemon-cp-hp">MAX CP ${pokemon.stats['max-cp']} / MAX HP ${pokemon.stats['max-hp']}</span>`;
+    card.innerHTML = `<span class="pokemon-name">${pokemon.name}</span>
+                      <span class="pokemon-cp-hp">MAX CP ${pokemon.stats['max-cp']} / MAX HP ${pokemon.stats['max-cp']}</span>              
+                      <img class="pokemon-img" src="${pokemon.img}">
+                      <span class= "pokemon-about" > ${pokemon.about}</span>`;
     putPokemonTypes(pokemon.type, card);
     container.append(card);
   } else {
@@ -298,6 +299,10 @@ const filterSystem = () => {
   const titleSlider = document.getElementsByClassName('title-slider-p');
   for (let i = 0; i < optionsFilter.length; i += 1) {
     optionsFilter[i].addEventListener('click', () => {
+      console.log(optionsFilter);
+      // eslint-disable-next-line no-return-assign
+      // optionsFilter.forEach(element => element.style.background = 'rgb(43, 41, 41)');
+      optionsFilter[i].style.background = '#0F4C75';
       isContainerShowMore = false;
       if (window.innerWidth < desktopSize) {
         hideMenu();
@@ -351,10 +356,16 @@ const orderSections = (option) => {
 
 const orderSystem = () => {
   const whichOrder = ['max-cp', 'max-hp', 'a-z'];
-  const optionsBtnOrder = document.getElementsByClassName('order-option');
-  for (let i = 0; i < optionsBtnOrder.length; i += 1) {
-    optionsBtnOrder[i].addEventListener('click', () => {
+  const optionsOrder = document.getElementsByClassName('order-option');
+  for (let i = 0; i < optionsOrder.length; i += 1) {
+    optionsOrder[i].addEventListener('click', () => {
       // reverse = true;
+      // eslint-disable-next-line no-return-assign
+      // optionsOrder.forEach(element => element.style.background = 'rgb(43, 41, 41)');
+      // for (let i = 0; i < optionsOrder.length; i += 1) {
+      //   optionsOrder[i].style.background = 'rgb(43, 41, 41)';
+      // }
+      optionsOrder[i].style.background = '#0F4C75';
       btnChangeOrder.style.visibility = 'visible';
       if (isContainerSection) {
         // console.log("secciones");

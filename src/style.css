@@ -474,40 +474,50 @@ section{
 .grow:hover { transform: scale(1.1); }
 
 .pokemon-card{
-  width: 250px;
+  width: 230px;
   height:auto;
-  padding: 1em;
+  padding: 0.2em;
   margin: 7px;    
-  background:rgb(43, 41, 41);  
+  background:rgb(43, 41, 41);
+  border-radius: 15px 15px 15px 15px;
 }
 .pokemon-name{
   display: block;
   color: aliceblue;
-  padding: .3rem 0;
+  padding: .1rem 0;
   width: 100%;
-  text-align: center;      
+  text-align: center;
+  font-size: 20px;    
 }
 #img-pokemon{
   display: block;
-  width: 135px;
-  height:130px;
+  width: 140px;
+  height:140px;
 }
 .pokemon-type{
-  border-radius: 3px;
+  border-radius: 4px;
   color: var(--color-blue-4);
   font-size: 12px;
   padding: .2rem;
-  margin: .5em;
+  margin: .4em;
   width: 40%;
 }
 .pokemon-cp-hp{
   color: aliceblue;
-  padding: .3em .3em;
-  margin: .5em 0;
+  padding: .15em .15em;
+  margin: .1em 0;
   display: block;  
-  font-size: 14px;
+  font-size: 11px;
   border-radius: 10px;
   background: #333333;
+}
+.pokemon-about{
+ font-size: 10px;
+ padding: .2em .2em;
+ margin: .5em 0.2em;
+ color: aliceblue;
+ border-radius: 10px;
+ background: #333333;
 }
 /*----------------Medias quaries----------------*/
 
