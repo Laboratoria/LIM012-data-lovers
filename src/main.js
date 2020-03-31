@@ -1,6 +1,5 @@
 import {
-  athletesView,
-  ordenAs,
+  athletesView, ordenAs, filtrarDeportes,
 } from './data.js';
 import data from './data/atletas/atletas.js';
 
@@ -53,5 +52,4 @@ alfhabeticOrder.addEventListener('click', () => {
     ulAtleta.appendChild(liDeporte);
     document.getElementById('root').appendChild(ulAtleta);
   });
-// eslint-disable-next-line eol-last
 });

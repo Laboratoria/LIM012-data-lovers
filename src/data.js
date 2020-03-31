@@ -17,5 +17,10 @@ export const ordenAs = (p1) => {
     } return -1;
   });
   return ascendente;
-// eslint-disable-next-line eol-last
 };
+
+export const filtrarDeportes = document.querySelector("#opcionDeportes");
+filtrarDeportes.addEventListener ("changue", (event) => {
+const tipoDepporte = elObjeto.filter(item) =>
+return item.deporte === filtrarDeportes.value;
+});
