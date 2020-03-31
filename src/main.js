@@ -49,13 +49,13 @@ const featuresCard = (pokemon) => {
   const cardContainer = document.createElement('div');
   cardContainer.innerHTML = `
   <div class="modal">
-    <p class="close">x</p>
+    <p class="close green-bg">x</p>
     <section class="cards">
-      <section class="pokemon-name2 green">${pokemon.num} - ${pokemon.name}</section>
+      <section class="pokemon-name2 green-bg">${pokemon.num} - ${pokemon.name}</section>
       <section class="info-container">
         <div class="sub-container-img">
           <p class="subtitle2">${pokemon['pokemon-rarity']}</p>
-          <div class="pokemon-screen">
+          <div class="pokemon-screen green-b">
             <img class="screen-img" src="${pokemon.img}">
           </div>
         </div>
@@ -186,12 +186,14 @@ const attackCard = (pokemon) => {
   const cardContainer = document.createElement('div');
   cardContainer.innerHTML = `
     <div class="modal">
-      <p class="close">x</p>
+      <p class="close red-bg">x</p>
       <section class="cards">
-        <section class="pokemon-name2 red">${pokemon.num} - ${pokemon.name}</section>
+        <section class="pokemon-name2 red-bg">${pokemon.num} - ${pokemon.name}</section>
         <section class="info-container">
-          <div class="pokemon-screen">
-            <img class="screen-img" src="${pokemon.img}">
+          <div class="sub-container-img">
+            <div class="pokemon-screen red-b">
+              <img class="screen-img" src="${pokemon.img}">
+            </div>
           </div>
           <div class="stats-container">
             <h3>Stats</h3>
