@@ -2,7 +2,7 @@
 /* eslint-disable no-console */
 /* eslint-disable no-loop-func */
 import {
-  dinamicSearchPokemon, filterPokemon, orderBy, changeOrder,
+  dinamicSearchPokemon, filterPokemon, orderBy, changeOrder, calculateBettersCombination ,
 } from './data.js';
 
 import data from './data/pokemon/pokemon.js';
@@ -301,8 +301,8 @@ const filterSystem = () => {
     optionsFilter[i].addEventListener('click', () => {
       console.log(optionsFilter);
       // eslint-disable-next-line no-return-assign
-      // optionsFilter.forEach(element => element.style.background = 'rgb(43, 41, 41)');
-      optionsFilter[i].style.background = '#0F4C75';
+      optionsFilter.forEach(element => element.style.background = 'rgb(43, 41, 41)');
+      optionsFilter[i].style.background = 'var(--color-blue-3)';
       isContainerShowMore = false;
       if (window.innerWidth < desktopSize) {
         hideMenu();
@@ -362,9 +362,9 @@ const orderSystem = () => {
       // reverse = true;
       // eslint-disable-next-line no-return-assign
       // optionsOrder.forEach(element => element.style.background = 'rgb(43, 41, 41)');
-      // for (let i = 0; i < optionsOrder.length; i += 1) {
-      //   optionsOrder[i].style.background = 'rgb(43, 41, 41)';
-      // }
+       for (let i = 0; i < optionsOrder.length; i += 1) {
+         optionsOrder[i].style.background = 'rgb(43, 41, 41)';
+         }
       optionsOrder[i].style.background = '#0F4C75';
       btnChangeOrder.style.visibility = 'visible';
       if (isContainerSection) {
@@ -499,3 +499,4 @@ const loadPage = () => {
 
 sliderSystem();
 window.onload = loadPage;
+console.log(calculateBettersCombination(data.pokemon[134]));

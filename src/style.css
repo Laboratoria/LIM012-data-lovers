@@ -263,11 +263,12 @@ aside{
 .section-order-by ul li{  
   border-bottom:rgb(41, 55, 63) solid 1px;  
 }
-.section-filter-by ul li:hover,
+
+/*.section-filter-by ul li:hover,
 .section-order-by ul li:hover{
   background: #fff;
-  color: #333;
-};
+  color: #fff;
+};*/
 
 .section-order-by li,
 .section-filter-by li,
