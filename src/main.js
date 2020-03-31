@@ -236,10 +236,63 @@ window.addEventListener('load', () => {
   };
 
   const attackCard = (pokemon) => {
-    let quickMoveContainer = '';
-    let specialAttackContainer = '';
+    cardContainer.innerHTML += `
+      <div class="allAttack">
+        <section class="pokemonId">${pokemon.num} - ${pokemon.name}</section>
+        <div class="pokemon-screen">
+            <div class="screen-border"></div>              
+            <img src="${pokemon.img}">
+        </div>
+        <div class="stats-container">
+            <h3>Stats</h3>
+            <ul class= "name-stats">
+                <li>Base-attack</li>
+                <li>Base-defense</li>
+                <li>Base-stamina</li>
+                <li>max-cp</li>
+                <li>max-hp</li>
+            </ul>
+            <ul class= "number-stats">
+                <li>${pokemon.stats['base-attack']}</li>
+                <li>${pokemon.stats['base-defense']}</li>
+                <li>${pokemon.stats['base-stamina']}</li>
+                <li>${pokemon.stats['max-cp']}</li>
+                <li>${pokemon.stats['max-hp']}</li>
+            </ul>
+        </div>
+        <div>
+            <p class="subtitle">Resistant</p>
+            <div id="resistant-container">
+            </div>
+            <p class="subtitle">Weakness</p>
+            <div id="weaknesses-container">
+            </div>
+        </div>
+        <div>
+            <h3>Quick-moves</h3>
+            <div id="quick-move"></div>
+        </div>
+        <div>
+            <h3>Special-attacks</h3>
+            <div id="special-attacks></div>
+        </div>
+     </div>
+     `;
+    const resistant = document.getElementById('resistant-container');
+    const weaknesses = document.getElementById('weaknesses-container');
+    const quickMoveContainer = document.getElementById('quick-move');
+    const specialAttackContainer = document.getElementById('special-attacks');
+
+
+    pokemon.resistant.forEach((resist) => {
+      resistant.innerHTML += `<span> ${resist}</span>`;
+    });
+
+    pokemon.weaknesses.forEach((weakness) => {
+      weaknesses.innerHTML += `<span> ${weakness}</span>`;
+    });
     pokemon['quick-move'].forEach((quickMove) => {
-      quickMoveContainer += `
+      quickMoveContainer.innerHTML += `
       <ul>
         <li>Name: ${quickMove.name}</li>
         <li>Type: ${quickMove.type}</li>
@@ -249,10 +302,10 @@ window.addEventListener('load', () => {
         <li>DPS: ${dpsCalculate(quickMove, pokemon.type)}</li>
         <li>EPS: ${epsCalculate(quickMove)}</li>
       </ul>
-    `;
+      `;
     });
     pokemon['special-attack'].forEach((attack) => {
-      specialAttackContainer += `
+      specialAttackContainer.innerHTML += `
       <ul>
         <li>Name: ${attack.name}</li>
         <li>Type: ${attack.type}</li>
@@ -262,101 +315,9 @@ window.addEventListener('load', () => {
         <li>DPS: ${dpsCalculate(attack, pokemon.type)}</li>
         <li>EPS: ${epsCalculate(attack)}</li>
       </ul>
-      <div class="allAttack">
-        <section class="pokemonId">${pokemon.num} - ${pokemon.name}</section>
-        <div class="pokemon-screen">
-            <div class="screen-border"></div>              
-            <img src="${pokemon.img}">
-        </div>
-        <div class="stats-container">
-            <h3>Stats</h3>
-            <ul class= "name-stats">
-                <li>Base-attack</li>
-                <li>Base-defense</li>
-                <li>Base-stamina</li>
-                <li>max-cp</li>
-                <li>max-hp</li>
-            </ul>
-            <ul class= "number-stats">
-                <li>${pokemon.stats['base-attack']}</li>
-                <li>${pokemon.stats['base-defense']}</li>
-                <li>${pokemon.stats['base-stamina']}</li>
-                <li>${pokemon.stats['max-cp']}</li>
-                <li>${pokemon.stats['max-hp']}</li>
-            </ul>
-        </div>
-        <div>
-            <p class="subtitle">Resistant</p>
-            <div id="resistant-container">
-            </div>
-            <p class="subtitle">Weakness</p>
-            <div id="weaknesses-container">
-            </div>
-        </div>
-        <div>
-            <h3>Quick-moves</h3>
-            ${quickMoveContainer}
-        </div>
-        <div>
-            <h3>Special-attacks</h3>
-            ${specialAttackContainer}
-        </div>
-  </div>
     `;
-      cardContainer.innerHTML += `
-      <div class="allAttack">
-        <section class="pokemonId">${pokemon.num} - ${pokemon.name}</section>
-        <div class="pokemon-screen">
-            <div class="screen-border"></div>              
-            <img src="${pokemon.img}">
-        </div>
-        <div class="stats-container">
-            <h3>Stats</h3>
-            <ul class= "name-stats">
-                <li>Base-attack</li>
-                <li>Base-defense</li>
-                <li>Base-stamina</li>
-                <li>max-cp</li>
-                <li>max-hp</li>
-            </ul>
-            <ul class= "number-stats">
-                <li>${pokemon.stats['base-attack']}</li>
-                <li>${pokemon.stats['base-defense']}</li>
-                <li>${pokemon.stats['base-stamina']}</li>
-                <li>${pokemon.stats['max-cp']}</li>
-                <li>${pokemon.stats['max-hp']}</li>
-            </ul>
-        </div>
-        <div>
-            <p class="subtitle">Resistant</p>
-            <div id="resistant-container">
-            </div>
-            <p class="subtitle">Weakness</p>
-            <div id="weaknesses-container">
-            </div>
-        </div>
-        <div>
-            <h3>Quick-moves</h3>
-            ${quickMoveContainer}
-        </div>
-        <div>
-            <h3>Special-attacks</h3>
-            ${specialAttackContainer}
-        </div>
-     </div>`;
     });
-    // const resistant = document.getElementById('resistant-container');
-    // const weaknesses = document.getElementById('weaknesses-container');
-
-    // pokemon.resistant.forEach((resist) => {
-    //   resistant.innerHTML += `<span> ${resist}</span>`;
-    // });
-
-    // pokemon.weaknesses.forEach((weakness) => {
-    //   weaknesses.innerHTML += `<span> ${weakness}</span>`;
-    // });
   };
-
   const close = document.querySelector('.close');
   const modalContainer = document.querySelector('.modal-container');
   // Llamando a las funciones para crear el modal de características
@@ -376,6 +337,7 @@ window.addEventListener('load', () => {
     modalContainer.classList.toggle('modal-close');
   });
 });
+
 
 // Guardando input para buscar
 const searchInput = document.querySelector('#filter-search');
