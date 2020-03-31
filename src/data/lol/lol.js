@@ -1304,56 +1304,56 @@ export default
         attackspeedperlevel: 1.75
       }
     },
-    Evelynn: {
-      version: "6.24.1",
-      id: "Evelynn",
-      key: "28",
-      name: "Evelynn",
-      title: "the Widowmaker",
-      splash:
-        "http://ddragon.leagueoflegends.com/cdn/img/champion/splash/Evelynn_0.jpg",
-      blurb:
-        "Swift and lethal, Evelynn is one of the most deadly - and expensive - assassins in all of Runeterra. Able to merge with the shadows at will, she patiently stalks her prey, waiting for the right moment to strike. While Evelynn is clearly not entirely ...",
-      info: {
-        attack: 4,
-        defense: 2,
-        magic: 7,
-        difficulty: 10
-      },
-      image: {
-        full: "Evelynn.png",
-        sprite: "champion0.png",
-        group: "champion",
-        x: 192,
-        y: 96,
-        w: 48,
-        h: 48
-      },
-      tags: ["Assassin", "Mage"],
-      partype: "MP",
-      stats: {
-        hp: 531.2,
-        hpperlevel: 90,
-        mp: 315.6,
-        mpperlevel: 42,
-        movespeed: 340,
-        armor: 26.5,
-        armorperlevel: 3.8,
-        spellblock: 32.1,
-        spellblockperlevel: 1.25,
-        attackrange: 125,
-        hpregen: 9.82,
-        hpregenperlevel: 0.55,
-        mpregen: 8.105,
-        mpregenperlevel: 0.6,
-        crit: 0,
-        critperlevel: 0,
-        attackdamage: 53.88,
-        attackdamageperlevel: 3.5,
-        attackspeedoffset: 0,
-        attackspeedperlevel: 3.6
-      }
-    },
+    // Evelynn: {
+    //   version: "6.24.1",
+    //   id: "Evelynn",
+    //   key: "28",
+    //   name: "Evelynn",
+    //   title: "the Widowmaker",
+    //   splash:
+    //     "http://ddragon.leagueoflegends.com/cdn/img/champion/splash/Evelynn_0.jpg",
+    //   blurb:
+    //     "Swift and lethal, Evelynn is one of the most deadly - and expensive - assassins in all of Runeterra. Able to merge with the shadows at will, she patiently stalks her prey, waiting for the right moment to strike. While Evelynn is clearly not entirely ...",
+    //   info: {
+    //     attack: 4,
+    //     defense: 2,
+    //     magic: 7,
+    //     difficulty: 10
+    //   },
+    //   image: {
+    //     full: "Evelynn.png",
+    //     sprite: "champion0.png",
+    //     group: "champion",
+    //     x: 192,
+    //     y: 96,
+    //     w: 48,
+    //     h: 48
+    //   },
+    //   tags: ["Assassin", "Mage"],
+    //   partype: "MP",
+    //   stats: {
+    //     hp: 531.2,
+    //     hpperlevel: 90,
+    //     mp: 315.6,
+    //     mpperlevel: 42,
+    //     movespeed: 340,
+    //     armor: 26.5,
+    //     armorperlevel: 3.8,
+    //     spellblock: 32.1,
+    //     spellblockperlevel: 1.25,
+    //     attackrange: 125,
+    //     hpregen: 9.82,
+    //     hpregenperlevel: 0.55,
+    //     mpregen: 8.105,
+    //     mpregenperlevel: 0.6,
+    //     crit: 0,
+    //     critperlevel: 0,
+    //     attackdamage: 53.88,
+    //     attackdamageperlevel: 3.5,
+    //     attackspeedoffset: 0,
+    //     attackspeedperlevel: 3.6
+    //   }
+    // },
     Ezreal: {
       version: "6.24.1",
       id: "Ezreal",
@@ -3019,58 +3019,58 @@ export default
         attackspeedperlevel: 2.65
       }
     },
-    Leblanc: {
-      version: "6.24.1",
-      id: "Leblanc",
-      key: "7",
-      name: "LeBlanc",
-      title: "the Deceiver",
-      "name:":
-        "https://www.masterypoints.com/assets/img/lol/champion_icons/Leblanc.png",
-      splash:
-        "http://ddragon.leagueoflegends.com/cdn/img/champion/splash/Leblanc_0.jpg",
-      blurb:
-        "Every city has its dark side, even one whose reputation is already of a questionable hue. Noxus - though its name is already invoked with a mixture of reverence and revulsion - is no exception to this simple truth. Deep within the winding dungeons ...",
-      info: {
-        attack: 1,
-        defense: 4,
-        magic: 10,
-        difficulty: 9
-      },
-      image: {
-        full: "Leblanc.png",
-        sprite: "champion1.png",
-        group: "champion",
-        x: 240,
-        y: 96,
-        w: 48,
-        h: 48
-      },
-      tags: ["Assassin", "Mage"],
-      partype: "MP",
-      stats: {
-        hp: 516,
-        hpperlevel: 80,
-        mp: 334,
-        mpperlevel: 50,
-        movespeed: 340,
-        armor: 21.88,
-        armorperlevel: 3.5,
-        spellblock: 30,
-        spellblockperlevel: 0,
-        attackrange: 525,
-        hpregen: 7.4,
-        hpregenperlevel: 0.55,
-        mpregen: 6,
-        mpregenperlevel: 0.8,
-        crit: 0,
-        critperlevel: 0,
-        attackdamage: 54.88,
-        attackdamageperlevel: 3.5,
-        attackspeedoffset: 0,
-        attackspeedperlevel: 1.4
-      }
-    },
+    // Leblanc: {
+    //   version: "6.24.1",
+    //   id: "Leblanc",
+    //   key: "7",
+    //   name: "LeBlanc",
+    //   title: "the Deceiver",
+    //   "name:":
+    //     "https://www.masterypoints.com/assets/img/lol/champion_icons/Leblanc.png",
+    //   splash:
+    //     "http://ddragon.leagueoflegends.com/cdn/img/champion/splash/Leblanc_0.jpg",
+    //   blurb:
+    //     "Every city has its dark side, even one whose reputation is already of a questionable hue. Noxus - though its name is already invoked with a mixture of reverence and revulsion - is no exception to this simple truth. Deep within the winding dungeons ...",
+    //   info: {
+    //     attack: 1,
+    //     defense: 4,
+    //     magic: 10,
+    //     difficulty: 9
+    //   },
+    //   image: {
+    //     full: "Leblanc.png",
+    //     sprite: "champion1.png",
+    //     group: "champion",
+    //     x: 240,
+    //     y: 96,
+    //     w: 48,
+    //     h: 48
+    //   },
+    //   tags: ["Assassin", "Mage"],
+    //   partype: "MP",
+    //   stats: {
+    //     hp: 516,
+    //     hpperlevel: 80,
+    //     mp: 334,
+    //     mpperlevel: 50,
+    //     movespeed: 340,
+    //     armor: 21.88,
+    //     armorperlevel: 3.5,
+    //     spellblock: 30,
+    //     spellblockperlevel: 0,
+    //     attackrange: 525,
+    //     hpregen: 7.4,
+    //     hpregenperlevel: 0.55,
+    //     mpregen: 6,
+    //     mpregenperlevel: 0.8,
+    //     crit: 0,
+    //     critperlevel: 0,
+    //     attackdamage: 54.88,
+    //     attackdamageperlevel: 3.5,
+    //     attackspeedoffset: 0,
+    //     attackspeedperlevel: 1.4
+    //   }
+    // },
     LeeSin: {
       version: "6.24.1",
       id: "LeeSin",

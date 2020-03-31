@@ -4,18 +4,22 @@ import { example } from './data.js';
 //import data from './data/pokemon/pokemon.js';
 
 let listadoHeroes = [];
+let listadoHeroesMostrar = [];
 
-  const ascendente = ( a, b) => {
+const nombreAscendente = ( a, b) => {
+    //debugger;
     if ( a.name < b.name ){
       return -1;
+
     }
     if ( a.name > b.name ){
       return 1;
     }
     return 0;
-  }
+}
 
-  const descendente = ( a, b) => {
+const nombreDescendente = ( a, b) => {
+    // debugger;
     if ( a.name < b.name ){
       return 1;
     }
@@ -23,13 +27,36 @@ let listadoHeroes = [];
       return -1;
     }
     return 0;
+}
+
+const HPorden = ( a, b) => {
+  //debugger;
+  if ( a.stats.hp < b.stats.hp ){
+    return 1;
+
   }
+  if ( a.stats.hp > b.stats.hp ){
+    return -1;
+  }
+  return 0;
+}
 
+const RAorden = ( a, b) => {
+  //debugger;
+  if ( a.stats.attackrange < b.stats.attackrange ){
+    return 1;
 
-  const dataFiltradoRol = (evento)=> {
+  }
+  if ( a.stats.attackrange > b.stats.attackrange ){
+    return -1;
+  }
+  return 0;
+}
 
-    let rol = evento.target == undefined ? evento : evento.target.value;
-    let listOrden = document.getElementById("orden");
+  const dataFiltradoRol = (param)=> {
+
+    let rol = param.target == undefined ? param : param.target.value;
+    let top = document.getElementById("top");
     // let stringTemplate = '';
     // let container = document.getElementById('container');
     listadoHeroes = [];
@@ -48,21 +75,46 @@ let listadoHeroes = [];
       }
     }
 
-    dataFiltradoOrden(listOrden.value);
+    dataFiltradoTop(top.value);
+
+    // dataFiltradoOrden(listOrden.value);
     // container.innerHTML= stringTemplate;
   }
 
-  const dataFiltradoOrden = (evento) => {
+  const dataFiltradoTop = (param) => {
+    debugger;
+    let top = param.target == undefined ? param : param.target.value;
+    let orden = document.getElementById("orden");
 
-    let orden = evento.target == undefined ? evento : evento.target.value;
+    if (top != '-1'){
+      let listTop = [];
+  
+      if (top == "HP")
+        listTop = listadoHeroes.sort(HPorden);
+      else
+        listTop = listadoHeroes.sort(RAorden);  
+   
+      listadoHeroesMostrar = listTop.slice(0, 10);
+    }
+    else
+    {
+      listadoHeroesMostrar = listadoHeroes;
+    }
+
+    dataFiltradoOrden(orden.value);
+  }
+
+  const dataFiltradoOrden = (param) => {
+
+    let orden = param.target == undefined ? param : param.target.value;
     let stringTemplate = '';
     let container = document.getElementById('container');
     let listOrden = [];
 
     if (orden == "AZ")
-      listOrden = listadoHeroes.sort(ascendente);
+      listOrden = listadoHeroesMostrar.sort(nombreAscendente);
     else
-      listOrden = listadoHeroes.sort(descendente);
+      listOrden = listadoHeroesMostrar.sort(nombreDescendente);
 
     for (const item in listOrden)
     {
@@ -78,15 +130,15 @@ let listadoHeroes = [];
 
   }
 
-
 /* Ejecucion del filtro roles "Todos" */
-dataFiltradoRol('-1');
+  dataFiltradoRol('-1');
 
 /* Agregar eventos */
   let listRoles = document.getElementById("roles");
   let listOrden = document.getElementById("orden");
+  let listTop = document.getElementById("top");
 
   listRoles.addEventListener("change", dataFiltradoRol);
   listOrden.addEventListener("change", dataFiltradoOrden);
-
+  listTop.addEventListener("change", dataFiltradoTop);
 
