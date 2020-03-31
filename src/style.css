@@ -131,17 +131,7 @@
 .cards-distribution {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    /* border: 1px solid black; */
-    margin-bottom: 1.5em;
-    width: 100%;
-}
-
-.distribution-search {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    /* border: 1px solid black; */
+    justify-content: space-around;
     margin-bottom: 1.5em;
     width: 100%;
 }
