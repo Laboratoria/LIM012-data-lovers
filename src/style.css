@@ -13,43 +13,85 @@ body {
   --color-border: rgba(255, 255, 255, 0.9);
   --color-size: rgba(255, 255, 255, 0.89);
   --color-description: #97969F;
+  --color-background-nav: #B10505;
 }
 
+/* header*/
 .header {
-  background: #B10505;
-  margin-top: 43px;
-  height: 7rem;
+  background: var(--color-background-nav);
+  margin-top: 1rem;
+  /*top, para que el header no se vea pegado al top del body (según prototipo)*/
+  height: 5rem;
   display: flex;
   justify-content: space-between;
+  /*space between para que los contenidos se vayan a los extremos*/
+  align-items: center;
+  /*fixed hace que el header sea estatico, pero al hacer esto se modifica el tama;o del header y le volvemos a dar padding y witdh abajo*/
+  position: fixed;
+  padding: 0 2rem;
+  /*tambien puede ser width:0*/
+  width: 100%;
 }
 
 .logo {
-  margin-top: 1rem;
+  margin-top: 3px;
   margin-left: 1.7rem;
 }
 
-.navegador {
+/* .navegador {
   display: flex;
+} */
+
+.navegador ul li {
+  display: inline-block;
+  margin: 0 10px;
+  /*margen entre las etiquetas <a> menu, atletas.etc*/
+  position: relative;
 }
 
-.navegador a {
-  color: #ffffff;
+/*.navegador ul li */
+a {
+  padding: 0.5rem 1rem;
+  color: var(--color-size);
   text-decoration: none;
-  font-size: 30px;
+  /*le estamos quitando el subrayado azul que tine por defaul*/
+  font-size: 23px;
   text-align: center;
   display: flex;
   align-items: center;
-  padding: 0 2rem;
+}
+
+.submenu {
+  position: absolute;
+  background-color: var(--color-background-nav);
+  text-transform: lowercase;
+  visibility: hidden;
+}
+
+.submenu li a {
+  font-size: 19px;
+}
+
+.menu li:hover .submenu {
+  visibility: visible;
+}
+
+/*icon*/
+i {
+  margin-right: 7px;
 }
 
 .navegador a:hover {
   background: #e74d3c88;
 }
 
+/*main*/
 .background {
   background-image: url(./img/background.jpg);
-  height: calc(100vh - 155px);
+  /*calc: calcula el tama;o total haciendo una resta del viewport y los 16px porque al header le dimos un margin-top* (para que no tenga scroll)*/
+  height: calc(100vh - 16px);
   background-position: center;
+  /*cover hace que tome todo el tama;o de la imagen y la centree*/
   background-size: cover;
 }
 
@@ -59,18 +101,17 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  padding-left: 10%;
+  padding-top: 6%
 }
 
 .title1 {
   background-color: rgba(196, 196, 196, 0.31);
   border: 5px solid var(--color-border);
-  width: 46%;
   height: 80px;
   padding: 6px 0;
-  margin: 95px 199px 0 0;
-  font-size: 50px;
-  text-align: center;
+  font-size: 45px;
 }
 
 .title2 {
@@ -95,13 +136,21 @@ body {
 .cards {
   background: rgba(20, 29, 38, 0.603);
   border: 1px solid var(--color-border);
-  width: 524px;
-  height: 200px;
-  margin: 10px;
+  width: 325px;
+  /*height: 182px;
   display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
   align-items: center;
+  justify-content: space-around;
+  */
+  margin: 10px;
+  border-radius: 15px;
+  text-align: center;
+  padding: 15px 11px;
+}
+
+.cards:hover {
+  cursor: pointer;
+  box-shadow: 0 4px 10px 0 rgba(190, 129, 129, 0.897)
 }
 
 .titleh2 {
@@ -111,3 +160,9 @@ body {
 .description {
   color: var(--color-description);
 }
+
+/*tama;o de la info de la info principal
+.infoPrincipal {
+  width: 45%;
+}
+*/

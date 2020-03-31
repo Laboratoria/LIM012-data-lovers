@@ -1,59 +1,98 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Data Lovers</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/1ace54bf0e.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
 
-<head>
-  <meta charset="utf-8">
-  <title>Data Lovers</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-
-<body>
-  <header class="header">
-    <div class="logo">
-      <img src="img/logoOlimpiadas.png" width="160" alt="logo">
-    </div>
-    <nav class="navegador">
+  <body>
+    <header class="header">
+      <div class="logo">
+        <img src="img/logoOlimpiadas.png" width="160" alt="logo" />
+      </div>
+      <nav class="navegador">
+        <ul class="menu">
+          <li>
+            <a href="#" class="navInicio">
+              <i class="fas fa-home"></i>
+              <span>Inicio</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="navAtletas">
+              <i class="far fa-user"></i>
+              <span>Atletas</span>
+            </a>
+            <ul class="submenu">
+              <li><a href="#">FEMALE</a></li>
+              <li><a href="#">MALE</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#" class="navDisciplinas">
+              <i class="fas fa-running"></i>
+              <span>Disciplinas</span>
+            </a>
+            <ul class="submenu">
+              <li><a href="#">SUMMER</a></li>
+              <li><a href="#">WINTER</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#" class="navMedalla">
+              <i class="fas fa-medal"></i>
+              <span>Medallas</span>
+            </a>
+            <ul class="submenu">
+              <li><a href="#">GOLD</a></li>
+              <li><a href="#">SILVER</a></li>
+              <li><a href="#">BRONZE</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <!-- <nav class="navegador">
       <a href="#" class="navInicio">
-        <img src="" alt="">
+        <i class="fas fa-home"></i>
         <span>Inicio</span>
       </a>
       <a href="#" class="navAtletas">
-        <img src="img/navAtleta.png" width="60" alt="icono del perfil de una atleta">
+        <img src="img/navAtleta.png" width="55" alt="icono del perfil de una atleta">
         <span>Atletas</span>
       </a>
       <a href="#" class="navDisciplinas">
-        <img src="img/navDisciplina.png" width="60" alt="icono de un atleta">
+        <img src="img/navDisciplina.png" width="55" alt="icono de un atleta">
         <span>Disciplinas</span>
       </a>
       <a href="#" class="navMedalla">
-        <img src="img/navMedalla.png" width="60" alt="icono de una medalla">
+        <img src="img/navMedalla.png" width="50" alt="icono de una medalla">
         <span>Medallas</span>
       </a>
-      <!-- <button>filtrar por</button>
-      <input type="text" placeholder="busca por disiplina"> -->
-    </nav>
-  </header>
-  <main class="background">
-
-    <div class="title">
-      <h1 class="title1">ATLETA CLUB</h1>
-      <h2 class="title2"> ENCUENTRA AQUI A <span class="subtitle">TUS ATLETAS FAVORITOS</span></h2>
-    </div>
-    <div id="main" class="main">
-      <!-- <h1>no me tapes!!!</h1> -->
-      <div id="cards">
-        <!-- <h3>Todos</h3> -->
+    </nav> -->
+    </header>
+    <main class="background">
+      <div class="title">
+        <h1 class="title1">ATLETA CLUB</h1>
+        <h2 class="title2">
+          ENCUENTRA AQUI A <span class="subtitle">TUS ATLETAS FAVORITOS</span>
+        </h2>
       </div>
-
-    </div>
-
-
-  </main>
-  <footer>
-    <p> by Franccesca & Almendra</p>
-  </footer>
-  <div id="root"></div>
-  <script src="main.js" type="module"></script>
-</body>
-
+      <div id="main" class="main">
+        <!-- <h1>no me tapes!!!</h1> -->
+        <div id="cards">
+          <!-- <h3>Todos</h3> -->
+        </div>
+      </div>
+    </main>
+    <footer>
+      <p>by Franccesca & Almendra</p>
+    </footer>
+    <div id="root"></div>
+    <script src="main.js" type="module"></script>
+  </body>
 </html>
