@@ -19,8 +19,9 @@ export const ordenAs = (p1) => {
   return ascendente;
 };
 
-export const filtrarDeportes = document.querySelector("#opcionDeportes");
-filtrarDeportes.addEventListener ("changue", (event) => {
-const tipoDepporte = elObjeto.filter(item) =>
-return item.deporte === filtrarDeportes.value;
-});
+export const filtrarAtletasPorDeporte = (arrayAtletas, deporteSeleccionado) => {
+  const deportesFiltrados = arrayAtletas.filter((atleta) => {
+    return atleta.deporte === deporteSeleccionado;
+  });
+  return deportesFiltrados;
+};
