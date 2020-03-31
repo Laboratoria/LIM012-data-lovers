@@ -3,6 +3,8 @@ import {
   search,
   order,
   filterByType,
+  dpsCalculate,
+  epsCalculate,
 } from '../src/data.js';
 
 const data = [
@@ -80,7 +82,14 @@ const data = [
     ],
   },
 ];
-
+// Se crea un array que contenga
+const data2 = {
+  name: 'ember',
+  type: 'fire',
+  'base-damage': '10',
+  energy: '10',
+  'move-duration-seg': '1',
+};
 const toEqual1 = [
   {
     num: '173',
@@ -431,5 +440,24 @@ describe('filterByType', () => {
 
   it('debería retornar el array de pokemones que tienen el mismo tipo', () => {
     expect(filterByType(data, 'poison')).toEqual(toEqual7);
+  });
+});
+
+// Test para calcular DPS
+describe('dpsCalculate', () => {
+  it('is a function', () => {
+    expect(typeof dpsCalculate).toBe('function');
+  });
+  it('debería retornar el calculo damage por segundo del pokemon seleccionado', () => {
+    expect(dpsCalculate(data2, ['fire', 'grass'])).toBe('12.0');
+  });
+});
+// Test para calcular EPS
+describe('epsCalculate', () => {
+  it('is a function', () => {
+    expect(typeof epsCalculate).toBe('function');
+  });
+  it('debería retornar el calculo damage por segundo del pokemon seleccionado', () => {
+    expect(epsCalculate(data2)).toBe('10.0');
   });
 });
