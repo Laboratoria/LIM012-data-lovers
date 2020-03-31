@@ -4,9 +4,10 @@
 
 import dataAtletas from './data/atletas/atletas.js';
 
-// console.log(dataAtletas);
+console.log(dataAtletas);
 
 const data = (dataAtletas.atletas);
+console.log("todos los atletas =>",data);
 
 document.getElementById('main').innerHTML = `
 <h2 class='title' >TODOS LOS ATLETAS</h2>
@@ -23,19 +24,21 @@ ${data.map(dataPrincipal => `
 </div>
 `;
 
-// const filtrador = data.filter((item)=> { return (eitem.team.icluides('Italy'))});
+/* filtrar a los atletas por  */
 
-// const filterData = data.filter(i => (atletas.gender.includes('M')
-// ));
+const filtrardataHombres = data.filter(items =>{ return (items.gender === 'M')
+});
+console.log("atletas hombres =>", filtrardataHombres);
 
-console.log ('filtrador');
+const filtrardataMujeres = data.filter( items =>{ return (items.gender === 'F')
+});
+console.log("atletas mujeres =>", filtrardataMujeres);
 
-// console.log ('data', data);
+/* para las opciones de temporada y medallas debemos filtar el array disciplinas de array general Atletas */
+const filtrardataInvierno = data.filter( items =>{ return (items.disciplinas.filter( item =>{ return (item.temporada === 'Summer')}))
+});
+console.log("temporada inviernop =>", filtrardataInvierno);
 
-// console.log('atletas genero', filterData);
-
-// console.log(Object.values);
-
-// const filtergender = document.getElementById ("masculino");
-
-// filtergender.addEventListener("click");
+const filtrarmedallaOro = data.filter( items =>{ return (items.gender === 'F')
+});
+console.log("atletas mujeres =>", filtrarmedallaOro);

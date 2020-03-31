@@ -14,6 +14,8 @@ body {
   background: #B10505;
 }
 .navegador{
+  outline: 1px solid yellow;
+  font-family: sans-serif;
   margin-left: 5%;
   flex: auto;
   display:flex;
@@ -35,7 +37,7 @@ body {
   background: #e74d3c88;
 }
 
-.navegador ul li{
+.{
   
   list-style: none;
   text-decoration: none;
