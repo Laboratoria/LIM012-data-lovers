@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 /* eslint-disable no-console */
 /* eslint-disable no-loop-func */
 import {
@@ -56,9 +57,6 @@ const divFilterBy = document.getElementsByClassName('menu')[1];
 const btnChangeOrder = document.getElementById('btn-change-order');
 const modalWindow = document.getElementById('modal-window');
 
-const showMessageOfSearch = (container) => {
-  container.innerHTML = '<p>Lo sentimos, no encontramos resultados que coincidan con su búsqueda</p>';
-};
 
 const createPokemonType = (type) => {
   const divPokemonType = document.createElement('div');
@@ -74,14 +72,17 @@ const putPokemonTypes = (dataTypesPokemon, divCardTypes) => {
   }
 };
 
+const showMessageOfSearch = (container) => {
+  container.innerHTML = '<p>Lo sentimos, no encontramos resultados que coincidan con su búsqueda</p>';
+};
 const createPokemonCard = (index, pokemon, container) => {
   if (typeof pokemon !== 'undefined') {
     const card = document.createElement('div');
     card.className = 'pokemon-card  flex-wrap font';
     card.id = pokemon.name;
     card.innerHTML = `<span class="pokemon-name">${pokemon.name}</span>              
-                      <img class="pokemon-img" src="${pokemon.img}" >
-                      <span class="pokemon-cp-hp">MAX CP ${pokemon.stats['max-cp']} / MAX HP ${pokemon.stats['max-cp']}</span>`;
+    <img class="pokemon-img" src="${pokemon.img}" >
+    <span class="pokemon-cp-hp">MAX CP ${pokemon.stats['max-cp']} / MAX HP ${pokemon.stats['max-hp']}</span>`;
     putPokemonTypes(pokemon.type, card);
     container.append(card);
   } else {
@@ -113,7 +114,6 @@ const searchPokemon = () => {
     showCard(currentData, divCardContainerFlex);
   }
 };
-
 
 const createOptionFilter = (name) => {
   const li = document.createElement('li');
@@ -167,29 +167,14 @@ const onlyText = (e) => {
   }
 };
 
-const changeOrderCurrentData = (container) => {
+
+const changeOrderCurrentData = () => {
   deg = 0;
   btnChangeOrder.addEventListener('click', () => {
-    console.log('cambiar');
     deg += 180;
     imgChange.style.transform = `rotate(${deg}deg)`;
-    if (isContainerSection === false) {
-      if (isContainerShowMore) {
-        if (showMoreSection === 'type') {
-          resultTypes = changeOrder(resultTypes);
-          showCard(resultTypes, divCardContainerFlex);
-        } else if (showMoreSection === 'resistant') {
-          resultResistant = changeOrder(resultResistant);
-          showCard(resultResistant, divCardContainerFlex);
-        } else {
-          resultWeaknesses = changeOrder(resultWeaknesses);
-          showCard(resultWeaknesses, divCardContainerFlex);
-        }
-      } else {
-        currentData = changeOrder(currentData);
-        showCard(currentData, divCardContainerFlex);
-      }
-    }
+    currentData = changeOrder(currentData);
+    showCard(currentData, divCardContainerFlex);
   });
 };
 
@@ -217,68 +202,6 @@ btnCloseModal.addEventListener('click', () => {
   modalMode.style.display = 'none';
 });
 
-const showAllByFilter = (whichFilter) => {
-  divCardContainerFlex.style.display = 'flex';
-  btnChangeOrder.style.visibility = 'visible';
-  divCardContainerBlock.style.display = 'none';
-  isContainerSection = false;
-  isContainerShowMore = true;
-  // currentData = filterPokemon(whichFilter, typeChoosed);
-  switch (whichFilter) {
-    case 'type':
-      showCard(resultTypes, divCardContainerFlex);
-      break;
-    case 'resistant':
-      showCard(resultResistant, divCardContainerFlex);
-      break;
-    case 'weaknesses':
-      showCard(resultWeaknesses, divCardContainerFlex);
-      break;
-    default:
-      // nothing
-  }
-  titleTop.textContent = `${typeChoosed}-${whichFilter} Pokemons`;
-};
-
-const showMore = document.getElementsByClassName('show-more');
-showMore[0].addEventListener('click', () => {
-  showAllByFilter('type');
-  showMoreSection = 'type';
-});
-showMore[1].addEventListener('click', () => {
-  showAllByFilter('resistant');
-  showMoreSection = 'resistant';
-});
-showMore[2].addEventListener('click', () => {
-  showAllByFilter('weaknesses');
-  showMoreSection = 'weaknesses';
-});
-
-const showPokemonInSections = () => {
-  if (isContainerSection === false) {
-    isContainerSection = true;
-    divCardContainerFlex.style.display = 'none';
-    btnChangeOrder.style.visibility = 'hidden';
-    divCardContainerBlock.style.display = 'block';
-  }
-  const divSections = divCardContainerBlock.getElementsByClassName('slide-cards');
-  divSections[0].innerHTML = '';
-  divSections[1].innerHTML = '';
-  divSections[2].innerHTML = '';
-  showCard(resultTypes, divSections[0]);
-  showCard(resultResistant, divSections[1]);
-  showCard(resultWeaknesses, divSections[2]);
-};
-
-const filterPokemonByType = (type) => {
-  console.log(`tipo: ${type}`);
-  resultTypes = filterPokemon('type', type);
-  resultResistant = filterPokemon('resistant', type);
-  resultWeaknesses = filterPokemon('weaknesses', type);
-  console.log(resultTypes, resultResistant, resultWeaknesses);
-  showPokemonInSections();
-};
-
 const translateX = (pos, slide) => {
   slide.style.left = `${pos * -164}px`;
 };
@@ -300,12 +223,10 @@ const goToPrevItem = (slider, index) => {
   }
 };
 
-
 const sliderSystem = () => {
   const sliders = divCardContainerBlock.getElementsByClassName('slide-cards');
   const ctrlPrevButtons = document.getElementsByClassName('ctrl-prev');
   const ctrlNextButtons = document.getElementsByClassName('ctrl-next');
-
   for (let i = 0; i < 3; i += 1) {
     ctrlPrevButtons[i].addEventListener('click', () => {
       goToPrevItem(sliders[i], i);
@@ -315,28 +236,112 @@ const sliderSystem = () => {
     });
   }
 };
+/* --------------------- mostrar mas pokemones ------------------------ */
+const showAllPokemons = (listData) => {
+  divCardContainerFlex.style.display = 'flex';
+  divCardContainerBlock.style.display = 'none';
+  showCard(listData, divCardContainerFlex);
+  isContainerSection = false;
+  isContainerShowMore = true;
+};
 
-const filterSystem = (btn, container) => {
+const showMore = document.getElementsByClassName('show-more');
+showMore[0].addEventListener('click', () => {
+  showAllPokemons(resultTypes);
+  currentData = resultTypes;
+  titleTop.textContent = `${typeChoosed} Type Pokemons`;
+  showMoreSection = 'type';
+});
+
+showMore[1].addEventListener('click', () => {
+  showAllPokemons(resultResistant);
+  currentData = resultResistant;
+  titleTop.textContent = `Pokemons resistant to the ${typeChoosed} Type`;
+  showMoreSection = 'resistant';
+});
+
+showMore[2].addEventListener('click', () => {
+  showAllPokemons(resultWeaknesses);
+  currentData = resultWeaknesses;
+  titleTop.textContent = `Pokemons weaknesses to the ${typeChoosed} Type`;
+  showMoreSection = 'weaknesses';
+});
+
+/* -------- muestra mokempnes despues del filrtado por tipo -----------*/
+const showPokemonInSections = () => {
+  if (isContainerSection === false) {
+    console.log('de ver mas a filtrado');
+    isContainerSection = true;
+    divCardContainerFlex.style.display = 'none';
+    btnChangeOrder.style.visibility = 'hidden';
+    divCardContainerBlock.style.display = 'block';
+  }
+  const divSections = divCardContainerBlock.getElementsByClassName('slide-cards');
+  divSections[0].innerHTML = '';
+  divSections[1].innerHTML = '';
+  divSections[2].innerHTML = '';
+  showCard(resultTypes, divSections[0]);
+  showCard(resultResistant, divSections[1]);
+  showCard(resultWeaknesses, divSections[2]);
+};
+
+
+const filterPokemonsByType = (type) => {
+  console.log(`tipo: ${type}`);
+  resultTypes = filterPokemon('type', type);
+  resultResistant = filterPokemon('resistant', type);
+  resultWeaknesses = filterPokemon('weaknesses', type);
+};
+
+const filterSystem = () => {
   titleTop.textContent = '';
   const titleSlider = document.getElementsByClassName('title-slider-p');
-
   for (let i = 0; i < optionsFilter.length; i += 1) {
-    btnChangeOrder.style.visibility = 'visible';
     optionsFilter[i].addEventListener('click', () => {
       isContainerShowMore = false;
-      filterPokemonByType(optionsFilter[i].textContent);
+      if (window.innerWidth < desktopSize) {
+        hideMenu();
+      }
+      btnChangeOrder.style.visibility = 'visible';
+      isContainerShowMore = false;
+      filterPokemonsByType(optionsFilter[i].textContent);
       typeChoosed = optionsFilter[i].textContent;
       titleSlider[0].textContent = `${typeChoosed}-type pokemons`;
       titleSlider[1].textContent = `${typeChoosed}-resistant pokemons`;
       titleSlider[2].textContent = `${typeChoosed}-weaknesses pokemons`;
-      if ((window.innerWidth >= desktopSize) === false) {
-        hideMenu();
-      }
+      showPokemonInSections();
     });
   }
 };
 
 
+// const orderSimpleData = (option) => {
+//   if (isContainerShowMore) {
+//     currentData = orderBy(currentData, option);
+//     showCard(currentData, divCardContainerFlex);
+//     // console.log(`seccion mostrar de tipo: ${showMoreSection}`);
+//     // switch (showMoreSection) {
+//     //   case 'type':
+//     //     break;
+//     //   case 'resistant':
+//     //     currentData = orderBy(currentData, option);
+//     //     showCard(resultResistant, divCardContainerFlex);
+//     //     break;
+//     //   case 'weaknesses':
+//     //     currentData = orderBy(currentData, option);
+//     //     showCard(resultWeaknesses, divCardContainerFlex);
+//     //     break;
+//     //   default:
+//     // do nothing
+//     // }
+//   } else {
+//     console.log('seccion de data simple');
+//     currentData = orderBy(currentData, option);
+//     showCard(currentData, divCardContainerFlex);
+//   }
+// };
+
+// revisando codigo
 const orderSections = (option) => {
   resultTypes = orderBy(resultTypes, option);
   resultResistant = orderBy(resultResistant, option);
@@ -344,29 +349,29 @@ const orderSections = (option) => {
   showPokemonInSections();
 };
 
-const orderSimpleData = (option) => {
-  currentData = orderBy(currentData, option);
-  showCard(currentData, divCardContainerFlex);
-};
-
-const orderSystem = (btn) => {
+const orderSystem = () => {
   const whichOrder = ['max-cp', 'max-hp', 'a-z'];
   const optionsBtnOrder = document.getElementsByClassName('order-option');
-
   for (let i = 0; i < optionsBtnOrder.length; i += 1) {
     optionsBtnOrder[i].addEventListener('click', () => {
+      // reverse = true;
       btnChangeOrder.style.visibility = 'visible';
       if (isContainerSection) {
+        // console.log("secciones");
         orderSections(whichOrder[i]);
+        // changeOrderCurrentData(divCardContainerBlock);
       } else {
-        orderSimpleData(whichOrder[i]);
+        // console.log("felxbox conteiner");
+        // orderSimpleData(whichOrder[i]);
+        currentData = orderBy(currentData, whichOrder[i]);
+        showCard(currentData, divCardContainerFlex);
+        changeOrderCurrentData(divCardContainerFlex);
       }
       if ((window.innerWidth >= desktopSize) === false) {
         hideMenu();
       }
     });
   }
-  changeOrderCurrentData(divCardContainerBlock);
 };
 
 // eslint-disable-next-line no-shadow

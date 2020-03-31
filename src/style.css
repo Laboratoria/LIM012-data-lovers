@@ -325,11 +325,12 @@ section{
 }
 #top-pagination{
   display: none;
-  display: flex;
-  justify-content: end;
-  padding-right: 5%;
-  padding-top: 3%;
+  /* display: flex; */
+  /* justify-content: end; */
+  /* padding-right: 5%;
+  padding-top: 3%; */
   background-color: var(--color-blue-3);
+  /* padding: 1em; */
 }
  #top-pagination-p{
  width: 90%;
@@ -339,14 +340,18 @@ section{
 
 }
   #btn-change-order{
-    width: 30px;
-    height: 30px;
+    /* background: hotpink; */
+    /* border: lavender solid 1px; */
+    border-radius: 3px;
+    height: 32px;
+    width: 32px;
     visibility: hidden;
+    padding: 2px;
   }
-    #btn-change-order-img{
-      width: 100%;
-      height: 100%;
-    }
+  #btn-change-order-img{
+    width: 100%;
+    height: 100%;
+  }
 
 
 #card-container-block{
@@ -576,8 +581,10 @@ section{
     #top-pagination{
       grid-area: top;
       display: flex;
-      padding-right: 5%;
-      padding-top: 3%;
+      justify-content: right;
+      padding: 1em;
+      /* padding-right: 5%; */
+      /* padding-top: 3%; */
       background-color: var(--color-blue-3);
     }
     #top-pagination-p{
