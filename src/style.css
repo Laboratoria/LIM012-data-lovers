@@ -1,6 +1,3 @@
-
-
-
 /*body{
   margin: 0;
   font-family: 'Spectral', serif;
@@ -10,15 +7,12 @@
   left: 0px;
   top: 0px;
 }
-
-
   /*Encabezado*/
  /* header{
       width: 100%;
       border:8px solid rgb(185, 255, 120);
       background: #061D29;
     }
-
       .logo{
         width: 250px;
         height: 120px;
@@ -53,7 +47,6 @@
       
       }
       
-
       
       .menu .categoria{
         display: block; 
@@ -62,16 +55,13 @@
         align-content: space-around;
         
       }
-
     
-
       li{
         border: 3px solid black;
         flex-grow: 1;
         flex-direction: column;
         
       }
-
       
       .item{
         border:5px solid  rgba(31, 30, 31, 0.548);
@@ -87,7 +77,6 @@
     display: flex;
     flex-wrap: wrap;
     background: #2A2A34;;
-
  
   }
   .imagenCampeon{
@@ -98,7 +87,6 @@
     padding: 5%;
     
   }
-
   .nombreCampeon{
     display: flex;
     flex-direction: column;
@@ -109,15 +97,11 @@
     text-align: center;
   }*/
   
-
-
-
-*{
+  *{
     margin: 0px;
     padding: 10px;
     box-sizing: border-box;
 }
-
 .padre{
   display: flex;
   flex-flow: column nowrap;
@@ -145,7 +129,6 @@ a{
     display: flex;
     flex-flow: column nowrap;
   }
-
     .encabezado{
       display: flex;
       flex-flow: row nowrap;
@@ -157,14 +140,13 @@ a{
     }
       .logoLol{
         flex: 1 1 auto;
-
       }
         .logo{
           position: absolute;
           width: 326px;
           height: 146px;
           left: 46px;
-          top: 18px;
+          top: 40px;
           background:  rgba(0, 0, 0, .0.1);
           display: flex;
           align-items: flex-end;
@@ -174,7 +156,6 @@ a{
         box-sizing: border-box;
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         border-radius: 5px;
-
       }
         .formBuscador{
           background: #C4C4C4;
@@ -188,7 +169,6 @@ a{
       display: flex;
       flex-flow: row nowrap;
       align-items: center;
-
     }
       .opciones{
         display: flex;
@@ -220,14 +200,13 @@ a{
           .itemH{
             flex: 3 1 auto;
           }
-
   .main{
     background:rgba(10, 10, 26, 0.911);
   }
     .lista{
       display: flex;
       flex-flow: row nowrap;
-      background:rgba(6, 6, 19, 0.747);
+      background:rgba(6, 6, 19, 0.616);
     }
       .galeriaDeCampeones{
         display: flex;
@@ -260,7 +239,6 @@ a{
     display: flex;
     justify-content: center;
   }
-
   /*responsive para tablet no se si sea necesario,probando*/
   /*@media all and (max-width: 800px){
     .menu{
@@ -268,7 +246,6 @@ a{
       height: auto;
     }
   }
-
   @media all and (max-width: 400px){
     .galeriaDeCampeones{
       flex-direction: column nowrap;
@@ -276,14 +253,10 @@ a{
     }
     .casillaCampeon{
       width:10px;
-
     }*/
-
   
-
   #error {
     background: #707b15;
     padding: 10px 10px 10px 10px;
     display: none;
 }
-  
