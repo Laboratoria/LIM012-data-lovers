@@ -32,32 +32,47 @@
 
 .letra{
 	color:#C37D28;
-	font-size: 100%;
+	font-size: 130%;
 	font-family: 'Raleway';
 	text-transform: uppercase;
+}
+
+.busqueda{
+    font-size: 120%;
 }
 
 .nameCamp {
     width: 100%;
     height: 20%;
-    background-color: #AAF5F5;
+    background-color:#ABEAEE;
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 50px;
 }
 
 .titleCamp {
     width: 100%;
     height: 20%;
-    background-color: #FACB7C;
+    background-color: #E6C677;
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 50px;
 }
 
 .imgCampeon{
     width: 80%;
     height: 60%;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    border-radius: 50%;
+    background-size: 100% auto;
+}
+
+
+.imgTitulo{
+    width: 5%;
 }
 
 .selection{
@@ -68,4 +83,13 @@
 .box{
     text-align: center;
     padding-bottom: 40px;
+}
+
+.titulo{
+    background-color: #030E0D;
+}
+
+.conteo {
+    border-radius: 100px;
+    text-align: center;
 }

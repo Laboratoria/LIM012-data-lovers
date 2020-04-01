@@ -8,19 +8,20 @@
     <link rel="stylesheet" href="style.css" href="//fonts.googleapis.com/css?family=Raleway" />
        
   </head>
-  <body>
+  <body class="selection body">
  
-    <section class="selection">
+    <section class="selection titulo">
       <header id="#header">
         <a href="#"><img src="imgmenu/lol.png" alt="" class="imgmenu"></a>
-        <a href="https://es.wikipedia.org/wiki/Riot_Games"><img src="imgsubmenu/riot.png" alt="" class="imgsubmenu"></a>
-        <a href="https://euw.leagueoflegends.com/es-es/"><img src="imgsubmenu/juegolol.png" alt="" class="imgsubmenu"></a>
+        <a href="https://es.wikipedia.org/wiki/Riot_Games"><img src="imgsubmenu/riot.png" alt="" class="imgsubmenu imgTitulo"></a>
+        <a href="https://euw.leagueoflegends.com/es-es/"><img src="imgsubmenu/juegolol.png" alt="" class="imgsubmenu imgTitulo"></a>
       </header>
         
     </section>
 
     <section class="selection">  
-      <p class='letra'><b>ROLES:<b> 
+      <p class='letra'>
+        <b class='busqueda'>ROLES:</b> 
         <select name="ROLES" id="roles" class='letra'>
           <option value="-1">Todos</option>
           <option value="Marksman">Marksman - Tirador</option>   <!-- tirador -->
@@ -31,7 +32,8 @@
         </select>
       </p>
 
-      <p class='letra'><b>TOP 10:</b> 
+      <p class='letra'>
+        <b class='busqueda'>TOP 10:</b> 
         <select name="TOP10" class='letra' id ="top">
           <option value="-1">Todos</option>
           <option value="HP"> HP - Nivel de Vida</option>
@@ -39,13 +41,28 @@
         </select>
       </p>
 
-      <p class='letra'><b>ORDENAR:</b> 
+      <p class='letra'>
+        <b class='busqueda'>ORDENAR:</b> 
         <select name="ORDENAR" id="orden" class='letra'>
           <option value="AZ">A-Z</option>
           <option value="ZA">Z-A</option>
         </select>
       </p>
-      <a href="#"></a><img src="imgbody/Eligecampeon.JPG" alt="" class="imgbody"></a>
+      
+      <p>
+        <input type="text" id="conteo" class="conteo">
+      </p>
+      <P>
+        <!-- <td height="380" colspan="3" valign="middle" class="bb"> -->
+        <audio controls autoplay>
+            <source src="audio.mp3" type="audio/mpeg">
+            Tu navegador no es compatible para reproducir audio.
+        </audio>
+        <!-- </td> -->
+      </P>
+      
+
+      <a href="#"></a><img src="imgbody/Eligecampeon.png" alt="" class="imgbody"></a>
 
     </section>
 

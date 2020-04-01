@@ -82,7 +82,7 @@ const RAorden = ( a, b) => {
   }
 
   const dataFiltradoTop = (param) => {
-    debugger;
+    // debugger;
     let top = param.target == undefined ? param : param.target.value;
     let orden = document.getElementById("orden");
 
@@ -109,6 +109,7 @@ const RAorden = ( a, b) => {
     let orden = param.target == undefined ? param : param.target.value;
     let stringTemplate = '';
     let container = document.getElementById('container');
+    let conteo = document.getElementById('conteo');
     let listOrden = [];
 
     if (orden == "AZ")
@@ -116,11 +117,13 @@ const RAorden = ( a, b) => {
     else
       listOrden = listadoHeroesMostrar.sort(nombreDescendente);
 
+      conteo.value = listOrden.length;
+
     for (const item in listOrden)
     {
           stringTemplate += `
           <div id='box' class="box">
-            <img src=${listOrden[item].img} class="imgCampeon"/>
+            <img src=${listOrden[item].splash} class="imgCampeon"/>
             <p id='name' class="nameCamp">${listOrden[item].name}</p>
             <p id='title'class="titleCamp">${listOrden[item].title}</p>
           </div>`
@@ -131,7 +134,7 @@ const RAorden = ( a, b) => {
   }
 
 /* Ejecucion del filtro roles "Todos" */
-  dataFiltradoRol('-1');
+  dataFiltradoRol('-1'); //Es el primero que se ejecuta cuando se carga la página
 
 /* Agregar eventos */
   let listRoles = document.getElementById("roles");
