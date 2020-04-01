@@ -62,7 +62,8 @@ a{
       }
         .formBuscador{
           background: #C4C4C4;
-          flex: 1 1 auto;
+          width: 350px;
+          height: 60px;
         } /*para enlazar iconos <i class:"" aria-hidden="true></i>"*/
         .botonBuscar{
           width: auto;
