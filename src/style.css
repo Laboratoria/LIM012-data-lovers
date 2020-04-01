@@ -107,6 +107,7 @@ a{
   .main{
     background:rgba(10, 10, 26, 0.911);
   }
+
     .lista{
       display: flex;
       flex-flow: row nowrap;
@@ -138,9 +139,6 @@ a{
           font-size: 36px;
           line-height: 40px;
           color: #FFFFFF;}
-.none{
-  display: none;
-}
   .footer{
     background: rgb(28, 28, 29);
     display: flex;
@@ -166,5 +164,7 @@ a{
   #error {
     background: #707b15;
     padding: 10px 10px 10px 10px;
-    display: none;
+}
+.ocultar{
+  display: none;
 }
