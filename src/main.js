@@ -2,7 +2,7 @@
 /* eslint-disable no-console */
 /* eslint-disable no-loop-func */
 import {
-  dinamicSearchPokemon, filterPokemon, orderBy, changeOrder, calculateBettersCombination ,
+  dinamicSearchPokemon, filterPokemon, orderBy, changeOrder, calculateBetterCombinations,
 } from './data.js';
 
 import data from './data/pokemon/pokemon.js';
@@ -499,4 +499,4 @@ const loadPage = () => {
 
 sliderSystem();
 window.onload = loadPage;
-console.log(calculateBettersCombination(data.pokemon[134]));
+console.log(calculateBetterCombinations(data.pokemon[134]));
