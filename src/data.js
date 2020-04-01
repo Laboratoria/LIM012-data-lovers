@@ -18,9 +18,7 @@ export const ordenAs = (p1) => {
   return ascendente;
 };
 
-export const filterSport = (theObjet) => {
-  const SportType = theObjet.filter(item => ({
-    return item.deporte === 'Baseball',
-  }));
-  return SportType;
+export const filtrarAtletasPorDeporte = (arrayAtletas, deporteSeleccionado) => {
+  const deportesFiltrados = arrayAtletas.filter(atleta => atleta.deporte === deporteSeleccionado);
+  return deportesFiltrados;
 };
