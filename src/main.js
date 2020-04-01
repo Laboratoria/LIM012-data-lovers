@@ -8,33 +8,9 @@ import {
 } from './data.js';
 import data from './data/pokemon/pokemon.js';
 
-// const nextEvolutions = (keys, array, evolution) => {
-//   const arrayTwo = array[keys.indexOf(evolution)];
-//   const arrIndex = [];
-
-//   if (arrayTwo.length === 1) {
-//     const arrayThree = Object.values(arrayTwo[0]);
-//     arrIndex.push(parseInt(arrayTwo[0].num, 10) - 1);
-
-//     for (let i = 0; i < arrayThree.length; i += 1) {
-//       if (typeof arrayThree[i] === 'object') {
-//         arrIndex.push(parseInt(arrayThree[i][0].num, 10) - 1);
-//       }
-//     }
-//   } else {
-//     // Eevee
-//     for (let i = 0; i < arrayTwo.length; i += 1) {
-//       if (arrayTwo[i].num < 251) {
-//         arrIndex.push(parseInt(arrayTwo[i].num, 10) - 1);
-//       } else {
-//         arrIndex.push(arrayTwo[i].name);
-//       }
-//     }
-//   }
-//   return arrIndex;
-// };
 const sectionContent = document.querySelector('.content');
 
+// Modal features
 const featuresCard = (pokemon) => {
   const getTypes = (arr) => {
     let types = '';
@@ -43,6 +19,7 @@ const featuresCard = (pokemon) => {
     });
     return types;
   };
+
   const sectionModal = document.createElement('section');
   sectionModal.classList.add('modal-container', 'modal-close');
   sectionModal.classList.toggle('modal-close');
@@ -99,15 +76,7 @@ const featuresCard = (pokemon) => {
   close.addEventListener('click', () => {
     sectionModal.classList.toggle('modal-close');
   });
-  const filterImg = (dataPokemon, nameP) => {
-    let img = 'assets/No_image_available.svg';
-    for (let i = 0; i < dataPokemon.length; i += 1) {
-      if (dataPokemon[i].name === nameP) {
-        img = dataPokemon[i].img;
-      }
-    }
-    return img;
-  };
+
   const evolutionContainer = cardContainer.querySelector('.evolutions');
   const pokEvolution = pokemon.evolution;
   const arrayOne = Object.values(pokEvolution);
@@ -115,33 +84,50 @@ const featuresCard = (pokemon) => {
 
   const prevEvolution = Object.prototype.hasOwnProperty.call(pokEvolution, 'prev-evolution');
   const nextEvolution = Object.prototype.hasOwnProperty.call(pokEvolution, 'next-evolution');
+
+  const evolutionCard = (nameP, evolution, cStyle) => {
+    let img = 'assets/No_image_available.svg';
+    for (let i = 0; i < data.pokemon.length; i += 1) {
+      if (data.pokemon[i].name === nameP) {
+        img = data.pokemon[i].img;
+      }
+    }
+    const element = `
+    <div class="${cStyle}">
+      <img src="${img}">
+      <p>${evolution}</p>
+      <p>${nameP}</p>
+    </div>`;
+    return element;
+  };
+
   if (prevEvolution && nextEvolution) {
-    evolutionContainer.innerHTML = `
-    <div class="eachContainer">
-      <img src="${filterImg(data.pokemon, arrayOne[keysArrayOne.indexOf('prev-evolution')][0].name)}">
-      <p>Pre-evolution</p>
-      <p>${arrayOne[keysArrayOne.indexOf('prev-evolution')][0].name}</p>
-    </div>
-    <div class="eachContainer">
-      <img src="${filterImg(data.pokemon, arrayOne[keysArrayOne.indexOf('next-evolution')][0].name)}">
-      <p>Next-evolution</p>
-      <p>${arrayOne[keysArrayOne.indexOf('next-evolution')][0].name}</p>
-    </div>`;
-  } else if (prevEvolution) {
-    // const arrayTwo = Object.values(arrayOne[keysArrayOne.indexOf('prev-evolution')][0]);
-    evolutionContainer.innerHTML += `
-    <div class="eachContainer">
-      <img src="${filterImg(data.pokemon, arrayOne[keysArrayOne.indexOf('prev-evolution')][0].name)}"
-      <p>Pre-evolution</p>
-      <p>${arrayOne[keysArrayOne.indexOf('prev-evolution')][0].name}</p>
-    </div>`;
-  } else if (nextEvolution) {
-    evolutionContainer.innerHTML += `
-    <div class="eachContainer">
-      <img src="${filterImg(data.pokemon, arrayOne[keysArrayOne.indexOf('next-evolution')][0].name)}"
-      <p>Pre-evolution</p>
-      <p>${arrayOne[keysArrayOne.indexOf('next-evolution')][0].name}</p>
-    </div>`;
+    const prevName = arrayOne[keysArrayOne.indexOf('prev-evolution')][0].name;
+    const nextName = arrayOne[keysArrayOne.indexOf('next-evolution')][0].name;
+    evolutionContainer.innerHTML = evolutionCard(prevName, 'prev-evolution', 'eachContainer');
+    evolutionContainer.innerHTML += evolutionCard(nextName, 'next-evolution', 'eachContainer');
+  } else if (prevEvolution || nextEvolution) {
+    let evolutionType = '';
+
+    if (prevEvolution) {
+      evolutionType = 'prev-evolution';
+    } else { evolutionType = 'next-evolution'; }
+
+    const arrayTwo = arrayOne[keysArrayOne.indexOf(evolutionType)];
+    if (arrayTwo.length === 1) {
+      evolutionContainer.innerHTML = evolutionCard(arrayTwo[0].name, evolutionType, 'eachContainer');
+
+      if (Object.prototype.hasOwnProperty.call(arrayTwo[0], evolutionType)) {
+        const arrayThree = Object.values(arrayTwo[0]);
+        const keysArrayTwo = Object.keys(arrayTwo[0]);
+        const lastArray = arrayThree[keysArrayTwo.indexOf(evolutionType)];
+        evolutionContainer.innerHTML += evolutionCard(lastArray[0].name, evolutionType, 'eachContainer');
+      }
+    } else {
+      arrayTwo.forEach((moreEvolutions) => {
+        evolutionContainer.innerHTML += evolutionCard(moreEvolutions.name, evolutionType, 'moreContainer');
+      });
+    }
   } else {
     evolutionContainer.innerHTML += `
     <p>This pokemons doesn't have evolutions</p>
