@@ -34,7 +34,7 @@ buscar.addEventListener('keyup', (evt) => {
   const texto = evt.target.value.toLowerCase();// extraemos el valor de la caja de texto
   const filtroCampeon = filtrarNombre(listaTodos, texto); // llamo mi funcion
 
-  // CHAMPION NOT FOUND
+  // campeon no encontrado
   const errorMsj = document.querySelector('#error');
   if (filtroCampeon.length === 0) {
     errorMsj.style.display = 'block';
@@ -45,7 +45,7 @@ buscar.addEventListener('keyup', (evt) => {
 },
 false);
 
-
+// filtrando por Rol
 const mostrarAssassin = document.getElementById('Assassin');
 mostrarAssassin.addEventListener('click', (event) => {
   const rolSeleccionado = event.target.value;
