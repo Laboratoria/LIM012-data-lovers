@@ -1,6 +1,5 @@
 /* eslint-disable import/named */
-/* eslint-disable import/extensions */
-import { sortData, filterData } from '../src/data';
+import { sortData, filterData } from '../src/data.js';
 
 
 const data = [

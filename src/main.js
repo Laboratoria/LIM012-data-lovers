@@ -1,6 +1,5 @@
 /* eslint-disable import/named */
 /* eslint-disable no-undef */
-/* eslint-disable import/extensions */
 // import data from './data/atletas/atletas.js';
 // import data from './data/pokemon/pokemon.js';
 
@@ -12,6 +11,9 @@ import { sortData, filterData } from './data.js';
 
 const allChampion = data.data;
 const arrObjetos = Object.values(allChampion);
+console.log(allChampion);
+console.log(arrObjetos);
+
 
 const crearTemplate = (arr) => {
   arr.forEach((champion) => {
