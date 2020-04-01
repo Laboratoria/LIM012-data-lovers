@@ -39,18 +39,34 @@ export const filtroNombre = (data, texto) => {
   return filtroCampeones; // retornamos el array de objetos encontrados
 };
 
-// export const filtrarRoles = (data, rolEscogido) => {
+
+// export const filtrandoRoles = (data, condicion) => {
+//   const rolCampeon = Object.values(data).filter((campeones) => {
+//     if (campeones.tag.indexOf(condicion) !== -1) {
+//       return campeones;
+//     }
+//     return false;
+//   });
+//   return condicion === 'ALL' ? Object.value(data) : rolCampeon;
+// };
+
+// export const filtrandoRoles = (data, rolEscogido) => {
 //   const tipoRol = Object.values(data.tags);
-//   const filtroRol = Object.values(data).filter((campeones) => (
-//     rolEscogido === campeones.tags(tipoRol)
-//   ));
+//   // console.log (tipoRol);
+//   const filtroRol = tipoRol.filter(rolEscogido === tipoRol);
 //   return filtroRol;
 // };
 
-// export const filtroLuchador = (data, property, condicion) => {
-//   const campeonLuchador = Object.values(data).filter((campeon) =>
-// campeon.tags[property] === condicion);
-//   return campeonLuchador;
-// };
+const filtrandoRoles = (data, string) => {
+  const newArray = [];
+  for (let i = 0; i < data.length; i++) {
+    const arrTags = data[i].tags;
+    for (let j = 0; j < arrTags.length; j++) {
+      if (arrTags[j] === string) {
+        newArray.push(data[i]);
+      }
+    }
+    return newArray;
+  }
+};
 
-// export const anotherExample = () => 'OMG';
