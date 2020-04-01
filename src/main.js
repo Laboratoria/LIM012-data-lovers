@@ -45,52 +45,42 @@ buscar.addEventListener('keyup', (evt) => {
 },
 false);
 
-// // Filtrado de Roles
-// const orderLuchador = document.querySelector('#luchador');
-// orderLuchador.addEventListener('click', () => {
-//   const orderSelectLuchador = orderLuchador.value;
-//   resultado(filtroLuchador(listaTodos, 'tags', orderSelectLuchador));
-// });
 
-const mostrarAsesinos = document.getElementById('Assassin');
-mostrarAsesinos.addEventListener('click', () => {
-  document.getElementById('pantalla2').style.display = 'none';
-  document.getElementById('pantalla3').style.display = 'block';
+const mostrarAssassin = document.getElementById('Assassin');
+mostrarAssassin.addEventListener('click', (event) => {
+  const rolSeleccionado = event.target.value;
+  resultado(filtrandoRoles(arrayCampeones, rolSeleccionado));
 });
-// <div> de almacen (asesinos)
-const contenedorAsesino = document.querySelector('#listaAsesino');
-const mostrandoAsesinos = (dataLol) => {
-  let result = '';
-  dataLol.forEach((champion) => {
-    const casillaCamp = `
-    <section>
-      <img src=${champion.splash} class="imgSplash">
-      <p class="name">${champion.name}</p><br><br>
-       <p class="tags">Tags:</span> ${champion.tags}</p><br>
-     </section>
-      `;
-    result += casillaCamp;
-  });
-  contenedorAsesino.innerHTML = result;
-};
-mostrandoAsesinos(arrayCampeones);
 
-const listaAsesinos = document.querySelector('#Assassin');
-listaAsesinos.addEventListener('click', () => {
-  const mostrar = listaAsesinos.value.toLowerCase();
-  mostrandoAsesinos(filtrandoRoles(arrayCampeones, mostrar));
+const mostrarFighter = document.getElementById('Fighter');
+mostrarFighter.addEventListener('click', (event) => {
+  const rolSeleccionado = event.target.value;
+  resultado(filtrandoRoles(arrayCampeones, rolSeleccionado));
 });
-// const filtro = document.querySelector('#luchador');
-// filtro.addEventListener('click', () => {
-//   const tagsData = Object.values(listaTodos.tags);
-//   console.log(tagsData);
-// });
-/* const rolesEnLaData = Object.values(tagsData);
-  // console.log(rolesEnLaData);
-  const filtroRol = evt.target.filtrarRoles(rolesEnLaData, rolEscogido);
-  return filtroRol;
-}); */
 
+const mostrarMage = document.getElementById('Mage');
+mostrarMage.addEventListener('click', (event) => {
+  const rolSeleccionado = event.target.value;
+  resultado(filtrandoRoles(arrayCampeones, rolSeleccionado));
+});
+
+const mostrarMarksman = document.getElementById('Marksman');
+mostrarMarksman.addEventListener('click', (event) => {
+  const rolSeleccionado = event.target.value;
+  resultado(filtrandoRoles(arrayCampeones, rolSeleccionado));
+});
+
+const mostrarAsesinos = document.getElementById('Support');
+mostrarAsesinos.addEventListener('click', (event) => {
+  const rolSeleccionado = event.target.value;
+  resultado(filtrandoRoles(arrayCampeones, rolSeleccionado));
+});
+
+const mostrarTank = document.getElementById('Tank');
+mostrarTank.addEventListener('click', (event) => {
+  const rolSeleccionado = event.target.value;
+  resultado(filtrandoRoles(arrayCampeones, rolSeleccionado));
+});
 // boton de ordenar
 const ordenar = document.getElementById('ordenar');
 ordenar.addEventListener('change', (evt) => {

@@ -40,10 +40,16 @@ export const filtrarNombre = (data, texto) => {
 };
 
 export const filtrandoRoles = (data, rolEscogido) => {
-  const tipoRol = Object.values(data.tags);
-  // console.log (tipoRol);
-  const filtroRol = tipoRol.filter(rolEscogido === tipoRol);
-  return filtroRol;
+  const newArray = [];
+  for (let i = 0; i < data.length; i++) {
+    const arrTags = data[i].tags;
+    for (let j = 0; j < arrTags.length; j++) {
+      if (arrTags[j] === rolEscogido) {
+        newArray.push(data[i]);
+      }
+    }
+  }
+  return newArray;
 };
 
 // export const anotherExample = () => 'OMG';
