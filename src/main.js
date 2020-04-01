@@ -1,11 +1,12 @@
 /* eslint-disable no-restricted-syntax */
 
 import lol from './data/lol/lol.js';
-import { filtroNombre, ordenarCampeones } from './data.js';
+import { filtrarNombre, ordenarCampeones, filtrandoRoles } from './data.js';
 
 const listaTodos = lol.data; // en esta variable guardo los objetos de la data
-const lista = document.querySelector('#galeria'); // selecciono la parte donde voy a poner la informacion
+const arrayCampeones = Object.values(listaTodos);
 
+const lista = document.querySelector('#galeria'); // selecciono la parte donde voy a poner la informacion
 const resultado = (data) => {
   // vaciar arreglo para que no se duplique
   lista.innerHTML = '';
@@ -31,7 +32,7 @@ resultado(listaTodos);
 const buscar = document.querySelector('#buscador');
 buscar.addEventListener('keyup', (evt) => {
   const texto = evt.target.value.toLowerCase();// extraemos el valor de la caja de texto
-  const filtroCampeon = filtroNombre(listaTodos, texto); // llamo mi funcion
+  const filtroCampeon = filtrarNombre(listaTodos, texto); // llamo mi funcion
 
   // CHAMPION NOT FOUND
   const errorMsj = document.querySelector('#error');
@@ -51,7 +52,34 @@ false);
 //   resultado(filtroLuchador(listaTodos, 'tags', orderSelectLuchador));
 // });
 
+const mostrarAsesinos = document.getElementById('Assassin');
+mostrarAsesinos.addEventListener('click', () => {
+  document.getElementById('pantalla2').style.display = 'none';
+  document.getElementById('pantalla3').style.display = 'block';
+});
+// <div> de almacen (asesinos)
+const contenedorAsesino = document.querySelector('#listaAsesino');
+const mostrandoAsesinos = (dataLol) => {
+  let result = '';
+  dataLol.forEach((champion) => {
+    const casillaCamp = `
+    <section>
+      <img src=${champion.splash} class="imgSplash">
+      <p class="name">${champion.name}</p><br><br>
+       <p class="tags">Tags:</span> ${champion.tags}</p><br>
+     </section>
+      `;
+    result += casillaCamp;
+  });
+  contenedorAsesino.innerHTML = result;
+};
+mostrandoAsesinos(arrayCampeones);
 
+const listaAsesinos = document.querySelector('#Assassin');
+listaAsesinos.addEventListener('click', () => {
+  const mostrar = listaAsesinos.value.toLowerCase();
+  mostrandoAsesinos(filtrandoRoles(arrayCampeones, mostrar));
+});
 // const filtro = document.querySelector('#luchador');
 // filtro.addEventListener('click', () => {
 //   const tagsData = Object.values(listaTodos.tags);

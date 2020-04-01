@@ -31,7 +31,7 @@ export const ordenarCampeones = (listaTodos, term) => {
 };
 
 
-export const filtroNombre = (data, texto) => {
+export const filtrarNombre = (data, texto) => {
   const longitudcadenaBuscada = texto.length;
   const filtroCampeones = Object.values(data).filter((campeones) => (
     texto === campeones.name.toLowerCase().substring(0, longitudcadenaBuscada)
@@ -39,18 +39,11 @@ export const filtroNombre = (data, texto) => {
   return filtroCampeones; // retornamos el array de objetos encontrados
 };
 
-// export const filtrarRoles = (data, rolEscogido) => {
-//   const tipoRol = Object.values(data.tags);
-//   const filtroRol = Object.values(data).filter((campeones) => (
-//     rolEscogido === campeones.tags(tipoRol)
-//   ));
-//   return filtroRol;
-// };
-
-// export const filtroLuchador = (data, property, condicion) => {
-//   const campeonLuchador = Object.values(data).filter((campeon) =>
-// campeon.tags[property] === condicion);
-//   return campeonLuchador;
-// };
+export const filtrandoRoles = (data, rolEscogido) => {
+  const tipoRol = Object.values(data.tags);
+  // console.log (tipoRol);
+  const filtroRol = tipoRol.filter(rolEscogido === tipoRol);
+  return filtroRol;
+};
 
 // export const anotherExample = () => 'OMG';
