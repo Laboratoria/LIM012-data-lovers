@@ -18,64 +18,79 @@
         <!-- <img id = "logo-pokemon" src="images/header4.png" alt=""> -->
       </header>
 
-      <div id="modal-mode">        
+      <div id="modal-mode">     
+
         <div id="modal-window" class="fixed">
-        <img src="images/close.png" alt="" id="close-modal" class="icon-small btn-close-img">
+        <!-- <img src="images/close.png" alt="" id="close-modal" class="icon-small btn-close-img"> -->
+        <i class="icon-cross " id="close-modal"></i>
         <div id="div-img-modal" >          
-          <img src="" id="img-pokemon-modal" class="pokemon-img-medium">          
-          
-        </div>        
+          <img src="" id="img-pokemon-modal" class="pokemon-img-medium">                    
+        </div>  
+        
         <section id="body-modal" class="modal- flex-wrap">  
-          <div id="div-pokemon-name-modal" class="font"></div>          
-          
-          <div class="column-1 flex-wrap">
-            <img src="images/cintam.png" alt="" class="icon-medium icon-center">
+          <span id="div-pokemon-name-modal" class="font"></span>                              
+          <div class="column-1 flex-wrap color-container">
+            <img src="images/cintam.png" alt="" class="icon-medium">
             <div class="font">
               <span class="label-section ">Height</span>
               <span id="height" class="data-section-2"></span>
             </div>
-            
-            
-          </div>
-          <div class="column-1 flex-wrap">
-            <img src="images/balanza.png" alt="" class="icon-medium icon-center ">
+          </div>          
+          <div class="column-1 flex-wrap color-container">
+            <img src="images/balanza.png" alt="" class="icon-medium">
             <div class="font">
               <span class="label-section">Weight</span>
               <span id="weight" class="data-section-2"></span>
             </div>          
           </div>
-          <div class="column-1 flex-wrap">
-            <img src="images/world.png" alt="" class="icon-medium icon-center">
+          <div class="column-1 flex-wrap color-container">
+            <img src="images/world.png" alt="" class="icon-medium">
             <div class="font">
               <span class="label-section ">Region</span>
               <span id="region" class="data-section-2"></span>
             </div>
           </div>
-          <div class="column-2 font" id = "sections-types">
-            <p class="label-section text-aling"> Type</p>            
+
+          <div class="column-1 flex-wrap color-container">
+            <img src="images/candy.png" alt="" class="icon-medium">
+            <div class="font">
+              <span class="label-section ">Candy</span>
+              <span id="height" class="data-section-2"></span>
+            </div>
+          </div>
+        
+
+          <div class="column-3 font color-container flex-wrap" id = "sections-types">
+            <span class="label-section text-aling"> Type</span>            
+            <span class="label-section text-aling"> Resistant</span>            
+            <span class="label-section text-aling"> Weaknesses</span>            
             <div id = "types" class="section-modal flex-wrap"></div>
-            <p class="label-section text-aling"> Resistant</p>            
             <div id = "resistant" class="section-modal flex-wrap"></div>
-            <p class="label-section text-aling"> Weaknesses</p>            
             <div id = "weaknesses" class="section-modal flex-wrap"></div>
           </div>
-          <div class="column-2 flex-wrap">
-            <div class="column-2 font">
-              <span class="label-section ">Max-CP</span>
-              <span id="max-cp" class="data-section-2"></span>
+
+          <div class="column-3 flex-wrap color-container">
+            <button id="get-set-move" class="font grow">Get Better Set Move</button>
+
+            <div id="move-and-attack" class="column-3 flex-wrap">
+              <span class="label-section font ">Special Atacks</span>
+              <span class="label-section font ">Quick Move</span>
+
+              <table id="special-attacks-table" class="column-2 font">
+                <!-- <tr><th>tipo</th><th>daño</th><th>energia</th>time</tr> -->
+              </table>
+
+              <table id="quick-move-table" class="column-2 font">                
+              </table>        
             </div>
-            <div class="column-2 font">              
-              <span class="label-section ">Max-HP</span>
-              <span id="max-hp" class="data-section-2"></span>
+
+            <div id="calculate-damage" class="column-3 flex-wrap">
+              <table id='table-damage'></table>
             </div>
-            <span class="label-section font ">Special Atacks</span>
-            <div id="special-attacks" class="column-3 font">
-            </div>            
-            
           </div>
+
           <p class="label-section font">EVOLUTION</p>            
-          <div id="evolution" class="column-3 flex-wrap"></div>
-          
+          <div id="evolution" class="column-3 flex-wrap"></div>          
         </section>
       </div>
       </div>

@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?2rifwi');
-  src:  url('fonts/icomoon.eot?2rifwi#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?2rifwi') format('truetype'),
-    url('fonts/icomoon.woff?2rifwi') format('woff'),
-    url('fonts/icomoon.svg?2rifwi#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?bkc6at');
+  src:  url('fonts/icomoon.eot?bkc6at#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?bkc6at') format('truetype'),
+    url('fonts/icomoon.woff?bkc6at') format('woff'),
+    url('fonts/icomoon.svg?bkc6at#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -91,9 +91,6 @@
 .icon-funnel:before {
   content: "\e911";
 }
-.icon-funnel:before {
-  content: "\e911";
-}
 .icon-css3:before {
   content: "\e901";
   color: #1572b6;
@@ -127,17 +124,8 @@
 .icon-circle-up:before {
   content: "\ea41";
 }
-.icon-move-up:before {
-  content: "\ea46";
-}
-.icon-move-down:before {
-  content: "\ea47";
-}
-.icon-filter:before {
-  content: "\ea5b";
-}
-.icon-filter:before {
-  content: "\ea5b";
+.icon-cross:before {
+  content: "\ea0f";
 }
 .icon-circle-down:before {
   content: "\ea43";

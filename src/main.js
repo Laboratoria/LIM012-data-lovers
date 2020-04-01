@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable no-param-reassign */
 /* eslint-disable no-console */
 /* eslint-disable no-loop-func */
@@ -78,7 +79,7 @@ const showMessageOfSearch = (container) => {
 const createPokemonCard = (index, pokemon, container) => {
   if (typeof pokemon !== 'undefined') {
     const card = document.createElement('div');
-    card.className = 'pokemon-card  flex-wrap font';
+    card.className = 'pokemon-card  flex-wrap font grow';
     card.id = pokemon.name;
     card.innerHTML = `<span class="pokemon-name">${pokemon.name}</span>
                       <span class="pokemon-cp-hp">MAX CP ${pokemon.stats['max-cp']} / MAX HP ${pokemon.stats['max-cp']}</span>              
@@ -319,33 +320,6 @@ const filterSystem = () => {
   }
 };
 
-
-// const orderSimpleData = (option) => {
-//   if (isContainerShowMore) {
-//     currentData = orderBy(currentData, option);
-//     showCard(currentData, divCardContainerFlex);
-//     // console.log(`seccion mostrar de tipo: ${showMoreSection}`);
-//     // switch (showMoreSection) {
-//     //   case 'type':
-//     //     break;
-//     //   case 'resistant':
-//     //     currentData = orderBy(currentData, option);
-//     //     showCard(resultResistant, divCardContainerFlex);
-//     //     break;
-//     //   case 'weaknesses':
-//     //     currentData = orderBy(currentData, option);
-//     //     showCard(resultWeaknesses, divCardContainerFlex);
-//     //     break;
-//     //   default:
-//     // do nothing
-//     // }
-//   } else {
-//     console.log('seccion de data simple');
-//     currentData = orderBy(currentData, option);
-//     showCard(currentData, divCardContainerFlex);
-//   }
-// };
-
 // revisando codigo
 const orderSections = (option) => {
   resultTypes = orderBy(resultTypes, option);
@@ -359,21 +333,11 @@ const orderSystem = () => {
   const optionsOrder = document.getElementsByClassName('order-option');
   for (let i = 0; i < optionsOrder.length; i += 1) {
     optionsOrder[i].addEventListener('click', () => {
-      // reverse = true;
-      // eslint-disable-next-line no-return-assign
-      // optionsOrder.forEach(element => element.style.background = 'rgb(43, 41, 41)');
-      // for (let i = 0; i < optionsOrder.length; i += 1) {
-      //   optionsOrder[i].style.background = 'rgb(43, 41, 41)';
-      // }
       optionsOrder[i].style.background = '#0F4C75';
       btnChangeOrder.style.visibility = 'visible';
       if (isContainerSection) {
-        // console.log("secciones");
         orderSections(whichOrder[i]);
-        // changeOrderCurrentData(divCardContainerBlock);
       } else {
-        // console.log("felxbox conteiner");
-        // orderSimpleData(whichOrder[i]);
         currentData = orderBy(currentData, whichOrder[i]);
         showCard(currentData, divCardContainerFlex);
         changeOrderCurrentData(divCardContainerFlex);
@@ -407,39 +371,85 @@ const createIconType = (type) => {
   return iconType;
 };
 
-const showEvolution = (currentPokemon, container, prev, next) => {
+const showEvolution = (poke, container, prev, next) => {
   container.innerHTML = '';
-  console.log(prev);
+  let divContainer; let pokemon;
   if (prev !== undefined) {
     for (let i = 0; i < prev.length; i += 1) {
-      const divContainer = document.createElement('div');
-      divContainer.className = 'div-evolution-img';
-      const img = document.createElement('img');
-      img.className = 'pokemon-img-small';
-      const pokemon = data.pokemon.find(pk => pk.name === prev[i].name);
-      img.setAttribute('src', pokemon.img);
-      divContainer.append(img);
-      container.append(img);
+      pokemon = data.pokemon.find(pk => pk.name === prev[i].name);
+      if (pokemon !== undefined) {
+        divContainer = document.createElement('div');
+        divContainer.className = 'card-pokemon-evolition';
+        divContainer.innerHTML = `<span class="font">${pokemon.name}</span>
+                                  <img src="${pokemon.img}" alt="" class="pokemon-img-small">`;
+        container.append(divContainer);
+      }
     }
   }
-  const imgCurr = document.createElement('img');
-  imgCurr.className = 'pokemon-img-small';
-  imgCurr.style.border = 'rgb(238, 222, 76) solid 1px';
-  imgCurr.setAttribute('src', currentPokemon);
-  container.append(imgCurr);
+  divContainer = document.createElement('div');
+  divContainer.className = 'card-pokemon-evolition';
+  divContainer.innerHTML = `<span class="font">${poke.name}</span>
+                            <img src="${poke.img}" alt="" class="pokemon-img-small">`;
+  container.append(divContainer);
 
-  // console.log(next);
   if (next !== undefined) {
     for (let i = 0; i < next.length; i += 1) {
-      const divContainer = document.createElement('div');
-      divContainer.className = 'div-evolution-img';
-      const img = document.createElement('img');
-      img.className = 'pokemon-img-small';
-      const pokemon = data.pokemon.find(pk => pk.name === next[i].name);
-      img.setAttribute('src', pokemon.img);
-      divContainer.append(img);
-      container.append(img);
+      pokemon = data.pokemon.find(pk => pk.name === next[i].name);
+      if (pokemon !== undefined) {
+        divContainer = document.createElement('div');
+        divContainer.className = 'card-pokemon-evolition';
+        divContainer.innerHTML = `<span class="font">${pokemon.name}</span>
+                                  <img src="${pokemon.img}" alt="" class="pokemon-img-small">`;
+        container.append(divContainer);
+      }
     }
+  }
+};
+
+const createIcons = (list, container) => {
+  for (let i = 0; i < list.length; i += 1) {
+    container.append(createIconType(list[i]));
+  }
+};
+
+const buildTable = (list, table) => {
+  table.innerHTML = '';
+  table.innerHTML = `<tr><th></th>
+                    <th><img class="icon-small" src="images/type.png"></th>
+                    <th><img class="icon-small" src="images/box.png"></th>
+                    <th><img class="icon-small" src="images/energy.png"></th>
+                    <th><img class="icon-small" src="images/time.png"></tr>`;
+  for (let i = 0; i < list.length; i += 1) {
+    const row = `<tr><td>${list[i].name}</td>
+                    <td><img class="icon-small" src="/images/${list[i].type}-icon.png"></td>
+                    <td>${list[i]['base-damage']}</td>
+                    <td>${list[i].energy}</td>
+                    <td>${list[i]['move-duration-seg']}</td></tr>`;
+    table.innerHTML += `${row}`;
+  }
+};
+const calculate = document.getElementById('get-set-move');
+const divMoveAndAttacks = document.getElementById('move-and-attack');
+const divcalculateMove = document.getElementById('calculate-damage');
+let isShowMove = true;
+calculate.addEventListener('click', () => {
+  if (isShowMove) {
+    divMoveAndAttacks.style.display = 'none';
+    divcalculateMove.style.display = 'block';
+    isShowMove = false;
+  } else {
+    divMoveAndAttacks.style.display = 'flex';
+    divcalculateMove.style.display = 'none';
+    isShowMove = true;
+  }
+});
+
+const calculeDamage = (num, container, list) => {
+  container.innerHTML = '';
+  container.innerHTML += '<tr><th>Quick Move</th><th>Special Attack</th><th>Damage</th></tr>';
+  for (let i = 0; i < num; i += 1) {
+    const row = `<tr><td>${list[i][0]}</td><td>${list[i][1]}</td><td>${list[i][2]}</td></tr>`;
+    row.innerHTML = row;
   }
 };
 
@@ -457,28 +467,18 @@ const showInfoPokemon = (name) => {
   types.innerHTML = '';
   resistant.innerHTML = '';
   weaknesses.innerHTML = '';
-  for (let i = 0; i < pokemon.type.length; i += 1) {
-    types.append(createIconType(pokemon.type[i]));
-  }
-  for (let i = 0; i < pokemon.resistant.length; i += 1) {
-    resistant.append(createIconType(pokemon.resistant[i]));
-  }
-  for (let i = 0; i < pokemon.weaknesses.length; i += 1) {
-    weaknesses.append(createIconType(pokemon.weaknesses[i]));
-  }
-  document.getElementById('max-cp').textContent = pokemon.stats['max-cp'];
-  document.getElementById('max-hp').textContent = pokemon.stats['max-hp'];
-  const specialAttacks = document.getElementById('special-attacks');
-  specialAttacks.innerHTML = '';
-  for (let i = 0; i < pokemon['special-attack'].length; i += 1) {
-    const span = document.createElement('span');
-    span.className = 'text-aling label-data';
-    span.textContent = pokemon['special-attack'][i].name;
-    specialAttacks.append(span);
-  }
+  createIcons(pokemon.type, types);
+  createIcons(pokemon.resistant, resistant);
+  createIcons(pokemon.weaknesses, weaknesses);
+  const specialAttacks = document.getElementById('special-attacks-table');
+  const quickMove = document.getElementById('quick-move-table');
+  const calcDamage = document.getElementById('table-damage-table');
+  // calculeDamage(5,calcDamage,arrya);
+  buildTable(pokemon['special-attack'], specialAttacks);
+  buildTable(pokemon['quick-move'], quickMove);
   const evolution = document.getElementById('evolution');
 
-  showEvolution(pokemon.img, evolution, pokemon.evolution['prev-evolution'], pokemon.evolution['next-evolution']);
+  showEvolution(pokemon, evolution, pokemon.evolution['prev-evolution'], pokemon.evolution['next-evolution']);
 };
 
 const loadPage = () => {
