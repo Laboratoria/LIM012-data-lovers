@@ -51,4 +51,3 @@ export const filtrandoRoles = (data, rolEscogido) => {
   }
   return newArray;
 };
-
