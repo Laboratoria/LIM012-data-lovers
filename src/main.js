@@ -53,9 +53,9 @@ const RAorden = ( a, b) => {
   return 0;
 }
 
-  const dataFiltradoRol = (param)=> {
+  const dataFiltradoRol = (rol)=> {
 
-    let rol = param.target == undefined ? param : param.target.value;
+    // let rol = param.target == undefined ? param : param.target.value;
     let top = document.getElementById("top");
     // let stringTemplate = '';
     // let container = document.getElementById('container');
@@ -81,9 +81,9 @@ const RAorden = ( a, b) => {
     // container.innerHTML= stringTemplate;
   }
 
-  const dataFiltradoTop = (param) => {
+  const dataFiltradoTop = (top) => {
     // debugger;
-    let top = param.target == undefined ? param : param.target.value;
+    // let top = param.target == undefined ? param : param.target.value;
     let orden = document.getElementById("orden");
 
     if (top != '-1'){
@@ -104,20 +104,17 @@ const RAorden = ( a, b) => {
     dataFiltradoOrden(orden.value);
   }
 
-  const dataFiltradoOrden = (param) => {
+  const dataFiltradoOrden = (orden) => {
 
-    let orden = param.target == undefined ? param : param.target.value;
+    // let orden = param.target == undefined ? param : param.target.value;
     let stringTemplate = '';
     let container = document.getElementById('container');
-    let conteo = document.getElementById('conteo');
     let listOrden = [];
 
     if (orden == "AZ")
       listOrden = listadoHeroesMostrar.sort(nombreAscendente);
     else
       listOrden = listadoHeroesMostrar.sort(nombreDescendente);
-
-      conteo.value = listOrden.length;
 
     for (const item in listOrden)
     {
@@ -131,17 +128,42 @@ const RAorden = ( a, b) => {
 
     container.innerHTML= stringTemplate;
 
+    mostrarConteo(listOrden.length);
   }
+
+const mostrarConteo =(cantidad) =>{
+  let conteo = document.getElementById('conteo');
+  let mensaje =  `Cantidad:  ${cantidad}`;
+  conteo.value = mensaje;
+}
+
+
 
 /* Ejecucion del filtro roles "Todos" */
   dataFiltradoRol('-1'); //Es el primero que se ejecuta cuando se carga la página
 
 /* Agregar eventos */
-  let listRoles = document.getElementById("roles");
-  let listOrden = document.getElementById("orden");
-  let listTop = document.getElementById("top");
+  // let listRoles = document.getElementById("roles");
+  // let listOrden = document.getElementById("orden");
+  // let listTop = document.getElementById("top");
 
-  listRoles.addEventListener("change", dataFiltradoRol);
-  listOrden.addEventListener("change", dataFiltradoOrden);
-  listTop.addEventListener("change", dataFiltradoTop);
+  // listRoles.addEventListener("change", dataFiltradoRol);
+  // listOrden.addEventListener("change", dataFiltradoOrden);
+  // listTop.addEventListener("change", dataFiltradoTop);
 
+
+  const selectRoles = document. ('.roles');
+  const selectTop = document.querySelector('.top');
+  const selectOrden = document.querySelector('.orden');
+
+  selectRoles.addEventListener("change", (event)=>{
+    dataFiltradoRol(event.target.value);
+  });
+
+  selectTop.addEventListener("change", (event)=>{
+    dataFiltradoTop(event.target.value);
+  });
+
+  selectOrden.addEventListener("change", (event)=>{
+    dataFiltradoOrden(event.target.value);
+  });

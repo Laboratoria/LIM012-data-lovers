@@ -68,6 +68,9 @@
     background-position: 50%;
     border-radius: 50%;
     background-size: 100% auto;
+    box-shadow: 2px 2px 5px #E9F7B5;
+    border: double #BDE82B;
+    border-style: double;    
 }
 
 
