@@ -1,6 +1,8 @@
 import {
   athletesView,
   ordenAs,
+  filtrarAtletasPorDeporte,
+
 } from '../src/data.js';
 
 const input = [
@@ -101,5 +103,37 @@ describe('ordenAs', () => {
       },
     ];
     expect(ordenAs(input)).toEqual(twoOutput);
+  });
+});
+
+describe('filtrarAtletasPorDeporte', () => {
+  it('is a function', () => {
+    expect(typeof filtrarAtletasPorDeporte).toBe('function');
+  });
+
+  it('Deberia retornar un array con atletas que solo hayan participado en el deporte Archery', () => {
+    const threeOutput = [
+      {
+        nombre: 'Matteo Bisiani',
+        genero: 'M',
+        altura: '184',
+        peso: '85',
+        fecha: 1976,
+        deporte: 'Archery',
+        equipo: 'Italy',
+        noc: 'ITA',
+      },
+      {
+        nombre: 'Nataliya Andrivna Burdeina',
+        genero: 'F',
+        altura: '165',
+        peso: '63',
+        fecha: 1974,
+        deporte: 'Archery',
+        equipo: 'Ukraine',
+        noc: 'UKR',
+      },
+    ];
+    expect(filtrarAtletasPorDeporte((input, 'Archery'))).toEqual(threeOutput);
   });
 });
