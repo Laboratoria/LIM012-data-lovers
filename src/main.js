@@ -152,7 +152,7 @@ const mostrarConteo =(cantidad) =>{
   // listTop.addEventListener("change", dataFiltradoTop);
 
 
-  const selectRoles = document. ('.roles');
+  const selectRoles = document.querySelector('.roles');
   const selectTop = document.querySelector('.top');
   const selectOrden = document.querySelector('.orden');
 
