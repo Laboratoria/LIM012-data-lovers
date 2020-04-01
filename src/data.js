@@ -1,4 +1,3 @@
-/* eslint-disable spaced-comment */
 /* eslint-disable no-plusplus */
 // export const example = () => 'example';
 // export const anotherExample = () => 'OMG';
@@ -29,6 +28,14 @@ export const sortData = (data, sortBy, sortOrder) => {
       return 0;
     });
   }
+  /*if (sortOrder === 'todos') {
+    newArray.sort((a, b) => {
+      if (a.name > b.name) {
+        return 1;
+      }
+      return -1;
+    });
+  }*/
   return newArray;
 };
 

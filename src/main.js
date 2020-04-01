@@ -1,9 +1,9 @@
-/* eslint-disable import/named */
+/* eslint-disable spaced-comment */
+/* eslint-disable no-restricted-globals */
+/* eslint-disable no-plusplus */
 /* eslint-disable no-undef */
-/* eslint-disable import/extensions */
 // import data from './data/atletas/atletas.js';
 // import data from './data/pokemon/pokemon.js';
-
 
 //  AQUI MANEJAMOS EL DOOM
 
@@ -18,17 +18,17 @@ const crearTemplate = (arr) => {
     const newElement = document.createElement('div');
     const img = document.createElement('img');
     const p = document.createElement('p');
-    const h3 = document.createElement('h3');
+    // const h3 = document.createElement('h3');
     newElement.classList.add('class-div');
     img.classList.add('class-img');
     p.classList.add('class-name');
-    h3.classList.add('class-tags');
+    // h3.classList.add('class-tags');
     img.src = `${champion.splash}`;
     p.innerHTML = `${champion.name}`;
-    h3.innerHTML = `${champion.tags.join(', ')}`;
+    // h3.innerHTML = `${champion.tags}`;
     newElement.appendChild(img);
     newElement.appendChild(p);
-    newElement.appendChild(h3);
+    // newElement.appendChild(h3);
     const container = document.getElementById('container');
     container.appendChild(newElement);
   });
@@ -36,12 +36,18 @@ const crearTemplate = (arr) => {
 crearTemplate(arrObjetos);
 
 // ORDENAR DATA
-const orderAlphabetically = document.getElementById('orderAlphabetically');
-orderAlphabetically.addEventListener('change', () => {
-  const sortingOut = orderAlphabetically.value;
+const orderAz = document.getElementById('orderAz');
+orderAz.addEventListener('click', () => {
   container.innerHTML = '';
-  crearTemplate(sortData(arrObjetos, 'name', sortingOut));
+  crearTemplate(sortData(arrObjetos, 'name', 'ascendente'));
 });
+
+const orderZa = document.getElementById('orderZa');
+orderZa.addEventListener('click', () => {
+  container.innerHTML = '';
+  crearTemplate(sortData(arrObjetos, 'name', 'descendente'));
+});
+
 
 // FILTRAR DATA
 const assassin = document.getElementById('assassin');
@@ -78,4 +84,24 @@ const tank = document.getElementById('tank');
 tank.addEventListener('click', () => {
   container.innerHTML = '';
   crearTemplate(filterData(arrObjetos, 'Tank'));
+});
+
+/*const currentLocation = location.href;
+const menuItems = document.querySelectorAll('a');
+const menuLengths = menuItems.length;
+for (let i = 0; i % menuLengths; i++) {
+  if (menuItems[i].href === currentLocation) {
+    menuItems[i].className = 'active';
+  }
+}*/
+
+//AGREGAR O ELIMINAR CLASE,ACTIVAR AL HACER CLICK
+const ul = document.querySelector('ul');
+const li = document.querySelectorAll('li');
+
+li.forEach((el) => {
+  el.addEventListener('click', () => {
+    ul.querySelector('.active').classList.remove('active');
+    el.classList.add('active');
+  });
 });

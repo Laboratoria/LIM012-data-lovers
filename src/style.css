@@ -1,11 +1,10 @@
-/*definiendo nuestro paquete de colores,en css se pueden declarar variables*/
 :root {
   --color-black: #000;
   --color-nav-dark: #2d2e2e;
   --color-main: #F2EFEF;
   --color-footer: #d0ff00;
   --color-white: #fff;
-  --color-borde: #937341;
+  --color-dorado: #937341;
 }
 
 /*valores por defecto*/
@@ -18,80 +17,144 @@
 
 /*contenedor general*/
 body {
-  
-  /* display: flex;
-  flex-direction: column; */
+  background-image: url(img/fondo.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  /*display: flex;
+  flex-direction: column;
   width: 100%;
   min-height: 100vh; /*altura definida*/
   font-family: Arial;
 }
 
-/*el main-header solo contiene una imagen AHORA SE LLAMA header*/
-/* .logo{ 
+/*el header solo contiene una imagen*/
+.main-header{
+  background: url(img/logo2.jpg);
   background-color: var(--color-black);
   height: 98px;
-} */
+}
 
-/* .main-nav {
-  background-color: var(--color-white);
-} */
+.main-nav {
+  /*background-color: #2b2c2c;*/
+}
 
 /*trabajando con el select*/
-#orderAlphabetically{
+/*#orderAlphabetically{
   background-color: var(--color-black);
   color: var(--color-borde);
-  /* display: inline-block; */
+  display: block;
   outline: none;
-  cursor: pointer;  
-  padding: 0.63rem 0;
-  /* flex-grow: 0; */
-  font-size: 1rem;
-  border: 1px none var(--color-borde);
-}
+  cursor: pointer;
+  flex-grow: 0;
+}*/
 
-#orderAlphabetically:hover {
+/*#orderAlphabetically:hover {
   background-color: var(--color-nav-dark);
-}
+}*/
 
-.menu {
+/*ul*/
+/*.nav-container {
+  display: flex;
   background-color: var(--color-black);
-  /* margin-top: 1%; para poder separar la lista del header, NO MODIFICA ESA DISTANCIA */
-  /* flex-wrap: wrap;envoltura flexible */
+  margin-top: 1%; /*para poder separar la lista del header*/
+  /*flex-wrap: wrap;/*envoltura flexibe
+}*/
+
+ul{
+  display: flex;
+  background-color: var(--color-black);
+  margin-top: 1%; /*para poder separar la lista del header*/
+  flex-wrap: wrap;/*envoltura flexibe*/
 }
 
-.nav-container_item {  
+ul li{
+ list-style: none;
+}
+
+li{
+  flex-grow: 1;
   text-align: center;
   line-height: 2.5;
-  padding-left: 2.7rem;
-  padding-right: 2.7rem;
-  border: 1px solid var(--color-borde);
+  /*border: 1px solid var(--color-dorado);*/
   
 }
 
-.nav-container_item:hover {
+ul li a{
+  position: relative;
+  display: block;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: var(--color-dorado);
+  /*font-weight: bold;*//*tener la letra en negrita*/
+}
+/*FCBA64
+EBB458
+F0B151
+rgba(250, 173, 41, 0.452);*/
+li.active a {
+  font-weight: bold;
+   height: 4px;
+  bottom: 0;
+  /*border-radius: 8px;*/
+  background:rgba(243, 168, 5, 0.842);/*color del cuadrado al elegir la opcion rgb(241, 178, 59);*/
+  color:rgba(243, 168, 5, 0.842);/*colo que se pondra la elegir la opcion*/
+  transition: all .5s ease 0s;
+  /*bottom: 0;*//*para q no sea cuadro sino raya pero no me salio*/
+}
+
+/*li*/
+/*.nav-container_item {
+  flex-grow: 1;
+  text-align: center;
+  line-height: 2.5;
+  border: 1px solid var(--color-dorado);
+}*/
+
+/*li hover*/
+/*.nav-container_item:hover {
   background-color: var(--color-nav-dark);
+}*/
+
+/*li hover*/
+li:hover {
+  background-color:#878a8a73;
+  /*background:#93734148;*/
 }
 
-.nav-container_link {
-  color: var(--color-borde);
-  display: block; /*es necesario para q el mouse al estar no solo en el nombre sino en su caja muestre el link abajo*/
-}
+/*<a>link*/
+/*.nav-container_link {
+  color: var(--color-dorado);
+  display: block; /*es necesario para q el mouse al estar no solo en el nombre sino en su caja muestre el link abajo
+}*/
 
-/*.main-container {
+.main-container {
   display: flex;
   flex-direction: column;
   flex-grow: 1; /*sirve para el crecimiento de las cajas*/
-  /*background-color: var(--color-white);
+ /*background: #2b2c2c;*/
 }
 
 /*trabajando con las imagenes y nombres*/
 .class-div {
+  background-color: rgb(6, 28, 37);
   display: inline-block;
   position: relative;
-  top: 8em; /*para separar el div del borde superior, antes la imagen se metia por dentro del logo y botones*/
-  margin-top: 1.9%;
+  margin-top: 1%;
   transform-style: preserve-3d;/*animacion*/
   transition: 1.5s;/*animacion*/
+  transition: all 0.3s linear;/*ease*/
+  cursor: pointer;
+  border: 1px solid var(--color-dorado);
+
+}
+
+/*agregando de youtube*/
+div:hover{
+ transform: scale(0.96);
+ background:rgba(243, 168, 5, 0.842);
+  /*background-color: rgb(6, 95, 131);*/
 }
 
 .galeria {
@@ -112,26 +175,34 @@ body {
 }
 
 .class-name {
-  font-size: x-large;
+  font-size: 1.3em;
   font-family: 'Acme', sans-serif;/*lo menciono para que aqui se utilize la fuente*/
   font-weight: bolder;
   text-align: center;
-  background-color: #c4c4c4;
-  margin-top: -0.15em;
-  margin-bottom: -0.5em;
+  /*background-color: rgb(6, 28, 37);*/
+  margin-top: -0.2em;/*15*/
   padding: 0.10em;
   text-transform: uppercase;
+  color: var(--color-white);
+  /**/  
+  padding: 6% 8%;
+  padding-top: 2%;
+  padding-right: 8%;
+  padding-bottom: 2%;
+  padding-left: 8%;
 }
 
-.class-tags{
-  font-size: x-large;
-  font-family: 'Acme', sans-serif;/*lo menciono para que aqui se utilize la fuente*/
+
+
+/*.class-tags{
+  font-size: 1.3em;
+  font-family: 'Acme', sans-serif;/*lo menciono para que aqui se utilize la fuente
   font-weight: bolder;
   text-align: center;
   background-color: #c4c4c4;
   margin-top: -0.15em;
   padding: 0.10em;
-}
+}*/
 
 .main-footer{
   background: url(img/facebook.png);
@@ -139,198 +210,16 @@ body {
   background-attachment: fixed;
   background-size: 30px;
   background-repeat: no-repeat;
-  background-color: var(--nav-black);
-  color: var(--color-black);
+  background-color: var(--color-black);
+  color: var(--color-white);
   text-align: center;
-  position: relative; /*the element is positioned absolutely to its first positioned parent*/
-  bottom: 0;
-  width: 100%; 
 }
 
-@media (max-width: 340px) {
-  .class-div {
-    display: inline-block;
-    position: relative;
-    top: 8em; /*para separar el div del borde superior, antes la imagen se metia por dentro del logo y botones*/
-    margin-top: 1.9%;
-    transform-style: preserve-3d;/*animacion*/
-    transition: 1.5s;/*animacion*/
-  }
-  
-  .galeria {
+/*@media screen and (min-width: 768px) {
+  .nav-container {
     display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
   }
-  
-  .class-img {
-    margin: 0;
-    width: 200px;
-    height: 100px;
+  .nav-container_item {
+    flex-grow: 1;
   }
-  
-  @font-face{
-    font-family: 'Acme', sans-serif; /*tipo de letra(fuente)*/
-    src: url('fonts/Acme-Regular.ttf'); /*fuente personalizada desde mi carpeta*/
-  }
-  
-  .class-name {
-    font-size: xx-small;
-    font-family: 'Acme', sans-serif;/*lo menciono para que aqui se utilize la fuente*/
-    font-weight: lighter;
-    text-align: center;
-    background-color: #c4c4c4;
-    margin-top: -0.15em;
-    margin-bottom: -0.5em;
-    padding: 0.10em;
-    text-transform: uppercase;
-  }
-  
-  .class-tags{
-    font-size: xx-small;
-    font-family: 'Acme', sans-serif;/*lo menciono para que aqui se utilize la fuente*/
-    font-weight: lighter;
-    text-align: center;
-    background-color: #c4c4c4;
-    margin-top: -0.15em;
-    padding: 0.10em;
-  }
-}
-
-body {
-  margin: 0;
-  font-family: Helvetica, sans-serif;
-  /* background-color: #bbb; pinta todo el body de gris*/
-}
-
-/* a { el color de la letra de los botones (negro)
-  color: #000;
-} */
-
-/* header */
-
-.header {
-  background-color: #fff;
-  box-shadow: 2px 2px 4px 0 rgba(0,0,0,.1);
-  position: fixed; /*fixed ancor the menu at the top hace que no se expanda el banner pero las imagenes de los campeones quedan por debajo*/
-  width: 100%;
-  z-index: 3;
-}
-
-.header ul {
-  margin: 0; /*set the menu to the top left*/
-  padding: 0; /*set the menu to the top left*/
-  list-style: none; /*remove the bullet or number even thought yoy can't see them*/
-  overflow: hidden; /*if anything flows out of bound it gets hidden*/
-  /* background-color: #fff; */
-}
-
-.header li a {
-  display: block; /*es necesario para q el mouse al estar no solo en el nombre sino en su caja muestre la mano*/
-  /*padding: 20px 20px; se achico para los roles 300px desktop sigue ancho*/ 
-  /* border-right: 1px solid #f4f4f4; */
-  text-decoration: none;
-}
-
-.header li a:hover,
-.header .menu-btn:hover {
-  background-color: #2d2e2e; /*color del fondo del boton cuando se hace hover*/
-}
-
-.header .logo {
-  display: block;
-  float: left;
-  /* font-size: 2em; */
-  padding: 0; /*controla el espacio entre el borde de la pantalla y la imagen del banner con el logo*/
-  /* text-decoration: none; */
-}
-
-/* menu */
-
-.header .menu {
-  clear: both;
-  max-height: 0;
-  transition: max-height .2s ease-out;/*hace que el despliegue tenga estilo, no solo mostrar y desaparecer*/
-}
-
-/* menu icon */
-
-.header .menu-icon {
-  cursor: pointer;
-  float: right; /*posiciona las 3 barras hacia la derecha*/
-  padding: 18px 20px; /*altura y ancho de la caja (ancho de la pantalla)que contiene el menu hamburguesa*/
-  position: relative;
-  user-select: none;
-}
-
-.header .menu-icon .nav-icon {/*dandole estilo a la raya del medio*/
-  background: #333;
-  display: block;
-  height: 2px;
-  position: relative;
-  transition: background .2s ease-out;
-  width: 18px;
-}
-
-.header .menu-icon .nav-icon:before,
-.header .menu-icon .nav-icon:after {
-  background: #333;
-  content: '';
-  display: block;
-  height: 100%;
-  position: absolute;
-  transition: all .2s ease-out;
-  width: 100%;
-}
-
-.header .menu-icon .nav-icon:before { /*barra de abajo*/
-  top: 5px;
-}
-
-.header .menu-icon .nav-icon:after {/*barra de arriba*/
-  top: -5px;
-}
-
-/* menu btn */
-
-.header .menu-btn {
-  display: none;
-}
-/*animacion del boton cuando se hace check sobre el*/
-.header .menu-btn:checked ~ .menu {
-  max-height: 300px; /*altura de la barra desplegada*/
-}
-
-.header .menu-btn:checked ~ .menu-icon .nav-icon {/*override the next 2 rules when the label is checked*/
-  background: transparent;
-}
-
-.header .menu-btn:checked ~ .menu-icon .nav-icon:before {
-  transform: rotate(-45deg);
-  top:0; /*para poner el centro de cada raya a la misma altura y se cree la x*/
-}
-
-.header .menu-btn:checked ~ .menu-icon .nav-icon:after {
-  transform: rotate(45deg);
-  top:0;
-}
-
-
-/* 48em = 768px @ 16pt font */
-
-@media (min-width: 1024px) { /*48em mas pequeño que tablet 768px*/
-  .header li {
-    float: left; /*pone todos los botones apilados a la izquierda*/
-  }
-  .header li a {
-    /* padding: 20px 30px; ajusta el ancho de los botones de rol en modo desktop*/
-  }
-  .header .menu {
-    clear: none; /*para que no flote a la izquierda*/
-    float: right; /*ya puede flotar a la derecha*/
-    max-height: none; /*se pone none porque ya se definio antes el max-height: 240px;*/
-  }
-  .header .menu-icon {
-    display: none; /*desaparece la x para pantallas de tablet o desktop*/
-  }
-}
+}*/
