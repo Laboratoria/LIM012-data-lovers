@@ -41,9 +41,9 @@ export const filtrarNombre = (data, texto) => {
 
 export const filtrandoRoles = (data, rolEscogido) => {
   const newArray = [];
-  for (let i = 0; i < data.length; i++) {
+  for (let i = 0; i < data.length; i += 1) {
     const arrTags = data[i].tags;
-    for (let j = 0; j < arrTags.length; j++) {
+    for (let j = 0; j < arrTags.length; j += 1) {
       if (arrTags[j] === rolEscogido) {
         newArray.push(data[i]);
       }

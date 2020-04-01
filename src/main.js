@@ -45,43 +45,25 @@ buscar.addEventListener('keyup', (evt) => {
 },
 false);
 
+const buttonRoles = document.getElementById('buttonRoles');
+buttonRoles.addEventListener('click', () => {
+  lista.style.display = 'none';
+  document.getElementById('pantalla2').style.display = 'block';
+});
+
 
 // filtrando por Rol
-const mostrarAssassin = document.getElementById('Assassin');
-mostrarAssassin.addEventListener('click', (event) => {
-  const rolSeleccionado = event.target.value;
-  resultado(filtrandoRoles(arrayCampeones, rolSeleccionado));
-});
+const seccionRoles = document.querySelector('.roles');
+const inputsRoles = seccionRoles.querySelectorAll('input');
+for (let i = 0; i < inputsRoles.length; i += 1) {
+  inputsRoles[i].addEventListener('click', (event) => {
+    const rolSeleccionado = event.target.value;
+    resultado(filtrandoRoles(arrayCampeones, rolSeleccionado));
+    lista.style.display = 'block';
+    document.getElementById('pantalla2').style.display = 'none';
+  });
+}
 
-const mostrarFighter = document.getElementById('Fighter');
-mostrarFighter.addEventListener('click', (event) => {
-  const rolSeleccionado = event.target.value;
-  resultado(filtrandoRoles(arrayCampeones, rolSeleccionado));
-});
-
-const mostrarMage = document.getElementById('Mage');
-mostrarMage.addEventListener('click', (event) => {
-  const rolSeleccionado = event.target.value;
-  resultado(filtrandoRoles(arrayCampeones, rolSeleccionado));
-});
-
-const mostrarMarksman = document.getElementById('Marksman');
-mostrarMarksman.addEventListener('click', (event) => {
-  const rolSeleccionado = event.target.value;
-  resultado(filtrandoRoles(arrayCampeones, rolSeleccionado));
-});
-
-const mostrarAsesinos = document.getElementById('Support');
-mostrarAsesinos.addEventListener('click', (event) => {
-  const rolSeleccionado = event.target.value;
-  resultado(filtrandoRoles(arrayCampeones, rolSeleccionado));
-});
-
-const mostrarTank = document.getElementById('Tank');
-mostrarTank.addEventListener('click', (event) => {
-  const rolSeleccionado = event.target.value;
-  resultado(filtrandoRoles(arrayCampeones, rolSeleccionado));
-});
 // boton de ordenar
 const ordenar = document.getElementById('ordenar');
 ordenar.addEventListener('change', (evt) => {
