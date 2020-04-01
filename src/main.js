@@ -99,78 +99,59 @@ const featuresCard = (pokemon) => {
   close.addEventListener('click', () => {
     sectionModal.classList.toggle('modal-close');
   });
+  const filterImg = (dataPokemon, nameP) => {
+    let img = 'assets/No_image_available.svg';
+    for (let i = 0; i < dataPokemon.length; i += 1) {
+      if (dataPokemon[i].name === nameP) {
+        img = dataPokemon[i].img;
+      }
+    }
+    return img;
+  };
+  const evolutionContainer = cardContainer.querySelector('.evolutions');
+  const pokEvolution = pokemon.evolution;
+  const arrayOne = Object.values(pokEvolution);
+  const keysArrayOne = Object.keys(pokEvolution);
 
-  // const evolutionContainer = document.querySelector('.evolutions');
-  // const pEvolution = pokemon.evolution;
-  // const arrayOne = Object.values(pEvolution);
-  // const keysArrayOne = Object.keys(pEvolution);
-
-  // const prevEvolution = Object.prototype.hasOwnProperty.call(pEvolution, 'prev-evolution');
-  // const nextEvolution = Object.prototype.hasOwnProperty.call(pEvolution, 'next-evolution');
-  // if (prevEvolution && nextEvolution) {
-  //   evolutionContainer.innerHTML += `
-  //   <div class="eachContainer">
-  //     <img src="${data.pokemon[index - 1].img}"
-  //     <p>Pre-evolution</p>
-  //     <p>${arrayOne[keysArrayOne.indexOf('prev-evolution')][0].name}</p>
-  //   </div>
-  //   <div class="eachContainer">
-  //     <img src="${data.pokemon[index + 1].img}"
-  //     <p>Next-evolution</p>
-  //     <p>${arrayOne[keysArrayOne.indexOf('next-evolution')][0].name}</p>
-  //   </div>
-  //   `;
-  // } else if (prevEvolution) {
-  //   const arr = nextEvolutions(keysArrayOne, arrayOne, 'prev-evolution');
-  //   arr.forEach((eachPokemon) => {
-  //     evolutionContainer.innerHTML += `
-  //     <div class="eachContainer">
-  //       <img src="${data.pokemon[eachPokemon].img}"
-  //       <p>Pre-evolution</p>
-  //       <p>${data.pokemon[eachPokemon].name}</p>
-  //     </div>
-  //     `;
-  //   });
-  // } else if (nextEvolution) {
-  //   const arr = nextEvolutions(keysArrayOne, arrayOne, 'next-evolution');
-  //   if (arr.length > 2) {
-  //     arr.forEach((eachPokemon) => {
-  //       if (typeof eachPokemon === 'number') {
-  //         evolutionContainer.innerHTML += `
-  //         <div class="eachContainer2">
-  //           <img src="${data.pokemon[eachPokemon].img}"
-  //           <p>${data.pokemon[eachPokemon].name}</p>
-  //         </div>
-  //         `;
-  //       } else {
-  //         evolutionContainer.innerHTML += `
-  //         <div class="otherGen">
-  //           <p>${eachPokemon}</p>
-  //         </div>
-  //         `;
-  //       }
-  //     });
-  //   } else {
-  //     arr.forEach((eachPokemon) => {
-  //       evolutionContainer.innerHTML += `
-  //       <div class="eachContainer">
-  //         <img src="${data.pokemon[eachPokemon].img}"
-  //         <p>Next-evolution</p>
-  //         <p>${data.pokemon[eachPokemon].name}</p>
-  //       </div>
-  //       `;
-  //     });
-  //   }
-  // } else {
-  //   evolutionContainer.innerHTML += `
-  //   <p>This pokemons doesn't have evolutions</p>
-  //   `;
-  // }
+  const prevEvolution = Object.prototype.hasOwnProperty.call(pokEvolution, 'prev-evolution');
+  const nextEvolution = Object.prototype.hasOwnProperty.call(pokEvolution, 'next-evolution');
+  if (prevEvolution && nextEvolution) {
+    evolutionContainer.innerHTML = `
+    <div class="eachContainer">
+      <img src="${filterImg(data.pokemon, arrayOne[keysArrayOne.indexOf('prev-evolution')][0].name)}">
+      <p>Pre-evolution</p>
+      <p>${arrayOne[keysArrayOne.indexOf('prev-evolution')][0].name}</p>
+    </div>
+    <div class="eachContainer">
+      <img src="${filterImg(data.pokemon, arrayOne[keysArrayOne.indexOf('next-evolution')][0].name)}">
+      <p>Next-evolution</p>
+      <p>${arrayOne[keysArrayOne.indexOf('next-evolution')][0].name}</p>
+    </div>`;
+  } else if (prevEvolution) {
+    // const arrayTwo = Object.values(arrayOne[keysArrayOne.indexOf('prev-evolution')][0]);
+    evolutionContainer.innerHTML += `
+    <div class="eachContainer">
+      <img src="${filterImg(data.pokemon, arrayOne[keysArrayOne.indexOf('prev-evolution')][0].name)}"
+      <p>Pre-evolution</p>
+      <p>${arrayOne[keysArrayOne.indexOf('prev-evolution')][0].name}</p>
+    </div>`;
+  } else if (nextEvolution) {
+    evolutionContainer.innerHTML += `
+    <div class="eachContainer">
+      <img src="${filterImg(data.pokemon, arrayOne[keysArrayOne.indexOf('next-evolution')][0].name)}"
+      <p>Pre-evolution</p>
+      <p>${arrayOne[keysArrayOne.indexOf('next-evolution')][0].name}</p>
+    </div>`;
+  } else {
+    evolutionContainer.innerHTML += `
+    <p>This pokemons doesn't have evolutions</p>
+    `;
+  }
   sectionModal.appendChild(cardContainer);
   return sectionModal;
 };
 
-// Modal attack
+// MODAL ATTACK
 const attackCard = (pokemon) => {
   const getTypes = (arr) => {
     let types = '';
