@@ -51,8 +51,9 @@ const pantalla1 = document.getElementById('pantalla1');
 // const pantalla3 = document.getElementById('pantalla3');
 const pantalla2 = document.getElementById('pantalla2');
 btnRoles.addEventListener('click', () => {
-  pantalla1.classList.add('none');
-  pantalla2.classList.remove('none');
+  // pantalla1.classList.add('none');
+  // pantalla2.classList.remove('none');
+  pantalla1.cla
 });
 
 // botones: Assassin, Fighter, Mage, Marksman, Support, Tank
