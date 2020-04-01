@@ -1,101 +1,4 @@
-/*body{
-  margin: 0;
-  font-family: 'Spectral', serif;
-  position: absolute;
-  width: 1440px;
-  height: 1024px;
-  left: 0px;
-  top: 0px;
-}
-  /*Encabezado*/
- /* header{
-      width: 100%;
-      border:8px solid rgb(185, 255, 120);
-      background: #061D29;
-    }
-      .logo{
-        width: 250px;
-        height: 120px;
-      }
-      
-      .formBuscador{
-        display: flex;  
-        justify-content:flex-end;
-        }
-      
-              /*header label{
-                display: none;
-                width:3%;
-                height: 5%;
-              }*/
-      
-/*      .menu ul{
-      background:rgba(68, 189, 173, 0.76);
-      margin:0;
-      list-style: none;
-      padding: 0%;
-      display: flex;
-      }
-      
-      
-      
-      .menu li a{
-        display:block;
-        right:15px;
-        color: aliceblue;
-        text-decoration: none;
-      
-      }
-      
-      
-      .menu .categoria{
-        display: block; 
-        flex-direction:row;
-        flex-wrap: wrap;
-        align-content: space-around;
-        
-      }
-    
-      li{
-        border: 3px solid black;
-        flex-grow: 1;
-        flex-direction: column;
-        
-      }
-      
-      .item{
-        border:5px solid  rgba(31, 30, 31, 0.548);
-        flex-direction: column;
-        top: 50%;
-        
-      }
-  
- 
-/*AQUI EMPIEZA SECTION= GALERIA
-  .galeriaDeCampeones{
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    background: #2A2A34;;
- 
-  }
-  .imagenCampeon{
-    width: 250px;
-    height: 200px;
-    display: wrap;
-    margin-left: 5%;
-    padding: 5%;
-    
-  }
-  .nombreCampeon{
-    display: flex;
-    flex-direction: column;
-    color: cornsilk;
-    margin-left: 9%;
-    margin-bottom: 15px;
-    box-shadow: 0px 0px 6px 0px rgba(0,0,0,22);
-    text-align: center;
-  }*/
+
   
   *{
     margin: 0px;
@@ -106,7 +9,7 @@
   display: flex;
   flex-flow: column nowrap;
   font-family: 'Spectral', serif; 
-  background: url(https://lh3.googleusercontent.com/proxy/2P8R5PuREY79It_7MDep_BZQj32qdpsXGj_rzb6eEYvJEL6_xSWGaEpjvGGvM2-4ZipM5dUT9KiZVcmeBAf11OK4l5cBsbA7RRrRN1cwa5pwKw);
+  /*background: url(https://lh3.googleusercontent.com/proxy/2P8R5PuREY79It_7MDep_BZQj32qdpsXGj_rzb6eEYvJEL6_xSWGaEpjvGGvM2-4ZipM5dUT9KiZVcmeBAf11OK4l5cBsbA7RRrRN1cwa5pwKw);*/
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -235,6 +138,9 @@ a{
           font-size: 36px;
           line-height: 40px;
           color: #FFFFFF;}
+.none{
+  display: none;
+}
   .footer{
     background: rgb(28, 28, 29);
     display: flex;
@@ -254,8 +160,9 @@ a{
     }
     .casillaCampeon{
       width:10px;
-    }*/
-  
+
+    } */
+
   #error {
     background: #707b15;
     padding: 10px 10px 10px 10px;

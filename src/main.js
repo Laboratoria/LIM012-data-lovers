@@ -45,6 +45,7 @@ buscar.addEventListener('keyup', (evt) => {
 },
 false);
 
+
 // filtrando por Rol
 const mostrarAssassin = document.getElementById('Assassin');
 mostrarAssassin.addEventListener('click', (event) => {
