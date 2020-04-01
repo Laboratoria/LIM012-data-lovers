@@ -3,7 +3,7 @@
 /* eslint-disable no-console */
 /* eslint-disable no-loop-func */
 import {
-  dinamicSearchPokemon, filterPokemon, orderBy, changeOrder,
+  dinamicSearchPokemon, filterPokemon, orderBy, changeOrder, calculateBettersCombination,
 } from './data.js';
 
 import data from './data/pokemon/pokemon.js';
@@ -39,6 +39,7 @@ const optionsFilter = [];
 // const optionsOrder = [];
 let isContainerSection = false;
 let isContainerShowMore = false;
+let isShowMove = true;
 let showMoreSection = '';
 const positions = [0, 0, 0];
 let typeChoosed = '';
@@ -47,13 +48,11 @@ const divCardContainerFlex = document.getElementById('card-container-flex');
 const divCardContainerBlock = document.getElementById('card-container-block');
 let deg = 0;
 const titleTop = document.getElementById('top-pagination-p');
-// const divTopPagination = document.getElementById('top-pagination');
 const modalMode = document.getElementById('modal-mode');
 const imgChange = document.getElementById('btn-change-order');
 
 const divOrderBy = document.getElementsByClassName('menu')[0];
 const divFilterBy = document.getElementsByClassName('menu')[1];
-// const divCalcuBy= document.getElementsByClassName('menu')[2];
 
 const btnChangeOrder = document.getElementById('btn-change-order');
 const modalWindow = document.getElementById('modal-window');
@@ -79,6 +78,7 @@ const showMessageOfSearch = (container) => {
 const createPokemonCard = (index, pokemon, container) => {
   if (typeof pokemon !== 'undefined') {
     const card = document.createElement('div');
+    card.setAttribute('name', pokemon.name);
     card.className = 'pokemon-card  flex-wrap font grow';
     card.id = pokemon.name;
     card.innerHTML = `<span class="pokemon-name">${pokemon.name}</span>
@@ -200,41 +200,48 @@ topMenuOrderBtn.addEventListener('click', () => {
 btnCloseMenu.addEventListener('click', hideMenu);
 
 btnCloseModal.addEventListener('click', () => {
+  isShowMove = true;
   modalWindow.style.display = 'none';
   modalMode.style.display = 'none';
 });
 
-const translateX = (pos, slide) => {
-  slide.style.left = `${pos * -164}px`;
+const translateX = (pos, slide, width) => {
+  slide.style.left = `${pos * -width}px`;
 };
+let widthCard = 0;
 
-const goToNextItem = (slider, index) => {
-  const visibleItems = (slider.offsetWidth >= 630) ? 4 : 2;
-  const totalItems = slider.getElementsByClassName('pokemon-card').length;
+const goToNextItem = (slide, sliderCards, index) => {
+  const numCards = sliderCards.getElementsByClassName('pokemon-card').length;
+  widthCard = sliderCards.offsetWidth / numCards;
+  const visibleItems = Math.round(slide.offsetWidth / widthCard);
+  const totalItems = sliderCards.getElementsByClassName('pokemon-card').length;
+  // console.log(`total ${sliderCards.offsetWidth / totalItems}`);
   const hiddenItems = totalItems - visibleItems;
+  // console.log(hiddenItems, visibleItems);
   if (positions[index] >= 0 && positions[index] < hiddenItems) {
     positions[index] += 1;
-    translateX(positions[index], slider);
+    translateX(positions[index], sliderCards, widthCard);
   }
 };
 
 const goToPrevItem = (slider, index) => {
   if (positions[index] > 0) {
     positions[index] -= 1;
-    translateX(positions[index], slider);
+    translateX(positions[index], slider, widthCard);
   }
 };
 
 const sliderSystem = () => {
-  const sliders = divCardContainerBlock.getElementsByClassName('slide-cards');
+  const slideCards = divCardContainerBlock.getElementsByClassName('slide-cards');
+  const slide = divCardContainerBlock.getElementsByClassName('slide');
   const ctrlPrevButtons = document.getElementsByClassName('ctrl-prev');
   const ctrlNextButtons = document.getElementsByClassName('ctrl-next');
   for (let i = 0; i < 3; i += 1) {
     ctrlPrevButtons[i].addEventListener('click', () => {
-      goToPrevItem(sliders[i], i);
+      goToPrevItem(slideCards[i], i);
     });
     ctrlNextButtons[i].addEventListener('click', () => {
-      goToNextItem(sliders[i], i);
+      goToNextItem(slide[i], slideCards[i], i);
     });
   }
 };
@@ -298,12 +305,13 @@ const filterPokemonsByType = (type) => {
 const filterSystem = () => {
   titleTop.textContent = '';
   const titleSlider = document.getElementsByClassName('title-slider-p');
+  const resultSlider = document.getElementsByClassName('result');
   for (let i = 0; i < optionsFilter.length; i += 1) {
     optionsFilter[i].addEventListener('click', () => {
       console.log(optionsFilter);
       // eslint-disable-next-line no-return-assign
-      // optionsFilter.forEach(element => element.style.background = 'rgb(43, 41, 41)');
-      optionsFilter[i].style.background = '#0F4C75';
+      optionsFilter.forEach(element => element.style.background = '#1B262C');
+      optionsFilter[i].style.background = 'var(--color-blue-3)';
       isContainerShowMore = false;
       if (window.innerWidth < desktopSize) {
         hideMenu();
@@ -312,9 +320,12 @@ const filterSystem = () => {
       isContainerShowMore = false;
       filterPokemonsByType(optionsFilter[i].textContent);
       typeChoosed = optionsFilter[i].textContent;
-      titleSlider[0].textContent = `${typeChoosed}-type pokemons`;
-      titleSlider[1].textContent = `${typeChoosed}-resistant pokemons`;
-      titleSlider[2].textContent = `${typeChoosed}-weaknesses pokemons`;
+      resultSlider[0].textContent = `${resultTypes.length}`;
+      resultSlider[1].textContent = `${resultResistant.length}`;
+      resultSlider[2].textContent = `${resultWeaknesses.length}`;
+      titleSlider[0].textContent = `${typeChoosed}-Type Pokemons`;
+      titleSlider[1].textContent = `${typeChoosed}-Resistant Pokemons`;
+      titleSlider[2].textContent = `${typeChoosed}-Weaknesses Pokemons`;
       showPokemonInSections();
     });
   }
@@ -333,6 +344,9 @@ const orderSystem = () => {
   const optionsOrder = document.getElementsByClassName('order-option');
   for (let i = 0; i < optionsOrder.length; i += 1) {
     optionsOrder[i].addEventListener('click', () => {
+      for (let j = 0; j < optionsOrder.length; j += 1) {
+        optionsOrder[j].style.background = 'rgb(43, 41, 41)';
+      }
       optionsOrder[i].style.background = '#0F4C75';
       btnChangeOrder.style.visibility = 'visible';
       if (isContainerSection) {
@@ -428,28 +442,30 @@ const buildTable = (list, table) => {
     table.innerHTML += `${row}`;
   }
 };
-const calculate = document.getElementById('get-set-move');
 const divMoveAndAttacks = document.getElementById('move-and-attack');
 const divcalculateMove = document.getElementById('calculate-damage');
-let isShowMove = true;
-calculate.addEventListener('click', () => {
+
+const showDamageOfMove = (btn) => {
   if (isShowMove) {
     divMoveAndAttacks.style.display = 'none';
     divcalculateMove.style.display = 'block';
+    btn.textContent = 'Moves & Attacks';
     isShowMove = false;
   } else {
     divMoveAndAttacks.style.display = 'flex';
     divcalculateMove.style.display = 'none';
     isShowMove = true;
+    btn.textContent = 'Calculate Damage';
   }
-});
-
+};
+// let isCalculate = false;
 const calculeDamage = (num, container, list) => {
   container.innerHTML = '';
-  container.innerHTML += '<tr><th>Quick Move</th><th>Special Attack</th><th>Damage</th></tr>';
+  container.innerHTML += '<tr><th>Quick Move</th><th></th><th>Special Attack</th><th></th><th>Damage</th></tr>';
   for (let i = 0; i < num; i += 1) {
-    const row = `<tr><td>${list[i][0]}</td><td>${list[i][1]}</td><td>${list[i][2]}</td></tr>`;
-    row.innerHTML = row;
+    container.innerHTML += `<tr><td>${list[i][0]}</td><td><img src="images/plus1.png" class="icon-small"></td>
+                            <td>${list[i][1]}</td><td><img src="images/igual1.png" class="icon-small"></td>
+                            <td>${list[i][2]}</td></tr>`;
   }
 };
 
@@ -459,8 +475,10 @@ const showInfoPokemon = (name) => {
   document.getElementById('img-pokemon-modal').setAttribute('src', pokemon.img);
   document.getElementById('div-pokemon-name-modal').textContent = pokemon.name;
   document.getElementById('height').textContent = pokemon.size.height;
+  document.getElementById('candy').textContent = pokemon.evolution.candy.replace('candy', '');
   document.getElementById('region').textContent = pokemon.generation.name;
   document.getElementById('weight').textContent = pokemon.size.weight;
+  const btnCalc = document.getElementById('get-set-move');
   const types = document.getElementById('types');
   const resistant = document.getElementById('resistant');
   const weaknesses = document.getElementById('weaknesses');
@@ -472,8 +490,15 @@ const showInfoPokemon = (name) => {
   createIcons(pokemon.weaknesses, weaknesses);
   const specialAttacks = document.getElementById('special-attacks-table');
   const quickMove = document.getElementById('quick-move-table');
-  const calcDamage = document.getElementById('table-damage-table');
-  // calculeDamage(5,calcDamage,arrya);
+  const calcDamage = document.getElementById('table-damage');
+  calcDamage.innerHTML = '';
+  isShowMove = true;
+  btnCalc.addEventListener('click', () => {
+    let count = calculateBettersCombination(pokemon).length;
+    count = (count > 5) ? 5 : count;
+    showDamageOfMove(btnCalc);
+    calculeDamage(count, calcDamage, calculateBettersCombination(pokemon));
+  });
   buildTable(pokemon['special-attack'], specialAttacks);
   buildTable(pokemon['quick-move'], quickMove);
   const evolution = document.getElementById('evolution');
@@ -488,14 +513,16 @@ const loadPage = () => {
   if (wordIntroduced.length === 0 && isContainerSection === false) {
     showCard(currentData, divCardContainerFlex);
   }
-  const listOfPokemonCards = document.getElementsByClassName('pokemon-card');
-  for (let i = 0; i < listOfPokemonCards.length; i += 1) {
-    listOfPokemonCards[i].addEventListener('click', () => {
-      modalMode.style.display = 'block';
-      showInfoPokemon(listOfPokemonCards[i].id);
-    });
-  }
 };
+
+document.addEventListener('click', (event) => {
+  const element = event.target.parentNode;
+  if (element.className === 'pokemon-card  flex-wrap font grow') {
+    modalMode.style.display = 'block';
+    showInfoPokemon(element.id);
+  }
+});
+
 
 sliderSystem();
 window.onload = loadPage;
