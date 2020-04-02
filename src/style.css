@@ -131,17 +131,7 @@
 .cards-distribution {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    /* border: 1px solid black; */
-    margin-bottom: 1.5em;
-    width: 100%;
-}
-
-.distribution-search {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    /* border: 1px solid black; */
+    justify-content: space-around;
     margin-bottom: 1.5em;
     width: 100%;
 }
@@ -186,18 +176,19 @@
     cursor: pointer;
 }
 
-#features {
+.features {
     border: 1.5px solid  #4AB483;
 }
-#attacks {
+
+.attacks {
     border: 1.5px solid #F25749;
 }
 
-#features:hover {
+.features:hover {
     background-color: #4AB483;
     color: #fff;
 }
-#attacks:hover {
+.attacks:hover {
     background-color: #F25749;
     color: #fff;
 }
