@@ -1,8 +1,8 @@
 :root {
   --color-black: #000;
   --color-nav-dark: #2d2e2e;
-  --color-main: #F2EFEF;
-  --color-footer: #d0ff00;
+  --color-nomain: #F2EFEF;
+  --color-otro: #d0ff00;
   --color-white: #fff;
   --color-dorado: #937341;
 }
@@ -67,6 +67,7 @@ ul li a{
   /*font-weight: bold;*//*tener la letra en negrita*/
 }
 
+/*utilizando active*/
 li.active a {
   font-weight: bold;
    height: 0.2px;
