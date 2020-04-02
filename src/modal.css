@@ -290,20 +290,31 @@
     justify-content: space-around;
     border-bottom: 1px solid #F25749;
 }
-@media (max-width: 1300px) and (min-width: 600px) {
-
-}
-
-
 
 @media (max-width: 600px) {
     .cards {
         width: 300px;
     }
 
+    .pokemon-screen {
+        box-sizing: border-box;
+        width: 90%;
+        background-color: #FFF;
+        padding: 20px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        height: 120px;
+    }
+
     .screen-img {
         position: absolute;
         width: 99%;
+    }
+
+    .name-stats {
+        line-height: 20px;
     }
 
     .close {
