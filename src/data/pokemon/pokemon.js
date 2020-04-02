@@ -2438,7 +2438,7 @@ export default {
     "special-attack": [
       {
         "name": "brick break",
-        "type": "fight",
+        "type": "fighting",
         "base-damage": "40",
         "energy": "-33",
         "move-duration-seg": "1.6"
@@ -5215,7 +5215,7 @@ export default {
       },
       {
         "name": "cross chop",
-        "type": "fight",
+        "type": "fighting",
         "base-damage": "50",
         "energy": "-50",
         "move-duration-seg": "1.5"
@@ -5363,7 +5363,7 @@ export default {
     "quick-move": [
       {
         "name": "karate chop",
-        "type": "fight",
+        "type": "fighting",
         "base-damage": "8",
         "energy": "10",
         "move-duration-seg": "0.8"
@@ -5379,21 +5379,21 @@ export default {
     "special-attack": [
       {
         "name": "cross chop",
-        "type": "fight",
+        "type": "fighting",
         "base-damage": "50",
         "energy": "-50",
         "move-duration-seg": "1.5"
       },
       {
         "name": "low sweep",
-        "type": "fight",
+        "type": "fighting",
         "base-damage": "40",
         "energy": "-33",
         "move-duration-seg": "1.9"
       },
       {
         "name": "brick break",
-        "type": "fight",
+        "type": "fighting",
         "base-damage": "40",
         "energy": "-33",
         "move-duration-seg": "1.6"
@@ -5452,21 +5452,21 @@ export default {
     "quick-move": [
       {
         "name": "low kick",
-        "type": "fight",
+        "type": "fighting",
         "base-damage": "6",
         "energy": "6",
         "move-duration-seg": "0.6"
       },
       {
         "name": "counter",
-        "type": "fight",
+        "type": "fighting",
         "base-damage": "12",
         "energy": "8",
         "move-duration-seg": "0.9"
       },
       {
         "name": "karate chop",
-        "type": "fight",
+        "type": "fighting",
         "base-damage": "8",
         "energy": "10",
         "move-duration-seg": "0.8"
@@ -5475,7 +5475,7 @@ export default {
     "special-attack": [
       {
         "name": "low sweep",
-        "type": "fight",
+        "type": "fighting",
         "base-damage": "40",
         "energy": "-33",
         "move-duration-seg": "1.9"
@@ -5489,14 +5489,14 @@ export default {
       },
       {
         "name": "close combat",
-        "type": "fight",
+        "type": "fighting",
         "base-damage": "100",
         "energy": "-100",
         "move-duration-seg": "2.3"
       },
       {
         "name": "cross chop",
-        "type": "fight",
+        "type": "fighting",
         "base-damage": "50",
         "energy": "-50",
         "move-duration-seg": "1.5"
@@ -5987,7 +5987,7 @@ export default {
       },
       {
         "name": "rock smash",
-        "type": "fight",
+        "type": "fighting",
         "base-damage": "15",
         "energy": "10",
         "move-duration-seg": "1.3"
@@ -6017,14 +6017,14 @@ export default {
       },
       {
         "name": "dynamic punch",
-        "type": "fight",
+        "type": "fighting",
         "base-damage": "90",
         "energy": "-50",
         "move-duration-seg": "2.7"
       },
       {
         "name": "submission",
-        "type": "fight",
+        "type": "fighting",
         "base-damage": "60",
         "energy": "-50",
         "move-duration-seg": "2.2"
@@ -6303,7 +6303,7 @@ export default {
       },
       {
         "name": "focus blast",
-        "type": "fight",
+        "type": "fighting",
         "base-damage": "140",
         "energy": "-100",
         "move-duration-seg": "3.5"
@@ -6381,21 +6381,21 @@ export default {
     "quick-move": [
       {
         "name": "karate chop",
-        "type": "fight",
+        "type": "fighting",
         "base-damage": "8",
         "energy": "10",
         "move-duration-seg": "0.8"
       },
       {
         "name": "rock smash",
-        "type": "fight",
+        "type": "fighting",
         "base-damage": "15",
         "energy": "10",
         "move-duration-seg": "1.3"
       },
       {
         "name": "low kick",
-        "type": "fight",
+        "type": "fighting",
         "base-damage": "6",
         "energy": "6",
         "move-duration-seg": "0.6"
@@ -6404,21 +6404,21 @@ export default {
     "special-attack": [
       {
         "name": "low sweep",
-        "type": "fight",
+        "type": "fighting",
         "base-damage": "40",
         "energy": "-33",
         "move-duration-seg": "1.9"
       },
       {
         "name": "brick break",
-        "type": "fight",
+        "type": "fighting",
         "base-damage": "40",
         "energy": "-33",
         "move-duration-seg": "1.6"
       },
       {
         "name": "cross chop",
-        "type": "fight",
+        "type": "fighting",
         "base-damage": "50",
         "energy": "-50",
         "move-duration-seg": "1.5"
@@ -6482,14 +6482,14 @@ export default {
     "quick-move": [
       {
         "name": "low kick",
-        "type": "fight",
+        "type": "fighting",
         "base-damage": "6",
         "energy": "6",
         "move-duration-seg": "0.6"
       },
       {
         "name": "karate chop",
-        "type": "fight",
+        "type": "fighting",
         "base-damage": "8",
         "energy": "10",
         "move-duration-seg": "0.8"
@@ -6498,28 +6498,28 @@ export default {
     "special-attack": [
       {
         "name": "submission",
-        "type": "fight",
+        "type": "fighting",
         "base-damage": "60",
         "energy": "-50",
         "move-duration-seg": "2.2"
       },
       {
         "name": "brick break",
-        "type": "fight",
+        "type": "fighting",
         "base-damage": "40",
         "energy": "-33",
         "move-duration-seg": "1.6"
       },
       {
         "name": "dynamic punch",
-        "type": "fight",
+        "type": "fighting",
         "base-damage": "90",
         "energy": "-50",
         "move-duration-seg": "2.7"
       },
       {
         "name": "cross chop",
-        "type": "fight",
+        "type": "fighting",
         "base-damage": "50",
         "energy": "-50",
         "move-duration-seg": "1.5"
@@ -6590,14 +6590,14 @@ export default {
       },
       {
         "name": "counter",
-        "type": "fight",
+        "type": "fighting",
         "base-damage": "12",
         "energy": "8",
         "move-duration-seg": "0.9"
       },
       {
         "name": "karate chop",
-        "type": "fight",
+        "type": "fighting",
         "base-damage": "8",
         "energy": "10",
         "move-duration-seg": "0.8"
@@ -6613,21 +6613,21 @@ export default {
       },
       {
         "name": "dynamic punch",
-        "type": "fight",
+        "type": "fighting",
         "base-damage": "90",
         "energy": "-50",
         "move-duration-seg": "2.7"
       },
       {
         "name": "close combat",
-        "type": "fight",
+        "type": "fighting",
         "base-damage": "100",
         "energy": "-100",
         "move-duration-seg": "2.3"
       },
       {
         "name": "cross chop",
-        "type": "fight",
+        "type": "fighting",
         "base-damage": "50",
         "energy": "-50",
         "move-duration-seg": "1.5"
@@ -6641,7 +6641,7 @@ export default {
       },
       {
         "name": "submission",
-        "type": "fight",
+        "type": "fighting",
         "base-damage": "60",
         "energy": "-50",
         "move-duration-seg": "2.2"
@@ -7618,7 +7618,7 @@ export default {
     "quick-move": [
       {
         "name": "low kick",
-        "type": "fight",
+        "type": "fighting",
         "base-damage": "6",
         "energy": "6",
         "move-duration-seg": "0.6"
@@ -8074,7 +8074,7 @@ export default {
       "num": "generation i",
       "name": "kanto"
     },
-    "about": "Farfetch'd is always seen with a stalk from a plant of some sort. Apparently, there are good stalks and bad stalks. This Pokémon has been known to fight with others over stalks.",
+    "about": "Farfetch'd is always seen with a stalk from a plant of some sort. Apparently, there are good stalks and bad stalks. This Pokémon has been known to fighting with others over stalks.",
     "img": "https://www.serebii.net/pokemongo/pokemon/083.png",
     "size": {
       "height": "0.79 m",
@@ -9269,7 +9269,7 @@ export default {
       },
       {
         "name": "focus blast",
-        "type": "fight",
+        "type": "fighting",
         "base-damage": "140",
         "energy": "-100",
         "move-duration-seg": "3.5"
@@ -9577,7 +9577,7 @@ export default {
       },
       {
         "name": "focus blast",
-        "type": "fight",
+        "type": "fighting",
         "base-damage": "140",
         "energy": "-100",
         "move-duration-seg": "3.5"
@@ -10236,7 +10236,7 @@ export default {
       },
       {
         "name": "rock smash",
-        "type": "fight",
+        "type": "fighting",
         "base-damage": "15",
         "energy": "10",
         "move-duration-seg": "1.3"
@@ -10325,7 +10325,7 @@ export default {
       },
       {
         "name": "rock smash",
-        "type": "fight",
+        "type": "fighting",
         "base-damage": "15",
         "energy": "10",
         "move-duration-seg": "1.3"
@@ -10407,14 +10407,14 @@ export default {
     "quick-move": [
       {
         "name": "low kick",
-        "type": "fight",
+        "type": "fighting",
         "base-damage": "6",
         "energy": "6",
         "move-duration-seg": "0.6"
       },
       {
         "name": "rock smash",
-        "type": "fight",
+        "type": "fighting",
         "base-damage": "15",
         "energy": "10",
         "move-duration-seg": "1.3"
@@ -10423,7 +10423,7 @@ export default {
     "special-attack": [
       {
         "name": "low sweep",
-        "type": "fight",
+        "type": "fighting",
         "base-damage": "40",
         "energy": "-33",
         "move-duration-seg": "1.9"
@@ -10437,14 +10437,14 @@ export default {
       },
       {
         "name": "close combat",
-        "type": "fight",
+        "type": "fighting",
         "base-damage": "100",
         "energy": "-100",
         "move-duration-seg": "2.3"
       },
       {
         "name": "brick break",
-        "type": "fight",
+        "type": "fighting",
         "base-damage": "40",
         "energy": "-33",
         "move-duration-seg": "1.6"
@@ -10517,14 +10517,14 @@ export default {
       },
       {
         "name": "counter",
-        "type": "fight",
+        "type": "fighting",
         "base-damage": "12",
         "energy": "8",
         "move-duration-seg": "0.9"
       },
       {
         "name": "rock smash",
-        "type": "fight",
+        "type": "fighting",
         "base-damage": "15",
         "energy": "10",
         "move-duration-seg": "1.3"
@@ -10547,14 +10547,14 @@ export default {
       },
       {
         "name": "close combat",
-        "type": "fight",
+        "type": "fighting",
         "base-damage": "100",
         "energy": "-100",
         "move-duration-seg": "2.3"
       },
       {
         "name": "brick break",
-        "type": "fight",
+        "type": "fighting",
         "base-damage": "40",
         "energy": "-33",
         "move-duration-seg": "1.6"
@@ -10907,7 +10907,7 @@ export default {
       },
       {
         "name": "rock smash",
-        "type": "fight",
+        "type": "fighting",
         "base-damage": "15",
         "energy": "10",
         "move-duration-seg": "1.3"
@@ -11011,7 +11011,7 @@ export default {
       },
       {
         "name": "rock smash",
-        "type": "fight",
+        "type": "fighting",
         "base-damage": "15",
         "energy": "10",
         "move-duration-seg": "1.3"
@@ -11296,7 +11296,7 @@ export default {
       },
       {
         "name": "low kick",
-        "type": "fight",
+        "type": "fighting",
         "base-damage": "6",
         "energy": "6",
         "move-duration-seg": "0.6"
@@ -11326,7 +11326,7 @@ export default {
       },
       {
         "name": "brick break",
-        "type": "fight",
+        "type": "fighting",
         "base-damage": "40",
         "energy": "-33",
         "move-duration-seg": "1.6"
@@ -12305,7 +12305,7 @@ export default {
       },
       {
         "name": "low kick",
-        "type": "fight",
+        "type": "fighting",
         "base-damage": "6",
         "energy": "6",
         "move-duration-seg": "0.6"
@@ -12405,7 +12405,7 @@ export default {
       },
       {
         "name": "karate chop",
-        "type": "fight",
+        "type": "fighting",
         "base-damage": "8",
         "energy": "10",
         "move-duration-seg": "0.8"
@@ -12496,7 +12496,7 @@ export default {
     "quick-move": [
       {
         "name": "rock smash",
-        "type": "fight",
+        "type": "fighting",
         "base-damage": "15",
         "energy": "10",
         "move-duration-seg": "1.3"
@@ -12533,14 +12533,14 @@ export default {
       },
       {
         "name": "close combat",
-        "type": "fight",
+        "type": "fighting",
         "base-damage": "100",
         "energy": "-100",
         "move-duration-seg": "2.3"
       },
       {
         "name": "submission",
-        "type": "fight",
+        "type": "fighting",
         "base-damage": "60",
         "energy": "-50",
         "move-duration-seg": "2.2"
@@ -13850,7 +13850,7 @@ export default {
       },
       {
         "name": "rock smash",
-        "type": "fight",
+        "type": "fighting",
         "base-damage": "15",
         "energy": "10",
         "move-duration-seg": "1.3"
@@ -14708,7 +14708,7 @@ export default {
       },
       {
         "name": "focus blast",
-        "type": "fight",
+        "type": "fighting",
         "base-damage": "140",
         "energy": "-100",
         "move-duration-seg": "3.5"
@@ -14790,7 +14790,7 @@ export default {
       },
       {
         "name": "focus blast",
-        "type": "fight",
+        "type": "fighting",
         "base-damage": "140",
         "energy": "-100",
         "move-duration-seg": "3.5"
@@ -15749,7 +15749,7 @@ export default {
       },
       {
         "name": "brick break",
-        "type": "fight",
+        "type": "fighting",
         "base-damage": "40",
         "energy": "-33",
         "move-duration-seg": "1.6"
@@ -15834,7 +15834,7 @@ export default {
       },
       {
         "name": "brick break",
-        "type": "fight",
+        "type": "fighting",
         "base-damage": "40",
         "energy": "-33",
         "move-duration-seg": "1.6"
@@ -17615,7 +17615,7 @@ export default {
       },
       {
         "name": "focus blast",
-        "type": "fight",
+        "type": "fighting",
         "base-damage": "140",
         "energy": "-100",
         "move-duration-seg": "3.5"
@@ -17886,7 +17886,7 @@ export default {
     "quick-move": [
       {
         "name": "rock smash",
-        "type": "fight",
+        "type": "fighting",
         "base-damage": "15",
         "energy": "10",
         "move-duration-seg": "1.3"
@@ -17989,7 +17989,7 @@ export default {
       },
       {
         "name": "counter",
-        "type": "fight",
+        "type": "fighting",
         "base-damage": "12",
         "energy": "8",
         "move-duration-seg": "0.9"
@@ -18472,7 +18472,7 @@ export default {
     "special-attack": [
       {
         "name": "low sweep",
-        "type": "fight",
+        "type": "fighting",
         "base-damage": "40",
         "energy": "-33",
         "move-duration-seg": "1.9"
@@ -19511,7 +19511,7 @@ export default {
     "quick-move": [
       {
         "name": "counter",
-        "type": "fight",
+        "type": "fighting",
         "base-damage": "12",
         "energy": "8",
         "move-duration-seg": "0.9"
@@ -20147,7 +20147,7 @@ export default {
       },
       {
         "name": "brick break",
-        "type": "fight",
+        "type": "fighting",
         "base-damage": "40",
         "energy": "-33",
         "move-duration-seg": "1.6"
@@ -20236,7 +20236,7 @@ export default {
       },
       {
         "name": "close combat",
-        "type": "fight",
+        "type": "fighting",
         "base-damage": "100",
         "energy": "-100",
         "move-duration-seg": "2.3"
@@ -20564,7 +20564,7 @@ export default {
     "quick-move": [
       {
         "name": "counter",
-        "type": "fight",
+        "type": "fighting",
         "base-damage": "12",
         "energy": "8",
         "move-duration-seg": "0.9"
@@ -20587,7 +20587,7 @@ export default {
       },
       {
         "name": "close combat",
-        "type": "fight",
+        "type": "fighting",
         "base-damage": "100",
         "energy": "-100",
         "move-duration-seg": "2.3"
@@ -20756,7 +20756,7 @@ export default {
     "special-attack": [
       {
         "name": "cross chop",
-        "type": "fight",
+        "type": "fighting",
         "base-damage": "50",
         "energy": "-50",
         "move-duration-seg": "1.5"
@@ -20832,7 +20832,7 @@ export default {
       },
       {
         "name": "counter",
-        "type": "fight",
+        "type": "fighting",
         "base-damage": "12",
         "energy": "8",
         "move-duration-seg": "0.9"
@@ -20841,7 +20841,7 @@ export default {
     "special-attack": [
       {
         "name": "close combat",
-        "type": "fight",
+        "type": "fighting",
         "base-damage": "100",
         "energy": "-100",
         "move-duration-seg": "2.3"
@@ -22098,7 +22098,7 @@ export default {
       },
       {
         "name": "rock smash",
-        "type": "fight",
+        "type": "fighting",
         "base-damage": "15",
         "energy": "10",
         "move-duration-seg": "1.3"
@@ -22187,7 +22187,7 @@ export default {
       },
       {
         "name": "counter",
-        "type": "fight",
+        "type": "fighting",
         "base-damage": "12",
         "energy": "8",
         "move-duration-seg": "0.9"
@@ -22504,7 +22504,7 @@ export default {
     "quick-move": [
       {
         "name": "rock smash",
-        "type": "fight",
+        "type": "fighting",
         "base-damage": "15",
         "energy": "10",
         "move-duration-seg": "1.3"
@@ -22520,7 +22520,7 @@ export default {
     "special-attack": [
       {
         "name": "brick break",
-        "type": "fight",
+        "type": "fighting",
         "base-damage": "40",
         "energy": "-33",
         "move-duration-seg": "1.6"
@@ -22534,7 +22534,7 @@ export default {
       },
       {
         "name": "low sweep",
-        "type": "fight",
+        "type": "fighting",
         "base-damage": "40",
         "energy": "-33",
         "move-duration-seg": "1.9"
@@ -22605,14 +22605,14 @@ export default {
     "quick-move": [
       {
         "name": "rock smash",
-        "type": "fight",
+        "type": "fighting",
         "base-damage": "15",
         "energy": "10",
         "move-duration-seg": "1.3"
       },
       {
         "name": "counter",
-        "type": "fight",
+        "type": "fighting",
         "base-damage": "12",
         "energy": "8",
         "move-duration-seg": "0.9"
@@ -22621,7 +22621,7 @@ export default {
     "special-attack": [
       {
         "name": "close combat",
-        "type": "fight",
+        "type": "fighting",
         "base-damage": "100",
         "energy": "-100",
         "move-duration-seg": "2.3"
@@ -22796,7 +22796,7 @@ export default {
       },
       {
         "name": "low kick",
-        "type": "fight",
+        "type": "fighting",
         "base-damage": "6",
         "energy": "6",
         "move-duration-seg": "0.6"
@@ -22812,7 +22812,7 @@ export default {
       },
       {
         "name": "brick break",
-        "type": "fight",
+        "type": "fighting",
         "base-damage": "40",
         "energy": "-33",
         "move-duration-seg": "1.6"
@@ -22903,7 +22903,7 @@ export default {
       },
       {
         "name": "karate chop",
-        "type": "fight",
+        "type": "fighting",
         "base-damage": "8",
         "energy": "10",
         "move-duration-seg": "0.8"
@@ -22912,7 +22912,7 @@ export default {
     "special-attack": [
       {
         "name": "brick break",
-        "type": "fight",
+        "type": "fighting",
         "base-damage": "40",
         "energy": "-33",
         "move-duration-seg": "1.6"
@@ -23437,7 +23437,7 @@ export default {
       },
       {
         "name": "rock smash",
-        "type": "fight",
+        "type": "fighting",
         "base-damage": "15",
         "energy": "10",
         "move-duration-seg": "1.3"
@@ -23538,7 +23538,7 @@ export default {
       },
       {
         "name": "rock smash",
-        "type": "fight",
+        "type": "fighting",
         "base-damage": "15",
         "energy": "10",
         "move-duration-seg": "1.3"
@@ -23590,7 +23590,7 @@ export default {
       "num": "generation ii",
       "name": "johto"
     },
-    "about": "Tyranitar is so overwhelmingly powerful, it can bring down a whole mountain to make its nest. This Pokémon wanders about in mountains seeking new opponents to fight.",
+    "about": "Tyranitar is so overwhelmingly powerful, it can bring down a whole mountain to make its nest. This Pokémon wanders about in mountains seeking new opponents to fighting.",
     "img": "https://www.serebii.net/pokemongo/pokemon/248.png",
     "size": {
       "height": "2.00 m",

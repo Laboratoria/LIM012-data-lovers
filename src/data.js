@@ -94,9 +94,10 @@ export const calculateBetterCombinations = (whichPokemon) => {
       const damageOnlyInTimeToCharge = chargeAmountInTimeNoUsed * (quickMoveDPS * timeToChargeEnergy);
       // eslint-disable-next-line max-len
       const damageInTimeChargeNotUsed = (timeChargeAmountNotUsed / specialAttackDuration) * specialAttackDB;
-
       // eslint-disable-next-line max-len
-      const totalDamage = damageOnlyByAttackUsed + damageOnlyInTimeToCharge + damageInTimeChargeNotUsed;
+      let totalDamage = damageOnlyByAttackUsed + damageOnlyInTimeToCharge + damageInTimeChargeNotUsed;
+      totalDamage = parseFloat(Math.round(totalDamage * 100) / 100).toFixed(2);
+
       result.push([whichPokemon['quick-move'][i].name, whichPokemon['special-attack'][j].name, totalDamage]);
     }
   }

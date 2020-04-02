@@ -96,7 +96,7 @@ describe('Test de la función ordenar', () => {
 
 describe('Test función calcular', () => {
   it('calculateBetterCombinations deberia ser una funcion', () => {
-    expect(typeof calculateBettersCombination).toBe('function');
+    expect(typeof calculateBetterCombinations).toBe('function');
   });
 
   it('Deberia mostrar a lo máximo 5 arrays', () => {
@@ -109,9 +109,9 @@ describe('Test función calcular', () => {
     for (let i = 0; i < data.pokemon.length; i += 1) {
       const betterCombinations = calculateBetterCombinations(data.pokemon[i]);
       const array = [betterCombinations[0][2]];
-      for (let j = 1; j < 5; j += 1) {
+      for (let j = 1; j < betterCombinations.length; j += 1) {
         array.push(betterCombinations[j][2]);
-        expect(betterCombinations[j - 1][2].localeCompare(betterCombinations[j][2])).toBe(-1);
+        expect(array[j - 1]).toBeGreaterThanOrEqual(array[j]);
       }
     }
   });
