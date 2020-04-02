@@ -1,6 +1,6 @@
 export const ordenar = (ordenarData, seleccion) => {
   let resultado;
-  if (seleccion === 'a-z'){
+  if (seleccion === 'a-z') {
     resultado = ordenarData.sort((a, b) => {
       if (a.nombre > b.nombre) {
         return 1;
@@ -10,7 +10,7 @@ export const ordenar = (ordenarData, seleccion) => {
       }
       return 0;
     });
-  }else {
+  } else {
     resultado = ordenarData.sort((a, b) => {
       if (a.nombre < b.nombre) {
         return 1;
@@ -22,5 +22,5 @@ export const ordenar = (ordenarData, seleccion) => {
     });
   }
 
-return resultado;
+  return resultado;
 };

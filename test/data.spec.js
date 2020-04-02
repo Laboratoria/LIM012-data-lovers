@@ -1,44 +1,26 @@
 import { ordenar } from '../src/data.js';
 
-const testOrder1 = [
-  {
-    nombre: 'Cornelia Pfohl (-Griem)',
-    genero: 'F',
-    altura: '175',
-    peso: '58',
-  },
-  {
-    nombre: 'Olena Anatolivna Sadovnycha',
-    genero: 'F',
-    altura: '168',
-    peso: '60',
-  },
-  {
-    nombre: 'Kateryna Valerivna Serdiuk (-Sumko)',
-    genero: 'F',
-    altura: '185',
-    peso: '80',
-  },
-];
-
 const testOrder2 = [
   {
     nombre: 'Cornelia Pfohl (-Griem)',
-    genero: 'F',
-    altura: '175',
-    peso: '58',
   },
   {
     nombre: 'Kateryna Valerivna Serdiuk (-Sumko)',
-    genero: 'F',
-    altura: '185',
-    peso: '80',
   },
   {
     nombre: 'Olena Anatolivna Sadovnycha',
-    genero: 'F',
-    altura: '168',
-    peso: '60',
+  },
+];
+
+const testOrder3 = [
+  {
+    nombre: 'Olena Anatolivna Sadovnycha',
+  },
+  {
+    nombre: 'Kateryna Valerivna Serdiuk (-Sumko)',
+  },
+  {
+    nombre: 'Cornelia Pfohl (-Griem)',
   },
 ];
 
@@ -48,10 +30,13 @@ describe('ordenar', () => {
   });
 
   it('Debe retornar Atletas ordenados de A a Z', () => {
-    expect(ordenar(testOrder1)).toEqual(testOrder2);
+    expect(ordenar(testOrder2)).toEqual(testOrder3);
+  });
+
+  it('Debe retornar Atletas ordenados de Z a A', () => {
+    expect(ordenar(testOrder3)).toEqual(testOrder2);
   });
 });
-
 
 // describe('anotherExample', () => {
 //   it('is a function', () => {
