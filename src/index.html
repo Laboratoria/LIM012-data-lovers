@@ -5,10 +5,12 @@
     <title>Data Lovers</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
        
-    <link rel="stylesheet" href="style.css" href="//fonts.googleapis.com/css?family=Raleway" />
+    <link rel="stylesheet" href="style.css" href="http://cssfontstack.com"/>
+    
+  
        
   </head>
-  <body class="selection body">
+  <body class="bodyCompleto">
  
     <section class="selection titulo">
       <header id="#header">
@@ -19,8 +21,8 @@
         
     </section>
 
-    <section class="selection">  
-      <p class='letra'>
+    <section class="selection letra div2" style="display: inline-flex; width: 100%;" >  
+      <p >
         <b class='busqueda'>ROLES:</b> 
         <select name="ROLES" id="roles" class='roles letra'>
           <option value="-1">Todos</option>
@@ -32,7 +34,7 @@
         </select>
       </p>
 
-      <p class='letra'>
+      <p >
         <b class='busqueda'>TOP 10:</b> 
         <select name="TOP10" class='top letra' id ="top">
           <option value="-1">Todos</option>
@@ -41,7 +43,7 @@
         </select>
       </p>
 
-      <p class='letra'>
+      <p>
         <b class='busqueda'>ORDENAR:</b> 
         <select name="ORDENAR" id="orden" class='orden letra'>
           <option value="AZ">A-Z</option>
@@ -49,24 +51,32 @@
         </select>
       </p>
       
-      <p>
+      <!-- <p>
         <input type="text" id="conteo" class="conteo">
-      </p>
-      <P>
-        <!-- <td height="380" colspan="3" valign="middle" class="bb"> -->
-        <audio controls autoplay>
-            <source src="audio.mp3" type="audio/mpeg">
-            Tu navegador no es compatible para reproducir audio.
-        </audio>
-        <!-- </td> -->
-      </P>
-      
-
-      <a href="#"></a><img src="imgbody/Eligecampeon.png" alt="" class="imgbody"></a>
-
+      </p> -->
     </section>
 
-      </div>
+    <section class="selection letra div3" style="display: inline-flex; width: 100%;" >
+      <P>
+        <!-- <td height="380" colspan="3" valign="middle" class="bb"> -->
+         <img src="music.png" style="height: 50px; width: 50px;"/>
+        <!-- </td> -->
+      </P>
+      <p><audio controls autoplay>
+           <source src="audio.mp3" type="audio/mpeg" >         
+         </audio>
+      </p>
+      <p>
+         <input type="text" id="conteo" class="conteo">
+      </p>
+     
+     </section>
+
+     <div class="elemento-padre">
+      <a href="#"></a><img src="imgbody/Eligecampeon.png" alt="" class="elemento-hijo"></a>
+    </div>
+
+
       <div id='container'>
 
       </div>
