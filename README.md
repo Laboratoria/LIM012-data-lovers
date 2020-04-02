@@ -12,29 +12,45 @@
 ## 1. Descripción del proyecto
 
 Pokémon GO es una experiencia de juego internacional que cuenta con más de mil millones de descargas y ha sido nombrada "el mejor juego para móviles" por Game Developers Choice Awards y "la mejor aplicación del año" por TechCrunch (tomado de Google Play).
-¿Tú también quieres unirte a esta experiencia pero dabes muy poco o nada acerca de pokemón? ¿Llevas poco tiempo jugando con esta aplicación y te sientes un perdido(a)?
+¿Tú también quieres unirte a esta experiencia pero sabes muy poco o nada acerca de pokemón? ¿Llevas poco tiempo jugando con esta aplicación y te sientes perdido(a)?
 
-XXXX es una página web dirigida principalmente a jugadores de Pokemon GO principiantes que quieren saber más información de cada pokemon y de esta manera estar mejor preparado para una batalla, aunque igual resulta útil para jugadores de cualquier nivel.
+[Pokedex]() es una página web dirigida principalmente a jugadores de Pokemon GO principiantes que quieren saber más información de cada pokemon y de esta manera estar mejor preparado para una batalla, aunque igual resulta útil para jugadores de cualquier nivel.
 
 ## 2. Objetivo de la página
 
-Mediante la página web, podrás acceder a la información de cada uno de ellos (dónde se detalla su nombre, una breve descripción, sus debilidades, resistencias, etc.), no necesitas saber su nombre exacto, simplemente bastará saber su inicial o las primeras letras de los pokemones que deseas conocer y nuesro buscador dinámico hará su trabajo.
-También podrás clasificarlos según al tipo que pertenece, ordenarlos de manera ascendente o descendente según salud, resistencia o simplemente alfabéticamente e incluso podrás obtener las 5 mejores combinaciones de ataque de cada uno de ellos, lo cual será particularmente útil cuando se quiere incurrir a una batalla.
+Mediante la página web, podrás acceder a la información de cada uno de los pokémones (dónde se detalla su nombre, una breve descripción, sus debilidades, resistencias, etc.), no necesitas saber su nombre exacto, simplemente bastará saber su inicial o las primeras letras de los pokemones que deseas conocer y nuesro buscador dinámico hará su trabajo.
+También podrás clasificarlos según el tipo de pókemon donde podrás visualizar cuantos pokemones de ese tipo hay y que pokemones son resistentes o debiles a este mismo tipo , ordenarlos de manera ascendente o descendente según salud, resistencia o simplemente alfabéticamente e incluso podrás obtener las 5 mejores combinaciones de ataque de cada uno de ellos, lo cual será particularmente útil cuando se quiere incurrir a una batalla.
 
 ## 3. Historias de usuario
+Las historias de usuario se trabajaron con la herramienta trello en el siguiente [link](https://trello.com/b/yXJ562wy/data-lovers-pokem%C3%B3n-l) donde se puede visualizar 6 historias de usuario que donde cada una consiste con criterios de aceptación, definición de terminado y pequeñas tareas en las cuales fueron subdivididas.
 
-### Historia uno
-### Historia dos
-### Historia tres
-### Historia cuatro
 
 ## 4. Diseño de la Interfaz de Usuario
 
 ### Prototipo de baja fidelidad
-Diseñamos bosquejos (para desktop y móvil) que constaba de dos pantallas.
+Diseñamos bosquejos (para desktop, móvil t tablet) que constaba de dos pantallas.
+#### Prototipo Móvil
+![](/src/images/movil1.jfif)
+![](/src/images/movil2.jfif)
+![](/src/images/movil3.jfif)
+#### Prototipo Tablet
+![](/src/images/tablet1.jfif)
+![](/src/images/tablet2.jfif)
+![](/src/images/tablet3.jfif)
+#### Prototipo Desktop
+![](/src/images/desktop1.jfif)
+![](/src/images/desktop2.jfif)
+![](/src/images/desktop3.jfif)
 
 ### Prototipo de alta fidelidad
 Diseñamos prototipos en FIGMA (para desktop y móvil) que constaba de dos pantallas.
+#### Prototipo para Móvil y tablet
+![](/src/images/figma-movil.PNG)
+#### Prototipo para Desktop
+![](/src/images/desktop-figma-1.PNG)
+![](/src/images/desktop-figma-2.PNG)
+![](/src/images/desktop-figma-3.PNG)
+
 
 ## 5. Objetivos de aprendizaje
 
