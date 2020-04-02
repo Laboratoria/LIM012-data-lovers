@@ -7,11 +7,13 @@ const listaTodos = lol.data; // en esta variable guardo los objetos de la data
 const arrayCampeones = Object.values(listaTodos);
 
 const lista = document.querySelector('#galeria'); // selecciono la parte donde voy a poner la informacion
+const cantidadCampeones = document.getElementById('cantidad');
 const resultado = (data) => {
   // vaciar arreglo para que no se duplique
   lista.innerHTML = '';
   // chequear la estructura de la data, si no es un array pasa a Object.values
   const checkData = Array.isArray(data) ? data : Object.values(data);
+  cantidadCampeones.innerHTML = `Cantidad de Campeones:  ${checkData.length}`;
   checkData.forEach((campeones) => {
     const casilla = document.createElement('div');
     const foto = document.createElement('img');
@@ -27,6 +29,7 @@ const resultado = (data) => {
   });
 };
 resultado(listaTodos);
+
 
 // buscando en el input
 const buscar = document.querySelector('#buscador');

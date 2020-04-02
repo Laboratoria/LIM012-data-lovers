@@ -33,29 +33,28 @@
     <main>
 
       <!--primera pantalla (buscar, ordenar)-->
-      <div id= "pantalla1"></div>
+      <div id= "pantalla1">
+      <div id="cantidad" class="cantidadMostrada"> </div>
         <section class="lista">
          <div id="galeria" class="galeriaDeCampeones"></div>
-          <div id="error" class="ocultar">No se encontraron resultados</div>
+         <div id="error" class="ocultar">No se encontraron resultados</div>
         </section> 
       </div>
-            <!--segunda pantalla (ver los roles)-->
-            <div id='pantalla2' class="ocultar">
-              <section id=sectionRoles class='roles'>
-                <input type=image id='Assassin' value ='Assassin' src='imagenes\role-icon-assassin.png'>
-                <input type=image id='Fighter' value ='Fighter' src='imagenes\league-of-legends-fighter-icon-1.png'> 
-                <input type=image id='Mage' value ='Mage' src='imagenes\Mage_icon.png'> 
-                <input type=image id='Marksman' value ='Marksman' src='imagenes\role_icon_support.png'> 
-                <input type=image id='Support' value ='Support' src='imagenes\role_icon_support.png'> 
-                <input type=image id='Tank' value ='Tank' src='imagenes\Tanque.png'>  
-              </section>
-       </div>
-       <button id="buttonUp" class="buttonUp"><i class="fas fa-angle-up"></i></button>
+      <!--segunda pantalla (ver los roles)-->
+      <div id="pantalla2" class="ocultar">
+        <section id="sectionRoles" class="roles">
+          <input type="image" id="Assassin" value ="Assassin" src="imagenes\role-icon-assassin.png">
+          <input type="image" id="Fighter" value ="Fighter" src="imagenes\league-of-legends-fighter-icon-1.png"> 
+          <input type="image" id="Mage" value ="Mage" src="imagenes\Mage_icon.png"> 
+          <input type="image" id="Marksman" value ="Marksman" src="imagenes\role_icon_support.png"> 
+          <input type="image" id="Support" value ="Support" src="imagenes\role_icon_support.png"> 
+          <input type="image" id="Tank" value ="Tank" src="imagenes\Tanque.png">
+        </section>
+      </div>
       <!--tercera pantalla (lista de campeones por rol)-->
-      <div id='pantalla3'>
+      <div id="pantalla3">
         <section>
-          <h3>ASESINO</h3>
-          <div id='listaAsesino'></div>
+          <div id="listaAsesino"></div>
         </section>
       </div>
     </main>
