@@ -302,7 +302,13 @@
 @media (max-width: 600px) {
     .cards {
         width: 300px;
+        overflow: auto;
     }
+
+    .pokemon-name2 {
+        height: 30px;
+        line-height: 30px;
+    }   
 
     .pokemon-screen {
         box-sizing: border-box;
@@ -326,12 +332,15 @@
     }
 
     .longElementName {
+        width: 19%;
         line-height: 0.8rem;
+        display: flex;
+        align-items: center;
     }
 
     .close {
         position: absolute;
-        top: 10px;
+        top: 5px;
         right: 10px;
         font-size: 1.3em;
         background-color: transparent;
