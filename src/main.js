@@ -216,9 +216,9 @@ const attackCard = (pokemon) => {
             <p>${getTypes(pokemon.weaknesses)}</p>
           </div>
         </section> 
-        <section class="calculate calculateStats">
-          <div class="quick-move ">
-            <p class="borderFiles subtitle2">Quick-Move</p>
+        <section class="calculate">
+          <div class="quick-move calculateStats">
+            <p class="subtitle2 line-width">Quick-Move</p>
             <p class="borderFiles longElement textTitle">Name</p>
             <p class="borderFiles element textTitle">Type</p>
             <p class="borderFiles longElement textTitle">Base damage</p>
@@ -228,7 +228,7 @@ const attackCard = (pokemon) => {
             <p class="borderFiles element textTitle">EPS</p>
           </div> 
           <div class="special-attack calculateStats">
-            <p class="borderFiles subtitle2">Special-attacks</p>
+            <p class="subtitle2 line-width">Special-attacks</p>
             <p class="borderFiles longElement textTitle">Name</p>
             <p class="borderFiles element textTitle">Type</p>
             <p class="borderFiles longElement textTitle">Base damage</p>
