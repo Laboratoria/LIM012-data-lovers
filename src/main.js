@@ -424,7 +424,7 @@ document.querySelector('.go-top-container').addEventListener('click', () => {
     behavior: 'smooth',
   });
 });
-
+// Focus input
 const iconSearch = document.querySelector('.flaticon-lupa');
 iconSearch.addEventListener('click', () => {
   searchInput.focus();
