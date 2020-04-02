@@ -1,7 +1,7 @@
 import { ordenar } from './data.js';
 import data from './data/atletas/atletas.js';
 
-const barraInicio = document.getElementById('barraInicio');
+const barraInicio = document.getElementById('hola');
 const datageneral = document.getElementById('datageneral');
 const barraMedallero = document.getElementById('barraMedallero');
 const filtroAz = document.getElementById('filtroAz');
@@ -17,6 +17,7 @@ document.getElementById('medallero').addEventListener('click', () => {
   datageneral.classList.add('hide');
   barraInicio.classList.add('hide');
   barraMedallero.classList.remove('hide');
+  filtroAz.classList.add('hide');
 });
 
 document.getElementById('btnSidney').addEventListener('click', () => {
@@ -42,13 +43,14 @@ document.getElementById('btnRio').addEventListener('click', () => {
 document.getElementById('atletas').addEventListener('click', () => {
   datageneral.classList.remove('hide');
   barraInicio.classList.add('hide');
+  barraMedallero.classList.add('hide');
   filtroAz.classList.remove('hide');
 
   const baseAtletas = (deportistas) => {
-
     let contenedor = '';
 
     const listaEncabezado = `
+
     <div class="encabezado">
         <div class="columna">Nombre</div>
         <div class="column">Pais</div>
@@ -61,7 +63,6 @@ document.getElementById('atletas').addEventListener('click', () => {
 
     deportistas.forEach((item) => {
       const lista = `
-
     <div class="fila">
       <div class="columna">${item.nombre}</div>
       <div class="column">${item.equipo}</div>
@@ -70,7 +71,7 @@ document.getElementById('atletas').addEventListener('click', () => {
       <div class="colum">${item.altura}</div>
       <div class="colum">${item.genero}</div>
     </div>
-  `;
+    `;
       contenedor += lista;
     });
     datageneral.innerHTML = listaEncabezado + contenedor;
@@ -78,8 +79,8 @@ document.getElementById('atletas').addEventListener('click', () => {
 
   baseAtletas(data.atletas);
 
-filtroAz.addEventListener('change', () => {
+  filtroAz.addEventListener('change', () => {
     const select = filtroAz.value;
     baseAtletas(ordenar(data.atletas, select));
-});
+  });
 });

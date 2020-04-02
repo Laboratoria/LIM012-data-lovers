@@ -12,22 +12,35 @@
 
 header{
   display: flex;
-  padding: 28px;
-  display: inline-block;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.headerNombre{
+.headerNombre h1{
+  display: flex;
   color: #1D4E89;
-  font-size: 42px;
+  font-size: 4rem;
   font-family: 'Questrial', sans-serif;
+  font-weight: lighter;
+  width: 100%;
+  margin-left: 7%;
 }
 
-.headerFecha{
-  font-family: 'Questrial', sans-serif
+header p{
+  font-family: 'Questrial', sans-serif;
+  font-size: 2rem;
+  position: absolute;
+  margin-left: 83%;
+  z-index: 1;
+  color: #ffff;
+}
+
+header img{
+  width: 35%;
 }
 
 nav{
-  background-image: url("img/menuimagen.png");
+  background-image: url("img/menuimg.png");
   background-size: cover;
   display: flex;
   justify-content: space-around;
@@ -39,17 +52,6 @@ a{
   text-decoration: none;
   font-family: 'Questrial', sans-serif;
   color: #ffff;
-}
-
-.menuInicio{
-
-}
-
-.menuInicio img{
-  display: flex;
-  width: 46%;
-  margin: 0px auto;
-  display: inline-block;
 }
 
 .encabezado{
@@ -65,8 +67,44 @@ a{
   display: flex;
 }
 
+.menuInicio{
+  display: flex;
+  width: 980px;
+  height: 500px;
+  overflow: hidden;
+  position: relative;
+  margin: auto;
+}
+
+li{
+  display: table-cell;
+}
+
+ul{
+  position: absolute;
+  animation-name: play;
+  animation-duration: 60s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes play {
+  0%{
+    left: -0px;
+  }
+  50%{
+    left: -1000px;
+  }
+  100%{
+    left: -2000px;
+  }
+}
+
+.menuInicio img{
+  width: 1000px;
+  height: 500px;
+}
+
 .menuAtletas{
-  margin-top: 5%;
   margin-bottom: 5%;
   margin-left: 15%;
   margin-right: 15%;
@@ -101,19 +139,46 @@ a{
   text-align: right;
 }
 
-.menuMedallero{
-  display: float;
-  justify-content: space-between;
+.filtroAz{
+    font-size: 1.2rem;
+    font-family: 'Questrial', sans-serif;
+    color: #1D4E89;
+    width: 6%;
+    margin: 4% 78%;
+    border: 1px solid #1D4E89;
 }
 
-
-.menuMedallero img{
-  justify-content: space-between;
-  width: 90px;
+.menuMedallero h2{
+  font-size: 1.5rem;
+  font-weight: lighter;
+  font-family: 'Questrial', sans-serif;
+  color: #1D4E89;
 }
 
 .menuMedallero button{
-  width: 5%;
+  border: none;
+  background: none;
+}
+
+.menuMedallero img{
+  width: 130px;
+}
+
+.summer{
+  display: inline-grid;
+  margin-right: 10%;
+}
+
+.winter{
+  display: inline-grid;
+  margin-left: 10%;
+}
+
+.menuMedallero{
+  margin-left: 25%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  justify-content: space-between;
 }
 
 footer{
@@ -121,8 +186,18 @@ footer{
   background-color: #1D4E89;
   padding: 28px;
   bottom: 0;
+  align-items: center;
 }
 
 .auspiciadores img{
   width: 7%;
+  margin-right: 10%;
+  float: right;
+}
+
+footer p{
+  font-size: 1.2rem;
+  font-family: 'Questrial', sans-serif;
+  color: #ffff;
+  margin-left: 1%;
 }
