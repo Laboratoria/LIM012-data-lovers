@@ -31,7 +31,6 @@ body {
 
 /*el header solo contiene una imagen*/
 .main-header{
-  /*background: url(img/logo4.jpg);*/
   height: 96px;
   margin: 0 auto;
   margin-top: 10px;/*para tener una distacia antes del encabezado*/
@@ -42,8 +41,8 @@ ul{
   background-color: var(--color-black);
   margin-top: 0 auto; /*para poder separar la lista del header*/
   flex-wrap: wrap;/*envoltura flexibe*/
-border: 1px solid var(--color-dorado);
-box-shadow: 0 0 1px rgb(255, 255, 252);
+  border: 1px solid var(--color-dorado);
+  box-shadow: 0 0 1px rgb(255, 255, 252);
 }
 
 ul li{
@@ -54,8 +53,7 @@ li{
   flex-grow: 1;
   text-align: center;
   line-height: 2.5;
-  /*border: 1px solid var(--color-dorado);*/
-  
+  /*border: 1px solid var(--color-dorado);*/  
 }
 
 ul li a{
@@ -70,14 +68,13 @@ ul li a{
 /*utilizando active*/
 li.active a {
   font-weight: bold;
-   height: 0.2px;
+  height: 0.2px;
   bottom: 0;
   /*border-radius: 8px;*/
   background:rgba(243, 168, 5, 0.842);/*color del cuadrado al elegir la opcion rgb(241, 178, 59);*/
   color:rgba(243, 168, 5, 0.842);/*colo que se pondra la elegir la opcion*/
   text-shadow: 0 0 1px rgb(255, 255, 252);
   transition: all .5s ease 0s;
-  /*bottom: 0;*//*para q no sea cuadro sino raya pero no me salio*/
 }
 
 li:hover {
@@ -105,7 +102,7 @@ li:hover {
   border: 1px solid var(--color-dorado);
 }
 
-/*agregando de youtube*/
+/*agregando hover*/
 div:hover{
  transform: scale(0.96);
  background:rgba(243, 168, 5, 0.842);
@@ -139,7 +136,6 @@ div:hover{
   padding: 0.10em;
   text-transform: uppercase;
   color: var(--color-white);
-  /**/  
   padding: 6% 8%;
   padding-top: 2%;
   padding-right: 8%;
@@ -157,7 +153,6 @@ div:hover{
 
 .icons_redes{
   margin-top: 15px;
-
 }
 
 .fa-facebook-square{
@@ -180,11 +175,3 @@ p{
   margin-top: -0.2em;/*15*/
   padding: 0.76em;
 }
-/*@media screen and (min-width: 768px) {
-  .nav-container {
-    display: flex;
-  }
-  .nav-container_item {
-    flex-grow: 1;
-  }
-}*/
