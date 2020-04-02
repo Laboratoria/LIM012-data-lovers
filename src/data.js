@@ -19,8 +19,6 @@ export const ordenAs = (p1) => {
 };
 
 export const filtrarAtletasPorDeporte = (arrayAtletas, deporteSeleccionado) => {
-  const deportesFiltrados = arrayAtletas.filter((atleta) => {
-    return atleta.deporte === deporteSeleccionado;
-  });
+  const deportesFiltrados = arrayAtletas.filter(atleta => atleta.deporte === deporteSeleccionado);
   return deportesFiltrados;
 };

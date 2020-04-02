@@ -57,26 +57,26 @@ alfhabeticOrder.addEventListener('click', () => {
 });
 
 const optionSports = document.querySelector('#optionSports');
-
 optionSports.addEventListener('change', (event) => {
   const deporteSeleccionado = optionSports.value;
   const atletasPorDeporte = filtrarAtletasPorDeporte(arrAtletas, deporteSeleccionado);
-
-  document.getElementById('root').innerHTML = '';
-  atletasPorDeporte.forEach((athlete) => {
-    const ulAtleta = document.createElement('ul');
-    const liNombre = document.createElement('li');
-    const textNombre = document.createTextNode(athlete.nombre);
-    liNombre.appendChild(textNombre);
-    ulAtleta.appendChild(liNombre);
-    const liEquipo = document.createElement('li');
-    const textEquipo = document.createTextNode(athlete.equipo);
-    liEquipo.appendChild(textEquipo);
-    ulAtleta.appendChild(liEquipo);
-    const liDeporte = document.createElement('li');
-    const textDeporte = document.createTextNode(athlete.deporte);
-    liDeporte.appendChild(textDeporte);
-    ulAtleta.appendChild(liDeporte);
-    document.getElementById('root').appendChild(ulAtleta);
-  });
+  if (event.target.id === 'optionSports') {
+    document.getElementById('root').innerHTML = '';
+    atletasPorDeporte.forEach((athlete) => {
+      const ulAtleta = document.createElement('ul');
+      const liNombre = document.createElement('li');
+      const textNombre = document.createTextNode(athlete.nombre);
+      liNombre.appendChild(textNombre);
+      ulAtleta.appendChild(liNombre);
+      const liEquipo = document.createElement('li');
+      const textEquipo = document.createTextNode(athlete.equipo);
+      liEquipo.appendChild(textEquipo);
+      ulAtleta.appendChild(liEquipo);
+      const liDeporte = document.createElement('li');
+      const textDeporte = document.createTextNode(athlete.deporte);
+      liDeporte.appendChild(textDeporte);
+      ulAtleta.appendChild(liDeporte);
+      document.getElementById('root').appendChild(ulAtleta);
+    });
+  }
 });

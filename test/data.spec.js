@@ -82,7 +82,6 @@ describe('ordenAs', () => {
         noc: 'ITA',
       },
       {
-<<<<<<< HEAD
         nombre: 'Matteo Bisiani',
         genero: 'M',
         altura: '184',
@@ -115,8 +114,6 @@ describe('filtrarAtletasPorDeporte', () => {
   it('Deberia retornar un array con atletas que solo hayan participado en el deporte Archery', () => {
     const threeOutput = [
       {
-=======
->>>>>>> e5b21a3af6970e7343a4fd0900e327610d44a277
         nombre: 'Matteo Bisiani',
         genero: 'M',
         altura: '184',
