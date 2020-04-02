@@ -46,7 +46,7 @@
     font-size: 0.8em;
     text-transform: capitalize;
     border-radius: 15px;
-    padding-bottom: 10px;
+    padding-bottom: 15px;
     text-align: left;
 }
 
@@ -158,9 +158,9 @@
 }
 
 .info-container:last-child {
- flex-direction: column;
- align-items: center;
- margin-top: 20px;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
 }
 
 .evolutions {
@@ -203,6 +203,93 @@
     width: 50%;
 }
 
+/*ATTACKS STYLE*/
+.name-stats {
+    line-height: 25px;
+}
+.stats-container{
+    margin-top: 10px;
+}
+.column2 {
+    width: 50%;
+    text-align: center;
+    box-sizing: border-box;
+    line-height: 1.7em;
+}
+.column2:first-child {
+    float: left;
+}
+
+.column2:last-child {
+    border-left: 1px solid #F25749;
+    float: right;
+}
+
+.calculate {
+    text-align: center;
+    width: 90%;
+    margin: auto;
+}
+.calculateStats {
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    line-height: 1.7em;
+    margin-top: 2px;
+    border-bottom: 1px solid #F25749;
+    border-top: 1px solid #F25749;
+}
+.attack-title {
+    margin-top: 10px;
+    padding: 3px 0;
+    color: #FFF;
+    background-color: #F25749;
+    box-sizing: border-box;
+}
+.element {
+    width: 12%;
+    display: inline-block;
+    text-align: center;
+    line-height: 1rem;
+}
+
+.longElement {
+    width: 14%;
+    display: inline-block;
+    text-align: center;
+    line-height: 0.9rem;
+}
+.longElementName {
+    width: 18%;
+    display: inline-block;
+    text-align: left;
+    line-height: 1.2rem;
+}
+.textTitle {
+    font-size: 0.6rem;
+}
+
+.textBreak {
+    font-size: 0.6rem;
+    overflow-wrap: break-word;
+}
+.textContent {
+    font-size: 0.7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.borderColumn {
+    border-right: 1px solid rgb(163, 163, 163);
+}
+.borderRows {
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid #F25749;
+}
 @media (max-width: 1300px) and (min-width: 600px) {
 
 }

@@ -10,7 +10,7 @@ import data from './data/pokemon/pokemon.js';
 
 const sectionContent = document.querySelector('.content');
 
-// Modal features
+// MODAL FEATURES
 const featuresCard = (pokemon) => {
   const getTypes = (arr) => {
     let types = '';
@@ -19,7 +19,7 @@ const featuresCard = (pokemon) => {
     });
     return types;
   };
-
+  // Card
   const sectionModal = document.createElement('section');
   sectionModal.classList.add('modal-container', 'modal-close');
   sectionModal.classList.toggle('modal-close');
@@ -76,7 +76,7 @@ const featuresCard = (pokemon) => {
   close.addEventListener('click', () => {
     sectionModal.classList.toggle('modal-close');
   });
-
+  // Evoluciones
   const evolutionContainer = cardContainer.querySelector('.evolutions');
   const pokEvolution = pokemon.evolution;
   const arrayOne = Object.values(pokEvolution);
@@ -100,12 +100,13 @@ const featuresCard = (pokemon) => {
     </div>`;
     return element;
   };
-
+  // Pokemons con una evolución y una pre evolución
   if (prevEvolution && nextEvolution) {
     const prevName = arrayOne[keysArrayOne.indexOf('prev-evolution')][0].name;
     const nextName = arrayOne[keysArrayOne.indexOf('next-evolution')][0].name;
     evolutionContainer.innerHTML = evolutionCard(prevName, 'prev-evolution', 'eachContainer');
     evolutionContainer.innerHTML += evolutionCard(nextName, 'next-evolution', 'eachContainer');
+    // Pokemons con una o varias evoluciones/pre evoluciones
   } else if (prevEvolution || nextEvolution) {
     let evolutionType = '';
 
@@ -124,6 +125,7 @@ const featuresCard = (pokemon) => {
         evolutionContainer.innerHTML += evolutionCard(lastArray[0].name, evolutionType, 'eachContainer');
       }
     } else {
+      // Pokemons con varias evoluciones
       arrayTwo.forEach((moreEvolutions) => {
         evolutionContainer.innerHTML += evolutionCard(moreEvolutions.name, evolutionType, 'moreContainer');
       });
@@ -149,7 +151,7 @@ const attackCard = (pokemon) => {
   const sectionModal = document.createElement('section');
   sectionModal.classList.add('modal-container', 'modal-close');
   sectionModal.classList.toggle('modal-close');
-
+  // Card
   const cardContainer = document.createElement('div');
   cardContainer.innerHTML = `
     <div class="modal">
@@ -163,63 +165,83 @@ const attackCard = (pokemon) => {
             </div>
           </div>
           <div class="stats-container">
-            <h3>Stats</h3>
-            <ul class= "name-stats">
-              <li>Base attack: ${pokemon.stats['base-attack']}</li>
-              <li>Base defense: ${pokemon.stats['base-defense']}</li>
-              <li>Base stamina: ${pokemon.stats['base-stamina']}</li>
-              <li>Max CP: ${pokemon.stats['max-cp']}</li>
-              <li>Max HP: ${pokemon.stats['max-hp']}</li>
-            </ul>
+            <p class="borderRows subtitle2">Stats</p>
+            <div class= "name-stats">
+              <p>Base attack: ${pokemon.stats['base-attack']}</p>
+              <p>Base defense: ${pokemon.stats['base-defense']}</p>
+              <p>Base stamina: ${pokemon.stats['base-stamina']}</p>
+              <p>Max CP: ${pokemon.stats['max-cp']}</p>
+              <p>Max HP: ${pokemon.stats['max-hp']}</p>
+            </div>
+          </div>
+        </section>
+        <section class="info-container">
+          <div class="column2">
+            <p class="borderRows subtitle2">Resistant</p>
+            <p>${getTypes(pokemon.resistant)}</p>
+          </div>
+          <div class="column2">
+            <p class="borderRows subtitle2">Weakness</p>
+            <p>${getTypes(pokemon.weaknesses)}</p>
           </div>
         </section> 
-        <div>
-          <p class="subtitle">Resistant</p>
-          <div>${getTypes(pokemon.resistant)}</div>
-          <p class="subtitle">Weakness</p>
-          <div>${getTypes(pokemon.weaknesses)}</div>
-        </div>
-        <div>
-          <h3>Quick-moves</h3>
+        <section class="calculate">
+          <p class="subtitle2 attack-title">Quick-Moves</p>
+          <div class="calculateStats">
+            <p class="longElementName textTitle">Name</p>
+            <p class="element textTitle">Type</p>
+            <p class="longElement textTitle">Base damage</p>
+            <p class="element textTitle">Energy</p>
+            <p class="longElement textTitle">Move duration</p>
+            <p class="element textTitle">DPS</p>
+            <p class="element textTitle">EPS</p>
+          </div> 
           <div class="quick-move"></div>
-        </div>
-        <div>
-          <h3>Special-attacks</h3>
+          <p class="subtitle2 attack-title">Special-attacks</p>
+          <div class="calculateStats">
+            <p class="longElementName textTitle">Name</p>
+            <p class="element textTitle">Type</p>
+            <p class="longElement textTitle">Base damage</p>
+            <p class="element textTitle">Energy</p>
+            <p class="longElement textTitle">Move duration</p>
+            <p class="element textTitle">DPS</p>
+            <p class="element textTitle">EPS</p>
+          </div>
           <div class="special-attack"></div>
-        </div>
+        </section>
       </section>  
     </div>`;
 
   const quickMoveContainer = cardContainer.querySelector('.quick-move');
   const specialAttackContainer = cardContainer.querySelector('.special-attack');
-
+  // Cálculos
   pokemon['quick-move'].forEach((quickMove) => {
     const divElement = document.createElement('div');
     divElement.innerHTML = `
-    <ul>
-      <li>Name: ${quickMove.name}</li>
-      <li>Type: ${quickMove.type}</li>
-      <li>Base-damage: ${quickMove['base-damage']}</li>
-      <li>Energy: ${quickMove.energy}</li>
-      <li>Move-duration-seg: ${quickMove['move-duration-seg']}</li>
-      <li>DPS: ${dpsCalculate(quickMove, pokemon.type)}</li>
-      <li>EPS: ${epsCalculate(quickMove)}</li>
-    </ul>`;
+    <div class="borderRows">
+      <p class="longElementName borderColumn textTitle">${quickMove.name}</p>
+      <p class="element borderColumn textTitle">${quickMove.type}</p>
+      <p class="longElement borderColumn textContent">${quickMove['base-damage']}</p>
+      <p class="element borderColumn textContent">${quickMove.energy}</p>
+      <p class="longElement borderColumn textContent">${quickMove['move-duration-seg']}</p>
+      <p class="element borderColumn textContent">${dpsCalculate(quickMove, pokemon.type)}</p>
+      <p class="element textContent ">${epsCalculate(quickMove)}</p>
+    </div>`;
     quickMoveContainer.appendChild(divElement);
   });
 
   pokemon['special-attack'].forEach((attack) => {
     const divElement = document.createElement('div');
     divElement.innerHTML = `
-    <ul>
-      <li>Name: ${attack.name}</li>
-      <li>Type: ${attack.type}</li>
-      <li>Base-damage: ${attack['base-damage']}</li>
-      <li>Energy: ${attack.energy}</li>
-      <li>Move-duration-seg: ${attack['move-duration-seg']}</li>
-      <li>DPS: ${dpsCalculate(attack, pokemon.type)}</li>
-      <li>EPS: ${epsCalculate(attack)}</li>
-    </ul>
+    <div class="borderRows"> 
+      <p class="longElementName borderColumn textBreak">${attack.name}</p>
+      <p class="element borderColumn textTitle">${attack.type}</p>
+      <p class="longElement borderColumn textContent">${attack['base-damage']}</p>
+      <p class="element borderColumn textContent">${attack.energy}</p>
+      <p class="longElement borderColumn textContent">${attack['move-duration-seg']}</p>
+      <p class="element borderColumn textContent">${dpsCalculate(attack, pokemon.type)}</p>
+      <p class="element textContent">${epsCalculate(attack)}</p>
+    </div>
     `;
     specialAttackContainer.appendChild(divElement);
   });
@@ -335,7 +357,7 @@ selection.addEventListener('change', () => {
   const chosenOrder = selection.value;
   sectionContent.innerHTML = '';
   sectionContent.appendChild(pokemonCards(order(data.pokemon, chosenOrder)));
-  // Mostrando la data completo por generaciones como defecto
+  // Mostrando la data completa por generaciones como defecto
   if (chosenOrder === 'default') {
     allDataByGenerations();
   }
