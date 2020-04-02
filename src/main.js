@@ -43,20 +43,24 @@ let showMoreSection = '';
 const positions = [0, 0, 0];
 let typeChoosed = '';
 
-const divCardContainerFlex = document.getElementById('card-container-flex');
-const divCardContainerBlock = document.getElementById('card-container-block');
+const getById = (label) => { document.getElementById(label); };
+const getByClass = (label) => { document.getElementsByClassName(label); };
+const getByQuery = (label) => { document.getElementsByClassName(label); };
+
+const divCardContainerFlex = getById('card-container-flex');
+const divCardContainerBlock = getById('card-container-block');
 let deg = 0;
-const titleTop = document.getElementById('top-pagination-p');
-const modalMode = document.getElementById('modal-mode');
-const btnChangeOrder = document.getElementById('btn-change-order');
+const titleTop = getById('top-pagination-p');
+const modalMode = getById('modal-mode');
+const btnChangeOrder = getById('btn-change-order');
 
-const divOrderBy = document.getElementsByClassName('menu')[0];
-const divFilterBy = document.getElementsByClassName('menu')[1];
+const divOrderBy = getByClass('menu')[0];
+const divFilterBy = getByClass('menu')[1];
 
-const modalWindow = document.getElementById('modal-window');
+const modalWindow = getById('modal-window');
 
-const orderBySelect = document.getElementById('order-by-select');
-const topTitle = document.getElementById('top-pagination-p');
+const orderBySelect = getById('order-by-select');
+const topTitle = getById('top-pagination-p');
 const iconTitle = document.querySelector('.icon-title');
 const iconArrowBack = document.querySelector('.icon-back');
 const iconHome = document.querySelector('#icon-nav-home');
@@ -84,7 +88,7 @@ const createPokemonCard = (index, pokemon, container) => {
     card.id = pokemon.name;
     card.innerHTML = `<span class="pokemon-name">${pokemon.name}</span>
                       <span class="pokemon-cp-hp">MAX CP ${pokemon.stats['max-cp']} / MAX HP ${pokemon.stats['max-cp']}</span>              
-                      <img class="pokemon-img" src="${pokemon.img}">
+                      <img class="pokemon-img-medium" src="${pokemon.img}">
                       <span class= "pokemon-about" > ${pokemon.about}</span>`;
     putPokemonTypes(pokemon.type, card);
     container.append(card);
@@ -108,7 +112,7 @@ const searchPokemon = () => {
     isContainerSection = false;
     divCardContainerFlex.style.display = 'flex';
   }
-  const wordIntroduced = document.getElementById('input-bar-search').value;
+  const wordIntroduced = getById('input-bar-search').value;
   currentData = dinamicSearchPokemon(wordIntroduced);
   if (currentData.length > 0) {
     showCard(currentData, divCardContainerFlex);
@@ -158,7 +162,7 @@ const showMenu = (which) => {
 
 const hideMenu = () => {
   modalMode.style.display = 'none';
-  const lateralMenu = document.getElementById('lateral-menu');
+  const lateralMenu = getById('lateral-menu');
   lateralMenu.style.width = '0';
   lateralMenu.getElementsByClassName('section-filter-by')[0].style.display = 'block';
 };
@@ -183,14 +187,14 @@ btnChangeOrder.addEventListener('click', () => {
 // const changeOrderCurrentData = () => {
 // };
 
-const inputBarSearch = document.getElementById('input-bar-search');
+const inputBarSearch = getById('input-bar-search');
 inputBarSearch.addEventListener('keyup', searchPokemon);
 inputBarSearch.addEventListener('keypress', onlyText, false);
 
-const topMenuFilterBtn = document.getElementsByClassName('top-menu-option')[0];
-const topMenuOrderBtn = document.getElementsByClassName('top-menu-option')[1];
-const btnCloseMenu = document.getElementById('close-menu');
-const btnCloseModal = document.getElementById('close-modal');
+const topMenuFilterBtn = getByClass('top-menu-option')[0];
+const topMenuOrderBtn = getByClass('top-menu-option')[1];
+const btnCloseMenu = getById('close-menu');
+const btnCloseModal = getById('close-modal');
 
 topMenuFilterBtn.addEventListener('click', () => {
   showMenu('filter');
@@ -235,8 +239,8 @@ const goToPrevItem = (slider, index) => {
 const sliderSystem = () => {
   const slideCards = divCardContainerBlock.getElementsByClassName('slide-cards');
   const slide = divCardContainerBlock.getElementsByClassName('slide');
-  const ctrlPrevButtons = document.getElementsByClassName('ctrl-prev');
-  const ctrlNextButtons = document.getElementsByClassName('ctrl-next');
+  const ctrlPrevButtons = getByClass('ctrl-prev');
+  const ctrlNextButtons = getByClass('ctrl-next');
   for (let i = 0; i < 3; i += 1) {
     ctrlPrevButtons[i].addEventListener('click', () => {
       goToPrevItem(slideCards[i], i);
@@ -262,7 +266,7 @@ iconArrowBack.addEventListener('click', (event) => {
   event.target.style.visibility = 'hidden';
 });
 
-const showMore = document.getElementsByClassName('show-more');
+const showMore = getByClass('show-more');
 showMore[0].addEventListener('click', () => {
   iconArrowBack.style.visibility = 'visible';
   showAllPokemons(resultTypes);
@@ -338,8 +342,8 @@ const filterPokemonsByType = (type) => {
 
 const filterSystem = () => {
   titleTop.textContent = '';
-  const titleSlider = document.getElementsByClassName('title-slider-p');
-  const resultSlider = document.getElementsByClassName('result');
+  const titleSlider = getByClass('title-slider-p');
+  const resultSlider = getByClass('result');
   for (let i = 0; i < optionsFilter.length; i += 1) {
     optionsFilter[i].addEventListener('click', () => {
       window.scrollTo(0, window.scrollY);
@@ -393,7 +397,7 @@ const orderSystem = () => {
     });
   } else {
     const whichOrder = ['max-cp', 'max-hp', 'a-z'];
-    const optionsOrder = document.getElementsByClassName('order-option');
+    const optionsOrder = getByClass('order-option');
     for (let i = 0; i < optionsOrder.length; i += 1) {
       optionsOrder[i].addEventListener('click', () => {
         deg = 0;
@@ -419,14 +423,14 @@ const orderSystem = () => {
 // eslint-disable-next-line no-shadow
 let menuConstructed = false;
 const menuSystem = () => {
-  const ulFilterOptions = document.getElementById('ul-filter-options');
+  const ulFilterOptions = getById('ul-filter-options');
   if (menuConstructed === false) {
     putPokemonTypesOnMenu(ulFilterOptions);
     menuConstructed = true;
   }
 
-  const buttonOrder = document.getElementById('menu-btn-order');
-  const buttonFilter = document.getElementById('menu-btn-filter');
+  const buttonOrder = getById('menu-btn-order');
+  const buttonFilter = getById('menu-btn-filter');
 
   orderSystem(buttonOrder);
   filterSystem(buttonFilter, ulFilterOptions);
@@ -447,7 +451,7 @@ const showEvolution = (poke, container, prev, next) => {
       if (pokemon !== undefined) {
         divContainer = document.createElement('div');
         divContainer.className = 'card-pokemon-evolition';
-        divContainer.innerHTML = `<span class="font">${pokemon.name}</span>
+        divContainer.innerHTML = `<span class="font pokemon-name">${pokemon.name}</span>
                                   <img src="${pokemon.img}" alt="" class="pokemon-img-small">`;
         container.append(divContainer);
       }
@@ -455,7 +459,7 @@ const showEvolution = (poke, container, prev, next) => {
   }
   divContainer = document.createElement('div');
   divContainer.className = 'card-pokemon-evolition';
-  divContainer.innerHTML = `<span class="font">${poke.name}</span>
+  divContainer.innerHTML = `<span class="font pokemon-name">${poke.name}</span>
                             <img src="${poke.img}" alt="" class="pokemon-img-small">`;
   container.append(divContainer);
 
@@ -465,7 +469,7 @@ const showEvolution = (poke, container, prev, next) => {
       if (pokemon !== undefined) {
         divContainer = document.createElement('div');
         divContainer.className = 'card-pokemon-evolition';
-        divContainer.innerHTML = `<span class="font">${pokemon.name}</span>
+        divContainer.innerHTML = `<span class="font pokemon-name">${pokemon.name}</span>
                                   <img src="${pokemon.img}" alt="" class="pokemon-img-small">`;
         container.append(divContainer);
       }
@@ -495,8 +499,8 @@ const buildTable = (list, table) => {
     table.innerHTML += `${row}`;
   }
 };
-const divMoveAndAttacks = document.getElementById('move-and-attack');
-const divcalculateMove = document.getElementById('calculate-damage');
+const divMoveAndAttacks = getById('move-and-attack');
+const divcalculateMove = getById('calculate-damage');
 
 const showDamageOfMove = (btn) => {
   if (btn.name === 'calculate') {
@@ -522,7 +526,7 @@ const calculeDamage = (container, list) => {
   }
 };
 
-const btnCalc = document.getElementById('get-set-move');
+const btnCalc = getById('get-set-move');
 btnCalc.addEventListener('click', () => {
   showDamageOfMove(btnCalc);
 });
@@ -530,36 +534,36 @@ btnCalc.addEventListener('click', () => {
 const showInfoPokemon = (name) => {
   modalWindow.style.display = 'block';
   const pokemon = data.pokemon.find(pk => pk.name === name);
-  document.getElementById('img-pokemon-modal').setAttribute('src', pokemon.img);
-  document.getElementById('div-pokemon-name-modal').textContent = pokemon.name;
-  document.getElementById('height').textContent = pokemon.size.height;
-  document.getElementById('candy').textContent = pokemon.evolution.candy.replace('candy', '');
-  document.getElementById('region').textContent = pokemon.generation.name;
-  document.getElementById('weight').textContent = pokemon.size.weight;
-  const types = document.getElementById('types');
-  const resistant = document.getElementById('resistant');
-  const weaknesses = document.getElementById('weaknesses');
+  getById('img-pokemon-modal').setAttribute('src', pokemon.img);
+  getById('div-pokemon-name-modal').textContent = pokemon.name;
+  getById('height').textContent = pokemon.size.height;
+  getById('candy').textContent = pokemon.evolution.candy.replace('candy', '');
+  getById('region').textContent = pokemon.generation.name;
+  getById('weight').textContent = pokemon.size.weight;
+  const types = getById('types');
+  const resistant = getById('resistant');
+  const weaknesses = getById('weaknesses');
   types.innerHTML = '';
   resistant.innerHTML = '';
   weaknesses.innerHTML = '';
   createIcons(pokemon.type, types);
   createIcons(pokemon.resistant, resistant);
   createIcons(pokemon.weaknesses, weaknesses);
-  const specialAttacks = document.getElementById('special-attacks-table');
-  const quickMove = document.getElementById('quick-move-table');
-  const calcDamage = document.getElementById('table-damage');
+  const specialAttacks = getById('special-attacks-table');
+  const quickMove = getById('quick-move-table');
+  const calcDamage = getById('table-damage');
   calcDamage.innerHTML = '';
   calculeDamage(calcDamage, calculateBetterCombinations(pokemon));
   buildTable(pokemon['special-attack'], specialAttacks);
   buildTable(pokemon['quick-move'], quickMove);
-  const evolution = document.getElementById('evolution');
+  const evolution = getById('evolution');
   showEvolution(pokemon, evolution, pokemon.evolution['prev-evolution'], pokemon.evolution['next-evolution']);
 };
 
 const loadPage = () => {
   window.scrollTo(0, 0);
   currentData = data.pokemon;
-  const wordIntroduced = document.getElementById('input-bar-search').value;
+  const wordIntroduced = getById('input-bar-search').value;
   menuSystem();
   if (wordIntroduced.length === 0 && isContainerSection === false) {
     showCard(currentData, divCardContainerFlex);
