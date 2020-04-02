@@ -12,7 +12,7 @@ const transformaBandera = (initial) => {
 
 const data = dataAtletas.atletas;
 
-/*
+
 document.getElementById('main').innerHTML = `
 <h2 class='titleh2' >TODOS LOS ATLETAS</h2>
 
@@ -41,8 +41,22 @@ ${data
     .join('')}
 </div>
 `;
- */
 
 
 const filterGender = data.filter(ele => (ele.gender === 'F'));
 console.log(filterGender);
+
+/* filtrar a los atletas por  */
+
+const filtrardataHombres = data.filter(items => (items.gender === 'M'));
+console.log('atletas hombres =>', filtrardataHombres);
+
+const filtrardataMujeres = data.filter(items => (items.gender === 'F'));
+console.log('atletas mujeres =>', filtrardataMujeres);
+
+/* para las opciones de temporada y medallas debemos filtar el array disciplinas de array general Atletas */
+const filtrardataInvierno = data.filter(items => (items.disciplinas.filter(item => (item.temporada === 'Summer'))));
+console.log('temporada inviernop =>', filtrardataInvierno);
+
+const filtrarmedallaOro = data.filter(items => (items.gender === 'F'));
+console.log('atletas mujeres =>', filtrarmedallaOro);
