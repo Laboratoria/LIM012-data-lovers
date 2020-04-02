@@ -36,7 +36,6 @@ let resultResistant = [];
 let resultWeaknesses = [];
 let currentData = [];
 const optionsFilter = [];
-// const optionsOrder = [];
 let isContainerSection = false;
 let isContainerShowMore = false;
 let isShowMove = true;
@@ -49,14 +48,19 @@ const divCardContainerBlock = document.getElementById('card-container-block');
 let deg = 0;
 const titleTop = document.getElementById('top-pagination-p');
 const modalMode = document.getElementById('modal-mode');
-const imgChange = document.getElementById('btn-change-order');
+const btnChangeOrder = document.getElementById('btn-change-order');
 
 const divOrderBy = document.getElementsByClassName('menu')[0];
 const divFilterBy = document.getElementsByClassName('menu')[1];
 
-const btnChangeOrder = document.getElementById('btn-change-order');
 const modalWindow = document.getElementById('modal-window');
 
+const orderBySelect = document.getElementById('order-by-select');
+const topTitle = document.getElementById('top-pagination-p');
+const iconTitle = document.querySelector('.icon-title');
+const iconArrowBack = document.querySelector('.icon-back');
+const iconHome = document.querySelector('#icon-nav-home');
+const iconGoTop = document.querySelector('#icon-arrow-up');
 
 const createPokemonType = (type) => {
   const divPokemonType = document.createElement('div');
@@ -72,9 +76,6 @@ const putPokemonTypes = (dataTypesPokemon, divCardTypes) => {
   }
 };
 
-const showMessageOfSearch = (container) => {
-  container.innerHTML = '<p>Lo sentimos, no encontramos resultados que coincidan con su búsqueda</p>';
-};
 const createPokemonCard = (index, pokemon, container) => {
   if (typeof pokemon !== 'undefined') {
     const card = document.createElement('div');
@@ -87,8 +88,6 @@ const createPokemonCard = (index, pokemon, container) => {
                       <span class= "pokemon-about" > ${pokemon.about}</span>`;
     putPokemonTypes(pokemon.type, card);
     container.append(card);
-  } else {
-    showMessageOfSearch(container);
   }
 };
 
@@ -100,6 +99,10 @@ const showCard = (dataPokemon, container) => {
 };
 
 const searchPokemon = () => {
+  orderBySelect.selectedIndex = 0;
+  topTitle.textContent = '';
+  iconTitle.style.visibility = 'hidden';
+  iconArrowBack.style.visibility = 'hidden';
   if (isContainerSection === true) {
     divCardContainerBlock.style.display = 'none';
     isContainerSection = false;
@@ -110,7 +113,9 @@ const searchPokemon = () => {
   if (currentData.length > 0) {
     showCard(currentData, divCardContainerFlex);
   } else if (currentData.length === 0 && wordIntroduced.length !== 0) {
-    showMessageOfSearch(divCardContainerFlex);
+    divCardContainerFlex.innerHTML = `<p class="message font text-aling">
+    Sorry, no results were found for your search <span class="import-text font">${wordIntroduced}</span> make sure it is well written
+    <i class="icon-wondering font"></i></p>`;
   } else {
     currentData = data.pokemon;
     showCard(currentData, divCardContainerFlex);
@@ -125,7 +130,6 @@ const createOptionFilter = (name) => {
   icon.setAttribute('src', `images/${name}-icon.png`);
   li.textContent = name;
   li.append(icon);
-  // li.append(a);
   optionsFilter.push(li);
   return li;
 };
@@ -135,7 +139,6 @@ const pokemonTypes = Object.keys(typeColors);
 
 const putPokemonTypesOnMenu = (container) => {
   for (let key = 0; key < pokemonTypes.length; key += 1) {
-    // container.appendChild(createTypeButton(pokemonTypes[key]));
     container.appendChild(createOptionFilter(pokemonTypes[key]));
   }
   divFilterBy.appendChild(container);
@@ -154,9 +157,11 @@ const showMenu = (which) => {
 };
 
 const hideMenu = () => {
+  console.log('ocultadon menu');
   modalMode.style.display = 'none';
   const lateralMenu = document.getElementById('lateral-menu');
   lateralMenu.style.width = '0';
+  lateralMenu.getElementsByClassName('section-filter-by')[0].style.display = 'block';
 };
 
 const onlyText = (e) => {
@@ -170,15 +175,14 @@ const onlyText = (e) => {
 };
 
 
-const changeOrderCurrentData = () => {
-  deg = 0;
-  btnChangeOrder.addEventListener('click', () => {
-    deg += 180;
-    imgChange.style.transform = `rotate(${deg}deg)`;
-    currentData = changeOrder(currentData);
-    showCard(currentData, divCardContainerFlex);
-  });
-};
+btnChangeOrder.addEventListener('click', () => {
+  deg += 180;
+  btnChangeOrder.style.transform = `rotate(${deg}deg)`;
+  currentData = changeOrder(currentData);
+  showCard(currentData, divCardContainerFlex);
+});
+// const changeOrderCurrentData = () => {
+// };
 
 const inputBarSearch = document.getElementById('input-bar-search');
 inputBarSearch.addEventListener('keyup', searchPokemon);
@@ -254,44 +258,80 @@ const showAllPokemons = (listData) => {
   isContainerShowMore = true;
 };
 
+iconArrowBack.addEventListener('click', (event) => {
+  divCardContainerFlex.style.display = 'none';
+  divCardContainerBlock.style.display = 'block';
+  isContainerSection = true;
+  event.target.style.visibility = 'hidden';
+});
+
 const showMore = document.getElementsByClassName('show-more');
 showMore[0].addEventListener('click', () => {
+  iconArrowBack.style.visibility = 'visible';
   showAllPokemons(resultTypes);
   currentData = resultTypes;
   titleTop.textContent = `${typeChoosed} Type Pokemons`;
+  topTitle.textContent = typeChoosed;
   showMoreSection = 'type';
 });
 
 showMore[1].addEventListener('click', () => {
+  iconArrowBack.style.visibility = 'visible';
   showAllPokemons(resultResistant);
   currentData = resultResistant;
   titleTop.textContent = `Pokemons resistant to the ${typeChoosed} Type`;
+  topTitle.textContent = typeChoosed;
   showMoreSection = 'resistant';
 });
 
 showMore[2].addEventListener('click', () => {
+  iconArrowBack.style.visibility = 'visible';
   showAllPokemons(resultWeaknesses);
   currentData = resultWeaknesses;
   titleTop.textContent = `Pokemons weaknesses to the ${typeChoosed} Type`;
+  topTitle.textContent = typeChoosed;
   showMoreSection = 'weaknesses';
 });
+
+const showMessageInSection = (container, section) => {
+  container.innerHTML = `<p class="message font text-aling" >Sorry, there are no ${section} pokemons for this type</p>`;
+};
 
 /* -------- muestra mokempnes despues del filrtado por tipo -----------*/
 const showPokemonInSections = () => {
   if (isContainerSection === false) {
-    console.log('de ver mas a filtrado');
     isContainerSection = true;
     divCardContainerFlex.style.display = 'none';
     btnChangeOrder.style.visibility = 'hidden';
     divCardContainerBlock.style.display = 'block';
   }
+  const sliders = divCardContainerBlock.getElementsByClassName('slider');
   const divSections = divCardContainerBlock.getElementsByClassName('slide-cards');
   divSections[0].innerHTML = '';
   divSections[1].innerHTML = '';
   divSections[2].innerHTML = '';
   showCard(resultTypes, divSections[0]);
-  showCard(resultResistant, divSections[1]);
-  showCard(resultWeaknesses, divSections[2]);
+  if (resultResistant.length > 0) {
+    showCard(resultResistant, divSections[1]);
+  } else {
+    sliders[1].querySelector('.show-more').style.visibility = 'hidden';
+    sliders[1].getElementsByTagName('button')[0].style.visibility = 'hidden';
+    sliders[1].getElementsByTagName('button')[1].style.visibility = 'hidden';
+    showMessageInSection(divSections[1], 'resistant');
+  }
+
+  if (resultWeaknesses.length > 0) {
+    showCard(resultWeaknesses, divSections[2]);
+    sliders[2].querySelector('.show-more').style.visibility = 'visible';
+    sliders[2].getElementsByTagName('button')[0].style.visibility = 'visible';
+    sliders[2].getElementsByTagName('button')[1].style.visibility = 'visible';
+  } else {
+    sliders[2].querySelector('.show-more').style.visibility = 'hidden';
+    sliders[2].getElementsByTagName('button')[0].style.visibility = 'hidden';
+    sliders[2].getElementsByTagName('button')[1].style.visibility = 'hidden';
+    showMessageInSection(divSections[2], 'resistant');
+
+  }
 };
 
 
@@ -308,24 +348,27 @@ const filterSystem = () => {
   const resultSlider = document.getElementsByClassName('result');
   for (let i = 0; i < optionsFilter.length; i += 1) {
     optionsFilter[i].addEventListener('click', () => {
-      console.log(optionsFilter);
+      window.scrollTo(0, window.scrollY);
+      orderBySelect.selectedIndex = 0;
       // eslint-disable-next-line no-return-assign
       optionsFilter.forEach(element => element.style.background = '#1B262C');
       optionsFilter[i].style.background = 'var(--color-blue-3)';
       isContainerShowMore = false;
-      if (window.innerWidth < desktopSize) {
-        hideMenu();
-      }
-      btnChangeOrder.style.visibility = 'visible';
+      if (window.innerWidth < desktopSize) hideMenu();
+      btnChangeOrder.style.visibility = 'hidden';
       isContainerShowMore = false;
+      topTitle.textContent = optionsFilter[i].textContent;
+      console.log(optionsFilter[i].textContent);
+      iconTitle.setAttribute('src', `images/${optionsFilter[i].textContent}-icon.png`);
+      iconTitle.style.visibility = 'visible';
       filterPokemonsByType(optionsFilter[i].textContent);
       typeChoosed = optionsFilter[i].textContent;
       resultSlider[0].textContent = `${resultTypes.length}`;
       resultSlider[1].textContent = `${resultResistant.length}`;
       resultSlider[2].textContent = `${resultWeaknesses.length}`;
-      titleSlider[0].textContent = `${typeChoosed}-Type Pokemons`;
-      titleSlider[1].textContent = `${typeChoosed}-Resistant Pokemons`;
-      titleSlider[2].textContent = `${typeChoosed}-Weaknesses Pokemons`;
+      titleSlider[0].textContent = `${typeChoosed} Pokemons`;
+      titleSlider[1].textContent = `Pokemons resistant to ${typeChoosed}`;
+      titleSlider[2].textContent = `Pokemons weak to ${typeChoosed} `;
       showPokemonInSections();
     });
   }
@@ -340,26 +383,43 @@ const orderSections = (option) => {
 };
 
 const orderSystem = () => {
-  const whichOrder = ['max-cp', 'max-hp', 'a-z'];
-  const optionsOrder = document.getElementsByClassName('order-option');
-  for (let i = 0; i < optionsOrder.length; i += 1) {
-    optionsOrder[i].addEventListener('click', () => {
-      for (let j = 0; j < optionsOrder.length; j += 1) {
-        optionsOrder[j].style.background = 'rgb(43, 41, 41)';
-      }
-      optionsOrder[i].style.background = '#0F4C75';
-      btnChangeOrder.style.visibility = 'visible';
-      if (isContainerSection) {
-        orderSections(whichOrder[i]);
-      } else {
-        currentData = orderBy(currentData, whichOrder[i]);
-        showCard(currentData, divCardContainerFlex);
-        changeOrderCurrentData(divCardContainerFlex);
-      }
-      if ((window.innerWidth >= desktopSize) === false) {
-        hideMenu();
+  if (window.innerWidth >= desktopSize) {
+    orderBySelect.addEventListener('change', (event) => {
+      deg = 0;
+      btnChangeOrder.style.transform = `rotate(${deg}deg)`;
+      if (event.target.value !== '') {
+        btnChangeOrder.style.visibility = (isContainerSection) ? 'hidden' : 'visible';
+        if (isContainerSection) {
+          orderSections(event.target.value);
+        } else {
+          currentData = orderBy(currentData, event.target.value);
+          showCard(currentData, divCardContainerFlex);
+          // changeOrderCurrentData(divCardContainerFlex);
+        }
       }
     });
+  } else {
+    const whichOrder = ['max-cp', 'max-hp', 'a-z'];
+    const optionsOrder = document.getElementsByClassName('order-option');
+    for (let i = 0; i < optionsOrder.length; i += 1) {
+      optionsOrder[i].addEventListener('click', () => {
+        deg = 0;
+        btnChangeOrder.style.transform = `rotate(${deg}deg)`;
+        hideMenu();
+        for (let j = 0; j < optionsOrder.length; j += 1) {
+          optionsOrder[j].style.background = 'rgb(43, 41, 41)';
+        }
+        optionsOrder[i].style.background = '#0F4C75';
+        btnChangeOrder.style.visibility = (isContainerSection) ? 'hidden' : 'visible';
+        if (isContainerSection) {
+          orderSections(whichOrder[i]);
+        } else {
+          currentData = orderBy(currentData, whichOrder[i]);
+          showCard(currentData, divCardContainerFlex);
+          // changeOrderCurrentData(divCardContainerFlex);
+        }
+      });
+    }
   }
 };
 
@@ -446,28 +506,34 @@ const divMoveAndAttacks = document.getElementById('move-and-attack');
 const divcalculateMove = document.getElementById('calculate-damage');
 
 const showDamageOfMove = (btn) => {
-  if (isShowMove) {
+  console.log(btn.name);
+  if (btn.name === 'calculate') {
     divMoveAndAttacks.style.display = 'none';
     divcalculateMove.style.display = 'block';
     btn.textContent = 'Moves & Attacks';
-    isShowMove = false;
+    btn.name = 'moves';
   } else {
     divMoveAndAttacks.style.display = 'flex';
     divcalculateMove.style.display = 'none';
-    isShowMove = true;
     btn.textContent = 'Calculate Damage';
+    btn.name = 'calculate';
   }
 };
 // let isCalculate = false;
-const calculeDamage = (num, container, list) => {
+const calculeDamage = (container, list) => {
   container.innerHTML = '';
   container.innerHTML += '<tr><th>Quick Move</th><th></th><th>Special Attack</th><th></th><th>Damage</th></tr>';
-  for (let i = 0; i < num; i += 1) {
+  for (let i = 0; i < list.length; i += 1) {
     container.innerHTML += `<tr><td>${list[i][0]}</td><td><img src="images/plus1.png" class="icon-small"></td>
                             <td>${list[i][1]}</td><td><img src="images/igual1.png" class="icon-small"></td>
                             <td>${list[i][2]}</td></tr>`;
   }
 };
+
+const btnCalc = document.getElementById('get-set-move');
+btnCalc.addEventListener('click', () => {
+  showDamageOfMove(btnCalc);
+});
 
 const showInfoPokemon = (name) => {
   modalWindow.style.display = 'block';
@@ -478,7 +544,6 @@ const showInfoPokemon = (name) => {
   document.getElementById('candy').textContent = pokemon.evolution.candy.replace('candy', '');
   document.getElementById('region').textContent = pokemon.generation.name;
   document.getElementById('weight').textContent = pokemon.size.weight;
-  const btnCalc = document.getElementById('get-set-move');
   const types = document.getElementById('types');
   const resistant = document.getElementById('resistant');
   const weaknesses = document.getElementById('weaknesses');
@@ -492,13 +557,7 @@ const showInfoPokemon = (name) => {
   const quickMove = document.getElementById('quick-move-table');
   const calcDamage = document.getElementById('table-damage');
   calcDamage.innerHTML = '';
-  isShowMove = true;
-  btnCalc.addEventListener('click', () => {
-    let count = calculateBettersCombination(pokemon).length;
-    count = (count > 5) ? 5 : count;
-    showDamageOfMove(btnCalc);
-    calculeDamage(count, calcDamage, calculateBettersCombination(pokemon));
-  });
+  calculeDamage(calcDamage, calculateBettersCombination(pokemon));
   buildTable(pokemon['special-attack'], specialAttacks);
   buildTable(pokemon['quick-move'], quickMove);
   const evolution = document.getElementById('evolution');
@@ -507,6 +566,7 @@ const showInfoPokemon = (name) => {
 };
 
 const loadPage = () => {
+  window.scrollTo(0, 0);
   currentData = data.pokemon;
   const wordIntroduced = document.getElementById('input-bar-search').value;
   menuSystem();
@@ -519,10 +579,31 @@ document.addEventListener('click', (event) => {
   const element = event.target.parentNode;
   if (element.className === 'pokemon-card  flex-wrap font grow') {
     modalMode.style.display = 'block';
+    divMoveAndAttacks.style.display = 'flex';
+    divcalculateMove.style.display = 'none';
+    btnCalc.name = 'calculate';
+    btnCalc.textContent = 'Calculate Damage';
     showInfoPokemon(element.id);
   }
 });
 
+iconHome.addEventListener('click', () => {
+  isContainerSection = false;
+  divCardContainerBlock.style.display = 'none';
+  divCardContainerFlex.style.display = 'flex';
+  iconTitle.style.visibility = 'hidden';
+  titleTop.textContent = '';
+  currentData = data.pokemon;
+  showCard(currentData, divCardContainerFlex);
+});
+
+iconGoTop.addEventListener('click', () => {
+  window.scrollTo(0, 0);
+});
+
+window.addEventListener('scroll', () => {
+  iconGoTop.style.height = (window.scrollY > 500) ? '60px' : '0px';
+});
 
 sliderSystem();
 window.onload = loadPage;
