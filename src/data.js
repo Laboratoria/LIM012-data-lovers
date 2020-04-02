@@ -52,12 +52,37 @@ export const filterData = (data, condition) => {
   return filtering;
 };
 
-export const filterAssassin = (data) => {
-  const filterOnlyAssassin = data.filter(champion => champion.tags.includes('Assassin'));
-  const reduceHpAssassin = filterOnlyAssassin.reduce((total, next) => total + next.stats.hp, 0);
-  const avgHpAssassin = reduceHpAssassin / filterOnlyAssassin.length;
-  return avgHpAssassin;
+export const filterAssassin = (data, role) => {
+  const filterOnlyAssassin = data.filter((champion) => {
+    if (champion.tags.includes(role === 'Assassin')) {
+      const reduceHpAssassin = filterOnlyAssassin.reduce((total, next) => total + next.stats.hp, 0);
+      const avgHpAssassin = reduceHpAssassin / filterOnlyAssassin.length;
+      return avgHpAssassin;
+    }
+    if (champion.tags.includes(role === 'Fighter')) {
+      const reduceHpAssassin = filterOnlyAssassin.reduce((total, next) => total + next.stats.hp, 0);
+      const avgHpAssassin = reduceHpAssassin / filterOnlyAssassin.length;
+      return avgHpAssassin;
+    }
+    if (champion.tags.includes(role === 'Mage')) {
+      const reduceHpAssassin = filterOnlyAssassin.reduce((total, next) => total + next.stats.hp, 0);
+      const avgHpAssassin = reduceHpAssassin / filterOnlyAssassin.length;
+      return avgHpAssassin;
+    }
+    if (champion.tags.includes(role === 'Support')) {
+      const reduceHpAssassin = filterOnlyAssassin.reduce((total, next) => total + next.stats.hp, 0);
+      const avgHpAssassin = reduceHpAssassin / filterOnlyAssassin.length;
+      return avgHpAssassin;
+    }
+    if (champion.tags.includes(role === 'Marksman')) {
+      const reduceHpAssassin = filterOnlyAssassin.reduce((total, next) => total + next.stats.hp, 0);
+      const avgHpAssassin = reduceHpAssassin / filterOnlyAssassin.length;
+      return avgHpAssassin;
+    }
+  });
+  return filterOnlyAssassin;
 };
+
 
 export const filterFighter = (data) => {
   const filterOnlyFighter = data.filter(champion => champion.tags.includes('Fighter'));
