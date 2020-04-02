@@ -457,7 +457,7 @@ describe('epsCalculate', () => {
   it('is a function', () => {
     expect(typeof epsCalculate).toBe('function');
   });
-  it('debería retornar el calculo damage por segundo del pokemon seleccionado', () => {
+  it('debería retornar el calculo de energía por segundo del pokemon seleccionado', () => {
     expect(epsCalculate(data2)).toBe('10.0');
   });
 });
