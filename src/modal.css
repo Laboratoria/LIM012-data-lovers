@@ -47,7 +47,7 @@
     font-size: 0.8em;
     text-transform: capitalize;
     border-radius: 15px;
-    padding-bottom: 10px;
+    padding-bottom: 15px;
     text-align: left;
 }
 
@@ -159,9 +159,9 @@
 }
 
 .info-container:last-child {
- flex-direction: column;
- align-items: center;
- margin-top: 20px;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
 }
 
 .evolutions {
@@ -226,36 +226,34 @@
     float: right;
 }
 
-.affinity {
-    width: 90%;
-    display: inline-block; 
-    text-align: center;
-    margin-top: 5px;
-    margin-left: 20px;
-}
 .calculate {
     text-align: center;
-    width: 97%;
-    margin-left: 3px;
+    width: 90%;
+    margin: auto;
 }
 .calculateStats {
     width: 100%;
     box-sizing: border-box;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
     line-height: 1.7em;
-    margin-top: 5px;
-}
-.line-width {
-    width: 95%;
-    margin-left: 7px;
+    margin-top: 2px;
     border-bottom: 1px solid #F25749;
+    border-top: 1px solid #F25749;
+}
+.attack-title {
+    margin-top: 10px;
+    padding: 3px 0;
+    color: #FFF;
+    background-color: #F25749;
+    box-sizing: border-box;
 }
 .element {
-    width: 11%;
+    width: 12%;
     display: inline-block;
     text-align: center;
-    line-height: 0.9rem;
-    margin: 0px;
-    padding: 0px;
+    line-height: 1rem;
 }
 
 .longElement {
@@ -263,28 +261,34 @@
     display: inline-block;
     text-align: center;
     line-height: 0.9rem;
-    align-items: flex-end;
-    margin: 0px;
-    padding: 0px;    
 }
 .longElementName {
-    width: 15%;
+    width: 18%;
     display: inline-block;
-    text-align: center;
-    line-height: 1rem;
-    margin: 0px;
-    padding: 0px;
+    text-align: left;
+    line-height: 1.2rem;
 }
 .textTitle {
-    font-size: 0.65rem;
+    font-size: 0.6rem;
+}
+
+.textBreak {
+    font-size: 0.6rem;
+    overflow-wrap: break-word;
 }
 .textContent {
-    font-size: 0.55rem;
+    font-size: 0.7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
 .borderColumn {
-    border-right: 1px solid #F25749;
+    border-right: 1px solid rgb(163, 163, 163);
 }
-.borderFiles {
+.borderRows {
+    display: flex;
+    justify-content: space-around;
     border-bottom: 1px solid #F25749;
 }
 @media (max-width: 1300px) and (min-width: 600px) {
