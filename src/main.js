@@ -10,7 +10,7 @@ import data from './data/pokemon/pokemon.js';
 
 const sectionContent = document.querySelector('.content');
 
-// Modal features
+// MODAL FEATURES
 const featuresCard = (pokemon) => {
   const getTypes = (arr) => {
     let types = '';
@@ -19,7 +19,7 @@ const featuresCard = (pokemon) => {
     });
     return types;
   };
-
+  // Card
   const sectionModal = document.createElement('section');
   sectionModal.classList.add('modal-container', 'modal-close');
   sectionModal.classList.toggle('modal-close');
@@ -76,7 +76,7 @@ const featuresCard = (pokemon) => {
   close.addEventListener('click', () => {
     sectionModal.classList.toggle('modal-close');
   });
-
+  // Evoluciones
   const evolutionContainer = cardContainer.querySelector('.evolutions');
   const pokEvolution = pokemon.evolution;
   const arrayOne = Object.values(pokEvolution);
@@ -100,12 +100,13 @@ const featuresCard = (pokemon) => {
     </div>`;
     return element;
   };
-
+  // Pokemons con una evolución y una pre evolución
   if (prevEvolution && nextEvolution) {
     const prevName = arrayOne[keysArrayOne.indexOf('prev-evolution')][0].name;
     const nextName = arrayOne[keysArrayOne.indexOf('next-evolution')][0].name;
     evolutionContainer.innerHTML = evolutionCard(prevName, 'prev-evolution', 'eachContainer');
     evolutionContainer.innerHTML += evolutionCard(nextName, 'next-evolution', 'eachContainer');
+    // Pokemons con una o varias evoluciones/pre evoluciones
   } else if (prevEvolution || nextEvolution) {
     let evolutionType = '';
 
@@ -124,6 +125,7 @@ const featuresCard = (pokemon) => {
         evolutionContainer.innerHTML += evolutionCard(lastArray[0].name, evolutionType, 'eachContainer');
       }
     } else {
+      // Pokemons con varias evoluciones
       arrayTwo.forEach((moreEvolutions) => {
         evolutionContainer.innerHTML += evolutionCard(moreEvolutions.name, evolutionType, 'moreContainer');
       });
@@ -149,7 +151,7 @@ const attackCard = (pokemon) => {
   const sectionModal = document.createElement('section');
   sectionModal.classList.add('modal-container', 'modal-close');
   sectionModal.classList.toggle('modal-close');
-
+  // Card
   const cardContainer = document.createElement('div');
   cardContainer.innerHTML = `
     <div class="modal">
@@ -192,7 +194,7 @@ const attackCard = (pokemon) => {
 
   const quickMoveContainer = cardContainer.querySelector('.quick-move');
   const specialAttackContainer = cardContainer.querySelector('.special-attack');
-
+  // Cálculos
   pokemon['quick-move'].forEach((quickMove) => {
     const divElement = document.createElement('div');
     divElement.innerHTML = `
@@ -335,7 +337,7 @@ selection.addEventListener('change', () => {
   const chosenOrder = selection.value;
   sectionContent.innerHTML = '';
   sectionContent.appendChild(pokemonCards(order(data.pokemon, chosenOrder)));
-  // Mostrando la data completo por generaciones como defecto
+  // Mostrando la data completa por generaciones como defecto
   if (chosenOrder === 'default') {
     allDataByGenerations();
   }
