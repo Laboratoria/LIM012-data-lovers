@@ -7,28 +7,24 @@ const firstTestExpect = [
     key: '111',
     name: 'Nautilus',
     title: 'the Titan of the Depths',
-    tags: ['Tank', 'Fighter'],
   },
   {
     id: 'Taliyah',
     key: '163',
     name: 'Taliyah',
     title: 'the Stoneweaver',
-    tags: ['Mage', 'Support'],
   },
   {
     id: 'Aatrox',
     key: '266',
     name: 'Aatrox',
     title: 'the Darkin Blade',
-    tags: ['Fighter', 'Tank'],
   },
   {
     id: 'Taric',
     key: '44',
     name: 'Taric',
     title: 'the Shield of Valoran',
-    tags: ['Support', 'Fighter'],
   },
 ];
 
@@ -38,28 +34,24 @@ const firstTestoBe = [
     key: '266',
     name: 'Aatrox',
     title: 'the Darkin Blade',
-    tags: ['Fighter', 'Tank'],
   },
   {
     id: 'Nautilus',
     key: '111',
     name: 'Nautilus',
     title: 'the Titan of the Depths',
-    tags: ['Tank', 'Fighter'],
   },
   {
     id: 'Taliyah',
     key: '163',
     name: 'Taliyah',
     title: 'the Stoneweaver',
-    tags: ['Mage', 'Support'],
   },
   {
     id: 'Taric',
     key: '44',
     name: 'Taric',
     title: 'the Shield of Valoran',
-    tags: ['Support', 'Fighter'],
   },
 ];
 
@@ -69,28 +61,24 @@ const secondTestoBe = [
     key: '44',
     name: 'Taric',
     title: 'the Shield of Valoran',
-    tags: ['Support', 'Fighter'],
   },
   {
     id: 'Taliyah',
     key: '163',
     name: 'Taliyah',
     title: 'the Stoneweaver',
-    tags: ['Mage', 'Support'],
   },
   {
     id: 'Nautilus',
     key: '111',
     name: 'Nautilus',
     title: 'the Titan of the Depths',
-    tags: ['Tank', 'Fighter'],
   },
   {
     id: 'Aatrox',
     key: '266',
     name: 'Aatrox',
     title: 'the Darkin Blade',
-    tags: ['Fighter', 'Tank'],
   },
 ];
 
