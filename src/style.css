@@ -3,6 +3,16 @@
     padding: 10px;
     box-sizing: border-box;
 }
+body::-webkit-scrollbar {
+	width: 20px;
+	background: #152049;
+}
+
+body::-webkit-scrollbar-thumb {
+	background: rgba(255,255,255, .2);
+	border-radius: 10px;
+	border-right: 6px solid #152049;
+}
 .padre{
   display: flex;
   flex-flow: column nowrap;
@@ -165,4 +175,60 @@ a{
 }
 .ocultar{
   display: none;
+}
+
+.contenedorSubir{
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  width: 60px;
+  height: 60px;
+  z-index: -1;
+}
+.botonSubir{
+  width: 0px;
+  height: 0px;
+  background: white;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: .2s;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+.botonSubir img{
+  position: absolute;
+  font-size: 17px;
+  top: 48%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  color: white;
+  transition: .2s;
+}
+.show{
+  z-index: 10;
+}
+.show .botonSubir{
+  animation: popup .3s ease-in-out;
+  width: 66px;
+  height: 66px;
+  z-index: 11;
+}
+.show img{
+  transform: translate(-50%, -50%) scale(1);
+}
+@keyframes popup{
+  0%{
+    width: 0px;
+    height: 0px;
+  }
+  50%{
+    width: 80px;
+    height: 80px;
+  }
+  100%{
+    width: 66px;
+    height: 66px;
+  }
 }
