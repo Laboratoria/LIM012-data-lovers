@@ -79,3 +79,19 @@ ordenar.addEventListener('change', (evt) => {
     resultado(dataOrdenada);
   }
 });
+
+// boton subir
+window.onscroll = () => {
+  // console.log(document.documentElement.scrollTop);
+  if (document.documentElement.scrollTop > 100) {
+    document.querySelector('.contenedorSubir').classList.add('show');
+  } else {
+    document.querySelector('.contenedorSubir').classList.remove('show');
+  }
+};
+document.querySelector('.contenedorSubir').addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth', // para que le de un efecto suave al subir
+  });
+});
