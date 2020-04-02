@@ -236,5 +236,39 @@ export default {
         }
       ]
     },
+    {
+      "id": 20,
+      "name": "Kjetil Andr Aamodt",
+      "gender": "M",
+      "height": "176",
+      "weight": "85",
+      "date-birth": 1972,
+      "sport": "Alpine Skiing",
+      "game": "2006 Winter",
+      "team": "Norway",
+      "noc": "NOR",
+      "disciplinas": [{
+          "disciplina": "Alpine Skiing Men's Super G",
+          "temporada": "Winter",
+          "año": 2002,
+          "ciudad": "Salt Lake City",
+          "medalla": "Gold"
+        },
+        {
+          "disciplina": "Alpine Skiing Men's Combined",
+          "temporada": "Winter",
+          "año": 2002,
+          "ciudad": "Salt Lake City",
+          "medalla": "Gold"
+        },
+        {
+          "disciplina": "Alpine Skiing Men's Super G",
+          "temporada": "Winter",
+          "año": 2006,
+          "ciudad": "Torino",
+          "medalla": "Gold"
+        }
+      ]
+    },
   ]
 };
