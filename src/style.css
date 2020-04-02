@@ -22,7 +22,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  /*display: flex;
+  display: flex;
   flex-direction: column;
   width: 100%;
   min-height: 100vh; /*altura definida*/
@@ -31,42 +31,19 @@ body {
 
 /*el header solo contiene una imagen*/
 .main-header{
-  background: url(img/logo2.jpg);
-  background-color: var(--color-black);
-  height: 98px;
+  /*background: url(img/logo4.jpg);*/
+  height: 96px;
+  margin: 0 auto;
+  margin-top: 10px;/*para tener una distacia antes del encabezado*/
 }
-
-.main-nav {
-  /*background-color: #2b2c2c;*/
-}
-
-/*trabajando con el select*/
-/*#orderAlphabetically{
-  background-color: var(--color-black);
-  color: var(--color-borde);
-  display: block;
-  outline: none;
-  cursor: pointer;
-  flex-grow: 0;
-}*/
-
-/*#orderAlphabetically:hover {
-  background-color: var(--color-nav-dark);
-}*/
-
-/*ul*/
-/*.nav-container {
-  display: flex;
-  background-color: var(--color-black);
-  margin-top: 1%; /*para poder separar la lista del header*/
-  /*flex-wrap: wrap;/*envoltura flexibe
-}*/
 
 ul{
   display: flex;
   background-color: var(--color-black);
-  margin-top: 1%; /*para poder separar la lista del header*/
+  margin-top: 0 auto; /*para poder separar la lista del header*/
   flex-wrap: wrap;/*envoltura flexibe*/
+border: 1px solid var(--color-dorado);
+box-shadow: 0 0 1px rgb(255, 255, 252);
 }
 
 ul li{
@@ -89,45 +66,23 @@ ul li a{
   color: var(--color-dorado);
   /*font-weight: bold;*//*tener la letra en negrita*/
 }
-/*FCBA64
-EBB458
-F0B151
-rgba(250, 173, 41, 0.452);*/
+
 li.active a {
   font-weight: bold;
-   height: 4px;
+   height: 0.2px;
   bottom: 0;
   /*border-radius: 8px;*/
   background:rgba(243, 168, 5, 0.842);/*color del cuadrado al elegir la opcion rgb(241, 178, 59);*/
   color:rgba(243, 168, 5, 0.842);/*colo que se pondra la elegir la opcion*/
+  text-shadow: 0 0 1px rgb(255, 255, 252);
   transition: all .5s ease 0s;
   /*bottom: 0;*//*para q no sea cuadro sino raya pero no me salio*/
 }
 
-/*li*/
-/*.nav-container_item {
-  flex-grow: 1;
-  text-align: center;
-  line-height: 2.5;
-  border: 1px solid var(--color-dorado);
-}*/
-
-/*li hover*/
-/*.nav-container_item:hover {
-  background-color: var(--color-nav-dark);
-}*/
-
-/*li hover*/
 li:hover {
   background-color:#878a8a73;
   /*background:#93734148;*/
 }
-
-/*<a>link*/
-/*.nav-container_link {
-  color: var(--color-dorado);
-  display: block; /*es necesario para q el mouse al estar no solo en el nombre sino en su caja muestre el link abajo
-}*/
 
 .main-container {
   display: flex;
@@ -147,7 +102,6 @@ li:hover {
   transition: all 0.3s linear;/*ease*/
   cursor: pointer;
   border: 1px solid var(--color-dorado);
-
 }
 
 /*agregando de youtube*/
@@ -192,29 +146,39 @@ div:hover{
   padding-left: 8%;
 }
 
-
-
-/*.class-tags{
-  font-size: 1.3em;
-  font-family: 'Acme', sans-serif;/*lo menciono para que aqui se utilize la fuente
-  font-weight: bolder;
-  text-align: center;
-  background-color: #c4c4c4;
-  margin-top: -0.15em;
-  padding: 0.10em;
-}*/
-
 .main-footer{
-  background: url(img/facebook.png);
-  background-position: center;
-  background-attachment: fixed;
-  background-size: 30px;
-  background-repeat: no-repeat;
-  background-color: var(--color-black);
+  margin-top: 12px;
+  /*border: 1px solid var(--color-dorado);*/
   color: var(--color-white);
   text-align: center;
+  height: 100px;
 }
 
+.icons_redes{
+  margin-top: 15px;
+
+}
+
+.fa-facebook-square{
+  font-size: 35px;
+}
+
+.fa-twitter-square{
+  font-size: 35px;
+}
+
+.fa-youtube{
+  font-size: 35px;
+}
+
+p{
+  color: rgb(255, 255, 255);
+  /*text-align: center;*/
+  font-size: 1em;   
+  /*background-color: rgb(6, 28, 37);*/
+  margin-top: -0.2em;/*15*/
+  padding: 0.76em;
+}
 /*@media screen and (min-width: 768px) {
   .nav-container {
     display: flex;
