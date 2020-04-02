@@ -189,10 +189,10 @@ const attackCard = (pokemon) => {
           <p class="subtitle2 attack-title">Quick-Moves</p>
           <div class="calculateStats">
             <p class="longElementName textTitle">Name</p>
-            <p class="element textTitle">Type</p>
-            <p class="longElement textTitle">Base damage</p>
-            <p class="element textTitle">Energy</p>
-            <p class="longElement textTitle">Move duration</p>
+            <p class="longElement textTitle">Type</p>
+            <p class="element textTitle">BD</p>
+            <p class="element textTitle">E</p>
+            <p class="element textTitle">MD</p>
             <p class="element textTitle">DPS</p>
             <p class="element textTitle">EPS</p>
           </div> 
@@ -200,14 +200,15 @@ const attackCard = (pokemon) => {
           <p class="subtitle2 attack-title">Special-attacks</p>
           <div class="calculateStats">
             <p class="longElementName textTitle">Name</p>
-            <p class="element textTitle">Type</p>
-            <p class="longElement textTitle">Base damage</p>
-            <p class="element textTitle">Energy</p>
-            <p class="longElement textTitle">Move duration</p>
+            <p class="longElement textTitle">Type</p>
+            <p class="element textTitle">BD</p>
+            <p class="element textTitle">E</p>
+            <p class="element textTitle">MD</p>
             <p class="element textTitle">DPS</p>
             <p class="element textTitle">EPS</p>
           </div>
           <div class="special-attack"></div>
+          <div class="legends">BD: base damage, E: energy, MD: move duration, DPS: damage per second, EPS: energy per second</div>
         </section>
       </section>  
     </div>`;
@@ -219,11 +220,11 @@ const attackCard = (pokemon) => {
     const divElement = document.createElement('div');
     divElement.innerHTML = `
     <div class="borderRows">
-      <p class="longElementName borderColumn textTitle">${quickMove.name}</p>
-      <p class="element borderColumn textTitle">${quickMove.type}</p>
-      <p class="longElement borderColumn textContent">${quickMove['base-damage']}</p>
+      <p class="longElementName borderColumn textBreak">${quickMove.name}</p>
+      <p class="longElement borderColumn textTitle">${quickMove.type}</p>
+      <p class="element borderColumn textContent">${quickMove['base-damage']}</p>
       <p class="element borderColumn textContent">${quickMove.energy}</p>
-      <p class="longElement borderColumn textContent">${quickMove['move-duration-seg']}</p>
+      <p class="element borderColumn textContent">${quickMove['move-duration-seg']}</p>
       <p class="element borderColumn textContent">${dpsCalculate(quickMove, pokemon.type)}</p>
       <p class="element textContent ">${epsCalculate(quickMove)}</p>
     </div>`;
@@ -235,10 +236,10 @@ const attackCard = (pokemon) => {
     divElement.innerHTML = `
     <div class="borderRows"> 
       <p class="longElementName borderColumn textBreak">${attack.name}</p>
-      <p class="element borderColumn textTitle">${attack.type}</p>
-      <p class="longElement borderColumn textContent">${attack['base-damage']}</p>
+      <p class="longElement  borderColumn textTitle">${attack.type}</p>
+      <p class="element borderColumn textContent">${attack['base-damage']}</p>
       <p class="element borderColumn textContent">${attack.energy}</p>
-      <p class="longElement borderColumn textContent">${attack['move-duration-seg']}</p>
+      <p class="element borderColumn textContent">${attack['move-duration-seg']}</p>
       <p class="element borderColumn textContent">${dpsCalculate(attack, pokemon.type)}</p>
       <p class="element textContent">${epsCalculate(attack)}</p>
     </div>

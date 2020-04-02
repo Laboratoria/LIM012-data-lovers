@@ -259,7 +259,7 @@
     width: 14%;
     display: inline-block;
     text-align: center;
-    line-height: 0.9rem;
+    line-height: 1.2rem;
 }
 .longElementName {
     width: 18%;
@@ -292,6 +292,11 @@
     display: flex;
     justify-content: space-around;
     border-bottom: 1px solid #F25749;
+}
+.legends {
+    margin-top: 3px;
+    font-size: 0.6rem;
+    text-align: left;
 }
 
 @media (max-width: 600px) {
