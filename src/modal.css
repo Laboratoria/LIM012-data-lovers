@@ -205,8 +205,11 @@
 }
 
 /*ATTACKS STYLE*/
+.name-stats {
+    line-height: 25px;
+}
 .stats-container{
-    margin-top: 25px;
+    margin-top: 10px;
 }
 .column2 {
     width: 50%;
@@ -224,40 +227,53 @@
 }
 
 .affinity {
-    width: 98%;
+    width: 90%;
     display: inline-block; 
     text-align: center;
     margin-top: 5px;
+    margin-left: 20px;
 }
 .calculate {
     text-align: center;
-    width: 98%;
-    margin-left: 7.5px;
+    width: 97%;
+    margin-left: 3px;
 }
 .calculateStats {
-    width: 98%;
+    width: 100%;
     box-sizing: border-box;
     line-height: 1.7em;
     margin-top: 5px;
 }
-
+.line-width {
+    width: 95%;
+    margin-left: 7px;
+    border-bottom: 1px solid #F25749;
+}
 .element {
     width: 11%;
     display: inline-block;
     text-align: center;
+    line-height: 0.9rem;
+    margin: 0px;
+    padding: 0px;
 }
 
 .longElement {
     width: 14%;
     display: inline-block;
     text-align: center;
-    line-height: 1.3rem;
+    line-height: 0.9rem;
+    align-items: flex-end;
+    margin: 0px;
+    padding: 0px;    
 }
 .longElementName {
     width: 15%;
     display: inline-block;
     text-align: center;
     line-height: 1rem;
+    margin: 0px;
+    padding: 0px;
 }
 .textTitle {
     font-size: 0.65rem;
