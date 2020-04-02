@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Niramit:ital,wght@0,300;1,600;1,700&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -5,15 +6,17 @@
 }
 
 body {
-  background: #141D26;
+  background: var(--background-body);
   color: aliceblue;
+  font-family: "Niramit", sans-serif;
 }
 
 :root {
+  --background-body: #141d26;
   --color-border: rgba(255, 255, 255, 0.9);
   --color-size: rgba(255, 255, 255, 0.89);
-  --color-description: #97969F;
-  --color-background-nav: #B10505;
+  --color-description: #97969f;
+  --color-background-nav: #b10505;
 }
 
 /* header*/
@@ -103,7 +106,7 @@ i {
   justify-content: center;
   align-items: flex-start;
   padding-left: 10%;
-  padding-top: 6%
+  padding-top: 6%;
 }
 
 .title1 {
@@ -150,7 +153,7 @@ i {
 
 .cards:hover {
   cursor: pointer;
-  box-shadow: 0 4px 10px 0 rgba(190, 129, 129, 0.897)
+  box-shadow: 0 4px 10px 0 rgba(190, 129, 129, 0.897);
 }
 
 .titleh2 {
@@ -160,9 +163,3 @@ i {
 .description {
   color: var(--color-description);
 }
-
-/*tama;o de la info de la info principal
-.infoPrincipal {
-  width: 45%;
-}
-*/

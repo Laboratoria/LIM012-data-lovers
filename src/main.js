@@ -12,6 +12,7 @@ const transformaBandera = (initial) => {
 
 const data = dataAtletas.atletas;
 
+/*
 document.getElementById('main').innerHTML = `
 <h2 class='titleh2' >TODOS LOS ATLETAS</h2>
 
@@ -33,10 +34,15 @@ ${data
     </div>
     <img width = 40 height = 40 src = "https://www.countryflags.io/${transformaBandera(dataPrincipal.noc)}/flat/64.png"
     class >
-    
+
 </div>
 `,
     )
     .join('')}
 </div>
 `;
+ */
+
+
+const filterGender = data.filter(ele => (ele.gender === 'F'));
+console.log(filterGender);
