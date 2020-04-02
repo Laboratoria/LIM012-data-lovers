@@ -28,6 +28,7 @@ const resultado = (data) => {
 };
 resultado(listaTodos);
 
+
 // buscando en el input
 const buscar = document.querySelector('#buscador');
 buscar.addEventListener('keyup', (evt) => {
