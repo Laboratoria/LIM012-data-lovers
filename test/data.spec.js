@@ -1,9 +1,11 @@
-import { dinamicSearchPokemon, filterPokemon, orderBy } from '../src/data.js';
+import {
+  dinamicSearchPokemon, filterPokemon, orderBy, calculateBetterCombinations,
+} from '../src/data.js';
 
 import data from '../src/data/pokemon/pokemon.js';
 
 // primer sprint : test de segunda historia [16 de Marzo]
-describe('dinamicSearchPokemon', () => {
+describe('Test de la función buscar', () => {
   it('deberia ser una funcion', () => {
     expect(typeof dinamicSearchPokemon).toBe('function');
   });
@@ -26,6 +28,12 @@ describe('dinamicSearchPokemon', () => {
       expect(result[i].name).toContain('pikachu');
     }
   });
+});
+
+describe('Test de la función filtrar', () => {
+  it('deberia ser una funcion', () => {
+    expect(typeof filterPokemon).toBe('function');
+  });
 
   it('retorna una lista de pokemones que coincida con el tipo agua', () => {
     const result = filterPokemon('type', 'water');
@@ -46,6 +54,12 @@ describe('dinamicSearchPokemon', () => {
     for (let i = 0; i < result.length; i += 1) {
       expect(result[i].weaknesses).toContain('rock');
     }
+  });
+});
+
+describe('Test de la función ordenar', () => {
+  it('deberia ser una funcion', () => {
+    expect(typeof orderBy).toBe('function');
   });
 
   it(' Verifica que se ordena de menor a mayor max-cp', () => {
@@ -76,6 +90,29 @@ describe('dinamicSearchPokemon', () => {
     for (let i = 1; i < dataOrdened.length; i += 1) {
       array.push(dataOrdened[i].name);
       expect(array[i - 1].localeCompare(array[i])).toBe(-1);
+    }
+  });
+});
+
+describe('Test función calcular', () => {
+  it('calculateBetterCombinations deberia ser una funcion', () => {
+    expect(typeof calculateBetterCombinations).toBe('function');
+  });
+
+  it('Deberia mostrar a lo máximo 5 arrays', () => {
+    for (let i = 0; i < data.pokemon.length; i += 1) {
+      expect(calculateBetterCombinations(data.pokemon[i]).length).toBeLessThanOrEqual(5);
+    }
+  });
+
+  it('Deberia ordenar de mayor a menor según orden de daño', () => {
+    for (let i = 0; i < data.pokemon.length; i += 1) {
+      const betterCombinations = calculateBetterCombinations(data.pokemon[i]);
+      const array = [betterCombinations[0][2]];
+      for (let j = 1; j < betterCombinations.length; j += 1) {
+        array.push(betterCombinations[j][2]);
+        expect(array[j - 1]).toBeGreaterThanOrEqual(array[j]);
+      }
     }
   });
 });

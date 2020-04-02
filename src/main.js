@@ -3,7 +3,7 @@
 /* eslint-disable no-console */
 /* eslint-disable no-loop-func */
 import {
-  dinamicSearchPokemon, filterPokemon, orderBy, changeOrder, calculateBettersCombination,
+  dinamicSearchPokemon, filterPokemon, orderBy, changeOrder, calculateBetterCombinations,
 } from './data.js';
 
 import data from './data/pokemon/pokemon.js';
@@ -157,7 +157,6 @@ const showMenu = (which) => {
 };
 
 const hideMenu = () => {
-  console.log('ocultadon menu');
   modalMode.style.display = 'none';
   const lateralMenu = document.getElementById('lateral-menu');
   lateralMenu.style.width = '0';
@@ -219,9 +218,7 @@ const goToNextItem = (slide, sliderCards, index) => {
   widthCard = sliderCards.offsetWidth / numCards;
   const visibleItems = Math.round(slide.offsetWidth / widthCard);
   const totalItems = sliderCards.getElementsByClassName('pokemon-card').length;
-  // console.log(`total ${sliderCards.offsetWidth / totalItems}`);
   const hiddenItems = totalItems - visibleItems;
-  // console.log(hiddenItems, visibleItems);
   if (positions[index] >= 0 && positions[index] < hiddenItems) {
     positions[index] += 1;
     translateX(positions[index], sliderCards, widthCard);
@@ -330,13 +327,10 @@ const showPokemonInSections = () => {
     sliders[2].getElementsByTagName('button')[0].style.visibility = 'hidden';
     sliders[2].getElementsByTagName('button')[1].style.visibility = 'hidden';
     showMessageInSection(divSections[2], 'resistant');
-
   }
 };
 
-
 const filterPokemonsByType = (type) => {
-  console.log(`tipo: ${type}`);
   resultTypes = filterPokemon('type', type);
   resultResistant = filterPokemon('resistant', type);
   resultWeaknesses = filterPokemon('weaknesses', type);
@@ -358,7 +352,6 @@ const filterSystem = () => {
       btnChangeOrder.style.visibility = 'hidden';
       isContainerShowMore = false;
       topTitle.textContent = optionsFilter[i].textContent;
-      console.log(optionsFilter[i].textContent);
       iconTitle.setAttribute('src', `images/${optionsFilter[i].textContent}-icon.png`);
       iconTitle.style.visibility = 'visible';
       filterPokemonsByType(optionsFilter[i].textContent);
@@ -506,7 +499,6 @@ const divMoveAndAttacks = document.getElementById('move-and-attack');
 const divcalculateMove = document.getElementById('calculate-damage');
 
 const showDamageOfMove = (btn) => {
-  console.log(btn.name);
   if (btn.name === 'calculate') {
     divMoveAndAttacks.style.display = 'none';
     divcalculateMove.style.display = 'block';
@@ -557,11 +549,10 @@ const showInfoPokemon = (name) => {
   const quickMove = document.getElementById('quick-move-table');
   const calcDamage = document.getElementById('table-damage');
   calcDamage.innerHTML = '';
-  calculeDamage(calcDamage, calculateBettersCombination(pokemon));
+  calculeDamage(calcDamage, calculateBetterCombinations(pokemon));
   buildTable(pokemon['special-attack'], specialAttacks);
   buildTable(pokemon['quick-move'], quickMove);
   const evolution = document.getElementById('evolution');
-
   showEvolution(pokemon, evolution, pokemon.evolution['prev-evolution'], pokemon.evolution['next-evolution']);
 };
 
