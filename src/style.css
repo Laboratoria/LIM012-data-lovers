@@ -5,6 +5,16 @@
     padding: 10px;
     box-sizing: border-box;
 }
+body::-webkit-scrollbar {
+	width: 18px;
+	background: #152049;
+}
+
+body::-webkit-scrollbar-thumb {
+	background: rgba(255,255,255, .2);
+	border-radius: 10px;
+	border-right: 3px solid #152049;
+}
 .padre{
   display: flex;
   flex-flow: column nowrap;
@@ -168,3 +178,21 @@ a{
 .ocultar{
   display: none;
 }
+/* .buttonUp {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 26px;
+  width: 50px;
+  height: 50px;
+  background-color:tomato;
+  color: white;
+  cursor: pointer;
+  outline: none;
+  border: 3px solid white;
+  border-radius: 50%;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+  transition-property: background-color, color;
+} */
