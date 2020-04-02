@@ -269,6 +269,9 @@
 }
 .textTitle {
     font-size: 0.6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .textBreak {
@@ -315,6 +318,10 @@
 
     .name-stats {
         line-height: 20px;
+    }
+
+    .longElementName {
+        line-height: 0.8rem;
     }
 
     .close {
