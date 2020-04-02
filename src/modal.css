@@ -204,6 +204,73 @@
     width: 50%;
 }
 
+/*ATTACKS STYLE*/
+.stats-container{
+    margin-top: 25px;
+}
+.column2 {
+    width: 50%;
+    text-align: center;
+    box-sizing: border-box;
+    line-height: 1.7em;
+}
+.column2:first-child {
+    float: left;
+}
+
+.column2:last-child {
+    border-left: 1px solid #F25749;
+    float: right;
+}
+
+.affinity {
+    width: 98%;
+    display: inline-block; 
+    text-align: center;
+    margin-top: 5px;
+}
+.calculate {
+    text-align: center;
+    width: 98%;
+    margin-left: 7.5px;
+}
+.calculateStats {
+    width: 98%;
+    box-sizing: border-box;
+    line-height: 1.7em;
+    margin-top: 5px;
+}
+
+.element {
+    width: 11%;
+    display: inline-block;
+    text-align: center;
+}
+
+.longElement {
+    width: 14%;
+    display: inline-block;
+    text-align: center;
+    line-height: 1.3rem;
+}
+.longElementName {
+    width: 15%;
+    display: inline-block;
+    text-align: center;
+    line-height: 1rem;
+}
+.textTitle {
+    font-size: 0.65rem;
+}
+.textContent {
+    font-size: 0.55rem;
+}
+.borderColumn {
+    border-right: 1px solid #F25749;
+}
+.borderFiles {
+    border-bottom: 1px solid #F25749;
+}
 @media (max-width: 1300px) and (min-width: 600px) {
 
 }

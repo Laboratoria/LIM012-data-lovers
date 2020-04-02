@@ -165,30 +165,48 @@ const attackCard = (pokemon) => {
             </div>
           </div>
           <div class="stats-container">
-            <h3>Stats</h3>
-            <ul class= "name-stats">
-              <li>Base attack: ${pokemon.stats['base-attack']}</li>
-              <li>Base defense: ${pokemon.stats['base-defense']}</li>
-              <li>Base stamina: ${pokemon.stats['base-stamina']}</li>
-              <li>Max CP: ${pokemon.stats['max-cp']}</li>
-              <li>Max HP: ${pokemon.stats['max-hp']}</li>
-            </ul>
+            <p class="borderFiles subtitle2">Stats</p>
+            <div class= "name-stats">
+              <p>Base attack: ${pokemon.stats['base-attack']}</p>
+              <p>Base defense: ${pokemon.stats['base-defense']}</p>
+              <p>Base stamina: ${pokemon.stats['base-stamina']}</p>
+              <p>Max CP: ${pokemon.stats['max-cp']}</p>
+              <p>Max HP: ${pokemon.stats['max-hp']}</p>
+            </div>
+          </div>
+        </section>
+        <section class="affinity">
+          <div class="column2">
+            <p class="borderFiles subtitle2">Resistant</p>
+            <p>${getTypes(pokemon.resistant)}</p>
+          </div>
+          <div class="column2">
+            <p class="borderFiles subtitle2">Weakness</p>
+            <p>${getTypes(pokemon.weaknesses)}</p>
           </div>
         </section> 
-        <div>
-          <p class="subtitle">Resistant</p>
-          <div>${getTypes(pokemon.resistant)}</div>
-          <p class="subtitle">Weakness</p>
-          <div>${getTypes(pokemon.weaknesses)}</div>
-        </div>
-        <div>
-          <h3>Quick-moves</h3>
-          <div class="quick-move"></div>
-        </div>
-        <div>
-          <h3>Special-attacks</h3>
-          <div class="special-attack"></div>
-        </div>
+        <section class="calculate calculateStats">
+          <div class="quick-move ">
+            <p class="borderFiles subtitle2">Quick-Move</p>
+            <p class="borderFiles longElement textTitle">Name</p>
+            <p class="borderFiles element textTitle">Type</p>
+            <p class="borderFiles longElement textTitle">Base damage</p>
+            <p class="borderFiles element textTitle">Energy</p>
+            <p class="borderFiles longElement textTitle">Move duration</p>
+            <p class="borderFiles element textTitle">DPS</p>
+            <p class="borderFiles element textTitle">EPS</p>
+          </div> 
+          <div class="special-attack calculateStats">
+            <p class="borderFiles subtitle2">Special-attacks</p>
+            <p class="borderFiles longElement textTitle">Name</p>
+            <p class="borderFiles element textTitle">Type</p>
+            <p class="borderFiles longElement textTitle">Base damage</p>
+            <p class="borderFiles element textTitle">Energy</p>
+            <p class="borderFiles longElement textTitle">Move duration</p>
+            <p class="borderFiles element textTitle">DPS</p>
+            <p class="borderFiles element textTitle">EPS</p>
+          </div>
+        </section>
       </section>  
     </div>`;
 
@@ -198,30 +216,30 @@ const attackCard = (pokemon) => {
   pokemon['quick-move'].forEach((quickMove) => {
     const divElement = document.createElement('div');
     divElement.innerHTML = `
-    <ul>
-      <li>Name: ${quickMove.name}</li>
-      <li>Type: ${quickMove.type}</li>
-      <li>Base-damage: ${quickMove['base-damage']}</li>
-      <li>Energy: ${quickMove.energy}</li>
-      <li>Move-duration-seg: ${quickMove['move-duration-seg']}</li>
-      <li>DPS: ${dpsCalculate(quickMove, pokemon.type)}</li>
-      <li>EPS: ${epsCalculate(quickMove)}</li>
-    </ul>`;
+    <div>
+      <p class="longElementName borderColumn textContent" >${quickMove.name}</p>
+      <p class="element borderColumn textContent">${quickMove.type}</p>
+      <p class="longElement borderColumn textContent">${quickMove['base-damage']}</p>
+      <p class="element borderColumn textContent">${quickMove.energy}</p>
+      <p class="longElement borderColumn textContent">${quickMove['move-duration-seg']}</p>
+      <p class="element borderColumn textContent">${dpsCalculate(quickMove, pokemon.type)}</p>
+      <p class="element textContent">${epsCalculate(quickMove)}</p>
+    </div>`;
     quickMoveContainer.appendChild(divElement);
   });
 
   pokemon['special-attack'].forEach((attack) => {
     const divElement = document.createElement('div');
     divElement.innerHTML = `
-    <ul>
-      <li>Name: ${attack.name}</li>
-      <li>Type: ${attack.type}</li>
-      <li>Base-damage: ${attack['base-damage']}</li>
-      <li>Energy: ${attack.energy}</li>
-      <li>Move-duration-seg: ${attack['move-duration-seg']}</li>
-      <li>DPS: ${dpsCalculate(attack, pokemon.type)}</li>
-      <li>EPS: ${epsCalculate(attack)}</li>
-    </ul>
+    <div> 
+      <p class="longElementName borderColumn textContent">${attack.name}</p>
+      <p class="element borderColumn textContent">${attack.type}</p>
+      <p class="longElement borderColumn textContent">${attack['base-damage']}</p>
+      <p class="element borderColumn textContent">${attack.energy}</p>
+      <p class="longElement borderColumn textContent">${attack['move-duration-seg']}</p>
+      <p class="element borderColumn textContent">${dpsCalculate(attack, pokemon.type)}</p>
+      <p class="element textContent">${epsCalculate(attack)}</p>
+    </div>
     `;
     specialAttackContainer.appendChild(divElement);
   });
