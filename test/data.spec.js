@@ -112,8 +112,6 @@ describe('filtrarAtletasPorDeporte', () => {
   });
 
   it('Deberia retornar un array con atletas que solo hayan participado en el deporte Archery', () => {
-    const optionSports = document.querySelector('#optionSports');
-    const deporteSeleccionado = optionSports.archery;
     const threeOutput = [
       {
         nombre: 'Matteo Bisiani',
@@ -136,6 +134,6 @@ describe('filtrarAtletasPorDeporte', () => {
         noc: 'UKR',
       },
     ];
-    expect(filtrarAtletasPorDeporte((input, 'Archery'))).toEqual(threeOutput);
+    expect(filtrarAtletasPorDeporte(input, 'Archery')).toEqual(threeOutput);
   });
 });
