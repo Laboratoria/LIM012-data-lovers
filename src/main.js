@@ -1,9 +1,7 @@
-/* eslint-disable spaced-comment */
-/* eslint-disable no-restricted-globals */
-/* eslint-disable no-plusplus */
-/* eslint-disable no-undef */
 // import data from './data/atletas/atletas.js';
 // import data from './data/pokemon/pokemon.js';
+
+// AQUI MANEJAMOS EL DOM
 
 import data from './data/lol/lol.js';
 import { sortData, filterData, averageData } from './data.js';
@@ -13,30 +11,27 @@ const arrObject = Object.values(allChampion);
 // console.log(allChampion);
 // console.log(arrObject);
 
-// SHOW DATA
+// MOSTRAR DATA
+const container = document.getElementById('container');
+
 const createTemplate = (arr) => {
   arr.forEach((champion) => {
     const newElement = document.createElement('div');
     const img = document.createElement('img');
     const p = document.createElement('p');
-    // const h3 = document.createElement('h3');
     newElement.classList.add('class-div');
     img.classList.add('class-img');
     p.classList.add('class-name');
-    // h3.classList.add('class-tags');
     img.src = `${champion.splash}`;
     p.innerHTML = `${champion.name}`;
-    // h3.innerHTML = `${champion.tags}`;
     newElement.appendChild(img);
     newElement.appendChild(p);
-    // newElement.appendChild(h3);
-    const container = document.getElementById('container');
     container.appendChild(newElement);
   });
 };
 createTemplate(arrObject);
 
-// CREATE A P LABEL TO SHOW THE AVERAGE
+// CREATE UN ELEMENTO P PARA MOSTRAR EL PROMEDIO
 const pElement = document.createElement('p');
 pElement.classList.add('class-name');
 
@@ -55,8 +50,8 @@ orderZa.addEventListener('click', () => {
   createTemplate(sortData(arrObject, 'name', 'descending'));
 });
 
-// FILTER DATA AND CALCULATE AVERAGE
-// ASSASSIN BUTTON
+// FILTRAR DATA Y CALCULAR PROMEDIO
+// ASESINOS
 const assassin = document.getElementById('assassin');
 assassin.addEventListener('click', () => {
   container.innerHTML = '';
@@ -67,7 +62,7 @@ assassin.addEventListener('click', () => {
   createTemplate(filterData(arrObject, 'Assassin'));
 });
 
-// FIGHTER BUTTON
+// LUCHADORES
 const fighter = document.getElementById('fighter');
 fighter.addEventListener('click', () => {
   container.innerHTML = '';
@@ -78,7 +73,7 @@ fighter.addEventListener('click', () => {
   createTemplate(filterData(arrObject, 'Fighter'));
 });
 
-// MAGE BUTTON
+// MAGOS
 const mage = document.getElementById('mage');
 mage.addEventListener('click', () => {
   container.innerHTML = '';
@@ -89,7 +84,7 @@ mage.addEventListener('click', () => {
   createTemplate(filterData(arrObject, 'Mage'));
 });
 
-// MARKSMAN BUTTON
+// TIRADORES
 const marksman = document.getElementById('marksman');
 marksman.addEventListener('click', () => {
   container.innerHTML = '';
@@ -100,7 +95,7 @@ marksman.addEventListener('click', () => {
   createTemplate(filterData(arrObject, 'Marksman'));
 });
 
-// SUPPORT BUTTON
+// SOPORTES
 const support = document.getElementById('support');
 support.addEventListener('click', () => {
   container.innerHTML = '';
@@ -111,7 +106,7 @@ support.addEventListener('click', () => {
   createTemplate(filterData(arrObject, 'Support'));
 });
 
-// TANK BUTTON
+// TANQUES
 const tank = document.getElementById('tank');
 tank.addEventListener('click', () => {
   container.innerHTML = '';
@@ -122,16 +117,7 @@ tank.addEventListener('click', () => {
   createTemplate(filterData(arrObject, 'Tank'));
 });
 
-/*const currentLocation = location.href;
-const menuItems = document.querySelectorAll('a');
-const menuLengths = menuItems.length;
-for (let i = 0; i % menuLengths; i++) {
-  if (menuItems[i].href === currentLocation) {
-    menuItems[i].className = 'active';
-  }
-}*/
-
-//AGREGAR O ELIMINAR CLASE,ACTIVAR AL HACER CLICK
+// AGREGAR O ELIMINAR CLASE A <LI>,ACTIVAR AL HACER CLICK
 const ul = document.querySelector('ul');
 const li = document.querySelectorAll('li');
 

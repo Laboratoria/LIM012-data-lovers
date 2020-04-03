@@ -1,6 +1,8 @@
 /* eslint-disable no-plusplus */
 
-// Order alphabetically
+// AQUI MANEJAMOS LAS FUNCIONES
+
+// ORDENAR ALFABETICAMENTE
 export const sortData = (data, sortBy, sortOrder) => {
   const newArray = data;
   if (sortBy === 'name' && sortOrder === 'ascending') {
@@ -25,18 +27,10 @@ export const sortData = (data, sortBy, sortOrder) => {
       return 0;
     });
   }
-  /* if (sortOrder === 'todos') {
-    newArray.sort((a, b) => {
-      if (a.name > b.name) {
-        return 1;
-      }
-      return -1;
-    });
-  } */
   return newArray;
 };
 
-// Filter by Role
+// FILTRAR POR ROL
 export const filterData = (data, condition) => {
   const filtering = data.filter((obj) => {
     const filterByRole = [];
@@ -51,7 +45,7 @@ export const filterData = (data, condition) => {
   return filtering;
 };
 
-// Average HP (Health Points) of each role
+// PROMEDIO DE HP (PUNTOS DE SALUD) DE CADA ROL
 export const averageData = (data, role) => {
   const filterOnlyByRole = data.filter(champion => champion.tags.includes(role));
   const reducehpfighter = filterOnlyByRole.reduce((acc, current) => acc + current.stats.hp, 0);
