@@ -5,21 +5,16 @@
 // import data from './data/atletas/atletas.js';
 // import data from './data/pokemon/pokemon.js';
 
-//  AQUI MANEJAMOS EL DOOM
-
 import data from './data/lol/lol.js';
-import {
-  sortData, filterData, filterFighter, filterMage,
-  filterAssassin, filterMarksman, filterSupport, filterTank,
-} from './data.js';
+import { sortData, filterData, averageData } from './data.js';
 
 const allChampion = data.data;
-const arrObjetos = Object.values(allChampion);
+const arrObject = Object.values(allChampion);
 // console.log(allChampion);
-// console.log(arrObjetos);
+// console.log(arrObject);
 
-
-const crearTemplate = (arr) => {
+// SHOW DATA
+const createTemplate = (arr) => {
   arr.forEach((champion) => {
     const newElement = document.createElement('div');
     const img = document.createElement('img');
@@ -39,98 +34,92 @@ const crearTemplate = (arr) => {
     container.appendChild(newElement);
   });
 };
-crearTemplate(arrObjetos);
+createTemplate(arrObject);
 
-// CREAR PARRAFO PARA MOSTRAR ESTADISTICA DE CALCULO AGREGADO
+// CREATE A P LABEL TO SHOW THE AVERAGE
 const pElement = document.createElement('p');
 pElement.classList.add('class-name');
 
-// ORDENAR DATA
+// ORDER DATA
 const orderAz = document.getElementById('orderAz');
 orderAz.addEventListener('click', () => {
   container.innerHTML = '';
   pElement.innerHTML = '';
-  crearTemplate(sortData(arrObjetos, 'name', 'ascendente'));
+  createTemplate(sortData(arrObject, 'name', 'ascending'));
 });
 
 const orderZa = document.getElementById('orderZa');
 orderZa.addEventListener('click', () => {
   container.innerHTML = '';
   pElement.innerHTML = '';
-  crearTemplate(sortData(arrObjetos, 'name', 'descendente'));
+  createTemplate(sortData(arrObject, 'name', 'descending'));
 });
 
-// FILTRAR DATA
+// FILTER DATA AND CALCULATE AVERAGE
+// ASSASSIN BUTTON
 const assassin = document.getElementById('assassin');
 assassin.addEventListener('click', () => {
   container.innerHTML = '';
-
   pElement.innerHTML = '';
-  pElement.innerHTML = `Assassin Average HP: ${filterAssassin(arrObjetos)}`;
+  pElement.innerHTML = `Assassin Average HP: ${averageData(arrObject, 'Assassin').toFixed(2)}`;
   const average = document.getElementById('average');
   average.appendChild(pElement);
-
-  crearTemplate(filterData(arrObjetos, 'Assassin'));
+  createTemplate(filterData(arrObject, 'Assassin'));
 });
 
+// FIGHTER BUTTON
 const fighter = document.getElementById('fighter');
 fighter.addEventListener('click', () => {
   container.innerHTML = '';
-
   pElement.innerHTML = '';
-  pElement.innerHTML = `Fighter Average HP: ${filterFighter(arrObjetos)}`;
+  pElement.innerHTML = `Fighter Average HP: ${averageData(arrObject, 'Fighter').toFixed(2)}`;
   const average = document.getElementById('average');
   average.appendChild(pElement);
-
-  crearTemplate(filterData(arrObjetos, 'Fighter'));
+  createTemplate(filterData(arrObject, 'Fighter'));
 });
 
+// MAGE BUTTON
 const mage = document.getElementById('mage');
 mage.addEventListener('click', () => {
   container.innerHTML = '';
-
   pElement.innerHTML = '';
-  pElement.innerHTML = `Mage Average Hp: ${filterMage(arrObjetos)}`;
+  pElement.innerHTML = `Mage Average Hp: ${averageData(arrObject, 'Mage').toFixed(2)}`;
   const average = document.getElementById('average');
   average.appendChild(pElement);
-
-  crearTemplate(filterData(arrObjetos, 'Mage'));
+  createTemplate(filterData(arrObject, 'Mage'));
 });
 
+// MARKSMAN BUTTON
 const marksman = document.getElementById('marksman');
 marksman.addEventListener('click', () => {
   container.innerHTML = '';
-
   pElement.innerHTML = '';
-  pElement.innerHTML = `Marksman Average Hp: ${filterMarksman(arrObjetos)}`;
+  pElement.innerHTML = `Marksman Average Hp: ${averageData(arrObject, 'Marksman').toFixed(2)}`;
   const average = document.getElementById('average');
   average.appendChild(pElement);
-
-  crearTemplate(filterData(arrObjetos, 'Marksman'));
+  createTemplate(filterData(arrObject, 'Marksman'));
 });
 
+// SUPPORT BUTTON
 const support = document.getElementById('support');
 support.addEventListener('click', () => {
   container.innerHTML = '';
-
   pElement.innerHTML = '';
-  pElement.innerHTML = `Support Average Hp: ${filterSupport(arrObjetos)}`;
+  pElement.innerHTML = `Support Average Hp: ${averageData(arrObject, 'Support').toFixed(2)}`;
   const average = document.getElementById('average');
   average.appendChild(pElement);
-
-  crearTemplate(filterData(arrObjetos, 'Support'));
+  createTemplate(filterData(arrObject, 'Support'));
 });
 
+// TANK BUTTON
 const tank = document.getElementById('tank');
 tank.addEventListener('click', () => {
   container.innerHTML = '';
-
   pElement.innerHTML = '';
-  pElement.innerHTML = `Tank Average Hp: ${filterTank(arrObjetos)}`;
+  pElement.innerHTML = `Tank Average Hp: ${averageData(arrObject, 'Tank').toFixed(2)}`;
   const average = document.getElementById('average');
   average.appendChild(pElement);
-
-  crearTemplate(filterData(arrObjetos, 'Tank'));
+  createTemplate(filterData(arrObject, 'Tank'));
 });
 
 /*const currentLocation = location.href;
@@ -152,18 +141,3 @@ li.forEach((el) => {
     el.classList.add('active');
   });
 });
-
-
-// const filterfighter = arrObjetos.filter(champeon => champeon.tags.includes('Fighter'));
-// console.log(('Campeones filtrados que son Fighter:'), filterfighter);
-
-// const reducehpfighter = filterfighter.reduce((total, next) => total + next.stats.hp, 0);
-// console.log(('suma de hp de los Fighter'), reducehpfighter);
-
-// const averagehpfighter = filterfighter.reduce((total, next) =>
-// total + next.stats.hp, 0) / filterfighter.length;
-// console.log(('promedio de hp de los Fighter'), averagehpfighter);
-
-// const averagemsfighter = filterfighter.reduce((total, next) =>
-// total + next.stats.movespeed, 0) / filterfighter.length;
-// console.log(('promedio de movespeed de los Fighter'), averagemsfighter);

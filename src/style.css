@@ -157,7 +157,7 @@ div:hover{
   /*background-color: rgb(6, 95, 131);*/
 }
 
-.galeria {
+.galery {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
