@@ -232,3 +232,15 @@ a{
     height: 66px;
   }
 }
+.cantidadMostrada {
+  margin: 5px;
+  padding: 5px;
+}
+.Assassin,.Fighter,.Mage,.Marksman,.Support,.Tank {
+  border-radius: 50%;
+  border: 2px solid black;
+  height:100px;
+  width:100px;
+
+}
+
