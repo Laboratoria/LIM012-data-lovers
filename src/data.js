@@ -1,8 +1,10 @@
 /* eslint-disable no-plusplus */
 
+
 // AQUI MANEJAMOS LAS FUNCIONES
 
 // ORDENAR ALFABETICAMENTE
+
 export const sortData = (data, sortBy, sortOrder) => {
   const newArray = data;
   if (sortBy === 'name' && sortOrder === 'ascending') {

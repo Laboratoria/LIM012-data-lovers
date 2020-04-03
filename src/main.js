@@ -62,7 +62,9 @@ assassin.addEventListener('click', () => {
   createTemplate(filterData(arrObject, 'Assassin'));
 });
 
+
 // LUCHADORES
+
 const fighter = document.getElementById('fighter');
 fighter.addEventListener('click', () => {
   container.innerHTML = '';
@@ -73,7 +75,9 @@ fighter.addEventListener('click', () => {
   createTemplate(filterData(arrObject, 'Fighter'));
 });
 
+
 // MAGOS
+
 const mage = document.getElementById('mage');
 mage.addEventListener('click', () => {
   container.innerHTML = '';
@@ -84,7 +88,9 @@ mage.addEventListener('click', () => {
   createTemplate(filterData(arrObject, 'Mage'));
 });
 
+
 // TIRADORES
+
 const marksman = document.getElementById('marksman');
 marksman.addEventListener('click', () => {
   container.innerHTML = '';
@@ -95,7 +101,9 @@ marksman.addEventListener('click', () => {
   createTemplate(filterData(arrObject, 'Marksman'));
 });
 
+
 // SOPORTES
+
 const support = document.getElementById('support');
 support.addEventListener('click', () => {
   container.innerHTML = '';
@@ -106,7 +114,9 @@ support.addEventListener('click', () => {
   createTemplate(filterData(arrObject, 'Support'));
 });
 
+
 // TANQUES
+
 const tank = document.getElementById('tank');
 tank.addEventListener('click', () => {
   container.innerHTML = '';
