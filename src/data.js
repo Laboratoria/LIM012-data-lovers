@@ -52,15 +52,14 @@ export const filtrandoRoles = (data, rolEscogido) => {
   return newArray;
 };
 
-export const infoCampeon = (data, campeon) => {
-  const newArrayInfo = [];
-  for (let k = 0; k < data.length; k += 1) {
-    const arrInfo = data[k].info;
-    for (let l = 0; l < data.length; l += 1) {
-      if (arrInfo[l] === campeon) {
-        newArrayInfo.push(data[k]);
-      }
-    }
-  }
-  return newArrayInfo;
-};
+// export const infoCampeon = (data, campeon) => {
+//   const newArrayInfo = [];
+//   for (let k = 0; k < data.length; k += 1) {
+//     const arrInfo = data[k].info;
+//     for (let l = 0; l < data.length; l += 1) {
+//       if (arrInfo[l] === campeon) {
+//         newArrayInfo.push(data[k]);
+//       }
+//     }
+//   }
+//   return newArrayInfo;

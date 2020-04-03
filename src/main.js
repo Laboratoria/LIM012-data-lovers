@@ -95,3 +95,26 @@ document.querySelector('.contenedorSubir').addEventListener('click', () => {
     behavior: 'smooth', // para que le de un efecto suave al subir
   });
 });
+
+// Descripcion de Campeon
+
+lista.addEventListener('click', (event) => {
+  const nombreCampeon = event.target.dataset.id;
+  const objCampeonSeleccionado = (listaTodos[nombreCampeon]);
+
+  const historias = document.querySelector('#detalleCampeon').innerHTML = `
+  <div class = "historia imagen">
+    <img src = ${objCampeonSeleccionado.splash} class="imgCampeon"/> </div>
+  <div class = "descripcionCampeon">
+    <p class = "historiaNombre">${objCampeonSeleccionado.name} </p> 
+    <p class = "historiaTitle>${objCampeonSeleccionado.title} </p>
+    <p class = "historiaCampeon>${objCampeonSeleccionado.blurb} </p>
+    <p class="historiaTags"> Rol: ${objCampeonSeleccionado.tags} </p>
+    <div class = "info"> 
+      <p> Defensa:${objCampeonSeleccionado.info.defense} </p>
+      <p> Ataque:${objCampeonSeleccionado.info.attack} </p>
+      <p> Magia:${objCampeonSeleccionado.info.magic} </p>
+      <p> Dificultad:${objCampeonSeleccionado.info.difficulty} </p> </div>
+  </div>`{};
+  resultado(historias);
+});
