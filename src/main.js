@@ -1,135 +1,123 @@
-/* eslint-disable max-len */
-/* eslint-disable spaced-comment */
-/* eslint-disable no-restricted-globals */
-/* eslint-disable no-plusplus */
-/* eslint-disable no-undef */
 // import data from './data/atletas/atletas.js';
 // import data from './data/pokemon/pokemon.js';
 
-//  AQUI MANEJAMOS EL DOOM
+// AQUI MANEJAMOS EL DOM
 
 import data from './data/lol/lol.js';
-import {
-  sortData, filterData, filterAssassin, filterFighter, filterMage, filterMarksman, filterSupport, filterTank,
-} from './data.js';
+import { sortData, filterData, averageData } from './data.js';
 
 const allChampion = data.data;
-const arrObjetos = Object.values(allChampion);
+const arrObject = Object.values(allChampion);
+// console.log(allChampion);
+// console.log(arrObject);
 
-const crearTemplate = (arr) => {
+// MOSTRAR DATA
+const container = document.getElementById('container');
+
+const createTemplate = (arr) => {
   arr.forEach((champion) => {
     const newElement = document.createElement('div');
     const img = document.createElement('img');
     const p = document.createElement('p');
-    // const h3 = document.createElement('h3');
     newElement.classList.add('class-div');
     img.classList.add('class-img');
     p.classList.add('class-name');
-    // h3.classList.add('class-tags');
     img.src = `${champion.splash}`;
     p.innerHTML = `${champion.name}`;
-    // h3.innerHTML = `${champion.tags}`;
     newElement.appendChild(img);
     newElement.appendChild(p);
-    // newElement.appendChild(h3);
-    const container = document.getElementById('container');
     container.appendChild(newElement);
   });
 };
-crearTemplate(arrObjetos);
+createTemplate(arrObject);
 
-//CREAR PARRAFO PARA MOSTRAR ESTADISTICA DE CALCULO AGREGADO(sonia)
+// CREATE UN ELEMENTO P PARA MOSTRAR EL PROMEDIO
 const pElement = document.createElement('p');
-pElement.classList.add('class-new');
+pElement.classList.add('class-name');
 
 // ORDENAR DATA
 const orderAz = document.getElementById('orderAz');
 orderAz.addEventListener('click', () => {
   container.innerHTML = '';
-  pElement.innerHTML = '';/*refrescar y q no salga el calculo aqui*/
-  crearTemplate(sortData(arrObjetos, 'name', 'ascendente'));
+  pElement.innerHTML = '';
+  createTemplate(sortData(arrObject, 'name', 'ascending'));
 });
 
 const orderZa = document.getElementById('orderZa');
 orderZa.addEventListener('click', () => {
   container.innerHTML = '';
-  pElement.innerHTML = '';/*refrescar y q no salga el calculo aqui*/
-  crearTemplate(sortData(arrObjetos, 'name', 'descendente'));
+  pElement.innerHTML = '';
+  createTemplate(sortData(arrObject, 'name', 'descending'));
 });
 
-// FILTRAR DATA
+// FILTRAR DATA Y CALCULAR PROMEDIO
+// ASESINOS
 const assassin = document.getElementById('assassin');
 assassin.addEventListener('click', () => {
   container.innerHTML = '';
-
   pElement.innerHTML = '';
-  pElement.innerHTML = `Assassin Average HP: ${filterAssassin(arrObjetos)}`;
+  pElement.innerHTML = `Assassin Average HP: ${averageData(arrObject, 'Assassin').toFixed(2)}`;
   const average = document.getElementById('average');
   average.appendChild(pElement);
-
-  crearTemplate(filterData(arrObjetos, 'Assassin'));
+  createTemplate(filterData(arrObject, 'Assassin'));
 });
 
+// LUCHADORES
 const fighter = document.getElementById('fighter');
 fighter.addEventListener('click', () => {
   container.innerHTML = '';
-
   pElement.innerHTML = '';
-  pElement.innerHTML = `Fighter Average HP: ${filterFighter(arrObjetos)}`;
+  pElement.innerHTML = `Fighter Average HP: ${averageData(arrObject, 'Fighter').toFixed(2)}`;
   const average = document.getElementById('average');
   average.appendChild(pElement);
-
-  crearTemplate(filterData(arrObjetos, 'Fighter'));
+  createTemplate(filterData(arrObject, 'Fighter'));
 });
 
+// MAGOS
 const mage = document.getElementById('mage');
 mage.addEventListener('click', () => {
   container.innerHTML = '';
   pElement.innerHTML = '';
-  pElement.innerHTML = `Mage Average Hp: ${filterMage(arrObjetos)}`;
+  pElement.innerHTML = `Mage Average Hp: ${averageData(arrObject, 'Mage').toFixed(2)}`;
   const average = document.getElementById('average');
   average.appendChild(pElement);
-
-  crearTemplate(filterData(arrObjetos, 'Mage'));
+  createTemplate(filterData(arrObject, 'Mage'));
 });
 
+// TIRADORES
 const marksman = document.getElementById('marksman');
 marksman.addEventListener('click', () => {
   container.innerHTML = '';
-
   pElement.innerHTML = '';
-  pElement.innerHTML = `Marksman Average Hp: ${filterMarksman(arrObjetos)}`;
+  pElement.innerHTML = `Marksman Average Hp: ${averageData(arrObject, 'Marksman').toFixed(2)}`;
   const average = document.getElementById('average');
   average.appendChild(pElement);
-
-  crearTemplate(filterData(arrObjetos, 'Marksman'));
+  createTemplate(filterData(arrObject, 'Marksman'));
 });
 
+// SOPORTES
 const support = document.getElementById('support');
 support.addEventListener('click', () => {
   container.innerHTML = '';
-
   pElement.innerHTML = '';
-  pElement.innerHTML = `Support Average Hp: ${filterSupport(arrObjetos)}`;
+  pElement.innerHTML = `Support Average Hp: ${averageData(arrObject, 'Support').toFixed(2)}`;
   const average = document.getElementById('average');
   average.appendChild(pElement);
-
-  crearTemplate(filterData(arrObjetos, 'Support'));
+  createTemplate(filterData(arrObject, 'Support'));
 });
 
+// TANQUES
 const tank = document.getElementById('tank');
 tank.addEventListener('click', () => {
   container.innerHTML = '';
-
   pElement.innerHTML = '';
-  pElement.innerHTML = `Tank Average Hp: ${filterTank(arrObjetos)}`;
+  pElement.innerHTML = `Tank Average Hp: ${averageData(arrObject, 'Tank').toFixed(2)}`;
   const average = document.getElementById('average');
   average.appendChild(pElement);
-
-  crearTemplate(filterData(arrObjetos, 'Tank'));
+  createTemplate(filterData(arrObject, 'Tank'));
 });
 
-//AGREGAR O ELIMINAR CLASE,ACTIVAR AL HACER CLICK
+// AGREGAR O ELIMINAR CLASE A <LI>,ACTIVAR AL HACER CLICK
 const ul = document.querySelector('ul');
 const li = document.querySelectorAll('li');
 

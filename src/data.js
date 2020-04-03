@@ -1,11 +1,11 @@
 /* eslint-disable no-plusplus */
-// export const example = () => 'example';
-// export const anotherExample = () => 'OMG';
 
 // AQUI MANEJAMOS LAS FUNCIONES
+
+// ORDENAR ALFABETICAMENTE
 export const sortData = (data, sortBy, sortOrder) => {
   const newArray = data;
-  if (sortBy === 'name' && sortOrder === 'ascendente') {
+  if (sortBy === 'name' && sortOrder === 'ascending') {
     newArray.sort((a, b) => {
       if (a.name > b.name) {
         return 1;
@@ -16,7 +16,7 @@ export const sortData = (data, sortBy, sortOrder) => {
       return 0;
     });
   }
-  if (sortBy === 'name' && sortOrder === 'descendente') {
+  if (sortBy === 'name' && sortOrder === 'descending') {
     newArray.sort((a, b) => {
       if (a.name < b.name) {
         return 1;
@@ -24,13 +24,13 @@ export const sortData = (data, sortBy, sortOrder) => {
       if (a.name > b.name) {
         return -1;
       }
-
       return 0;
     });
   }
   return newArray;
 };
 
+// FILTRAR POR ROL
 export const filterData = (data, condition) => {
   const filtering = data.filter((obj) => {
     const filterByRole = [];
@@ -45,42 +45,10 @@ export const filterData = (data, condition) => {
   return filtering;
 };
 
-export const filterAssassin = (data) => {
-  const filterOnlyAssassin = data.filter(champion => champion.tags.includes('Assassin'));
-  const reducehpAssassin = filterOnlyAssassin.reduce((total, next) => total + next.stats.hp, 0);
-  const avghpAssassin = reducehpAssassin / filterOnlyAssassin.length;
-  return avghpAssassin;
-};
-
-export const filterFighter = (data) => {
-  const filterOnlyFighter = data.filter(champion => champion.tags.includes('Fighter'));
-  const reducehpfighter = filterOnlyFighter.reduce((total, next) => total + next.stats.hp, 0);
-  const avghpfighter = reducehpfighter / filterOnlyFighter.length;
+// PROMEDIO DE HP (PUNTOS DE SALUD) DE CADA ROL
+export const averageData = (data, role) => {
+  const filterOnlyByRole = data.filter(champion => champion.tags.includes(role));
+  const reducehpfighter = filterOnlyByRole.reduce((acc, current) => acc + current.stats.hp, 0);
+  const avghpfighter = reducehpfighter / filterOnlyByRole.length;
   return avghpfighter;
-};
-
-export const filterMage = (data) => {
-  const filterOnlyMage = data.filter(champion => champion.tags.includes('Mage'));
-  const reduceHpMage = filterOnlyMage.reduce((total, next) => total + next.stats.hp, 0);
-  const avgHpMage = reduceHpMage / filterOnlyMage.length;
-  return avgHpMage;
-};
-export const filterMarksman = (data) => {
-  const filterOnlyMarksman = data.filter(champion => champion.tags.includes('Marksman'));
-  const reduceHpMarksman = filterOnlyMarksman.reduce((total, next) => total + next.stats.hp, 0);
-  const avgHpMarksman = reduceHpMarksman / filterOnlyMarksman.length;
-  return avgHpMarksman;
-};
-
-export const filterSupport = (data) => {
-  const filterOnlySupport = data.filter(champion => champion.tags.includes('Support'));
-  const reduceHpSupport = filterOnlySupport.reduce((total, next) => total + next.stats.hp, 0);
-  const avgHpSupport = reduceHpSupport / filterOnlySupport.length;
-  return avgHpSupport;
-};
-export const filterTank = (data) => {
-  const filterOnlyTank = data.filter(champion => champion.tags.includes('Tank'));
-  const reduceHpTank = filterOnlyTank.reduce((total, next) => total + next.stats.hp, 0);
-  const avgHpTank = reduceHpTank / filterOnlyTank.length;
-  return avgHpTank;
 };
