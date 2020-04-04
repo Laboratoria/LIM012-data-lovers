@@ -121,5 +121,7 @@ vistaCampeones.forEach((campeones) => {
     const nombreId = evt.path[1].id;
     // console.log(listaTodos[nombreId]);
     crearVistaCampeon(listaTodos[nombreId]);
+    lista.style.display = 'none';
+    document.getElementById('pantalla3').style.display = 'block';
   });
 });
