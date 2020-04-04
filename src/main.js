@@ -23,6 +23,7 @@ const resultado = (data) => {
     nombre.innerHTML = `${campeones.name}`;
     foto.src = `${campeones.splash}`;
     casilla.className = 'casillaCampeon';
+    casilla.id = campeones.name;
     casilla.appendChild(foto);
     casilla.appendChild(nombre);
     lista.appendChild(casilla);
@@ -96,25 +97,29 @@ document.querySelector('.contenedorSubir').addEventListener('click', () => {
   });
 });
 
+
 // Descripcion de Campeon
-
-lista.addEventListener('click', (event) => {
-  const nombreCampeon = event.target.dataset.id;
-  const objCampeonSeleccionado = (listaTodos[nombreCampeon]);
-
-  const historias = document.querySelector('#detalleCampeon').innerHTML = `
+const crearVistaCampeon = (campeon) => {
+  document.querySelector('#detalleCampeon').innerHTML = `
   <div class = "historia imagen">
-    <img src = ${objCampeonSeleccionado.splash} class="imgCampeon"/> </div>
+    <img src = ${campeon.splash} class="imgCampeon"/> </div>
   <div class = "descripcionCampeon">
-    <p class = "historiaNombre">${objCampeonSeleccionado.name} </p> 
-    <p class = "historiaTitle>${objCampeonSeleccionado.title} </p>
-    <p class = "historiaCampeon>${objCampeonSeleccionado.blurb} </p>
-    <p class="historiaTags"> Rol: ${objCampeonSeleccionado.tags} </p>
-    <div class = "info"> 
-      <p> Defensa:${objCampeonSeleccionado.info.defense} </p>
-      <p> Ataque:${objCampeonSeleccionado.info.attack} </p>
-      <p> Magia:${objCampeonSeleccionado.info.magic} </p>
-      <p> Dificultad:${objCampeonSeleccionado.info.difficulty} </p> </div>
+    <p class = "historiaNombre">${campeon.name} </p>
+    <p class = "historiaTitle">${campeon.title} </p>
+    <p class = "historiaCampeon">${campeon.blurb} </p>
+    <p class="historiaTags"> Rol: ${campeon.tags} </p>
+    <div class = "info">
+      <p> Defensa:${campeon.info.defense} </p>
+      <p> Ataque:${campeon.info.attack} </p>
+      <p> Magia:${campeon.info.magic} </p>
+      <p> Dificultad:${campeon.info.difficulty} </p> </div>
   </div>`;
-  resultado(historias);
+};
+const vistaCampeones = document.querySelectorAll('.casillaCampeon');
+vistaCampeones.forEach((campeones) => {
+  campeones.addEventListener('click', (evt) => {
+    const nombreId = evt.path[1].id;
+    // console.log(listaTodos[nombreId]);
+    crearVistaCampeon(listaTodos[nombreId]);
+  });
 });
