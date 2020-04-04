@@ -115,6 +115,6 @@ lista.addEventListener('click', (event) => {
       <p> Ataque:${objCampeonSeleccionado.info.attack} </p>
       <p> Magia:${objCampeonSeleccionado.info.magic} </p>
       <p> Dificultad:${objCampeonSeleccionado.info.difficulty} </p> </div>
-  </div>`{};
+  </div>`;
   resultado(historias);
 });
