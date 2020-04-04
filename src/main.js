@@ -33,7 +33,7 @@ createTemplate(arrObject);
 
 // CREATE UN ELEMENTO P PARA MOSTRAR EL PROMEDIO
 const pElement = document.createElement('p');
-pElement.classList.add('class-name');
+pElement.classList.add('class-new');
 
 // ORDENAR DATA
 const orderAz = document.getElementById('orderAz');

@@ -1,6 +1,4 @@
-/* eslint-disable import/named */
 import { sortData, filterData, averageData } from '../src/data.js';
-
 
 const data = [
   {
