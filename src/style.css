@@ -22,78 +22,129 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  min-height: 100vh; /*altura definida*/
   font-family: Arial;
 }
 
-/*EL HEADER SOLO CONTIENE UNA IMAGEN*/
-.main-header{
-  height: 96px;
-  margin: 0 auto;
-  margin-top: 15px;/*para tener una distacia antes del encabezado*/
+/*trabajando el banner, los li de los roles y menu hamburguesa en el header*/
+header { 
+width: 100%;
+background-color: var(--color-black);
 }
 
-/**/
-ul{
-  display: flex;
+#btn-menu { /* para que no se vea el input checkbox*/
+  display: none;
+}
+
+/* dimensiones del label que contiene la img icono-menu */
+header label {
+  display: none;
+  width: 30px;
+  height: 30px;
+  padding: 10px;
+  border-right: 1px solid var(--color-dorado);
+}
+
+/* estilo al label que contiene la img icono-menu :cambia de color al hacer hover */
+header label:hover {
+  cursor: pointer;
+  background: var(--color-nav-dark);
+}
+
+.main-nav ul{
+  /*display: flex;
   background-color: var(--color-black);
   margin-top: 0 auto; /*para poder separar la lista del header*/
-  flex-wrap: wrap;/*envoltura flexibe*/
-  border: 1px solid var(--color-dorado);
+  /*flex-wrap: wrap;/*envoltura flexible*/
+  border: 1px solid var(--color-dorado); /* borde dorado al ul y no a cada li*/
   box-shadow: 0 0 1px rgb(255, 255, 252);
+  margin: 0;
+  list-style: none;
+  padding: 0;
+  display: flex;
 }
 
-ul li{
- list-style: none;
-}
-
-li{
+.main-nav li{
   flex-grow: 1;
   text-align: center;
   line-height: 2.5;
-  /*font-size: 1em;*/
-  /*border: 1px solid var(--color-dorado);*/  
+  /*border: 1px solid var(--color-dorado);*/  /* borde dorado a cada li*/
 }
 
-ul li a{
-  position: relative;
+/* estilo a los li de roles y ordenar: cambia de color al hacer hover*/
+.main-nav li:hover {
+  background:#878a8a73;
+  /*background:#93734148;*/
+}
+
+.main-nav li a{
+  /*position: relative;*/
   display: block;
   text-decoration: none;
   text-transform: uppercase;
   color: var(--color-dorado);
 }
 
-/*UTILIZANDO ACTIVE*/
+@media (max-width:768px) {
+  header label {
+    display: block;
+  }
+  .main-nav {
+    position: absolute; /*estaba en absolute pero las imagenes quedaban montadas sobre los li. si pongo relative no quedan asi pero sale un fondo negro que no se va*/
+    background: var(--color-black);
+    width: 70%;
+    margin-left: -70%;
+    transition: all 0.5s;
+  }
+  .main-nav ul{
+    flex-direction: column;
+    z-index: 1100;
+  }
+  .main-nav li {
+    border-top: var(--color-dorado);
+  }
+  #btn-menu:checked ~ .main-nav {
+    margin: 0;
+    z-index: 1;
+    
+  }
+  #btn-menu:checked ~ .main-container {
+        z-index: -1;
+  }
+
+}
+
+
+/*utilizando active*/
 li.active a {
-  font-weight: bold;/*tener la letra en negrita*/
-  height: 0.2px;
-  bottom: 0;
+  font-weight: bold;
+  /*height: 0.2px; /*no se que hace pero cuando lo comente ya no se superponian los li cuando se desmarcaban. Si se comenta, el li selecionado se queda amarillo*/
+  /*bottom: 0; no se que hace*/
   /*border-radius: 8px;*/
   background:rgba(243, 168, 5, 0.842);/*color del cuadrado al elegir la opcion rgb(241, 178, 59);*/
-  color:rgba(243, 168, 5, 0.842);/*colo que se pondra la elegir la opcion*/
-  text-shadow: 0 0 1.5px rgb(255, 255, 252);
-  transition: all .5s ease 0s;
+  color: var(--color-black);/*color que tendra el texto al elegir la opcion*/
+  text-shadow: 0 0 1px rgb(255, 255, 252);
+  transition: all 0.1s ease-in-out 0.1s;
+}
+ /* estilo para que el banner de la img dentro del header se ajuste al ancho del padre*/
+.banner-lol {
+  width: 100%;
 }
 
-li:hover {
-  background-color:#878a8a73;
-  /*background:#93734148;*/
-}
 
-.main-container {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1; /*sirve para el crecimiento de las cajas*/
-}
+
+
+
+
+
+
+
+
 
 /*TRABAJANDO CON EL CONTENEDOR DE LAS IMAGENES Y NOMBRES*/
 .class-div {
   background-color: rgb(6, 28, 37);
   display: inline-block;
-  position: relative;
+  position: relative; /*estaba relative*/
   margin-top: 1%;
   transform-style: preserve-3d;/*animacion*/
   transition: 1.5s;/*animacion*/
@@ -102,18 +153,20 @@ li:hover {
   border: 1px solid var(--color-dorado);
 }
 
-/*agregando hover*/
+/*agregando hover al div de los campeones*/
 div:hover{
  transform: scale(0.96);
  background:rgba(243, 168, 5, 0.842);
   /*background-color: rgb(6, 95, 131);*/
 }
 
-/*ID DE IMAGENES DE CAMPEONES*/
+/* dandole estilo a la section dentro del main con class="main-container"*/
 .galery {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
+  flex-grow: 1;
+  z-index: -1100; /* no esta funcionando, imag todavia superponen al main-nav*/
 }
 
 /*IMAGENES DE CAMPEONES*/
@@ -147,7 +200,7 @@ div:hover{
   font-family: 'Exo', sans-serif;/*lo menciono para que aqui se utilize la fuente
   font-weight: bolder;*/
   text-align: center;
-  /*background-color: rgb(6, 28, 37);*/
+  background-color: rgb(6, 28, 37);
   margin-top: -0.2em;/*15*/
   padding: 0.10em;
   text-transform: uppercase;
@@ -167,7 +220,15 @@ div:hover{
   text-shadow: 0px 3px 3px rgba(255, 255, 255, 0.548),0px -1px 1px rgb(0, 0, 0);
 }
 
-/*ESTILO DEL FOOTER*/
+/*intentando darle otro estilo de hover sobre el calculo*/
+.class-new:hover{
+  transform: scale(0.96);
+  color: var(--color-black);
+  background:rgba(243, 168, 5, 0.842);
+}
+
+
+/* etiqueta footer que contiene 2 section: los iconos de redes sociales y el p con el texto del footer*/
 .main-footer{
   margin-top: 12px;
   border-top: inset 1px  ; /*borde solo a la parte superior*/
@@ -176,8 +237,7 @@ div:hover{
   text-align: center;
   height: 100px;
 }
-
-/*REDES SOCIALES DEL FOOTER*/
+/* etiqueta section que contiene a los icones de redes sociales*/
 .icons_redes{
   margin-top: 15px;
 }
@@ -194,7 +254,7 @@ div:hover{
   font-size: 35px;
 }
 
-/*TEXTO DEL FOOTER*/
+/* Estilo de la etiqueta p que contiene el texto del footer*/
 .text-footer{
   color: rgb(255, 255, 255);
   /*text-align: center;*/

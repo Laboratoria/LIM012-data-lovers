@@ -1,8 +1,10 @@
 /* eslint-disable no-plusplus */
 
+
 // AQUI MANEJAMOS LAS FUNCIONES
 
 // ORDENAR ALFABETICAMENTE
+
 export const sortData = (data, sortBy, sortOrder) => {
   const newArray = data;
   if (sortBy === 'name' && sortOrder === 'ascending') {
@@ -45,10 +47,15 @@ export const filterData = (data, condition) => {
   return filtering;
 };
 
-// PROMEDIO DE HP (PUNTOS DE SALUD) DE CADA ROL
+// PROMEDIO DE AD (DAÑO POR ATAQUE) DE CADA ROL
 export const averageData = (data, role) => {
   const filterOnlyByRole = data.filter(champion => champion.tags.includes(role));
-  const reducehpfighter = filterOnlyByRole.reduce((acc, current) => acc + current.stats.hp, 0);
-  const avghpfighter = reducehpfighter / filterOnlyByRole.length;
-  return avghpfighter;
+
+  const reduceRole = filterOnlyByRole.reduce((acc, current) => acc
+   + current.stats.attackdamage
+   + current.stats.attackspeedoffset
+   + current.stats.crit
+   + current.stats.armor, 0);
+  const avgRole = reduceRole / filterOnlyByRole.length;
+  return avgRole;
 };
