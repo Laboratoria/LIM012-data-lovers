@@ -1,74 +1,89 @@
-import { orderData, searchChampions } from '../src/data.js';
+import {
+  orderData,
+  orderFilterTags,
+} from '../src/data.js';
 
-const champAscend = [
+const champA = [
   {
     id: 'Morgana',
     key: 25,
     name: 'Morgana',
     title: 'Fallen Angel',
+    tags: ['Mage', 'Support'],
   },
   {
     id: 'Rammus',
     key: 33,
     name: 'Rammus',
     title: 'the Armordillo',
+    tags: ['Tank'],
   },
   {
     id: 'Shaco',
     key: 35,
     name: 'Shaco',
     title: 'the Demon Jester',
+    tags: ['Assassin'],
   },
   {
     id: 'Shen',
     key: 98,
     name: 'Shen',
     title: 'the Eye of Twilight',
+    tags: ['Tank'],
   },
 ];
-const champDescend = [
+
+const champD = [
   {
     id: 'Shen',
     key: 98,
     name: 'Shen',
     title: 'the Eye of Twilight',
+    tags: ['Tank', 'Melee'],
   },
   {
     id: 'Shaco',
     key: 35,
     name: 'Shaco',
     title: 'the Demon Jester',
+    tags: ['Assassin'],
   },
   {
     id: 'Rammus',
     key: 33,
     name: 'Rammus',
     title: 'the Armordillo',
+    tags: ['Tank', 'Fighter'],
   },
   {
     id: 'Morgana',
     key: 25,
     name: 'Morgana',
     title: 'Fallen Angel',
+    tags: ['Mage', 'Support'],
   },
 ];
-describe('orderData', () => {
+
+describe('ORDENAR DE FORMA ASCENDENTE Y DESCENDENTE', () => {
   it('orderData es una funcion', () => {
     expect(typeof orderData).toBe('function');
   });
-  it('Debe ordenar de manera ascendente', () => {
-    expect(orderData(champAscend, 'name', 'ascendente')).toEqual(champAscend);
+  it('Debería ordenar de manera ascendente', () => {
+    expect(orderData(champA, 'name', 'ascendente')).toEqual(champA);
   });
-  it('Debe ordenar de manera descendente', () => {
-    expect(orderData(champDescend, 'name', 'descendente')).toEqual(champDescend);
+  it('Debería ordenar de manera descendente', () => {
+    expect(orderData(champD, 'name', 'descendente')).toEqual(champD);
   });
 });
-
-describe('searchChampions', () => {
-  it('searchChampions es una funcion', () => {
-    expect(typeof searchChampions).toBe('function');
+describe('FILTRAR POR ROLES', () => {
+  it('orderFilterTags es una funcion', () => {
+    expect(typeof orderFilterTags).toBe('function');
   });
-  it('Deberá de mostrar un array', () => {
-    expect(typeof searchChampions([champAscend])).toBe('object');
+  it('Debería retornar los campeones de Rol: Assessin', () => {
+   
+  });
+  it('Debería retornar los campeones de Rol: Tank', () => {
+    
   });
 });

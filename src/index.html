@@ -6,49 +6,60 @@
     <link rel="stylesheet" href="style.css"/>
     <link rel="shortcut icon" href="imagenes/logo.png" >
     <!-- <script src="https://kit.fontawesome.com/995e334b50.js" crossorigin="anonymous"></script> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
-  <body>
+  <body id = "body" class="classBody">
   <!-- PRIMERA PANTALLA -->
-  <div id = 'firstScreen'>
+  <div id="firstScreen">
     <header>
-      <input type='checkbox' id='btn-menu'>
+      <input type="checkbox" id="btn-menu">
       <label for="btn-menu"><img src="imagenes/icono1.png" width="30px" height="30px" alt=""></label>
-         <nav class='menu'>
+         <nav class="menu">
             <ul>
-              <li><a href=''>Logo</a></li>
-              <li><a href=''>Juego</a></li>
-              <li><a href=''>Lista de Términos</a></li>
-              <li><a href=''>Noticias</a></li>
-              <li><a href=''>Sobre Nosotras</a></li>
+              <li><a href="">Logo</a></li>
+              <li><a href="https://lan.leagueoflegends.com/es-mx/how-to-play/">Juego</a></li>
+              <li><a href="https://league-of-legends-lol.fandom.com/es/wiki/Diccionario_de_Terminos_del_LoL">Lista de Términos</a></li>
+              <li><a href="https://lan.leagueoflegends.com/es-mx/news/game-updates/">Noticias</a></li>
+              <li><a href="">Sobre Nosotras</a></li>
             </ul>
           </nav>
     </header>
-  <div class="bttnM">
-    <button id='btnMostrar' class='btnMostrar'>Conoce a los campeones</button>
-  </div>
-  </div> 
+    <div class="bttnM">
+      <button id="btnMostrar" class="btnMostrar">Conoce a los campeones</button>
+    </div>
+</div> 
 
   <!-- SEGUNDA PANTALLA -->
-  <div id = 'secondScreen'>
+  <div id="secondScreen" class="classNone" class="classBody">
+    <header class="header">
+    <div class="wrapper">
+      <nav>
+        <ul>
+          <li><a href="#" id="topTeam">TOP 5 </a></li>
+          <li>
+            <button class='btnRoles' id='btnRoles'>Roles de Campeones</button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header> 
     <!-- ORDENAR -->
-     <section class='orderList'>
-      <select name='order' id='order' class='styleList'>
-        <option value='' selected disabled>Ordenar</option>
-        <option value='ascendente'>Ascendente</option>
-        <option value='descendente'>Descendente</option>
+     <section class=orderList>
+      <select name="order" id="order" class="styleList">
+        <option value="" selected disabled>Ordenar</option>
+        <option value="ascendente">Ascendente</option>
+        <option value="descendente">Descendente</option>
       </select>
         <!-- BUSCAR -->
         <i class="fas fa-search searching"></i>
-        <input type="search" id='inputBuscar' placeholder='Buscar' class='styleList'>        
+        <input type="search" id="inputBuscar" placeholder="Buscar" class="styleList">        
      </section><br><br>
-     <div>
-      <button class='btnRoles' id='btnRoles'>Roles de Campeones</button>
-    </div> 
 
-    <div id='contentList'></div> 
+    <h1 class="title">UNIVERSO DE CAMPEONES</h1>
+    <div id="contentList"></div> 
   </div> 
   <!-- TERCERA PANTALLA -->
-  <div id='thirdScreen'>
+  <div id='thirdScreen' class="classNone">
     <section class='roles'>
       <input type=image id='rolAssassin' value ='Assassin' src='imagenes/role_icon_assassin.png'>
       <input type=image id='rolFighter' value ='Fighter' src='imagenes/role_icon_fighter.png'> 
@@ -58,13 +69,13 @@
       <input type=image id='rolTank' value ='Tank' src='imagenes/role_icon_tank.png'>  
     </section> 
    
-      <div class="videoIntro">
+      <div class="videoIntro" id="video">
           <video src="imagenes/videoChampions.mp4" autoplay loop muted width="50%" height="50%"></video>
       </div>     
   
     </div>
   <!--CUARTA PANTALLA -ROL ASESINO-->
-  <div id='fourthScreen' class='fourthScreen'>
+  <div id='fourthScreen' class='fourthScreen classNone'>
     <section class='asesino'>
       <h1>ASESINOS</h1>
       <section>
@@ -78,9 +89,11 @@
           <i class="fas fa-search searching"></i>
           <input type='text' id='inputBuscarRoles' placeholder='Buscar'>
       </section>
-      
-    
-    <div id='contentListAsse'></div> 
+    <div id='contentListRol'></div> 
+  </div>
+  
+  <div id="fifthScreen" class="classNone">
+    <div id="contentTop"></div>
   </div>
   <script src="main.js" type="module"></script>
   </body>
