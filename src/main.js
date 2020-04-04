@@ -105,8 +105,8 @@ const crearVistaCampeon = (campeon) => {
     <img src = ${campeon.splash} class="imgCampeon"/> </div>
   <div class = "descripcionCampeon">
     <p class = "historiaNombre">${campeon.name} </p>
-    <p class = "historiaTitle>${campeon.title} </p>
-    <p class = "historiaCampeon>${campeon.blurb} </p>
+    <p class = "historiaTitle">${campeon.title} </p>
+    <p class = "historiaCampeon">${campeon.blurb} </p>
     <p class="historiaTags"> Rol: ${campeon.tags} </p>
     <div class = "info">
       <p> Defensa:${campeon.info.defense} </p>
@@ -123,14 +123,3 @@ vistaCampeones.forEach((campeones) => {
     crearVistaCampeon(listaTodos[nombreId]);
   });
 });
-
-
-// lista.addEventListener('click', (event) => {
-//   const nombreCampeon = event.target.dataset.id;
-//   console.log(nombreCampeon);
-//   const objCampeonSeleccionado = (listaTodos[nombreCampeon]);
-//   //console.log(objCampeonSeleccionado);
-
-
-//   resultado(historias);
-// });
