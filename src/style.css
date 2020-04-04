@@ -140,6 +140,15 @@ li.active a {
 
 
 
+
+
+
+
+
+
+
+
+
 /*TRABAJANDO CON EL CONTENEDOR DE LAS IMAGENES Y NOMBRES*/
 .class-div {
   background-color: rgb(6, 28, 37);
@@ -204,7 +213,7 @@ div:hover{
   margin-top: -0.2em;/*15*/
   padding: 0.10em;
   text-transform: uppercase;
-  /*color: var(--color-white);*/
+  color: var(--color-dorado);
   padding: 6% 8%;
   padding-top: 1%;
   padding-right: 8%;
