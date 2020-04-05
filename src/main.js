@@ -21,17 +21,17 @@ const createTemplate = (arr) => {
     const newElement = document.createElement('div');
     const img = document.createElement('img');
     const p = document.createElement('p');
-    const pAvg = document.createElement('p');
+
     newElement.classList.add('class-div');
     img.classList.add('class-img');
     p.classList.add('class-name');
-    pAvg.classList.add('class-avg');
+
     img.src = `${champion.splash}`;
     p.innerHTML = `${champion.name}`;
-    pAvg.innerHTML = `Average Offensive Statistic:${averageName(arrObject, `${champion.name}`).toFixed(2)}`;
+
     newElement.appendChild(img);
     newElement.appendChild(p);
-    newElement.appendChild(pAvg);
+
     container.appendChild(newElement);
   });
 };
@@ -57,6 +57,28 @@ orderZa.addEventListener('click', () => {
 });
 
 // FILTRAR DATA Y CALCULAR PROMEDIO
+
+const showFilter = (arr) => {
+  arr.forEach((champion) => {
+    const newElement = document.createElement('div');
+    const img = document.createElement('img');
+    const p = document.createElement('p');
+    const pAvg = document.createElement('p');
+    newElement.classList.add('class-div');
+    img.classList.add('class-img');
+    p.classList.add('class-name');
+    pAvg.classList.add('class-avg');
+    img.src = `${champion.splash}`;
+    p.innerHTML = `${champion.name}`;
+    pAvg.innerHTML = `Average Offensive Statistic: ${averageName(arrObject, `${champion.name}`).toFixed(2)}`;
+    newElement.appendChild(img);
+    newElement.appendChild(p);
+    newElement.appendChild(pAvg);
+    container.appendChild(newElement);
+  });
+};
+showFilter(arrObject);
+
 // ASESINOS
 const assassin = document.getElementById('assassin');
 assassin.addEventListener('click', () => {
@@ -65,7 +87,7 @@ assassin.addEventListener('click', () => {
   pElement.innerHTML = `Assassin Average Offensive Statistic: ${averageData(arrObject, 'Assassin').toFixed(2)}`;
   const average = document.getElementById('average');
   average.appendChild(pElement);
-  createTemplate(filterData(arrObject, 'Assassin'));
+  showFilter(filterData(arrObject, 'Assassin'));
 });
 
 
@@ -78,7 +100,7 @@ fighter.addEventListener('click', () => {
   pElement.innerHTML = `Fighter Average Offensive Statistic: ${averageData(arrObject, 'Fighter').toFixed(2)}`;
   const average = document.getElementById('average');
   average.appendChild(pElement);
-  createTemplate(filterData(arrObject, 'Fighter'));
+  showFilter(filterData(arrObject, 'Fighter'));
 });
 
 
@@ -91,7 +113,7 @@ mage.addEventListener('click', () => {
   pElement.innerHTML = `Mage Average Offensive Statistic: ${averageData(arrObject, 'Mage').toFixed(2)}`;
   const average = document.getElementById('average');
   average.appendChild(pElement);
-  createTemplate(filterData(arrObject, 'Mage'));
+  showFilter(filterData(arrObject, 'Mage'));
 });
 
 
@@ -104,7 +126,7 @@ marksman.addEventListener('click', () => {
   pElement.innerHTML = `Marksman Average Offensive Statistic: ${averageData(arrObject, 'Marksman').toFixed(2)}`;
   const average = document.getElementById('average');
   average.appendChild(pElement);
-  createTemplate(filterData(arrObject, 'Marksman'));
+  showFilter(filterData(arrObject, 'Marksman'));
 });
 
 
@@ -117,7 +139,7 @@ support.addEventListener('click', () => {
   pElement.innerHTML = `Support Average Offensive Statistic: ${averageData(arrObject, 'Support').toFixed(2)}`;
   const average = document.getElementById('average');
   average.appendChild(pElement);
-  createTemplate(filterData(arrObject, 'Support'));
+  showFilter(filterData(arrObject, 'Support'));
 });
 
 
@@ -130,7 +152,7 @@ tank.addEventListener('click', () => {
   pElement.innerHTML = `Tank Average Offensive Statistic: ${averageData(arrObject, 'Tank').toFixed(2)}`;
   const average = document.getElementById('average');
   average.appendChild(pElement);
-  createTemplate(filterData(arrObject, 'Tank'));
+  showFilter(filterData(arrObject, 'Tank'));
 });
 
 // AGREGAR O ELIMINAR CLASE A <LI>,ACTIVAR AL HACER CLICK

@@ -48,6 +48,7 @@ export const filterData = (data, condition) => {
 };
 
 // PROMEDIO DE ESTADISTICA OFENSIVA(daño x ataque,veloc de ataque,golpe critico,armadura) D CADA ROL
+// PROMEDIO DE AD (DAÑO POR ATAQUE) DE CADA ROL
 export const averageData = (data, role) => {
   const filterOnlyByRole = data.filter(champion => champion.tags.includes(role));
 

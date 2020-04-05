@@ -199,8 +199,6 @@ iteraciones que hagas, que las subas a tu repositorio y las menciones en tu
 
 ![Historia de usuario #5 DESKTOP mostrar modal con estadistica ofensiva de cada rol](https://user-images.githubusercontent.com/60791273/78462958-fe33ba00-769c-11ea-8639-f5ecb45dc340.jpg)
 
-![Historia de usuario #5 MOVIL mostrar modal con estadistica ofensiva de cada rol](https://user-images.githubusercontent.com/60791273/78462961-0986e580-769d-11ea-8078-75801df6feb9.jpg)
-
 ### Prototipo de alta fidelidad
 
 Lo siguiente es diseñar tu Interfaz de Usuario (UI por sus siglas en inglés -

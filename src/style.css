@@ -7,7 +7,7 @@
   --color-dorado: #937341;
 }
 
-/*valores por defecto*/
+/*VALORES POR DEFECTO*/
 * {
   margin: 0;
   padding: 0;
@@ -15,133 +15,137 @@
   list-style: none;
 }
 
-/*contenedor general*/
+/*CONTENEDOR GENERAL/TRABAJANDO CON EL FONDO DE PANTALLA*/
 body {
   background-image: url(img/fondo.jpg);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  font-family: Arial;
+  font-family: Arial;  
 }
 
-/*trabajando el banner, los li de los roles y menu hamburguesa en el header*/
+/*TRABAJANDO CON EL HEADER*/
 header { 
 width: 100%;
-background-color: var(--color-black);
+margin-top: 20px;/*distancia del logo con la pantalla parte de arriba*/
 }
 
-#btn-menu { /* para que no se vea el input checkbox*/
-  display: none;
+/*estilo de img logo*/
+.logo {
+  width: 63%;
+  margin: 8px 10% 5px 18%;
+}
+
+/*input checkbox*/
+#btn-menu { 
+  display: none;/*para que no se vea el input en la pagina*/
 }
 
 /* dimensiones del label que contiene la img icono-menu */
 header label {
+  display: flex;
   display: none;
   width: 30px;
   height: 30px;
   padding: 10px;
-  /* border: 1px solid var(--color-dorado); */
+  border-right: 1px solid var(--color-dorado);
 }
 
-/* estilo al label que contiene la img icono-menu :cambia de color al hacer hover */
+/* estilo al label:cambia de color al hacer hover */
 header label:hover {
   cursor: pointer;
   background: var(--color-nav-dark);
 }
 
-.main-nav ul{
-  /*display: flex;
-  background-color: var(--color-black);*/
-  margin-top: 0 auto; /*para poder separar la lista del header NOTA: no veo que eso suceda*/
-  /*flex-wrap: wrap;/*envoltura flexible*/
-  border: 1px solid var(--color-dorado); /* borde dorado al ul y no a cada li*/
-  box-shadow: 0 0 1px rgb(255, 255, 252);
-  margin: 0;
-  list-style: none;
-  padding: 0;
+/*PROPIEDADES DE UL PARA PODER TRABAJAR DINAMICAMENTE CON <LI>*/
+ul{
   display: flex;
+  background-color: rgba(0, 0, 0, 0.507);
+  margin-top: 17px; /*para poder separar la lista del header*/
+  flex-wrap: wrap;/*envoltura flexibe*/
+  border: 1px solid var(--color-dorado);
+  box-shadow: 0 0 2px rgba(173, 173, 173, 0.726);
 }
 
-.main-nav li{
+li{
+  font-family: 'Poppins', sans-serif;
   flex-grow: 1;
   text-align: center;
   line-height: 2.5;
-  /*border: 1px solid var(--color-dorado);*/  /* borde dorado a cada li*/
+  font-size: 1.1em;
 }
 
-/* estilo a los li de roles y ordenar: cambia de color al hacer hover*/
-.main-nav li:hover {
-  background:#878a8a73;
-  /*background:#93734148;*/
+/* estilo a los <li>/animacion*/
+li:hover {
+  background:#eeda6718;
 }
 
-.main-nav li a{
-  /*position: relative;*/
+li a{
   display: block;
   text-decoration: none;
   text-transform: uppercase;
-  color: var(--color-dorado); /*color del texto de cada a*/
-  /*font-weight: bold;*//*tener la letra en negrita*/
+  color: var(--color-dorado);
+  font-size: 1.1em;
 }
 
-@media (max-width:768px) {
-  header label {
-    display: block;
-  }
-  .main-nav {
-    position: absolute; /*estaba en absolute pero las imagenes quedaban montadas sobre los li. si pongo relative no quedan asi pero sale un fondo negro que no se va*/
-    background: var(--color-black); /*color de fondo del ul al ser desplegado*/
-    width: 100%;
-    margin-left: -100%;
-    transition: all 0.5s;
-  }
-  .main-nav ul{
-    flex-direction: column;
-    /*z-index: 1100; Aqui tampoco nunca iba a funcionar. Solo en #btn-menu:checked ~ .main-nav logre que funcionase*/
-  }
-  /*.main-nav li { /*ya no necesito el borde superior dorado porque el box se pone amarillo al selecionar*/
-  /*  border-top: var(--color-dorado);
-  }*/
-  #btn-menu:checked ~ .main-nav {
-    margin: 0;
-    z-index: 1;
-    
-  }
-  /* #btn-menu:checked ~ .main-container { ya no es necesario. Solo poniendo z-index:1 en #btn-menu:checked ~ .main-nav ya funciona y no se superpone la imagen al li
-        z-index: -1;
-  } */
-
-}
-
-
-/*utilizando active*/
+/*utilizando "active"/se trabajo tambien con main.js*/
 li.active a {
+  font-family: 'Poppins', sans-serif;
   font-weight: bold;
-  /*height: 0.2px; /*no se que hace pero cuando lo comente ya no se superponian los li cuando se desmarcaban. Si se comenta, el li selecionado se queda amarillo*/
-  /*bottom: 0; no se que hace*/
-  /*border-radius: 8px;*/
-  background:rgba(243, 168, 5, 0.842);/*color del cuadrado al elegir la opcion rgb(241, 178, 59);*/
-  color: var(--color-black);/*color que tendra el texto al elegir la opcion*/
-  text-shadow: 0 0 1px rgb(255, 255, 252);
+  color:#cca05a;
+  background:#878a8a42;
+  /*text-shadow: 0 0 1.5px #fff;*/
   transition: all 0.1s ease-in-out 0.1s;
 }
  /* estilo para que el banner de la img dentro del header se ajuste al ancho del padre*/
 
- .banner-lol {
-  width: 100%;
+/*RESPONSIVE MODO MOBIL/MENU HAMBURGUESA*/
+@media (max-width:768px) {
+  header{
+    background: var(--color-black);
+    margin: 10px 0px 20px 0px;
+  }
+
+  .logo {
+    width: 63%;
+    margin: 8px 10% -35px 18%;/*-44*/
+  }
+
+  header label {
+    display: block;
+    margin-top: -8px;
+  }
+
+  nav {
+    position:absolute;
+    background: var(--color-black);
+    width: 100%;
+    margin-left: -100%;
+    transition: all 0.5s;
+  }
+
+  ul{
+    flex-direction: column;
+    z-index: 1100;
+  }
+
+  li {
+    border-bottom: inset 0.5px var(--color-dorado); ; /*borde solo a la parte superior*/  
+  }
+
+  #btn-menu:checked ~ nav {
+    margin: 0;
+    z-index: 1;
+  }
+
+  #btn-menu:checked ~ main {
+        z-index: -1;
+  }
+
 }
 
-
-
-
-
-
-
-
-
-
-/*trabajando con las imagenes y nombres*/
+/*TRABAJANDO CON EL CONTENEDOR DE LAS IMAGENES Y NOMBRES*/
 .class-div {
   background-color: rgb(6, 28, 37);
   display: inline-block;
@@ -161,8 +165,8 @@ div:hover{
   /*background-color: rgb(6, 95, 131);*/
 }
 
-/* dandole estilo a la section dentro del main con class="main-container"*/
-.galery {
+/* dandole estilo al ID de la seccion dentro del main*/
+#container {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
@@ -170,24 +174,20 @@ div:hover{
   /*z-index: -1100; /* aqui nunca iba a funcionar, imag todavia superponen al main-nav*/
 }
 
+/*IMAGENES DE CAMPEONES*/
 .class-img {
   margin: 0;
-  width: 307px;
-  height: 200px;
+  width: 307px;/*307px*/
+  height: 200px;/*200px*/
 }
 
-@font-face{
-  font-family: 'Acme', sans-serif; /*tipo de letra(fuente)*/
-  src: url('fonts/Acme-Regular.ttf'); /*fuente personalizada desde mi carpeta*/
-}
-
+/*NOMBRES DE CAMPEONES*/
 .class-name {
   font-size: 1.2em;
   font-family: 'Acme', sans-serif;/*lo menciono para que aqui se utilize la fuente*/
   font-weight: bolder;
   text-align: center;
-  /*background-color: rgb(6, 28, 37);*/
-  margin-top: -0.2em;/*15*/
+  margin-top: -0.2em;
   padding: 0.10em;
   text-transform: uppercase;
   color: var(--color-white);
@@ -198,34 +198,33 @@ div:hover{
   padding-left: 8%;
 }
 
-/*estilo al calculo*/
+/*ESTILO DE LA FUNCION CALCULO*/
 .class-new{
-  font-size: 1.6em;
-  font-family: 'Acme', sans-serif;/*lo menciono para que aqui se utilize la fuente*/
-  font-weight: bolder;
+  font-size: 1.8em;
+  font-family: 'Poppins', sans-serif;
   text-align: center;
-  /*background-color: rgb(6, 28, 37);*/
+  background-color: rgb(6, 28, 37);
   margin-top: -0.2em;/*15*/
   padding: 0.10em;
   text-transform: uppercase;
   color: var(--color-dorado);
   padding: 6% 8%;
-  padding-top: 2%;
+  padding-top: 1.5%;
   padding-right: 8%;
-  padding-bottom: 2%;
+  padding-bottom: 0.5%;
   padding-left: 8%;
-}
-
-/*intentando darle otro estilo de hover sobre el calculo*/
-.class-new:hover{
-  transform: scale(0.96);
-  /* color: var(--color-black);
-  background:rgba(243, 168, 5, 0.842); */
+  font-weight: bold;
+  background: #020202; 
+  -webkit-background-clip: text; 
+  -moz-background-clip: text; 
+  background-clip: text; 
+  color: transparent; 
+  text-shadow: 0px 3px 3px rgba(255, 255, 255, 0.548),0px -1px 1px rgb(0, 0, 0);
 }
 
 /*estilo a la estadistica ofensiva de cada campeon*/
 .class-avg{
-  font-size: 1em;
+  font-size: 1.1em;
   font-family: 'Acme', sans-serif;/*lo menciono para que aqui se utilize la fuente*/
   font-weight: bolder;
   text-align: center;
@@ -241,24 +240,23 @@ div:hover{
   padding-left: 8%;
 }
 
-/*intentando darle otro estilo de hover sobre el calculo*/
+/*estilo de hover sobre el calculo*/
 .class-avg:hover{
   transform: scale(0.96);
   color: var(--color-black);
   /*background:rgba(243, 168, 5, 0.842);*/
 }
 
-
-/* etiqueta footer que contiene 2 section: los iconos de redes sociales y el p con el texto del footer*/
-.main-footer{
+/*ESTILO DEL FOOTER*/
+footer{
   margin-top: 12px;
   border-top: inset 1px  ; /*borde solo a la parte superior*/
-  /*border: 1px solid var(--color-dorado);*/
   color: var(--color-white);
   text-align: center;
   height: 100px;
 }
-/* etiqueta section que contiene a los icones de redes sociales*/
+
+/*iconos de redes sociales*/
 .icons_redes{
   margin-top: 15px;
 }
@@ -276,21 +274,14 @@ div:hover{
 }
 
 /* Estilo de la etiqueta p que contiene el texto del footer*/
-.text-footer{
+.text{
   color: rgb(255, 255, 255);
-  /*text-align: center;*/
   font-size: 1em;   
-  /*background-color: rgb(6, 28, 37);*/
-  margin-top: -0.2em;/*15*/
+  margin-top: -0.2em;
   padding: 0.76em;
 }
 
-
-
-
-
-
-
+/*BARRA LATERAL DE LA PAGINA*/
 /* For the "inset" look only */
 html {
   overflow: auto;
@@ -308,12 +299,12 @@ body {
 
 /* Let's get this party started */
 ::-webkit-scrollbar {
-  width: 12px;
+  width: 7px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
   -webkit-border-radius: 10px;
   border-radius: 10px;
 }
@@ -322,8 +313,8 @@ body {
 ::-webkit-scrollbar-thumb {
   -webkit-border-radius: 10px;
   border-radius: 10px;
-  background:var(--color-dorado); 
-  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+  background:#cca05a54;
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
 }
 ::-webkit-scrollbar-thumb:window-inactive {
 background: var(--color-dorado); 
