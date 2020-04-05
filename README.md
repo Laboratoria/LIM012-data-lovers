@@ -189,6 +189,18 @@ solución usando papel y lápiz. Te recomendamos tomar fotos de todas las
 iteraciones que hagas, que las subas a tu repositorio y las menciones en tu
 `README.md`.
 
+![Historia de usuario #2 DESKTOP ordenar alfabeticamente](https://user-images.githubusercontent.com/60791273/78462770-dc393800-769a-11ea-8ef6-b777aea5bc06.jpg)
+
+![Historia de usuario #2 MOVIL ordenar alfabeticamente](https://user-images.githubusercontent.com/60791273/78462813-4f42ae80-769b-11ea-8b98-4730c2b677d3.jpg)
+
+![Historia de usuario #3 DESKTOP filtrar por roles](https://user-images.githubusercontent.com/60791273/78462947-e825f980-769c-11ea-9d26-faddc4ff3f8e.jpg)
+
+![Historia de usuario #3 MOVIL filtrar por roles](https://user-images.githubusercontent.com/60791273/78462951-f1af6180-769c-11ea-92d8-a28b03816967.jpg)
+
+![Historia de usuario #5 DESKTOP mostrar modal con estadistica ofensiva de cada rol](https://user-images.githubusercontent.com/60791273/78462958-fe33ba00-769c-11ea-8639-f5ecb45dc340.jpg)
+
+![Historia de usuario #5 MOVIL mostrar modal con estadistica ofensiva de cada rol](https://user-images.githubusercontent.com/60791273/78462961-0986e580-769d-11ea-8078-75801df6feb9.jpg)
+
 ### Prototipo de alta fidelidad
 
 Lo siguiente es diseñar tu Interfaz de Usuario (UI por sus siglas en inglés -

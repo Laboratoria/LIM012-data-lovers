@@ -41,7 +41,7 @@ header label {
   width: 30px;
   height: 30px;
   padding: 10px;
-  border-right: 1px solid var(--color-dorado);
+  /* border: 1px solid var(--color-dorado); */
 }
 
 /* estilo al label que contiene la img icono-menu :cambia de color al hacer hover */
@@ -52,8 +52,8 @@ header label:hover {
 
 .main-nav ul{
   /*display: flex;
-  background-color: var(--color-black);
-  margin-top: 0 auto; /*para poder separar la lista del header*/
+  background-color: var(--color-black);*/
+  margin-top: 0 auto; /*para poder separar la lista del header NOTA: no veo que eso suceda*/
   /*flex-wrap: wrap;/*envoltura flexible*/
   border: 1px solid var(--color-dorado); /* borde dorado al ul y no a cada li*/
   box-shadow: 0 0 1px rgb(255, 255, 252);
@@ -81,7 +81,7 @@ header label:hover {
   display: block;
   text-decoration: none;
   text-transform: uppercase;
-  color: var(--color-dorado);
+  color: var(--color-dorado); /*color del texto de cada a*/
   /*font-weight: bold;*//*tener la letra en negrita*/
 }
 
@@ -91,26 +91,26 @@ header label:hover {
   }
   .main-nav {
     position: absolute; /*estaba en absolute pero las imagenes quedaban montadas sobre los li. si pongo relative no quedan asi pero sale un fondo negro que no se va*/
-    background: var(--color-black);
-    width: 70%;
-    margin-left: -70%;
+    background: var(--color-black); /*color de fondo del ul al ser desplegado*/
+    width: 100%;
+    margin-left: -100%;
     transition: all 0.5s;
   }
   .main-nav ul{
     flex-direction: column;
-    z-index: 1100;
+    /*z-index: 1100; Aqui tampoco nunca iba a funcionar. Solo en #btn-menu:checked ~ .main-nav logre que funcionase*/
   }
-  .main-nav li {
-    border-top: var(--color-dorado);
-  }
+  /*.main-nav li { /*ya no necesito el borde superior dorado porque el box se pone amarillo al selecionar*/
+  /*  border-top: var(--color-dorado);
+  }*/
   #btn-menu:checked ~ .main-nav {
     margin: 0;
     z-index: 1;
     
   }
-  #btn-menu:checked ~ .main-container {
+  /* #btn-menu:checked ~ .main-container { ya no es necesario. Solo poniendo z-index:1 en #btn-menu:checked ~ .main-nav ya funciona y no se superpone la imagen al li
         z-index: -1;
-  }
+  } */
 
 }
 
@@ -127,10 +127,10 @@ li.active a {
   transition: all 0.1s ease-in-out 0.1s;
 }
  /* estilo para que el banner de la img dentro del header se ajuste al ancho del padre*/
-.banner-lol {
+
+ .banner-lol {
   width: 100%;
 }
-
 
 
 
@@ -167,7 +167,7 @@ div:hover{
   justify-content: space-evenly;
   flex-wrap: wrap;
   flex-grow: 1;
-  z-index: -1100; /* no esta funcionando, imag todavia superponen al main-nav*/
+  /*z-index: -1100; /* aqui nunca iba a funcionar, imag todavia superponen al main-nav*/
 }
 
 .class-img {
@@ -204,7 +204,7 @@ div:hover{
   font-family: 'Acme', sans-serif;/*lo menciono para que aqui se utilize la fuente*/
   font-weight: bolder;
   text-align: center;
-  background-color: rgb(6, 28, 37);
+  /*background-color: rgb(6, 28, 37);*/
   margin-top: -0.2em;/*15*/
   padding: 0.10em;
   text-transform: uppercase;
@@ -219,8 +219,33 @@ div:hover{
 /*intentando darle otro estilo de hover sobre el calculo*/
 .class-new:hover{
   transform: scale(0.96);
+  /* color: var(--color-black);
+  background:rgba(243, 168, 5, 0.842); */
+}
+
+/*estilo a la estadistica ofensiva de cada campeon*/
+.class-avg{
+  font-size: 1em;
+  font-family: 'Acme', sans-serif;/*lo menciono para que aqui se utilize la fuente*/
+  font-weight: bolder;
+  text-align: center;
+  /*background-color: rgb(6, 28, 37);*/
+  margin-top: -0.2em;/*15*/
+  padding: 0.10em;
+  text-transform: capitalize;
+  color: var(--color-white);
+  padding: 6% 8%;
+  padding-top: 2%;
+  padding-right: 8%;
+  padding-bottom: 2%;
+  padding-left: 8%;
+}
+
+/*intentando darle otro estilo de hover sobre el calculo*/
+.class-avg:hover{
+  transform: scale(0.96);
   color: var(--color-black);
-  background:rgba(243, 168, 5, 0.842);
+  /*background:rgba(243, 168, 5, 0.842);*/
 }
 
 
@@ -258,4 +283,53 @@ div:hover{
   /*background-color: rgb(6, 28, 37);*/
   margin-top: -0.2em;/*15*/
   padding: 0.76em;
+}
+
+
+
+
+
+
+
+/* For the "inset" look only */
+html {
+  overflow: auto;
+}
+body {
+  position: absolute;
+  top: 1px;
+  left: 0;
+  bottom: 5px;
+  right: 2px;
+  padding: 0; 
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+/* Let's get this party started */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background:var(--color-dorado); 
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+::-webkit-scrollbar-thumb:window-inactive {
+background: var(--color-dorado); 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-nav-dark); 
 }

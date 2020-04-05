@@ -4,7 +4,9 @@
 // AQUI MANEJAMOS EL DOM
 
 import data from './data/lol/lol.js';
-import { sortData, filterData, averageData } from './data.js';
+import {
+  sortData, filterData, averageData, averageName,
+} from './data.js';
 
 const allChampion = data.data;
 const arrObject = Object.values(allChampion);
@@ -19,13 +21,17 @@ const createTemplate = (arr) => {
     const newElement = document.createElement('div');
     const img = document.createElement('img');
     const p = document.createElement('p');
+    const pAvg = document.createElement('p');
     newElement.classList.add('class-div');
     img.classList.add('class-img');
     p.classList.add('class-name');
+    pAvg.classList.add('class-avg');
     img.src = `${champion.splash}`;
     p.innerHTML = `${champion.name}`;
+    pAvg.innerHTML = `Average Offensive Statistic:${averageName(arrObject, `${champion.name}`).toFixed(2)}`;
     newElement.appendChild(img);
     newElement.appendChild(p);
+    newElement.appendChild(pAvg);
     container.appendChild(newElement);
   });
 };
