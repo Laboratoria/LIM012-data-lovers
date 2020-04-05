@@ -28,6 +28,7 @@ body {
 /*TRABAJANDO CON EL HEADER*/
 header { 
 width: 100%;
+margin-top: 20px;/*distancia del logo con la pantalla parte de arriba*/
 }
 
 /*estilo de img logo*/
@@ -60,22 +61,24 @@ header label:hover {
 /*PROPIEDADES DE UL PARA PODER TRABAJAR DINAMICAMENTE CON <LI>*/
 ul{
   display: flex;
-  background-color: var(--color-black);
-  margin-top: 0 auto; /*para poder separar la lista del header*/
+  background-color: rgba(0, 0, 0, 0.507);
+  margin-top: 17px; /*para poder separar la lista del header*/
   flex-wrap: wrap;/*envoltura flexibe*/
   border: 1px solid var(--color-dorado);
-  box-shadow: 0 0 1px rgb(255, 255, 252);
+  box-shadow: 0 0 2px rgba(173, 173, 173, 0.726);
 }
 
 li{
+  font-family: 'Poppins', sans-serif;
   flex-grow: 1;
   text-align: center;
   line-height: 2.5;
+  font-size: 1.1em;
 }
 
 /* estilo a los <li>/animacion*/
 li:hover {
-  background:#878a8a73;
+  background:#eeda6718;
 }
 
 li a{
@@ -88,20 +91,33 @@ li a{
 
 /*utilizando "active"/se trabajo tambien con main.js*/
 li.active a {
+  font-family: 'Poppins', sans-serif;
   font-weight: bold;
-  color:rgba(243, 168, 5, 0.842);/*color que se pondra al elegir la opcion*/
-  text-shadow: 0 0 1.5px #fff;
+  color:#cca05a;
+  background:#878a8a42;
+  /*text-shadow: 0 0 1.5px #fff;*/
   transition: all 0.1s ease-in-out 0.1s;
 }
 
 /*RESPONSIVE MODO MOBIL/MENU HAMBURGUESA*/
 @media (max-width:768px) {
+  header{
+    background: var(--color-black);
+    margin: 10px 0px 20px 0px;
+  }
+
+  .logo {
+    width: 63%;
+    margin: 8px 10% -35px 18%;/*-44*/
+  }
+
   header label {
     display: block;
+    margin-top: -8px;
   }
 
   nav {
-    position: absolute;
+    position:absolute;
     background: var(--color-black);
     width: 100%;
     margin-left: -100%;
@@ -119,7 +135,7 @@ li.active a {
 
   #btn-menu:checked ~ nav {
     margin: 0;
-    z-index: 1;  
+    z-index: 1;
   }
 
   #btn-menu:checked ~ main {
@@ -158,8 +174,8 @@ div:hover{
 /*IMAGENES DE CAMPEONES*/
 .class-img {
   margin: 0;
-  width: 307px;
-  height: 200px;
+  width: 307px;/*307px*/
+  height: 200px;/*200px*/
 }
 
 /*NOMBRES DE CAMPEONES*/
@@ -181,8 +197,8 @@ div:hover{
 
 /*ESTILO DE LA FUNCION CALCULO*/
 .class-new{
-  font-size: 1.6em;
-  font-family: 'Exo', sans-serif;/*lo menciono para que aqui se utilize la fuente*/
+  font-size: 1.8em;
+  font-family: 'Poppins', sans-serif;
   text-align: center;
   background-color: rgb(6, 28, 37);
   margin-top: -0.2em;/*15*/
@@ -190,11 +206,11 @@ div:hover{
   text-transform: uppercase;
   color: var(--color-dorado);
   padding: 6% 8%;
-  padding-top: 1%;
+  padding-top: 1.5%;
   padding-right: 8%;
-  padding-bottom: 0%;
+  padding-bottom: 0.5%;
   padding-left: 8%;
-  font-weight: bold; font-size: 30px; 
+  font-weight: bold;
   background: #020202; 
   -webkit-background-clip: text; 
   -moz-background-clip: text; 
@@ -255,7 +271,7 @@ body {
 
 /* Let's get this party started */
 ::-webkit-scrollbar {
-  width: 12px;
+  width: 7px;
 }
 
 /* Track */
@@ -269,7 +285,7 @@ body {
 ::-webkit-scrollbar-thumb {
   -webkit-border-radius: 10px;
   border-radius: 10px;
-  background:var(--color-dorado); 
+  background:#cca05a54;
   box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
 }
 ::-webkit-scrollbar-thumb:window-inactive {
