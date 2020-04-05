@@ -54,7 +54,7 @@ YO COMO: jugador de LOL, QUIERO: ver a todos los campeones (imagen y nombre), PA
 ✔ PROTOTIPO DE BAJA FIDELIDAD:
 ![alt prototipoBaja](prototipos/P.B1.png)
 ✔ PROTOTIPO DE ALTA FIDELIDAD:
-link
+![alt prototipoBaja](prototipos/P.A1.png)
 
 
 2° HISTORIA DE USUARIO
@@ -77,7 +77,7 @@ YO COMO: jugador de LOL, QUIERO: ver a todos los campeones (imagen y nombre)orde
 ![alt prototipoBaja](prototipos/P.B2.png)
 
 ✔ PROTOTIPO DE ALTA FIDELIDAD:
-
+![alt prototipoBaja](prototipos/P.A2.png)
 
 
 3° HISTORIA DE USUARIO
@@ -100,7 +100,7 @@ YO COMO: jugador de LOL, QUIERO: filtrar por rol a cada campeón, PARA: poder co
 ![alt prototipoBaja](prototipos/P.B3.png)
 
 ✔ PROTOTIPO DE ALTA FIDELIDAD:
-![alt prototipoAlta](prototipos/P.B.Mobile2.jpg)
+![alt prototipoBaja](prototipos/P.A3.png)
 
 
 4° HISTORIA DE USUARIO
@@ -121,7 +121,7 @@ YO COMO: jugador de LOL, QUIERO: conocer la estadística ofensiva de los campeon
 ✔ PROTOTIPO DE BAJA FIDELIDAD:
 ![alt prototipoBaja](prototipos/P.B4.png)
 ✔ PROTOTIPO DE ALTA FIDELIDAD:
-link
+![alt prototipoBaja](prototipos/P.A4.png)
  
 
 4# OBJETIVOS DE APRENDIZAJE:
