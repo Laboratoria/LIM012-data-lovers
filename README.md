@@ -52,7 +52,7 @@ YO COMO: jugador de LOL, QUIERO: ver a todos los campeones (imagen y nombre), PA
 - Subir detalles al Readme.
 
 ✔ PROTOTIPO DE BAJA FIDELIDAD:
-link
+![alt prototipoBaja](prototipos/prototipo-baja1.png)
 ✔ PROTOTIPO DE ALTA FIDELIDAD:
 link
 
@@ -97,7 +97,7 @@ YO COMO: jugador de LOL, QUIERO: filtrar por rol a cada campeón, PARA: poder co
 - Subir detalles al Readme.
 
 ✔ PROTOTIPO DE BAJA FIDELIDAD:
-![alt prototipoBaja](prototipos/P.B.Desktop2.jpg)
+![alt prototipoBaja](prototipos/prototipo-baja1.png)
 
 ✔ PROTOTIPO DE ALTA FIDELIDAD:
 ![alt prototipoAlta](prototipos/P.B.Mobile2.jpg)
@@ -109,7 +109,7 @@ YO COMO: jugador de LOL, QUIERO: conocer la estadística ofensiva de los campeon
 
 ✔ CRITERIOS DE ACEPTACION:
 - El usuario al elegir el rol que desee podra ver el promedio general de Estadistica ofensiva.
-- El usuario solo podra ver esta informacion dentro de estas opciones unicamente.
+- El usuario solo podra ver esta informacion dentro deprototipo-baja estas opciones unicamente.
 - El usuario podrá realizar esta acción desde cualquier dispositivo.
 
 ✔ DEFINICION DE TERMINADO:
