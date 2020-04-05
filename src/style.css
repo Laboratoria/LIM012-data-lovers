@@ -1,6 +1,6 @@
     *{
     margin: 0px;
-    padding: 10px;
+    padding: 5px;
     box-sizing: border-box;
 }
 body::-webkit-scrollbar {
@@ -119,7 +119,7 @@ a{
     .lista{
       display: flex;
       flex-flow: row nowrap;
-      background:rgba(6, 6, 19, 0.616);
+      background:#1f1d2a;
     }
       .galeriaDeCampeones{
         display: flex;
@@ -128,14 +128,15 @@ a{
         flex-wrap: wrap;
       }
         .casillaCampeon{
+          margin: 10px;
           display: flex;
           flex-flow: column nowrap;
           flex: 3 1 auto;
-          box-shadow: 4px 4px 11px rgba(252, 249, 249, 0.27);
+          box-shadow: 4px 4px 11px rgba(252, 249, 249, 0.2);
           width: 295px;
           height: 370px;
           box-sizing: border-box;
-          box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);  
+          
         }
         .imagenCampeon{
           width: 290px;
