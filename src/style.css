@@ -1,10 +1,13 @@
+/*DEFINIENDO COLORES QUE SE USARÁN EN LA PAGINA*/
 :root {
   --color-black: #000;
-  --color-nav-dark: #2d2e2e;
-  --color-nomain: #F2EFEF;
-  --color-otro: #d0ff00;
   --color-white: #fff;
   --color-dorado: #937341;
+  --color-fondo-div: rgb(6, 28, 37);
+  --color-hover-div: rgba(243, 168, 5, 0.842);
+  --color-hover-li:#eeda6718;
+  --color-active-dark: #2d2e2e;
+  --color-active-rol: #cca05a;
 }
 
 /*VALORES POR DEFECTO*/
@@ -22,7 +25,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  font-family: Arial;  
+  font-family: Arial;
 }
 
 /*TRABAJANDO CON EL HEADER*/
@@ -55,7 +58,7 @@ header label {
 /* estilo al label:cambia de color al hacer hover */
 header label:hover {
   cursor: pointer;
-  background: var(--color-nav-dark);
+  background: var(--color-active-dark);
 }
 
 /*PROPIEDADES DE UL PARA PODER TRABAJAR DINAMICAMENTE CON <LI>*/
@@ -73,12 +76,12 @@ li{
   flex-grow: 1;
   text-align: center;
   line-height: 2.5;
-  font-size: 1.1em;
+  font-size: 1em;
 }
 
 /* estilo a los <li>/animacion*/
 li:hover {
-  background:#eeda6718;
+  background: var(--color-hover-li);
 }
 
 li a{
@@ -93,7 +96,7 @@ li a{
 li.active a {
   font-family: 'Poppins', sans-serif;
   font-weight: bold;
-  color:#cca05a;
+  color: var(--color-active-rol);
   background:#878a8a42;
   /*text-shadow: 0 0 1.5px #fff;*/
   transition: all 0.1s ease-in-out 0.1s;
@@ -108,7 +111,7 @@ li.active a {
 
   .logo {
     width: 63%;
-    margin: 8px 10% -35px 18%;/*-44*/
+    margin: 8px 10% -35px 18%;
   }
 
   header label {
@@ -146,7 +149,7 @@ li.active a {
 
 /*TRABAJANDO CON EL CONTENEDOR DE LAS IMAGENES Y NOMBRES*/
 .class-div {
-  background-color: rgb(6, 28, 37);
+  background-color: var(--color-fondo-div);
   display: inline-block;
   position: relative; /*estaba relative*/
   margin-top: 1%;
@@ -160,7 +163,7 @@ li.active a {
 /*agregando hover al div de los campeones*/
 div:hover{
  transform: scale(0.96);
- background:rgba(243, 168, 5, 0.842);
+ background:var(--color-hover-div);
   /*background-color: rgb(6, 95, 131);*/
 }
 
@@ -174,8 +177,8 @@ div:hover{
 /*IMAGENES DE CAMPEONES*/
 .class-img {
   margin: 0;
-  width: 307px;/*307px*/
-  height: 200px;/*200px*/
+  width: 307px;
+  height: 200px;
 }
 
 /*NOMBRES DE CAMPEONES*/
@@ -200,29 +203,26 @@ div:hover{
   font-size: 1.8em;
   font-family: 'Poppins', sans-serif;
   text-align: center;
-  background-color: rgb(6, 28, 37);
-  margin-top: -0.2em;/*15*/
+  margin-top: -0.2em;
   padding: 0.10em;
   text-transform: uppercase;
-  color: var(--color-dorado);
   padding: 6% 8%;
   padding-top: 1.5%;
   padding-right: 8%;
   padding-bottom: 0.5%;
   padding-left: 8%;
   font-weight: bold;
-  background: #020202; 
   -webkit-background-clip: text; 
   -moz-background-clip: text; 
   background-clip: text; 
   color: transparent; 
-  text-shadow: 0px 3px 3px rgba(255, 255, 255, 0.548),0px -1px 1px rgb(0, 0, 0);
+  text-shadow: 0px 3px 2.3px rgba(255, 255, 255, 0.548),0px -1px 1px rgb(0, 0, 0);
 }
 
 /*ESTILO DEL FOOTER*/
 footer{
   margin-top: 12px;
-  border-top: inset 1px  ; /*borde solo a la parte superior*/
+  border-top: inset 1px; /*borde solo a la parte superior*/
   color: var(--color-white);
   text-align: center;
   height: 100px;
@@ -247,7 +247,7 @@ footer{
 
 /* Estilo de la etiqueta p que contiene el texto del footer*/
 .text{
-  color: rgb(255, 255, 255);
+  color: var(--color-white);
   font-size: 1em;   
   margin-top: -0.2em;
   padding: 0.76em;
@@ -258,12 +258,13 @@ footer{
 html {
   overflow: auto;
 }
+
 body {
   position: absolute;
   top: 1px;
   left: 0;
-  bottom: 5px;
-  right: 2px;
+  bottom: 3px;
+  right: 1px;
   padding: 0; 
   overflow-y: scroll;
   overflow-x: hidden;
@@ -271,28 +272,11 @@ body {
 
 /* Let's get this party started */
 ::-webkit-scrollbar {
-  width: 7px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
-  -webkit-border-radius: 10px;
-  border-radius: 10px;
+  width: 12px;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  -webkit-border-radius: 10px;
-  border-radius: 10px;
-  background:#cca05a54;
+  background:#fffffe31;
   box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
-}
-::-webkit-scrollbar-thumb:window-inactive {
-background: var(--color-dorado); 
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: var(--color-nav-dark); 
 }
