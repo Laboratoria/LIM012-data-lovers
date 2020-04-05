@@ -97,9 +97,10 @@ YO COMO: jugador de LOL, QUIERO: filtrar por rol a cada campeón, PARA: poder co
 - Subir detalles al Readme.
 
 ✔ PROTOTIPO DE BAJA FIDELIDAD:
-link
+![alt prototipoBaja](prototipos/P.B.Desktop2.jpg)
+
 ✔ PROTOTIPO DE ALTA FIDELIDAD:
-link
+![alt prototipoAlta](prototipos/P.B.Mobile2.jpg)
 
 
 4° HISTORIA DE USUARIO
