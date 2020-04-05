@@ -52,7 +52,7 @@ YO COMO: jugador de LOL, QUIERO: ver a todos los campeones (imagen y nombre), PA
 - Subir detalles al Readme.
 
 ✔ PROTOTIPO DE BAJA FIDELIDAD:
-![alt prototipoBaja](prototipos/prototipo-baja1.png)
+![alt prototipoBaja](prototipos/P.B1.png)
 ✔ PROTOTIPO DE ALTA FIDELIDAD:
 link
 
@@ -74,10 +74,10 @@ YO COMO: jugador de LOL, QUIERO: ver a todos los campeones (imagen y nombre)orde
 - Subir detalles al Readme.
 
 ✔ PROTOTIPO DE BAJA FIDELIDAD:
-![alt prototipoBaja](prototipos/P.B.Desktop1.jpg)
+![alt prototipoBaja](prototipos/P.B2.png)
 
 ✔ PROTOTIPO DE ALTA FIDELIDAD:
-![alt prototipoAlta](prototipos/P.B.Mobile1.jpg)
+
 
 
 3° HISTORIA DE USUARIO
@@ -97,7 +97,7 @@ YO COMO: jugador de LOL, QUIERO: filtrar por rol a cada campeón, PARA: poder co
 - Subir detalles al Readme.
 
 ✔ PROTOTIPO DE BAJA FIDELIDAD:
-![alt prototipoBaja](prototipos/prototipo-baja1.png)
+![alt prototipoBaja](prototipos/P.B3.png)
 
 ✔ PROTOTIPO DE ALTA FIDELIDAD:
 ![alt prototipoAlta](prototipos/P.B.Mobile2.jpg)
@@ -119,7 +119,7 @@ YO COMO: jugador de LOL, QUIERO: conocer la estadística ofensiva de los campeon
 - Subir detalles al Readme.
 
 ✔ PROTOTIPO DE BAJA FIDELIDAD:
-link
+![alt prototipoBaja](prototipos/P.B4.png)
 ✔ PROTOTIPO DE ALTA FIDELIDAD:
 link
  
