@@ -52,6 +52,7 @@ false);
 const buttonRoles = document.getElementById('buttonRoles');
 buttonRoles.addEventListener('click', () => {
   lista.style.display = 'none';
+  document.getElementById('cantidad').style.display = 'none';
   document.getElementById('pantalla2').style.display = 'block';
 });
 
@@ -122,6 +123,7 @@ vistaCampeones.forEach((campeones) => {
     // console.log(listaTodos[nombreId]);
     crearVistaCampeon(listaTodos[nombreId]);
     lista.style.display = 'none';
+    document.getElementById('cantidad').style.display = 'none';
     document.getElementById('pantalla3').style.display = 'block';
   });
 });
