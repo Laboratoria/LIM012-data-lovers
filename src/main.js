@@ -62,17 +62,21 @@ const showFilter = (arr) => {
   arr.forEach((champion) => {
     const newElement = document.createElement('div');
     const img = document.createElement('img');
-    const p = document.createElement('p');
+    const p = document.createElement('h3');
+    const pTags = document.createElement('p');
     const pAvg = document.createElement('p');
     newElement.classList.add('class-div');
-    img.classList.add('class-img');
     p.classList.add('class-name');
+    pTags.classList.add('class-avg');
+    img.classList.add('class-img');
     pAvg.classList.add('class-avg');
-    img.src = `${champion.splash}`;
     p.innerHTML = `${champion.name}`;
-    pAvg.innerHTML = `Average Offensive Statistic: ${averageName(arrObject, `${champion.name}`).toFixed(2)}`;
+    img.src = `${champion.splash}`;
+    pTags.innerHTML = `Role : ${(champion.tags).join(' , ')}`;
+    pAvg.innerHTML = `Average Offensive Statistic : ${averageName(arrObject, `${champion.name}`).toFixed(2)}`;
     newElement.appendChild(img);
     newElement.appendChild(p);
+    newElement.appendChild(pTags);
     newElement.appendChild(pAvg);
     container.appendChild(newElement);
   });
