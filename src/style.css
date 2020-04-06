@@ -41,7 +41,9 @@ background-size: cover;*/
       width: auto;
       height: 145px;
       background: #061D29; /*background:rgba (0,0,0,.1) - transparencia de color negro*/
+
       border-bottom: 3px solid rgba(235, 178, 24, 0.719);
+
     }
       .logoLol{
         flex: 1 1 auto;
@@ -50,8 +52,7 @@ background-size: cover;*/
         left: 68px;
         top: -1px;
       }
-        .logo{
-         
+        .logo{     
           width: 260px;
           height: 120px;
           display: flex;
@@ -66,7 +67,7 @@ background-size: cover;*/
         } /*para enlazar iconos <i class:"" aria-hidden="true></i>"*/
 
     .menu{
-      background:#31302E;
+      background:rgb(63, 65, 66);
       display: flex;
       flex-flow: row nowrap;
       align-items: center;
@@ -102,11 +103,12 @@ background-size: cover;*/
     .lista{
       display: flex;
       flex-flow: row nowrap;
+
       margin: 15px;
     }
       .galeriaDeCampeones{
         display: flex;
-        flex-flow: row nowrap;
+        flex-wrap: row nowrap;
         flex: 1 1 auto;
         flex-wrap: wrap;
         display: grid;
@@ -116,9 +118,12 @@ background-size: cover;*/
         grid-gap: 25px;
       }
         .casillaCampeon{
+          margin: 15px;
+          padding: 10px;
           display: flex;
           flex-flow: column nowrap;
           flex: 3 1 auto;
+
           width: 295px;
           height: 370px;
           box-sizing: border-box;
@@ -126,6 +131,7 @@ background-size: cover;*/
         .casillaCampeon:hover{
           transform: scale(1.1);
           transition: 0.5;  
+
         }
         .imagenCampeon{
           width: 270px;
@@ -137,7 +143,7 @@ background-size: cover;*/
         .nombreCampeon{
           text-align: center;
           font-size: 36px;
-          line-height: 40px;
+          line-height: 70px;
           color: #FFFFFF;}
   .roles{
     display: grid;
@@ -297,5 +303,43 @@ background-size: cover;*/
   }
 }
 
+.cantidadMostrada {
+  display: flex;
+  justify-content: flex-end;
+  text-decoration: none;
+  padding: 3px;
+  font-weight: 500;
+  font-size: 25px;
+  color:  rgba(235, 178, 24, 0.719); 
+  background-color: #31302E;
+}
 
+/* MOVIL*/
+@media (max-width: 768px){
+  .logo{
+    position: absolute;
+    width: 210px;
+    height: 100px;
+    left: 10px;
+    top: 40px;
+    background:  rgba(0, 0, 0, .0.1);
+    display: flex;
+    align-items: flex-end;
+  }
+ /* Boton del Search - MOVIL */
+  body{
+    margin: 0%;
+    padding: 0%;}
 
+  .formBuscador {
+    width: 40px;
+    left: 90px;
+  }
+  .buscador{
+    display: none;
+    
+  }
+  .formBuscador:hover > .buscador{
+    width: -300px;
+  }
+ };
