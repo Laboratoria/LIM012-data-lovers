@@ -203,5 +203,3 @@ YO COMO: jugador de LOL, QUIERO: conocer la estadística ofensiva de los campeon
 * [X] UI: Permite ordenar data por uno o más campos (asc y desc).
 * [X] UI: Permite filtrar data en base a una condición.
 * [X] UI: Es _responsive_.
-
-

@@ -101,6 +101,7 @@ li.active a {
   /*text-shadow: 0 0 1.5px #fff;*/
   transition: all 0.1s ease-in-out 0.1s;
 }
+ /* estilo para que el banner de la img dentro del header se ajuste al ancho del padre*/
 
 /*RESPONSIVE MODO MOBIL/MENU HAMBURGUESA*/
 @media (max-width:768px) {
@@ -172,6 +173,8 @@ div:hover{
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
+  flex-grow: 1;
+  /*z-index: -1100; /* aqui nunca iba a funcionar, imag todavia superponen al main-nav*/
 }
 
 /*IMAGENES DE CAMPEONES*/
