@@ -1,6 +1,6 @@
     *{
     margin: 0px;
-    padding: 5px;
+    padding: 0px;
     box-sizing: border-box;
 }
 body::-webkit-scrollbar {
@@ -16,7 +16,7 @@ body::-webkit-scrollbar-thumb {
 .padre{
   display: flex;
   flex-flow: column nowrap;
-  font-family: 'Spectral', serif; 
+  font-family: DejaVu Sans Mono, monospace;
   /*background: url(https://lh3.googleusercontent.com/proxy/2P8R5PuREY79It_7MDep_BZQj32qdpsXGj_rzb6eEYvJEL6_xSWGaEpjvGGvM2-4ZipM5dUT9KiZVcmeBAf11OK4l5cBsbA7RRrRN1cwa5pwKw);*/
   background-repeat: no-repeat;
   background-position: center center;
@@ -48,6 +48,7 @@ a{
       height: 177px;
       background: #061D29; /*background:rgba (0,0,0,.1) - transparencia de color negro*/
       border-bottom: 2px solid rgba(235, 178, 24, 0.719);
+     
     }
       .logoLol{
         flex: 1 1 auto;
@@ -56,62 +57,88 @@ a{
           position: absolute;
           width: 326px;
           height: 146px;
-          left: 46px;
-          top: 40px;
+          left: 10px;
+          top: 20px;
           background:  rgba(0, 0, 0, .0.1);
           display: flex;
           align-items: flex-end;
         }
-      .buscar{
-        background: #061D29;
-        box-sizing: border-box;
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-        border-radius: 5px;
-      }
+        /*Boton del search*/
         .formBuscador{
           background: #C4C4C4;
-          width: 350px;
-          height: 60px;
-        } /*para enlazar iconos <i class:"" aria-hidden="true></i>"*/
-        .botonBuscar{
-          width: auto;
+          width: 270px;
+          height: 40px;
+          border-radius: 30px;
+          display: flex;
+          align-items: flex-end;
         }
+        .buscador{
+          border: none;
+          background: none;
+          cursor: pointer;
+          outline: none;
+          font-size: 15px;
+          line-height: 40px;  
+        }
+        .buscar{
+          margin: 8px;   
+        }
+        
     .menu{
-      background:#31302E;
+      background:rgb(63, 65, 66);
       display: flex;
       flex-flow: row nowrap;
       align-items: center;
+      font-size: 25px;
+    }
+    .btnTodos{
+      font-family: DejaVu Sans Mono, monospace;
+      font-size: inherit;
+      line-height: inherit;
+     -webkit-appearance: none;
+     -moz-appearance: none;
+      border: none;
+      background: none;
+      cursor: pointer;
+      padding: 10px;
+      margin: 5px;
+      border-radius: 10px;
+      color: white;
+     
+    }
+    .btnTodos:hover, .btn-borde:active, .btn-borde:focus {
+      color: #fff;
+      background-color: #b18804;
+
     }
       .opciones{
         display: flex;
         flex-flow: row nowrap;
         align-items: center;
-        width: 687px;
-        height: 85px;
-      }
-        .opciones a{
-          color: rgba(196, 177, 14, 0.904);
-          font-size: 23px;
-          text-transform: uppercase;
-          padding: 0 10px;
-          letter-spacing: 2px;
-          flex-flow: row wrap;
-          align-items: flex-start;
-          text-shadow: 1px 1px 2px black;
-        }
-        .opciones a:hover{
-          color:#EFEABB;
         
-        }
-          .itemO{
-            flex: 3 1 auto;
-          }
-          .itemR{
-            flex: 3 1 auto;
-          }
-          .itemH{
-            flex: 3 1 auto;
-          }
+      }
+
+      .selectStyle, .btnRoles {
+        font-family: DejaVu Sans Mono, monospace;
+        font-size: inherit;
+        line-height: inherit;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        border: none;
+        background: none;
+        cursor: pointer;
+        padding: 10px;
+        margin: 5px;
+        border-radius: 10px;
+        text-decoration-color: none;
+        color: white;
+     
+      }
+     .btnRoles:hover, .btn-borde:active, .btn-borde:focus {
+        color: #fff;
+        background-color: #b18804; 
+      }
+     
   .main{
     background:rgba(10, 10, 26, 0.911);
   }
@@ -119,23 +146,26 @@ a{
     .lista{
       display: flex;
       flex-flow: row nowrap;
-      background:#1f1d2a;
+      background:rgba(31, 29, 42, 1);
+      /*background-image: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.1)), url(imagenes/fondolol2.jpg);*/
     }
       .galeriaDeCampeones{
         display: flex;
-        flex-flow: row nowrap;
+        flex-wrap: row nowrap;
         flex: 1 1 auto;
         flex-wrap: wrap;
       }
         .casillaCampeon{
-          margin: 10px;
+          margin: 15px;
+          padding: 10px;
           display: flex;
           flex-flow: column nowrap;
           flex: 3 1 auto;
-          box-shadow: 4px 4px 11px rgba(252, 249, 249, 0.2);
+          box-shadow: 4px 4px 11px rgba(243, 228, 19, 0.4);
           width: 295px;
           height: 370px;
           box-sizing: border-box;
+          border-radius: 8px;
           
         }
         .imagenCampeon{
@@ -145,7 +175,7 @@ a{
         .nombreCampeon{
           text-align: center;
           font-size: 36px;
-          line-height: 40px;
+          line-height: 70px;
           color: #FFFFFF;}
   .footer{
     background: rgb(28, 28, 29);
@@ -233,14 +263,42 @@ a{
   }
 }
 .cantidadMostrada {
-  margin: 5px;
-  padding: 5px;
+  display: flex;
+  justify-content: flex-end;
+  text-decoration: none;
+  padding: 3px;
+  font-weight: 500;
+  font-size: 25px;
+  color:  rgba(235, 178, 24, 0.719); 
+  background-color: #31302E;
 }
-.Assassin,.Fighter,.Mage,.Marksman,.Support,.Tank {
-  border-radius: 50%;
-  border: 2px solid black;
-  height:100px;
-  width:100px;
 
-}
+/* MOVIL*/
+@media (max-width: 768px){
+  .logo{
+    position: absolute;
+    width: 210px;
+    height: 100px;
+    left: 10px;
+    top: 40px;
+    background:  rgba(0, 0, 0, .0.1);
+    display: flex;
+    align-items: flex-end;
+  }
+ /* Boton del Search - MOVIL */
+  body{
+    margin: 0%;
+    padding: 0%;}
 
+  .formBuscador {
+    width: 40px;
+    left: 90px;
+  }
+  .buscador{
+    display: none;
+    
+  }
+  .formBuscador:hover > .buscador{
+    width: -300px;
+  }
+ };
