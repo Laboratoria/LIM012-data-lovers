@@ -1,7 +1,10 @@
 /* eslint-disable no-plusplus */
+
+
 // AQUI MANEJAMOS LAS FUNCIONES
 
 // ORDENAR ALFABETICAMENTE
+
 export const sortData = (data, sortBy, sortOrder) => {
   const newArray = data;
   if (sortBy === 'name' && sortOrder === 'ascending') {
@@ -44,6 +47,7 @@ export const filterData = (data, condition) => {
   return filtering;
 };
 
+// PROMEDIO DE ESTADISTICA OFENSIVA(daño x ataque,veloc de ataque,golpe critico,armadura) D CADA ROL
 // PROMEDIO DE AD (DAÑO POR ATAQUE) DE CADA ROL
 export const averageData = (data, role) => {
   const filterOnlyByRole = data.filter(champion => champion.tags.includes(role));
