@@ -82,6 +82,15 @@ background-size: cover;*/
       font-size: 21px;
       text-shadow: -1px 2px 4px rgb(117, 116, 116);
     }
+    .selectStyle {
+      background: transparent;
+      border: none;
+      color: rgba(235, 179, 24, 0.945);
+      font-family: serif;
+      margin: 27px;
+      font-size: 21px;
+      text-shadow: -1px 2px 4px rgb(117, 116, 116);
+    }
     .estiloBoton:hover{
       transform: scale(1.1);
       transition: 0.5;  
@@ -115,7 +124,7 @@ background-size: cover;*/
         grid-template-columns: 1fr 1fr 1fr 1fr;
         justify-items: center;
         align-items: center;
-        grid-gap: 25px;
+        grid-gap: 10px;
       }
         .casillaCampeon{
           margin: 15px;
@@ -168,7 +177,7 @@ background-size: cover;*/
     transition: 0.5;  
   }
   .styleInput{
-    background: rgba(224, 37, 37, 0.856);
+    background: rgba(255, 255, 255, 0.856);
     border: 4px solid rgba(235, 202, 18, 0.856);
     border-radius: 122px;
     width: 168px;
@@ -303,7 +312,7 @@ background-size: cover;*/
   }
 }
 
-.cantidadMostrada {
+/* .cantidadMostrada {
   display: flex;
   justify-content: flex-end;
   text-decoration: none;
@@ -312,9 +321,9 @@ background-size: cover;*/
   font-size: 25px;
   color:  rgba(235, 178, 24, 0.719); 
   background-color: #31302E;
-}
+} 
 
-/* MOVIL*/
+/* MOVIL
 @media (max-width: 768px){
   .logo{
     position: absolute;
@@ -326,7 +335,7 @@ background-size: cover;*/
     display: flex;
     align-items: flex-end;
   }
- /* Boton del Search - MOVIL */
+  Boton del Search - MOVIL 
   body{
     margin: 0%;
     padding: 0%;}
@@ -342,4 +351,4 @@ background-size: cover;*/
   .formBuscador:hover > .buscador{
     width: -300px;
   }
- };
+ };*/
