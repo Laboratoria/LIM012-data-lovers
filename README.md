@@ -169,7 +169,30 @@ YO COMO: jugador de LOL, QUIERO: conocer la estadística ofensiva de los campeon
 - [ ] Utilizar ES Modules (`import` | `export`).
 
 ### Pruebas Unitarias (_testing_)
+- [ ] Testear funciones (funciones puras).
 
+### Git y GitHub
+- [ ] Ejecutar comandos de git (`add` | `commit` | `pull` | `status` | `push`).
+- [ ] Utilizar los repositorios de GitHub (`clone` | `fork` | `gh-pages`).
+- [ ] Colaborar en Github (`pull requests`).
+
+### Buenas prácticas de desarrollo
+- [ ] Organizar y dividir el código en módulos (Modularización).
+- [ ] Utilizar identificadores descriptivos (Nomenclatura | Semántica).
+- [ ] Utilizar linter para seguir buenas prácticas (ESLINT).
+
+## 5. Checklist
+
+* [ ] Usa VanillaJS.
+* [ ] No hace uso de `this`.
+* [ ] Pasa linter (`npm run pretest`)
+* [ ] Pasa tests (`npm test`)
+* [ ] Pruebas unitarias cubren un mínimo del 70% de statements, functions y
+  lines y branches.
+* [ ] Incluye _Definición del producto_ clara e informativa en `README.md`.
+* [ ] Incluye historias de usuario en `README.md`.
+* [ ] Incluye _sketch_ de la solución (prototipo de baja fidelidad) en
+  `README.md`.
 * [ ] Incluye _Diseño de la Interfaz de Usuario_ (prototipo de alta fidelidad)
   en `README.md`.
 * [ ] Incluye link a Zeplin en `README.md`.
