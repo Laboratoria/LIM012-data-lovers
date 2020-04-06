@@ -26,3 +26,7 @@ export const orderFilterTags = (item, index, condition) => {
   const championRol = item.filter(el => (el[index][0] === condition || el[index][1] === condition));
   return championRol;
 };
+export const dataOrdenado = (data) => {
+  const arrayOrdenado = data.sort((a, b) => b.promedio - a.promedio).slice(0, 5);
+  return arrayOrdenado;
+};

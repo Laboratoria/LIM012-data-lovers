@@ -4,6 +4,7 @@ import {
   orderData,
   searchChampions,
   orderFilterTags,
+  dataOrdenado,
 } from './data.js';
 
 const btnMostrar = document.getElementById('btnMostrar');
@@ -27,12 +28,12 @@ const listOnScreen = (dataLol) => {
     const showChampions = `
     <div class="container">
       <div class="card">
-      <img src=${champion.splash} >
-      <h4>${champion.name}</h4>
+      <img src=${champion.splash} class="imgSplash">
+      <h4 class="name">${champion.name}</h4>
       <p>Attack: ${champion.info.attack}</p>
       <p>Defense: ${champion.info.defense}</p>
       <p>Magic: ${champion.info.magic}</p>
-      <p>Difficulty: ${champion.info.difficulty}</p>  
+      <p>Difficulty: ${champion.info.difficulty}</p>
       </div>
     </div>    
       `;
@@ -166,4 +167,42 @@ const ordenarTank = document.querySelector('#rolTank');
 ordenarTank.addEventListener('click', () => {
   const ordenar = ordenarTank.value;
   listOnScreenRol(orderFilterTags(championArray, 'tags', ordenar));
+});
+/* PROMEDIO DE ESTADÍSTICAS DEFENSIVAS */
+const obStats = (arr) => {
+  const newArray = arr.map(ele => ({
+    splash: ele.splash,
+    name: ele.name,
+    sumaHp: ele.stats.hp + ele.stats.armor + ele.stats.armorperlevel
+      + ele.stats.spellblock + ele.stats.spellblockperlevel,
+    promedio: ((ele.stats.hp + ele.stats.armor + ele.stats.armorperlevel
+        + ele.stats.spellblock + ele.stats.spellblockperlevel) / 5).toFixed(2),
+  }));
+  return newArray;
+};
+obStats(championArray);
+
+const contentTop = document.querySelector('#contentTop');
+const fTop = (dataLol) => {
+  let result = '';
+  dataLol.forEach((champion) => {
+    const showChampions = `
+    <section>
+    <img src=${champion.splash} class="imgSplash">
+    <p class="name">${champion.name}</p>
+    <p>${champion.promedio}</p>
+    </section>    
+      `;
+    result += showChampions;
+  });
+  contentTop.innerHTML = result;
+};
+
+const topTeam = document.getElementById('topTeam');
+const fifthScreen = document.getElementById('fifthScreen');
+topTeam.addEventListener('click', () => {
+  secondScreen.classList.toggle('classNone');
+  firstScreen.classList.add('classNone');
+  fifthScreen.classList.remove('classNone');
+  fTop(dataOrdenado(obStats(championArray)));
 });

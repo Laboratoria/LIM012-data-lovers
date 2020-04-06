@@ -2,32 +2,33 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Data Lovers</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Carter+One&family=Merienda:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css"/>
     <link rel="shortcut icon" href="imagenes/logo.png" >
-    <!-- <script src="https://kit.fontawesome.com/995e334b50.js" crossorigin="anonymous"></script> -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body id = "body" class="classBody">
   <!-- PRIMERA PANTALLA -->
-  <div id="firstScreen">
-    <header>
-      <input type="checkbox" id="btn-menu">
-      <label for="btn-menu"><img src="imagenes/icono1.png" width="30px" height="30px" alt=""></label>
-         <nav class="menu">
-            <ul>
-              <li><a href="">Logo</a></li>
-              <li><a href="https://lan.leagueoflegends.com/es-mx/how-to-play/">Juego</a></li>
-              <li><a href="https://league-of-legends-lol.fandom.com/es/wiki/Diccionario_de_Terminos_del_LoL">Lista de Términos</a></li>
-              <li><a href="https://lan.leagueoflegends.com/es-mx/news/game-updates/">Noticias</a></li>
-              <li><a href="">Sobre Nosotras</a></li>
-            </ul>
+    <div id="firstScreen">
+      <header>
+        <input type="checkbox" id="btn-menu">
+        <label for="btn-menu"><img src="imagenes/icono1.png" width="30px" height="30px" alt=""></label>
+          <nav class="menu">
+              <ul>
+                <li><a href="">Logo</a></li>
+                <li><a href="https://lan.leagueoflegends.com/es-mx/how-to-play/">Juego</a></li>
+                <li><a href="https://league-of-legends-lol.fandom.com/es/wiki/Diccionario_de_Terminos_del_LoL">Lista de Términos</a></li>
+                <li><a href="https://lan.leagueoflegends.com/es-mx/news/game-updates/">Noticias</a></li>
+                <li><a href="">Sobre Nosotras</a></li>
+              </ul>
           </nav>
-    </header>
-    <div class="bttnM">
-      <button id="btnMostrar" class="btnMostrar">Conoce a los campeones</button>
-    </div>
-</div> 
+      </header>
+      <div class="bttnM">
+        <button id="btnMostrar" class="btnMostrar">Conoce a los campeones</button>
+      </div>
+    </div> 
 
   <!-- SEGUNDA PANTALLA -->
   <div id="secondScreen" class="classNone" class="classBody">
@@ -76,19 +77,22 @@
     </div>
   <!--CUARTA PANTALLA -ROL ASESINO-->
   <div id='fourthScreen' class='fourthScreen classNone'>
-    <section class='asesino'>
-      <h1>ASESINOS</h1>
-      <section>
-        <!--boton ordenar-->
-          <select name='order' id='orderRoles' class='selectStyle'>
-            <option value='' selected disabled>Ordenar</option>
-            <option value='ascendente'>Ascendente</option>
-            <option value='descendente'>Descendente</option>
-          </select>
-        <!--boton buscar-->
-          <i class="fas fa-search searching"></i>
-          <input type='text' id='inputBuscarRoles' placeholder='Buscar'>
-      </section>
+    <header class="header-container">
+      <div class="title-screen-asse">
+        <h2 class="title-asse">ASESINOS</h2>
+      </div>
+      <div class="ascend-descend">
+        <select name="order" id="orderRoles" class="select-order">
+          <option value="" selected disabled>Order</option>
+          <option value="ascendente">Ascendente</option>
+          <option value="descendente">Descendente</option>
+        </select>
+      </div>
+      <div class="search-lol">
+        <input type="text" id="inputBuscarRoles" placeholder="Search" class="input-search">
+      </div>
+    </header>
+    <!-- <section class='asesino'> -->
     <div id='contentListRol'></div> 
   </div>
   
