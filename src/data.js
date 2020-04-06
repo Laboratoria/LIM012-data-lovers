@@ -60,16 +60,3 @@ export const averageData = (data, role) => {
   const avgRole = reduceRole / filterOnlyByRole.length;
   return avgRole;
 };
-
-// PROMEDIO DE EO (ESTADISTICA OFENSIVA) PARA CADA CAMPEON
-export const averageName = (data, name) => {
-  const filterOnlyByName = data.filter(champion => champion.name.includes(name));
-
-  const reduceName = filterOnlyByName.reduce((acc, current) => acc
-   + current.stats.attackdamage
-   + current.stats.attackspeedoffset
-   + current.stats.crit
-   + current.stats.armor, 0);
-  const avgName = reduceName / filterOnlyByName.length;
-  return avgName;
-};
