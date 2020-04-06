@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Data Lovers</title>
     <link rel="stylesheet" href="style.css" />
-    <link href="https://fonts.googleapis.com/css?family=Spectral:400,800&display=swap" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Spectral:400,800&display=swap" rel="stylesheet"> -->
   </head>
   <body class="padre">
 
@@ -14,19 +14,17 @@
         <div class="logoLol">
           <a href="\src\index.html"><img src= "imagenes/logo.png" class="logo" ></a><!--src= "imagenes/logo.png"/volver a ponerlo cuando termine el css-->
         </div>
-        <form class="formBuscador">
-          <input type="search" id="buscador" placeholder="Buscar por campeon">
-        </form>
+        <input type="search" id="buscador" class="formBuscador" placeholder="Buscar por campeon">
       </div>
       <nav class="menu">
-        <a href="\src\index.html"><button id="todos" class="btnTodos">Todos</button></a>
+        <a href="\src\index.html"><button id="todos" class="btnTodos estiloBoton">TODOS</button></a>
           <select name="opciones" id="ordenar" class="selectStyle">
-            <option value="" selected disabled>Ordenar</option>
-            <option value="ascendente">A - Z</option>
-            <option value="descendente">Z - A</option>
+            <option value="" selected disabled  class="estiloBoton">ORDENAR</option>
+            <option value="ascendente" class="estiloBoton">A - Z</option>
+            <option value="descendente" class="estiloBoton">Z - A</option>
           </select>
-          <button id="buttonRoles">Roles</button>
-          <button id="habilidades">Habilidades</button>
+          <button id="buttonRoles" class="estiloBoton">ROLES</button>
+          <button id="habilidades" class="estiloBoton">HABILIDADES</button>
       </nav>  
     </header>
  
@@ -50,12 +48,12 @@
       <!--segunda pantalla (ver los roles)-->
       <div id="pantalla2" class="ocultar">
         <section id="sectionRoles" class="roles">
-          <input type="image" id="Assassin" value ="Assassin" src="imagenes\role-icon-assassin.png">
-          <input type="image" id="Fighter" value ="Fighter" src="imagenes\league-of-legends-fighter-icon-1.png"> 
-          <input type="image" id="Mage" value ="Mage" src="imagenes\Mage_icon.png"> 
-          <input type="image" id="Marksman" value ="Marksman" src="imagenes\role_icon_support.png"> 
-          <input type="image" id="Support" value ="Support" src="imagenes\role_icon_support.png"> 
-          <input type="image" id="Tank" value ="Tank" src="imagenes\Tanque.png">
+          <div class="divRol"><input type="image" id="Assassin" value ="Assassin" class="styleInput" src="imagenes\role-icon-assassin.png"><p class="pRoles">ASSASSIN</p></div>
+          <div class="divRol"><input type="image" id="Fighter" value ="Fighter" class="styleInput" src="imagenes\league-of-legends-fighter-icon-1.png"><p class="pRoles">FIGHTER</p></div>
+          <div class="divRol"><input type="image" id="Mage" value ="Mage" class="styleInput" src="imagenes\Mage_icon.png"><p class="pRoles">MAGE</p></div>
+          <div class="divRol"><input type="image" id="Marksman" value ="Marksman" class="styleInput"src="imagenes\role_icon_fighter.png"><p class="pRoles">MARKSMAN</p></div> 
+          <div class="divRol"><input type="image" id="Support" value ="Support" class="styleInput"src="imagenes\role_icon_support.png"><p class="pRoles">SUPPORT</p></div>
+          <div class="divRol"><input type="image" id="Tank" value ="Tank" class="styleInput" src="imagenes\Tanque.png"><p class="pRoles">TANK</p></div>
         </section>
       </div>
       <!--tercera pantalla (lista de campeones por rol)-->
