@@ -56,24 +56,6 @@
           </li>
         </ul>
       </nav>
-      <!-- <nav class="navegador">
-      <a href="#" class="navInicio">
-        <i class="fas fa-home"></i>
-        <span>Inicio</span>
-      </a>
-      <a href="#" class="navAtletas">
-        <img src="img/navAtleta.png" width="55" alt="icono del perfil de una atleta">
-        <span>Atletas</span>
-      </a>
-      <a href="#" class="navDisciplinas">
-        <img src="img/navDisciplina.png" width="55" alt="icono de un atleta">
-        <span>Disciplinas</span>
-      </a>
-      <a href="#" class="navMedalla">
-        <img src="img/navMedalla.png" width="50" alt="icono de una medalla">
-        <span>Medallas</span>
-      </a>
-    </nav> -->
     </header>
     <main class="background">
       <div class="title">
@@ -82,17 +64,63 @@
           ENCUENTRA AQUI A <span class="subtitle">TUS ATLETAS FAVORITOS</span>
         </h2>
       </div>
-      <div id="main" class="main">
-        <!-- <h1>no me tapes!!!</h1> -->
-        <div id="cards">
-          <!-- <h3>Todos</h3> -->
+      <
+      <section>
+        <div class="subNav">
+          <input
+            type="text"
+            id="search"
+            class="search"
+            placeholder="search for a name"
+          />
+          <div class="optionFiler" id="filterGender">
+            filter by Gender
+            <i class="fas fa-chevron-down"></i>
+            <ul>
+              <li>Todos</li>
+              <li>F</li>
+              <li>M</li>
+            </ul>
+          </div>
+          <div class="optionFiler" id="filterSeason">
+            filter by Season
+            <i class="fas fa-chevron-down"></i>
+            <ul>
+              <li>Todos</li>
+              <li>Summer</li>
+              <li>Winter</li>
+            </ul>
+          </div>
+          <div class="optionFiler" id="filterMedal">
+            filter by Medal
+            <i class="fas fa-chevron-down"></i>
+            <ul>
+              <li>Todos</li>
+              <li>Gold</li>
+              <li>Silver</li>
+              <li>Bronze</li>
+            </ul>
+          </div>
         </div>
-      </div>
+      </section>
+
+      <section>
+        <div class="container athletes" id="atlethes">
+          <h2>Atlethes loading ...</h2>
+        </div>
+      </section>
+
+      <<!-- div class="perfil" id="perfil">
+        </div>
+        <div id="main" class="main">
+          <div id="cards">
+          </div>
+        </div>
+        <div id="root"></div> -->
     </main>
     <footer>
       <p>by Franccesca & Almendra</p>
     </footer>
-    <div id="root"></div>
     <script src="main.js" type="module"></script>
   </body>
 </html>
