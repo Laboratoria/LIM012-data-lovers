@@ -6,9 +6,9 @@
  La pagina web fue diseñada basandose en la informacion obtenida del juego League of Legends y del tipo d usuario que conoce de este juego.Lol tiene como atractivo principal a sus personajes,los que son conocidos por los jugadores como "campeones",cada uno de ellos tienen ciertas caracteristicas que los diferencian a unos de otros y cada uno de estos detalles son determinantes para el jugador de Lol(invocador) ya que basandose en la informacion que pueda obtener de cada uno de ellos podra decidir quienes serian los campeones que conformarian su equipo para ser llevados a una partida.
 
 # IMAGEN FINAL DEL PROYECTO.
- 
- link deskop
- link mobil
+✔ Diseño Responsive
+![alt prototipoBaja](prototipos/DiseñoResponsive.png)
+
 
 # DEFINICIÓN DEL PRODUCTO:
 Nuestro proceso de diseño hacia el producto final comenzo por entender los hallazgos de la investigacion UX.
