@@ -146,7 +146,7 @@ En este paso se crearon la Historias de Usuario que trabajaremos en el proyecto.
 ![](https://github.com/Lourdes0896/LIM012-data-lovers/blob/master/pantallazo_5.png)
 
 ## LINK PARA VISUALIZAR PROTOTIPOS DE ALTA FIDELIDAD EN FIGMA PARA MOVIL
-[VER 👉 FIGMA] (https://www.figma.com/file/g2FilRd3OZUsTJVVkRN8fQ/MOBILE-1?node-id=10%3A3)
+[VER 👉 FIGMA] (https://www.figma.com/file/g2FilRd3OZUsTJVVkRN8fQ/MOBILE-1?node-id=17%3A4)
 
 *******************************************************************************
 ### Objetivos de aprendizaje
