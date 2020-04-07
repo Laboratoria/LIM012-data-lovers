@@ -1,5 +1,6 @@
 import {
-  athletesView, ordenAs, filtrarAtletasPorDeporte, totalMedallasOroPorOlimpiadaPais,
+  athletesView, ordenAs, filtrarAtletasPorDeporte, totalMedallasOro, totalMedallasPlata,
+  totalMedallasBronce,
 } from './data.js';
 import data from './data/atletas/atletas.js';
 
@@ -38,18 +39,18 @@ const alfhabeticOrder = document.getElementById('btn');
 alfhabeticOrder.addEventListener('click', () => {
   const ascendente = ordenAs(athletesView(arrAtletas));
   document.getElementById('root').innerHTML = '';
-  ascendente.forEach((item) => {
+  ascendente.forEach((athlete) => {
     const ulAtleta = document.createElement('ul');
     const liNombre = document.createElement('li');
-    const textNombre = document.createTextNode(item.nombre);
+    const textNombre = document.createTextNode(athlete.nombre);
     liNombre.appendChild(textNombre);
     ulAtleta.appendChild(liNombre);
     const liEquipo = document.createElement('li');
-    const textEquipo = document.createTextNode(item.equipo);
+    const textEquipo = document.createTextNode(athlete.equipo);
     liEquipo.appendChild(textEquipo);
     ulAtleta.appendChild(liEquipo);
     const liDeporte = document.createElement('li');
-    const textDeporte = document.createTextNode(item.deporte);
+    const textDeporte = document.createTextNode(athlete.deporte);
     liDeporte.appendChild(textDeporte);
     ulAtleta.appendChild(liDeporte);
     document.getElementById('root').appendChild(ulAtleta);
@@ -57,7 +58,6 @@ alfhabeticOrder.addEventListener('click', () => {
 });
 
 const optionSports = document.querySelector('#optionSports');
-
 optionSports.addEventListener('change', (event) => {
   const deporteSeleccionado = optionSports.value;
   const atletasPorDeporte = filtrarAtletasPorDeporte(arrAtletas, deporteSeleccionado);
@@ -82,38 +82,21 @@ optionSports.addEventListener('change', (event) => {
   }
 });
 
-
-const opcionOlimpiadas = document.querySelector('#opcionOlimpiadas');
-const opcionPais = document.querySelector('#opcionPais');
-/*
-
-      opcionOlimpiadas.addEventListener('change', (event) => {
-      opcionPais.addEventListener('change', (event) => {
-      if (event.target.id === '3') {
-        const olimpiadaSeleccionada = opcionOlimpiadas.value;
-        const paisSeleccionado = opcionPais.value;
-        const medallasOlimpiadas = medallasPorPais(arrAtletas, olimpiadaSeleccionada, paisSeleccionado);
-        document.getElementById('root').innerHTML = 'Las medallas ganadas son: Oro, plata y bronce';
-      }
-    });
-  }
-});
-*/
-
-
 const btnMostrarMedallas = document.querySelector('#btnMostrarMedallas');
 
-btnMostrarMedallas.addEventListener('click', (event) => {
+btnMostrarMedallas.addEventListener('click', () => {
   const olimpiadaConAño = opcionOlimpiadas.value;
   const pais = opcionPais.value;
-
   if (olimpiadaConAño !== '' && pais !== '') {
     const olimpiada = olimpiadaConAño.substring(0, olimpiadaConAño.length - 4);
     const año = olimpiadaConAño.substring(olimpiadaConAño.length - 4);
-
-    const totalMedallasOro = totalMedallasOroPorOlimpiadaPais(arrAtletas, pais, olimpiada, año);
-    alert(totalMedallasOro);
+    const MedallasOro = totalMedallasOro(arrAtletas, pais, olimpiada, año);
+    const MedallasPlata = totalMedallasPlata(arrAtletas, pais, olimpiada, año);
+    const MedallasBronce = totalMedallasBronce(arrAtletas, pais, olimpiada, año);
+    document.getElementById('rootMedallas').innerHTML = `Cantidad de Medallas Oro ${MedallasOro} `
+    + `Cantidad de Medallas Plata ${MedallasPlata} `
+    + `Cantidad de Medallas Bronce ${MedallasBronce}`;
   } else {
-    alert('Seleccione la olimpiada y el país');
+    document.getElementById('rootMedallas').innerHTML = 'Por favor seleccione una Olimpiada';
   }
 });

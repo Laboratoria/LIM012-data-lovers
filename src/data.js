@@ -19,16 +19,15 @@ export const ordenAs = (p1) => {
 };
 
 export const filtrarAtletasPorDeporte = (arrayAtletas, deporteSeleccionado) => {
-  const deportesFiltrados = arrayAtletas.filter(atleta => atleta.deporte === deporteSeleccionado);
+  const deportesFiltrados = arrayAtletas.filter(atletas => atletas.deporte === deporteSeleccionado);
   return deportesFiltrados;
 };
 
-export const totalMedallasOroPorOlimpiadaPais = (arrayAtletas, pais, olimpiada, anno) => {
+export const totalMedallasOro = (arrayAtletas, pais, olimpiada, anno) => {
   const arrayAtletasPorPais = arrayAtletas.filter(atleta => atleta.equipo === pais);
   /* debugger; */
   const totalMedallasGold = arrayAtletasPorPais.reduce((contador, atleta) => {
     /* debugger; */
-    // eslint-disable-next-line eqeqeq
     const atletaConMedallaGold = atleta.disciplinas.filter(c => c.ciudad === olimpiada && c.año == anno && c.medalla === 'Gold');
 
     if (atletaConMedallaGold.length > 0) {
@@ -40,36 +39,34 @@ export const totalMedallasOroPorOlimpiadaPais = (arrayAtletas, pais, olimpiada, 
   return totalMedallasGold;
 };
 
-/*
-export const totalMedallasPlataPorOlimpiadaPais = (arrayAtletas, olimpiada, pais) => {
+export const totalMedallasPlata = (arrayAtletas, pais, olimpiada, anno) => {
+  const arrayAtletasPorPais = arrayAtletas.filter(atleta => atleta.equipo === pais);
+  /* debugger; */
+  const totalMedallasSilver = arrayAtletasPorPais.reduce((contador, atleta) => {
+    /* debugger; */
+    const atletaConMedallaSilver = atleta.disciplinas.filter(c => c.ciudad === olimpiada && c.año == anno && c.medalla === 'Silver');
 
-};
-
-export const totalMedallasBroncePorOlimpiadaPais = (arrayAtletas, olimpiada, pais) => {
-
-};
-
-/*
-  let contadorOro = 0;
-  let contadorPlata = 0;
-  let contadorBronce = 0;
-
-  for (let i = 0; i < arrayAtletas.length; i += 1) {
-    if (arrayAtletas[i].equipo === 'Mexico') {
-      for (let j = 0; j < arrayAtletas[i].disciplinas.length; j += 1) {
-        if (arrayAtletas[i].disciplinas[j].anio === 2000) {
-          if (arrayAtletas[i].disciplinas[j].medalla === 'Gold') {
-            contadorOro += 1;
-          } else if (arrayAtletas[i].disciplinas[j].medalla === 'Silver') {
-            contadorPlata += 1;
-          } else if (arrayAtletas[i].disciplinas[j].medalla === 'Bronze') {
-            contadorBronce += 1;
-          }
-        }
-      }
-      return contadorOro;
+    if (atletaConMedallaSilver.length > 0) {
+      return contador + 1;
     }
-    return contadorPlata;
-  }
-  return contadorBronce;
-}; */
+    return contador;
+  }, 0);
+
+  return totalMedallasSilver;
+};
+
+export const totalMedallasBronce = (arrayAtletas, pais, olimpiada, anno) => {
+  const arrayAtletasPorPais = arrayAtletas.filter(atleta => atleta.equipo === pais);
+  /* debugger; */
+  const totalMedallasBronze = arrayAtletasPorPais.reduce((contador, atleta) => {
+    /* debugger; */
+    const atletaConMedallaBronze = atleta.disciplinas.filter(c => c.ciudad === olimpiada && c.año == anno && c.medalla === 'Bronze');
+
+    if (atletaConMedallaBronze.length > 0) {
+      return contador + 1;
+    }
+    return contador;
+  }, 0);
+
+  return totalMedallasBronze;
+};
