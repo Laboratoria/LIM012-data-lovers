@@ -29,6 +29,7 @@ export const totalMedallasOroPorOlimpiadaPais = (arrayAtletas, pais, olimpiada, 
   /* debugger; */
   const totalMedallasGold = arrayAtletasPorPais.reduce((contador, atleta) => {
     /* debugger; */
+    // eslint-disable-next-line eqeqeq
     const atletaConMedallaGold = atleta.disciplinas.filter(c => c.ciudad === olimpiada && c.año == anno && c.medalla === 'Gold');
 
     if (atletaConMedallaGold.length > 0) {
