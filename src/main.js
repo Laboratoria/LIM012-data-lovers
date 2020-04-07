@@ -10,6 +10,25 @@ const lista = document.querySelector('#galeria'); // selecciono la parte donde v
 const pantalla2 = document.getElementById('pantalla2');
 const pantalla3 = document.getElementById('pantalla3');
 const cantidadCampeones = document.getElementById('cantidad');
+
+// Descripcion de Campeon
+const crearVistaCampeon = (campeon) => {
+  document.querySelector('#detalleCampeon').innerHTML = `
+  <div class = "historia imagen">
+    <img src = ${campeon.splash} class="imgCampeon"/> </div>
+  <div class = "descripcionCampeon">
+    <p class = "historiaNombre">${campeon.name} </p>
+    <p class = "historiaTitle">${campeon.title} </p>
+    <p class = "historiaCampeon">${campeon.blurb} </p>
+    <p class="historiaTags"> Rol: ${campeon.tags} </p>
+    <div class = "info">
+      <p> Defensa:${campeon.info.defense} </p>
+      <p> Ataque:${campeon.info.attack} </p>
+      <p> Magia:${campeon.info.magic} </p>
+      <p> Dificultad:${campeon.info.difficulty} </p> </div>
+  </div>`;
+};
+
 const resultado = (data) => {
   // vaciar arreglo para que no se duplique
   lista.innerHTML = '';
@@ -29,10 +48,25 @@ const resultado = (data) => {
     casilla.appendChild(foto);
     casilla.appendChild(nombre);
     lista.appendChild(casilla);
+    // casilla agregar add event ... crearVistaCampeon(identificador);
+    casilla.addEventListener('click', (evt) => {
+      const nombreId = evt.path[1].id;
+      // console.log(listaTodos[nombreId]);
+      crearVistaCampeon(listaTodos[nombreId]);
+      lista.classList.add('ocultar');
+      pantalla3.classList.add('mostrar');
+    });
+
+    // agregar aqui el evento
   });
 };
 resultado(listaTodos);
 
+
+// const vistaCampeones = document.querySelectorAll('.casillaCampeon');
+// vistaCampeones.forEach((campeones) => {
+
+// });
 
 // buscando en el input
 const buscar = document.querySelector('#buscador');
@@ -100,35 +134,5 @@ document.querySelector('.contenedorSubir').addEventListener('click', () => {
   window.scrollTo({
     top: 0,
     behavior: 'smooth', // para que le de un efecto suave al subir
-  });
-});
-
-
-// Descripcion de Campeon
-const crearVistaCampeon = (campeon) => {
-  document.querySelector('#detalleCampeon').innerHTML = `
-  <div class = "historia imagen">
-    <img src = ${campeon.splash} class="imgCampeon"/> </div>
-  <div class = "descripcionCampeon">
-    <p class = "historiaNombre">${campeon.name} </p>
-    <p class = "historiaTitle">${campeon.title} </p>
-    <p class = "historiaCampeon">${campeon.blurb} </p>
-    <p class="historiaTags"> Rol: ${campeon.tags} </p>
-    <div class = "info">
-      <p> Defensa:${campeon.info.defense} </p>
-      <p> Ataque:${campeon.info.attack} </p>
-      <p> Magia:${campeon.info.magic} </p>
-      <p> Dificultad:${campeon.info.difficulty} </p> </div>
-  </div>`;
-};
-const vistaCampeones = document.querySelectorAll('.casillaCampeon');
-vistaCampeones.forEach((campeones) => {
-  campeones.addEventListener('click', (evt) => {
-    const nombreId = evt.path[1].id;
-    // console.log(listaTodos[nombreId]);
-    crearVistaCampeon(listaTodos[nombreId]);
-    lista.classList.add('ocultar');
-    // document.getElementById('pantalla3').style.display = 'block';
-    pantalla3.classList.add('mostrar');
   });
 });
