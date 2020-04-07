@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
- 
+
 <head>
   <meta charset="utf-8">
   <title>Data Lovers</title>
@@ -8,7 +8,7 @@
     content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="style.css" />
 </head>
- 
+
 <body>
   <div class="padre">
     <header class="header">
@@ -37,10 +37,12 @@
       <section id="table" class="main-container borrar">
         <table>
           <button id="btn" class="btn">Ordenar</button>
-          <select><option value="">A-Z</option></select>
-            <th>NOMBRE</th>
-            <th>EQUIPO</th>
-            <th>DEPORTE
+          <select>
+            <option value="">A-Z</option>
+          </select>
+          <th>NOMBRE</th>
+          <th>EQUIPO</th>
+          <th>DEPORTE
             <select id="optionSports">
               <option value="">Seleccione un Deporte</option>
               <option value="Archery">Archery</option>
@@ -48,9 +50,31 @@
               <option value="Badminton">Badminton</option>
               <option value="Baseball">Baseball</option>
             </select>
-            </th>           
+          </th>
         </table>
         <div id="root"></div>
+      </section>
+      <section>
+        <select id="opcionOlimpiadas">
+          <option value="">Seleccione una Olimpiada</option>
+          <option value="RiodeJaneiro2016">Rio de Janeiro 2016</option>
+          <option value="Sochi2014">Sochi 2014</option>
+          <option value="London2012">London 2012</option>
+          <option value="Vancouver2010">Vancouver 2010</option>
+          <option value="Beijing2008">Beijing 2008</option>
+          <option value="Torino2006">Torino 2006</option>
+          <option value="Athina2004">Athina 2004</option>
+          <option value="SaltLakeCity2002">Salt Lake City 2002</option>
+          <option value="Sydney2000">Sydney 2000</option>
+        </select>
+        <select id="opcionPais">
+          <option value="">Seleccione un País</option>
+          <option value="Italy">Italia</option>
+          <option value="Mexico">Mexico</option>
+          <option value="Australia">Australia</option>
+        </select>
+        <input type="button" name="btnMostrarMedallas" id="btnMostrarMedallas" value="Mostrar Medallas"/>
+        <div id="rootMedallas"></div>
       </section>
       <section id="articulos" class="section margen-interno">
         <div class="articulos">
@@ -104,4 +128,5 @@
   </div>
   <script src="main.js" type="module"></script>
 </body>
+
 </html>

@@ -1,5 +1,5 @@
 import {
-  athletesView, ordenAs, filtrarAtletasPorDeporte,
+  athletesView, ordenAs, filtrarAtletasPorDeporte, totalMedallasOroPorOlimpiadaPais,
 } from './data.js';
 import data from './data/atletas/atletas.js';
 
@@ -79,5 +79,41 @@ optionSports.addEventListener('change', (event) => {
       ulAtleta.appendChild(liDeporte);
       document.getElementById('root').appendChild(ulAtleta);
     });
+  }
+});
+
+
+const opcionOlimpiadas = document.querySelector('#opcionOlimpiadas');
+const opcionPais = document.querySelector('#opcionPais');
+/*
+
+      opcionOlimpiadas.addEventListener('change', (event) => {
+      opcionPais.addEventListener('change', (event) => {
+      if (event.target.id === '3') {
+        const olimpiadaSeleccionada = opcionOlimpiadas.value;
+        const paisSeleccionado = opcionPais.value;
+        const medallasOlimpiadas = medallasPorPais(arrAtletas, olimpiadaSeleccionada, paisSeleccionado);
+        document.getElementById('root').innerHTML = 'Las medallas ganadas son: Oro, plata y bronce';
+      }
+    });
+  }
+});
+*/
+
+
+const btnMostrarMedallas = document.querySelector('#btnMostrarMedallas');
+
+btnMostrarMedallas.addEventListener('click', (event) => {
+  const olimpiadaConAño = opcionOlimpiadas.value;
+  const pais = opcionPais.value;
+
+  if (olimpiadaConAño !== '' && pais !== '') {
+    const olimpiada = olimpiadaConAño.substring(0, olimpiadaConAño.length - 4);
+    const año = olimpiadaConAño.substring(olimpiadaConAño.length - 4);
+
+    const totalMedallasOro = totalMedallasOroPorOlimpiadaPais(arrAtletas, pais, olimpiada, año);
+    alert(totalMedallasOro);
+  } else {
+    alert('Seleccione la olimpiada y el país');
   }
 });
