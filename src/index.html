@@ -10,11 +10,11 @@
 
       <header>
             <div class="headerNombre">
-              <h1>Boletín OLÍMPICO</h1>
+              <p>Boletín<br>OLÍMPICO</p>
             </div>
-            <p>Abril, 2020</p>
-            <img src="img/ribbon.png" alt="">
-
+            <div class="headerFecha">
+              <p>Marzo, 2020</p>
+            </div>
       </header>
 
       <nav class="menu">
@@ -26,14 +26,9 @@
       </nav>
 
       <main>
-        <div id="hola" class="hola">
             <div id="barraInicio" class="menuInicio">
-              <ul>
-                  <li><img src="img/facemask.png" alt=""></li>
-                  <li><img src="img/rusiadoping.png" alt=""></li>
-                  <li><img src="img/women.png" alt=""></li>
-              </ul>
-            </div>
+              <img src="img/facemasks.jpg" alt="">
+              <img src="img/rusia.jpg" alt="">
             </div>
 
             <div id="barraMedallero" class="menuMedallero hide">
@@ -56,27 +51,85 @@
                       <button id="btnSochi"><img src="img/sochi2014.jpg" alt="Sochi 2014"></button>
                       <button id="btnPyeong"><img src="img/pyeong2018.png" alt="Pyeong Chang 2018"></button>
                     </div>
+
             </div>
 
+            <div id="barraDeportes" class="menuDeportes hide">
+
+                    <div id="summerSports" class="summerSports">
+                      <h2>Summer</h2>
+                      <button id="btnar"><img src="img/ar.jpg" >Archery</button>
+                      <button id="btnat"><img src="img/at.jpg" >Atletismo</button>
+                      <button id="btnbd"><img src="img/bd.jpg" >Bádminton</button>
+                      <button id="btnbk"><img src="img/bk.png" >Baloncesto</button>
+                      <button id="btnbsb"><img src="img/bsb.jpg" >Béisbol</button>
+                      <button id="btnbv"><img src="img/bv.png" >Voleybol de playa</button>
+                      <button id="btnbx"><img src="img/bx.png" >Box</button>
+                      <button id="btncb"><img src="img/cb (1).jpg" >Ciclismo</button>
+                      <button id="btncf"><img src="img/cf (1).jpg" >Canotaje</button>
+                      <button id="btnclb"><img src="img/clb.jpg" >Escalada</button>
+                      <button id="btncm"><img src="img/cm.jpg" >Ciclismo de Montaña</button>
+                      <button id="btncr"><img src="img/cr.jpg" >Ciclismo</button>
+                      <button id="btncs"><img src="img/cs.jfif" >Slalom canoa</button>
+                      <button id="btnct"><img src="img/ct.jfif" >Circuito de ciclismo</button>  
+                      <button id="btndv"><img src="img/dv.jfif" >Buceo</button>
+                      <button id="btnec"><img src="img/ec.jfif" >Evento ecuestre</button>
+                      <button id="btned"><img src="img/ed.jfif" >Ecuestre doma</button>
+                      <button id="btnes"><img src="img/es.jfif" >Salto Ecuestre</button>
+                      <button id="btnfb"><img src="img/fb.jfif" >Fútbol Americano</button>
+                      <button id="btnfe"><img src="img/fe.jfif" >Esgrima</button>
+                      <button id="btnga"><img src="img/ga.png" >Gimnasia Artística</button>
+                      <button id="btngo"><img src="img/go.webp" >Golf</button>
+                      <button id="btngr"><img src="img/gr.jfif" >Gimnasia Rítmica</button>
+                      <button id="btngt"><img src="img/gt.jfif" >Trampolín</button>
+                      <button id="btnhb"><img src="img/hb.png" >Balonmano</button>
+                      <button id="btnho"><img src="img/ho.png" >Hockey</button>
+                      <button id="btnju"><img src="img/ju.jfif" >Judo</button>
+                      <button id="btnkte"><img src="img/kte.jfif" >kárate</button>
+                      <button id="btnmp"><img src="img/mp.jfif" >Pentatlón Moderno</button>
+                      <button id="btnow"><img src="img/ow.jfif" >Maratón de Natación</button>
+                      <button id="btnro"><img src="img/ro.jfif" >Remo</button>
+                      <button id="btnru"><img src="img/ru.jfif" >Rugby</button>
+                      <button id="btnsa"><img src="img/sa.jfif" >Navegación</button>
+                      <button id="btnsh"><img src="img/sh.png" >Disparo</button>
+                      <button id="btnskb"><img src="img/skb.jfif" >Skateboarding</button>  
+                      <button id="btnsrf"><img src="img/srf.jfif" >Surf</button>
+                      <button id="btnsw"><img src="img/sw.jfif" >Natación</button>
+                      <button id="btnsy"><img src="img/sy.jfif" >Natación Artística</button>
+                      <button id="btnte"><img src="img/te.png" >Tenis</button>
+                      <button id="btntk"><img src="img/tk.jfif" >Taekwondo</button>
+                      <button id="btntr"><img src="img/tr.jfif" >Triatlón</button>
+                      <button id="btnvo"><img src="img/vo.png" >Voleybol</button>
+                      <button id="btnwf"><img src="img/wf.jfif" >Lucha Libre</button>
+                      <button id="btnwg"><img src="img/wg.jfif" >Lucha grecorromana</button>
+                      <button id="btnwl"><img src="img/wl.jfif" >Levantamiento de Pesas</button>
+                      <button id="btnwp"><img src="img/wp.jfif" >Polo Acuático</button>
+                    </div>
+
+                    <div id="dataDeportes" class="menusports hide">
+                    </div>
+
+              
+
+      </div>
+         
             <select id="filtroAz" class="filtroAz hide" name="OrdenAZ">
-              <option value="a-z">Filtrar</option>
+              <h5>Ordenar</h5>
               <option value="a-z">A-Z</option>
               <option value="z-a">Z-A</option>
             </select>
-
             <div id="datageneral" class="menuAtletas hide">
             </div>
+            
 
       </main>
 
   <footer>
-    <p>Patrocinadores:</p>
         <div class="auspiciadores">
-
+            <p>Auspiciadores:</p>
              <a title="" href="http://www.asics.com"><img src="img/asics.png" alt="Asics"/></a>
-             <a title="" href="http://www.lining.com"><img src="img/lining.png" alt="Li-ning"/></a>
              <a title="" href="https://www.technogym.com"><img src="img/technogym.png" alt="Technogym"/></a>
-             <a title="" href="https://www.omegawatches.com"><img src="img/omega.png" alt="Omega"/></a>
+             <a title="" href="http://www.lining.com"><img src="img/lining.png" alt="Li-ning"/></a>
         </div>
   </footer>
 
