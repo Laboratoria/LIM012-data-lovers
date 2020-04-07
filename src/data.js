@@ -25,7 +25,7 @@ export const filtrarAtletasPorDeporte = (arrayAtletas, deporteSeleccionado) => {
 
 export const totalMedallasOro = (arrayAtletas, pais, olimpiada, anno) => {
   const arrayAtletasPorPais = arrayAtletas.filter(atleta => atleta.equipo === pais);
-  /* debugger; */
+  debugger;
   const totalMedallasGold = arrayAtletasPorPais.reduce((contador, atleta) => {
     /* debugger; */
     const atletaConMedallaGold = atleta.disciplinas.filter(c => c.ciudad === olimpiada && c.año == anno && c.medalla === 'Gold');

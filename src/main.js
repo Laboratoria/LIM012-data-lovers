@@ -90,6 +90,7 @@ btnMostrarMedallas.addEventListener('click', () => {
   if (olimpiadaConAño !== '' && pais !== '') {
     const olimpiada = olimpiadaConAño.substring(0, olimpiadaConAño.length - 4);
     const año = olimpiadaConAño.substring(olimpiadaConAño.length - 4);
+
     const MedallasOro = totalMedallasOro(arrAtletas, pais, olimpiada, año);
     const MedallasPlata = totalMedallasPlata(arrAtletas, pais, olimpiada, año);
     const MedallasBronce = totalMedallasBronce(arrAtletas, pais, olimpiada, año);
