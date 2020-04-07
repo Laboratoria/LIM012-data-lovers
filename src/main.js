@@ -1,7 +1,7 @@
 import { ordenar } from './data.js';
 import data from './data/atletas/atletas.js';
 
-window.alert('Quedate en casa. Las autoridades estan haciendo su trabajo, pero necesitan de la disciplina de todos. No salgas de casa a menos que tengas una urgencia personal o familiar, mientras tanto puedes disfrutar de esta página.');
+window.alert('Quedate en casa. Las autoridades estan haciendo su trabajo en relación al COVID-19, pero necesitan de la disciplina de todos. No salgas de casa a menos que tengas una urgencia personal o familiar, mientras tanto puedes disfrutar de esta página.');
 
 const barraInicio = document.getElementById('contenedorInicio');
 const datageneral = document.getElementById('datageneral');
