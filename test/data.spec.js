@@ -111,7 +111,7 @@ describe('filtrarAtletasPorDeporte', () => {
     expect(typeof filtrarAtletasPorDeporte).toBe('function');
   });
 
-  it('Deberia retornar un array con atletas que solo hayan participado en el deporte Archery', () => {
+  it('Deberia retornar un array con objetos tengan el mismo tipo de deporte', () => {
     const threeOutput = [
       {
         nombre: 'Matteo Bisiani',
@@ -134,6 +134,6 @@ describe('filtrarAtletasPorDeporte', () => {
         noc: 'UKR',
       },
     ];
-    expect(filtrarAtletasPorDeporte((input, 'Archery'))).toEqual(threeOutput);
+    expect(filtrarAtletasPorDeporte(input, 'Archery')).toEqual(threeOutput);
   });
 });

@@ -19,9 +19,9 @@
         <nav>
           <ul class="menu">
             <li class="liMenu"><a href="#"><span id="1" class="off">Conoce a los atletas</span></a></li>
-            <li class="liMenu"><a href="#"><span id="2" class="off">Deportes</span></a></li>
-            <li class="liMenu"><a href="#"><span id="3" class="off">Medallero</span></a></li>
-            <li class="liMenu"><a href="#"><span id="4" class="off">Cronología de los Juegos</span></a></li>
+            <th class="liMenu"><a href="#"><span id="2" class="off">Deportes</span></a></th>
+            <th class="liMenu"><a href="#"><span id="3" class="off">Medallero</span></a></th>
+            <th class="liMenu"><a href="#"><span id="4" class="off">Cronología de los Juegos</span></a></th>
           </ul>
         </nav>
         <div class="social"></div>
@@ -51,6 +51,28 @@
             </th>
         </table>
         <div id="root"></div>
+      </section>
+      <section>
+        <select id="opcionOlimpiadas">
+          <option value="">Seleccione una Olimpiada</option>
+          <option value="RiodeJaneiro2016">Rio de Janeiro 2016</option>
+          <option value="Sochi2014">Sochi 2014</option>
+          <option value="London2012">London 2012</option>
+          <option value="Vancouver2010">Vancouver 2010</option>
+          <option value="Beijing2008">Beijing 2008</option>
+          <option value="Torino2006">Torino 2006</option>
+          <option value="Athina2004">Athina 2004</option>
+          <option value="SaltLakeCity2002">Salt Lake City 2002</option>
+          <option value="Sydney2000">Sydney 2000</option>
+        </select>
+        <select id="opcionPais">
+          <option value="">Seleccione un País</option>
+          <option value="Italy">Italia</option>
+          <option value="Mexico">Mexico</option>
+          <option value="Australia">Australia</option>
+        </select>
+        <input type="button" name="btnMostrarMedallas" id="btnMostrarMedallas" value="Mostrar Medallas"/>
+        <div id="rootMedallas"></div>
       </section>
       <section id="articulos" class="section margen-interno">
         <div class="articulos">
