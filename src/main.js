@@ -83,20 +83,31 @@ optionSports.addEventListener('change', (event) => {
 });
 
 const btnMostrarMedallas = document.querySelector('#btnMostrarMedallas');
+const opcionOlimpiadas = document.querySelector('#opcionOlimpiadas');
+const opcionPais = document.querySelector('#opcionPais');
+
+let ciudadSelec;
+let annoSelec;
+let paisSelec;
+
+opcionOlimpiadas.addEventListener('change', (event) => {
+  ciudadSelec = event.target.options[event.target.selectedIndex].getAttribute('data-ciudad');
+  annoSelec = event.target.options[event.target.selectedIndex].getAttribute('data-anno');
+});
+
+opcionPais.addEventListener('change', (event) => {
+  paisSelec = event.target.options[event.target.selectedIndex].getAttribute('data-pais');
+});
 
 btnMostrarMedallas.addEventListener('click', () => {
-  const olimpiadaConAño = opcionOlimpiadas.value;
-  const pais = opcionPais.value;
-  if (olimpiadaConAño !== '' && pais !== '') {
-    const olimpiada = olimpiadaConAño.substring(0, olimpiadaConAño.length - 4);
-    const año = olimpiadaConAño.substring(olimpiadaConAño.length - 4);
-    const MedallasOro = totalMedallasOro(arrAtletas, pais, olimpiada, año);
-    const MedallasPlata = totalMedallasPlata(arrAtletas, pais, olimpiada, año);
-    const MedallasBronce = totalMedallasBronce(arrAtletas, pais, olimpiada, año);
-    document.getElementById('rootMedallas').innerHTML = `Cantidad de Medallas Oro ${MedallasOro} `
-    + `Cantidad de Medallas Plata ${MedallasPlata} `
-    + `Cantidad de Medallas Bronce ${MedallasBronce}`;
+  if (ciudadSelec !== '' && paisSelec !== '' && annoSelec !== '') {
+    const medallasOro = totalMedallasOro(arrAtletas, paisSelec, ciudadSelec, annoSelec);
+    const medallasPlata = totalMedallasPlata(arrAtletas, paisSelec, ciudadSelec, annoSelec);
+    const medallasBronce = totalMedallasBronce(arrAtletas, paisSelec, ciudadSelec, annoSelec);
+    document.getElementById('rootMedallas').innerHTML = `Cantidad de Medallas Oro ${medallasOro} `
+      + `Cantidad de Medallas Plata ${medallasPlata} `
+      + `Cantidad de Medallas Bronce ${medallasBronce}`;
   } else {
-    document.getElementById('rootMedallas').innerHTML = 'Por favor seleccione una Olimpiada';
+    document.getElementById('rootMedallas').innerHTML = 'Por favor seleccione una Olimpiada y un pais';
   }
 });
