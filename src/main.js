@@ -7,6 +7,8 @@ const listaTodos = lol.data; // en esta variable guardo los objetos de la data
 const arrayCampeones = Object.values(listaTodos);
 
 const lista = document.querySelector('#galeria'); // selecciono la parte donde voy a poner la informacion
+const pantalla2 = document.getElementById('pantalla2');
+const pantalla3 = document.getElementById('pantalla3');
 const cantidadCampeones = document.getElementById('cantidad');
 const resultado = (data) => {
   // vaciar arreglo para que no se duplique
@@ -41,9 +43,9 @@ buscar.addEventListener('keyup', (evt) => {
   // CHAMPION NOT FOUND
   const errorMsj = document.querySelector('#error');
   if (filtroCampeon.length === 0) {
-    errorMsj.style.display = 'block';
+    errorMsj.classList.add('mostrar');
   } else {
-    errorMsj.style.display = 'none';
+    errorMsj.classList.add('ocultar');
   }
   resultado(filtroCampeon);
 },
@@ -51,9 +53,9 @@ false);
 
 const buttonRoles = document.getElementById('buttonRoles');
 buttonRoles.addEventListener('click', () => {
-  lista.style.display = 'none';
-  document.getElementById('cantidad').style.display = 'none';
-  document.getElementById('pantalla2').style.display = 'block';
+  lista.classList.add('ocultar');
+  cantidadCampeones.classList.add('mostrar');
+  pantalla2.classList.add('mostrar');
 });
 
 
@@ -64,8 +66,10 @@ for (let i = 0; i < inputsRoles.length; i += 1) {
   inputsRoles[i].addEventListener('click', (event) => {
     const rolSeleccionado = event.target.value;
     resultado(filtrandoRoles(arrayCampeones, rolSeleccionado));
-    lista.style.display = 'block';
-    document.getElementById('pantalla2').style.display = 'none';
+    lista.classList.add('mostrar');
+    // pantalla2.classList.add('ocultar');
+    // document.getElementById('pantalla2').style.display = 'none';
+    pantalla2.innerHTML = '';
   });
 }
 
@@ -80,6 +84,7 @@ ordenar.addEventListener('change', (evt) => {
     const dataOrdenada = ordenarCampeones(listaTodos, 'za');
     resultado(dataOrdenada);
   }
+  cantidadCampeones.classList.add('mostrar');
 });
 
 // boton subir
@@ -122,8 +127,8 @@ vistaCampeones.forEach((campeones) => {
     const nombreId = evt.path[1].id;
     // console.log(listaTodos[nombreId]);
     crearVistaCampeon(listaTodos[nombreId]);
-    lista.style.display = 'none';
-    document.getElementById('cantidad').style.display = 'none';
-    document.getElementById('pantalla3').style.display = 'block';
+    lista.classList.add('ocultar');
+    // document.getElementById('pantalla3').style.display = 'block';
+    pantalla3.classList.add('mostrar');
   });
 });

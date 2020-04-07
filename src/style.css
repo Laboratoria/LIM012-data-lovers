@@ -45,13 +45,6 @@ background-size: cover;*/
       border-bottom: 3px solid rgba(235, 178, 24, 0.719);
 
     }
-      .logoLol{
-        flex: 1 1 auto;
-        position: relative;
-        display: inline-block;
-        left: 68px;
-        top: -1px;
-      }
         .logo{     
           width: 260px;
           height: 120px;
@@ -65,6 +58,14 @@ background-size: cover;*/
           margin: 68px;
           border-radius: 5px;;
         } /*para enlazar iconos <i class:"" aria-hidden="true></i>"*/
+        .iconBuscar{
+          width: 46px;
+          height: 44px;
+          position: relative;
+          left: 62px;
+          border-radius: 6px;
+          background: #C4C4C4;
+        }
 
     .menu{
       background:rgb(63, 65, 66);
@@ -113,18 +114,18 @@ background-size: cover;*/
       display: flex;
       flex-flow: row nowrap;
 
-      margin: 15px;
+      
     }
       .galeriaDeCampeones{
         display: flex;
         flex-wrap: row nowrap;
         flex: 1 1 auto;
         flex-wrap: wrap;
-        display: grid;
+        /* display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
         justify-items: center;
         align-items: center;
-        grid-gap: 10px;
+        grid-gap: 10px; */
       }
         .casillaCampeon{
           margin: 15px;
@@ -143,8 +144,8 @@ background-size: cover;*/
 
         }
         .imagenCampeon{
-          width: 270px;
-          height: 290px;
+          width: 290px;
+          height: 300px;
           border: 4px solid rgba(235, 178, 24, 0.719);
           border-radius: 5px;
           box-shadow: 3px 10px 17px 3px rgba(0,0,0,0.75);
@@ -255,6 +256,10 @@ background-size: cover;*/
   display: none;
 }
 
+.mostrar {
+  display: block;
+}
+
 .contenedorSubir{
   position: fixed;
   bottom: 40px;
@@ -312,30 +317,49 @@ background-size: cover;*/
   }
 }
 
-/* .cantidadMostrada {
-  display: flex;
-  justify-content: flex-end;
-  text-decoration: none;
-  padding: 3px;
-  font-weight: 500;
-  font-size: 25px;
-  color:  rgba(235, 178, 24, 0.719); 
-  background-color: #31302E;
-} 
-
-/* MOVIL
-@media (max-width: 768px){
+/*MOVIL*/
+@media all and (max-width: 400px){
   .logo{
-    position: absolute;
-    width: 210px;
-    height: 100px;
-    left: 10px;
-    top: 40px;
-    background:  rgba(0, 0, 0, .0.1);
-    display: flex;
-    align-items: flex-end;
+    width: 200px;
+    height: 90px;
+    margin: 30px;
   }
-  Boton del Search - MOVIL 
+  .formBuscador{
+    display:none;
+  }
+  .iconBuscar{
+    width: 50px;
+    position: relative;
+    left: 30px;
+  }
+
+  .estiloBoton  {
+    width: 90px;
+    height: 30px;
+    list-style: none;
+    font-size: 20px;
+    margin: 8px;
+  }
+  .selectStyle {
+    width: 90px;
+    height: 30px;
+    list-style: none;
+    font-size: 20px;
+    margin: 8px;
+  }
+
+  .galeriaDeCampeones{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+     /* .roles {
+     display: grid;
+    grid-template-columns: 1fr; 
+  }*/
+};
+
+ /* Boton del Search - MOVIL 
   body{
     margin: 0%;
     padding: 0%;}
