@@ -45,13 +45,7 @@ background-size: cover;*/
       border-bottom: 3px solid rgba(235, 178, 24, 0.719);
 
     }
-      .logoLol{
-        flex: 1 1 auto;
-        position: relative;
-        display: inline-block;
-        left: 68px;
-        top: -1px;
-      }
+
         .logo{     
           width: 260px;
           height: 120px;
@@ -65,6 +59,14 @@ background-size: cover;*/
           margin: 68px;
           border-radius: 5px;;
         } /*para enlazar iconos <i class:"" aria-hidden="true></i>"*/
+        .iconBuscar{
+          width: 46px;
+          height: 44px;
+          position: relative;
+          left: 62px;
+          border-radius: 6px;
+          background: #C4C4C4;  
+        }
 
     .menu{
       background:rgb(63, 65, 66);
@@ -230,22 +232,6 @@ background-size: cover;*/
     margin-top: 90px rgb(28, 28, 29);
     margin-bottom: 0;
   }
-  /*responsive para tablet no se si sea necesario,probando*/
-  /*@media all and (max-width: 800px){
-    .menu{
-      flex-direction: column;
-      height: auto;
-    }
-  }
-  @media all and (max-width: 400px){
-    .galeriaDeCampeones{
-      flex-direction: column nowrap;
-      height: auto;
-    }
-    .casillaCampeon{
-      width:10px;
-
-    } */
 
   #error {
     background: #707b15;
@@ -312,6 +298,41 @@ background-size: cover;*/
   }
 }
 
+@media all and (max-width: 400px){
+  .logo{
+  width: 180px;
+  height: 100px;
+  position:relative;
+  left: -23px;
+}
+.formBuscador{
+  display:none
+}
+.iconBuscar{
+  width: 50px;
+  position: relative;
+  left: -25px;
+}
+.estiloBoton{
+  font-size:17px;
+}
+.cantidadMostrada{
+  position:relative;
+  right:10px;
+}
+.galeriaDeCampeones{
+display:grid;
+grid-template-columns: 1fr;
+}
+.roles {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.detalleCampeon{
+  display: grid;
+  grid-template-rows: 1fr;
+}
+
 /* .cantidadMostrada {
   display: flex;
   justify-content: flex-end;
@@ -352,3 +373,9 @@ background-size: cover;*/
     width: -300px;
   }
  };*/
+   /* @media all and (max-width: 800px){
+    .menu{
+      flex-direction: column;
+      height: auto;
+    } 
+  }  */

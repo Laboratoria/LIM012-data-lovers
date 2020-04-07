@@ -49,6 +49,14 @@ buscar.addEventListener('keyup', (evt) => {
 },
 false);
 
+// icono search
+const textoBuscado = document.getElementById('buscardor');
+const iconSearch = document.getElementById('iconBuscar');
+iconSearch.addEventListener('click', () => {
+  const filtroCampeon = filtrarNombre(listaTodos, textoBuscado);
+  resultado(filtroCampeon);
+})
+
 const buttonRoles = document.getElementById('buttonRoles');
 buttonRoles.addEventListener('click', () => {
   lista.style.display = 'none';
@@ -82,22 +90,6 @@ ordenar.addEventListener('change', (evt) => {
   }
 });
 
-// boton subir
-window.onscroll = () => {
-  // console.log(document.documentElement.scrollTop);
-  if (document.documentElement.scrollTop > 100) {
-    document.querySelector('.contenedorSubir').classList.add('show');
-  } else {
-    document.querySelector('.contenedorSubir').classList.remove('show');
-  }
-};
-document.querySelector('.contenedorSubir').addEventListener('click', () => {
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth', // para que le de un efecto suave al subir
-  });
-});
-
 
 // Descripcion de Campeon
 const crearVistaCampeon = (campeon) => {
@@ -125,5 +117,21 @@ vistaCampeones.forEach((campeones) => {
     lista.style.display = 'none';
     document.getElementById('cantidad').style.display = 'none';
     document.getElementById('pantalla3').style.display = 'block';
+  });
+});
+
+// boton subir
+window.onscroll = () => {
+  // console.log(document.documentElement.scrollTop);
+  if (document.documentElement.scrollTop > 100) {
+    document.querySelector('.contenedorSubir').classList.add('show');
+  } else {
+    document.querySelector('.contenedorSubir').classList.remove('show');
+  }
+};
+document.querySelector('.contenedorSubir').addEventListener('click', () => {
+  window.scrollTo({
+    top: 0, // para que suba - inicio
+    behavior: 'smooth', // para que le de un efecto suave al subir
   });
 });
