@@ -21,11 +21,11 @@
         
     </section>
 
-    <section class="selection letra div2" style="display: inline-flex; width: 100%;" >  
+    <section class="selection letra div2">  
       <p >
         <b class='busqueda'>ROLES:</b> 
         <select name="ROLES" id="roles" class='roles letra'>
-          <option value="-1">Todos</option>
+          <option value="todos">Todos</option>
           <option value="Marksman">Marksman - Tirador</option>   <!-- tirador -->
           <option value="Mage">Mage - Mago</option>
           <option value="Fighter">Fighter - Asesino</option>   <!-- Asesino -->
@@ -36,8 +36,8 @@
 
       <p >
         <b class='busqueda'>TOP 10:</b> 
-        <select name="TOP10" class='top letra' id ="top">
-          <option value="-1">Todos</option>
+        <select name="TOP10" id ="top" class='top letra'>
+          <option value="todos">Todos</option>
           <option value="HP"> HP - Nivel de Vida</option>
           <option value="RA">RA - Rango de Ataque</option>
         </select>
@@ -51,16 +51,11 @@
         </select>
       </p>
       
-      <!-- <p>
-        <input type="text" id="conteo" class="conteo">
-      </p> -->
     </section>
 
-    <section class="selection letra div3" style="display: inline-flex; width: 100%;" >
+    <section class="selection letra div3">
       <P>
-        <!-- <td height="380" colspan="3" valign="middle" class="bb"> -->
-         <img src="music.png" style="height: 50px; width: 50px;"/>
-        <!-- </td> -->
+        <img src="music.png" style="height: 50px; width: 50px;"/>
       </P>
       <p><audio controls autoplay>
            <source src="audio.mp3" type="audio/mpeg" >         
@@ -69,18 +64,18 @@
       <p>
          <input type="text" id="conteo" class="conteo">
       </p>
-     
      </section>
 
-     <div class="elemento-padre">
+     <div>
       <a href="#"></a><img src="imgbody/Eligecampeon.png" alt="" class="elemento-hijo"></a>
     </div>
 
 
-      <div id='container'>
+    <div id='container'>
 
-      </div>
+    </div>
   
-  <script src="main.js" type="module"></script>
+  <script src="main2.js" type="module"></script>
+  <!-- <script src="data.js" type="module"></script> -->
   </body>
   </html>

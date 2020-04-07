@@ -43,6 +43,7 @@
     padding-right: 20px;
     margin-left: -20px;
     font-size: 120%;
+    /* outline: none; */
 
     
   }
@@ -155,7 +156,9 @@ select {
     grid-template-columns: repeat(auto-fit, 250px);
     grid-auto-rows: 300px;
     grid-gap: 1rem;
-	justify-content: center;
+    justify-content: center;
+    display: inline-flex; 
+    width: 100%;
 }
 
 .div3{
@@ -163,10 +166,13 @@ select {
     grid-template-columns: repeat(auto-fit, 250px);
     grid-auto-rows: 300px;
     grid-gap: 1rem;
-	justify-content: center;
+    justify-content: center;
+    display: inline-flex; 
+    width: 100%;
 }
 
 .bodyCompleto{
     background: rgb(253, 247, 243);
   
 }
+
