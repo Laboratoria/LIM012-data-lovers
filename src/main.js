@@ -9,6 +9,7 @@ const arrayCampeones = Object.values(listaTodos);
 const lista = document.querySelector('#galeria'); // selecciono la parte donde voy a poner la informacion
 const pantalla2 = document.getElementById('pantalla2');
 const pantalla3 = document.getElementById('pantalla3');
+const pantalla4 = document.getElementById('pantalla4');
 const cantidadCampeones = document.getElementById('cantidad');
 
 // Descripcion de Campeon
@@ -86,6 +87,7 @@ iconSearch.addEventListener('click', () => {
   resultado(filtroCampeon);
 });
 
+// funcionalidad de boton role
 const buttonRoles = document.getElementById('buttonRoles');
 buttonRoles.addEventListener('click', () => {
   lista.classList.add('ocultar');
@@ -138,8 +140,32 @@ document.querySelector('.contenedorSubir').addEventListener('click', () => {
   });
 });
 
-
+// funcionalidad de boton habilidades
+const habilidades = document.getElementById('habilidades');
+habilidades.addEventListener('click', () => {
+  lista.classList.add('ocultar');
+  cantidadCampeones.classList.add('ocultar');
+  pantalla2.classList.add('ocultar');
+  pantalla4.classList.add('mostrar');
+});
+// promedio hp
 const hpCampeon = arrayCampeones.map((campeones) => campeones.stats);
 const totalHp = hpCampeon.reduce((sum, value) => (sum + value.hp), 0);
 const resultHp = totalHp / 134;
-console.log(resultHp);
+
+const moveCampeon = arrayCampeones.map((campeones) => campeones.stats);
+const totalMovespeed = moveCampeon.reduce((sum, value) => (sum + value.movespeed), 0);
+const resultMovespeed = totalMovespeed / 134;
+
+const attackCampeon = arrayCampeones.map((campeones) => campeones.stats);
+const totalAttack = attackCampeon.reduce((sum, value) => (sum + value.attackdamage), 0);
+const resultAttack = totalAttack / 134;
+
+const hpChampion = document.querySelector('#hpChampion');
+hpChampion.innerHTML = ` Champions Life Span: ${resultHp}`;
+
+const movespeedChampion = document.querySelector('#movespeedChampion');
+movespeedChampion.innerHTML = ` Average Movement Speed: ${resultMovespeed}`;
+
+const attackChampion = document.querySelector('#attackChampion');
+attackChampion.innerHTML = ` Average Attack Damage: ${resultAttack}`;
