@@ -6,99 +6,182 @@
     <title>Data Lovers</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Carter+One&family=Merienda:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css"/>
     <link rel="shortcut icon" href="imagenes/logo.png" >
+    <link rel="stylesheet" href="style.css"/>
   </head>
   <body id = "body" class="classBody">
   <!-- PRIMERA PANTALLA -->
-    <div id="firstScreen">
-      <header>
-        <input type="checkbox" id="btn-menu">
-        <label for="btn-menu"><img src="imagenes/icono1.png" width="30px" height="30px" alt=""></label>
-          <nav class="menu">
-              <ul>
-                <li><a href="">Logo</a></li>
-                <li><a href="https://lan.leagueoflegends.com/es-mx/how-to-play/">Juego</a></li>
-                <li><a href="https://league-of-legends-lol.fandom.com/es/wiki/Diccionario_de_Terminos_del_LoL">Lista de Términos</a></li>
-                <li><a href="https://lan.leagueoflegends.com/es-mx/news/game-updates/">Noticias</a></li>
-                <li><a href="">Sobre Nosotras</a></li>
-              </ul>
-          </nav>
-      </header>
-      <div class="bttnM">
-        <button id="btnMostrar" class="btnMostrar">Conoce a los campeones</button>
-      </div>
-    </div> 
-
-  <!-- SEGUNDA PANTALLA -->
-  <div id="secondScreen" class="classNone" class="classBody">
+  <div id="firstScreen">
     <header class="header">
-    <div class="wrapper">
-      <nav>
+      <div class="menu">
+      <div class="logo">
+        <a href="index.html"><img src="Imagenes/league-of-legends-icon-png-.png" witdth= "50px" height="50px" alt=""></a>
+      </div>
+      <input type="checkbox" id="btn-menu">
+      <label for="btn-menu"><img src="icono1.png" width="30px" height="30x" alt=""></label>
+      <nav class="nav">
         <ul>
-          <li><a href="#" id="topTeam">TOP 5 </a></li>
-          <li>
-            <button class='btnRoles' id='btnRoles'>Roles de Campeones</button>
-          </li>
+          <li><a href="https://euw.leagueoflegends.com/es-es/how-to-play/">game</a></li>
+          <li><a href="https://league-of-legends-lol.fandom.com/es/wiki/Diccionario_de_Terminos_del_LoL">list of terms</a></li>
+          <li><a href="https://esports.as.com/league-of-legends/">news</a></li>
+          <li><a href="">about us</a></li>
         </ul>
       </nav>
-    </div>
-  </header> 
-    <!-- ORDENAR -->
-     <section class=orderList>
-      <select name="order" id="order" class="styleList">
-        <option value="" selected disabled>Ordenar</option>
-        <option value="ascendente">Ascendente</option>
-        <option value="descendente">Descendente</option>
-      </select>
-        <!-- BUSCAR -->
-        <i class="fas fa-search searching"></i>
-        <input type="search" id="inputBuscar" placeholder="Buscar" class="styleList">        
-     </section><br><br>
-
-    <h1 class="title">UNIVERSO DE CAMPEONES</h1>
-    <div id="contentList"></div> 
-  </div> 
-  <!-- TERCERA PANTALLA -->
-  <div id='thirdScreen' class="classNone">
-    <section class='roles'>
-      <input type=image id='rolAssassin' value ='Assassin' src='imagenes/role_icon_assassin.png'>
-      <input type=image id='rolFighter' value ='Fighter' src='imagenes/role_icon_fighter.png'> 
-      <input type=image id='rolMage' value ='Mage' src='imagenes/role_icon_mage.png'> 
-      <input type=image id='rolMarksman' value ='Marksman' src='imagenes/role_icon_marksman.png'> 
-      <input type=image id='rolSupport' value ='Support' src='imagenes/role_icon_support.png'> 
-      <input type=image id='rolTank' value ='Tank' src='imagenes/role_icon_tank.png'>  
-    </section> 
-   
-      <div class="videoIntro" id="video">
-          <video src="imagenes/videoChampions.mp4" autoplay loop muted width="50%" height="50%"></video>
-      </div>     
-  
-    </div>
-  <!--CUARTA PANTALLA -ROL ASESINO-->
-  <div id='fourthScreen' class='fourthScreen classNone'>
-    <header class="header-container">
-      <div class="title-screen-asse">
-        <h2 class="title-asse">ASESINOS</h2>
+    </header>
+    <section class="section">
+      <div class="slider">
+        <div class="slider-content">
+          <img src="Imagenes/lol-league-of-Legends-logo.png" class="lol" alt="">
+          <button id="btnMostrar" class="btnMostrar">Meet the champions</button>
+        </div>
+      </div>
+    </section>
+    <footer class="footer">
+      <nav class="pie">
+        <a href="#">©Copyright 2020 by Ruth Campos & Rosmery Terry</a>
+      </nav>
+    </footer>
+  </div>
+  <!-- SEGUNDA PANTALLA -->
+  <div id="secondScreen" class="hide">
+    <header class="higher-container">
+      <div class="title-screen">
+        <div class="title-champions">
+          <h1>universe of <span class="big">champions</span></h1>
+        </div>
+        <div class="description-screen">
+          <p class="description">With over 134 champions, 
+            you will find the one that perfectly matches your playing style. Master one or master them all.</p>
+        </div>
       </div>
       <div class="ascend-descend">
-        <select name="order" id="orderRoles" class="select-order">
-          <option value="" selected disabled>Order</option>
-          <option value="ascendente">Ascendente</option>
-          <option value="descendente">Descendente</option>
+        <select name="order" id="order" class="select-order">
+          <option>Order</option>
+          <option value="ascendente">Ascending</option>
+          <option value="descendente">Descending</option>
         </select>
       </div>
       <div class="search-lol">
-        <input type="text" id="inputBuscarRoles" placeholder="Search" class="input-search">
+        <input type="text" id= "inputBuscar" class= "input-search" placeholder="Search">
       </div>
     </header>
-    <!-- <section class='asesino'> -->
-    <div id='contentListRol'></div> 
+    <section class="medium-container">
+      <div class="championList">
+        <div id="contentList">
+        </div>
+      </div>
+    </section>
+    <footer class="lower-container">
+      <button class="btnTop5" id="btnTop5">Top 5</button>
+      <button class="btnRoles" id="btnRoles">Roles of Champions</button>
+    </footer>
   </div>
-  
-  <div id="fifthScreen" class="classNone">
-    <div id="contentTop"></div>
-  </div>
+<!-- CALCULO AGREGADO -->
+<div id="calculationScreen" class="hide">
+  <header class="title-calculation">
+    <h2 class="title-top">top 5</h2>
+    <p class="description-top">defensive statistics</p>
+    <p class="description-top-phase">Maybe they outnumber me, but never in strength.</p>
+  </header>
+  <section class="stats-calculation">
+      <div class="stats">
+        <div id="contentTop">
+        </div>
+      </div>
+  </section>
+  <footer class="footer">
+    <nav class="pie">
+      <a href="#">©Copyright 2020 by Ruth Campos & Rosmery Terry</a>
+    </nav>
+  </footer>
+</div>
+<!-- TERCERA PANTALLA -->          
+<div id="thirdScreen" class="hide">
+  <header class=title-calculation>
+    <h3 class="title-top">champion roles</h3>
+    <p class="description-top-phase">Fight and you will be remembered as heroes, or you will die and you will be remembered as cowards!</p>
+  </header>
+  <section class="roles-firstScreen">
+    <div class="button-assassin">
+      <input type=image id="rolAssassin" value="Assassin" src="imagenes/role_icon_assassin.png">
+      <p>Assassin</p>
+    </div>
+    <div class="button-fighter">
+      <input type=image id="rolFighter" value="Fighter" src="imagenes/role_icon_fighter.png"> 
+      <p>Fighter</p>
+    </div>
+    <div class="button-mage">
+      <input type=image id="rolMage" value="Mage" src="imagenes/role_icon_mage.png"> 
+      <p>Mage</p>
+    </div>
+    <div class="button-marksman">
+      <input type=image id="rolMarksman" value="Marksman" src="imagenes/role_icon_marksman.png"> 
+      <p>Marksman</p>
+    </div>
+    <div class="button-support">
+      <input type=image id="rolSupport" value="Support" src="imagenes/role_icon_support.png"> 
+      <p>Support</p>
+    </div>
+    <div class="button-tank">
+      <input type=image id="rolTank" value="Tank" src="imagenes/role_icon_tank.png"> 
+      <p>Tank</p>
+    </div>
+    </section> 
+    <div class="videoIntro" id="video" class="hide">
+      <video src="imagenes/videoChampions.mp4" autoplay loop muted width="50%" height="50%"></video>
+    </div>
+</div>
+<!-- CUARTA PANTALLA -->
+<div id="fourthScreen" class="hide">
+  <header class="header-container">
+    <div class="title-screen-asse">
+      <p class="title-asse" id="title-fourthScreen"></p>
+    </div>
+    <div class="ascend-descend">
+      <select name="order" id="orderRoles" class="select-order">
+        <option value="" selected disabled>Order</option>
+        <option value="ascendente">Ascendente</option>
+        <option value="descendente">Descendente</option>
+      </select>
+    </div>
+    <div class="search-lol">
+      <input type="text" id="inputBuscarRoles" placeholder="Search" class="input-search">
+    </div>
+  </header>
+  <section class="medium-container">
+    <div class="championList">
+      <div id="contentListRol">
+      </div>
+    </div>
+  </section>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   <script src="main.js" type="module"></script>
   </body>
 </html>

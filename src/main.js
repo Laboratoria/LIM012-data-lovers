@@ -7,35 +7,47 @@ import {
   dataOrdenado,
 } from './data.js';
 
-const btnMostrar = document.getElementById('btnMostrar');
 const firstScreen = document.getElementById('firstScreen');
 const secondScreen = document.getElementById('secondScreen');
+const calculationScreen = document.getElementById('calculationScreen');
 const thirdScreen = document.getElementById('thirdScreen');
 const fourthScreen = document.getElementById('fourthScreen');
-const body = document.getElementById('body');
+
+// BOTON PARA MOSTRAR CAMPEONES
+const btnMostrar = document.getElementById('btnMostrar');
 btnMostrar.addEventListener('click', () => {
-  secondScreen.classList.toggle('classNone');
-  firstScreen.classList.add('classNone');
-  body.classList.remove('classBody');
+  firstScreen.classList.add('hide');
+  secondScreen.classList.remove('hide');
 });
 
+// VER LOS CAMPEONES
 const championList = data.data;
 const contentList = document.querySelector('#contentList');
+const contentTop = document.querySelector('#contentTop');
 const championArray = Object.values(championList);
 const listOnScreen = (dataLol) => {
   let result = '';
   dataLol.forEach((champion) => {
     const showChampions = `
-    <div class="container">
+    <div class="card-champions">
       <div class="card">
-      <img src=${champion.splash} class="imgSplash">
-      <h4 class="name">${champion.name}</h4>
-      <p>Attack: ${champion.info.attack}</p>
-      <p>Defense: ${champion.info.defense}</p>
-      <p>Magic: ${champion.info.magic}</p>
-      <p>Difficulty: ${champion.info.difficulty}</p>
+        <div class="img-box">
+          <img src=${champion.splash} class="galeria-img">
+        </div>
+        <div class="details">
+          <div class="content-info">
+            <img src=${champion.img} class="small-img">
+            <h4 class="title-info">"${champion.title}"</h4>
+            <p class="info-champions">Attack: ${champion.info.attack}</p>
+            <p class="info-champions">Defense: ${champion.info.defense}</p>
+            <p class="info-champions">Magic: ${champion.info.magic}</p>
+            <p class="info-champions">Difficulty: ${champion.info.difficulty}</p>
+            <p class="info-champions"><span class="title-tags">Tags: </span>${champion.tags}</p>
+          </div>
+        </div>
       </div>
-    </div>    
+      <p class="name-champions">${champion.name}</p>
+    </div>
       `;
     result += showChampions;
   });
@@ -43,132 +55,26 @@ const listOnScreen = (dataLol) => {
 };
 listOnScreen(championArray);
 
-
-/* ORDENAR CAMPEONES ASCENDENTE - DESCENDENTE */
+// ORDENAR CAMPEONES ASCENDENTE - DESCENDENTE
 const orderChampions = document.querySelector('#order');
 orderChampions.addEventListener('change', () => {
   const orderSelect = orderChampions.value;
   listOnScreen(orderData(championArray, 'name', orderSelect));
 });
-/* BUSCAR POR LETRA CADA CAMPEON */
+
+// BUSCAR POR LETRA CADA CAMPEON
 const enterText = document.querySelector('#inputBuscar');
 enterText.addEventListener('keyup', () => {
   const text = enterText.value.toLowerCase();
   listOnScreen(searchChampions(championArray, 'name', text));
   if (contentList.innerHTML === '') {
     contentList.innerHTML += `
-      <p>ERROR!!!</p>
+      <p>No results were found.</p>
       `;
   }
 });
 
-const contentListRol = document.querySelector('#contentListRol');
-const listOnScreenRol = (dataLol) => {
-  let result = '';
-  dataLol.forEach((champion) => {
-    const showChampions = `
-    <section>
-      <img src=${champion.splash} class="imgSplash">
-      <p class="name">${champion.name}</p><br><br>
-       <p class="tags">Tags:</span> ${champion.tags}</p><br>
-     </section> 
-      `;
-    result += showChampions;
-  });
-  contentListRol.innerHTML = result;
-};
-listOnScreenRol(championArray);
-/* ORDENAR CAMPEONES ASCENDENTE - DESCENDENTE */
-const orderRoles = document.querySelector('#orderRoles');
-orderRoles.addEventListener('change', () => {
-  const orderSelect = orderRoles.value;
-  listOnScreenRol(orderData(championArray, 'name', orderSelect));
-});
-/* BUSCAR POR LETRA CADA CAMPEON */
-const inputBuscarRoles = document.querySelector('#inputBuscarRoles');
-inputBuscarRoles.addEventListener('keyup', () => {
-  const text = inputBuscarRoles.value.toLowerCase();
-  listOnScreenRol(searchChampions(championArray, 'name', text));
-  if (contentListRol.innerHTML === '') {
-    contentListRol.innerHTML += `
-      <p>ERROR!!!</p>
-      `;
-  }
-});
-const btnRoles = document.getElementById('btnRoles');
-btnRoles.addEventListener('click', () => {
-  secondScreen.classList.toggle('classNone');
-  thirdScreen.classList.toggle('classNone');
-});
-/* ORDENAR POR ROL ASESINO */
-const video = document.getElementById('video');
-const mostrarAsesinos = document.getElementById('rolAssassin');
-mostrarAsesinos.addEventListener('click', () => {
-  video.classList.add('classNone');
-  thirdScreen.classList.remove('classNone');
-  fourthScreen.classList.remove('classNone');
-});
-const ordenarAsesinos = document.querySelector('#rolAssassin');
-ordenarAsesinos.addEventListener('click', () => {
-  const ordenar = ordenarAsesinos.value;
-  listOnScreenRol(orderFilterTags(championArray, 'tags', ordenar));
-});
-/* ORDENAR POR ROL LUCHADOR */
-const mostrarTiradores = document.getElementById('rolFighter');
-mostrarTiradores.addEventListener('click', () => {
-  thirdScreen.classList.remove('classNone');
-  fourthScreen.classList.remove('classNone');
-});
-const ordenarLuchador = document.querySelector('#rolFighter');
-ordenarLuchador.addEventListener('click', () => {
-  const ordenar = ordenarLuchador.value;
-  listOnScreenRol(orderFilterTags(championArray, 'tags', ordenar));
-});
-/* ORDENAR POR ROL MAGOS */
-const mostrarMagos = document.getElementById('rolMage');
-mostrarMagos.addEventListener('click', () => {
-  thirdScreen.classList.remove('classNone');
-  fourthScreen.classList.remove('classNone');
-});
-const ordenarMago = document.querySelector('#rolMage');
-ordenarMago.addEventListener('click', () => {
-  const ordenar = ordenarMago.value;
-  listOnScreenRol(orderFilterTags(championArray, 'tags', ordenar));
-});
-/* ORDENAR POR ROL TIRADORES */
-const mostrarTirador = document.getElementById('rolMarksman');
-mostrarTirador.addEventListener('click', () => {
-  thirdScreen.classList.remove('classNone');
-  fourthScreen.classList.remove('classNone');
-});
-const ordenarTirador = document.querySelector('#rolMarksman');
-ordenarTirador.addEventListener('click', () => {
-  const ordenar = ordenarTirador.value;
-  listOnScreenRol(orderFilterTags(championArray, 'tags', ordenar));
-});
-/* ORDENAR POR ROL SOPORTE */
-const mostrarSoporte = document.getElementById('rolSupport');
-mostrarSoporte.addEventListener('click', () => {
-  thirdScreen.classList.remove('classNone');
-  fourthScreen.classList.remove('classNone');
-});
-const ordenarSoporte = document.querySelector('#rolSupport');
-ordenarSoporte.addEventListener('click', () => {
-  const ordenar = ordenarSoporte.value;
-  listOnScreenRol(orderFilterTags(championArray, 'tags', ordenar));
-});
-/* ROL MAGOS */
-const mostrarTank = document.getElementById('rolTank');
-mostrarTank.addEventListener('click', () => {
-  thirdScreen.classList.remove('classNone');
-  fourthScreen.classList.remove('classNone');
-});
-const ordenarTank = document.querySelector('#rolTank');
-ordenarTank.addEventListener('click', () => {
-  const ordenar = ordenarTank.value;
-  listOnScreenRol(orderFilterTags(championArray, 'tags', ordenar));
-});
-/* PROMEDIO DE ESTADÍSTICAS DEFENSIVAS */
+// PROMEDIOS DE ESTADÍSTICAS DEFENSIVAS
 const obStats = (arr) => {
   const newArray = arr.map(ele => ({
     splash: ele.splash,
@@ -182,27 +88,183 @@ const obStats = (arr) => {
 };
 obStats(championArray);
 
-const contentTop = document.querySelector('#contentTop');
 const fTop = (dataLol) => {
   let result = '';
   dataLol.forEach((champion) => {
     const showChampions = `
-    <section>
-    <img src=${champion.splash} class="imgSplash">
-    <p class="name">${champion.name}</p>
-    <p>${champion.promedio}</p>
-    </section>    
+    <div class="card-top" id="top">
+    <img src=${champion.splash} class="galeria-top">
+    <p class="name-top">${champion.name}</p>
+    <p class="promedio-top">Average: ${champion.promedio}</p>
+    </div>    
       `;
     result += showChampions;
   });
   contentTop.innerHTML = result;
 };
+// necesita agregarle un identificador para llamarlo en CSS y llamar solo a ese elemento
+// línea 80
 
-const topTeam = document.getElementById('topTeam');
-const fifthScreen = document.getElementById('fifthScreen');
-topTeam.addEventListener('click', () => {
-  secondScreen.classList.toggle('classNone');
-  firstScreen.classList.add('classNone');
-  fifthScreen.classList.remove('classNone');
+// BOTON TOP 5
+const btnTop5 = document.getElementById('btnTop5');
+btnTop5.addEventListener('click', () => {
+  secondScreen.classList.add('hide');
+  calculationScreen.classList.remove('hide');
   fTop(dataOrdenado(obStats(championArray)));
+});
+
+// BOTON PARA MOSTRAR POR ROLES
+const btnRoles = document.getElementById('btnRoles');
+btnRoles.addEventListener('click', () => {
+  secondScreen.classList.add('hide');
+  thirdScreen.classList.remove('hide');
+});
+
+// CONTENEDOR DE ROLES
+const contentListRol = document.querySelector('#contentListRol');
+const listOnScreenRol = (dataLol) => {
+  let result = '';
+  dataLol.forEach((champion) => {
+    const showChampions = `
+    <div class="card-champions">
+      <div class="card">
+        <div class="img-box">
+          <img src=${champion.splash} class="galeria-img">
+        </div>
+        <div class="details">
+          <div class="content-info">
+            <img src=${champion.img} class="small-img">
+            <h4 class="title-info">"${champion.title}"</h4>
+            <p class="info-champions">Attack: ${champion.info.attack}</p>
+            <p class="info-champions">Defense: ${champion.info.defense}</p>
+            <p class="info-champions">Magic: ${champion.info.magic}</p>
+            <p class="info-champions">Difficulty: ${champion.info.difficulty}</p>
+            <p class="info-champions"><span class="title-tags">Tags: </span>${champion.tags}</p>
+          </div>
+        </div>
+      </div>
+      <p class="name-champions">${champion.name}</p>
+    </div>
+      `;
+    result += showChampions;
+  });
+  contentListRol.innerHTML = result;
+};
+listOnScreenRol(championArray);
+
+// ORDENAR CAMPEONES ASCENDENTE - DESCENDENTE - ROLES
+const orderRoles = document.querySelector('#orderRoles');
+orderRoles.addEventListener('change', () => {
+  const orderSelect = orderRoles.value;
+  listOnScreenRol(orderData(championArray, 'name', orderSelect));
+});
+
+// BUSCAR POR LETRA CADA CAMPEON - ROLES
+const inputBuscarRoles = document.querySelector('#inputBuscarRoles');
+inputBuscarRoles.addEventListener('keyup', () => {
+  const text = inputBuscarRoles.value.toLowerCase();
+  listOnScreenRol(searchChampions(championArray, 'name', text));
+  if (contentListRol.innerHTML === '') {
+    contentListRol.innerHTML += `
+      <p>No results were found.</p>
+      `;
+  }
+});
+
+// ORDENAR POR ROL ASESINO
+const video = document.getElementById('video');
+const showAssassin = document.getElementById('rolAssassin');
+showAssassin.addEventListener('click', () => {
+  video.classList.add('hide');
+  thirdScreen.classList.remove('hide');
+  fourthScreen.classList.remove('hide');
+  const titleAssassin = document.getElementById('rolAssassin').value;
+  if (titleAssassin) {
+    document.getElementById('title-fourthScreen').innerHTML = 'Assassin';
+  }
+});
+const orderAssassin = document.querySelector('#rolAssassin');
+orderAssassin.addEventListener('click', () => {
+  const order = orderAssassin.value;
+  listOnScreenRol(orderFilterTags(championArray, 'tags', order));
+});
+
+// ORDENAR POR ROL LUCHADOR
+const showFighter = document.getElementById('rolFighter');
+showFighter.addEventListener('click', () => {
+  thirdScreen.classList.remove('hide');
+  fourthScreen.classList.remove('hide');
+  const titleFighter = document.getElementById('rolFighter').value;
+  if (titleFighter) {
+    document.getElementById('title-fourthScreen').innerHTML = 'Fighter';
+  }
+});
+const orderFighter = document.querySelector('#rolFighter');
+orderFighter.addEventListener('click', () => {
+  const order = orderFighter.value;
+  listOnScreenRol(orderFilterTags(championArray, 'tags', order));
+});
+
+// ORDENAR POR ROL MAGOS
+const showMage = document.getElementById('rolMage');
+showMage.addEventListener('click', () => {
+  thirdScreen.classList.remove('hide');
+  fourthScreen.classList.remove('hide');
+  const titleMage = document.getElementById('rolMage').value;
+  if (titleMage) {
+    document.getElementById('title-fourthScreen').innerHTML = 'Mage';
+  }
+});
+const orderMage = document.querySelector('#rolMage');
+orderMage.addEventListener('click', () => {
+  const order = orderMage.value;
+  listOnScreenRol(orderFilterTags(championArray, 'tags', order));
+});
+
+// ORDENAR POR ROL TIRADORES
+const showMarksman = document.getElementById('rolMarksman');
+showMarksman.addEventListener('click', () => {
+  thirdScreen.classList.remove('hide');
+  fourthScreen.classList.remove('hide');
+  const titleMarksman = document.getElementById('rolMarksman').value;
+  if (titleMarksman) {
+    document.getElementById('title-fourthScreen').innerHTML = 'Marksman';
+  }
+});
+const orderMarksman = document.querySelector('#rolMarksman');
+orderMarksman.addEventListener('click', () => {
+  const order = orderMarksman.value;
+  listOnScreenRol(orderFilterTags(championArray, 'tags', order));
+});
+
+// ORDENAR POR ROL SOPORTE
+const showSupport = document.getElementById('rolSupport');
+showSupport.addEventListener('click', () => {
+  thirdScreen.classList.remove('hide');
+  fourthScreen.classList.remove('hide');
+  const titleSupport = document.getElementById('rolSupport').value;
+  if (titleSupport) {
+    document.getElementById('title-fourthScreen').innerHTML = 'Support';
+  }
+});
+const orderSupport = document.querySelector('#rolSupport');
+orderSupport.addEventListener('click', () => {
+  const order = orderSupport.value;
+  listOnScreenRol(orderFilterTags(championArray, 'tags', order));
+});
+
+// ORDENAR POR ROL TANQUE
+const showTank = document.getElementById('rolTank');
+showTank.addEventListener('click', () => {
+  thirdScreen.classList.remove('hide');
+  fourthScreen.classList.remove('hide');
+  const titleTank = document.getElementById('rolTank').value;
+  if (titleTank) {
+    document.getElementById('title-fourthScreen').innerHTML = 'Tank';
+  }
+});
+const orderTank = document.querySelector('#rolTank');
+orderTank.addEventListener('click', () => {
+  const order = orderTank.value;
+  listOnScreenRol(orderFilterTags(championArray, 'tags', order));
 });
