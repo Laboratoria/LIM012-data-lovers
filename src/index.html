@@ -19,9 +19,7 @@
         <nav>
           <ul class="menu">
             <li class="liMenu"><a href="#"><span id="1" class="off">Conoce a los atletas</span></a></li>
-            <th class="liMenu"><a href="#"><span id="2" class="off">Deportes</span></a></th>
-            <th class="liMenu"><a href="#"><span id="3" class="off">Medallero</span></a></th>
-            <th class="liMenu"><a href="#"><span id="4" class="off">Cronología de los Juegos</span></a></th>
+            <a href="#"><span id="medallas" class="off">Medallero</span></a>
           </ul>
         </nav>
         <div class="social"></div>
@@ -42,20 +40,19 @@
           </select>
           <th>NOMBRE</th>
           <th>EQUIPO</th>
-          <th>DEPORTE
-            <select id="optionSports">
-              <option value="">Seleccione un Deporte</option>
+          <th>DEPORTE</th>
+            <select class="optionSports" id="optionSports">
+              <option value="">Filtrar por Deporte</option>
               <option value="Archery">Archery</option>
               <option value="Athletics">Athletics</option>
               <option value="Badminton">Badminton</option>
               <option value="Baseball">Baseball</option>
             </select>
-          </th>
         </table>
         <div id="root"></div>
       </section>
-      <section>
-        <select id="opcionOlimpiadas">
+      <section id ="seccion-medallas" class="seccion-medallas borrar">
+        <select id="opcionOlimpiadas" class="opcOlimpiadas">
           <option data-ciudad="" data-anno="">Seleccione una Olimpiada</option>
           <option data-ciudad="Rio de Janeiro" data-anno="2016">Rio de Janeiro 2016</option>
           <option data-ciudad="Sochi" data-anno="2014">Sochi 2014</option>
@@ -67,13 +64,13 @@
           <option data-ciudad="Salt Lake City" data-anno="2002">Salt Lake City 2002</option>
           <option data-ciudad="Sydney" data-anno="2000">Sydney 2000</option>
         </select>
-        <select id="opcionPais">
+        <select id="opcionPais" class="opcOlimpiadas">
           <option data-pais="">Seleccione un País</option>
           <option data-pais="Italy">Italia</option>
-          <option data-pais="Germany">Mexico</option>
+          <option data-pais="Mexico">Mexico</option>
           <option data-pais="Australia">Australia</option>
         </select>
-        <input type="button" name="btnMostrarMedallas" id="btnMostrarMedallas" value="Mostrar Medallas"/>
+        <input type="button" name="btnMostrarMedallas" id="btnMostrarMedallas" class=" btnmedallas" value="Mostrar Medallas"/>
         <div id="rootMedallas"></div>
       </section>
       <section id="articulos" class="section margen-interno">

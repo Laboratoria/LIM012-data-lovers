@@ -34,6 +34,17 @@ a{
   border-radius: 10px 10px ;
   padding: 20px;
 } 
+
+.optionSports{
+      position: relative;
+      margin-left: 18%;
+      width: 35%;
+      color: #fff;
+      font-size: 15px;
+      background-color: #142850;
+      padding: 8px;
+}
+
    .btn{
     margin-left: 80%;
     color: #fff;
@@ -59,6 +70,37 @@ a{
     padding: 10px;
     background-color:rgb(248, 245, 245);
   }
+
+.seccion-medallas  {
+  position: relative;
+  margin-left: 30%;
+  margin-top: 3%;
+  width: 40%;
+  height: 70%;
+  background-color:rgba(218, 222, 231, 0.884);
+  border: solid 3px #142850;
+  border-radius: 3px 3px ;
+  padding: 20px;
+}
+    .opcOlimpiadas{
+      margin-top: 5%;
+      margin-left: 28%;
+      width: 45%;
+      color: #fff;
+      font-size: 15px;
+      background-color: #142850;
+      padding: 8px;
+    }
+
+    .btnmedallas{
+    margin-top: 5%;
+    margin-left: 38%;
+    color: #fff;
+    font-size: 14px;
+    background-color: #7493d1;
+    padding: 5px;
+   }
+      
  
 .margen-interno{
     padding: 0 50px;

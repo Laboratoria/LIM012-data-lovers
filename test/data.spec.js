@@ -1,8 +1,5 @@
 import {
-  athletesView,
-  ordenAs,
-  filtrarAtletasPorDeporte,
-
+  athletesView, ordenAs, filtrarAtletasPorDeporte,
 } from '../src/data.js';
 
 const input = [
