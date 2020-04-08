@@ -104,6 +104,10 @@ background-size: cover;*/
       transform: scale(1.1);
       transition: 0.5;  
     }
+    .selectStyle:hover{
+      transform: scale(1.1);
+      transition: 0.5;  
+    }
     .cantidadMostrada{
       background:transparent;
       color: rgba(235, 179, 24, 0.945);
@@ -315,6 +319,8 @@ background-size: cover;*/
     width: 200px;
     height: 90px;
     margin: 30px;
+    position: relative;
+    left: 10px;
   }
   .formBuscador{
     display:none;
@@ -330,14 +336,20 @@ background-size: cover;*/
     height: 30px;
     list-style: none;
     font-size: 20px;
-    margin: 8px;
+    margin: 10px;
+    position: relative;
+    right: 25px;
+    border-bottom: 1px solid rgba(245, 180, 5, 0.719);
   }
   .selectStyle {
     width: 90px;
     height: 30px;
     list-style: none;
     font-size: 20px;
-    margin: 8px;
+    margin: 0px;
+    position: relative;
+    right: 36px;
+    border-bottom: 1px solid rgba(245, 180, 5, 0.719);
   }
 
   .galeriaDeCampeones{
