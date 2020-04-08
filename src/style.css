@@ -287,6 +287,20 @@ a{
     .aside{
           flex-direction: column;
     }
+    .main-container {
+        flex-direction: column;
+    }
+    li {
+        font-size: 11px;
+        padding: 4%;
+    }
+    select{
+        font-size: 8px;
+    }
+    th{
+        font-size: 11px;
+        padding: 3%;
+    }
 }
 
 

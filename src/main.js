@@ -1,6 +1,5 @@
 import {
-  athletesView, ordenAs, filtrarAtletasPorDeporte, totalMedallasOro, totalMedallasPlata,
-  totalMedallasBronce,
+  athletesView, ordenAs, filtrarAtletasPorDeporte, totalMedallas,
 } from './data.js';
 import data from './data/atletas/atletas.js';
 
@@ -92,23 +91,25 @@ optionsMedallas.addEventListener('click', () => {
   const opcionPais = document.querySelector('#opcionPais');
 
   let ciudadSelec;
-  let annoSelec;
   let paisSelec;
 
 
   opcionOlimpiadas.addEventListener('change', (event) => {
     ciudadSelec = event.target.options[event.target.selectedIndex].getAttribute('data-ciudad');
-    annoSelec = event.target.options[event.target.selectedIndex].getAttribute('data-anno');
   });
 
   opcionPais.addEventListener('change', (event) => {
     paisSelec = event.target.options[event.target.selectedIndex].getAttribute('data-pais');
   });
 
+  const tipoOro = 'Gold';
+  const tipoPlata = 'Silver';
+  const tipoBronce = 'Bronze';
+
   btnMostrarMedallas.addEventListener('click', () => {
-    const medallasOro = totalMedallasOro(arrAtletas, paisSelec, ciudadSelec, annoSelec);
-    const medallasPlata = totalMedallasPlata(arrAtletas, paisSelec, ciudadSelec, annoSelec);
-    const medallasBronce = totalMedallasBronce(arrAtletas, paisSelec, ciudadSelec, annoSelec);
+    const medallasOro = totalMedallas(arrAtletas, paisSelec, ciudadSelec, tipoOro);
+    const medallasPlata = totalMedallas(arrAtletas, paisSelec, ciudadSelec, tipoPlata);
+    const medallasBronce = totalMedallas(arrAtletas, paisSelec, ciudadSelec, tipoBronce);
 
     document.getElementById('rootMedallas').innerHTML = `Oro ${medallasOro} `
       + `Plata ${medallasPlata} `
