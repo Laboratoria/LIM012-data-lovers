@@ -23,16 +23,27 @@
             <a href="#" class="barra" id="atletas">Atletas</a>
             <a href="#" class="barra" id="paises">Países</a>
             <a href="#" class="barra" id="deportes">Deportes</a>
+            <a href="#" class="barra" id="sedes">Sedes<br>Olímpicas</a>
       </nav>
 
       <main>
+        <div id="contenedorInicio" class="contenedorInicio">
             <div id="barraInicio" class="menuInicio">
               <img src="img/facemasks.jpg" alt="">
               <img src="img/rusia.jpg" alt="">
             </div>
 
             <div id="barraMedallero" class="menuMedallero hide">
-
+                <div id="contenedorOlimpiadas" class="contenedorOlimpiadas">
+                      <div id="summer" class="summer">
+                        <h2>JUEGO OLÍMPICOS VERANO</h2>
+                        <button id="btnSidney"><img src="img/sidney2000.png" alt="Sidney 2000"></button>
+                        <button id="btnAtenas"><img src="img/atenas2004.png" alt="Atenas 2004"></button>
+                        <button id="btnBeijing"><img src="img/beijing2008.png" alt="Beijing 2008"></button>
+                        <button id="btnLondres"><img src="img/londres2012.png" alt="Londres 2012"></button>
+                        <button id="btnRio"><img src="img/rio2016.png" alt="Rio 2016"></button>
+                      </div>
+                  
                     <div id="summer" class="summer">
                       <h2>Olimpiadas Verano</h2>
 
@@ -120,7 +131,41 @@
             </select>
             <div id="datageneral" class="menuAtletas hide">
             </div>
-            
+           
+                      <div id="winter" class="winter">
+                        <h2>JUEGOS OLÍMPICOS INVIERNO</h2>
+                        <button id="btnSalt"><img src="img/salt2002.png" alt="Salt Lake 2002"></button>
+                        <button id="btnTurin"><img src="img/turin2006.jpg" alt="Turin 2006"></button>
+                        <button id="btnVncvr"><img src="img/vncvr2010.png" alt="Vancouver 2010"></button>
+                        <button id="btnSochi"><img src="img/sochi2014.jpg" alt="Sochi 2014"></button>
+                        <button id="btnPyeong"><img src="img/pyeong2018.png" alt="Pyeong Chang 2018"></button>
+                      </div>
+                </div>
+            </div>
+
+          <div id="contenedorAtletas" class="contenedorAtletas hide">
+            <p>Atletas que participaron en Olímpiadas de Verano e Invierno<br>2000-2016</p>
+            <select id="filtroAz" class="filtroAz" name="OrdenAZ">
+              <option value="a-z">Ordenar⇅</option>
+              <option value="a-z">A-Z</option>
+              <option value="z-a">Z-A</option>
+            </select>
+            <button type="button" class="botonTop">Top↑</button>
+            <div id="datageneral" class="menuAtletas"></div>
+          </div>
+
+            <div id="barraSedes" class="menuSedes hide">
+                <a target="_blank" href="https://www.olympic.org/sydney-2000"><img src="img/sidney2000.png" alt="Sidney 2000"/></a>
+                <a target="_blank" href="https://www.athens2004.org"><img src="img/atenas2004.png" alt="Atenas 2004"/></a>
+                <a target="_blank" href="https://www.beijing-2008.org"><img src="img/beijing2008.png" alt="Beijing 2008"/></a>
+                <a target="_blank" href="https://www.olympic.org/london-2012"><img src="img/londres2012.png" alt="Londres 2012"/></a>
+                <a target="_blank" href="https://www.olympic.org/rio-2016"><img src="img/rio2016.png" alt="Rio 2016"/></a>
+                <a target="_blank" href="https://www.olympic.org/salt-lake-city-2002"><img src="img/salt2002.png" alt="Salt Lake 2002"/></a>
+                <a target="_blank" href="https://www.olympic.org/turin-2006"><img src="img/turin2006.jpg" alt="Turin 2006"/></a>
+                <a target="_blank" href="https://www.olympic.org/vancouver-2010"><img src="img/vncvr2010.png" alt="Vancouver 2010"/></a>
+                <a target="_blank" href="https://www.olympic.org/sochi-2014"><img src="img/sochi2014.jpg" alt="Sochi 2014"/></a>
+                <a target="_blank" href="https://www.olympic.org/pyeongchang-2018"><img src="img/pyeong2018.png" alt="Pyeong Chang 2018"/></a>
+             </div>
 
       </main>
 
@@ -128,6 +173,9 @@
         <div class="auspiciadores">
             <p>Auspiciadores:</p>
              <a title="" href="http://www.asics.com"><img src="img/asics.png" alt="Asics"/></a>
+             <a title="" href="http://www.asics.com"><img src="img/asics.png" alt="Asics"/></a>
+             <a title="" href="https://www.coca-cola.com/"><img src="img/cocacola.png" alt="Coca Cola"/></a>
+             <a title="" href="http://www.lining.com"><img src="img/lining.png" alt="Li-ning"/></a>
              <a title="" href="https://www.technogym.com"><img src="img/technogym.png" alt="Technogym"/></a>
              <a title="" href="http://www.lining.com"><img src="img/lining.png" alt="Li-ning"/></a>
         </div>

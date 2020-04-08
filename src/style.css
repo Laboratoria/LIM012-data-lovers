@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Questrial&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap');
+
 
 *{
   margin:0;
@@ -31,8 +33,10 @@ nav{
   background-size: cover;
   display: flex;
   justify-content: space-around;
-  font-size: 28px;
-  padding: 21px;
+  font-size: 1.5rem;
+  padding: 14px;
+  align-items: center;
+  text-align: center;
 }
 
 a{
@@ -66,6 +70,7 @@ a{
   margin-bottom: 5%;
   margin-left: 15%;
   margin-right: 15%;
+  margin-top: 3%;
 }
 
 .fila{
@@ -112,6 +117,96 @@ a{
   width: 5%;
 }
 
+.filtroAz{
+  font-size: 1.1rem;
+  font-family: 'Questrial', sans-serif;
+  color: #1D4E89;
+  padding: 0.5% 1.5%;
+  border: 1px solid #1D4E89;
+  outline: none;
+  margin-left: 16.5%;
+}
+
+.filtroAz:hover{
+  color: #1D4E89;
+}
+
+.botonTop{
+  float: right;
+  position: fixed;
+  right: 5%;
+  bottom: 30%;
+  width: 70px;
+  height: 70px;
+  border: 2px solid #179a13;
+  outline: none;
+  color: #179a13;
+  font-family: 'Questrial', sans-serif;
+  cursor: pointer;
+  background: none;
+  font-size: 1.3rem;
+}
+
+.contenedorAtletas p{
+  font-family: 'Oswald', sans-serif;
+  font-size: 180%;
+  font-weight: bolder;
+  color: #1D4E89;
+  text-align: center;
+  margin: 4% 0 4%;
+}
+
+.menuMedallero{
+  min-height: 70vh;
+}
+
+.menuMedallero h2{
+  margin: 5%;
+  margin-bottom: 10%;
+  font-size: 180%;
+  font-weight: bolder;
+  font-family: 'Oswald', sans-serif;
+  color: #1D4E89;
+}
+
+.contenedorOlimpiadas{
+  display: flex;
+}
+
+.winter{
+  width: 55%;
+  margin: 4%;
+  text-align: center;
+  align-items: center;
+}
+
+.summer{
+  width: 55%;
+  margin: 4%;
+  text-align: center;
+  align-items: center;
+}
+
+.menuMedallero button{
+  border: none;
+  background: none;
+  width: 40%;
+}
+
+.menuMedallero img{
+  width: 70%;
+}
+
+.menuSedes{
+  margin: 7%;
+  text-align: center;
+}
+
+.menuSedes img{
+  width: 15%;
+  padding: 3%;
+}
+
 footer{
   display: flex;
   background-color: #1D4E89;
@@ -121,4 +216,16 @@ footer{
 
 .auspiciadores img{
   width: 7%;
+}
+
+  margin-right: 10%;
+  float: right;
+  cursor: pointer;
+}
+
+footer p{
+  font-size: 1.2rem;
+  font-family: 'Questrial', sans-serif;
+  color: #ffff;
+  margin-left: 1%;
 }
