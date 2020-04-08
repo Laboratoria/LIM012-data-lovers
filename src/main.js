@@ -1,10 +1,10 @@
-/* eslint-disable no-restricted-syntax */
 
 import lol from './data/lol/lol.js';
 import { filtrarNombre, ordenarCampeones, filtrandoRoles } from './data.js';
 
 const listaTodos = lol.data; // en esta variable guardo los objetos de la data
 const arrayCampeones = Object.values(listaTodos);
+
 
 const lista = document.querySelector('#galeria'); // selecciono la parte donde voy a poner la informacion
 const pantalla2 = document.getElementById('pantalla2');
@@ -56,17 +56,10 @@ const resultado = (data) => {
       lista.classList.add('ocultar');
       pantalla3.classList.add('mostrar');
     });
-
-    // agregar aqui el evento
   });
 };
 resultado(listaTodos);
 
-
-// const vistaCampeones = document.querySelectorAll('.casillaCampeon');
-// vistaCampeones.forEach((campeones) => {
-
-// });
 
 // buscando en el input
 const buscar = document.querySelector('#buscador');
@@ -136,3 +129,9 @@ document.querySelector('.contenedorSubir').addEventListener('click', () => {
     behavior: 'smooth', // para que le de un efecto suave al subir
   });
 });
+
+
+const hpCampeon = arrayCampeones.map((campeones) => campeones.stats);
+const totalHp = hpCampeon.reduce((sum, value) => (sum + value.hp), 0);
+const resultHp = totalHp / 134;
+console.log(resultHp);
