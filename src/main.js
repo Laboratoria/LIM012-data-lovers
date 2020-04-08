@@ -53,7 +53,7 @@ const resultado = (data) => {
       const nombreId = evt.path[1].id;
       // console.log(listaTodos[nombreId]);
       crearVistaCampeon(listaTodos[nombreId]);
-      lista.classList.add('ocultar');
+      lista.innerHTML = '';
       pantalla3.classList.add('mostrar');
     });
   });
@@ -77,6 +77,14 @@ buscar.addEventListener('keyup', (evt) => {
   resultado(filtroCampeon);
 },
 false);
+
+// icono search
+const textoBuscado = document.getElementById('buscardor');
+const iconSearch = document.getElementById('iconBuscar');
+iconSearch.addEventListener('click', () => {
+  const filtroCampeon = filtrarNombre(listaTodos, textoBuscado);
+  resultado(filtroCampeon);
+});
 
 const buttonRoles = document.getElementById('buttonRoles');
 buttonRoles.addEventListener('click', () => {
@@ -125,7 +133,7 @@ window.onscroll = () => {
 };
 document.querySelector('.contenedorSubir').addEventListener('click', () => {
   window.scrollTo({
-    top: 0,
+    top: 0, // para que suba - inicio
     behavior: 'smooth', // para que le de un efecto suave al subir
   });
 });
