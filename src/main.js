@@ -34,7 +34,7 @@ const resultado = (data) => {
   lista.innerHTML = '';
   // chequear la estructura de la data, si no es un array pasa a Object.values
   const checkData = Array.isArray(data) ? data : Object.values(data);
-  cantidadCampeones.innerHTML = `Cantidad de Campeones:  ${checkData.length}`;
+  cantidadCampeones.innerHTML = `Number Of Champions:  ${checkData.length}`;
   checkData.forEach((campeones) => {
     const casilla = document.createElement('div');
     const foto = document.createElement('img');
