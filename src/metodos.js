@@ -1,9 +1,9 @@
 
 import dataLol from './data/lol/lol.js';
 
-let listadoHeroes = []; //Lista de heroes filtrados por roles y por top
-let listadoHeroesMostrar = []; //Son los heroes que se van a filtrar visualmente y
-                            //va tomar como base los heroes filtrados
+// let listadoHeroes = []; //Lista de heroes filtrados por roles y por top
+// let listadoHeroesMostrar = []; //Son los heroes que se van a filtrar visualmente y
+                              //va tomar como base los heroes filtrados
 
 const nombreAscendente = ( a, b) => { //Funcion para ordenar .name
    if ( a.name < b.name ){
@@ -49,9 +49,9 @@ const RAorden = ( a, b) => { //Funcion para ordenar .stats.attackrange descenden
              //este metodo esta declarando un parametro
 export const dataFiltradoRol = (rol)=> {  //rol nombre de mi parametro que se ha seleccionado
 
-    let listadoTop = document.getElementById("top");//Obteniendo el elemento Select que tiene el id top
+    // let listadoTop = document.getElementById("top");//Obteniendo el elemento Select que tiene el id top
    
-    listadoHeroes = [];
+    let listadoHeroes = [];
     //bucle va recorrer dataLol.data, const heroes va almacenar valores por cada vuelta
    
     for (const heroes in dataLol.data){ //Ahri .tags es una propiedad tipo lista.
@@ -63,20 +63,49 @@ export const dataFiltradoRol = (rol)=> {  //rol nombre de mi parametro que se ha
       }
     }
     //Voy a ejecutar un metodo(HP - Nivel de Vida.hp);
-    dataFiltradoTop(listadoTop.value);
+    // dataFiltradoTop(listadoTop.value);
+
+    // dataFiltradoTop(top,orden);
+    return listadoHeroes;
   }
 
-export const dataFiltradoTop = (top) => {
+export const dataFiltradoTop = (listadoHeroes,top) => {
     //Obteniendo el elemento orden
-    let orden = document.getElementById("orden");
+    // let orden = document.getElementById("orden");
+
+    let listadoHeroesMostrar = [];
 
     if (top != 'todos'){//Si top es diferente a todos, es hp si cumple
       let listTop = [];
   
       if (top == "HP")
-        listTop = listadoHeroes.sort(HPorden);//va ordenar por HP
+        listTop = [].slice.call(listadoHeroes).sort(
+            (a,b)=>{
+              if ( a.stats.hp < b.stats.hp ){
+                return 1;
+            
+              }
+              if ( a.stats.hp > b.stats.hp ){
+                return -1;
+              }
+              return 0;
+            }
+
+        );//va ordenar por HP
       else
-        listTop = listadoHeroes.sort(RAorden);//va ordenar por RA  
+        listTop = [].slice.call(listadoHeroes).sort(
+          (a,b)=>{
+            if ( a.stats.attackrange < b.stats.attackrange[0]){
+              return 1;
+          
+            }
+            if ( a.stats.attackrange > b.stats.attackrange[1]){
+              return -1;
+            }
+            return 0;
+          }
+
+        );//va ordenar por RA  
    
       listadoHeroesMostrar = listTop.slice(0, 10);
     }
@@ -85,18 +114,19 @@ export const dataFiltradoTop = (top) => {
       listadoHeroesMostrar = listadoHeroes;
     }
 
-    dataFiltradoOrden(orden.value);//Primer valor que se carga AZ
+    return listadoHeroesMostrar;
+    // dataFiltradoOrden(orden);//Primer valor que se carga AZ
   }                                //al momento de levantar la página
 
-export const dataFiltradoOrden = (orden) => {
+export const dataFiltradoOrden = (listadoHeroesMostrar,orden) => {
     let stringTemplate = '';
-    let container = document.getElementById('container');
+    // let container = document.getElementById('container');
     let listOrden = [];
 
     if (orden == "AZ")
-      listOrden = listadoHeroesMostrar.sort(nombreAscendente);
+      listOrden = [].slice.call(listadoHeroesMostrar).sort(nombreAscendente);
     else
-      listOrden = listadoHeroesMostrar.sort(nombreDescendente);
+      listOrden = [].slice.call(listadoHeroesMostrar).sort(nombreDescendente);
 
     for (const item in listOrden)
     {    //stringTemplatecadena que va contener los héroes en html 
@@ -107,17 +137,20 @@ export const dataFiltradoOrden = (orden) => {
             <p id='title'class="titleCamp">${listOrden[item].title}</p>
           </div>`
     }
+
+    return stringTemplate;
             //inyectar html dentro del container
-    container.innerHTML= stringTemplate;
-    mostrarConteo(listOrden.length); //length es el tamaño de la lista
+    // container.innerHTML= stringTemplate;
+    // mostrarConteo(listOrden.length); //length es el tamaño de la lista
   }
 
-const mostrarConteo =(cantidad) =>{
-  let conteo = document.getElementById('conteo');
-  let mensaje =  `Cantidad:  ${cantidad}`;
-  conteo.value = mensaje;
+export const mostrarConteo = (listadoHeroesMostrar) =>{
+//   let conteo = document.getElementById('conteo');
+  let mensaje =  `Cantidad:  ${listadoHeroesMostrar.length}`;
+  return mensaje;
+//   conteo.value = mensaje;
 }
 
-dataFiltradoRol('todos'); //Es el primer método que se ejecuta por defecto cuando se carga la página
+// dataFiltradoRol('todos'); //Es el primer método que se ejecuta por defecto cuando se carga la página
 
 
