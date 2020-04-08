@@ -53,7 +53,7 @@ const resultado = (data) => {
       const nombreId = evt.path[1].id;
       // console.log(listaTodos[nombreId]);
       crearVistaCampeon(listaTodos[nombreId]);
-      lista.classList.add('ocultar');
+      lista.innerHTML = '';
       pantalla3.classList.add('mostrar');
     });
 

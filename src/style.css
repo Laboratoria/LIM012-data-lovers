@@ -17,7 +17,12 @@ body::-webkit-scrollbar-thumb {
   display: flex;
   flex-flow: column nowrap;
   font-family: 'Spectral', serif; 
-}   
+  background-image: url(https://www.educo.org/Educo/media/Imagenes/Blog/9-cosas-que-los-padres-deberian-saber-sobre-League-of-Legends-destacada.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+}
   /*fondo de pantalla
 background-image: url(https://i.pinimg.com/originals/7c/f9/28/7cf92868b50c428c103210ae3391be02.jpg);
 background-repeat: no-repeat;
@@ -30,7 +35,7 @@ background-attachment:contain;
 background-size: cover;*/
 
   .header{
-    background:rgba(10, 10, 26, 0.616);
+    background:rgba(10, 10, 26, 0.384);
     display: flex;
     flex-flow: column nowrap;
   }
@@ -40,8 +45,7 @@ background-size: cover;*/
       align-items: center;
       width: auto;
       height: 145px;
-      background: #061D29; /*background:rgba (0,0,0,.1) - transparencia de color negro*/
-
+      background: rgba(3, 28, 41, 0.767);  /*background:rgba (0,0,0,.1) - transparencia de color negro*/
       border-bottom: 3px solid rgba(235, 178, 24, 0.719);
 
     }
@@ -50,25 +54,29 @@ background-size: cover;*/
           height: 120px;
           display: flex;
           align-items: flex-end;
+          position: relative;
+          left: 63px;
         }
         .formBuscador{
           background: #C4C4C4;
           width: 300px;
           height: 41px;
           margin: 68px;
-          border-radius: 5px;;
+          border-radius: 5px;
+          position: relative;
+          left: 638px;
         } /*para enlazar iconos <i class:"" aria-hidden="true></i>"*/
         .iconBuscar{
           width: 46px;
           height: 44px;
           position: relative;
-          left: 62px;
+          left: 690px;
           border-radius: 6px;
           background: #C4C4C4;
         }
 
     .menu{
-      background:rgb(63, 65, 66);
+      background:rgba(63, 65, 66, 0.973);
       display: flex;
       flex-flow: row nowrap;
       align-items: center;
@@ -97,7 +105,7 @@ background-size: cover;*/
       transition: 0.5;  
     }
     .cantidadMostrada{
-      background:#31302E;
+      background:transparent;
       color: rgba(235, 179, 24, 0.945);
       font-family: serif;
       font-size: 21px;
@@ -107,7 +115,7 @@ background-size: cover;*/
       margin-right: 30px;
     }
   main{
-    background:#31302E;
+    background:rgba(49, 48, 46, 0.699);
   }
 
     .lista{
@@ -146,7 +154,7 @@ background-size: cover;*/
         .imagenCampeon{
           width: 290px;
           height: 300px;
-          border: 4px solid rgba(235, 178, 24, 0.719);
+          border: 2px solid rgba(235, 178, 24, 0.719);
           border-radius: 5px;
           box-shadow: 3px 10px 17px 3px rgba(0,0,0,0.75);
         }
