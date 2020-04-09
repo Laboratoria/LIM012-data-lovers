@@ -552,7 +552,9 @@ body {
               }
 /* TERCERA PANTALLA - ROLES DE CAMPEONES - ICONOS Y VIDEO */
 .roles-firstScreen{
-  background: #fff;
+  /* background: #fff; */
+  /* background: #685762; */
+  background-image: url("9.jpg");
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
@@ -599,6 +601,7 @@ body {
       font-size: 3.5em;
       font-family: 'Merienda', cursive; 
       text-transform: uppercase;
+      
     }
     #contentListRol{
       background: #fff;
