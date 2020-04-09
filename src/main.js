@@ -73,7 +73,12 @@ enterText.addEventListener('keyup', () => {
       `;
   }
 });
-
+// BOTON REGRESAR A PANTALLA PRINCIPAL
+const regresar = document.getElementById('back');
+regresar.addEventListener('click', () => {
+  secondScreen.classList.toggle('hide');
+  firstScreen.classList.toggle('hide');
+});
 // PROMEDIOS DE ESTADÍSTICAS DEFENSIVAS
 const obStats = (arr) => {
   const newArray = arr.map(ele => ({
@@ -119,7 +124,12 @@ btnRoles.addEventListener('click', () => {
   secondScreen.classList.add('hide');
   thirdScreen.classList.remove('hide');
 });
-
+// BOTON REGRESAR A LA SEGUNDA PANTALLA
+const regresarS = document.getElementById('backB');
+regresarS.addEventListener('click', () => {
+  thirdScreen.classList.toggle('hide');
+  secondScreen.classList.toggle('hide');
+});
 // CONTENEDOR DE ROLES
 const contentListRol = document.querySelector('#contentListRol');
 const listOnScreenRol = (dataLol) => {
