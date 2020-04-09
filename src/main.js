@@ -194,6 +194,8 @@ const showFighter = document.getElementById('rolFighter');
 showFighter.addEventListener('click', () => {
   thirdScreen.classList.remove('hide');
   fourthScreen.classList.remove('hide');
+  video.classList.add('hide');
+
   const titleFighter = document.getElementById('rolFighter').value;
   if (titleFighter) {
     document.getElementById('title-fourthScreen').innerHTML = 'Fighter';
@@ -210,6 +212,7 @@ const showMage = document.getElementById('rolMage');
 showMage.addEventListener('click', () => {
   thirdScreen.classList.remove('hide');
   fourthScreen.classList.remove('hide');
+  video.classList.add('hide');
   const titleMage = document.getElementById('rolMage').value;
   if (titleMage) {
     document.getElementById('title-fourthScreen').innerHTML = 'Mage';
@@ -226,6 +229,7 @@ const showMarksman = document.getElementById('rolMarksman');
 showMarksman.addEventListener('click', () => {
   thirdScreen.classList.remove('hide');
   fourthScreen.classList.remove('hide');
+  video.classList.add('hide');
   const titleMarksman = document.getElementById('rolMarksman').value;
   if (titleMarksman) {
     document.getElementById('title-fourthScreen').innerHTML = 'Marksman';
@@ -242,6 +246,7 @@ const showSupport = document.getElementById('rolSupport');
 showSupport.addEventListener('click', () => {
   thirdScreen.classList.remove('hide');
   fourthScreen.classList.remove('hide');
+  video.classList.add('hide');
   const titleSupport = document.getElementById('rolSupport').value;
   if (titleSupport) {
     document.getElementById('title-fourthScreen').innerHTML = 'Support';
@@ -258,6 +263,7 @@ const showTank = document.getElementById('rolTank');
 showTank.addEventListener('click', () => {
   thirdScreen.classList.remove('hide');
   fourthScreen.classList.remove('hide');
+  video.classList.add('hide');
   const titleTank = document.getElementById('rolTank').value;
   if (titleTank) {
     document.getElementById('title-fourthScreen').innerHTML = 'Tank';
