@@ -73,12 +73,7 @@ enterText.addEventListener('keyup', () => {
       `;
   }
 });
-// BOTON REGRESAR A PANTALLA PRINCIPAL
-const regresar = document.getElementById('back');
-regresar.addEventListener('click', () => {
-  secondScreen.classList.toggle('hide');
-  firstScreen.classList.toggle('hide');
-});
+
 // PROMEDIOS DE ESTADÍSTICAS DEFENSIVAS
 const obStats = (arr) => {
   const newArray = arr.map(ele => ({
@@ -98,9 +93,16 @@ const fTop = (dataLol) => {
   dataLol.forEach((champion) => {
     const showChampions = `
     <div class="card-top" id="top">
-    <img src=${champion.splash} class="galeria-top">
-    <p class="name-top">${champion.name}</p>
-    <p class="promedio-top">Average: ${champion.promedio}</p>
+      <div class="cardTwo">
+        <div class="img-boxTwo">
+          <img src=${champion.splash} class="galeria-top">
+        </div>
+        <div class="details-two">
+            <h6 class="title-average">Average</h6>
+            <p class="promedio-top">${champion.promedio}</p>
+        </div>
+      </div>
+      <p class="name-top">${champion.name}</p>
     </div>    
       `;
     result += showChampions;
@@ -124,12 +126,21 @@ btnRoles.addEventListener('click', () => {
   secondScreen.classList.add('hide');
   thirdScreen.classList.remove('hide');
 });
-// BOTON REGRESAR A LA SEGUNDA PANTALLA
-const regresarS = document.getElementById('backB');
-regresarS.addEventListener('click', () => {
-  thirdScreen.classList.toggle('hide');
+
+// BOTON BACK PRIMERA PANTALLA
+const back = document.getElementById('backOne');
+back.addEventListener('click', () => {
+  secondScreen.classList.toggle('hide');
+  firstScreen.classList.toggle('hide');
+});
+
+// BOTON BACK SEGUNDA PANTALLA - TOP 5
+const backTwo = document.getElementById('backTwo');
+backTwo.addEventListener('click', () => {
+  calculationScreen.classList.toggle('hide');
   secondScreen.classList.toggle('hide');
 });
+
 // CONTENEDOR DE ROLES
 const contentListRol = document.querySelector('#contentListRol');
 const listOnScreenRol = (dataLol) => {
@@ -181,6 +192,13 @@ inputBuscarRoles.addEventListener('keyup', () => {
   }
 });
 
+// BOTON BACK SEGUNDA PANTALLA
+const backThree = document.getElementById('backThree');
+backThree.addEventListener('click', () => {
+  thirdScreen.classList.toggle('hide');
+  secondScreen.classList.toggle('hide');
+});
+
 // ORDENAR POR ROL ASESINO
 const video = document.getElementById('video');
 const showAssassin = document.getElementById('rolAssassin');
@@ -202,10 +220,9 @@ orderAssassin.addEventListener('click', () => {
 // ORDENAR POR ROL LUCHADOR
 const showFighter = document.getElementById('rolFighter');
 showFighter.addEventListener('click', () => {
+  video.classList.add('hide');
   thirdScreen.classList.remove('hide');
   fourthScreen.classList.remove('hide');
-  video.classList.add('hide');
-
   const titleFighter = document.getElementById('rolFighter').value;
   if (titleFighter) {
     document.getElementById('title-fourthScreen').innerHTML = 'Fighter';
@@ -220,9 +237,9 @@ orderFighter.addEventListener('click', () => {
 // ORDENAR POR ROL MAGOS
 const showMage = document.getElementById('rolMage');
 showMage.addEventListener('click', () => {
+  video.classList.add('hide');
   thirdScreen.classList.remove('hide');
   fourthScreen.classList.remove('hide');
-  video.classList.add('hide');
   const titleMage = document.getElementById('rolMage').value;
   if (titleMage) {
     document.getElementById('title-fourthScreen').innerHTML = 'Mage';
@@ -237,9 +254,9 @@ orderMage.addEventListener('click', () => {
 // ORDENAR POR ROL TIRADORES
 const showMarksman = document.getElementById('rolMarksman');
 showMarksman.addEventListener('click', () => {
+  video.classList.add('hide');
   thirdScreen.classList.remove('hide');
   fourthScreen.classList.remove('hide');
-  video.classList.add('hide');
   const titleMarksman = document.getElementById('rolMarksman').value;
   if (titleMarksman) {
     document.getElementById('title-fourthScreen').innerHTML = 'Marksman';
@@ -254,9 +271,9 @@ orderMarksman.addEventListener('click', () => {
 // ORDENAR POR ROL SOPORTE
 const showSupport = document.getElementById('rolSupport');
 showSupport.addEventListener('click', () => {
+  video.classList.add('hide');
   thirdScreen.classList.remove('hide');
   fourthScreen.classList.remove('hide');
-  video.classList.add('hide');
   const titleSupport = document.getElementById('rolSupport').value;
   if (titleSupport) {
     document.getElementById('title-fourthScreen').innerHTML = 'Support';
@@ -271,9 +288,9 @@ orderSupport.addEventListener('click', () => {
 // ORDENAR POR ROL TANQUE
 const showTank = document.getElementById('rolTank');
 showTank.addEventListener('click', () => {
+  video.classList.add('hide');
   thirdScreen.classList.remove('hide');
   fourthScreen.classList.remove('hide');
-  video.classList.add('hide');
   const titleTank = document.getElementById('rolTank').value;
   if (titleTank) {
     document.getElementById('title-fourthScreen').innerHTML = 'Tank';

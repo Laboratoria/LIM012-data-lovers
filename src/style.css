@@ -2,6 +2,7 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+  text-decoration: none;
 }
 .hide{
   display: none;
@@ -14,70 +15,76 @@ body {
   background-color: #fff;
   background-size: cover;
 }
-  .header{
+  header{
     background: #232020;
-    display: flex;
-    flex-flow: column nowrap;
+    width: 100%;
   }
       #btn-menu {
-          display: none;
+        display: none;
       }
       header label {
-          display: none;
-          width: 30px;
-          height: 30px;
-          padding: 10px;
+        display: none;
+        width: 30px;
+        height: 30px;
+        padding: 10px;
+        border-right:1px solid #fff;
       }
       header label:hover {
           cursor: pointer;
           background: rgba(224, 221, 20, 0.3);
       }
-    .menu{
-      display: flex;
-      flex-flow: row nowrap;
-      height: 60px;
-      align-items: center;
+    .menu ul{
+      margin:0;
+      list-style:none;
+      padding:0;
+      display:flex;
     }
-      .logo{
-        display: flex;
-        flex: 1 1 auto;
-        flex-direction: column;
+      .menu li{
+        flex-grow: 1;
+        text-align: center;
+        border-right: 1px solid #fff;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        align-self: center;
       }
-        .logo a{
-          font-size: 30px;
-          align-self: center;
-        }
-        .nav{
-          flex: 4 1 auto;
-        }
-        .nav ul {
-          margin:0;
-          list-style:none;
-          padding:0;
-          display:flex;
+      .menu li:hover {
+        background: rgb(15, 190, 221);
       }
-        .nav li {
-            flex-grow: 1;
-            text-align: center;
-            border-left: 1px solid #fff;
-          }
-        .nav li:hover {
-            background: rgb(212, 175, 55);
-        }
-        .nav li a {
+      .menu li a {
+        display: block;
+        padding: 15px 20px;
+        color: #fff;
+        text-decoration: none;
+      }
+@media (max-width:750px){
+        header label{
             display: block;
-            padding: 15px 20px;
-            color: #fff;
-            text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-      }
+            width: 50px;
+            height: 50px;
+        }
+        .menu {
+            position: absolute;
+            background: rgb(37, 35, 35); 
+            width: 70%;        
+            margin-left: -70%;
+            transition: all 0.5s;
+        }
+        .menu ul {
+            flex-direction: column;
+        }
+        .menu li {
+            border-top: 1px solid #fff;
+            align-self: auto;
+        }
+        #btn-menu:checked ~ .menu {
+            margin:0;
+        }
+    } 
   .section{
     display: flex;
     flex-flow: row wrap;
   }
     .slider{
-      position: relative;
       width: 100%;
       height: 100vh;
       background-color: #f5f5f5;
@@ -134,7 +141,7 @@ body {
             font:inherit;line-height:1;
             margin:.5em;
             padding:1em 2em
-          }
+          } 
 @keyframes slider{
   0%{
     background-image: url('imagenes/slider1.jpg');
@@ -170,54 +177,13 @@ body {
       background: #e6af2e;
       width: 300px;
     }
-@media screen and (max-width: 750px){
-  header label{
-      display: block;
-      width: 70px;
-      height: 50px;
-  }
-  .nav {
-      position: absolute;
-      background: rgb(37, 35, 35); 
-      width: 70%;        
-      margin-left: -70%;
-      transition: all 0.5s;
-  }
-  .nav ul {
-      flex-direction: column;
-  }
-  .nav li {
-      border-top: 1px solid #fff;
-  }
-  #btn-menu:checked ~ .nav {
-      margin:0;
-  }
-  .section{
-    flex-direction: column;
-  }
-  .lol{
-    width: 400px;
-    height: 200px;
-  }
-} 
-@media screen and (max-width: 600px){
-  .lol{
-    width: 300px;
-    height: 150px;
-  }
-}
-@media screen and (max-width: 400px){
-  .lol{
-    width: 150px;
-    height: 100px;
-  }
-}
+
 /* SEGUNDA PANTALLA */
 .higher-container{
   display: flex;
   background: #ffffff;
   width: 100%;
-  height: 260px;
+  height: 300px;
   align-items: center;
   justify-content: center;
 }
@@ -345,7 +311,6 @@ body {
           position: relative;
           width: 100%;
           height: 360px;
-
         }
         .img-box{
           position: relative;
@@ -490,14 +455,14 @@ body {
   flex-flow: column nowrap;
   padding-top: 0px;
   width: 100%;
-  height: 180px;
+  height: 260px;
 }
   .title-top{
     font-size: 5em;
     font-family: 'Merienda', cursive;   
     text-transform: uppercase;
-    color: #343434;  /* prueba */
-}
+    color: #343434;
+  }
   .description-top{
     font-family: 'Noto Sans JP', sans-serif;
     font-weight: 500;
@@ -509,75 +474,123 @@ body {
     font-family: 'Noto Sans JP', sans-serif;
     font-size: 1em;
     font-weight: 300;
-}
+  }
 .stats-calculation{
   display: flex;
   justify-content: center;
-  background: yellow;
   width: 100%;
+  padding: 20px;
   }
     .stats{
       display: flex;
       flex-wrap: wrap;      
       justify-content: center;
-      background: red;
-      width: 90%;
+      width: 100%;
     }
         #contentTop{
-          background: blue;
           display: flex;
-          /* flex-wrap: wrap-reverse; */
           flex-wrap: wrap;
-          /* flex-direction: row; */
-          width: 80%;
-          }
+          width: 100%;
+          justify-content: center;
+        }
             .card-top{
-              background: pink;
               max-width: 30%;
               height: 400px;
               margin: 10px;
               padding: 10px;
               flex: auto;
             }
-              .galeria-top{
-                background: skyblue;
+              .cardTwo{
+                position: relative;
                 width: 100%;
-                height: 350px;
+                height: 360px;
               }
+                .img-boxTwo{
+                  position: relative;
+                  max-width: 100%;
+                  height: 360px;
+                  overflow: hidden;
+                }
+                .galeria-top{
+                  max-width: 100%;
+                  height: 360px;
+                }
+              .details-two{
+                display: flex;
+                position: absolute;
+                justify-content: center;
+                flex-direction: column;
+                align-content: center;
+                height: 86px;
+                width: 100px;
+                color: white;
+                box-sizing: content-box;
+                padding-top: 15px;
+                font-size: 11px;
+                top: 0px;
+                left: 0px;
+                bottom: 0px;
+                right: 0px;
+                background: rgba(9, 214, 214, 0.8);
+              }
+              .details-two:after{
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 0;
+                height: 0;
+                border-bottom: 13px solid rgba(195, 195, 195, 0.9); 
+                border-left: 50px solid transparent; 
+                border-right: 50px solid transparent; 
+              }
+                .title-average{
+                  font-family: 'Noto Sans JP', sans-serif;
+                  font-weight: 500;
+                  font-size: 1.5em;
+                  text-align: center;   
+                  color: #343434;
+                }
+                .promedio-top{
+                  font-family: 'Noto Sans JP', sans-serif;
+                  font-weight: 300;
+                  font-size: 1.5em;
+                  text-align: center;   
+                  color: #fff;
+                }
               .name-top{
-                background: springgreen;
-              }
-              .promedio-top{
-                background: tomato;
+                font-size: 1.5em;
+                font-family: 'Merienda', cursive;      
+                text-align: center;   
+                color: #fbb901;
               }
 /* TERCERA PANTALLA - ROLES DE CAMPEONES - ICONOS Y VIDEO */
 .roles-firstScreen{
-  /* background: #fff; */
-  /* background: #685762; */
-  background-image: url("9.jpg");
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
   flex-direction: row;
+  align-items: center;
   height: 150px;
 }
-  .button-assassin{
-    background: red;
+  .button-roles{
     display: flex;
     justify-content: center;
     flex-direction: column;
   }
+  .title-roles{
+    text-align: center;
+    color: #343434;
+    font-family: 'Merienda', cursive; 
+  }
+    .input-roles{
+      outline: none;
+    }
 .videoIntro{
   position: relative;
   text-align: center;
   background: #fff;
 }
-
-
-
-
-
-
 /* CUARTA PANTALLA - FILTRAR ROLES DE CAMPEONES */
 .header-container{
   background: #fff;
@@ -597,11 +610,10 @@ body {
     align-items: center;
   }
     .title-asse{
-      color: black;
+      color: #343434;
       font-size: 3.5em;
       font-family: 'Merienda', cursive; 
       text-transform: uppercase;
-      
     }
     #contentListRol{
       background: #fff;
@@ -611,41 +623,10 @@ body {
       width: 100%;
       justify-content: center;
     }
-
-
+/* BOTONES ADICIONALES */
 i{
-  font-size: 40px;
+  padding-top: 25px;
+  font-size: 50px;
+  color: #343434;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

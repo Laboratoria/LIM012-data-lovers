@@ -4,30 +4,27 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Data Lovers</title>
+    <script src="https://kit.fontawesome.com/79502f8f9e.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Carter+One&family=Merienda:wght@400;700&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="imagenes/logo.png" >
-    <script src="https://kit.fontawesome.com/995e334b50.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css"/>
   </head>
   <body>
   <!-- PRIMERA PANTALLA -->
   <div id="firstScreen">
-    <header class="header">
-      <div class="menu">
-      <div class="logo">
-        <a href="index.html"><img src="Imagenes/league-of-legends-icon-png-.png" witdth= "50px" height="50px" alt=""></a>
-      </div>
-      <input type="checkbox" id="btn-menu">
-      <label for="btn-menu"><img src="icono1.png" width="30px" height="30x" alt=""></label>
-      <nav class="nav">
-        <ul>
-          <li><a href="https://euw.leagueoflegends.com/es-es/how-to-play/">game</a></li>
-          <li><a href="https://league-of-legends-lol.fandom.com/es/wiki/Diccionario_de_Terminos_del_LoL">list of terms</a></li>
-          <li><a href="https://esports.as.com/league-of-legends/">news</a></li>
-          <li><a href="">about us</a></li>
-        </ul>
-      </nav>
+    <header>
+        <input type="checkbox" id="btn-menu">
+        <label for="btn-menu"><img src="imagenes/icono.png" width="30px" height="30px"></label>
+          <nav class="menu">
+            <ul>
+              <li><a href="index.html"><img src="imagenes/logoI.png" width= "40px" height="40px" alt="Logo"></a></li>
+              <li><a href="https://euw.leagueoflegends.com/es-es/how-to-play/">game</a></li>
+              <li><a href="https://league-of-legends-lol.fandom.com/es/wiki/Diccionario_de_Terminos_del_LoL">list of terms</a></li>
+              <li><a href="https://esports.as.com/league-of-legends/">news</a></li>
+              <li><a href="">about us</a></li>
+            </ul>
+          </nav>
     </header>
     <section class="section">
       <div class="slider">
@@ -50,14 +47,14 @@
         <div class="title-champions">
           <h1>universe of <span class="big">champions</span></h1>
         </div>
-        <div id="back">
-          <i class="fas fa-chevron-circle-left"></i>
-        </div>
         <div class="description-screen">
           <p class="description">With over 134 champions, 
             you will find the one that perfectly matches your playing style. Master one or master them all.</p>
         </div>
-      </div>
+        <div id="backOne">
+          <i class="fas fa-chevron-circle-left"></i>
+        </div>
+        </div>
       <div class="ascend-descend">
         <select name="order" id="order" class="select-order">
           <option>Order</option>
@@ -86,6 +83,9 @@
     <h2 class="title-top">top 5</h2>
     <p class="description-top">defensive statistics</p>
     <p class="description-top-phase">Maybe they outnumber me, but never in strength.</p>
+    <div id="backTwo">
+      <i class="fas fa-chevron-circle-left"></i>
+    </div>
   </header>
   <section class="stats-calculation">
       <div class="stats">
@@ -101,40 +101,40 @@
 </div>
 <!-- TERCERA PANTALLA -->          
 <div id="thirdScreen" class="hide">
-  <header class=title-calculation>
+  <header class="title-calculation">
     <h3 class="title-top">champion roles</h3>
     <p class="description-top-phase">Fight and you will be remembered as heroes, or you will die and you will be remembered as cowards!</p>
-    <div id="backB">
+    <div id="backThree">
       <i class="fas fa-chevron-circle-left"></i>
     </div>
   </header>
   <section class="roles-firstScreen">
-    <div class="button-assassin">
-      <input type=image id="rolAssassin" value="Assassin" src="imagenes/role_icon_assassin.png">
-      <p>Assassin</p>
+    <div class="button-roles">
+      <input type=image id="rolAssassin" class="input-roles" value="Assassin" src="imagenes/role_icon_assassin.png">
+      <p class="title-roles">Assassin</p>
     </div>
-    <div class="button-fighter">
-      <input type=image id="rolFighter" value="Fighter" src="imagenes/role_icon_fighter.png"> 
-      <p>Fighter</p>
+    <div class="button-roles">
+      <input type=image id="rolFighter" class="input-roles" value="Fighter" src="imagenes/role_icon_fighter.png"> 
+      <p class="title-roles">Fighter</p>
     </div>
-    <div class="button-mage">
-      <input type=image id="rolMage" value="Mage" src="imagenes/role_icon_mage.png"> 
-      <p>Mage</p>
+    <div class="button-roles">
+      <input type=image id="rolMarksman" class="input-roles" value="Marksman" src="imagenes/role_icon_marksman.png"> 
+      <p class="title-roles">Marksman</p>
     </div>
-    <div class="button-marksman">
-      <input type=image id="rolMarksman" value="Marksman" src="imagenes/role_icon_marksman.png"> 
-      <p>Marksman</p>
+    <div class="button-roles">
+      <input type=image id="rolMage" class="input-roles" value="Mage" src="imagenes/role_icon_mage.png"> 
+      <p class="title-roles">Mage</p>
     </div>
-    <div class="button-support">
-      <input type=image id="rolSupport" value="Support" src="imagenes/role_icon_support.png"> 
-      <p>Support</p>
+    <div class="button-roles">
+      <input type=image id="rolSupport" class="input-roles" value="Support" src="imagenes/role_icon_support.png"> 
+      <p class="title-roles">Support</p>
     </div>
-    <div class="button-tank">
-      <input type=image id="rolTank" value="Tank" src="imagenes/role_icon_tank.png"> 
-      <p>Tank</p>
+    <div class="button-roles">
+      <input type=image id="rolTank" class="input-roles" value="Tank" src="imagenes/role_icon_tank.png"> 
+      <p class="title-roles">Tank</p>
     </div>
     </section> 
-    <div class="videoIntro" id="video" class="hide">
+    <div class="videoIntro" id="video">
       <video src="imagenes/videoChampions.mp4" autoplay loop muted width="50%" height="50%"></video>
     </div>
 </div>
@@ -162,33 +162,6 @@
     </div>
   </section>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   <script src="main.js" type="module"></script>
   </body>
 </html>
