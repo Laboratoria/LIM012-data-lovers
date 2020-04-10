@@ -61,10 +61,16 @@ const resultado = (data) => {
       pantalla3.classList.add('mostrar');
       pantalla4.classList.add('ocultar');
     });
+    pantalla4.classList.add('ocultar');
   });
 };
 resultado(listaTodos);
 
+// boton todos
+const btnAll = document.getElementById('todos');
+btnAll.addEventListener('click', () => {
+  resultado(listaTodos);
+});
 
 // Evento cerrar Modal
 const cerrar = document.getElementById('cerrar');
@@ -105,6 +111,7 @@ buttonRoles.addEventListener('click', () => {
   cantidadCampeones.classList.add('mostrar');
   pantalla2.classList.add('mostrar');
   pantalla4.innerHTML = '';
+
 });
 
 
@@ -119,6 +126,7 @@ for (let i = 0; i < inputsRoles.length; i += 1) {
     // pantalla2.classList.add('ocultar');
     // document.getElementById('pantalla2').style.display = 'none';
     pantalla2.innerHTML = '';
+    pantalla4.classList.add('ocultar');
   });
 }
 
@@ -134,6 +142,7 @@ ordenar.addEventListener('change', (evt) => {
     resultado(dataOrdenada);
   }
   cantidadCampeones.classList.add('mostrar');
+  pantalla4.classList.add('ocultar');
 });
 
 // boton subir
