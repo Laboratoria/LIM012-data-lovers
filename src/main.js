@@ -162,10 +162,10 @@ const totalAttack = attackCampeon.reduce((sum, value) => (sum + value.attackdama
 const resultAttack = totalAttack / 134;
 
 const hpChampion = document.querySelector('#hpChampion');
-hpChampion.innerHTML = ` Champions Life Span: ${resultHp}`;
+hpChampion.innerHTML = ` Champions Life Span: "${resultHp}"`;
 
 const movespeedChampion = document.querySelector('#movespeedChampion');
-movespeedChampion.innerHTML = ` Average Movement Speed: ${resultMovespeed}`;
+movespeedChampion.innerHTML = ` Average Movement Speed: "${resultMovespeed}"`;
 
 const attackChampion = document.querySelector('#attackChampion');
-attackChampion.innerHTML = ` Average Attack Damage: ${resultAttack}`;
+attackChampion.innerHTML = ` Average Attack Damage: "${resultAttack}"`;
