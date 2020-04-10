@@ -159,6 +159,7 @@ background-size: cover;*/
       
     }
       .galeriaDeCampeones{
+        background-color: red;
         display: flex;
         flex-wrap: row nowrap;
         flex: 1 1 auto;
