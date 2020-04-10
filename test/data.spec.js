@@ -1,4 +1,4 @@
-import {dataFiltradoRol,dataFiltradoTop,dataFiltradoOrden,mostrarConteo} from '../src/metodos.js';
+import {dataFiltradoRol,dataFiltradoTop,dataFiltradoOrden,mostrarConteo} from '../src/data.js';
   
 describe('dataFiltradoRol', () => {
   it('should return []', () => {

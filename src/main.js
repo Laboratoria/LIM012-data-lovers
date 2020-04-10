@@ -1,6 +1,6 @@
 /******************************Eventos*************************************/
 /*en el mismo nivel .data*/
-import {dataFiltradoRol,dataFiltradoTop,dataFiltradoOrden,mostrarConteo} from './metodos.js';
+import {dataFiltradoRol,dataFiltradoTop,dataFiltradoOrden,mostrarConteo} from './data.js';
 
 let listadoHeroes = []; 
 let listadoHeroesMostrar = [];

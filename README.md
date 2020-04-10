@@ -1,6 +1,7 @@
-# Data Lovers
+![Caratula](https://raw.githubusercontent.com/Erikaquispejanampa/LIM012-data-lovers/master/src/img/caratula.png)
 
-## Índice
+
+##                                          Índice
 
 * [1. Preámbulo](#1-preámbulo)
 * [2. Resumen del proyecto](#2-resumen-del-proyecto)
@@ -16,68 +17,25 @@
 
 ## 1. Preámbulo
 
-Según [Forbes](https://www.forbes.com/sites/bernardmarr/2018/05/21/how-much-data-do-we-create-every-day-the-mind-blowing-stats-everyone-should-read),
-el 90% de la data que existe hoy ha sido creada durante los últimos dos años.
-Cada día generamos 2.5 millones de terabytes de datos, una cifra sin
-precedentes.
-
-No obstante, los datos por sí mismos son de poca utilidad. Para que esas
-grandes cantidades de datos se conviertan en **información** fácil de leer para
-los usuarios, necesitamos entender y procesar estos datos. Una manera simple de
-hacerlo es creando _interfaces_ y _visualizaciones_.
-
-En la siguiente imagen, podrás ver cómo con la data que que se ve en la parte
-izquierda se puede construir una interfaz amigable y entendible por el usuario
-al lado derecho.
-
-![json-interfaz](https://lh4.googleusercontent.com/Tn-RPXS26pVvOTdUzRT1KVaJ-_QbFs9SpcGLxSPE43fgbHaXtFgMUInuDt7kV41DkT1j8Tt29V0LxQW7SMtC6digOIhfTXSBKdwI08wUwhD3RAqlwy0hjfmhZ2BFe91mtmCSEqysfgk)
+Antes de empezar,  queremos explicar que los juegos de estrategia son videojuegos que requieren que el jugador ponga en práctica sus habilidades de planeamiento y pensamiento para maniobrar. 
+A su vez, mencionar y destacar el uso de páginas web dinámicas que tenemos actualmente, en donde los visitantes pueden interactuar con la información mostrada. Para nuestro proyecto nos hemos enfocado en una página web  informativa del juego reconocido mundialmente, League of Legends. 
+Encontrará más información en [Wikipedia](https://es.wikipedia.org/wiki/Videojuego_de_estrategia) y [Cefire](http://cefire.edu.gva.es/file.php/1/Comunicacion_y_apertura/B3_PaginaWeb/pgina_web_esttica_vs_dinmica.html).
 
 ## 2. Resumen del proyecto
 
-En este proyecto **construirás una _página web_ para visualizar un
-_conjunto (set) de datos_** que se adecúe a lo que descubras que tu usuario
-necesita.
+El objetivo de este proyecto es la creación y el desarrollo de una página web dinámica, que está orientada a la información de los campeones de League of Legends. Durante el desarrollo de interacción, el usuario irá aprendiendo de manera sencilla y amena la información de los campeones, de acuerdo a cada búsqueda en  particular. El proyecto se ha desarrollado utilizando  HTML puro, CSS y Javascript basada en data de formato Json.  
 
-Como entregable final tendrás una página web que permita **visualizar la data,
-filtrarla, ordenarla y hacer algún cálculo agregado**. Con cálculo agregado
-nos referimos a distintos cálculos que puedes hacer con la data para mostrar
-información aún más relevante para los usuarios (promedio, el valor máximo
-o mínimo, etc).
+Cómo [League of Legends](https://euw.leagueoflegends.com/es-es/) es un juego de estrategia, nuestro proyecto [“LOLQuery”](https://erikaquispejanampa.github.io/LIM012-data-lovers/src/)
+sirve de  ayuda para los jugadores, porque permite visualizar las características esenciales de los campeones. Por lo tanto, la selección de búsqueda según las opciones que brinda LOLQuery,  facilitan al usuario ya que pueden prever  una estrategia antes de empezar la partida.
 
-Esta vez te proponemos una serie de datos de diferentes _temáticas_ para que
-explores y decidas con qué temática te interesa trabajar. Hemos elegido
-específicamente estos sets de datos porque creemos que se adecúan bien a esta
-etapa de tu aprendizaje.
-
-Una vez que definas tu área de interés, buscar entender quién es tu usuario
-y qué necesita saber o ver exactamente; luego podrás construir la interfaz que
-le ayude a interactuar y entender mejor esos datos.
-
-Estos son datos que te proponemos:
-
-* [Pokémon](src/data/pokemon/pokemon.json):
-  En este set encontrarás una lista con los 251 Pokémon de la región de Kanto
-  y Johto, junto con sus respectivas estadísticas usadas en el juego
-  [Pokémon GO](http://pokemongolive.com).
-   - [Investigación con jugadores de Pokémon Go](/src/data/pokemon/README.md)
+Para este proyecto hemos escogido esta data:
 
 * [League of Legends - Challenger leaderboard](src/data/lol/lol.json):
   Este set de datos muestra la lista de campeones en una liga del
   juego League of Legends (LoL).
    - [Investigación con jugadores de LoL](/src/data/lol/README.md)
 
-* [Atletas Olímpicos](src/data/atletas/atletas.json).
-  Este set nos proporciona la lista de los atletas que ganaron medallas en las
-  olímpiadas de invierno y verano del siglo XXI.
-   - [Investigación con interesados en atletas olímpicos](/src/data/atletas/README.md)
-
-<!---
-¡Too much information para comenzar (Diego)!
-Una opción serían cálculos estadísticos como el promedio, el máximo o el mínimo,
-por ejemplo, si tenemos una colección que representa a un grupo de personas,
-y cada persona está representada como un _objeto_ con una _propiedad_ `altura`,
-podríamos elegir calcular la altura promedio en el grupo entre otras cosas.
---->
+Como entregable final tendrás una página web que permita visualizar la data, filtrar, ordenar y hacer algún cálculo agregado. Con cálculo agregado nos referimos a distintos cálculos que puedes hacer con la data para mostrar información aún más relevante para los usuarios (promedio, el valor máximo o mínimo, etc).
 
 ## 3. Objetivos de aprendizaje
 
@@ -135,10 +93,7 @@ y de equipo.
 
 ## 4. Consideraciones generales
 
-* Este proyecto se debe resolver en duplas.
-* El proyecto será entregado subiendo tu código a GitHub (commit/push) y la
-  interfaz será desplegada usando [GitHub Pages](https://pages.github.com/).
-* Tiempo para completarlo: Toma como referencia 4 semanas.
+* La interfaz será desplegada usando [https://erikaquispejanampa.github.io/LIM012-data-lovers/src/](https://erikaquispejanampa.github.io/LIM012-data-lovers/src/).
 
 ## 5. Criterios de aceptación mínimos del proyecto
 
@@ -151,14 +106,10 @@ contándonos cómo fue tu proceso de diseño y cómo crees que el producto resue
 el problema (o problemas) que tiene tu usuario.
 
 ### Historias de usuario
-
-Una vez que entiendas las necesidades de tus usuarios, escribe las [Historias
-de Usuario](https://es.wikipedia.org/wiki/Historias_de_usuario) que representen
-todo lo que el usuario necesita hacer/ver. Las **Historias de Usuario** deben
-ser el resultado de tu proceso de investigación o _research_ de tus usuarios.
-
-Asegúrate de incluir la definición de terminado (_definition of done_) y los
-Criterios de Aceptación para cada una.
+* ![1. Historia de Usuario 1](https://raw.githubusercontent.com/Erikaquispejanampa/LIM012-data-lovers/master/src/HU/HU01.JPG)
+* ![2. Historia de Usuario 2](https://raw.githubusercontent.com/Erikaquispejanampa/LIM012-data-lovers/master/src/HU/HU02.JPG)
+* ![3. Historia de Usuario 3](https://raw.githubusercontent.com/Erikaquispejanampa/LIM012-data-lovers/master/src/HU/HU03.JPG)
+* ![4. Historia de Usuario 4](https://raw.githubusercontent.com/Erikaquispejanampa/LIM012-data-lovers/master/src/HU/HU04.JPG)
 
 En la medida de lo posible, termina una historia de usuario antes de pasar
 a la siguiente (Cumple con Definición de Terminado + Criterios de Aceptación).
@@ -174,25 +125,12 @@ iteraciones que hagas, que las subas a tu repositorio y las menciones en tu
 
 #### Prototipo de alta fidelidad
 
-Lo siguiente es diseñar tu Interfaz de Usuario (UI por sus siglas en inglés -
-_User Interface_). Para eso debes aprender a utilizar alguna herramienta de
-diseño visual. Nosotros te recomendamos [Figma](https://www.figma.com/) que es
-una herramienta que funciona en el navegador y, además, puedes crear una cuenta
-gratis. Sin embargo, eres libre de utilizar otros editores gráficos como
-Illustrator, Photoshop, PowerPoint, Keynote, etc. Recuerda utilizar la
-[identidad gráfica](https://drive.google.com/open?id=1eeWFqrWpy-OYOH4EHDckFGunyrm9iNeE)
-correspondiente a cada set de datos que elijas.
-
-El diseño debe representar el _ideal_ de tu solución. Digamos que es lo que
-desearías implementar si tuvieras tiempo ilimitado para trabajar. Además, tu
-diseño debe seguir los fundamentos de _visual design_.
+Nosotras usamos [Figma LOLQuery](https://www.figma.com/file/u9RLvGmtt4u1hnD2z0rpgM/LOLQuery---Alta-Fidelidad).
 
 #### Testeos de usabilidad
 
-Durante el reto deberás hacer _tests_ de usabilidad con distintos usuarios, y
-en base a los resultados, deberás iterar tus diseños. Cuéntanos
-qué problemas de usabilidad detectaste a través de los _tests_ y cómo los
-mejoraste en tu propuesta final.
+Con el prototipo de baja fidelidad hicimos feedback de usabilidad con compañeras, determinamos dos problemas a resolver, el primero fue la opción campeones para filtrar los roles, era redundante ya que la compañera a la cual hicimos el testeo se quedaba en ese paso sin saber qué más hacer, debido a eso concluimos filtrar por la opción Roles y posteriormente el segundo problema fue la opción de  los más fuertes, ya que la búsqueda era ambigua, nuestra compañera no comprendía la relación de  los más fuertes con los demás roles, es por ello que determinamos encasillarlo en un filtro llamado TOP10.
+
 
 ### Implementación de la Interfaz de Usuario (HTML/CSS/JS)
 
@@ -305,13 +243,13 @@ correspondiente.
 Por ejemplo, si "descomentamos" la siguiente línea:
 
 ```js
-// import data from './data/pokemon/pokemon.js';
+//import dataLol from './data/lol/lol.js';
 ```
 
 La línea quedaría así:
 
 ```js
-import data from './data/pokemon/pokemon.js';
+import dataLol from './data/lol/lol.js';
 ```
 
 Y ahora tendríamos la variable `data` disponible en el script `src/main.js`.
