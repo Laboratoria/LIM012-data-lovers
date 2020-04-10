@@ -5,7 +5,7 @@
 } 
 body::-webkit-scrollbar {
 	width: 20px;
-	background: rgba(8, 21, 29, 0.87);
+	background: rgba(1, 15, 24, 0.651);
 }
 
 body::-webkit-scrollbar-thumb {
@@ -33,6 +33,24 @@ background-attachment: fixed;
 background-position: center;
 background-attachment:contain;
 background-size: cover;*/
+
+/* .video-responsive {
+  position: relative;
+  padding-bottom: 56.25%; /* 16/9 ratio */
+  /* padding-top: 30px; /* IE6 workaround*/
+  /* height: 0;
+  overflow: hidden;
+  }
+  
+  .video-responsive iframe,
+  .video-responsive object,
+  .video-responsive embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; */
+  /* }  */
 
   .header{
     background:rgba(10, 10, 26, 0.384);
@@ -74,6 +92,18 @@ background-size: cover;*/
           border-radius: 6px;
           background: #C4C4C4;
         }
+        /* .iconBuscar label::after {
+          left: 0;
+          bottom: 0;
+          opacity: 0;
+          content: "";
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          transition: transform 0.3s ease;
+          border-bottom: 0.125rem solid #07cbe9;
+      } */
+      
 
     .menu{
       background:rgba(63, 65, 66, 0.973);
@@ -312,7 +342,35 @@ background-size: cover;*/
     height: 66px;
   }
 }
-
+.sectionAvage{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin: 40px;
+}
+.styleAverage{
+  width: 500px;
+  height: 53px;
+  margin: 25px;
+  padding: 10px;
+  background: rgba(3, 28, 41, 0.767);
+  color: #C4C4C4;
+  border-bottom: 3px solid rgba(235, 178, 24, 0.719);
+  border-radius: 6px;
+  text-align: center;
+  font-size: 21px;
+  line-height: 36px;
+  text-shadow: -1px 2px 4px rgba(39, 38, 38, 0.856);
+  font-family: serif;
+  box-shadow: 1px 10px 17px 3px rgba(0,0,0,0.75);
+}
+.mapLol{
+  width: 488px;
+  box-shadow: 1px 10px 17px 3px rgba(0,0,0,0.75);
+  border-radius: 8px;
+}
 /*MOVIL*/
 @media all and (max-width: 400px){
   .logo{
@@ -363,6 +421,17 @@ background-size: cover;*/
   }*/
 };
 
+/* .styleAverage{
+  margin: 25px;
+  padding: 10px;
+  background: rgba(3, 28, 41, 0.767);
+  border-bottom: 3px solid rgba(235, 178, 24, 0.719);
+  border-radius: 6px;
+  text-align: center;
+  text-shadow: -1px 2px 4px rgb(25, 23, 23);
+  font-family: serif;
+  box-shadow: 1px 10px 17px 3px rgba(0,0,0,0.75);
+} */
  /* Boton del Search - MOVIL 
   body{
     margin: 0%;
