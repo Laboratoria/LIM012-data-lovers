@@ -56,7 +56,9 @@ const resultado = (data) => {
       crearVistaCampeon(listaTodos[nombreId]);
       lista.innerHTML = '';
       pantalla3.classList.add('mostrar');
+      pantalla4.classList.add('ocultar');
     });
+    pantalla4.classList.add('ocultar');
   });
 };
 resultado(listaTodos);
@@ -93,6 +95,7 @@ buttonRoles.addEventListener('click', () => {
   lista.classList.add('ocultar');
   cantidadCampeones.classList.add('mostrar');
   pantalla2.classList.add('mostrar');
+  pantalla4.classList.add('ocultar');
 });
 
 
@@ -107,6 +110,7 @@ for (let i = 0; i < inputsRoles.length; i += 1) {
     // pantalla2.classList.add('ocultar');
     // document.getElementById('pantalla2').style.display = 'none';
     pantalla2.innerHTML = '';
+    pantalla4.classList.add('ocultar');
   });
 }
 
@@ -122,6 +126,7 @@ ordenar.addEventListener('change', (evt) => {
     resultado(dataOrdenada);
   }
   cantidadCampeones.classList.add('mostrar');
+  pantalla4.classList.add('ocultar');
 });
 
 // boton subir
