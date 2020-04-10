@@ -7,10 +7,12 @@ const arrayCampeones = Object.values(listaTodos);
 
 
 const lista = document.querySelector('#galeria'); // selecciono la parte donde voy a poner la informacion
+// const pantalla1 = document.getElementById('pantalla1');
 const pantalla2 = document.getElementById('pantalla2');
 const pantalla3 = document.getElementById('pantalla3');
 const pantalla4 = document.getElementById('pantalla4');
 const cantidadCampeones = document.getElementById('cantidad');
+
 
 // Descripcion de Campeon
 const crearVistaCampeon = (campeon) => {
@@ -33,6 +35,7 @@ const crearVistaCampeon = (campeon) => {
 const resultado = (data) => {
   // vaciar arreglo para que no se duplique
   lista.innerHTML = '';
+  pantalla4.classList.add('ocultar');
   // chequear la estructura de la data, si no es un array pasa a Object.values
   const checkData = Array.isArray(data) ? data : Object.values(data);
   cantidadCampeones.innerHTML = `Number Of Champions:  ${checkData.length}`;
@@ -56,11 +59,19 @@ const resultado = (data) => {
       crearVistaCampeon(listaTodos[nombreId]);
       lista.innerHTML = '';
       pantalla3.classList.add('mostrar');
+      pantalla4.classList.add('ocultar');
     });
   });
 };
 resultado(listaTodos);
 
+
+// Evento cerrar Modal
+const cerrar = document.getElementById('cerrar');
+const contenedorVideo = document.getElementById('contenedorVideo');
+cerrar.addEventListener('click', () => {
+  contenedorVideo.classList.add('ocultar');
+});
 
 // buscando en el input
 const buscar = document.querySelector('#buscador');
@@ -93,6 +104,7 @@ buttonRoles.addEventListener('click', () => {
   lista.classList.add('ocultar');
   cantidadCampeones.classList.add('mostrar');
   pantalla2.classList.add('mostrar');
+  pantalla4.innerHTML = '';
 });
 
 
