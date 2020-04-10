@@ -63,6 +63,11 @@ const resultado = (data) => {
 };
 resultado(listaTodos);
 
+// boton todos
+const btnAll = document.getElementById('todos');
+btnAll.addEventListener('click', () => {
+  resultado(listaTodos);
+});
 
 // buscando en el input
 const buscar = document.querySelector('#buscador');
