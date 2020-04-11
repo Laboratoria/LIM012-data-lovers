@@ -84,8 +84,11 @@ OLYMPIC HISTORY- Contiene un apartado denominado "Medallero", a traves del cual,
 
  ### Prototipo de Baja Fidelidad
 
-  A continuacion los prototipos de baja realizados luego de algunas iteraciones y testeos de usabilidad.
+  A continuacion los prototipos de baja realizados luego de algunas iteraciones y testeos de usabilidad, durante los cuales, se presentaron problemas como que los usuarios no lograban entender la funcionalidad, por lo cual, se mejoraron los bocetos para que fueron mas intuitivos.
 
+   * Primera Iteracion
+   ![Pagina](readme0.jpg)
+   * Segunda Iteracion
    ![Pagina](readme1.jpg)
    ![Pagina](readme2.jpg)
    ![Pagina](readme3.jpg)
@@ -94,12 +97,23 @@ OLYMPIC HISTORY- Contiene un apartado denominado "Medallero", a traves del cual,
 
   ### Prototipo de Alta Fidelidad
 
-  A continuacion los prototipos de alta fidelidad realizados con la herramienta **Figma** donde se aplicaron los principios de diseño visual.
+  A continuacion los prototipos de alta fidelidad realizados con la herramienta **Figma** donde se aplicaron los principios de diseño visual para nuestra propuesta final.
 
-   ![Pagina](readme6_alta.jpg)
-   ![Pagina](readme7_alta.jpg)
+   ![Pagina](readme6_alta.png)
+   ![Pagina](readme7_alta.png)
 
-## 5. Implementacion de la interfaz de Usuario
+## 5. Implementacion de la interfaz de Usuario.
+
+La implementacion de la interfaz de usuario tardo mas tiempo del planificado, al implementar los primeros springs se demoraron un tiempo mas del planificado, sin embargo, se trabajo para que el proyecto cumpliera con todas las caracteristicas solicitadas. A continuaciòn algunas imagenes del producto final:
+
+![Pagina](readme8.png)
+![Pagina](readme9.png)
+![Pagina](readme10.png)
+
+.- Muestra la data en una interfaz: una tabla.
+.- Permite al usuario interactuar para obtener la infomación que necesita. <!--filtrar y ordenar la data.-->
+
+![Pagina](readme11.png)
 
 ## 6. Objetivos de aprendizaje
 
@@ -176,29 +190,6 @@ y de equipo.
 * [x] UI: Permite ordenar data por uno o más campos (asc y desc).
 * [x] UI: Permite filtrar data en base a una condición.
 * [x] UI: Es _responsive_.
-
-#### Testeos de usabilidad
-
-Durante el reto deberás hacer _tests_ de usabilidad con distintos usuarios, y
-en base a los resultados, deberás iterar tus diseños. Cuéntanos
-qué problemas de usabilidad detectaste a través de los _tests_ y cómo los
-mejoraste en tu propuesta final.
-
-### Implementación de la Interfaz de Usuario (HTML/CSS/JS)
-
-Luego de diseñar tu interfaz de usuario deberás trabajar en su implementación.
-**No** es necesario que construyas la interfaz exactamente como la diseñaste.
-No tienes tiempo ilimitado para trabajar, así es que deberás priorizar.
-
-Como mínimo, tu implementación debe:
-
-1. Mostrar la data en una interfaz: puede ser un card, una tabla, una lista,
-   etc.
-2. Permitir al usuario interactuar para obtener la infomación que necesita.
-   <!--filtrar y ordenar la data.-->
-3. Ser _responsive_, es decir, debe visualizarse sin problemas desde distintos
-   tamaños de pantallas: móviles, tablets y desktops.
-4. Que la interfaz siga los fundamentos de _visual design_.
 
 ### Pruebas unitarias
 
@@ -485,7 +476,3 @@ compañera:
   Aceptación_ y nosotros sí lo haremos. Más detalles en la guía.
 * [Cómo dividir H.U.](https://www.youtube.com/watch?v=Ueq786iZ30I&t=341s)
 * [Guía para Data Lovers](https://docs.google.com/presentation/d/e/2PACX-1vQhx9D36NjpH-Daea-ITPUDUzNL8ZiNAprq_7b5PSUrfutk45tEtaOLz2lmd8f54_5jX1hypDM8f8SM/pub?start=false&loop=false&delayms=60000)
-
-***
-
-
