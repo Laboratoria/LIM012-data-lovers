@@ -84,11 +84,20 @@ OLYMPIC HISTORY- Contiene un apartado denominado "Medallero", a traves del cual,
 
  ### Prototipo de Baja Fidelidad
 
+  A continuacion los prototipos de baja realizados luego de algunas iteraciones y testeos de usabilidad.
+
    ![Pagina](readme1.jpg)
+   ![Pagina](readme2.jpg)
+   ![Pagina](readme3.jpg)
+   ![Pagina](readme4.jpg)
+   ![Pagina](readme5.jpg)
 
   ### Prototipo de Alta Fidelidad
 
-   ![Pagina](readme2.jpg)
+  A continuacion los prototipos de alta fidelidad realizados con la herramienta **Figma** donde se aplicaron los principios de diseño visual.
+
+   ![Pagina](readme6_alta.jpg)
+   ![Pagina](readme7_alta.jpg)
 
 ## 5. Implementacion de la interfaz de Usuario
 
@@ -146,59 +155,27 @@ y de equipo.
 - [x] Utilizar identificadores descriptivos (Nomenclatura | Semántica).
 - [x] Utilizar linter para seguir buenas prácticas (ESLINT).
 
-## 4. Consideraciones generales
+## 7. Checklist
 
-* Este proyecto se debe resolver en duplas.
-* El proyecto será entregado subiendo tu código a GitHub (commit/push) y la
-  interfaz será desplegada usando [GitHub Pages](https://pages.github.com/).
-* Tiempo para completarlo: Toma como referencia 4 semanas.
-
-## 5. Criterios de aceptación mínimos del proyecto
-
-Los criterios para considerar que has completado este proyecto son:
-
-### Definición del producto
-
-Documenta brevemente tu trabajo en el archivo `README.md` de tu repositorio,
-contándonos cómo fue tu proceso de diseño y cómo crees que el producto resuelve
-el problema (o problemas) que tiene tu usuario.
-
-### Historias de usuario
-
-Una vez que entiendas las necesidades de tus usuarios, escribe las [Historias
-de Usuario](https://es.wikipedia.org/wiki/Historias_de_usuario) que representen
-todo lo que el usuario necesita hacer/ver. Las **Historias de Usuario** deben
-ser el resultado de tu proceso de investigación o _research_ de tus usuarios.
-
-Asegúrate de incluir la definición de terminado (_definition of done_) y los
-Criterios de Aceptación para cada una.
-
-En la medida de lo posible, termina una historia de usuario antes de pasar
-a la siguiente (Cumple con Definición de Terminado + Criterios de Aceptación).
-
-### Diseño de la Interfaz de Usuario
-
-#### Prototipo de baja fidelidad
-
-Durante tu trabajo deberás haber hecho e iterado bocetos (_sketches_) de tu
-solución usando papel y lápiz. Te recomendamos tomar fotos de todas las
-iteraciones que hagas, que las subas a tu repositorio y las menciones en tu
-`README.md`.
-
-#### Prototipo de alta fidelidad
-
-Lo siguiente es diseñar tu Interfaz de Usuario (UI por sus siglas en inglés -
-_User Interface_). Para eso debes aprender a utilizar alguna herramienta de
-diseño visual. Nosotros te recomendamos [Figma](https://www.figma.com/) que es
-una herramienta que funciona en el navegador y, además, puedes crear una cuenta
-gratis. Sin embargo, eres libre de utilizar otros editores gráficos como
-Illustrator, Photoshop, PowerPoint, Keynote, etc. Recuerda utilizar la
-[identidad gráfica](https://drive.google.com/open?id=1eeWFqrWpy-OYOH4EHDckFGunyrm9iNeE)
-correspondiente a cada set de datos que elijas.
-
-El diseño debe representar el _ideal_ de tu solución. Digamos que es lo que
-desearías implementar si tuvieras tiempo ilimitado para trabajar. Además, tu
-diseño debe seguir los fundamentos de _visual design_.
+* [x] Usa VanillaJS.
+* [x] No hace uso de `this`.
+* [x] Pasa linter (`npm run pretest`)
+* [x] Pasa tests (`npm test`)
+* [ ] Pruebas unitarias cubren un mínimo del 70% de statements, functions y
+  lines y branches.
+* [x] Incluye _Definición del producto_ clara e informativa en `README.md`.
+* [x] Incluye historias de usuario en `README.md`.
+* [x] Incluye _sketch_ de la solución (prototipo de baja fidelidad) en
+  `README.md`.
+* [x] Incluye _Diseño de la Interfaz de Usuario_ (prototipo de alta fidelidad)
+  en `README.md`.
+* [ ] Incluye link a Zeplin en `README.md`.
+* [x] Incluye el listado de problemas que detectaste a través de tests de
+  usabilidad en el `README.md`.
+* [x] UI: Muestra lista y/o tabla con datos y/o indicadores.
+* [x] UI: Permite ordenar data por uno o más campos (asc y desc).
+* [x] UI: Permite filtrar data en base a una condición.
+* [x] UI: Es _responsive_.
 
 #### Testeos de usabilidad
 
@@ -235,7 +212,7 @@ Tus _pruebas unitarias_ deben dar una cobertura del 70% de _statements_
 (_ramas_) del archivo `src/data.js` que contenga tus funciones y está detallado
 en la sección de [Consideraciones técnicas](#srcdatajs).
 
-## 6. Hacker edition
+## Hacker edition
 
 Las secciones llamadas _Hacker Edition_ son **opcionales**. Si **terminaste**
 con todo lo anterior y te queda tiempo, intenta completarlas. Así podrás
@@ -253,7 +230,7 @@ Features/características extra sugeridas:
   o [Google Charts](https://developers.google.com/chart/).
 * 100% Coverage
 
-## 7. Consideraciones técnicas
+## Consideraciones técnicas
 
 La lógica del proyecto debe estar implementada completamente en JavaScript
 (ES6), HTML y CSS. En este proyecto NO está permitido usar librerías o
@@ -375,7 +352,7 @@ asíncrona con [`fetch()`](https://developer.mozilla.org/es/docs/Web/API/Fetch_A
 Tendrás también que completar las pruebas unitarias de las funciones
 implementadas en el archivo `data.js`.
 
-## 8. Pistas, tips y lecturas complementarias
+## Pistas, tips y lecturas complementarias
 
 ### Primeros pasos
 
@@ -511,24 +488,4 @@ compañera:
 
 ***
 
-## 9. Checklist
 
-* [x] Usa VanillaJS.
-* [x] No hace uso de `this`.
-* [x] Pasa linter (`npm run pretest`)
-* [x] Pasa tests (`npm test`)
-* [ ] Pruebas unitarias cubren un mínimo del 70% de statements, functions y
-  lines y branches.
-* [x] Incluye _Definición del producto_ clara e informativa en `README.md`.
-* [x] Incluye historias de usuario en `README.md`.
-* [x] Incluye _sketch_ de la solución (prototipo de baja fidelidad) en
-  `README.md`.
-* [x] Incluye _Diseño de la Interfaz de Usuario_ (prototipo de alta fidelidad)
-  en `README.md`.
-* [ ] Incluye link a Zeplin en `README.md`.
-* [x] Incluye el listado de problemas que detectaste a través de tests de
-  usabilidad en el `README.md`.
-* [x] UI: Muestra lista y/o tabla con datos y/o indicadores.
-* [x] UI: Permite ordenar data por uno o más campos (asc y desc).
-* [x] UI: Permite filtrar data en base a una condición.
-* [x] UI: Es _responsive_.
