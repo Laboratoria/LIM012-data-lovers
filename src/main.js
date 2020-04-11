@@ -13,6 +13,7 @@ const pantalla2 = document.getElementById('pantalla2');
 const pantalla3 = document.getElementById('pantalla3');
 const pantalla4 = document.getElementById('pantalla4');
 const cantidadCampeones = document.getElementById('cantidad');
+const error = document.getElementById('error');
 
 
 // Descripcion de Campeon
@@ -57,6 +58,10 @@ const resultado = (data) => {
       const nombreId = evt.path[1].id;
       // console.log(listaTodos[nombreId]);
       crearVistaCampeon(listaTodos[nombreId]);
+      pantalla3.classList.remove('ocultar');
+      lista.innerHTML = '';
+      pantalla2.classList.remove('mostrar');
+      pantalla2.classList.add('ocultar');
     });
   });
 };
@@ -68,7 +73,9 @@ btnAll.addEventListener('click', () => {
   resultado(listaTodos);
   pantalla2.classList.remove('mostrar');
   pantalla2.classList.add('ocultar');
+  pantalla3.classList.add('ocultar');
   pantalla4.classList.add('ocultar');
+  error.classList.remove('mostrar');
 });
 
 // Evento cerrar Modal
@@ -88,14 +95,19 @@ buscar.addEventListener('keyup', (evt) => {
   const errorMsj = document.querySelector('#error');
   if (filtroCampeon.length === 0) {
     errorMsj.classList.add('mostrar');
+    pantalla2.classList.add('ocultar');
+    pantalla3.classList.add('ocultar');
+    pantalla3.classList.add('ocultar');
+    lista.innerHTML = '';
   } else {
     errorMsj.classList.add('ocultar');
   }
   resultado(filtroCampeon);
 },
+
 false);
 
-// funcionalidad de boton role
+// funcionalidad de boton roles
 const buttonRoles = document.getElementById('buttonRoles');
 buttonRoles.addEventListener('click', () => {
   pantalla2.classList.remove('ocultar');
@@ -103,6 +115,8 @@ buttonRoles.addEventListener('click', () => {
   lista.innerHTML = '';
   cantidadCampeones.classList.add('mostrar');
   pantalla4.classList.add('ocultar');
+  pantalla3.classList.add('ocultar');
+  pantalla2.classList.remove('mostrar');
 });
 
 
@@ -113,6 +127,7 @@ for (let i = 0; i < inputsRoles.length; i += 1) {
   inputsRoles[i].addEventListener('click', (event) => {
     const rolSeleccionado = event.target.value;
     resultado(filtrandoRoles(arrayCampeones, rolSeleccionado));
+    pantalla2.classList.add('ocultar');
   });
 }
 
@@ -154,6 +169,7 @@ habilidades.addEventListener('click', () => {
   lista.innerHTML = '';
   pantalla2.classList.remove('mostrar');
   pantalla2.classList.add('ocultar');
+  pantalla3.classList.add('ocultar');
 });
 
 const hpChampion = document.querySelector('#hpChampion');
