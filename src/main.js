@@ -36,8 +36,6 @@ const crearVistaCampeon = (campeon) => {
 const resultado = (data) => {
   // vaciar arreglo para que no se duplique
   lista.innerHTML = '';
-  pantalla2.classList.add('ocultar');
-  pantalla4.classList.add('ocultar');
   // chequear la estructura de la data, si no es un array pasa a Object.values
   const checkData = Array.isArray(data) ? data : Object.values(data);
   cantidadCampeones.innerHTML = `Number Of Champions:  ${checkData.length}`;
@@ -59,12 +57,7 @@ const resultado = (data) => {
       const nombreId = evt.path[1].id;
       // console.log(listaTodos[nombreId]);
       crearVistaCampeon(listaTodos[nombreId]);
-      lista.innerHTML = '';
-      pantalla3.classList.add('mostrar');
-      pantalla4.classList.add('ocultar');
     });
-    pantalla4.classList.add('ocultar');
-    pantalla2.classList.add('ocultar');
   });
 };
 resultado(listaTodos);
@@ -72,8 +65,10 @@ resultado(listaTodos);
 // boton todos
 const btnAll = document.getElementById('todos');
 btnAll.addEventListener('click', () => {
-  lista.classList.add('mostrar');
   resultado(listaTodos);
+  pantalla2.classList.remove('mostrar');
+  pantalla2.classList.add('ocultar');
+  pantalla4.classList.add('ocultar');
 });
 
 // Evento cerrar Modal
@@ -103,11 +98,11 @@ false);
 // funcionalidad de boton role
 const buttonRoles = document.getElementById('buttonRoles');
 buttonRoles.addEventListener('click', () => {
+  pantalla2.classList.remove('ocultar');
   pantalla2.classList.add('mostrar');
   lista.innerHTML = '';
-  lista.classList.add('ocultar');
   cantidadCampeones.classList.add('mostrar');
-  pantalla4.innerHTML = '';
+  pantalla4.classList.add('ocultar');
 });
 
 
@@ -118,7 +113,6 @@ for (let i = 0; i < inputsRoles.length; i += 1) {
   inputsRoles[i].addEventListener('click', (event) => {
     const rolSeleccionado = event.target.value;
     resultado(filtrandoRoles(arrayCampeones, rolSeleccionado));
-    lista.classList.add('ocultar');
   });
 }
 
@@ -156,9 +150,10 @@ document.querySelector('.contenedorSubir').addEventListener('click', () => {
 // funcionalidad de boton habilidades
 const habilidades = document.getElementById('habilidades');
 habilidades.addEventListener('click', () => {
+  pantalla4.classList.remove('ocultar');
   lista.innerHTML = '';
-  pantalla4.classList.add('mostrar');
-  pantalla3.classList.add('ocultar');
+  pantalla2.classList.remove('mostrar');
+  pantalla2.classList.add('ocultar');
 });
 
 const hpChampion = document.querySelector('#hpChampion');
