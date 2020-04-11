@@ -108,12 +108,11 @@ La implementacion de la interfaz de usuario tardo mas tiempo del planificado, al
 
   ![Pagina](readme8.png)
   ![Pagina](readme9.png)
-  ![Pagina](readme10.png)
 
 .- Muestra la data en una interfaz: una tabla.
 .- Permite al usuario interactuar para obtener la infomación que necesita: Filtra y ordena la data.
 
-  ![Pagina](readme11.png)
+  ![Pagina](readme10.png)
 
 ## 6. Objetivos de aprendizaje
 
