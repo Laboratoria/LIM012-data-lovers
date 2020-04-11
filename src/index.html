@@ -13,10 +13,13 @@
     <header class="header">
       <div class="encabezado">
         <div class="logoLol">
-          <a href="\src\index.html"><img src= "imagenes/logo.png" class="logo" ></a><!--src= "imagenes/logo.png"/volver a ponerlo cuando termine el css-->
+        <img src= "imagenes/logo.png" class="logo" ><!--src= "imagenes/logo.png"/volver a ponerlo cuando termine el css-->
         </div>
-        <button class ="iconBuscar" id="iconBuscar"><img src="imagenes/search-regular-24.png" alt="buscar"></button>
-        <input type="search" id="buscador" class="formBuscador" placeholder="Buscar por campeon">
+        <div class="searcher">
+          <input type="search" id="buscador" class="formBuscador" placeholder="Buscar por campeon">
+          <img src="imagenes/search-regular-24.png" alt="buscar"></button>
+        </div>
+
       </div>
       <nav class="menu">
         <button id="todos" class="btnTodos estiloBoton">ALL</button>
@@ -33,7 +36,7 @@
     <main>
       <!-- presentacion(video) -->
       <div class="contenedorVideo" id="contenedorVideo">
-        <span class="cerrar" id="cerrar">&times;</span>
+        <spam class="cerrar" id="cerrar">&times;</spam>
         <div id = "pantallaVideo" class="pantallaVideo">
           <iframe src="https://www.youtube.com/embed/YNKfQ8swjnA" frameborder="0" allow="autoplay; accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
@@ -54,7 +57,7 @@
       </div>
 
       <!--segunda pantalla (ver los roles)-->
-      <div id="pantalla2" class="ocultar">
+      <div id="pantalla2">
         <section id="sectionRoles" class="roles">
           <div class="divRol"><input type="image" id="Assassin" value ="Assassin" class="styleInput" src="imagenes\role-icon-assassin.png"><p class="pRoles">ASSASSIN</p></div>
           <div class="divRol"><input type="image" id="Fighter" value ="Fighter" class="styleInput" src="imagenes\league-of-legends-fighter-icon-1.png"><p class="pRoles">FIGHTER</p></div>
@@ -72,7 +75,7 @@
       </div>
       <div id="pantalla4">
         <section class="sectionAvage">
-          <div class="divMapLol"><img src="imagenes\mapLol.png" class="mapLol" alt="mapLol"></div>
+          <div class="divMapLol"><img src="imagenes/mapLol.png" class="mapLol" alt="mapLol"></div>
           <div class="divMapLol">
             <div id="hpChampion" class="hpChampion styleAverage"></div>
             <div id="movespeedChampion" class="movespeedChampion styleAverage"></div>

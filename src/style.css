@@ -13,13 +13,6 @@ background: rgba(235, 178, 24, 0.719);
 border-radius: 10px;
 border-right: 6px solid #807729;
 }
-.ocultar{
-  display: none;
-}
-
-.mostrar {
-  display: block;
-}
 .padre{
 display: flex;
 flex-flow: column nowrap;
@@ -61,65 +54,71 @@ left: 0;
 width: 100%;
 height: 100%; */
 /* }  */
-
+/* ------------estilos header(logo-buscador)------------------------*/
+.header{
+  background:rgba(10, 10, 26, 0.384);
+  display: flex;
+  flex-flow: column nowrap;
+}
+  .encabezado{
+    background: rgba(3, 28, 41, 0.767);
+    border-bottom: 3px solid rgba(235, 178, 24, 0.719);
+  }
         .logo{     
           width: 260px;
           height: 120px;
-          display: flex;
-          align-items: flex-end;
-          position: relative;
-          left: 63px;
+          margin: 2em 0em 0em 2em;
         }
         .formBuscador{
           background: #C4C4C4;
-          width: 300px;
           height: 41px;
-          margin: 68px;
           border-radius: 5px;
-          position: relative;
-          left: 638px;
-        } /*para enlazar iconos <i class:"" aria-hidden="true></i>"*/
-        .iconBuscar{
-          width: 46px;
-          height: 44px;
-          position: relative;
-          left: 690px;
-          border-radius: 6px;
-          background: #C4C4C4;
+          background: none;
+          border: none;
+          outline: none;
+          margin:0em 0em 0em 1em;
         }
-        /* .iconBuscar label::after {
-          left: 0;
-          bottom: 0;
-          opacity: 0;
-          content: "";
-          width: 100%;
-          height: 100%;
-          position: absolute;
-          transition: transform 0.3s ease;
-          border-bottom: 0.125rem solid #07cbe9;
-      } */
+        .searcher{
+          display: flex;
+          background-color: rgb(190, 187, 187);
+          border-radius: 5px;
+          border: solid 1px rgb(77, 77, 78);
+          margin: 1em;
+        }
+        .encabezado-hijo{
+          display: grid;
+          justify-content: right;
+        }
+        .searcher img{
+          margin: 0.4em;
+          width: 1.8em;
+          height: 1.8em;       
+        }
+/* ------------estilos video------------------------*/
       .contenedorVideo {
+        display: none;
         position: fixed;
-        z-index: 6;
+        z-index: 3;
         left: 0;
         top: 0;
         width: 100%;
         height: 100%;
         background-color: rgba(0, 0, 0, 0.6);
-        display: grid;
-        grid-template-rows: 20% 80%;
       }
-      /* .contenedorVideo{
-        display: none;
-      } */
+      .modal{
+        position: relative;
+        margin: auto;
+        width: 80%;
+        text-align: right;
+      }
+      .pantallaVideo{
+        display: grid;
+        justify-items: center;
+      }
       .cerrar{
-        font-size: 30px;
-        padding: 0em 0em 0em 37em;
-        position: absolute;
-        top: 22px;
-        /* background: rgba(63, 65, 66, 0.973); */
-        border-radius: 5px;
-        color: rgba(235, 178, 24, 0.719);
+        font-size: 3em;
+        cursor: pointer;
+        color: rgba(235, 179, 24, 0.945);
       }
 
       .pantallaVideo{
@@ -139,19 +138,16 @@ height: 100%; */
         width: 71%;
         height: 63%;    
         }
+/* ------------estilos menu-----------------------*/
     .menu{
       background:rgba(63, 65, 66, 0.973);
-      display: flex;
-      flex-flow: row nowrap;
-      align-items: center;
-      height: 60px;
     }
     .estiloBoton {
-      background: transparent;
+      background: none;
       border: none;
       color: rgba(235, 179, 24, 0.945);
       font-family: serif;
-      margin: 27px;
+      margin: 0em 5px 0em 5em;
       font-size: 21px;
       text-shadow: -1px 2px 4px rgb(117, 116, 116);
     }
@@ -185,97 +181,13 @@ height: 100%; */
   main{
     background:rgba(49, 48, 46, 0.699);
   }
-      .logo{     
-        width: 260px;
-        height: 120px;
-        display: flex;
-        align-items: flex-end;
-        position: relative;
-        left: 63px;
-      }
-      .formBuscador{
-        background: #C4C4C4;
-        width: 300px;
-        height: 41px;
-        margin: 68px;
-        border-radius: 5px;
-        position: relative;
-        left: 638px;
-      } /*para enlazar iconos <i class:"" aria-hidden="true></i>"*/
-      .iconBuscar{
-        width: 46px;
-        height: 44px;
-        position: relative;
-        left: 690px;
-        border-radius: 6px;
-        background: #C4C4C4;
-      }
-      /* .iconBuscar label::after {
-        left: 0;
-        bottom: 0;
-        opacity: 0;
-        content: "";
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        transition: transform 0.3s ease;
-        border-bottom: 0.125rem solid #07cbe9;
-    } */
-    
-
-  .menu{
-    background:rgba(63, 65, 66, 0.973);
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-    height: 60px;
-  }
-  .estiloBoton {
-    background: transparent;
-    border: none;
-    color: rgba(235, 179, 24, 0.945);
-    font-family: serif;
-    margin: 27px;
-    font-size: 21px;
-    text-shadow: -1px 2px 4px rgb(117, 116, 116);
-  }
-  .selectStyle {
-    background: transparent;
-    border: none;
-    color: rgba(235, 179, 24, 0.945);
-    font-family: serif;
-    margin: 27px;
-    font-size: 21px;
-    text-shadow: -1px 2px 4px rgb(117, 116, 116);
-  }
-  .estiloBoton:hover{
-    transform: scale(1.1);
-    transition: 0.5;  
-  }
-  .selectStyle:hover{
-    transform: scale(1.1);
-    transition: 0.5;  
-  }
-  .cantidadMostrada{
-    background:transparent;
-    color: rgba(235, 179, 24, 0.945);
-    font-family: serif;
-    font-size: 21px;
-    border: none;
-    position: relative;
-    text-align: end;
-    margin-right: 30px;
-  }
-main{
-  background:rgba(49, 48, 46, 0.699);
-}
 
   .lista{
     display: flex;
     flex-flow: row nowrap;
 
     
-  }
+  }/*
     .galeriaDeCampeones{
       display: flex;
       flex-wrap: row nowrap;
@@ -285,19 +197,19 @@ main{
       grid-template-columns: 1fr 1fr 1fr 1fr;
       justify-items: center;
       align-items: center;
-      grid-gap: 10px; */
-    }
+      grid-gap: 10px; 
+    } */
       .casillaCampeon{
         margin: 15px;
         padding: 10px;
         display: flex;
         flex-flow: column nowrap;
         flex: 3 1 auto;
-
-        width: 295px;
+        width: 200px;
         height: 370px;
         box-sizing: border-box;
       }
+      /*
       .casillaCampeon:hover{
         transform: scale(1.1);
         transition: 0.5;  
@@ -315,6 +227,7 @@ main{
         font-size: 36px;
         line-height: 70px;
         color: #FFFFFF;}
+        */
 .roles{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -395,6 +308,14 @@ main{
 #error {
   background: #707b15;
   padding: 10px 10px 10px 10px;
+}
+
+.ocultar{
+  display: none;
+}
+
+.mostrar {
+  display: block;
 }
 
 .contenedorSubir{
@@ -492,42 +413,6 @@ border-radius: 8px;
 /*-------------------------------------------------------------------------------------------------------
  MOVIL*/
 @media all and (max-width: 400px){
-.logo{
-  width: 200px;
-  height: 90px;
-  margin: 30px;
-  position: relative;
-  left: 10px;
-}
-.formBuscador{
-  display:none;
-}
-.iconBuscar{
-  width: 50px;
-  position: relative;
-  left: 30px;
-}
-
-.estiloBoton  {
-  width: 90px;
-  height: 30px;
-  list-style: none;
-  font-size: 20px;
-  margin: 10px;
-  position: relative;
-  right: 25px;
-  border-bottom: 1px solid rgba(245, 180, 5, 0.719);
-}
-.selectStyle {
-  width: 90px;
-  height: 30px;
-  list-style: none;
-  font-size: 20px;
-  margin: 0px;
-  position: relative;
-  right: 36px;
-  border-bottom: 1px solid rgba(245, 180, 5, 0.719);
-}
 
 .galeriaDeCampeones{
   display: flex;

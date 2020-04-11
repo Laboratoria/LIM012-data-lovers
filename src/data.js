@@ -51,3 +51,24 @@ export const filtrandoRoles = (data, rolEscogido) => {
   }
   return newArray;
 };
+export const calculoStats = (data, entrada) => {
+  let item = 0;
+  let result = 0;
+  switch (entrada) {
+    case 'hp':
+      item = data.map((campeones) => campeones.stats);
+      result = (item.reduce((sum, value) => (sum + value.hp), 0) / 134).toFixed(2);
+      break;
+    case 'movespeed':
+      item = data.map((campeones) => campeones.stats);
+      result = (item.reduce((sum, value) => (sum + value.movespeed), 0) / 134).toFixed(2);
+      break;
+    case 'attackdamage':
+      item = data.map((campeones) => campeones.stats);
+      result = (item.reduce((sum, value) => (sum + value.attackdamage), 0) / 134).toFixed(2);
+      break;
+    default:
+      break;
+  }
+  return result;
+};

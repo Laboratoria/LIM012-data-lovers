@@ -1,13 +1,14 @@
 
 import lol from './data/lol/lol.js';
-import { filtrarNombre, ordenarCampeones, filtrandoRoles } from './data.js';
+import {
+  filtrarNombre, ordenarCampeones, filtrandoRoles, calculoStats,
+} from './data.js';
 
 const listaTodos = lol.data; // en esta variable guardo los objetos de la data
 const arrayCampeones = Object.values(listaTodos);
 
-
 const lista = document.querySelector('#galeria'); // selecciono la parte donde voy a poner la informacion
-// const pantalla1 = document.getElementById('pantalla1');
+
 const pantalla2 = document.getElementById('pantalla2');
 const pantalla3 = document.getElementById('pantalla3');
 const pantalla4 = document.getElementById('pantalla4');
@@ -35,6 +36,7 @@ const crearVistaCampeon = (campeon) => {
 const resultado = (data) => {
   // vaciar arreglo para que no se duplique
   lista.innerHTML = '';
+  pantalla2.classList.add('ocultar');
   pantalla4.classList.add('ocultar');
   // chequear la estructura de la data, si no es un array pasa a Object.values
   const checkData = Array.isArray(data) ? data : Object.values(data);
@@ -62,6 +64,7 @@ const resultado = (data) => {
       pantalla4.classList.add('ocultar');
     });
     pantalla4.classList.add('ocultar');
+    pantalla2.classList.add('ocultar');
   });
 };
 resultado(listaTodos);
@@ -69,6 +72,7 @@ resultado(listaTodos);
 // boton todos
 const btnAll = document.getElementById('todos');
 btnAll.addEventListener('click', () => {
+  lista.classList.add('mostrar');
   resultado(listaTodos);
 });
 
@@ -96,20 +100,13 @@ buscar.addEventListener('keyup', (evt) => {
 },
 false);
 
-// icono search
-const textoBuscado = document.getElementById('buscardor');
-const iconSearch = document.getElementById('iconBuscar');
-iconSearch.addEventListener('click', () => {
-  const filtroCampeon = filtrarNombre(listaTodos, textoBuscado);
-  resultado(filtroCampeon);
-});
-
 // funcionalidad de boton role
 const buttonRoles = document.getElementById('buttonRoles');
 buttonRoles.addEventListener('click', () => {
+  pantalla2.classList.add('mostrar');
+  lista.innerHTML = '';
   lista.classList.add('ocultar');
   cantidadCampeones.classList.add('mostrar');
-  pantalla2.classList.add('mostrar');
   pantalla4.innerHTML = '';
 });
 
@@ -121,11 +118,7 @@ for (let i = 0; i < inputsRoles.length; i += 1) {
   inputsRoles[i].addEventListener('click', (event) => {
     const rolSeleccionado = event.target.value;
     resultado(filtrandoRoles(arrayCampeones, rolSeleccionado));
-    lista.classList.add('mostrar');
-    // pantalla2.classList.add('ocultar');
-    // document.getElementById('pantalla2').style.display = 'none';
-    pantalla2.innerHTML = '';
-    pantalla4.classList.add('ocultar');
+    lista.classList.add('ocultar');
   });
 }
 
@@ -163,29 +156,17 @@ document.querySelector('.contenedorSubir').addEventListener('click', () => {
 // funcionalidad de boton habilidades
 const habilidades = document.getElementById('habilidades');
 habilidades.addEventListener('click', () => {
-  lista.classList.add('ocultar');
-  cantidadCampeones.classList.add('ocultar');
-  pantalla2.classList.add('ocultar');
+  lista.innerHTML = '';
   pantalla4.classList.add('mostrar');
+  pantalla3.classList.add('ocultar');
 });
-// promedio hp
-const hpCampeon = arrayCampeones.map((campeones) => campeones.stats);
-const totalHp = hpCampeon.reduce((sum, value) => (sum + value.hp), 0);
-const resultHp = totalHp / 134;
-
-const moveCampeon = arrayCampeones.map((campeones) => campeones.stats);
-const totalMovespeed = moveCampeon.reduce((sum, value) => (sum + value.movespeed), 0);
-const resultMovespeed = totalMovespeed / 134;
-
-const attackCampeon = arrayCampeones.map((campeones) => campeones.stats);
-const totalAttack = attackCampeon.reduce((sum, value) => (sum + value.attackdamage), 0);
-const resultAttack = totalAttack / 134;
 
 const hpChampion = document.querySelector('#hpChampion');
-hpChampion.innerHTML = ` Champions Life Span: "${resultHp}"`;
-
+hpChampion.innerHTML = ` Champions Life Span: "${calculoStats(arrayCampeones, 'hp')}"`;
 const movespeedChampion = document.querySelector('#movespeedChampion');
-movespeedChampion.innerHTML = ` Average Movement Speed: "${resultMovespeed}"`;
-
+movespeedChampion.innerHTML = ` Average Movement Speed: "${calculoStats(arrayCampeones, 'movespeed')}"`;
 const attackChampion = document.querySelector('#attackChampion');
-attackChampion.innerHTML = ` Average Attack Damage: "${resultAttack}"`;
+attackChampion.innerHTML = ` Average Attack Damage: "${calculoStats(arrayCampeones, 'attackdamage')}"`;
+
+
+// promedio hp
