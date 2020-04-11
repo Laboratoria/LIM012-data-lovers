@@ -104,7 +104,7 @@ OLYMPIC HISTORY- Contiene un apartado denominado "Medallero", a traves del cual,
 
 ## 5. Implementacion de la interfaz de Usuario.
 
-La implementacion de la interfaz de usuario tardo mas tiempo del planificado, al implementar los primeros springs se demoraron un tiempo mas del planificado, sin embargo, se trabajo para que el proyecto cumpliera con todas las caracteristicas solicitadas. A continuaciòn algunas imagenes del producto final:
+La implementacion de la interfaz de usuario tardo mas tiempo del planificado, al implementar los primeros springs se demoraron un tiempo mas del planificado, sin embargo, se trabajo para que el proyecto cumpliera con todas las caracteristicas solicitadas. A continuacion algunas imagenes del producto final:
 
   ![Pagina](readme8.png)
   ![Pagina](readme9.png)
