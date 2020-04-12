@@ -210,7 +210,7 @@ body {
     align-items: center;
     justify-content: center;
     order: -1;
-  }
+}
     .select-order{
       width: 60%;
       height: 40px;
@@ -238,7 +238,7 @@ body {
     align-items: center;
     justify-content: center;
     order: 3;
-  }
+}
     .input-search{
       width: 60%;
       height: 40px;
@@ -427,6 +427,188 @@ body {
                 0 0 25px #fbb901;
   }
 
+/* CALCULO AGREGADO */
+.title-calculation{
+  display: flex;
+  background: #fff;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column nowrap;
+  padding-top: 0px;
+  width: 100%;
+  height: 260px;
+}
+  .title-top{
+    font-size: 4em;
+    font-family: 'Merienda', cursive;   
+    text-transform: uppercase;
+    color: #343434;
+  }
+  .description-top{
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 500;
+    font-size: 2em;
+    text-transform: uppercase;
+    color: #343434;
+  }
+  .description-top-phase{
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 1em;
+    font-weight: 300;
+  }
+.stats-calculation{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 20px;
+  }
+    .stats{
+      display: flex;
+      flex-wrap: wrap;      
+      justify-content: center;
+      width: 100%;
+    }
+        #contentTop{
+          display: flex;
+          flex-wrap: wrap;
+          width: 100%;
+          justify-content: center;
+        }
+            .card-top{
+              max-width: 30%;
+              height: 400px;
+              margin: 10px;
+              padding: 10px;
+              flex: auto;
+            }
+              .cardTwo{
+                position: relative;
+                width: 100%;
+                height: 360px;
+              }
+                .img-boxTwo{
+                  position: relative;
+                  max-width: 100%;
+                  height: 360px;
+                  overflow: hidden;
+                }
+                .galeria-top{
+                  max-width: 100%;
+                  height: 360px;
+                }
+              .details-two{
+                display: flex;
+                position: absolute;
+                justify-content: center;
+                flex-direction: column;
+                align-content: center;
+                height: 86px;
+                width: 100px;
+                color: white;
+                box-sizing: content-box;
+                padding-top: 15px;
+                font-size: 11px;
+                top: 0px;
+                left: 0px;
+                bottom: 0px;
+                right: 0px;
+                background: rgba(9, 214, 214, 0.8);
+              }
+              .details-two:after{
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 0;
+                height: 0;
+                border-bottom: 13px solid rgba(195, 195, 195, 0.9); 
+                border-left: 50px solid transparent; 
+                border-right: 50px solid transparent; 
+              }
+                .title-average{
+                  font-family: 'Noto Sans JP', sans-serif;
+                  font-weight: 500;
+                  font-size: 1.5em;
+                  text-align: center;   
+                  color: #343434;
+                }
+                .promedio-top{
+                  font-family: 'Noto Sans JP', sans-serif;
+                  font-weight: 300;
+                  font-size: 1.5em;
+                  text-align: center;   
+                  color: #fff;
+                }
+              .name-top{
+                font-size: 1.5em;
+                font-family: 'Merienda', cursive;      
+                text-align: center;   
+                color: #fbb901;
+              }
+/* TERCERA PANTALLA - ROLES DE CAMPEONES - ICONOS Y VIDEO */
+.roles-firstScreen{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  height: 150px;
+}
+  .button-roles{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .title-roles{
+    text-align: center;
+    color: #343434;
+    font-family: 'Merienda', cursive; 
+  }
+    .input-roles{
+      outline: none;
+    }
+.videoIntro{
+  position: relative;
+  text-align: center;
+}
+/* CUARTA PANTALLA - FILTRAR ROLES DE CAMPEONES */
+.header-container{
+  background: #fff;
+  display: flex;
+  width: 100%;
+  height: 180px;
+  align-items: center;
+  justify-content: center;
+}
+  .title-screen-asse{
+    background: #fff;
+    display: flex;
+    width: 50%;
+    height: 100%;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+  }
+    .title-asse{
+      color: #343434;
+      font-size: 3.5em;
+      font-family: 'Merienda', cursive; 
+      text-transform: uppercase;
+    }
+    #contentListRol{
+      background: #fff;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      width: 100%;
+      justify-content: center;
+    }
+/* BOTONES ADICIONALES */
+i{
+  padding-top: 25px;
+  font-size: 50px;
+  color: #343434;
+}
 /* MEDIA QUERIES */
 @media (min-width: 2141px) and (max-width: 2560px) {
   .higher-container{
@@ -1081,6 +1263,25 @@ body {
       height: 35px;
       font-size: 0.9em;
     }
+    #contentTop{
+      justify-content: space-evenly;
+    }
+    .card-top{
+      max-width: 45%;
+      height: 350px;
+    }
+    .cardTwo{
+      height: 300px;
+    }
+    .img-boxTwo{
+      height: 300px;
+    }
+    .galeria-top{
+      height: 300px;
+    }
+    .name-top{
+      font-size: 1.2em;
+    }
 }
 
 @media (min-width: 481px) and (max-width: 767px) {
@@ -1187,195 +1388,39 @@ body {
       height: 30px;
       font-size: 0.8em;
     }
-}
-
-
-
-
-
-
-/* CALCULO AGREGADO */
-.title-calculation{
-  display: flex;
-  background: #fff;
-  align-items: center;
-  justify-content: center;
-  flex-flow: column nowrap;
-  padding-top: 0px;
-  width: 100%;
-  height: 260px;
-}
-  .title-top{
-    font-size: 5em;
-    font-family: 'Merienda', cursive;   
-    text-transform: uppercase;
-    color: #343434;
-  }
-  .description-top{
-    font-family: 'Noto Sans JP', sans-serif;
-    font-weight: 500;
-    font-size: 2em;
-    text-transform: uppercase;
-    color: #343434;
-  }
-  .description-top-phase{
-    font-family: 'Noto Sans JP', sans-serif;
-    font-size: 1em;
-    font-weight: 300;
-  }
-.stats-calculation{
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  padding: 20px;
-  }
-    .stats{
-      display: flex;
-      flex-wrap: wrap;      
-      justify-content: center;
-      width: 100%;
+    .title-top{
+      text-align: center;
+      font-size: 3em;
     }
-        #contentTop{
-          display: flex;
-          flex-wrap: wrap;
-          width: 100%;
-          justify-content: center;
-        }
-            .card-top{
-              max-width: 30%;
-              height: 400px;
-              margin: 10px;
-              padding: 10px;
-              flex: auto;
-            }
-              .cardTwo{
-                position: relative;
-                width: 100%;
-                height: 360px;
-              }
-                .img-boxTwo{
-                  position: relative;
-                  max-width: 100%;
-                  height: 360px;
-                  overflow: hidden;
-                }
-                .galeria-top{
-                  max-width: 100%;
-                  height: 360px;
-                }
-              .details-two{
-                display: flex;
-                position: absolute;
-                justify-content: center;
-                flex-direction: column;
-                align-content: center;
-                height: 86px;
-                width: 100px;
-                color: white;
-                box-sizing: content-box;
-                padding-top: 15px;
-                font-size: 11px;
-                top: 0px;
-                left: 0px;
-                bottom: 0px;
-                right: 0px;
-                background: rgba(9, 214, 214, 0.8);
-              }
-              .details-two:after{
-                content: "";
-                position: absolute;
-                left: 0;
-                bottom: 0;
-                width: 0;
-                height: 0;
-                border-bottom: 13px solid rgba(195, 195, 195, 0.9); 
-                border-left: 50px solid transparent; 
-                border-right: 50px solid transparent; 
-              }
-                .title-average{
-                  font-family: 'Noto Sans JP', sans-serif;
-                  font-weight: 500;
-                  font-size: 1.5em;
-                  text-align: center;   
-                  color: #343434;
-                }
-                .promedio-top{
-                  font-family: 'Noto Sans JP', sans-serif;
-                  font-weight: 300;
-                  font-size: 1.5em;
-                  text-align: center;   
-                  color: #fff;
-                }
-              .name-top{
-                font-size: 1.5em;
-                font-family: 'Merienda', cursive;      
-                text-align: center;   
-                color: #fbb901;
-              }
-/* TERCERA PANTALLA - ROLES DE CAMPEONES - ICONOS Y VIDEO */
-.roles-firstScreen{
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  flex-direction: row;
-  align-items: center;
-  height: 150px;
-}
-  .button-roles{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-  }
-  .title-roles{
-    text-align: center;
-    color: #343434;
-    font-family: 'Merienda', cursive; 
-  }
-    .input-roles{
-      outline: none;
+    .description-top{
+      text-align: center;
+      font-size: 1.5em;
     }
-.videoIntro{
-  position: relative;
-  text-align: center;
-  background: #fff;
-}
-/* CUARTA PANTALLA - FILTRAR ROLES DE CAMPEONES */
-.header-container{
-  background: #fff;
-  display: flex;
-  width: 100%;
-  height: 180px;
-  align-items: center;
-  justify-content: center;
-}
-  .title-screen-asse{
-    background: #fff;
-    display: flex;
-    width: 50%;
-    height: 100%;
-    box-sizing: border-box;
-    justify-content: center;
-    align-items: center;
-  }
-    .title-asse{
-      color: #343434;
-      font-size: 3.5em;
-      font-family: 'Merienda', cursive; 
-      text-transform: uppercase;
+    .description-top-phase{
+      text-align: center;
+      font-size: 1em;
     }
-    #contentListRol{
-      background: #fff;
-      display: flex;
-      flex-wrap: wrap;
-      flex-direction: row;
-      width: 100%;
-      justify-content: center;
+    .stats-calculation{
+      padding: 5px;
     }
-/* BOTONES ADICIONALES */
-i{
-  padding-top: 25px;
-  font-size: 50px;
-  color: #343434;
+    .card-top{
+      max-width: 90%;
+      height: 350px;
+      margin: 5px;
+      padding: 5px;
+    }
+    .cardTwo{
+      height: 300px;
+    }
+    .img-boxTwo{
+      height: 300px;
+    }
+    .galeria-top{
+      height: 300px;
+    }
+    .name-top{
+      font-size: 1.2em;
+    }
 }
 
 @media (min-width: 320px) and (max-width: 480px) {
@@ -1384,7 +1429,7 @@ i{
     width: 100%;
     height: 70px;
   }
-    .header-nav label{
+  .header-nav label{
       display: block;
       width: 70px;
       height: 70px;
@@ -1518,13 +1563,51 @@ i{
       font-size: 0.75em;
     }
     .title-top{
-      font-size: 2em;
+      padding-top: 20px;
+      font-size: 2.5em;
+      text-align: center;
     }
     .description-top{
-      font-size: 0.9em;
+      font-size: 1.5em;
+      text-align: center;
     }
     .description-top-phase{
-      font-size: 0.9em;
+      text-align: center;
+      font-size: 1em;
+      padding-top: 20px;
+    }
+    i{
+      font-size: 35px;
+    }
+    .stats-calculation{
+      padding: 5px;
+    }
+    .card-top{
+      max-width: 90%;
+      height: 350px;
+      margin: 5px;
+      padding: 5px;
+    }
+    .cardTwo{
+      height: 300px;
+    }
+    .img-boxTwo{
+      height: 300px;
+    }
+    .galeria-top{
+      height: 300px;
+    }
+    .name-top{
+      font-size: 1.2em;
+    }
+    .title-roles{
+      font-size: 0.7em;
+    }
+    .input-roles{
+      height: 45px;
+      width: 45px;
+    }
+    .title-asse{
+      font-size: 2em;
     }
 }
-
