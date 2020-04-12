@@ -13,10 +13,9 @@ body {
   width: 100%;
   height: 100%;
   background-color: #fff;
-  /* background-color: slateblue; */
   background-size: cover;
 }
-  header{
+  .header-nav{
     background: #232020;
     width: 100%;
     height: 70px;
@@ -24,14 +23,14 @@ body {
       #btn-menu {
         display: none;
       }
-      header label {
+      .header-nav label {
         display: none;
         width: 30px;
         height: 30px;
         padding: 10px;
         border-right:1px solid #fff;
       }
-      header label:hover {
+      .header-nav label:hover {
           cursor: pointer;
           background: rgba(224, 221, 20, 0.3);
       }
@@ -158,6 +157,7 @@ body {
     }
 
 /* SEGUNDA PANTALLA */
+
 .higher-container{
   display: flex;
   background: #ffffff;
@@ -210,7 +210,7 @@ body {
     align-items: center;
     justify-content: center;
     order: -1;
-}
+  }
     .select-order{
       width: 60%;
       height: 40px;
@@ -225,6 +225,7 @@ body {
       font-family: 'Noto Sans JP', sans-serif;
       font-size: 0.8em;
       font-weight: 300;
+      background: #fff;
       }
       .selectOrder:focus{
         border-color: #fbb901;
@@ -237,7 +238,7 @@ body {
     align-items: center;
     justify-content: center;
     order: 3;
-}
+  }
     .input-search{
       width: 60%;
       height: 40px;
@@ -356,7 +357,7 @@ body {
             padding-bottom: 10px;
         }
           .title-tags{
-            color: #fbb901;
+            color: #343434;
             text-align: center;                
             font-family: 'Noto Sans JP', sans-serif;
             font-weight: 500;
@@ -425,6 +426,774 @@ body {
     box-shadow: 0 0 5px #fbb901,
                 0 0 25px #fbb901;
   }
+
+/* MEDIA QUERIES */
+@media (min-width: 2141px) and (max-width: 2560px) {
+  .higher-container{
+    height: 480px;
+  }
+  .title-screen{
+    width: 50%;
+  }
+    .title-champions{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 250px;
+      padding-top: 35px;
+    }
+        h1{
+          font-size: 2.7em;
+        }
+        .big{
+          font-size: 3.7em;
+        }
+      .description-screen{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100px;
+      }
+        .description{
+          font-size: 1.8em;
+        }
+        .ascend-descend{
+          width: 25%;
+          height: 160px;
+        }
+          .select-order{
+            height: 90px;
+            padding-left: 15px;
+            font-size: 1.6em;
+          }
+        .search-lol{
+          width: 25%;
+          height: 160px;
+        }
+          .input-search{
+            height: 90px;
+            padding-left: 15px;
+            font-size: 1.6em;
+          }
+        #backOne i{
+          padding-top: 20px;
+          font-size: 75px;
+          color: #343434;
+        }
+    .medium-container{
+      padding-top: 15px;
+      padding-bottom: 60px;
+    }
+      .card-champions{
+        max-width: 18%;
+        height: 580px;
+        margin: 15px;
+      }
+        .card{
+          height: 525px;
+        }
+        .img-box{
+          height: 525px;
+        }
+          .galeria-img{
+            height: 525px;
+          }
+          .details{
+            top: 10px;
+            left: 10px;
+            bottom: 10px;
+            right: 10px;
+          }
+          .content-info{
+            padding-bottom: 30px;
+          }
+          .small-img{
+            max-width: 115px;
+            height: 155px;
+            top: 0px;
+            bottom: 0px;
+          }
+          .name-champions{
+            font-size: 2.8em;
+          }
+          .title-info{
+            font-size: 2em;
+            padding-bottom: 10px;
+          }
+            .title-tags{
+              font-size: 1em;
+            }
+              .info-champions{
+                font-size: 1.8em;
+              }
+    .lower-container{
+      height: 110px;
+      padding: 2rem 0;
+    }
+      .btnTop5{
+        width: 360px;
+        height: 65px;
+        font-size: 1.8em;
+      }
+      .btnRoles{
+        width: 360px;
+        height: 65px;
+        font-size: 1.8em;
+      }
+}
+
+@media (min-width: 1625px) and (max-width: 2140px) {
+  .higher-container{
+    height: 415px;
+  }
+  .title-screen{
+    width: 50%;
+  }
+    .title-champions{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 230px;
+      padding-top: 35px;
+    }
+        h1{
+          font-size: 2.4em;
+        }
+        .big{
+          font-size: 3.4em;
+        }
+      .description-screen{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 80px;
+      }
+        .description{
+          font-size: 1.6em;
+        }
+        .ascend-descend{
+          width: 25%;
+          height: 160px;
+        }
+          .select-order{
+            height: 70px;
+            padding-left: 15px;
+            font-size: 1.5em;
+          }
+        .search-lol{
+          width: 25%;
+          height: 160px;
+        }
+          .input-search{
+            height: 70px;
+            padding-left: 15px;
+            font-size: 1.5em;
+          }
+        #backOne i{
+          padding-top: 20px;
+          font-size: 65px;
+          color: #343434;
+        }
+    .medium-container{
+      padding-top: 15px;
+      padding-bottom: 60px;
+    }
+      .card-champions{
+        max-width: 20%;
+        height: 550px;
+        margin: 15px;
+      }
+        .card{
+          height: 495px;
+        }
+        .img-box{
+          height: 495px;
+        }
+          .galeria-img{
+            height: 495px;
+          }
+          .details{
+            top: 10px;
+            left: 10px;
+            bottom: 10px;
+            right: 10px;
+          }
+          .content-info{
+            padding-bottom: 30px;
+          }
+          .small-img{
+            max-width: 115px;
+            height: 155px;
+            top: 0px;
+            bottom: 0px;
+          }
+          .name-champions{
+            font-size: 2.8em;
+          }
+          .title-info{
+            font-size: 2em;
+            padding-bottom: 10px;
+          }
+            .title-tags{
+              font-size: 1em;
+            }
+              .info-champions{
+                font-size: 1.8em;
+              }
+    .lower-container{
+      height: 90px;
+      padding: 2rem 0;
+    }
+      .btnTop5{
+        width: 360px;
+        height: 60px;
+        font-size: 1.8em;
+      }
+      .btnRoles{
+        width: 360px;
+        height: 60px;
+        font-size: 1.8em;
+      }
+}
+@media (min-width: 1281px) and (max-width: 1440px) {
+  .higher-container{
+    height: 300px;
+  }
+    .title-champions{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 180px;
+      padding-top: 20px;
+    }
+        h1{
+          font-size: 2em;
+        }
+        .big{
+          font-size: 3em;
+        }
+      .description-screen{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 40px;
+      }
+        .description{
+          font-size: 1em;
+        }
+      .ascend-descend{
+        height: 80px;
+      }
+        .select-order{
+          padding-left: 15px;
+          font-size: 0.8em;
+        }
+      .search-lol{
+        height: 80px;
+      }
+        .input-search{
+          padding-left: 15px;
+          font-size: 0.8em;
+        }
+      #backOne i{
+        padding-top: 20px;
+        font-size: 45px;
+        color: #343434;
+      }
+  .medium-container{
+    padding-top: 15px;
+    padding-bottom: 60px;
+  }
+    .card-champions{
+      max-width: 20%;
+      height: 400px;
+      margin: 10px;
+    }
+      .card{
+        height: 360px;
+      }
+      .img-box{
+        height: 360px;
+      }
+        .galeria-img{
+          height: 360px;
+        }
+        .details{
+          top: 10px;
+          left: 10px;
+          bottom: 10px;
+          right: 10px;
+        }
+        .content-info{
+          padding-bottom: 30px;
+        }
+        .small-img{
+          max-width: 85px;
+          height: 125px;
+          top: 0px;
+          bottom: 0px;
+        }
+        .name-champions{
+          font-size: 1.5em;
+        }
+        .title-info{
+          font-size: 1.2em;
+          padding-bottom: 10px;
+        }
+          .title-tags{
+            font-size: 1em;
+          }
+            .info-champions{
+              font-size: 1em;
+            }
+  .lower-container{
+    height: 60px;
+    padding: 1.8rem 0;
+  }
+    .btnTop5{
+      width: 260px;
+      height: 40px;
+      font-size: 1em;
+    }
+    .btnRoles{
+      width: 260px;
+      height: 40px;
+      font-size: 1em;
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+  .higher-container{
+    height: 250px;
+  }
+    .title-champions{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 140px;
+      padding-top: 20px;
+    }
+        h1{
+          font-size: 1.8em;
+        }
+        .big{
+          font-size: 2.7em;
+        }
+      .description-screen{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 60px;
+      }
+        .description{
+          font-size: 1em;
+        }
+      .ascend-descend{
+        height: 65px;
+      }
+        .select-order{
+          padding-left: 10px;
+          font-size: 0.8em;
+        }
+      .search-lol{
+        height: 65px;
+      }
+        .input-search{
+          padding-left: 10px;
+          font-size: 0.8em;
+        }
+      #backOne i{
+        padding-top: 1px;
+        font-size: 35px;
+        color: #343434;
+      }
+  .medium-container{
+    padding-top: 5px;
+    padding-bottom: 60px;
+  }
+    .card-champions{
+      max-width: 20%;
+      height: 300px;
+      margin: 10px;
+    }
+      .card{
+        height: 260px;
+      }
+      .img-box{
+        height: 260px;
+      }
+        .galeria-img{
+          height: 260px;
+        }
+        .details{
+          top: 8px;
+          left: 8px;
+          bottom: 8px;
+          right: 8px;
+        }
+        .content-info{
+          padding-bottom: 30px;
+        }
+        .small-img{
+          max-width: 65px;
+          height: 105px;
+          top: 0px;
+          bottom: 0px;
+        }
+        .name-champions{
+          font-size: 1.5em;
+        }
+        .title-info{
+          font-size: 1em;
+          padding-bottom: 2px;
+        }
+          .title-tags{
+            font-size: 0.95em;
+          }
+            .info-champions{
+              font-size: 0.85em;
+            }
+  .lower-container{
+    height: 50px;
+    padding: 1.8rem 0;
+  }
+    .btnTop5{
+      width: 200px;
+      height: 35px;
+      font-size: 0.9em;
+    }
+    .btnRoles{
+      width: 200px;
+      height: 35px;
+      font-size: 0.9em;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .higher-container{
+    height: 250px;
+  }
+    .title-champions{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 130px;
+      padding-top: 20px;
+    }
+        h1{
+          font-size: 1.5em;
+        }
+        .big{
+          font-size: 2.7em;
+        }
+      .description-screen{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 80px;
+      }
+        .description{
+          font-size: 1em;
+        }
+      .ascend-descend{
+        height: 65px;
+      }
+        .select-order{
+          padding-left: 4px;
+          font-size: 0.8em;
+        }
+      .search-lol{
+        height: 65px;
+      }
+        .input-search{
+          padding-left: 4px;
+          font-size: 0.8em;
+        }
+      #backOne i{
+        padding-top: 2px;
+        font-size: 35px;
+        color: #343434;
+      }
+  .medium-container{
+    padding-top: 5px;
+    padding-bottom: 60px;
+  }
+    .card-champions{
+      max-width: 30%;
+      height: 300px;
+      margin: 10px;
+    }
+      .card{
+        height: 260px;
+      }
+      .img-box{
+        height: 260px;
+      }
+        .galeria-img{
+          height: 260px;
+        }
+        .details{
+          top: 8px;
+          left: 8px;
+          bottom: 8px;
+          right: 8px;
+        }
+        .content-info{
+          padding-bottom: 30px;
+        }
+        .small-img{
+          max-width: 65px;
+          height: 105px;
+          top: 0px;
+          bottom: 0px;
+        }
+        .name-champions{
+          font-size: 1.5em;
+        }
+        .title-info{
+          font-size: 1em;
+          padding-bottom: 2px;
+        }
+          .title-tags{
+            font-size: 0.95em;
+          }
+            .info-champions{
+              font-size: 0.85em;
+            }
+  .lower-container{
+    height: 50px;
+    padding: 1.8rem 0;
+  }
+    .btnTop5{
+      width: 200px;
+      height: 35px;
+      font-size: 0.9em;
+    }
+    .btnRoles{
+      width: 200px;
+      height: 35px;
+      font-size: 0.9em;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .higher-container{
+    height: 250px;
+  }
+    .title-champions{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 130px;
+      padding-top: 20px;
+    }
+        h1{
+          font-size: 1.5em;
+        }
+        .big{
+          font-size: 2.7em;
+        }
+      .description-screen{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 80px;
+      }
+        .description{
+          font-size: 1em;
+        }
+      .ascend-descend{
+        height: 65px;
+      }
+        .select-order{
+          padding-left: 4px;
+          font-size: 0.8em;
+        }
+      .search-lol{
+        height: 65px;
+      }
+        .input-search{
+          padding-left: 4px;
+          font-size: 0.8em;
+        }
+      #backOne i{
+        padding-top: 2px;
+        font-size: 35px;
+        color: #343434;
+      }
+  .medium-container{
+    padding-top: 5px;
+    padding-bottom: 60px;
+  }
+    .card-champions{
+      max-width: 30%;
+      height: 300px;
+      margin: 10px;
+    }
+      .card{
+        height: 260px;
+      }
+      .img-box{
+        height: 260px;
+      }
+        .galeria-img{
+          height: 260px;
+        }
+        .details{
+          top: 8px;
+          left: 8px;
+          bottom: 8px;
+          right: 8px;
+        }
+        .content-info{
+          padding-bottom: 30px;
+        }
+        .small-img{
+          max-width: 65px;
+          height: 105px;
+          top: 0px;
+          bottom: 0px;
+        }
+        .name-champions{
+          font-size: 1.5em;
+        }
+        .title-info{
+          font-size: 1em;
+          padding-bottom: 2px;
+        }
+          .title-tags{
+            font-size: 0.95em;
+          }
+            .info-champions{
+              font-size: 0.85em;
+            }
+  .lower-container{
+    height: 50px;
+    padding: 1.8rem 0;
+  }
+    .btnTop5{
+      width: 200px;
+      height: 35px;
+      font-size: 0.9em;
+    }
+    .btnRoles{
+      width: 200px;
+      height: 35px;
+      font-size: 0.9em;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+  .higher-container{
+    height: 250px;
+  }
+    .title-champions{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 80px;
+    }
+        h1{
+          font-size: 1em;
+        }
+        .big{
+          font-size: 2.8em;
+        }
+      .description-screen{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100px;
+      }
+        .description{
+          font-size: 0.9em;
+        }
+      .ascend-descend{
+        height: 50px;
+      }
+        .select-order{
+          padding-left: 4px;
+          font-size: 0.7em;
+        }
+      .search-lol{
+        height: 50px;
+      }
+        .input-search{
+          padding-left: 4px;
+          font-size: 0.7em;
+        }
+      #backOne i{
+        padding-top: 5px;
+        font-size: 35px;
+        color: #343434;
+      }
+  .medium-container{
+    padding-top: 5px;
+    padding-bottom: 60px;
+  }
+    .card-champions{
+      max-width: 40%;
+      height: 285px;
+      margin: 8px;
+    }
+      .card{
+        height: 260px;
+      }
+      .img-box{
+        height: 260px;
+      }
+        .galeria-img{
+          height: 260px;
+        }
+        .details{
+          top: 8px;
+          left: 8px;
+          bottom: 8px;
+          right: 8px;
+        }
+        .content-info{
+          padding-bottom: 30px;
+        }
+        .small-img{
+          max-width: 65px;
+          height: 105px;
+          top: 0px;
+          bottom: 0px;
+        }
+        .name-champions{
+          font-size: 1.2em;
+        }
+        .title-info{
+          font-size: 1em;
+          padding-bottom: 2px;
+        }
+          .title-tags{
+            font-size: 1em;
+          }
+            .info-champions{
+              font-size: 0.9em;
+            }
+  .lower-container{
+    height: 50px;
+    padding: 1.5rem 0;
+  }
+    .btnTop5{
+      width: 170px;
+      height: 30px;
+      font-size: 0.8em;
+    }
+    .btnRoles{
+      width: 170px;
+      height: 30px;
+      font-size: 0.8em;
+    }
+}
+
+
+
+
+
+
 /* CALCULO AGREGADO */
 .title-calculation{
   display: flex;
@@ -550,6 +1319,7 @@ body {
   flex-wrap: wrap;
   flex-direction: row;
   align-items: center;
+  height: 150px;
 }
   .button-roles{
     display: flex;
@@ -568,7 +1338,6 @@ body {
   position: relative;
   text-align: center;
   background: #fff;
-  /* margin-top: 10px; */
 }
 /* CUARTA PANTALLA - FILTRAR ROLES DE CAMPEONES */
 .header-container{
@@ -609,27 +1378,27 @@ i{
   color: #343434;
 }
 
-@media only screen and (max-width:425px){
-  header{
+@media (min-width: 320px) and (max-width: 480px) {
+  .header-nav{
     background: #232020;
     width: 100%;
     height: 70px;
   }
-  header label{
-    display: block;
-    width: 70px;
-    height: 70px;
-}
-.imgLolo{
-  width: 50px;
-  height: 40px;
-}
+    .header-nav label{
+      display: block;
+      width: 70px;
+      height: 70px;
+    }
+  .imgLolo{
+    width: 50px;
+    height: 40px;
+  }
 .menu {
-    position: absolute;
-    background: rgb(37, 35, 35); 
-    width: 70%;        
-    margin-left: -70%;
-    transition: all 0.5s;
+  position: absolute;
+  background: rgb(37, 35, 35); 
+  width: 70%;        
+  margin-left: -70%;
+  transition: all 0.5s;
 }
 .menu ul {
     flex-direction: column;
@@ -642,7 +1411,120 @@ i{
     margin:0;
 }
 .lol{
-  width: 100%;
-  height: 200px;
+  width: 80%;
+  height: 150px;
   }
+  .higher-container{
+    height: 250px;
+  }
+    .title-champions{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 80px;
+    }
+        h1{
+          font-size: 0.9em;
+        }
+        .big{
+          font-size: 2em;
+        }
+      .description-screen{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 130px;
+      }
+        .description{
+          font-size: 0.9em;
+        }
+      .ascend-descend{
+        height: 50px;
+      }
+        .select-order{
+          padding-left: 1px;
+          font-size: 0.55em;
+        }
+      .search-lol{
+        height: 50px;
+      }
+        .input-search{
+          padding-left: 4px;
+          font-size: 0.55em;
+        }
+      #backOne i{
+        padding-top: 5px;
+        font-size: 25px;
+        color: #343434;
+      }
+  .medium-container{
+    padding-top: 5px;
+    padding-bottom: 60px;
+  }
+    .card-champions{
+      max-width: 40%;
+      height: 255px;
+      margin: 8px;
+    }
+      .card{
+        height: 230px;
+      }
+      .img-box{
+        height: 230px;
+      }
+        .galeria-img{
+          height: 230px;
+        }
+        .details{
+          top: 5px;
+          left: 5px;
+          bottom: 5px;
+          right: 5px;
+        }
+        .content-info{
+          padding-bottom: 30px;
+        }
+        .small-img{
+          max-width: 55px;
+          height: 95px;
+          top: 0px;
+          bottom: 0px;
+        }
+        .name-champions{
+          font-size: 1.2em;
+        }
+        .title-info{
+          font-size: 0.8em;
+          padding-bottom: 2px;
+        }
+          .title-tags{
+            font-size: 1em;
+          }
+            .info-champions{
+              font-size: 0.7em;
+            }
+  .lower-container{
+    height: 40px;
+    padding: 1rem 0;
+  }
+    .btnTop5{
+      width: 150px;
+      height: 25px;
+      font-size: 0.75em;
+    }
+    .btnRoles{
+      width: 150px;
+      height: 25px;
+      font-size: 0.75em;
+    }
+    .title-top{
+      font-size: 2em;
+    }
+    .description-top{
+      font-size: 0.9em;
+    }
+    .description-top-phase{
+      font-size: 0.9em;
+    }
 }
+
