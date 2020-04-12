@@ -19,18 +19,37 @@ const error = document.getElementById('error');
 // Descripcion de Campeon
 const crearVistaCampeon = (campeon) => {
   document.querySelector('#detalleCampeon').innerHTML = `
-  <div class = "historia imagen">
-    <img src = ${campeon.splash} class="imgCampeon"/> </div>
+  <div class = "historia">
+    <div class="titulo">
+     <p class="historiaNombre">${campeon.name} </p>
+     <p class="hp" > HP ${campeon.stats.hp} </p>
+    </div>
+    <img src = ${campeon.splash} class="imgCampeon"/>
+    <p class="historiaTags">${campeon.tags} </p>
+  </div>
   <div class = "descripcionCampeon">
-    <p class = "historiaNombre">${campeon.name} </p>
     <p class = "historiaTitle">${campeon.title} </p>
-    <p class = "historiaCampeon">${campeon.blurb} </p>
-    <p class="historiaTags"> Rol: ${campeon.tags} </p>
-    <div class = "info">
-      <p> Defensa:${campeon.info.defense} </p>
-      <p> Ataque:${campeon.info.attack} </p>
-      <p> Magia:${campeon.info.magic} </p>
-      <p> Dificultad:${campeon.info.difficulty} </p> </div>
+    <div class = "historiaCampeon">
+      <p >${campeon.blurb} </p>
+      <div class = "info">
+        <div>
+          <img src="imagenes/ataque.png">
+          <p> Atack: ${campeon.info.attack}</p>
+        </div>
+        <div>
+          <img src="imagenes/defensa.png">
+          <p> Defense: ${campeon.info.defense}</p>
+        </div>
+        <div>
+          <img src="imagenes/magia.png" class="tamaño">
+          <p> Magic: ${campeon.info.magic}</p>
+        </div>
+        <div>
+          <img src="imagenes/dificultad.png" class="tamaño">
+          <p> Difficulty: ${campeon.info.difficulty}</p>
+        </div>
+      </div>
+    </div>
   </div>`;
 };
 
@@ -56,7 +75,6 @@ const resultado = (data) => {
     // casilla agregar add event ... crearVistaCampeon(identificador);
     casilla.addEventListener('click', (evt) => {
       const nombreId = evt.path[1].id;
-      // console.log(listaTodos[nombreId]);
       crearVistaCampeon(listaTodos[nombreId]);
       pantalla3.classList.remove('ocultar');
       lista.innerHTML = '';
@@ -87,19 +105,21 @@ cerrar.addEventListener('click', () => {
 
 // buscando en el input
 const buscar = document.querySelector('#buscador');
-buscar.addEventListener('keyup', (evt) => {
+buscar.addEventListener('input', (evt) => {
   const texto = evt.target.value.toLowerCase();// extraemos el valor de la caja de texto
   const filtroCampeon = filtrarNombre(listaTodos, texto); // llamo mi funcion
 
   // CHAMPION NOT FOUND
   const errorMsj = document.querySelector('#error');
   if (filtroCampeon.length === 0) {
+    errorMsj.classList.remove('ocultar');
     errorMsj.classList.add('mostrar');
     pantalla2.classList.add('ocultar');
     pantalla3.classList.add('ocultar');
-    pantalla3.classList.add('ocultar');
+    pantalla4.classList.add('ocultar');
     lista.innerHTML = '';
   } else {
+    errorMsj.classList.remove('mostrar');
     errorMsj.classList.add('ocultar');
   }
   resultado(filtroCampeon);
@@ -122,7 +142,7 @@ buttonRoles.addEventListener('click', () => {
 
 // filtrando por Rol
 const seccionRoles = document.querySelector('.roles');
-const inputsRoles = seccionRoles.querySelectorAll('input');
+const inputsRoles = seccionRoles.querySelectorAll('.divRol');
 for (let i = 0; i < inputsRoles.length; i += 1) {
   inputsRoles[i].addEventListener('click', (event) => {
     const rolSeleccionado = event.target.value;

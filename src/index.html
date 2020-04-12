@@ -12,13 +12,17 @@
 
     <header class="header">
       <div class="encabezado">
-        <div class="logoLol">
-        <img src= "imagenes/logo.png" class="logo" ><!--src= "imagenes/logo.png"/volver a ponerlo cuando termine el css-->
+        <div class="logo-padre">
+          <img src= "imagenes/logo.png" class="logo" ><!--src= "imagenes/logo.png"/volver a ponerlo cuando termine el css-->
         </div>
-        <div class="searcher">
-          <input type="search" id="buscador" class="formBuscador" placeholder="Buscar por campeon">
-          <img src="imagenes/search-regular-24.png" alt="buscar"></button>
+       
+        <div class="encabezado-hijo">
+          <div class="searcher">
+            <input type="search" id="buscador" class="formBuscador" placeholder="Buscar por campeon" autocomplete="off">
+            <img src="imagenes/search-regular-24.png" alt="buscar"></button>
+          </div>
         </div>
+
 
       </div>
       <nav class="menu">
@@ -46,8 +50,10 @@
       <div id="cantidad" class="cantidadMostrada"></div>
         <section class="lista">
          <div id="galeria" class="galeriaDeCampeones"></div>
-         <div id="error" class="ocultar">No se encontraron resultados</div>
         </section> 
+        <div id="error" class="ocultar">
+          <p>No se encontraron resultados</p>
+        </div>
       </div>
 
       <div class="contenedorSubir" >
@@ -59,32 +65,28 @@
       <!--segunda pantalla (ver los roles)-->
       <div id="pantalla2" class="ocultar">
         <section id="sectionRoles" class="roles">
-          <div class="divRol"><input type="image" id="Assassin" value ="Assassin" class="styleInput" src="imagenes\role-icon-assassin.png"><p class="pRoles">ASSASSIN</p></div>
-          <div class="divRol"><input type="image" id="Fighter" value ="Fighter" class="styleInput" src="imagenes\league-of-legends-fighter-icon-1.png"><p class="pRoles">FIGHTER</p></div>
-          <div class="divRol"><input type="image" id="Mage" value ="Mage" class="styleInput" src="imagenes\Mage_icon.png"><p class="pRoles">MAGE</p></div>
-          <div class="divRol"><input type="image" id="Marksman" value ="Marksman" class="styleInput" src="imagenes\role_icon_fighter.png"><p class="pRoles">MARKSMAN</p></div> 
-          <div class="divRol"><input type="image" id="Support" value ="Support" class="styleInput" src="imagenes\role_icon_support.png"><p class="pRoles">SUPPORT</p></div>
-          <div class="divRol"><input type="image" id="Tank" value ="Tank" class="styleInput" src="imagenes\Tanque.png"><p class="pRoles">TANK</p></div>
+            <div class="divRol"><input type="image" id="Assassin" value ="Assassin" class="styleInput" src="imagenes\role-icon-assassin.png"><p class="pRoles">ASSASSIN</p></div>
+            <div class="divRol"><input type="image" id="Mage" value ="Mage" class="styleInput" src="imagenes\Mage_icon.png"><p class="pRoles">MAGE</p></div>
+            <div class="divRol"><input type="image" id="Marksman" value ="Marksman" class="styleInput" src="imagenes\role_icon_fighter.png"><p class="pRoles">MARKSMAN</p></div> 
+            <div class="divRol"><input type="image" id="Support" value ="Support" class="styleInput" src="imagenes\role_icon_support.png"><p class="pRoles">SUPPORT</p></div>
+            <div class="divRol"><input type="image" id="Tank" value ="Tank" class="styleInput" src="imagenes\Tanque.png"><p class="pRoles">TANK</p></div>   
+            <div class="divRol"><input type="image" id="Fighter" value ="Fighter" class="styleInput" src="imagenes\league-of-legends-fighter-icon-1.png"><p class="pRoles">FIGHTER</p></div>     
         </section>
       </div>
       <!--tercera pantalla (lista de campeones por rol)-->
       <div id="pantalla3" class="ocultar">
-        <section>
           <div id="detalleCampeon" class="detalleCampeon"></div>
-        </section>
       </div>
-      <div id="pantalla4" class="ocultar">
-        <section class="sectionAvage">
-          <div class="divMapLol"><img src="imagenes/mapLol.png" class="mapLol" alt="mapLol"></div>
+      <section id="pantalla4" class="ocultar">
+        <div class="sectionAvage">
           <div class="divMapLol">
             <div id="hpChampion" class="hpChampion styleAverage"></div>
             <div id="movespeedChampion" class="movespeedChampion styleAverage"></div>
             <div id="attackChampion" class="attackChampion styleAverage"></div>
           </div>
-        </section>
-      </div>
-
-
+          <div class="divMapLol"><img src="imagenes/mapLol.png" class="mapLol" alt="mapLol"></div>
+        </div>
+      </section>
     </main>
 
     <footer class="footer">
