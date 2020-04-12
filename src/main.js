@@ -199,6 +199,8 @@ habilidades.addEventListener('click', () => {
   pantalla2.classList.add('ocultar');
   pantalla3.classList.add('ocultar');
   error.classList.remove('mostrar');
+  cantidadCampeones.classList.add('ocultar');
+  cantidadCampeones.classList.remove('mostrar');
 });
 
 const hpChampion = document.querySelector('#hpChampion');
