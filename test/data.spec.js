@@ -1,5 +1,7 @@
 // import data from '../src/data/lol/lol.js';
-import { ordenarCampeones, filtrarNombre, filtrandoRoles } from '../src/data.js';
+import {
+  ordenarCampeones, filtrarNombre, filtrandoRoles, calculoStats,
+} from '../src/data.js';
 
 const firstTestExpect = [
   {
@@ -161,13 +163,62 @@ describe('filtrandoRoles', () => {
   });
 });
 
+const secondTestExpect = [
+  {
+    id: 'Akali',
+    key: '84',
+    name: 'Akali',
+    stats: {
+      hp: 587.8,
+      movespeed: 350,
+      attackdamage: 58.376,
+    },
+  },
+  {
+    id: 'Bard',
+    key: '432',
+    name: 'Bard',
+    stats: {
+      hp: 535,
+      movespeed: 330,
+      attackdamage: 52,
+    },
+  },
+  {
+    id: 'Ekko',
+    key: '245',
+    name: 'Ekko',
+    stats: {
+      hp: 580,
+      movespeed: 340,
+      attackdamage: 55,
+    },
+  },
+  {
+    id: 'Morgana',
+    key: '25',
+    name: 'Morgana',
+    stats: {
+      hp: 547.48,
+      movespeed: 335,
+      attackdamage: 55.46,
+    },
+  },
+];
 
-// describe('anotherExample', () => {
-//   it('is a function', () => {
-//     expect(typeof anotherExample).toBe('function');
-//   });
 
-//   it('returns `anotherExample`', () => {
-//     expect(anotherExample()).toBe('OMG');
-//   });
-// });
+describe('calculoStats', () => {
+  it('es una función', () => {
+    expect(typeof calculoStats).toBe('function');
+  });
+
+  it('Debe retornar el promedio de HP de los campeones', () => {
+    expect(calculoStats(secondTestExpect, 'hp')).toBe('16.79');
+  });
+  it('Debe retornar el promedio de MOVESPEED de los campeones', () => {
+    expect(calculoStats(secondTestExpect, 'movespeed')).toBe('10.11');
+  });
+  it('Debe retornar el promedio de ATTACKDAMAGE de los campeones', () => {
+    expect(calculoStats(secondTestExpect, 'attackdamage')).toBe('1.65');
+  });
+});
