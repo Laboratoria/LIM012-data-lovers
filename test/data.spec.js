@@ -1,5 +1,5 @@
 import {
-  athletesView, ordenAs, filtrarAtletasPorDeporte,
+  athletesView, ordenAs, filtrarAtletasPorDeporte, totalMedallas,
 } from '../src/data.js';
 
 const input = [
@@ -32,6 +32,73 @@ const input = [
     deporte: 'Swing',
     equipo: 'Italy',
     noc: 'ITA',
+  },
+];
+
+const medallero = [
+  {
+    nombre: 'Matteo Bisiani',
+    genero: 'M',
+    altura: '184',
+    peso: '85',
+    nacimiento: 1976,
+    deporte: 'Archery',
+    equipo: 'Italy',
+    noc: 'ITA',
+    disciplinas: [
+      {
+        disciplina: "Archery Men's Team",
+        temporada: 'Summer',
+        año: 2000,
+        ciudad: 'Sydney',
+        medalla: 'Silver',
+      },
+    ],
+  },
+  {
+    nombre: 'Nataliya Andrivna Burdeina',
+    genero: 'F',
+    altura: '165',
+    peso: '63',
+    nacimiento: 1974,
+    deporte: 'Archery',
+    equipo: 'Ukraine',
+    noc: 'UKR',
+    disciplinas: [
+      {
+        disciplina: "Archery Women's Team",
+        temporada: 'Summer',
+        año: 2000,
+        ciudad: 'Sydney',
+        medalla: 'Silver',
+      },
+    ],
+  },
+  {
+    nombre: 'Ilario Di Bu',
+    genero: 'M',
+    altura: '175',
+    peso: '90',
+    nacimiento: 1966,
+    deporte: 'Archery',
+    equipo: 'Italy',
+    noc: 'ITA',
+    disciplinas: [
+      {
+        disciplina: "Archery Men's Team",
+        temporada: 'Summer',
+        año: 2000,
+        ciudad: 'Sydney',
+        medalla: 'Silver',
+      },
+      {
+        disciplina: "Archery Men's Team",
+        temporada: 'Summer',
+        año: 2008,
+        ciudad: 'Beijing',
+        medalla: 'Silver',
+      },
+    ],
   },
 ];
 
@@ -132,5 +199,16 @@ describe('filtrarAtletasPorDeporte', () => {
       },
     ];
     expect(filtrarAtletasPorDeporte(input, 'Archery')).toEqual(threeOutput);
+  });
+});
+
+describe('totalMedallas', () => {
+  it('is a function', () => {
+    expect(typeof totalMedallas).toBe('function');
+  });
+
+  it('Deberia retornar un numero unico con la cantidad de medallas', () => {
+    const resultado = 2;
+    expect(totalMedallas(medallero, 'Italy', 'Sydney', 'Silver')).toEqual(resultado);
   });
 });

@@ -84,6 +84,7 @@ optionSports.addEventListener('change', (event) => {
 const optionsMedallas = document.querySelector('#medallas');
 optionsMedallas.addEventListener('click', () => {
   document.getElementById('seccion-medallas').classList.remove('borrar');
+  document.getElementById('table').classList.add('borrar');
   document.getElementById('articulos').classList.add('borrar');
 
   const btnMostrarMedallas = document.querySelector('#btnMostrarMedallas');

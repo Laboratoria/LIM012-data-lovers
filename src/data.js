@@ -22,7 +22,7 @@ export const filtrarAtletasPorDeporte = (arrayAtletas, deporteSeleccionado) => {
   const deportesFiltrados = arrayAtletas.filter(atletas => atletas.deporte === deporteSeleccionado);
   return deportesFiltrados;
 };
-debugger;
+
 export const totalMedallas = (arrayAtletas, pais, olimpiada, tipo) => {
   const arrayAtletasPorPais = arrayAtletas.filter(atleta => atleta.equipo === pais);
   const totalMedallasTipo = arrayAtletasPorPais.reduce((contador, atleta) => {
