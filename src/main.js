@@ -1,66 +1,97 @@
 // import data from './data/lol/lol.js';
 // import data from './data/pokemon/pokemon.js';
-import dataAtletas from './data/atletas/atletas.js';
-// import dataAtletas from './data/copy.js';
+import dataAtletas from './data/copy.js';
+// import dataAtletas from './data/atletas/atletas.js';
 
-/* import {
-  filterMedallaSilver,
-  filterMedallaBronze,
-  filterMedallaGold,
-  filterTempSummer,
-  filterTempWinter,
-} from './data.js'; */
+import {
+  transformaBandera,
+  removeDuplicates,
+} from './data.js';
 
-const data = (dataAtletas.atletas);
+const data = dataAtletas.atletas;
 const atletasInfo = document.getElementById('atlethes');
 const btnGender = document.getElementById('filterGender');
 const btnSeason = document.getElementById('filterSeason');
 const btnMedal = document.getElementById('filterMedal');
 const genderFilters = btnGender.querySelectorAll('li');
+const seasonFilters = btnSeason.querySelectorAll('li');
+const medalFilters = btnMedal.querySelectorAll('li');
 const inputSearch = document.getElementById('search');
+const btnSort = document.getElementById('sort');
+const modal = document.getElementById('modal');
+const closeBtn = document.getElementById('close');
 
-
-const transformaBandera = (initial) => {
-  const newInitial = initial.slice(0, -1);
-  return newInitial;
-};
-
-
-atletasInfo.innerHTML = '';
-data.forEach((arrays) => {
-  const card = document.createElement('div');
-  card.classList.add('card');
-  card.innerHTML = `
-   <div>
-   <img src = ${arrays.gender === 'F'
+const pintarData = (data) => {
+  atletasInfo.innerHTML = '';
+  data.forEach((arrays) => {
+    const card = document.createElement('div');
+    card.classList.add('card');
+    card.innerHTML = `
+    <div>
+    <img src = ${arrays.gender === 'F'
     ? './img/avatarMujer.png'
     : './img/avatarVaron.png'}
-      width = 110 height = 110>
-   </div>
-   
-   <div class="card-body">
-   <h3 class="atlethe-name">${arrays.name}</h3>
-   <p class = "atlethe-gender">
-   <strong>gender:</strong>
-   ${arrays.gender}
-   </p>
-   <p>
-   <strong>Sport:</strong>
-   ${arrays.sport}
-   </p>
-   <p class="country-region">
-   <strong>Team:</strong>
-   ${arrays.team}
-   </p>
-   <p class="atlethe-game">
-   <strong>Temporada:</strong>
-   ${arrays.sport}
-   </p>
-   </div>
-   <img width = 40 height = 40 src = "https://www.countryflags.io/${transformaBandera(arrays.noc)}/flat/64.png">
+    width = 110 height = 110> 
+    </div>      
+    <div class="card-body">
+      <h3 class="atlethe-name">${arrays.name}</h3>
+      <p class = "atlethe-gender">
+      <strong>gender:</strong>
+        ${arrays.gender}
+      </p>
+      <p>
+      <strong>Sport:</strong>
+        ${arrays.sport}
+      </p>
+      <p class="country-region">
+      <strong>Team:</strong>
+        ${arrays.team}
+      </p>
+      <p>
+      <strong>Disciplina:</strong>
+        ${arrays.disciplinas}
+      </p>
+      </div>
+      <img width = 40 height = 40 src ="https://www.countryflags.io/${transformaBandera(
+    arrays.noc,
+  )}/flat/64.png">
    `;
-  atletasInfo.appendChild(card);
-});
+    card.addEventListener('click', () => {
+      modal.style.display = 'flex';
+      atletheDetails(data);
+    });
+    atletasInfo.appendChild(card);
+  });
+};
+pintarData(data);
+
+// modal
+
+const atletheDetails = (data) => {
+  const modalBody = modal.querySelector('.modal').innerHTML = `
+            <p>
+              <strong>disciplina:</strong>
+              ${modal.name}
+            </p>
+            <p>
+              <strong>Temporada:</strong>
+              ${modal.name}
+            </p>
+            <p>
+              <strong>age:</strong>
+              ${modal.name}
+            </p>
+            <p>
+              <strong>ciudad:</strong>
+              ${modal.name}
+            </p>
+            <p>
+              <strong>medalla:</strong>
+              ${modal.name}
+            </p>
+  `;
+};
+
 
 /* le damos funcionalidad al div que contiene la lista de opciones de filtrado por genero */
 window.addEventListener('click', (e) => {
@@ -87,13 +118,15 @@ window.addEventListener('click', (e) => {
   }
 });
 
+/* close the modal */
+closeBtn.addEventListener('click', () => {
+  modal.style.display = 'none';
+});
+
 /* search, buscador de nombre, encuentra coincidencias */
 inputSearch.addEventListener('input', (e) => {
-  const {
-    value,
-  } = e.target;
+  const { value } = e.target;
   const atletheName = document.querySelectorAll('.atlethe-name');
-  // console.log(atletheName);
   atletheName.forEach((name) => {
     if (name.innerText.toLowerCase().includes(value.toLowerCase())) {
       // desde el nommbre obtenemos el '.atlethe-name' ->subimos a .card Body ->hasta llegar a card
@@ -108,58 +141,70 @@ inputSearch.addEventListener('input', (e) => {
 genderFilters.forEach((filtro) => {
   filtro.addEventListener('click', () => {
     const valor = filtro.innerText;
-    const atletheGender = document.querySelectorAll('.atlethe-gender');
-    // console.log(valor);
-    atletheGender.forEach((genero) => {
-      if (genero.innerText.includes(valor) || valor === 'Todos') {
-        // desde el nommbre obtenemos el '.atlethe-gender' ->subimos a .card Body ->hasta llegar a card
-        genero.parentElement.parentElement.style.display = 'block';
-      } else {
-        genero.parentElement.parentElement.style.display = 'none';
-      }
-    });
+    const filterGenderArr = data.filter(items => (items.gender === valor || valor === 'All'));
+    pintarData(filterGenderArr);
   });
 });
 
-/* filtrar a los atletas por  */
-
-/* const filtrardataHombres = data.filter(items => (items.gender === 'M'));
-console.log('atletas hombres =>', filtrardataHombres);
-
-const filtrardataMujeres = data.filter(items => (items.gender === 'F'));
-console.log('atletas mujeres =>', filtrardataMujeres); */
-
-/* para las opciones de temporada y medallas debemos filtar el array disciplinas de array general Atletas */
-/* const filtrardataInvierno = data.filter(items => (items.disciplinas.filter(item => (item.temporada === 'winter'))));
-console.log('temporada inviernop =>', filtrardataInvierno);
-
-const filtrarmedallaOro = data.filter(items => (items.gender === 'F'));
-console.log('atletas mujeres =>', filtrarmedallaOro); */
-
-/* const filterGender = data.filter(ele => (ele.gender === 'F'));
-console.log(filterGender); */
-
-/* FILTRADOS del array Disciplina */
-
-
-/* filtrado de atletas que son masculino y game summer */
-// const prueba = data.filter(item => item.gender = 'M' && item.game.includes('Winter'));
-// console.log(prueba);
-
-/* const array = [1, 2, 3, 3, 2, 1, 5, 6, 7, 8, 8];
-const removeDuplicates = array => [...new Set(array)]; */
-// console.log(removeDuplicates(array));
-
-/* const filterTempWinter = () => {
-  const tempWinter = [];
-  data.forEach((elem) => {
-    if (elem.hasOwnProperty('disciplinas')) {
-      elem.disciplinas.forEach((obj) => {
-        if (obj.temporada === 'Winter') {
-          tempWinter.push(elem);
-        }
-        const removeDuSummer = removeDuplicates(tempWinter);
-      });
-    }
+// agregue un filtro en las li dentro del.optionFilter (btnSeason)
+seasonFilters.forEach((season) => {
+  season.addEventListener('click', () => {
+    const valor = season.innerText;
+    // console.log(valor);
+    const filterSeasonArr = [];
+    data.forEach((elem) => {
+      if (elem.hasOwnProperty('disciplinas')) {
+        elem.disciplinas.forEach((obj) => {
+          if (obj.temporada === valor || valor === 'All') {
+            filterSeasonArr.push(elem);
+          }
+        });
+      }
+    });
+    pintarData(removeDuplicates(filterSeasonArr));
   });
-}; */
+});
+
+// agregue un filtro en las li dentro del.optionFilter (btnMedal)
+medalFilters.forEach((medal) => {
+  medal.addEventListener('click', () => {
+    const valor = medal.innerText;
+    // console.log(valor);
+    const filterMedalArr = [];
+    data.forEach((elem) => {
+      if (elem.hasOwnProperty('disciplinas')) {
+        elem.disciplinas.forEach((obj) => {
+          if (obj.medalla === valor || valor === 'All') {
+            filterMedalArr.push(elem);
+          }
+        });
+      }
+    });
+    pintarData(removeDuplicates(filterMedalArr));
+  });
+});
+
+
+btnSort.addEventListener('click', () => {
+  const sortedByName = data.sort((a, b) => {
+    if (a.name - b.name) {
+      return 1;
+    }
+    if (b.name > a.name) {
+      return -1;
+    }
+    return 0;
+  });
+  pintarData(sortedByName);
+});
+
+// funcion para to-top
+const toTop = document.querySelector('.to-top');
+window.addEventListener('scroll', () => {
+  // window de la pagina y desplazamiento(pageYOffset) es mayor a 100 pixeles desde la parte superior
+  if (window.pageYOffset > 900) {
+    toTop.classList.add('active');
+  } else {
+    toTop.classList.remove('active');
+  }
+});

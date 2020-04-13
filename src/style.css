@@ -6,6 +6,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: var(--background-body);
   color: aliceblue;
@@ -31,7 +35,7 @@ body {
   /*space between para que los contenidos se vayan a los extremos*/
   align-items: center;
   /*fixed hace que el header sea estatico, pero al hacer esto se modifica el tama;o del header y le volvemos a dar padding y witdh abajo*/
-  position: fixed;
+  /* position: fixed; */
   padding: 0 2rem;
   /*tambien puede ser width:0*/
   width: 100%;
@@ -65,21 +69,6 @@ a {
   align-items: center;
 }
 
-.submenu {
-  position: absolute;
-  background-color: var(--color-background-nav);
-  text-transform: lowercase;
-  visibility: hidden;
-}
-
-.submenu li a {
-  font-size: 19px;
-}
-
-.menu li:hover .submenu {
-  visibility: visible;
-}
-
 /*icon*/
 i {
   margin-right: 7px;
@@ -99,6 +88,12 @@ i {
   padding: 25px;
   min-width: 300px;
 } */
+
+.dataPintada{
+  width: 100%;
+  max-width: 1200px;
+  margin: 30px auto 0;
+}
 
 /*opcion de filtrado*/
 .optionFilter {
@@ -150,14 +145,34 @@ i {
   justify-content: space-evenly;
 }
 
+/*div del input e icono search*/
+.search-box {
+  background-color: var(--color-background-nav);
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+}
+
+/*hover > input el width crece*/
+.search-box:hover > .search {
+  width: 240px;
+  padding: 0 6px;
+}
+
 .search {
   border-radius: 4px;
   border: none;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16),
-    0 3px 6px rgba(0, 0, 0, 0.23);
-  width: 400px;
+  /*  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16),
+    0 3px 6px rgba(0, 0, 0, 0.23); */
+  width: 0px;
   height: 60px;
   padding: 0 12px;
+  background: none;
+  outline: none;
+  color: white;
+  font-size: 16px;
+  transition: 0.4s;
+  line-height: 40px;
 }
 
 /*opcion de filtrado*/
@@ -165,8 +180,7 @@ i {
   border-radius: 4px;
   background-color: var(--color-background-nav);
   color: var(--color-size);
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16),
-    0 3px 6px rgba(0, 0, 0, 0.23);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   cursor: pointer;
   padding: 20px;
   position: relative;
@@ -179,8 +193,7 @@ i {
 .optionFiler ul {
   border-radius: 4px;
   background-color: var(--color-background-nav);
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16),
-    0 3px 6px rgba(0, 0, 0, 0.23);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   display: none;
   padding: 0px;
   position: absolute;
@@ -199,19 +212,39 @@ i {
   padding-left: 20px;
 }
 
+.btn {
+  display: inline-block;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  border-radius: 4px;
+  background-color: var(--color-background-nav);
+  color: var(--color-size);
+  font-size: 21px;
+  cursor: pointer;
+  border: none;
+}
+
+/* .order .fa-sort-alpha-down-alt {
+  display: block;
+}
+
+.order .fa-sort-alpha-up {
+  display: block;
+} */
+
 .container {
   height: 100vh;
-  margin-top: 30px;
+  margin-top: 5rem;
   border: hidden;
   display: inline-flex;
   flex-wrap: wrap;
   justify-content: center;
+  position: relative;
 }
 
 .card {
   background: rgba(23, 30, 37, 0.603);
   border: 1px solid var(--color-border);
-  width: 325px;
+  width: 280px;
   height: 350px;
   /*height: 182px;
   display: flex;
@@ -235,4 +268,75 @@ i {
 
 .description {
   color: var(--color-description);
+}
+
+/* to top button*/
+.to-top {
+  background-color: white;
+  position: fixed;
+  bottom: 16px;
+  right: 56px;
+  width: 50px;
+  height: 50px;
+  padding-left: 1.5rem;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  color: #1f1f1f;
+  text-decoration: none;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s;
+}
+
+.to-top.active {
+  bottom: 32px;
+  pointer-events: auto;
+  opacity: 1;
+}
+
+/*modal styling*/
+.modal{
+  background-color: var(--color-background-nav);
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+}
+
+/* .modal-body{
+  padding: 30px;
+  width: 470px;
+} */
+
+.btn-close{
+  border: none;
+  font-size: 20px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+/*responsive mobile*/
+@media screen and (max-width: 320px){
+  .card {
+  width: 260px;
+  height: 350px;
+  margin: 20px 11px;
+}
+
+.to-top {
+  right: 19px;
+  width: 45px;
+  height: 45px;  
+}
+
+.to-top.active {
+  bottom: 26px;
+}
+
 }

@@ -2,7 +2,8 @@
 
 Esta página web permite a lxs usuarixs, poder encontrar a los atletas de juegos olimpicos, filtrandolos por género, tipo de medalla y deporte ,con el objetivo de encontrar la información necesaria de las carácteristicas de los atletas a quienes admiran, con la finalidad de entregarles una informacion que requieran para su entrenamiento para dichos juegos.
 
-### Proyecto final
+## Proyecto final
+
 
 ## Investigación UX 🕵️‍♂️
 
@@ -30,30 +31,124 @@ Esta página web permite a lxs usuarixs, poder encontrar a los atletas de juegos
 
 - _¿CÓMO UTILIZAN O UTILIZARÍAN EL PRODUCTO?_
 
+  ## Historias de usuario 
+  ---
+
+  ### **Historia de Usuario N° 1** 🧐
+
+    **Descripción :** Yo como aspirante a juegos olimpicos, quiero poder buscar atletas de una temporada en particular, para conocer los deportes y ver con cual me siento identificadx.
+  
+    **Criterios de Aceptación :** 
+
+    ♥ El usuario encontrara un boton que le muestre la opcion de ver todos los atletas por temporada
+
+    ♥ El usuario podrá ordenarlos a los atletas alfabéticamente.
+
+    ♥ El usuario podra encontrar informacion relevante de los atletas que coincidan con el deporte por temporada
+
+    **Defición de terminado :**
+
+    ♥ El prototipo de baja fidelidad debe recibir testeo y feedback.
+
+    ♥ Uso de Slint para buenas prácticas.
+
+    ♥ Subir a Github.
+
+    ♥ Desplegar el proyecto en gh pages.
+
+
+  ### **Historia de Usuario N° 2** 🧐
+
+    **Descripción :** Yo como aspirante a juegos olímpicos, quiero encontrar un buscador para encontrar con facilidad  a los atletas por su nombre.
+
+    **Criterios de Aceptación :**
+    
+    ♥ El usuario encontrara coincidencias según digite las letras en su busqueda.
+
+    ♥ El usuario podra visualizar información relevante del atleta que busca por nombre.
+
+    **Defición de terminado :**
+
+    ♥ El prototipo de baja fidelidad debe recibir testeo y feedback.
+
+    ♥ Uso de Slint para buenas prácticas.
+
+    ♥ Subir a Github.
+
+    ♥ Desplegar el proyecto en gh pages.
+
+  ### **Historia de Usuario N° 3** 🧐
+
+    **Descripción :** Yo como aspirante a juegos olimpicos, quiero poder ver el perfil de los atletas, para conocer más características de ellos con respecto a las disciplinas, medallas ganadas, etc.
+
+    **Criterios de Aceptación :**
+
+    ♥ El usuario podrá acceder al perfil del atleta haciendo click al card. 
+
+    ♥ El usario podrá visualizar de forma ordenada las características del atleta y el detalle de su participación de los juegos olimpicos.
+
+     **Defición de terminado :**
+
+    ♥ El prototipo de baja fidelidad debe recibir testeo y feedback.
+
+    ♥ Uso de Slint para buenas prácticas.
+
+    ♥ Subir a Github.
+
+    ♥ Desplegar el proyecto en gh pages.
+
+    
+  ### **Historia de Usuario N° 4** 🧐
+
+    **Descripción :** Yo como aspirante a juegos olimpicos, quiero encontrar a los atletas agrupados por tipo de medalla obtenida, para aspirar a dicha medalla.
+
+    **Criterios de Aceptación :**
+
+    ♥ El usuario encontrara obciones para elegir a los atletas por tipo de medalla (oro, plara y cobre).
+
+   **Defición de terminado :**
+
+    ♥ El prototipo de baja fidelidad debe recibir testeo y feedback.
+
+    ♥ Uso de Slint para buenas prácticas.
+
+    ♥ Subir a Github.
+
+    ♥ Desplegar el proyecto en gh pages.
+
   ## Prototipo de baja fidelidad
 
   - feedback
 
   ## Prototipo de alta fidelidad
 
+  **Primera pantalla**
+  ![](./src/img/prototipo1.png)
+
+  **Segunda pantalla**
+  ![](./src/img/prototipo2.png)
+
+  **Modal**
+  ![](./src/img/prototipo3.png    )  
+
 ## 9. Checklist
 
-- [ ] Usa VanillaJS.
-- [ ] No hace uso de `this`.
+- [x] Usa VanillaJS.
+- [x] No hace uso de `this`.
 - [ ] Pasa linter (`npm run pretest`)
 - [ ] Pasa tests (`npm test`)
 - [ ] Pruebas unitarias cubren un mínimo del 70% de statements, functions y
       lines y branches.
-- [ ] Incluye _Definición del producto_ clara e informativa en `README.md`.
-- [ ] Incluye historias de usuario en `README.md`.
+- [x] Incluye _Definición del producto_ clara e informativa en `README.md`.
+- [x] Incluye historias de usuario en `README.md`.
 - [ ] Incluye _sketch_ de la solución (prototipo de baja fidelidad) en
       `README.md`.
-- [ ] Incluye _Diseño de la Interfaz de Usuario_ (prototipo de alta fidelidad)
+- [x] Incluye _Diseño de la Interfaz de Usuario_ (prototipo de alta fidelidad)
       en `README.md`.
 - [ ] Incluye link a Zeplin en `README.md`.
 - [ ] Incluye el listado de problemas que detectaste a través de tests de
       usabilidad en el `README.md`.
-- [ ] UI: Muestra lista y/o tabla con datos y/o indicadores.
+- [x] UI: Muestra lista y/o tabla con datos y/o indicadores.
 - [ ] UI: Permite ordenar data por uno o más campos (asc y desc).
 - [ ] UI: Permite filtrar data en base a una condición.
 - [ ] UI: Es _responsive_.

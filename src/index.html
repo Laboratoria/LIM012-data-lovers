@@ -1,126 +1,171 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <title>Data Lovers</title>
-    <link rel="stylesheet" href="style.css" />
-    <script
-      src="https://kit.fontawesome.com/1ace54bf0e.js"
-      crossorigin="anonymous"
-    ></script>
-  </head>
 
-  <body>
-    <header class="header">
-      <div class="logo">
-        <img src="img/logoOlimpiadas.png" width="160" alt="logo" />
-      </div>
-      <nav class="navegador">
-        <ul class="menu">
-          <li>
-            <a href="#" class="navInicio">
-              <i class="fas fa-home"></i>
-              <span>Inicio</span>
-            </a>
-          </li>
-          <li>
-            <a href="#" class="navAtletas">
-              <i class="far fa-user"></i>
-              <span>Atletas</span>
-            </a>
-            <ul class="submenu">
-              <li><a href="#">FEMALE</a></li>
-              <li><a href="#">MALE</a></li>
-            </ul>
-          </li>
-          <li>
-            <a href="#" class="navDisciplinas">
-              <i class="fas fa-running"></i>
-              <span>Disciplinas</span>
-            </a>
-            <ul class="submenu">
-              <li><a href="#">SUMMER</a></li>
-              <li><a href="#">WINTER</a></li>
-            </ul>
-          </li>
-          <li>
-            <a href="#" class="navMedalla">
-              <i class="fas fa-medal"></i>
-              <span>Medallas</span>
-            </a>
-            <ul class="submenu">
-              <li><a href="#">GOLD</a></li>
-              <li><a href="#">SILVER</a></li>
-              <li><a href="#">BRONZE</a></li>
-            </ul>
-          </li>
-        </ul>
-      </nav>
-    </header>
-    <main class="background">
-      <div class="title">
-        <h1 class="title1">ATLETA CLUB</h1>
-        <h2 class="title2">
-          ENCUENTRA AQUI A <span class="subtitle">TUS ATLETAS FAVORITOS</span>
-        </h2>
-      </div>
-      <
-      <section>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0" />
+  <title>Data Lovers</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://kit.fontawesome.com/1ace54bf0e.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <header class="header">
+    <div class="logo">
+      <img src="img/logoOlimpiadas.png" width="160" alt="logo" />
+    </div>
+    <nav class="navegador">
+      <ul class="menu">
+        <li>
+          <a href="#" class="navInicio">
+            <i class="fas fa-home"></i>
+            <span>Inicio</span>
+          </a>
+        </li>
+        <li>
+          <a href="#dataPintada" class="navAtletas">
+            <i class="far fa-user"></i>
+            <span>Atletas</span>
+          </a>
+        </li>
+        <li>
+          <a href="#dataPintada" class="navDisciplinas">
+            <i class="fas fa-running"></i>
+            <span>Disciplinas</span>
+          </a>
+        </li>
+        <li>
+          <a href="#dataPintada" class="navMedalla">
+            <i class="fas fa-medal"></i>
+            <span>Medallas</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main class="background">
+    <div class="title">
+      <h1 class="title1">ATLETA CLUB</h1>
+      <h2 class="title2">
+        ENCUENTRA AQUI A <span class="subtitle">TUS ATLETAS FAVORITOS</span>
+      </h2>
+    </div>
+
+    <section id="dataPintada" class="dataPintada">
+      <section class="subNav1">
         <div class="subNav">
-          <input
-            type="text"
-            id="search"
-            class="search"
-            placeholder="search for a name"
-          />
+          <div class="search-box">
+            <input type="text" id="search" class="search" placeholder="search for a name" />
+            <i class="fas fa-search"></i>
+          </div>
           <div class="optionFiler" id="filterGender">
+            <i class="fas fa-venus-mars"></i>
             filter by Gender
             <i class="fas fa-chevron-down"></i>
             <ul>
-              <li>Todos</li>
+              <li>All</li>
               <li>F</li>
               <li>M</li>
             </ul>
           </div>
           <div class="optionFiler" id="filterSeason">
+            <i class="fas fa-cloud-sun"></i>
             filter by Season
             <i class="fas fa-chevron-down"></i>
             <ul>
-              <li>Todos</li>
+              <li>All</li>
               <li>Summer</li>
               <li>Winter</li>
             </ul>
           </div>
           <div class="optionFiler" id="filterMedal">
+            <i class="fas fa-medal"></i>
             filter by Medal
             <i class="fas fa-chevron-down"></i>
             <ul>
-              <li>Todos</li>
+              <li>All</li>
               <li>Gold</li>
               <li>Silver</li>
               <li>Bronze</li>
             </ul>
           </div>
+          <button class="btn btn-order" id="sort">
+            <!-- <i class="fas fa-sort-alpha-down-alt"></i> -->
+            <i class="fas fa-sort-alpha-up"></i>
+          </button>
         </div>
       </section>
-
+      
       <section>
         <div class="container athletes" id="atlethes">
           <h2>Atlethes loading ...</h2>
         </div>
       </section>
+    </section>
+  </main>
+    <div class="modal" id="modal">
+        <!-- <div class="container"> -->
+          <button class="btn-close" id="close">
+            <i class="fas fa-times"></i>
+          </button>
+          <div class="modal-head">
+            <img src="./img/avatarMujer.png" alt="" width=110 height=110>
+            <h1><strong>
+                aqui el nombre
+              </strong>
+            </h1>
+            <div class="infoHead" >
+              <p><strong>temporada:</strong>
+                aqui la temporada
+              </p>
+              <p><strong>sport:</strong>
+                aqui el deporte
+              </p>
+              <p><strong>team:</strong>
+                aqui el team
+              </p>
+            </div>
+          </div>
+          <div class="modal-body">
+            <p>
+              <strong>disciplina:</strong>
+              ${modal.name}
+            </p>
+            <p>
+              <strong>Temporada:</strong>
+              ${modal.name}
+            </p>
+            <p>
+              <strong>age:</strong>
+              ${modal.name}
+            </p>
+            <p>
+              <strong>ciudad:</strong>
+              ${modal.name}
+            </p>
+            <p>
+              <strong>medalla:</strong>
+              ${modal.name}
+            </p>
+          </div>
+        <!-- </div> -->
 
-      <<!-- div class="perfil" id="perfil">
-        </div>
-        <div id="main" class="main">
+    </div>
+
+    <!-- <div class="perfil" id="perfil">
+      </div>
+      <div id="main" class="main">
           <div id="cards">
           </div>
         </div>
         <div id="root"></div> -->
-    </main>
-    <footer>
+  <a href="#" class="to-top">
+    <i class="fas fa-chevron-up"></i>
+  </a>
+  <!-- <footer>
       <p>by Franccesca & Almendra</p>
-    </footer>
-    <script src="main.js" type="module"></script>
-  </body>
+    </footer> -->
+  <script src="main.js" type="module"></script>
+</body>
+
 </html>
