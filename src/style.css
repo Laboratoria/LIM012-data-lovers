@@ -322,7 +322,7 @@ i {
   right: 20px;
 }
 /*responsive mobile*/
-@media screen and (max-width: 321px){
+@media screen and (max-width: 320px){
   .card {
   width: 260px;
   height: 350px;
