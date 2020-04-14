@@ -67,30 +67,30 @@ pintarData(data);
 
 // modal
 
-const atletheDetails = (data) => {
-  const modalBody = modal.querySelector('.modal').innerHTML = `
-            <p>
-              <strong>disciplina:</strong>
-              ${modal.name}
-            </p>
-            <p>
-              <strong>Temporada:</strong>
-              ${modal.name}
-            </p>
-            <p>
-              <strong>age:</strong>
-              ${modal.name}
-            </p>
-            <p>
-              <strong>ciudad:</strong>
-              ${modal.name}
-            </p>
-            <p>
-              <strong>medalla:</strong>
-              ${modal.name}
-            </p>
-  `;
-};
+// const atletheDetails = (data) => {
+//   const modalBody = modal.querySelector('.modal').innerHTML = `
+//             <p>
+//               <strong>disciplina:</strong>
+//               ${modal.name}
+//             </p>
+//             <p>
+//               <strong>Temporada:</strong>
+//               ${modal.name}
+//             </p>
+//             <p>
+//               <strong>age:</strong>
+//               ${modal.name}
+//             </p>
+//             <p>
+//               <strong>ciudad:</strong>
+//               ${modal.name}
+//             </p>
+//             <p>
+//               <strong>medalla:</strong>
+//               ${modal.name}
+//             </p>
+//   `;
+// };
 
 
 /* le damos funcionalidad al div que contiene la lista de opciones de filtrado por genero */
