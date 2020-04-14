@@ -118,7 +118,14 @@ Esta página web permite a lxs usuarixs, poder encontrar a los atletas de juegos
 
   ## Prototipo de baja fidelidad
 
-  - feedback
+   **Primera pantalla**
+  ![](./src/img/baja1.jpg)
+
+  **Segunda pantalla**
+  ![](./src/img/baja2.jpg)
+
+  **Modal**
+  ![](./src/img/baja3.jpg)
 
   ## Prototipo de alta fidelidad
 
@@ -129,7 +136,7 @@ Esta página web permite a lxs usuarixs, poder encontrar a los atletas de juegos
   ![](./src/img/prototipo2.png)
 
   **Modal**
-  ![](./src/img/prototipo3.png    )  
+  ![](./src/img/prototipo3.png)  
 
 ## 9. Checklist
 
