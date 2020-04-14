@@ -1,5 +1,8 @@
+
 @import url('https://fonts.googleapis.com/css?family=Questrial&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap');
+
 
 *{
   margin:0;
@@ -12,40 +15,48 @@
 
 header{
   display: flex;
-  padding: 28px;
-  display: inline-block;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.headerNombre{
+.headerNombre h1{
+  display: flex;
   color: #1D4E89;
-  font-size: 42px;
+  font-size: 4rem;
   font-family: 'Questrial', sans-serif;
+  font-weight: lighter;
+  width: 100%;
+  margin-left: 7%;
 }
 
-.headerFecha{
-  font-family: 'Questrial', sans-serif
+header p{
+  font-family: 'Questrial', sans-serif;
+  font-size: 2rem;
+  position: absolute;
+  margin-left: 83%;
+  z-index: 1;
+  color: #ffff;
+}
+
+header img{
+  width: 35%;
 }
 
 nav{
-  background-image: url("img/menuimagen.png");
+  background-image: url("img/menuimg.png");
   background-size: cover;
   display: flex;
   justify-content: space-around;
-  font-size: 28px;
-  padding: 21px;
+  font-size: 1.5rem;
+  padding: 14px;
+  align-items: center;
+  text-align: center;
 }
 
 a{
   text-decoration: none;
   font-family: 'Questrial', sans-serif;
   color: #ffff;
-}
-
-.menuInicio img{
-  display: flex;
-  width: 46%;
-  margin: 0px auto;
-  display: inline-block;
 }
 
 .encabezado{
@@ -61,11 +72,60 @@ a{
   display: flex;
 }
 
+.menuInicio{
+  display: flex;
+  width: 980px;
+  height: 500px;
+  overflow: hidden;
+  position: relative;
+  margin: auto;
+}
+
+li{
+  display: table-cell;
+}
+
+ul{
+  position: absolute;
+  animation-name: play;
+  animation-duration: 60s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes play {
+  0%{
+    left: -0px;
+  }
+  20%{
+    left: -1000px;
+  }
+  40%{
+    left: -2000px;
+  }
+  60%{
+    left: -3000px;
+  }
+  70%{
+    left: -2000px;
+  }
+  80%{
+    left: -1000px;
+  }
+  100%{
+    left: -0px;
+  }
+}
+
+.menuInicio img{
+  width: 1000px;
+  height: 500px;
+}
+
 .menuAtletas{
-  margin-top: 5%;
   margin-bottom: 5%;
   margin-left: 15%;
   margin-right: 15%;
+  margin-top: 3%;
 }
 
 .fila{
@@ -97,19 +157,147 @@ a{
   text-align: right;
 }
 
-.menuMedallero{
-  display: float;
-  justify-content: space-between;
+.filtroAz{
+  font-size: 1.1rem;
+  font-family: 'Questrial', sans-serif;
+  color: #1D4E89;
+  padding: 0.5% 1.5%;
+  border: 1px solid #1D4E89;
+  outline: none;
+  margin-left: 16.5%;
 }
 
+.filtroAz:hover{
+  color: #1D4E89;
+}
 
-.menuMedallero img{
-  justify-content: space-between;
-  width: 90px;
+.botonTop{
+  float: right;
+  position: fixed;
+  right: 5%;
+  bottom: 30%;
+  width: 70px;
+  height: 70px;
+  border: 2px solid #179a13;
+  outline: none;
+  color: #179a13;
+  font-family: 'Questrial', sans-serif;
+  cursor: pointer;
+  background: none;
+  font-size: 1.3rem;
+}
+
+.contenedorAtletas p{
+  font-family: 'Oswald', sans-serif;
+  font-size: 180%;
+  font-weight: bolder;
+  color: #1D4E89;
+  text-align: center;
+  margin: 4% 0 4%;
+}
+
+.menuMedallero{
+  min-height: 70vh;
+}
+
+.menuMedallero h2{
+  margin: 5%;
+  margin-bottom: 10%;
+  font-size: 180%;
+  font-weight: bolder;
+  font-family: 'Oswald', sans-serif;
+  color: #1D4E89;
+}
+
+.menuMedallero h5{
+  font-size: 180%;
+  font-weight: bolder;
+  font-family: 'Oswald', sans-serif;
+  color: #1D4E89;
+}
+.contenedorOlimpiadas{
+  display: flex;
+}
+
+.winter{
+  width: 55%;
+  margin: 4%;
+  text-align: center;
+  align-items: center;
+}
+
+.summer{
+  width: 55%;
+  margin: 4%;
+  text-align: center;
+  align-items: center;
 }
 
 .menuMedallero button{
-  width: 5%;
+  border: none;
+  background: none;
+  width: 40%;
+}
+
+.menuMedallero img{
+  width: 70%;
+}
+
+.botonDeporte {
+  text-align: center;
+}
+
+.select-css{
+  display:block;
+  padding: 5px 10px;
+  height:42px;
+  margin:10px auto;
+  min-width: 225px;
+  -webkit-appearance: none;
+  height: 34px;
+  background-repeat: no-repeat, repeat;
+  background-position: right .7em top 50%, 0 0;
+  background-size: .65em auto, 100%;
+  background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'),
+   linear-gradient(to bottom, #ffffff 0%,#f7f7f7 100%);
+}
+.select-css::-ms-expand {
+  display: none;
+ }
+ .select-css:hover {
+  border-color: #888;
+ }
+ .select-css:focus {
+  border-color: #aaa;
+  box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);
+  box-shadow: 0 0 0 3px -moz-mac-focusring;
+  color: #222; 
+  outline: none;
+ }
+ .select-css option {
+  font-weight:normal;
+ }
+ 
+.menuDeportes button{
+  border: none;
+  background: none;
+  width: 30%;
+  height: 20%;
+}
+
+.summerSports h2{
+  text-align: center;
+  font-size:large;
+}
+
+.menuSedes{
+  margin: 7%;
+  text-align: center;
+}
+
+.menuSedes img{
+  width: 15%;
+  padding: 3%;
 }
 
 footer{
@@ -117,8 +305,19 @@ footer{
   background-color: #1D4E89;
   padding: 28px;
   bottom: 0;
+  align-items: center;
 }
 
 .auspiciadores img{
   width: 7%;
+  margin-right: 10%;
+  float: right;
+  cursor: pointer;
+}
+
+footer p{
+  font-size: 1.2rem;
+  font-family: 'Questrial', sans-serif;
+  color: #ffff;
+  margin-left: 1%;
 }
