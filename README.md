@@ -37,13 +37,13 @@ Al seleccionar la Olímpiada deseada se mostrará el medallero correspondiente o
 ![](./src/img/atletasbaja.jpg)
 
 **Sedes Olímpicas**: Se muestra los logos de los Juegos Olimpicos de Verano e Invierno, cada uno a modo de boton redirigirá al usuario a su propia web.
-![Sedes Olímpicas](img/sedesbaja.jpg)
+![](./src/img/sedesbaja.jpg)
 
 #### Prototipo de Alta fidelidad
 Previa investigación se eligieron colores que no saturen a la vista, de por si el tema incluye 5 colores relacionados a los aros olimpicos, sin embargo solo se eligió el color verde en combinación con un azul neutro.
 El prototipado del proyecto siempre se desarrolló a modo que cuando sea responsive no se altere el diseño del mismo.
 
-![Inicio Alta fidelidad](img/inicioalta.jpg)
+![](./src/img/inicioalta.jpg)
 
 ## Objetivos de Aprendizaje
 
