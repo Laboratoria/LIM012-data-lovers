@@ -85,14 +85,14 @@ li{
   display: table-cell;
 }
 
-ul{
+/*ul{
   position: absolute;
   animation-name: play;
   animation-duration: 60s;
   animation-iteration-count: infinite;
-}
+}*/
 
-@keyframes play {
+/*@keyframes play {
   0%{
     left: -0px;
   }
@@ -114,7 +114,7 @@ ul{
   100%{
     left: -0px;
   }
-}
+}*/
 
 .menuInicio img{
   width: 1000px;
