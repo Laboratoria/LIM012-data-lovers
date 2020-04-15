@@ -26,8 +26,8 @@ export const ordenar = (ordenarData, seleccion) => {
 };
 
 export const filtroPorDeporte = (listaCompetidor, sport) => {
-  const filteredPorSport = listaCompetidor.filter(x => x.deporte === sport);
-  return filteredPorSport;
+  const filtroPorActividad = listaCompetidor.filter(x => x.deporte === sport);
+  return filtroPorActividad;
 };
 
 export const filtroResultadoMedallas = (data, ciudad, medalla) => {
@@ -36,7 +36,6 @@ export const filtroResultadoMedallas = (data, ciudad, medalla) => {
   data.forEach((elem) => {
     // eslint-disable-next-line no-prototype-builtins
     if (elem.hasOwnProperty('disciplinas')) {
-    // console.log(elem, 'hola');
       return elem.disciplinas.forEach((obj) => {
         if (obj.ciudad === ciudad && obj.medalla === medalla) {
           newArr.push(obj);

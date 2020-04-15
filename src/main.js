@@ -20,25 +20,7 @@ const medallaSelect = document.getElementById('medalla');
 const ciudadSelect1 = document.getElementById('ciudad1');
 const medallaSelect1 = document.getElementById('medalla1');
 
-const scroll = () => {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    botonTop.classList.add('showScrollUp');
-  } else {
-    botonTop.classList.remove('showScrollUp');
-  }
-};
-
-window.addEventListener('scroll', scroll);
-
-const backToTop = () => {
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth',
-  });
-};
-
-botonTop.addEventListener('click', backToTop);
-
+// ------Barra/inicio-----//
 document.getElementById('inicio').addEventListener('click', () => {
   barraInicio.classList.remove('hide');
   datageneral.classList.add('hide');
@@ -46,7 +28,7 @@ document.getElementById('inicio').addEventListener('click', () => {
   contenedorAtletas.classList.add('hide');
   barraSedes.classList.add('hide');
 });
-
+// ------Barra/medallero---//
 document.getElementById('medallero').addEventListener('click', () => {
   datageneral.classList.add('hide');
   barraInicio.classList.add('hide');
@@ -54,7 +36,7 @@ document.getElementById('medallero').addEventListener('click', () => {
   contenedorAtletas.classList.add('hide');
   barraSedes.classList.add('hide');
 });
-
+// ----Barra/medallero(Select con olimpiadas de verano) --------//
 let ciudad = '';
 ciudadSelect.addEventListener('change', (event) => {
   ciudad = event.target.value;
@@ -67,7 +49,7 @@ medallaSelect.addEventListener('change', (event) => {
   resultadoMedallero.classList.remove('hide');
   barraMedallero.classList.remove('hide');
 });
-
+// ----Barra/medallero(Select con olimpiadas de invierno)--------//
 let ciudad1 = '';
 ciudadSelect1.addEventListener('change', (event) => {
   ciudad1 = event.target.value;
@@ -80,7 +62,7 @@ medallaSelect1.addEventListener('change', (event) => {
   resultadoMedallero.classList.remove('hide');
   barraMedallero.classList.remove('hide');
 });
-
+// -----Barra/atletas--------------//
 document.getElementById('atletas').addEventListener('click', () => {
   datageneral.classList.remove('hide');
   barraInicio.classList.add('hide');
@@ -88,6 +70,45 @@ document.getElementById('atletas').addEventListener('click', () => {
   contenedorAtletas.classList.remove('hide');
   barraSedes.classList.add('hide');
 
+  // -----Barra/atletas(boton scroll)--------------//
+  const scroll = () => {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      botonTop.classList.add('showScrollUp');
+    } else {
+      botonTop.classList.remove('showScrollUp');
+    }
+  };
+
+  window.addEventListener('scroll', scroll);
+
+  const backToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
+
+  botonTop.addEventListener('click', backToTop);
+
+  // -----Barra/Deportes--------------//
+  document.getElementById('deportes').addEventListener('click', () => {
+    barraDeportes.classList.remove('hide');
+    barraInicio.classList.add('hide');
+    datageneral.classList.add('hide');
+    barraMedallero.classList.add('hide');
+    contenedorAtletas.classList.add('hide');
+    barraSedes.classList.add('hide');
+  });
+  // -----Barra/Sedes olímpicas (link)--------------//
+  document.getElementById('sedes').addEventListener('click', () => {
+    barraInicio.classList.add('hide');
+    datageneral.classList.add('hide');
+    barraMedallero.classList.add('hide');
+    contenedorAtletas.classList.add('hide');
+    barraSedes.classList.remove('hide');
+  });
+
+  // -----Ejecuta función ordenar  por nombre (a-z),(z-a)----//
   const baseAtletas = (deportistas) => {
     let contenedor = '';
 
@@ -122,29 +143,10 @@ document.getElementById('atletas').addEventListener('click', () => {
   baseAtletas(data.atletas);
 
   filtroAz.addEventListener('change', () => {
-    const select = filtroAz.values;
+    const select = filtroAz.value;
     baseAtletas(ordenar(data.atletas, select));
   });
 });
-
-document.getElementById('sedes').addEventListener('click', () => {
-  barraInicio.classList.add('hide');
-  datageneral.classList.add('hide');
-  barraMedallero.classList.add('hide');
-  contenedorAtletas.classList.add('hide');
-  barraSedes.classList.remove('hide');
-});
-
-
-document.getElementById('deportes').addEventListener('click', () => {
-  barraDeportes.classList.remove('hide');
-  barraInicio.classList.add('hide');
-  datageneral.classList.add('hide');
-  barraMedallero.classList.add('hide');
-  contenedorAtletas.classList.add('hide');
-  barraSedes.classList.add('hide');
-});
-
 
 // -----------------Ejecuta la funcionalidad de los iconos (filtro por deportes)----//
 const filtroIconos = (deportistas) => {
