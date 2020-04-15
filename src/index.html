@@ -89,11 +89,17 @@
               <li>Bronze</li>
             </ul>
           </div>
-          <button class="btn btn-order" id="sort">
-            <!-- <i class="fas fa-sort-alpha-down-alt"></i> -->
-            <i class="fas fa-sort-alpha-up"></i>
-          </button>
+          <div class="btn btn-order" id="sort">
+            <span><input type=image id="btnOrdenarA" class="input-order" value="a-z" src="./img/flechaA.svg"
+                alt="flecha" /></span>
+          </div>
+          <div class="btn btn-order" id="sortD">
+            <span><input type=image id="btnOrdenarD" class="input-order" value="z-a" src="./img/flechaD.svg"
+                alt="flecha" /></span>
+          </div>
+
         </div>
+
       </section>
       
       <section>
@@ -104,51 +110,13 @@
     </section>
   </main>
     <div class="modal" id="modal">
-        <!-- <div class="container"> -->
+        <div class="modal-container">
           <button class="btn-close" id="close">
             <i class="fas fa-times"></i>
           </button>
-          <div class="modal-head">
-            <img src="./img/avatarMujer.png" alt="" width=110 height=110>
-            <h1><strong>
-                aqui el nombre
-              </strong>
-            </h1>
-            <div class="infoHead" >
-              <p><strong>temporada:</strong>
-                aqui la temporada
-              </p>
-              <p><strong>sport:</strong>
-                aqui el deporte
-              </p>
-              <p><strong>team:</strong>
-                aqui el team
-              </p>
-            </div>
-          </div>
-          <div class="modal-body">
-            <p>
-              <strong>disciplina:</strong>
-              ${modal.name}
-            </p>
-            <p>
-              <strong>Temporada:</strong>
-              ${modal.name}
-            </p>
-            <p>
-              <strong>age:</strong>
-              ${modal.name}
-            </p>
-            <p>
-              <strong>ciudad:</strong>
-              ${modal.name}
-            </p>
-            <p>
-              <strong>medalla:</strong>
-              medalla
-            </p>
-          </div>
-        <!-- </div> -->
+          <div class="modal-head"></div>
+          <div class="modal-body"></div>
+        </div>
 
     </div>
 

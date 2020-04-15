@@ -28,7 +28,7 @@ export default {
       "sport": "Archery",
       "game": "2000 Summer",
       "team": "Ukraine",
-      "noc": "UKR",
+      "noc": "UAk",
       "disciplinas": [{
         "disciplina": "Archery Women's Team",
         "temporada": "Summer",

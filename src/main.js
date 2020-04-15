@@ -1,11 +1,14 @@
 // import data from './data/lol/lol.js';
 // import data from './data/pokemon/pokemon.js';
-import dataAtletas from './data/copy.js';
-// import dataAtletas from './data/atletas/atletas.js';
+// import dataAtletas from './data/copy.js';
+import dataAtletas from './data/atletas/atletas.js';
 
 import {
   transformaBandera,
   removeDuplicates,
+  age,
+  sortedByNameA,
+  sortedByNameD,
 } from './data.js';
 
 const data = dataAtletas.atletas;
@@ -18,6 +21,7 @@ const seasonFilters = btnSeason.querySelectorAll('li');
 const medalFilters = btnMedal.querySelectorAll('li');
 const inputSearch = document.getElementById('search');
 const btnSort = document.getElementById('sort');
+const btnSortD = document.getElementById('sortD');
 const modal = document.getElementById('modal');
 const closeBtn = document.getElementById('close');
 
@@ -48,8 +52,8 @@ const pintarData = (data) => {
         ${arrays.team}
       </p>
       <p>
-      <strong>Disciplina:</strong>
-        ${arrays.disciplinas}
+      <strong>Medal:</strong>
+        ${arrays.game}
       </p>
       </div>
       <img width = 40 height = 40 src ="https://www.countryflags.io/${transformaBandera(
@@ -58,7 +62,7 @@ const pintarData = (data) => {
    `;
     card.addEventListener('click', () => {
       modal.style.display = 'flex';
-      atletheDetails(data);
+      atletheDetails(arrays);
     });
     atletasInfo.appendChild(card);
   });
@@ -67,30 +71,53 @@ pintarData(data);
 
 // modal
 
-// const atletheDetails = (data) => {
-//   const modalBody = modal.querySelector('.modal').innerHTML = `
-//             <p>
-//               <strong>disciplina:</strong>
-//               ${modal.name}
-//             </p>
-//             <p>
-//               <strong>Temporada:</strong>
-//               ${modal.name}
-//             </p>
-//             <p>
-//               <strong>age:</strong>
-//               ${modal.name}
-//             </p>
-//             <p>
-//               <strong>ciudad:</strong>
-//               ${modal.name}
-//             </p>
-//             <p>
-//               <strong>medalla:</strong>
-//               ${modal.name}
-//             </p>
-//   `;
-// };
+const atletheDetails = (arrays) => {
+  const modalContainer = modal.querySelector('.modal-head');
+
+  modalContainer.innerHTML = `
+    <div>
+    <img src = ${arrays.gender === 'F'
+    ? './img/avatarMujer.png'
+    : './img/avatarVaron.png'}
+    width = 110 height = 110> 
+    </div>
+    <div class="infoHead" >
+      <h1>
+      <strong>${arrays.name}</strong>
+      </h1>
+      <p><strong>Edad:</strong>
+        ${arrays.disciplinas.map(elem => age(elem.disciplina))}
+      </p>
+      <p><strong>Weigth:</strong>
+        ${arrays.weight}
+      </p>
+      <p><strong>Height:</strong>
+        ${arrays.height}
+      </p>
+      <p><strong>Team:</strong>
+        ${arrays.team}
+      </p>
+    </div>
+    <div class="modal-body">
+      <p><strong>disciplina:</strong>
+        ${arrays.disciplinas.map(elem => elem.disciplina)}
+      </p>
+      <p><strong>Temporada:</strong>
+        ${arrays.disciplinas.map(elem => elem.temporada)}
+      </p>
+      <p><strong>age:</strong>
+        ${arrays.disciplinas.map(elem => elem.año)}
+      </p>
+      <p><strong>ciudad:</strong>
+        ${arrays.disciplinas.map(elem => elem.ciudad)}
+      </p>
+      <p><strong>medalla:</strong>
+        ${arrays.disciplinas.map(elem => elem.medalla)}
+      </p>
+    </div>         
+        
+  `;
+};
 
 
 /* le damos funcionalidad al div que contiene la lista de opciones de filtrado por genero */
@@ -184,24 +211,22 @@ medalFilters.forEach((medal) => {
   });
 });
 
-
+// btn de filtrado ascendente
 btnSort.addEventListener('click', () => {
-  const sortedByName = data.sort((a, b) => {
-    if (a.name - b.name) {
-      return 1;
-    }
-    if (b.name > a.name) {
-      return -1;
-    }
-    return 0;
-  });
-  pintarData(sortedByName);
+  pintarData(sortedByNameA(data));
 });
+
+// btn de filtrado descendente
+btnSortD.addEventListener('click', () => {
+  pintarData(sortedByNameD(data));
+});
+
 
 // funcion para to-top
 const toTop = document.querySelector('.to-top');
 window.addEventListener('scroll', () => {
-  // window de la pagina y desplazamiento(pageYOffset) es mayor a 100 pixeles desde la parte superior
+  // window de la pagina y desplazamiento(pageYOffset) es mayor a 100 pixeles
+  // desde la parte superior
   if (window.pageYOffset > 900) {
     toTop.classList.add('active');
   } else {

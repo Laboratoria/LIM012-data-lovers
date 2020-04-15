@@ -223,6 +223,11 @@ i {
   border: none;
 }
 
+.input-order{
+  width: 25px;
+  height: 60px;
+}
+
 /* .order .fa-sort-alpha-down-alt {
   display: block;
 }
@@ -299,14 +304,32 @@ i {
 
 /*modal styling*/
 .modal{
-  background-color: var(--color-background-nav);
+  background-color: rgba(0, 0, 0, .5);
   display: none;
+  align-items: center;
+  justify-content: center;
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 100;
+  /* right: 0;
+  bottom: 0; */
+  width: 100%;
+  height: 100vh;
+  /* z-index: 100; */
+    /* visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s opacity 0,5s; */
+}
+
+.modal-container{
+  background-color: var(--color-background-nav);
+  border-radius: 15px;
+  display: flex;
+  margin: 0 auto;
+  width: 50%;
+  height: 70%;
+  flex-direction: row;
+  /* animation: animatezoom 0.6s; */
 }
 
 /* .modal-body{
