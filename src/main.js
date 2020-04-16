@@ -51,10 +51,16 @@ let medalla = '';
 medallaSelect.addEventListener('change', (event) => {
   medalla = event.target.value;
   resultadoMedallero.innerHTML = `
-  <div class="columna"> Se ganaron ${filtroResultadoMedallas(data.atletas, ciudad, medalla)} medallas en esta sede olimpica</div>`;
+  <input type="checkbox" id="cerrar">
+   <label for="cerrar" id="btn-cerrar">X</label>
+    <div class="modal"> 
+      <div class="contenido">
+      <h2>Se ganaron ${filtroResultadoMedallas(data.atletas, ciudad, medalla)} medallas en esta sede olímpica</h2>
+      </div>`;
   resultadoMedallero.classList.remove('hide');
   barraMedallero.classList.remove('hide');
 });
+
 
 // ----Barra/medallero(Select con olimpiadas de invierno)--------//
 let ciudad1 = '';
@@ -65,7 +71,12 @@ let medalla1 = '';
 medallaSelect1.addEventListener('change', (event) => {
   medalla1 = event.target.value;
   resultadoMedallero.innerHTML = `
-  <div class="columna"> Se ganaron ${filtroResultadoMedallas(data.atletas, ciudad1, medalla1)} medallas en esta sede olimpica</div>`;
+  <input type="checkbox" id="cerrar">
+   <label for="cerrar" id="btn-cerrar">X</label>
+    <div class="modal"> 
+      <div class="contenido">
+      <h2>Se ganaron ${filtroResultadoMedallas(data.atletas, ciudad1, medalla1)} medallas en esta sede olímpica</h2>
+      </div>`;
   resultadoMedallero.classList.remove('hide');
   barraMedallero.classList.remove('hide');
 });

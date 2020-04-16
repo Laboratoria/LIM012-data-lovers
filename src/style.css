@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css?family=Questrial&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap');
@@ -36,12 +35,10 @@ header p{
   margin-left: 83%;
   z-index: 1;
   color: #ffff;
-  flex-wrap: wrap;
 }
 
 header img{
   width: 35%;
-  display: flex;
 }
 
 nav{
@@ -53,14 +50,12 @@ nav{
   padding: 14px;
   align-items: center;
   text-align: center;
-  display: flex;
 }
 
 a{
   text-decoration: none;
   font-family: 'Questrial', sans-serif;
   color: #ffff;
- 
 }
 
 .encabezado{
@@ -69,12 +64,11 @@ a{
   color: #179a13;
   font-weight: 300;
   margin-left: 6%;
-  display: flex;
 }
 
 .encabezado div{
   font-size: 1.1rem;
-  
+  display: flex;
 }
 
 .menuInicio{
@@ -89,7 +83,6 @@ a{
 li{
   display: table-cell;
 }
-
 /*ul{
   position: absolute;
   animation-name: play;
@@ -124,9 +117,8 @@ li{
 .menuInicio img{
   width: 1000px;
   height: 500px;
-  display: flex;
 }
-
+/*tabla  atletas*/
 .menuAtletas{
   margin-bottom: 5%;
   margin-left: 15%;
@@ -162,7 +154,7 @@ li{
   margin-right: 4%;
   text-align: right;
 }
-
+/*selector*/
 .filtroAz{
   font-size: 1.1rem;
   font-family: 'Questrial', sans-serif;
@@ -201,7 +193,7 @@ li{
   text-align: center;
   margin: 4% 0 4%;
 }
-
+/*pantalla medallas*/
 .menuMedallero{
   min-height: 70vh;
 }
@@ -283,17 +275,16 @@ li{
 .menuDeportes button{
   border:none;
   background: none;
-  width: 30%;
-  height: 10%;
   text-align: center;
-  cursor: pointer;
-  flex-wrap: wrap;
-
+  border: none;
+  background: none;
+  width: 30%;
+  height: 20%;
 }
 
 .menuDeportes button:hover{
-  background-color: gray;
-	color: white;
+  background-color:whitesmoke;
+	color: black;
 	transition: all 0.5s ease;
 }
 
@@ -464,4 +455,68 @@ footer p{
   font-family: 'Questrial', sans-serif;
   color: #ffff;
   margin-left: 1%;
+}
+
+body {
+    text-align: center;
+    font-family: sans-serif;
+    margin: 0;
+}
+
+.modal {
+    width: 100%;
+    height: 100vh;
+    background: rgba(0,0,0,0.8);
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+    display: flex;
+    
+    animation: modal 0.5s 0.5s forwards;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.contenido {
+    margin: auto;
+    width: 40%;
+    height: 40%;
+    background: white;
+    border-radius: 10px;
+}
+
+#cerrar {
+    display: none;
+}
+
+#cerrar + label {
+    position: fixed;
+    color: #fff;
+    font-size: 25px;
+    z-index: 50;
+    background: darkred;
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    border-radius: 50%;
+    right: 150px;
+    top: 150px;
+    cursor: pointer;
+    
+    animation: modal 0.5s 0.5s forwards;
+    visibility: hidden;
+    opacity: 0;
+}
+
+#cerrar:checked + label, #cerrar:checked ~ .modal {
+    display: none;
+}
+
+@keyframes modal {
+    100% {
+        visibility: visible;
+        opacity: 1;
+    }
 }
