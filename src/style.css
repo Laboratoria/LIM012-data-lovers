@@ -36,7 +36,7 @@ header p{
   margin-left: 83%;
   z-index: 1;
   color: #ffff;
-  display: flex;
+  flex-wrap: wrap;
 }
 
 header img{
@@ -60,7 +60,7 @@ a{
   text-decoration: none;
   font-family: 'Questrial', sans-serif;
   color: #ffff;
-  display: flex;
+ 
 }
 
 .encabezado{
@@ -74,7 +74,7 @@ a{
 
 .encabezado div{
   font-size: 1.1rem;
-  display: flex;
+  
 }
 
 .menuInicio{
@@ -284,15 +284,15 @@ li{
   border:none;
   background: none;
   width: 30%;
-  height: 20%;
+  height: 10%;
   text-align: center;
   cursor: pointer;
-  flex-shrink: 1;
+  flex-wrap: wrap;
 
 }
 
 .menuDeportes button:hover{
-  background-color: #222;
+  background-color: gray;
 	color: white;
 	transition: all 0.5s ease;
 }
