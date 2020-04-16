@@ -12,13 +12,14 @@ const contenedorAtletas = document.getElementById('contenedorAtletas');
 const barraSedes = document.getElementById('barraSedes');
 const filtroAz = document.getElementById('filtroAz');
 const barraDeportes = document.getElementById('barraDeportes');
-const dataSports = document.getElementById('dataSports');
-const summerSpots = document.getElementById('summerSports');
+const summerSports = document.getElementById('summerSports');
 const resultadoMedallero = document.getElementById('resultadoMedallero');
 const ciudadSelect = document.getElementById('ciudad');
 const medallaSelect = document.getElementById('medalla');
 const ciudadSelect1 = document.getElementById('ciudad1');
 const medallaSelect1 = document.getElementById('medalla1');
+const dataSports = document.getElementById('dataSports');
+
 
 // ------Barra/inicio-----//
 document.getElementById('inicio').addEventListener('click', () => {
@@ -26,16 +27,21 @@ document.getElementById('inicio').addEventListener('click', () => {
   datageneral.classList.add('hide');
   barraMedallero.classList.add('hide');
   contenedorAtletas.classList.add('hide');
+  barraDeportes.classList.add('hide');
+  dataSports.classList.add('hide');
   barraSedes.classList.add('hide');
 });
+
 // ------Barra/medallero---//
 document.getElementById('medallero').addEventListener('click', () => {
   datageneral.classList.add('hide');
   barraInicio.classList.add('hide');
   barraMedallero.classList.remove('hide');
   contenedorAtletas.classList.add('hide');
+  barraDeportes.classList.add('hide');
   barraSedes.classList.add('hide');
 });
+
 // ----Barra/medallero(Select con olimpiadas de verano) --------//
 let ciudad = '';
 ciudadSelect.addEventListener('change', (event) => {
@@ -49,6 +55,7 @@ medallaSelect.addEventListener('change', (event) => {
   resultadoMedallero.classList.remove('hide');
   barraMedallero.classList.remove('hide');
 });
+
 // ----Barra/medallero(Select con olimpiadas de invierno)--------//
 let ciudad1 = '';
 ciudadSelect1.addEventListener('change', (event) => {
@@ -62,6 +69,7 @@ medallaSelect1.addEventListener('change', (event) => {
   resultadoMedallero.classList.remove('hide');
   barraMedallero.classList.remove('hide');
 });
+
 // -----Barra/atletas--------------//
 document.getElementById('atletas').addEventListener('click', () => {
   datageneral.classList.remove('hide');
@@ -89,24 +97,6 @@ document.getElementById('atletas').addEventListener('click', () => {
   };
 
   botonTop.addEventListener('click', backToTop);
-
-  // -----Barra/Deportes--------------//
-  document.getElementById('deportes').addEventListener('click', () => {
-    barraDeportes.classList.remove('hide');
-    barraInicio.classList.add('hide');
-    datageneral.classList.add('hide');
-    barraMedallero.classList.add('hide');
-    contenedorAtletas.classList.add('hide');
-    barraSedes.classList.add('hide');
-  });
-  // -----Barra/Sedes olímpicas (link)--------------//
-  document.getElementById('sedes').addEventListener('click', () => {
-    barraInicio.classList.add('hide');
-    datageneral.classList.add('hide');
-    barraMedallero.classList.add('hide');
-    contenedorAtletas.classList.add('hide');
-    barraSedes.classList.remove('hide');
-  });
 
   // -----Ejecuta función ordenar  por nombre (a-z),(z-a)----//
   const baseAtletas = (deportistas) => {
@@ -147,32 +137,53 @@ document.getElementById('atletas').addEventListener('click', () => {
     baseAtletas(ordenar(data.atletas, select));
   });
 });
+// -----Barra/Sedes olímpicas (link)--------------//
+document.getElementById('sedes').addEventListener('click', () => {
+  barraInicio.classList.add('hide');
+  datageneral.classList.add('hide');
+  barraMedallero.classList.add('hide');
+  contenedorAtletas.classList.add('hide');
+  barraDeportes.classList.add('hide');
+  dataSports.classList.add('hide');
+  barraSedes.classList.remove('hide');
+});
+
+// -----Barra/Deportes--------------//
+document.getElementById('deportes').addEventListener('click', () => {
+  barraDeportes.classList.remove('hide');
+  barraInicio.classList.add('hide');
+  datageneral.classList.add('hide');
+  barraMedallero.classList.add('hide');
+  contenedorAtletas.classList.add('hide');
+  barraSedes.classList.add('hide');
+});
+
 
 // -----------------Ejecuta la funcionalidad de los iconos (filtro por deportes)----//
 const filtroIconos = (deportistas) => {
   let contenedor1 = '';
 
   const listaEncabezado = `
-  <div class="encabezado">
-      <div class="columna">Nombre</div>
-      <div class="column">Pais</div>
-      <div class="column">Deporte</div>
-      <div class="colum">Peso</div>
-      <div class="colum">Altura</div>
-      <div class="colum">Género</div>
-   </div>
-   `;
+<div class="encabezado">
+    <div class="columna">Nombre</div>
+    <div class="column">Pais</div>
+    <div class="column">Deporte</div>
+    <div class="colum">Peso</div>
+    <div class="colum">Altura</div>
+    <div class="colum">Género</div>
+ </div>
+ `;
 
   deportistas.forEach((item) => {
     const lista1 = `
-  <div class="fila">
-    <div class="columna">${item.nombre}</div>
-    <div class="column">${item.equipo}</div>
-    <div class="column">${item.deporte}</div>
-    <div class="colum">${item.peso}</div>
-    <div class="colum">${item.altura}</div>
-    <div class="colum">${item.genero}</div>
-  </div>
+<div class="fila">
+  <div class="columna">${item.nombre}</div>
+  <div class="column">${item.equipo}</div>
+  <div class="column">${item.deporte}</div>
+  <div class="colum">${item.peso}</div>
+  <div class="colum">${item.altura}</div>
+  <div class="colum">${item.genero}</div>
+</div>
 `;
     contenedor1 += lista1;
   });
@@ -187,7 +198,8 @@ document.querySelectorAll('.botonDeporte').forEach((element) => {
     datageneral.classList.add('hide');
     barraMedallero.classList.add('hide');
     contenedorAtletas.classList.add('hide');
+    barraDeportes.classList.add('hide');
+    summerSports.classList.add('hide');
     barraSedes.classList.add('hide');
-    summerSpots.classList.add('hide');
   });
 });
