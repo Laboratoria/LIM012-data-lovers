@@ -36,10 +36,12 @@ header p{
   margin-left: 83%;
   z-index: 1;
   color: #ffff;
+  display: flex;
 }
 
 header img{
   width: 35%;
+  display: flex;
 }
 
 nav{
@@ -51,12 +53,14 @@ nav{
   padding: 14px;
   align-items: center;
   text-align: center;
+  display: flex;
 }
 
 a{
   text-decoration: none;
   font-family: 'Questrial', sans-serif;
   color: #ffff;
+  display: flex;
 }
 
 .encabezado{
@@ -65,6 +69,7 @@ a{
   color: #179a13;
   font-weight: 300;
   margin-left: 6%;
+  display: flex;
 }
 
 .encabezado div{
@@ -119,6 +124,7 @@ li{
 .menuInicio img{
   width: 1000px;
   height: 500px;
+  display: flex;
 }
 
 .menuAtletas{
@@ -243,10 +249,6 @@ li{
   width: 70%;
 }
 
-.botonDeporte {
-  text-align: center;
-}
-
 .select-css{
   display:block;
   padding: 5px 10px;
@@ -279,13 +281,23 @@ li{
  }
  
 .menuDeportes button{
-  border: none;
+  border:none;
   background: none;
   width: 30%;
   height: 20%;
+  text-align: center;
+  cursor: pointer;
+  flex-shrink: 1;
+
 }
 
-h2{
+.menuDeportes button:hover{
+  background-color: #222;
+	color: white;
+	transition: all 0.5s ease;
+}
+
+.menuDeportes h2{
   text-align: center;
   margin: 10%;
   margin-bottom: 10%;
@@ -295,6 +307,42 @@ h2{
   color: #1D4E89;
 
 }
+.menuSports{
+  margin-bottom: 5%;
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-top: 3%;
+}
+
+.fila{
+  margin: 1.5%;
+  display: flex;
+  border-bottom-width: thin;
+  border-bottom-style: solid;
+  border-color: #1D4E89;
+}
+
+.columna{
+  font-family: 'Questrial', sans-serif;
+  font-size: 0.9rem;
+  flex-basis: 33%;
+  margin-left: 3%;
+}
+
+.column{
+  font-family: 'Questrial', sans-serif;
+  font-size: 0.9rem;
+  flex-basis: 25%;
+}
+
+.colum{
+  font-family: 'Questrial', sans-serif;
+  font-size: 0.9rem;
+  flex-basis: 5%;
+  margin-right: 4%;
+  text-align: right;
+}
+
 
 .menuSedes{
   margin: 7%;
