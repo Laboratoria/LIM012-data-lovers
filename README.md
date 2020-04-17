@@ -136,17 +136,44 @@ Esta página web permite a lxs usuarixs, poder encontrar a los atletas de juegos
   **Modal**
   ![](./src/img/prototipo3.png)  
 
+  OBJETIVOS DE APRENDIZAJE
+UX
+[x] Diseñar la aplicación pensando y entendiendo al usuario.
+[x] Crear prototipos para obtener feedback e iterar.
+[x] Aplicar los principios de diseño visual (contraste, alineación, jerarquía).
+[ ] Planear y ejecutar tests de usabilidad.
+
+HTML y CSS
+[x] Entender y reconocer por qué es importante el HTML semántico.
+[x] Identificar y entender tipos de selectores en CSS.
+[x] Entender como funciona flexbox en CSS.
+[x] Construir tu aplicación respetando el diseño planeado (maquetación).
+
+DOM
+[x] Entender y reconocer los selectores del DOM (querySelector | querySelectorAll).
+[x] Manejar eventos del DOM. (addEventListener)
+[x] Manipular dinámicamente el DOM. (createElement, appendchild, innerHTML, value)
+
+Javascript
+[x] Manipular arrays (filter | map | sort | reduce).
+[] Manipular objects (key | value).
+[x] Entender el uso de condicionales (if-else | switch).
+[x] Entender el uso de bucles (for | forEach).
+[] Entender la diferencia entre expression y statements.
+[] Util✔
+
+
 ## 9. Checklist
 
 - [x] Usa VanillaJS.
 - [x] No hace uso de `this`.
-- [ ] Pasa linter (`npm run pretest`)
-- [ ] Pasa tests (`npm test`)
-- [ ] Pruebas unitarias cubren un mínimo del 70% de statements, functions y
+- [x] Pasa linter (`npm run pretest`)
+- [x] Pasa tests (`npm test`)
+- [x] Pruebas unitarias cubren un mínimo del 70% de statements, functions y
       lines y branches.
 - [x] Incluye _Definición del producto_ clara e informativa en `README.md`.
 - [x] Incluye historias de usuario en `README.md`.
-- [ ] Incluye _sketch_ de la solución (prototipo de baja fidelidad) en
+- [x] Incluye _sketch_ de la solución (prototipo de baja fidelidad) en
       `README.md`.
 - [x] Incluye _Diseño de la Interfaz de Usuario_ (prototipo de alta fidelidad)
       en `README.md`.
@@ -154,6 +181,6 @@ Esta página web permite a lxs usuarixs, poder encontrar a los atletas de juegos
 - [ ] Incluye el listado de problemas que detectaste a través de tests de
       usabilidad en el `README.md`.
 - [x] UI: Muestra lista y/o tabla con datos y/o indicadores.
-- [ ] UI: Permite ordenar data por uno o más campos (asc y desc).
-- [ ] UI: Permite filtrar data en base a una condición.
+- [x] UI: Permite ordenar data por uno o más campos (asc y desc).
+- [x] UI: Permite filtrar data en base a una condición.
 - [ ] UI: Es _responsive_.
