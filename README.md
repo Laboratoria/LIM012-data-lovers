@@ -137,30 +137,33 @@ Esta página web permite a lxs usuarixs, poder encontrar a los atletas de juegos
   ![](./src/img/prototipo3.png)  
 
   OBJETIVOS DE APRENDIZAJE
-UX
-[x] Diseñar la aplicación pensando y entendiendo al usuario.
-[x] Crear prototipos para obtener feedback e iterar.
-[x] Aplicar los principios de diseño visual (contraste, alineación, jerarquía).
-[ ] Planear y ejecutar tests de usabilidad.
+## UX
 
-HTML y CSS
-[x] Entender y reconocer por qué es importante el HTML semántico.
-[x] Identificar y entender tipos de selectores en CSS.
-[x] Entender como funciona flexbox en CSS.
-[x] Construir tu aplicación respetando el diseño planeado (maquetación).
+- [x] Diseñar la aplicación pensando y entendiendo al usuario.
+- [x] Crear prototipos para obtener feedback e iterar.
+-[x] Aplicar los principios de diseño visual (contraste, alineación, jerarquía).
+- [ ] Planear y ejecutar tests de usabilidad.
+
+## HTML y CSS
+
+- [x] Entender y reconocer por qué es importante el HTML semántico.
+- [x] Identificar y entender tipos de selectores en CSS.
+- [x] Entender como funciona flexbox en CSS.
+- [x] Construir tu aplicación respetando el diseño planeado (maquetación).
 
 DOM
-[x] Entender y reconocer los selectores del DOM (querySelector | querySelectorAll).
-[x] Manejar eventos del DOM. (addEventListener)
-[x] Manipular dinámicamente el DOM. (createElement, appendchild, innerHTML, value)
+- [x] Entender y reconocer los selectores del DOM (querySelector | querySelectorAll).
+- [x] Manejar eventos del DOM. (addEventListener)
+- [x] Manipular dinámicamente el DOM. (createElement, appendchild, innerHTML, value)
 
-Javascript
-[x] Manipular arrays (filter | map | sort | reduce).
-[] Manipular objects (key | value).
-[x] Entender el uso de condicionales (if-else | switch).
-[x] Entender el uso de bucles (for | forEach).
-[] Entender la diferencia entre expression y statements.
-[] Util✔
+## Javascript
+
+- [x] Manipular arrays (filter | map | sort | reduce).
+- [ ] Manipular objects (key | value).
+- [x] Entender el uso de condicionales (if-else | switch).
+- [x] Entender el uso de bucles (for | forEach).
+- [ ] Entender la diferencia entre expression y statements.
+- [ ] Util✔
 
 
 ## 9. Checklist
