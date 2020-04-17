@@ -1,7 +1,7 @@
 // import data from './data/lol/lol.js';
 // import data from './data/pokemon/pokemon.js';
-import dataAtletas from './data/copy.js';
-// import dataAtletas from './data/atletas/atletas.js';
+// import dataAtletas from './data/copy.js';
+import dataAtletas from './data/atletas/atletas.js';
 
 import {
   transformaBandera,
