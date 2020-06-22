@@ -23,7 +23,6 @@ export const ordenarCampeones = (listaTodos, term) => {
         if (a.name > b.name) {
           return -1;
         }
-        // a must be equal to b
         return 0;
       });
   }
