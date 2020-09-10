@@ -327,7 +327,7 @@ const searchPokemon = () => {
   } else if (currentData.length === 0 && wordIntroduced.length !== 0) {
     cardContainer.innerHTML = `<p class="message">
     Sorry, no results were found for your search <span class="import-text font">${wordIntroduced}</span> make sure it is well written
-    <i class="icon-wondering font"></i></p>`;
+    <img src="./images/pokemon.svg"/></p>`;
   } else {
     currentData = data.pokemon;
     showPokemonCards(currentData);

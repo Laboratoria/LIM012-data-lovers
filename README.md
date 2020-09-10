@@ -29,27 +29,10 @@ Las historias de usuario se trabajaron con la herramienta trello en el siguiente
 
 ### Prototipo de baja fidelidad
 Diseñamos bosquejos (para desktop, móvil t tablet) que constaba de dos pantallas.
-#### Prototipo Móvil
-![](/src/images/movil1.jfif)
-![](/src/images/movil2.jfif)
-![](/src/images/movil3.jfif)
-#### Prototipo Tablet
-![](/src/images/tablet1.jfif)
-![](/src/images/tablet2.jfif)
-![](/src/images/tablet3.jfif)
-#### Prototipo Desktop
-![](/src/images/desktop1.jfif)
-![](/src/images/desktop2.jfif)
-![](/src/images/desktop3.jfif)
-
+![](./src/images/1.jpg)
 ### Prototipo de alta fidelidad
 Diseñamos prototipos en FIGMA (para desktop y móvil) que constaba de dos pantallas.
-#### Prototipo para Móvil y tablet
-![](/src/images/figma-movil.PNG)
-#### Prototipo para Desktop
-![](/src/images/desktop-figma-1.PNG)
-![](/src/images/desktop-figma-2.PNG)
-![](/src/images/desktop-figma-3.PNG)
+![](/src/images/2.jpg)
 
 
 ## 5. Objetivos de aprendizaje
