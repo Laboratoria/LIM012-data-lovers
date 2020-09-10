@@ -30,7 +30,6 @@ export const filterPokemon = (whichFilter, pokemonType) => {
     default:
       // do nothing
   }
-  // console.log(result);
   return result;
 };
 

@@ -1,172 +1,339 @@
-/* eslint-disable no-unused-vars */
 /* eslint-disable no-param-reassign */
-/* eslint-disable no-console */
-/* eslint-disable no-loop-func */
 import {
   dinamicSearchPokemon, filterPokemon, orderBy, changeOrder, calculateBetterCombinations,
 } from './data.js';
 
 import data from './data/pokemon/pokemon.js';
 
-const typeColors = {
-  normal: '#AAA284',
-  fire: '#FF9C06',
-  grass: '#95C215',
-  water: '#168CBF',
-  electric: '#F4C313',
-  ice: '#85EFF5',
-  flying: '#20E5F1',
-  poison: '#C22AF8',
-  ground: '#AB8709',
-  psychic: '#F013F4',
-  rock: '#C9AF53',
-  bug: '#4C6C2C',
-  dragon: '#731E9B',
-  ghost: '#8968AA',
-  dark: '#6C695C',
-  steel: '#9DAFC0',
-  fairy: '#FAB3E2',
-  fighting: '#BD5022',
-};
 
-const desktopSize = 1025;
+const getById = label => document.getElementById(label);
+const getByClass = label => document.getElementsByClassName(label);
+const getByQuery = label => document.querySelectorAll(label);
 
-let resultTypes = [];
-let resultResistant = [];
-let resultWeaknesses = [];
-let currentData = [];
-const optionsFilter = [];
-let isContainerSection = false;
-let isContainerShowMore = false;
-let isShowMove = true;
-let showMoreSection = '';
-const positions = [0, 0, 0];
-let typeChoosed = '';
 
-const getById = (label) => { document.getElementById(label); };
-const getByClass = (label) => { document.getElementsByClassName(label); };
-const getByQuery = (label) => { document.getElementsByClassName(label); };
+const cardContainer = document.querySelector('#cards-section');
 
-const divCardContainerFlex = getById('card-container-flex');
-const divCardContainerBlock = getById('card-container-block');
-let deg = 0;
-const titleTop = getById('top-pagination-p');
-const modalMode = getById('modal-mode');
-const btnChangeOrder = getById('btn-change-order');
+const inputBarSearch = getById('input-bar-search');
 
-const divOrderBy = getByClass('menu')[0];
-const divFilterBy = getByClass('menu')[1];
 
-const modalWindow = getById('modal-window');
+// btn sections
+const btnType = document.querySelector('#type');
+const btnResistant = document.querySelector('#resistant');
+const btnWeak = document.querySelector('#weak');
+// sections
+const titleSection = document.querySelector('.title-section');
+const btnSection = document.querySelectorAll('.btn-section');
 
-const orderBySelect = getById('order-by-select');
-const topTitle = getById('top-pagination-p');
-const iconTitle = document.querySelector('.icon-title');
-const iconArrowBack = document.querySelector('.icon-back');
-const iconHome = document.querySelector('#icon-nav-home');
-const iconGoTop = document.querySelector('#icon-arrow-up');
+const btnHome = document.querySelector('#btn-menu');
+let optionSelected = btnHome;
 
-const createPokemonType = (type) => {
-  const divPokemonType = document.createElement('div');
-  divPokemonType.className = 'pokemon-type font';
-  divPokemonType.appendChild(document.createTextNode(type));
-  divPokemonType.style.background = typeColors[type];
-  return divPokemonType;
-};
 
-const putPokemonTypes = (dataTypesPokemon, divCardTypes) => {
-  for (let i = 0; i < dataTypesPokemon.length; i += 1) {
-    divCardTypes.appendChild(createPokemonType(dataTypesPokemon[i]));
-  }
-};
+let resultTypes;
+let resultResistant;
+let resultWeaknesses;
 
-const createPokemonCard = (index, pokemon, container) => {
+let currentData;
+let currentSection = btnSection[0];
+
+const btnMenu = document.querySelector('.menu-btn');
+const asideBar = document.querySelector('aside');
+
+const pokemonSection = document.querySelector('.pokemon-info');
+
+const btnGoBack = document.querySelector('.go-back');
+
+
+
+const createPokemonCard = (pokemon, container) => {
   if (typeof pokemon !== 'undefined') {
-    const card = document.createElement('div');
-    card.setAttribute('name', pokemon.name);
-    card.className = 'pokemon-card  flex-wrap font grow';
-    card.id = pokemon.name;
-    card.innerHTML = `<span class="pokemon-name">${pokemon.name}</span>
-                      <span class="pokemon-cp-hp">MAX CP ${pokemon.stats['max-cp']} / MAX HP ${pokemon.stats['max-cp']}</span>              
-                      <img class="pokemon-img-medium" src="${pokemon.img}">
-                      <span class= "pokemon-about" > ${pokemon.about}</span>`;
-    putPokemonTypes(pokemon.type, card);
+    const card = document.createElement('article');
+    card.classList.add('pokemon-card', 'flex-box');
+    let types = '';
+    pokemon.type.forEach((type) => {
+      types += `<img class="icon-type-card" src="./images/${type}-icon.png" alt=""/>`;
+    });
+    card.innerHTML = `
+    <div class="simple-pokemon-info">
+      <h1 class="pokemon-name">${pokemon.name}</h1>
+      <div class="background-pokemon-img">
+      <img src="${pokemon.img}" id="${pokemon.name}" class="pokemon">
+      </div>
+    </div>
+    <div class="types-pokemon-info flex-box">
+    ${types}
+    <span class="ptj">MAX CP ${pokemon.stats['max-cp']}</span><span class="ptj">MAX HP ${pokemon.stats['max-cp']}</span>
+    </div>
+    `;
     container.append(card);
   }
 };
 
-const showCard = (dataPokemon, container) => {
+const showPokemonCards = (pokemons, container = cardContainer) => {
   container.innerHTML = '';
-  for (let i = 0; i < dataPokemon.length; i += 1) {
-    createPokemonCard(i, dataPokemon[i], container);
+  pokemons.forEach((pokemon) => {
+    createPokemonCard(pokemon, container);
+  });
+};
+
+btnHome.addEventListener('click', (e) => {
+  btnGoBack.classList.add('hidden');
+  cardContainer.classList.remove('hidden');
+  pokemonSection.classList.add('hidden');
+  if (optionSelected !== e.target) {
+    optionSelected.classList.remove('selected');
+    e.target.classList.add('selected');
+    optionSelected = e.target;
+  }
+  showPokemonCards(data.pokemon);
+});
+
+btnGoBack.addEventListener('click', (e) => {
+  pokemonSection.classList.add('hidden');
+  cardContainer.classList.remove('hidden');
+  e.target.classList.add('hidden');
+});
+
+btnMenu.addEventListener('click', () => {
+  asideBar.classList.toggle('show-aside');
+});
+
+const createIcons = (list) => {
+  let icons = '';
+  for (let i = 0; i < list.length; i += 1) {
+    icons += `<img src="./images/${list[i]}-icon.png" alt=""/>`;
+  }
+  return icons;
+};
+
+const buildTable = (list, table) => {
+  table.innerHTML = '';
+  table.innerHTML = `<tr><th></th>
+  <th><img class="icon-modal" src="./images/type.png"></th>
+  <th><img class="icon-modal" src="./images/box.png"></th>
+  <th><img class="icon-modal" src="./images/energy.png"></th>
+  <th><img class="icon-modal" src="./images/time.png"></tr>`;
+  for (let i = 0; i < list.length; i += 1) {
+    const row = `<tr><td>${list[i].name}</td>
+    <td><img class="icon-modal" src="./images/${list[i].type}-icon.png"></td>
+    <td>${list[i]['base-damage']}</td>
+    <td>${list[i].energy}</td>
+    <td>${list[i]['move-duration-seg']}</td></tr>`;
+    table.innerHTML += `${row}`;
   }
 };
 
-const searchPokemon = () => {
-  orderBySelect.selectedIndex = 0;
-  topTitle.textContent = '';
-  iconTitle.style.visibility = 'hidden';
-  iconArrowBack.style.visibility = 'hidden';
-  if (isContainerSection === true) {
-    divCardContainerBlock.style.display = 'none';
-    isContainerSection = false;
-    divCardContainerFlex.style.display = 'flex';
+
+const getPokemonEvolution = (poke) => {
+  if (poke['next-evolution']) {
+    return [{ num: poke.num, name: poke.name }].concat(getPokemonEvolution(poke['next-evolution'][0]));
+  } if (poke['prev-evolution']) {
+    return [{ num: poke.num, name: poke.name }].concat(getPokemonEvolution(poke['prev-evolution'][0]));
   }
+  return [{ num: poke.num, name: poke.name }];
+};
+
+const evolution = (poke, prev, next) => {
+  const prevs = (prev) ? getPokemonEvolution(prev[0]).reverse() : [];
+  const nexts = (next) ? getPokemonEvolution(next[0]) : [];
+  const pokemons = prevs.concat([{ num: poke.num, name: poke.name }]).concat(nexts);
+  let cards = '';
+  let objPoke;
+  for (let index = 0; index < pokemons.length; index += 1) {
+    objPoke = data.pokemon.find(pk => pk.name === pokemons[index].name);
+    cards += `
+      <div class="card-pokemon-evolition flex-box"> 
+        <span class="font pokemon-name">${objPoke.name}</span>
+        <img src="${objPoke.img}" alt="" class="pokemon-img-evo">
+      </div>`;
+    if (index !== pokemons.length - 1) cards += '<i class="fas fa-angle-right"></i><i class="fas fa-angle-down"></i>';
+  }
+  return cards;
+};
+
+// show pokemon info
+const showInfoPokemon = (name) => {
+  const pokemon = data.pokemon.find(pk => pk.name === name);
+  const section = document.querySelector('.pokemon-info');
+  section.innerHTML = `
+    <article class="pokemon-simple-info">
+      <img src="${pokemon.img}" class="pokemon-info-img" alt="" >
+      <span class="pokemon-info-name">${pokemon.name}</span>
+    </article>
+    <article class="pokemon-about">
+      <span>About <strong>${pokemon.name}</strong></span>
+      <p class="about">${pokemon.about}</p>
+    </article>
+    <article class="pokemon-details flex-box">
+      <h4>Details</h4>
+      <div class="detail">
+        <img src="./images/balanza.png" alt="" srcset="">
+        <p>
+          <span>Weight</span>
+          <strong>${pokemon.size.weight}</strong>
+        </p>
+      </div>
+      <div class="detail"><img src="" alt="" srcset="./images/cintam.png">
+        <p>
+          <span>Height</span>
+          <strong>${pokemon.size.height}</strong>
+        </p>
+      </div>
+      <div class="detail"><img src="./images/world.png" alt="" srcset="">
+        <p>
+          <span>Region</span>
+          <strong>${pokemon.generation.name}</strong>
+        </p>
+      </div>
+      <div class="detail"><img src="./images/candy.png" alt="" srcset="">
+        <p>
+          <span>Candy</span>
+          <strong>${pokemon.evolution.candy.replace('candy', '')}</strong>
+        </p>
+      </div>
+    </article>
+    <article class="pokemon-stats flex-box">
+      <h4>Stats</h4>
+      <div class="graphics">
+        <div class="wrap-bar">
+          <div>
+            <div class="bar" style="height:${(pokemon.stats['base-attack'] * 100) / 150}px"></div>
+          </div>
+          <span>attack</span>
+        </div>
+        <div class="wrap-bar">
+          <div>
+            <div class="bar" style="height:${(pokemon.stats['base-defense'] * 100) / 150}px"></div>
+          </div>
+          <span>defense</span>
+        </div>
+        <div class="wrap-bar">
+          <div>
+            <div class="bar" style="height:${(pokemon.stats['base-stamina'] * 100) / 150}px"></div>
+          </div>
+          <span>stamina</span>
+        </div>    
+      </div>       
+    </article>
+    <article class="pokemon-types flex-box">
+      <h4>Elements</h4>
+      <div><span>Type</span>${createIcons(pokemon.type)}</div>
+      <div><span>Resistant</span>${createIcons(pokemon.resistant)}</div>
+      <div><span>Weaknesses</span>${createIcons(pokemon.weaknesses)}</div>
+      
+    </article>
+    <article class="pokemon-evolution flex-box">
+      <h4>Evolution</h4>
+      ${evolution(pokemon, pokemon.evolution['prev-evolution'], pokemon.evolution['next-evolution'])}
+    </article>`;
+};
+
+
+document.addEventListener('click', (event) => {
+  const element = event.target;
+  if (element.classList.contains('pokemon')) {
+    btnGoBack.classList.remove('hidden');
+    pokemonSection.classList.remove('hidden');
+    cardContainer.classList.add('hidden');
+    showInfoPokemon(element.id);
+  }
+});
+
+const filterPokemonsByType = (type) => {
+  resultTypes = filterPokemon('type', type);
+  // resultResistant = filterPokemon('resistant', type);
+  // resultWeaknesses = filterPokemon('weaknesses', type);
+};
+
+
+const sortSystem = (sortOptions) => {
+  sortOptions.forEach((option) => {
+    option.addEventListener('click', (event) => {
+      if (cardContainer.classList.contains('hidden')) {
+        cardContainer.classList.remove('hidden');
+        pokemonSection.classList.add('hidden');
+        btnGoBack.classList.add('hidden');
+      }
+      optionSelected.classList.remove('selected');
+      option.classList.add('selected');
+      optionSelected = option;
+      currentData = orderBy(currentData, event.target.name);
+      showPokemonCards(currentData);
+    });
+  });
+};
+
+const filterSystem = (filterOptions) => {
+  filterOptions.forEach((option) => {
+    option.addEventListener('click', () => {
+      if (cardContainer.classList.contains('hidden')) {
+        cardContainer.classList.remove('hidden');
+        pokemonSection.classList.add('hidden');
+        btnGoBack.classList.add('hidden');
+      }
+      optionSelected.classList.remove('selected');
+      option.classList.add('selected');
+      optionSelected = option;
+      filterPokemonsByType(option.textContent);
+      cardContainer.innerHTML = '';
+      currentData = resultTypes;
+      showPokemonCards(resultTypes);
+    });
+  });
+};
+
+btnSection.forEach((btn) => {
+  cardContainer.innerHTML = '';
+  btn.addEventListener('click', () => {
+    switch (btn.id) {
+      case 'type':
+        currentSection.classList.remove('active');
+        currentData = resultTypes;
+        showPokemonCards(resultTypes);
+        btn.classList.add('active');
+        break;
+      case 'resistant':
+        currentSection.classList.remove('active');
+        currentData = resultResistant;
+        showPokemonCards(resultResistant);
+        btn.classList.add('active');
+        break;
+      case 'weak':
+        currentSection.classList.remove('active');
+        currentData = resultWeaknesses;
+        showPokemonCards(resultWeaknesses);
+        btn.classList.add('active');
+        break;
+      default: // nothing
+    }
+    currentSection = btn;
+    // btn.classList.add('active');
+  });
+});
+// menu system
+const menuSystem = () => {
+  const ulSortOptions = getByQuery('.sort-option');
+  const ulFilterOptions = getByQuery('.filter-option');
+  filterSystem(ulFilterOptions);
+  sortSystem(ulSortOptions);
+};
+
+
+// search pokemon
+const searchPokemon = () => {
   const wordIntroduced = getById('input-bar-search').value;
   currentData = dinamicSearchPokemon(wordIntroduced);
   if (currentData.length > 0) {
-    showCard(currentData, divCardContainerFlex);
+    showPokemonCards(currentData);
   } else if (currentData.length === 0 && wordIntroduced.length !== 0) {
-    divCardContainerFlex.innerHTML = `<p class="message font text-aling">
+    cardContainer.innerHTML = `<p class="message">
     Sorry, no results were found for your search <span class="import-text font">${wordIntroduced}</span> make sure it is well written
     <i class="icon-wondering font"></i></p>`;
   } else {
     currentData = data.pokemon;
-    showCard(currentData, divCardContainerFlex);
+    showPokemonCards(currentData);
   }
 };
-
-const createOptionFilter = (name) => {
-  const li = document.createElement('li');
-  const icon = document.createElement('img');
-  li.className = 'option filter-option';
-  icon.className = 'icon-medium icon-filter';
-  icon.setAttribute('src', `images/${name}-icon.png`);
-  li.textContent = name;
-  li.append(icon);
-  optionsFilter.push(li);
-  return li;
-};
-
-const pokemonTypes = Object.keys(typeColors);
-
-
-const putPokemonTypesOnMenu = (container) => {
-  for (let key = 0; key < pokemonTypes.length; key += 1) {
-    container.appendChild(createOptionFilter(pokemonTypes[key]));
-  }
-  divFilterBy.appendChild(container);
-};
-
-const showMenu = (which) => {
-  const asideLateralMenu = document.getElementsByTagName('aside')[0];
-  asideLateralMenu.style.width = (window.screen.width < 768) ? '80%' : '50%';
-  if (which === 'filter') {
-    divOrderBy.style.display = 'none';
-    divFilterBy.style.display = 'block';
-  } else {
-    divFilterBy.style.display = 'none';
-    divOrderBy.style.display = 'block';
-  }
-};
-
-const hideMenu = () => {
-  modalMode.style.display = 'none';
-  const lateralMenu = getById('lateral-menu');
-  lateralMenu.style.width = '0';
-  lateralMenu.getElementsByClassName('section-filter-by')[0].style.display = 'block';
-};
-
+//  estos son lo unicos caracteres aceptados
 const onlyText = (e) => {
   const key = e.keyCode || e.which;
   const tecla = String.fromCharCode(key).toLowerCase();
@@ -177,428 +344,17 @@ const onlyText = (e) => {
   }
 };
 
-
-btnChangeOrder.addEventListener('click', () => {
-  deg += 180;
-  btnChangeOrder.style.transform = `rotate(${deg}deg)`;
-  currentData = changeOrder(currentData);
-  showCard(currentData, divCardContainerFlex);
-});
-// const changeOrderCurrentData = () => {
-// };
-
-const inputBarSearch = getById('input-bar-search');
 inputBarSearch.addEventListener('keyup', searchPokemon);
 inputBarSearch.addEventListener('keypress', onlyText, false);
-
-const topMenuFilterBtn = getByClass('top-menu-option')[0];
-const topMenuOrderBtn = getByClass('top-menu-option')[1];
-const btnCloseMenu = getById('close-menu');
-const btnCloseModal = getById('close-modal');
-
-topMenuFilterBtn.addEventListener('click', () => {
-  showMenu('filter');
-  modalMode.style.display = 'block';
-});
-topMenuOrderBtn.addEventListener('click', () => {
-  showMenu('order');
-  modalMode.style.display = 'block';
-});
-btnCloseMenu.addEventListener('click', hideMenu);
-
-btnCloseModal.addEventListener('click', () => {
-  isShowMove = true;
-  modalWindow.style.display = 'none';
-  modalMode.style.display = 'none';
-});
-
-const translateX = (pos, slide, width) => {
-  slide.style.left = `${pos * -width}px`;
-};
-let widthCard = 0;
-
-const goToNextItem = (slide, sliderCards, index) => {
-  const numCards = sliderCards.getElementsByClassName('pokemon-card').length;
-  widthCard = sliderCards.offsetWidth / numCards;
-  const visibleItems = Math.round(slide.offsetWidth / widthCard);
-  const totalItems = sliderCards.getElementsByClassName('pokemon-card').length;
-  const hiddenItems = totalItems - visibleItems;
-  if (positions[index] >= 0 && positions[index] < hiddenItems) {
-    positions[index] += 1;
-    translateX(positions[index], sliderCards, widthCard);
-  }
-};
-
-const goToPrevItem = (slider, index) => {
-  if (positions[index] > 0) {
-    positions[index] -= 1;
-    translateX(positions[index], slider, widthCard);
-  }
-};
-
-const sliderSystem = () => {
-  const slideCards = divCardContainerBlock.getElementsByClassName('slide-cards');
-  const slide = divCardContainerBlock.getElementsByClassName('slide');
-  const ctrlPrevButtons = getByClass('ctrl-prev');
-  const ctrlNextButtons = getByClass('ctrl-next');
-  for (let i = 0; i < 3; i += 1) {
-    ctrlPrevButtons[i].addEventListener('click', () => {
-      goToPrevItem(slideCards[i], i);
-    });
-    ctrlNextButtons[i].addEventListener('click', () => {
-      goToNextItem(slide[i], slideCards[i], i);
-    });
-  }
-};
-/* --------------------- mostrar mas pokemones ------------------------ */
-const showAllPokemons = (listData) => {
-  divCardContainerFlex.style.display = 'flex';
-  divCardContainerBlock.style.display = 'none';
-  showCard(listData, divCardContainerFlex);
-  isContainerSection = false;
-  isContainerShowMore = true;
-};
-
-iconArrowBack.addEventListener('click', (event) => {
-  divCardContainerFlex.style.display = 'none';
-  divCardContainerBlock.style.display = 'block';
-  isContainerSection = true;
-  event.target.style.visibility = 'hidden';
-});
-
-const showMore = getByClass('show-more');
-showMore[0].addEventListener('click', () => {
-  iconArrowBack.style.visibility = 'visible';
-  showAllPokemons(resultTypes);
-  currentData = resultTypes;
-  titleTop.textContent = `${typeChoosed} Type Pokemons`;
-  topTitle.textContent = typeChoosed;
-  showMoreSection = 'type';
-});
-
-showMore[1].addEventListener('click', () => {
-  iconArrowBack.style.visibility = 'visible';
-  showAllPokemons(resultResistant);
-  currentData = resultResistant;
-  titleTop.textContent = `Pokemons resistant to the ${typeChoosed} Type`;
-  topTitle.textContent = typeChoosed;
-  showMoreSection = 'resistant';
-});
-
-showMore[2].addEventListener('click', () => {
-  iconArrowBack.style.visibility = 'visible';
-  showAllPokemons(resultWeaknesses);
-  currentData = resultWeaknesses;
-  titleTop.textContent = `Pokemons weaknesses to the ${typeChoosed} Type`;
-  topTitle.textContent = typeChoosed;
-  showMoreSection = 'weaknesses';
-});
-
-const showMessageInSection = (container, section) => {
-  container.innerHTML = `<p class="message font text-aling" >Sorry, there are no ${section} pokemons for this type</p>`;
-};
-
-/* -------- muestra mokempnes despues del filrtado por tipo -----------*/
-const showPokemonInSections = () => {
-  if (isContainerSection === false) {
-    isContainerSection = true;
-    divCardContainerFlex.style.display = 'none';
-    btnChangeOrder.style.visibility = 'hidden';
-    divCardContainerBlock.style.display = 'block';
-  }
-  const sliders = divCardContainerBlock.getElementsByClassName('slider');
-  const divSections = divCardContainerBlock.getElementsByClassName('slide-cards');
-  divSections[0].innerHTML = '';
-  divSections[1].innerHTML = '';
-  divSections[2].innerHTML = '';
-  showCard(resultTypes, divSections[0]);
-  if (resultResistant.length > 0) {
-    showCard(resultResistant, divSections[1]);
-  } else {
-    sliders[1].querySelector('.show-more').style.visibility = 'hidden';
-    sliders[1].getElementsByTagName('button')[0].style.visibility = 'hidden';
-    sliders[1].getElementsByTagName('button')[1].style.visibility = 'hidden';
-    showMessageInSection(divSections[1], 'resistant');
-  }
-
-  if (resultWeaknesses.length > 0) {
-    showCard(resultWeaknesses, divSections[2]);
-    sliders[2].querySelector('.show-more').style.visibility = 'visible';
-    sliders[2].getElementsByTagName('button')[0].style.visibility = 'visible';
-    sliders[2].getElementsByTagName('button')[1].style.visibility = 'visible';
-  } else {
-    sliders[2].querySelector('.show-more').style.visibility = 'hidden';
-    sliders[2].getElementsByTagName('button')[0].style.visibility = 'hidden';
-    sliders[2].getElementsByTagName('button')[1].style.visibility = 'hidden';
-    showMessageInSection(divSections[2], 'resistant');
-  }
-};
-
-const filterPokemonsByType = (type) => {
-  resultTypes = filterPokemon('type', type);
-  resultResistant = filterPokemon('resistant', type);
-  resultWeaknesses = filterPokemon('weaknesses', type);
-};
-
-const filterSystem = () => {
-  titleTop.textContent = '';
-  const titleSlider = getByClass('title-slider-p');
-  const resultSlider = getByClass('result');
-  for (let i = 0; i < optionsFilter.length; i += 1) {
-    optionsFilter[i].addEventListener('click', () => {
-      window.scrollTo(0, window.scrollY);
-      orderBySelect.selectedIndex = 0;
-      // eslint-disable-next-line no-return-assign
-      optionsFilter.forEach(element => element.style.background = '#1B262C');
-      optionsFilter[i].style.background = 'var(--color-blue-3)';
-      isContainerShowMore = false;
-      if (window.innerWidth < desktopSize) hideMenu();
-      btnChangeOrder.style.visibility = 'hidden';
-      isContainerShowMore = false;
-      topTitle.textContent = optionsFilter[i].textContent;
-      iconTitle.setAttribute('src', `images/${optionsFilter[i].textContent}-icon.png`);
-      iconTitle.style.visibility = 'visible';
-      filterPokemonsByType(optionsFilter[i].textContent);
-      typeChoosed = optionsFilter[i].textContent;
-      resultSlider[0].textContent = `${resultTypes.length}`;
-      resultSlider[1].textContent = `${resultResistant.length}`;
-      resultSlider[2].textContent = `${resultWeaknesses.length}`;
-      titleSlider[0].textContent = `${typeChoosed} Pokemons`;
-      titleSlider[1].textContent = `Pokemons resistant to ${typeChoosed}`;
-      titleSlider[2].textContent = `Pokemons weak to ${typeChoosed} `;
-      showPokemonInSections();
-    });
-  }
-};
-
-// revisando codigo
-const orderSections = (option) => {
-  resultTypes = orderBy(resultTypes, option);
-  resultResistant = orderBy(resultResistant, option);
-  resultWeaknesses = orderBy(resultWeaknesses, option);
-  showPokemonInSections();
-};
-
-const orderSystem = () => {
-  if (window.innerWidth >= desktopSize) {
-    orderBySelect.addEventListener('change', (event) => {
-      deg = 0;
-      btnChangeOrder.style.transform = `rotate(${deg}deg)`;
-      if (event.target.value !== '') {
-        btnChangeOrder.style.visibility = (isContainerSection) ? 'hidden' : 'visible';
-        if (isContainerSection) {
-          orderSections(event.target.value);
-        } else {
-          currentData = orderBy(currentData, event.target.value);
-          showCard(currentData, divCardContainerFlex);
-          // changeOrderCurrentData(divCardContainerFlex);
-        }
-      }
-    });
-  } else {
-    const whichOrder = ['max-cp', 'max-hp', 'a-z'];
-    const optionsOrder = getByClass('order-option');
-    for (let i = 0; i < optionsOrder.length; i += 1) {
-      optionsOrder[i].addEventListener('click', () => {
-        deg = 0;
-        btnChangeOrder.style.transform = `rotate(${deg}deg)`;
-        hideMenu();
-        for (let j = 0; j < optionsOrder.length; j += 1) {
-          optionsOrder[j].style.background = 'rgb(43, 41, 41)';
-        }
-        optionsOrder[i].style.background = '#0F4C75';
-        btnChangeOrder.style.visibility = (isContainerSection) ? 'hidden' : 'visible';
-        if (isContainerSection) {
-          orderSections(whichOrder[i]);
-        } else {
-          currentData = orderBy(currentData, whichOrder[i]);
-          showCard(currentData, divCardContainerFlex);
-          // changeOrderCurrentData(divCardContainerFlex);
-        }
-      });
-    }
-  }
-};
-
-// eslint-disable-next-line no-shadow
-let menuConstructed = false;
-const menuSystem = () => {
-  const ulFilterOptions = getById('ul-filter-options');
-  if (menuConstructed === false) {
-    putPokemonTypesOnMenu(ulFilterOptions);
-    menuConstructed = true;
-  }
-
-  const buttonOrder = getById('menu-btn-order');
-  const buttonFilter = getById('menu-btn-filter');
-
-  orderSystem(buttonOrder);
-  filterSystem(buttonFilter, ulFilterOptions);
-};
-const createIconType = (type) => {
-  const iconType = document.createElement('img');
-  iconType.className = 'icon-medium';
-  iconType.setAttribute('src', `images/${type}-icon.png`);
-  return iconType;
-};
-
-const showEvolution = (poke, container, prev, next) => {
-  container.innerHTML = '';
-  let divContainer; let pokemon;
-  if (prev !== undefined) {
-    for (let i = 0; i < prev.length; i += 1) {
-      pokemon = data.pokemon.find(pk => pk.name === prev[i].name);
-      if (pokemon !== undefined) {
-        divContainer = document.createElement('div');
-        divContainer.className = 'card-pokemon-evolition';
-        divContainer.innerHTML = `<span class="font pokemon-name">${pokemon.name}</span>
-                                  <img src="${pokemon.img}" alt="" class="pokemon-img-small">`;
-        container.append(divContainer);
-      }
-    }
-  }
-  divContainer = document.createElement('div');
-  divContainer.className = 'card-pokemon-evolition';
-  divContainer.innerHTML = `<span class="font pokemon-name">${poke.name}</span>
-                            <img src="${poke.img}" alt="" class="pokemon-img-small">`;
-  container.append(divContainer);
-
-  if (next !== undefined) {
-    for (let i = 0; i < next.length; i += 1) {
-      pokemon = data.pokemon.find(pk => pk.name === next[i].name);
-      if (pokemon !== undefined) {
-        divContainer = document.createElement('div');
-        divContainer.className = 'card-pokemon-evolition';
-        divContainer.innerHTML = `<span class="font pokemon-name">${pokemon.name}</span>
-                                  <img src="${pokemon.img}" alt="" class="pokemon-img-small">`;
-        container.append(divContainer);
-      }
-    }
-  }
-};
-
-const createIcons = (list, container) => {
-  for (let i = 0; i < list.length; i += 1) {
-    container.append(createIconType(list[i]));
-  }
-};
-
-const buildTable = (list, table) => {
-  table.innerHTML = '';
-  table.innerHTML = `<tr><th></th>
-                    <th><img class="icon-small" src="images/type.png"></th>
-                    <th><img class="icon-small" src="images/box.png"></th>
-                    <th><img class="icon-small" src="images/energy.png"></th>
-                    <th><img class="icon-small" src="images/time.png"></tr>`;
-  for (let i = 0; i < list.length; i += 1) {
-    const row = `<tr><td>${list[i].name}</td>
-                    <td><img class="icon-small" src="/images/${list[i].type}-icon.png"></td>
-                    <td>${list[i]['base-damage']}</td>
-                    <td>${list[i].energy}</td>
-                    <td>${list[i]['move-duration-seg']}</td></tr>`;
-    table.innerHTML += `${row}`;
-  }
-};
-const divMoveAndAttacks = getById('move-and-attack');
-const divcalculateMove = getById('calculate-damage');
-
-const showDamageOfMove = (btn) => {
-  if (btn.name === 'calculate') {
-    divMoveAndAttacks.style.display = 'none';
-    divcalculateMove.style.display = 'block';
-    btn.textContent = 'Moves & Attacks';
-    btn.name = 'moves';
-  } else {
-    divMoveAndAttacks.style.display = 'flex';
-    divcalculateMove.style.display = 'none';
-    btn.textContent = 'Calculate Damage';
-    btn.name = 'calculate';
-  }
-};
-// let isCalculate = false;
-const calculeDamage = (container, list) => {
-  container.innerHTML = '';
-  container.innerHTML += '<tr><th>Quick Move</th><th></th><th>Special Attack</th><th></th><th>Damage</th></tr>';
-  for (let i = 0; i < list.length; i += 1) {
-    container.innerHTML += `<tr><td>${list[i][0]}</td><td><img src="images/plus1.png" class="icon-small"></td>
-                            <td>${list[i][1]}</td><td><img src="images/igual1.png" class="icon-small"></td>
-                            <td>${list[i][2]}</td></tr>`;
-  }
-};
-
-const btnCalc = getById('get-set-move');
-btnCalc.addEventListener('click', () => {
-  showDamageOfMove(btnCalc);
-});
-
-const showInfoPokemon = (name) => {
-  modalWindow.style.display = 'block';
-  const pokemon = data.pokemon.find(pk => pk.name === name);
-  getById('img-pokemon-modal').setAttribute('src', pokemon.img);
-  getById('div-pokemon-name-modal').textContent = pokemon.name;
-  getById('height').textContent = pokemon.size.height;
-  getById('candy').textContent = pokemon.evolution.candy.replace('candy', '');
-  getById('region').textContent = pokemon.generation.name;
-  getById('weight').textContent = pokemon.size.weight;
-  const types = getById('types');
-  const resistant = getById('resistant');
-  const weaknesses = getById('weaknesses');
-  types.innerHTML = '';
-  resistant.innerHTML = '';
-  weaknesses.innerHTML = '';
-  createIcons(pokemon.type, types);
-  createIcons(pokemon.resistant, resistant);
-  createIcons(pokemon.weaknesses, weaknesses);
-  const specialAttacks = getById('special-attacks-table');
-  const quickMove = getById('quick-move-table');
-  const calcDamage = getById('table-damage');
-  calcDamage.innerHTML = '';
-  calculeDamage(calcDamage, calculateBetterCombinations(pokemon));
-  buildTable(pokemon['special-attack'], specialAttacks);
-  buildTable(pokemon['quick-move'], quickMove);
-  const evolution = getById('evolution');
-  showEvolution(pokemon, evolution, pokemon.evolution['prev-evolution'], pokemon.evolution['next-evolution']);
-};
 
 const loadPage = () => {
   window.scrollTo(0, 0);
   currentData = data.pokemon;
   const wordIntroduced = getById('input-bar-search').value;
   menuSystem();
-  if (wordIntroduced.length === 0 && isContainerSection === false) {
-    showCard(currentData, divCardContainerFlex);
+  if (wordIntroduced.length === 0) {
+    // console.log('esta vacio');
+    showPokemonCards(currentData);
   }
 };
-
-document.addEventListener('click', (event) => {
-  const element = event.target.parentNode;
-  if (element.className === 'pokemon-card  flex-wrap font grow') {
-    modalMode.style.display = 'block';
-    divMoveAndAttacks.style.display = 'flex';
-    divcalculateMove.style.display = 'none';
-    btnCalc.name = 'calculate';
-    btnCalc.textContent = 'Calculate Damage';
-    showInfoPokemon(element.id);
-  }
-});
-
-iconHome.addEventListener('click', () => {
-  isContainerSection = false;
-  divCardContainerBlock.style.display = 'none';
-  divCardContainerFlex.style.display = 'flex';
-  iconTitle.style.visibility = 'hidden';
-  titleTop.textContent = '';
-  currentData = data.pokemon;
-  showCard(currentData, divCardContainerFlex);
-});
-
-iconGoTop.addEventListener('click', () => {
-  window.scrollTo(0, 0);
-});
-
-window.addEventListener('scroll', () => {
-  iconGoTop.style.height = (window.scrollY > 500) ? '60px' : '0px';
-});
-
-sliderSystem();
 window.onload = loadPage;
